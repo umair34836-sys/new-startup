@@ -71,6 +71,12 @@ Read this first in every session.
 
 ## Voice and songs with words
 
+- AI songs with vocals that the owner LOVED ("perfect song"): `library/tools/ai_song.py` with seed 7,
+  80 BPM, 60 s, caption "romantic hindi pop ballad, soft piano, acoustic guitar, strings, gentle tabla,
+  rainy evening mood, warm male vocals, clear hindi lyrics". Reuse this recipe/style for new songs; the
+  result is in `library/music/baarish-ki-pehli-shaam-ai-song.mp3`. Run it in the background with a
+  per-minute status monitor (the owner likes minute-by-minute updates on long jobs).
+
 - ElevenLabs connector (ONLY when the owner asks for it; TTS only, costs the owner's credits; ~230 credits for 2 takes of a 16 s script,
   ~90 per transcription). Good warm Urdu/Hindi romantic male voice: "Ashar – Romantic, Warm Boyfriend"
   (`nq3gz2RQGRBB1SbrgTqF`), model `eleven_v4`. Write the script in Devanagari (English words stay

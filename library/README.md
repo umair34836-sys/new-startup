@@ -13,6 +13,7 @@ All self-made, copyright-free. 72 BPM, 4/4, so one bar = 3.333 s: cut scenes on 
 | `romance-bollywood-72bpm.wav` | 21.6 s | 90s Bollywood romantic: sitar intro, bansuri (flute) melody, piano arpeggios, strings, bass, dholak-style keherwa | Melody written by Magenta Improv RNN over C, Am, F, G, Am+F, C. Percussion and flute start at 3.333 s. Fade-out from 20.2 s. -15 LUFS. |
 | `romance-bollywood-72bpm.mid` | 6 bars | MIDI of the above | Re-voice it (change GM programs in `tools/magenta/arrange.py`) and re-render with FluidSynth. |
 | `romance-bollywood-72bpm-vocal-bed.wav` | 21.6 s | Same track with the flute melody pulled back | Bed for a voice-over or spoken lyrics (use with `tools/voice_over_music.py`). |
+| `baarish-ki-pehli-shaam-ai-song.mp3` | 60 s | AI Hindi song WITH vocals (ACE-Step 1.5 turbo), romantic pop ballad, piano/guitar/strings/tabla, beats pulled back under the sung words | Lyrics in `lyrics/baarish-ki-pehli-shaam.txt`. Owner loved it. Made with `ai_song.py` defaults (seed 7, 8 steps, INT8, 80 BPM) and the caption below. |
 | `romance-piano-72bpm.wav` | 21.6 s | Soft synthesized piano + strings + light pulse | Made by `tools/romance_synth.py` (numpy). Plainer than the Bollywood track. |
 
 ## Sound effects (`sfx/`)
