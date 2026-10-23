@@ -1,0 +1,20 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .gr { position: absolute; inset: 0; }
+    #gr-night { background: rgba(8, 22, 48, 0.38); }
+    #gr-gold { background: radial-gradient(ellipse 70% 60% at 50% 60%, rgba(255, 196, 110, 0.22), rgba(255, 170, 80, 0.08) 60%, rgba(0, 0, 0, 0) 80%); opacity: 0; }
+    #gr-vig { background: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.42) 100%); }
+  </style>
+  <div id="root" data-composition-id="grade" data-width="1920" data-height="1080">
+    <div id="gr-night" class="gr"></div>
+    <div id="gr-gold" class="gr"></div>
+    <div id="gr-vig" class="gr"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to("#gr-night", { opacity: 0.45, duration: 7, ease: "sine.inOut" }, 38.0);
+    tl.fromTo("#gr-gold", { opacity: 0 }, { opacity: 1, duration: 7, ease: "sine.inOut" }, 38.3);
+    window.__timelines["grade"] = tl;
+  </script>
+</template>

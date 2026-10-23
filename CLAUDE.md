@@ -90,6 +90,18 @@ Read this first in every session.
   silently does nothing, so place lines in numpy (the tool does).
 - A video `<audio data-fade-out>` must start after the last spoken word, or it swallows the final line.
 
+## CSS 3D voxel films (learned on the Blocky Monsoon video)
+
+- `mix-blend-mode` (and opacity < 1 / filter on a preserve-3d container) flattens the whole 3D world: camera pitch
+  stops working and the ground vanishes. Use plain rgba/gradients on faces; put blends only in separate 2D overlay
+  compositions above the world.
+- Chrome drops a whole face once any part of it passes behind the camera: tile ground into 4x4-block quads.
+- `tl.set(..., 0)` does not render on frame 0: also apply initial states with `gsap.set` before the timeline
+  (build.py does this automatically). Hide things with `visibility`, not container opacity.
+- Keep the camera out of buildings: a side tracking shot needs a gap between the lane and the houses.
+- ~1,200 faces + 2 characters render fine; snapshot at the QA times before every render.
+- Never `cd` somewhere and `rm -rf *`: make a fresh folder instead (the safety check blocks it anyway).
+
 ## Editing a phone video into a "professional" edit (recipe that worked)
 
 1. Look first: ffprobe (rotation, fps), a contact sheet every ~0.4 s, find the best moments (smiles, actions).

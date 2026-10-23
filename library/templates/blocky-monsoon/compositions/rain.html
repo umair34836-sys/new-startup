@@ -1,0 +1,29 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .rn { position: absolute; inset: 0; background-repeat: repeat; }
+    #rn-b0 { background-image: url("assets/textures/rain_blue_0.png"); background-size: 512px 512px; opacity: 0.55; }
+    #rn-b1 { background-image: url("assets/textures/rain_blue_1.png"); background-size: 768px 768px; opacity: 0.45; }
+    #rn-g0 { background-image: url("assets/textures/rain_gold_0.png"); background-size: 512px 512px; opacity: 0; }
+    #rn-g1 { background-image: url("assets/textures/rain_gold_1.png"); background-size: 768px 768px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="rain" data-width="1920" data-height="1080">
+    <div id="rn-b0" class="rn"></div>
+    <div id="rn-b1" class="rn"></div>
+    <div id="rn-g0" class="rn"></div>
+    <div id="rn-g1" class="rn"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Constant fall along the streak angle (x drifts -0.18 px per px down).
+    for (const [sel, speed] of [["#rn-b0", 900], ["#rn-g0", 900], ["#rn-b1", 1500], ["#rn-g1", 1500]]) {
+      tl.fromTo(sel, { backgroundPosition: "0px 0px" }, { backgroundPosition: `${-0.18 * speed * 60}px ${speed * 60}px`, duration: 60, ease: "none" }, 0);
+    }
+    tl.to(["#rn-b0", "#rn-b1"], { opacity: 0.12, duration: 7, ease: "sine.inOut" }, 38.3);
+    tl.to("#rn-g0", { opacity: 0.6, duration: 7, ease: "sine.inOut" }, 38.3);
+    tl.to("#rn-g1", { opacity: 0.5, duration: 7, ease: "sine.inOut" }, 38.3);
+    tl.to(["#rn-g0", "#rn-g1"], { opacity: 0.25, duration: 2, ease: "sine.inOut" }, 56.2);
+    tl.to(["#rn-b0", "#rn-b1"], { opacity: 0, duration: 2, ease: "sine.inOut" }, 56.2);
+    window.__timelines["rain"] = tl;
+  </script>
+</template>

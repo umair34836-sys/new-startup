@@ -1,0 +1,24 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .sk-fill { position: absolute; inset: 0; }
+    #sk-night { background: linear-gradient(to bottom, #07142a 0%, #12294a 55%, #1f3d5c 100%); }
+    #sk-warm { background: linear-gradient(to bottom, #0b1830 0%, #3a2f52 50%, #b8662e 100%); opacity: 0; }
+    .sk-cloud { position: absolute; background: #0d1b30; box-shadow: 64px 32px 0 #0d1b30, -64px 32px 0 #0d1b30, 128px 32px 0 #0f1f36; height: 64px; }
+  </style>
+  <div id="root" data-composition-id="sky" data-width="1920" data-height="1080">
+    <div id="sk-night" class="sk-fill"></div>
+    <div id="sk-warm" class="sk-fill"></div>
+    <div id="sk-c1" class="sk-cloud" style="left: 120px; top: 90px; width: 384px"></div>
+    <div id="sk-c2" class="sk-cloud" style="left: 900px; top: 40px; width: 512px"></div>
+    <div id="sk-c3" class="sk-cloud" style="left: 1480px; top: 150px; width: 320px"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#sk-c1", { x: 0 }, { x: 160, duration: 60, ease: "none" }, 0);
+    tl.fromTo("#sk-c2", { x: 0 }, { x: 120, duration: 60, ease: "none" }, 0);
+    tl.fromTo("#sk-c3", { x: 0 }, { x: 90, duration: 60, ease: "none" }, 0);
+    tl.fromTo("#sk-warm", { opacity: 0 }, { opacity: 0.85, duration: 8, ease: "sine.inOut" }, 37.5);
+    window.__timelines["sky"] = tl;
+  </script>
+</template>

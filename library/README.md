@@ -33,6 +33,22 @@ gotchas in the root `CLAUDE.md` (the riser crests at 3.47 s, the error tone is l
   eyes, ripped black jeans, white shoes, red "M" on the back). **Default host for every video that needs a
   host or presenter.** Build it with `tools/blocky_character.py` (CSS 3D, no WebGL, renders anywhere).
 
+- `girl-skin.png`: a girl partner character (long black hair, bindi, maroon kurta with gold trim, gold
+  dupatta, bangles, cream salwar, gold juttis), painted by `tools/make_girl_skin.py`.
+
+## Textures (`textures/`)
+
+16x16 Minecraft-style block textures from `tools/voxel_textures.py` (grass, dirt, cobble, stone brick, oak and
+dark-oak planks, log, leaves, lit window, door, red/white awning, red wool, lantern, iron) plus seamless rain
+streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
+
+## Templates (`templates/`)
+
+- `blocky-monsoon/`: the full 60 s voxel music video for "Baarish ki pehli shaam" (owner's character meets the
+  girl at a chai stall in the rain; lamps light, rain turns gold, umbrella pops on the song's peak). `build.py`
+  writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
+  `SPEC.md` has every shot. Copy the folder, copy assets (textures, skins, fonts, gsap, song) and edit `build.py`.
+
 ## Lyrics (`lyrics/`)
 
 - `baarish-ki-pehli-shaam.txt`: 1-minute Hindi love story (rain, a tea stall, first meeting), ACE-Step section tags.
@@ -73,6 +89,9 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 | `setup-ai-song.sh` | Installs ACE-Step 1.5 (lyrics -> song with vocals) and OpenAI Whisper into /home/user/tools/venv. Weights need huggingface.co + openaipublic.azureedge.net allowed. |
 | `ai_song.py` | Full pipeline: song with vocals from lyrics (turbo text2music) -> Whisper finds where words are sung -> bass and cymbal bands lowered there, voice band lifted -> Whisper transcript compared to the lyrics (`report.json`). Resumable; run it in the background (CPU). |
 | `blocky_character.py` | `python3 blocky_character.py compositions/host.html --skin assets/characters/host-skin.png --duration 6 --scale 16 --moves '[[0,"idle"],[1,"wave"],[3,"talk"]]'`: a 3D Minecraft-style character scene from a 64x64 skin. Poses: idle, wave, talk, walk, point, spin; `--turn`, `--tilt`, `--x/--y` place it. Copy the skin into the project's assets first. |
+| `voxel_world.py` | CSS 3D voxel worlds for HyperFrames: `World.box/plane/group/raw`, a camera rig (dolly, pitch, yaw, target) and `camera_js` keyframes. Faces take a texture name or a CSS colour. |
+| `voxel_textures.py` | Paints the 16x16 block textures into a folder. |
+| `make_girl_skin.py` | Paints `characters/girl-skin.png`. |
 | `floating_hearts.py` | Writes a deterministic floating hearts + bokeh overlay scene (`--duration`, `--count`, `--burst-at` for an end-card burst, `--width/--height`). |
 | `ember_background.py` | Writes the dark ember background scene used in the FireCraft video (36 rising embers + glow). |
 
