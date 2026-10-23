@@ -18,3 +18,4 @@ video/.hyperframes/
 *.heif
 uploads/
 graft/
+.cache/
