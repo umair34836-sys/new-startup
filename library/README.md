@@ -115,3 +115,7 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 Facts gathered by tools and web research, one topic per file (source + date), so nothing is looked up twice:
 `firecraft-smp.md` (server facts for promos), `tools-landscape.md` (open-source tools and star counts),
 `video-editing.md` (editing techniques), `talkember-studio.md` (the owner's website, for promos).
+
+## templates/website-promo
+
+Song + HyperFrames walkthrough video of a real website (TalkEmber Studio promo, Oct 2026): build.py, alignment (dp_align.py), multi-part song generation. See its README.
