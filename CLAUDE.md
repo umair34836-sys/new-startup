@@ -13,6 +13,12 @@ Read this first in every session.
 - Whenever something is downloaded or made that a future edit could reuse (a track, an effect, a font,
   a block, a model), add it to `library/` and list it in `library/README.md` so it is never fetched or
   rebuilt twice.
+- SAVE ALL USEFUL DATA (owner, Oct 2026): every fact, finding or result gathered through tools or research
+  (web reads, searches, star counts, specs, measurements, what worked/failed) goes into `library/research/`
+  (one topic per .md, with source and date) or this file, and is pushed, so nothing is fetched twice.
+  Downloaded reusable media goes to `library/` as before. Still NEVER personal data, family media or videos.
+- Every tool installed for the owner must be added to `library/tools/setup-all.sh` so it is present in
+  every session (the SessionStart hook runs it).
 - Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
   in that request. Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
 - Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
@@ -38,10 +44,11 @@ Read this first in every session.
   curl and crop. Image URLs themselves can't be screenshotted.
 - Never download copyrighted songs (YouTube rips etc.). Make music with `library/tools` or ask the
   owner to upload an MP3 they have.
-- AUTO-INSTALL (owner asked that tools be there every session): the SessionStart hook runs
-  `library/tools/setup-all.sh`: HyperFrames Chrome + Agent-Reach + graft in the foreground, and the music +
-  ACE-Step/Whisper stack with its weights in the background (log /home/user/tools/setup.log; done when
-  /home/user/tools/.heavy-ready exists, ~15 min in a fresh container). Installed programs and the ~10 GB weights
+- AUTO-INSTALL (owner asked that tools be there every session): the SessionStart hook fetches HyperFrames'
+  Chrome, then runs `library/tools/setup-all.sh all` in the background: light part (~1 min: ffmpeg,
+  PIL/numpy/mido/pyworld, Agent-Reach, graft; flag /home/user/tools/.light-ready), then heavy part (music,
+  ACE-Step/Whisper + weights, yt-dlp link; ~15 min fresh; flag .heavy-ready). Log /home/user/tools/setup.log.
+  Before using a tool early in a session, check its flag. Installed programs and the ~10 GB weights
   can't live in the repo (GitHub 100 MB file limit). Any new tool: add it to setup-all.sh, not only to chat.
 - Song-with-vocals (ACE-Step 1.5, 13.9k stars) and transcription (OpenAI Whisper, 111k stars) install
   with `library/tools/setup-ai-song.sh` into /home/user/tools/venv (Py 3.12, CPU, ~7.6 GB, ~10 min).

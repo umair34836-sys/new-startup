@@ -103,3 +103,9 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 
 - Romantic glow (indoor phone footage, harsh window light, people):
   `{"preset":"warm-daylight","intensity":0.7,"adjust":{"exposure":0.04,"contrast":0.04,"highlights":-0.25,"shadows":0.2,"whites":-0.1,"temperature":0.12,"tint":0.04,"vibrance":0.08},"details":{"vignette":0.14}}`
+
+## research/
+
+Facts gathered by tools and web research, one topic per file (source + date), so nothing is looked up twice:
+`firecraft-smp.md` (server facts for promos), `tools-landscape.md` (open-source tools and star counts),
+`video-editing.md` (editing techniques).
