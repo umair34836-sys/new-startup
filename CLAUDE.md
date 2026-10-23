@@ -45,7 +45,10 @@ Read this first in every session.
   Their WEIGHTS download from huggingface.co, whose big files are served from us.aws.cdn.hf.co
   (non-Xet path, forced in ai_song.py with HF_HUB_DISABLE_XET=1) or cas-server/transfer.xethub.hf.co (Xet),
   and Whisper's from openaipublic.azureedge.net (works now: small model, 461 MB in ~20 s): until the owner allows those hosts in the environment's network
-  settings, both fail with 403. No GPU here, so ACE-Step runs on CPU (slow; use the 2B turbo, LM off).
+  settings, both fail with 403. No GPU here, so ACE-Step runs on CPU: load the DiT with quantization=int8_weight_only (fp32 OOMs
+  at VAE decode), raise ACESTEP_GENERATION_TIMEOUT (default 600 s). Turbo 60 s song ~5 min; base 32
+  steps ~16 min. The base model's `lego` task (add vocals over an instrumental) did NOT add vocals on
+  CPU (output = 0.97 copy of the input): make vocal songs with turbo text2music + lyrics instead.
 
 ## HyperFrames learnings
 
