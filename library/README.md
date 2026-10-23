@@ -26,6 +26,12 @@ All self-made, copyright-free. 72 BPM, 4/4, so one bar = 3.333 s: cut scenes on 
 `npx hyperframes media-use resolve --type sfx --intent "<name>" --project . --local-only`. See the
 gotchas in the root `CLAUDE.md` (the riser crests at 3.47 s, the error tone is late and quiet).
 
+## Characters (`characters/`)
+
+- `host-skin.png`: the owner's own Minecraft skin (64x64 classic: white hoodie with hood, black hair, blue
+  eyes, ripped black jeans, white shoes, red "M" on the back). **Default host for every video that needs a
+  host or presenter.** Build it with `tools/blocky_character.py` (CSS 3D, no WebGL, renders anywhere).
+
 ## Lyrics (`lyrics/`)
 
 - `baarish-ki-pehli-shaam.txt`: 1-minute Hindi love story (rain, a tea stall, first meeting), ACE-Step section tags.
@@ -65,6 +71,7 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 | `voice_over_music.py` | `python3 voice_over_music.py spec.json out.wav`: places voice lines (cut from one take by transcript word timings) at chosen film times, speeds a line up only if it overruns, polishes the voice, ducks the bed 8 dB under it and sets the voice 5.5 dB over the bed. Spec format is in the file header. |
 | `setup-ai-song.sh` | Installs ACE-Step 1.5 (lyrics -> song with vocals) and OpenAI Whisper into /home/user/tools/venv. Weights need huggingface.co + openaipublic.azureedge.net allowed. |
 | `ai_song.py` | Full pipeline: instrumental (turbo) -> Hindi/any vocals over it (base, lego) -> beats ducked under the voice -> Whisper transcript compared to the lyrics (`report.json`). Resumable; run it in the background (CPU is slow). |
+| `blocky_character.py` | `python3 blocky_character.py compositions/host.html --skin assets/characters/host-skin.png --duration 6 --scale 16 --moves '[[0,"idle"],[1,"wave"],[3,"talk"]]'`: a 3D Minecraft-style character scene from a 64x64 skin. Poses: idle, wave, talk, walk, point, spin; `--turn`, `--tilt`, `--x/--y` place it. Copy the skin into the project's assets first. |
 | `floating_hearts.py` | Writes a deterministic floating hearts + bokeh overlay scene (`--duration`, `--count`, `--burst-at` for an end-card burst, `--width/--height`). |
 | `ember_background.py` | Writes the dark ember background scene used in the FireCraft video (36 rising embers + glow). |
 

@@ -14,6 +14,8 @@ import numpy as np
 
 # Xet's cas-server host isn't allowed here; the classic LFS path (cas-bridge) is.
 os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
+# ACE-Step aborts a generation after 600 s (sized for GPUs); the base model on CPU needs longer.
+os.environ.setdefault("ACESTEP_GENERATION_TIMEOUT", "5400")
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--lyrics", required=True)

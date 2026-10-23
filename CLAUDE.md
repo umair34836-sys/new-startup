@@ -16,6 +16,9 @@ Read this first in every session.
 - Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
   in that request. Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
 - Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
+- DEFAULT HOST: when a video needs a host/presenter/character (or the owner says "character use karo"),
+  use the owner's own skin `library/characters/host-skin.png` built with `library/tools/blocky_character.py`
+  unless they name another character.
 - The owner runs FireCraft SMP (www.firecraft.fun), a Minecraft lifesteal server. The `video/` folder
   is its Season 2 launch video and a template for similar promos.
 
