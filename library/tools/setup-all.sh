@@ -36,6 +36,10 @@ heavy() {
     julius diffq ml_collections beartype rotary-embedding-torch resampy
   "$T/venv/bin/audio-separator" --download_model_only -m model_bs_roformer_ep_368_sdr_12.9628.ckpt \
     --model_file_dir "$T/sep-models" >/dev/null && echo "separator ready"
+  # clean_voice.py: denoise, de-reverb and the fast vocal model.
+  for m in denoise_mel_band_roformer_aufr33_sdr_27.9959.ckpt UVR-DeEcho-DeReverb.pth UVR-MDX-NET-Voc_FT.onnx; do
+    "$T/venv/bin/audio-separator" --download_model_only -m "$m" --model_file_dir "$T/sep-models" >/dev/null
+  done
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
   touch "$T/.heavy-ready"
 }

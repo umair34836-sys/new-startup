@@ -84,6 +84,9 @@ Read this first in every session.
 - RULE (owner, Oct 2026): "voice over / narration / awaaz" = spoken voice with ZERO music and every line present ->
   `library/tools/ai_voice.py`. "song / gaana / music" = with music -> `ai_song.py`. Skill: `.claude/skills/voice-or-song`.
   The owner prefers this ACE-Step voice over Kokoro (Kokoro sounded less natural and smooth to them).
+- RULE (owner, Oct 2026): if a video the owner gives already has a voice, USE THAT VOICE: remove noise, music and
+  every background sound so only the person's voice remains -> `library/tools/clean_voice.py` (skill
+  `.claude/skills/clean-video-voice`). Don't generate a new voice for it.
 - ai_voice.py lessons (Oct 2026 test, 6 lines): a lone short line per take came out garbled (40-53% Whisper match);
   the whole passage per take works (round 1: 65-100% per line, round 2: all >= 84%, overall 88%), so lines are
   generated in groups of 6 and each line keeps its clearest stretch from any take. Cut each line between its
