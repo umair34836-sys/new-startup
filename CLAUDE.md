@@ -146,4 +146,6 @@ Read this first in every session.
   web search (exa) WORK. For GitHub tool discovery use `agent-reach web search "<name> github"` (results show stars);
   the github channel itself fails (session gh API is repo-scoped). Reddit search can hit Exa 429 (rate limit) and
   its opencli fallback needs a GitHub release download (blocked): wait and retry once, else WebSearch.
+- ECC (everything-claude-code) lives in .claude/ (agents, commands, quality skills; no hooks). REA (reverse engineering,
+  MCP `rea` in .mcp.json + skill). See library/research/tools-landscape.md.
 - graft 0.25 (`graft build`, `graft ask "<q>"`): code context graph; telemetry disabled. Don't commit its graft/ folder unless asked.

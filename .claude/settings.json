@@ -11,5 +11,8 @@
       }
     ]
   },
-  "includeCoAuthoredBy": false
+  "includeCoAuthoredBy": false,
+  "enabledMcpjsonServers": [
+    "rea"
+  ]
 }

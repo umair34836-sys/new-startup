@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install every tool this repo uses into a fresh cloud container, skipping what is already there.
-#   bash library/tools/setup-all.sh light   # quick (~1 min): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft
+#   bash library/tools/setup-all.sh light   # quick (~1 min): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA
 #   bash library/tools/setup-all.sh heavy   # music + AI song stack and its model weights (~15 min, ~17 GB)
 # The SessionStart hook runs "all" in the background, logging to /home/user/tools/setup.log; it touches
 # /home/user/tools/.light-ready and then /home/user/tools/.heavy-ready as each part finishes.
@@ -20,6 +20,8 @@ light() {
       agent-reach setup >/dev/null
   }
   command -v graft >/dev/null || { npm i -g -s @nanonets/graft@0.25.0 && graft telemetry disable >/dev/null; }
+  # REA (morluto/rea): reverse-engineering CLI; its MCP server is registered in the repo's .mcp.json.
+  command -v rea >/dev/null || npm i -g -s rea-agents@6.7.0
 }
 
 heavy() {
@@ -29,6 +31,11 @@ heavy() {
   cd "$T/ACE-Step-1.5" && HF_HUB_DISABLE_XET=1 "$T/venv/bin/python" -c \
     "from acestep.model_downloader import ensure_main_model as e; print(e(prefer_source='huggingface'))"
   "$T/venv/bin/python" -c "import whisper; whisper.load_model('small'); print('whisper small ready')"
+  # Vocal separation (music -> zero under a voice): audio-separator + BS-RoFormer weights (GitHub release download).
+  VIRTUAL_ENV="$T/venv" uv pip install -q "audio-separator[cpu]" audioread pydub onnxruntime librosa samplerate \
+    julius diffq ml_collections beartype rotary-embedding-torch resampy
+  "$T/venv/bin/audio-separator" --download_model_only -m model_bs_roformer_ep_368_sdr_12.9628.ckpt \
+    --model_file_dir "$T/sep-models" >/dev/null && echo "separator ready"
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
   touch "$T/.heavy-ready"
 }
