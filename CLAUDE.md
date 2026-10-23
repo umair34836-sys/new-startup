@@ -13,6 +13,8 @@ Read this first in every session.
 - Whenever something is downloaded or made that a future edit could reuse (a track, an effect, a font,
   a block, a model), add it to `library/` and list it in `library/README.md` so it is never fetched or
   rebuilt twice.
+- Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
+  in that request. Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
 - Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
 - The owner runs FireCraft SMP (www.firecraft.fun), a Minecraft lifesteal server. The `video/` folder
   is its Season 2 launch video and a template for similar promos.
@@ -53,7 +55,7 @@ Read this first in every session.
 
 ## Voice and songs with words
 
-- ElevenLabs connector (TTS only, costs the owner's credits; ~230 credits for 2 takes of a 16 s script,
+- ElevenLabs connector (ONLY when the owner asks for it; TTS only, costs the owner's credits; ~230 credits for 2 takes of a 16 s script,
   ~90 per transcription). Good warm Urdu/Hindi romantic male voice: "Ashar – Romantic, Warm Boyfriend"
   (`nq3gz2RQGRBB1SbrgTqF`), model `eleven_v4`. Write the script in Devanagari (English words stay
   English); it pronounces Hindustani well.
