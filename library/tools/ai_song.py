@@ -26,6 +26,7 @@ ap.add_argument("--seed", type=int, default=7)
 ap.add_argument("--duck-db", type=float, default=-9)
 ap.add_argument("--base-steps", type=int, default=32)
 ap.add_argument("--whisper-model", default="small")
+ap.add_argument("--quantization", default="int8_weight_only", help="DiT weights; fp32 2B needs ~10 GB RAM and OOMs a 15 GB box at VAE decode")
 ap.add_argument("--out", required=True)
 ap.add_argument("--project-root", default="/home/user/tools/ACE-Step-1.5")
 a = ap.parse_args()
@@ -46,7 +47,8 @@ def generate(config_path, params_kwargs, dst):
     t0 = time.time()
     dit = AceStepHandler()
     status, ok = dit.initialize_service(project_root=a.project_root, config_path=config_path, device="cpu",
-                                        prefer_source="huggingface")
+                                        prefer_source="huggingface",
+                                        quantization=None if a.quantization == "none" else a.quantization)
     if not ok:
         sys.exit(f"model init failed ({config_path}): {status}")
     params = GenerationParams(thinking=False, use_cot_metas=False, use_cot_caption=False, use_cot_language=False,
@@ -58,6 +60,9 @@ def generate(config_path, params_kwargs, dst):
         sys.exit(f"generation failed: {res.error}")
     shutil.copy(res.audios[0]["path"], dst)
     shutil.rmtree(tmp, ignore_errors=True)
+    del dit, res
+    import gc, torch
+    gc.collect()
     log(f"{os.path.basename(dst)} done in {time.time() - t0:.0f}s")
 
 def read(path):
