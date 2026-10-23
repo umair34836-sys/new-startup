@@ -1,0 +1,9 @@
+{
+  "name": "magenta-melody-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@magenta/music": "1.23.1",
+    "@tensorflow/tfjs": "2.8.6"
+  }
+}

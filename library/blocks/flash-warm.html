@@ -1,0 +1,15 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #fl-white { position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, #fffaf2, #ffe2cc 70%); }
+  </style>
+  <div id="root" data-composition-id="flash" data-width="1080" data-height="1920">
+    <div id="fl-white"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#fl-white", { opacity: 0 }, { opacity: 0.85, duration: 0.2, ease: "power2.in" }, 0);
+    tl.to("#fl-white", { opacity: 0, duration: 0.45, ease: "power2.out" }, 0.2);
+    window.__timelines["flash"] = tl;
+  </script>
+</template>

@@ -1,3 +1,19 @@
 node_modules/
 video/renders/
 video/.hyperframes/
+**/renders/
+**/.hyperframes/
+
+# Personal media never goes to GitHub (owner's rule). Reusable assets go in library/.
+*.mp4
+*.mov
+*.m4v
+*.mkv
+*.avi
+*.webm
+*.3gp
+*.jpg
+*.jpeg
+*.heic
+*.heif
+uploads/
