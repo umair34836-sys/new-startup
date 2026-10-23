@@ -100,6 +100,13 @@ Read this first in every session.
   silently does nothing, so place lines in numpy (the tool does).
 - A video `<audio data-fade-out>` must start after the last spoken word, or it swallows the final line.
 
+- Spoken voiceover from ACE-Step (test Oct 2026): caption "spoken word, male narrator speaking hindi, warm
+  friendly youtube voiceover, a cappella, dry clean vocal, no music, no instruments, no singing, clear hindi
+  speech", lyrics under [Spoken Word], 20 s, 90 BPM, ducking off (--duck-*-db 0 --presence-db 0), ~2.5 min/take.
+  Seed 21: Whisper similarity 46% (most lines, one skipped), seed 7: 24% (skipped lines). The loved song scored
+  23%, so Whisper scores are low for any AI vocal. ~25% of voiced frames are held notes (half-sung delivery),
+  quiet bed at -30 dB. Usable as a sing-song narrator, not a flat newsreader; it can drop lines: check report.json.
+
 ## CSS 3D voxel films (learned on the Blocky Monsoon video)
 
 - `mix-blend-mode` (and opacity < 1 / filter on a preserve-3d container) flattens the whole 3D world: camera pitch
