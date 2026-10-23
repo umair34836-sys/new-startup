@@ -38,8 +38,11 @@ Read this first in every session.
   curl and crop. Image URLs themselves can't be screenshotted.
 - Never download copyrighted songs (YouTube rips etc.). Make music with `library/tools` or ask the
   owner to upload an MP3 they have.
-- HyperFrames renders need headless Chrome: the SessionStart hook runs `browser ensure`.
-- Music tools need `library/tools/setup-music.sh` once per container.
+- AUTO-INSTALL (owner asked that tools be there every session): the SessionStart hook runs
+  `library/tools/setup-all.sh`: HyperFrames Chrome + Agent-Reach + graft in the foreground, and the music +
+  ACE-Step/Whisper stack with its weights in the background (log /home/user/tools/setup.log; done when
+  /home/user/tools/.heavy-ready exists, ~15 min in a fresh container). Installed programs and the ~10 GB weights
+  can't live in the repo (GitHub 100 MB file limit). Any new tool: add it to setup-all.sh, not only to chat.
 - Song-with-vocals (ACE-Step 1.5, 13.9k stars) and transcription (OpenAI Whisper, 111k stars) install
   with `library/tools/setup-ai-song.sh` into /home/user/tools/venv (Py 3.12, CPU, ~7.6 GB, ~10 min).
   Their WEIGHTS download from huggingface.co, whose big files are served from us.aws.cdn.hf.co

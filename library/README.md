@@ -80,6 +80,8 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 
 | Tool | What it does |
 | --- | --- |
+| `setup-all.sh` | Installs everything (`light`: Agent-Reach, graft; `heavy`: music + ACE-Step/Whisper + weights). Run automatically by the SessionStart hook. |
+| `setup-agent-tools.sh` | Agent-Reach + graft only (also part of setup-all.sh light). |
 | `setup-music.sh` | One-time setup per container: apt FluidSynth + FluidR3 GM SoundFont (148 MB, too big for git), pip mido/numpy, npm Magenta.js. |
 | `magenta/melody.mjs` | `node melody.mjs <checkpoint-url> out.json`: 12 Improv RNN takes over the chords, scored; best first. Serve the checkpoint with `python3 -m http.server 8766 --directory library/models/magenta/chord_pitches_improv`. Edit `seed` / `chords` inside for a new song. |
 | `magenta/arrange.py` | `python3 arrange.py melody.json out.mid [temp]`: arranges a take for sitar, flute, piano, strings, bass, celesta and dholak-style percussion. |
