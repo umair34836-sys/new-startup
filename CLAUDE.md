@@ -35,8 +35,9 @@ Read this first in every session.
 - Music tools need `library/tools/setup-music.sh` once per container.
 - Song-with-vocals (ACE-Step 1.5, 13.9k stars) and transcription (OpenAI Whisper, 111k stars) install
   with `library/tools/setup-ai-song.sh` into /home/user/tools/venv (Py 3.12, CPU, ~7.6 GB, ~10 min).
-  Their WEIGHTS download from huggingface.co (+ cas-bridge.xethub.hf.co / cdn-lfs.huggingface.co)
-  and openaipublic.azureedge.net: until the owner allows those hosts in the environment's network
+  Their WEIGHTS download from huggingface.co, whose big files are served from us.aws.cdn.hf.co
+  (non-Xet path, forced in ai_song.py with HF_HUB_DISABLE_XET=1) or cas-server/transfer.xethub.hf.co (Xet),
+  and Whisper's from openaipublic.azureedge.net (works now: small model, 461 MB in ~20 s): until the owner allows those hosts in the environment's network
   settings, both fail with 403. No GPU here, so ACE-Step runs on CPU (slow; use the 2B turbo, LM off).
 
 ## HyperFrames learnings

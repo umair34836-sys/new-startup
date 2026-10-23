@@ -12,6 +12,9 @@
 import argparse, difflib, glob, json, os, re, shutil, subprocess, sys, time, wave
 import numpy as np
 
+# Xet's cas-server host isn't allowed here; the classic LFS path (cas-bridge) is.
+os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--lyrics", required=True)
 ap.add_argument("--caption", required=True, help="style of the music, e.g. 'romantic hindi pop ballad, piano, strings'")
@@ -42,7 +45,8 @@ def generate(config_path, params_kwargs, dst):
     from acestep.inference import GenerationParams, GenerationConfig, generate_music
     t0 = time.time()
     dit = AceStepHandler()
-    status, ok = dit.initialize_service(project_root=a.project_root, config_path=config_path, device="cpu")
+    status, ok = dit.initialize_service(project_root=a.project_root, config_path=config_path, device="cpu",
+                                        prefer_source="huggingface")
     if not ok:
         sys.exit(f"model init failed ({config_path}): {status}")
     params = GenerationParams(thinking=False, use_cot_metas=False, use_cot_caption=False, use_cot_language=False,
