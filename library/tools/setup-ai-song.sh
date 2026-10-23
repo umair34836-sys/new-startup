@@ -34,6 +34,7 @@ toml
 modelscope
 pytorch-wavelets>=1.3.0
 openai-whisper
+yt-dlp
 diskcache
 peft>=0.18.0
 typer-slim>=0.21.1

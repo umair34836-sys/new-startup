@@ -22,10 +22,14 @@ Read this first in every session.
 ## Environment facts (cloud container)
 
 - Everything runs in an ephemeral cloud container, not the owner's PC.
-- Network is allowlisted. Blocked: huggingface.co (no MusicGen/HF models), cdn.jsdelivr.net,
-  download.pytorch.org, firecraft.fun, youtube, openverse, github.com web pages. Allowed: npm, pypi,
-  archive.ubuntu.com (apt works), raw.githubusercontent.com, `git clone` of public repos,
-  storage.googleapis.com (Magenta checkpoints, Firecrawl screenshots), fonts.googleapis.com.
+- Network is allowlisted. The owner has allowed (Oct 2026): npm, pypi, archive.ubuntu.com (apt),
+  raw.githubusercontent.com, `git clone` of public repos, storage.googleapis.com, fonts.googleapis.com,
+  huggingface.co + its CDNs (us.aws.cdn.hf.co, *.xethub.hf.co), openaipublic.azureedge.net (Whisper),
+  YouTube (youtube.com, *.googlevideo.com, i.ytimg.com), pixabay, freesound, api.openverse.org,
+  wikimedia commons/upload, archive.org, freemusicarchive.org, incompetech.com.
+  Still blocked: modelscope.cn, cdn.jsdelivr.net, download.pytorch.org, firecraft.fun, github.com web pages.
+  YouTube downloads: `yt-dlp` (in /home/user/tools/venv). Only download CC/public-domain/royalty-free
+  media, check the licence, and credit it; never copyrighted songs.
 - A blocked website can still be read and seen through the Firecrawl MCP: `firecrawl_scrape` with
   `formats: ["screenshot"]` (fullPage for the whole page) returns a storage.googleapis.com PNG you can
   curl and crop. Image URLs themselves can't be screenshotted.
