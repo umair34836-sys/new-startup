@@ -33,6 +33,11 @@ Read this first in every session.
   owner to upload an MP3 they have.
 - HyperFrames renders need headless Chrome: the SessionStart hook runs `browser ensure`.
 - Music tools need `library/tools/setup-music.sh` once per container.
+- Song-with-vocals (ACE-Step 1.5, 13.9k stars) and transcription (OpenAI Whisper, 111k stars) install
+  with `library/tools/setup-ai-song.sh` into /home/user/tools/venv (Py 3.12, CPU, ~7.6 GB, ~10 min).
+  Their WEIGHTS download from huggingface.co (+ cas-bridge.xethub.hf.co / cdn-lfs.huggingface.co)
+  and openaipublic.azureedge.net: until the owner allows those hosts in the environment's network
+  settings, both fail with 403. No GPU here, so ACE-Step runs on CPU (slow; use the 2B turbo, LM off).
 
 ## HyperFrames learnings
 
