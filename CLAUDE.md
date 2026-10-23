@@ -87,6 +87,12 @@ Read this first in every session.
 - RULE (owner, Oct 2026): if a video the owner gives already has a voice, USE THAT VOICE: remove noise, music and
   every background sound so only the person's voice remains -> `library/tools/clean_voice.py` (skill
   `.claude/skills/clean-video-voice`). Don't generate a new voice for it.
+- clean_voice.py test (Oct 2026, 26 s voice + instrumental music + pink noise + 120 Hz hum): BS-RoFormer took the
+  pauses from -28 dB to -106 dB and SNR 5.7 -> 21.9 dB in ~8 min; --fast (MDX-Net Voc FT) gave -69 dB / 18 dB in
+  43 s. The denoise pass (~3 min) then took the pauses to digital silence (-180 dB). Whisper words unchanged.
+  A song WITH a singer as background is kept as "voice" by any vocal model: only instrumental sound is removable.
+  Measuring: a causal 70 Hz high-pass shifts phase, so waveform SNR vs a reference collapses (2 dB) though nothing
+  audible changed; compare against a reference passed through the same filter, or use pause levels.
 - ai_voice.py lessons (Oct 2026 test, 6 lines): a lone short line per take came out garbled (40-53% Whisper match);
   the whole passage per take works (round 1: 65-100% per line, round 2: all >= 84%, overall 88%), so lines are
   generated in groups of 6 and each line keeps its clearest stretch from any take. Cut each line between its

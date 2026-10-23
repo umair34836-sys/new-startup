@@ -70,7 +70,14 @@ if a.dereverb:
     x = stem(x, DEREVERB, "no reverb", "3-dereverb.wav")
 
 voice = os.path.join(a.out, "voice.wav")
-ff("-i", x, "-af", "highpass=f=70,loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", voice)
+# Two-pass loudnorm in linear mode: one steady gain to -16 LUFS. (The one-pass dynamic mode rides the gain
+# up and down inside sentences, which made the cleaned voice pump.)
+af = "highpass=f=70"
+meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", x, "-af", af + ",loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json",
+                       "-f", "null", "-"], capture_output=True, text=True).stderr
+m = json.loads(meas[meas.rindex("{"):meas.rindex("}") + 1])
+ff("-i", x, "-af", af + f",loudnorm=I=-16:TP=-1.5:LRA=11:linear=true:measured_I={m['input_i']}:measured_TP={m['input_tp']}"
+   f":measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}", "-ar", "48000", voice)
 log("voice.wav written")
 if has_video:
     clean = os.path.join(a.out, "clean.mp4")
