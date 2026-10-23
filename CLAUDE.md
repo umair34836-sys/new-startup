@@ -51,6 +51,21 @@ Read this first in every session.
 - Light text on a bright wall fails contrast: use a deep colour (#6e0c20) with a light glow, or put
   captions over the darker lower part of the frame with a bottom gradient veil.
 
+## Voice and songs with words
+
+- ElevenLabs connector (TTS only, costs the owner's credits; ~230 credits for 2 takes of a 16 s script,
+  ~90 per transcription). Good warm Urdu/Hindi romantic male voice: "Ashar – Romantic, Warm Boyfriend"
+  (`nq3gz2RQGRBB1SbrgTqF`), model `eleven_v4`. Write the script in Devanagari (English words stay
+  English); it pronounces Hindustani well.
+- The `[singing]` tag does NOT really sing for this voice: pitch analysis (pyworld) showed only 4% held
+  notes, i.e. soft expressive speech. Treat it as spoken izhar/shayari over music, and say so.
+- Verify every take with ElevenLabs transcription (`creative_attach_reference_file` with the take's URL
+  on the same flow, then `creative_transcribe_audio`): it checks the words and gives per-word timings
+  to cut lines from. Result/asset URLs are on storage.googleapis.com, so curl can download them.
+- Mix with `library/tools/voice_over_music.py`. ffmpeg 6.1 quirk: `adelay` after `concat`+`atempo`
+  silently does nothing, so place lines in numpy (the tool does).
+- A video `<audio data-fade-out>` must start after the last spoken word, or it swallows the final line.
+
 ## Editing a phone video into a "professional" edit (recipe that worked)
 
 1. Look first: ffprobe (rotation, fps), a contact sheet every ~0.4 s, find the best moments (smiles, actions).
