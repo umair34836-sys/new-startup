@@ -60,6 +60,16 @@ Read this first in every session.
   steps ~16 min. The base model's `lego` task (add vocals over an instrumental) did NOT add vocals on
   CPU (output = 0.97 copy of the input): make vocal songs with turbo text2music + lyrics instead.
 
+- Long AI songs (Oct 2026, TalkEmber promo): a 47-line, 200 s ACE-Step song SKIPPED half the lyrics (sang ~25 lines).
+  Keep each generation to ~16-19 lines (~130-150 s) and join parts at an instrumental gap with a crossfade. Several
+  parts in one Python process share one model load (first load + INT8 ~11 min, later ~1 min).
+- Whisper on a long song misses whole sung stretches: separate the vocals first (UVR-MDX-NET Voc FT, ~2 min for
+  200 s), transcribe with condition_on_previous_text=False, then align lyric lines with a global in-order DP
+  (video/dp_align.py pattern), never greedy first-match (one weak match pushes every later line out of place).
+- NEVER run two heavy torch jobs at once on this 4-core box (ACE-Step + Whisper together: load 8, both 3-4x slower;
+  a part that takes 9 min alone took 35+). Queue them.
+- Background Bash jobs die at their timeout (default 30 min): give long jobs timeout up to 7200000 ms.
+
 ## HyperFrames learnings
 
 - Load GSAP from `assets/vendor/gsap-3.14.2.min.js`, never the CDN (render fails with
