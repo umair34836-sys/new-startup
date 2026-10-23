@@ -119,3 +119,7 @@ Facts gathered by tools and web research, one topic per file (source + date), so
 ## templates/website-promo
 
 Song + HyperFrames walkthrough video of a real website (TalkEmber Studio promo, Oct 2026): build.py, alignment (dp_align.py), multi-part song generation. See its README.
+
+## music (added)
+
+`music/talkember-studio-promo-song.mp3`: 6 min upbeat Hindi pop promo song about TalkEmber Studio (ACE-Step, 3 parts joined at 96.0 s and 212.5 s); line timings in `templates/website-promo/talkember-timing.json`.

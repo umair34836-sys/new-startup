@@ -1,0 +1,378 @@
+{
+ "duration": 362.5,
+ "lines": [
+  {
+   "id": 0,
+   "start": 8.900000000000002,
+   "end": 14.28,
+   "sung": true,
+   "roman": "TalkEmber Studio, Pakistan ke karobar ke liye"
+  },
+  {
+   "id": 1,
+   "start": 16.360000000000003,
+   "end": 22.08,
+   "sung": true,
+   "roman": "Tez aur nayi website, grahak jeetne ke liye"
+  },
+  {
+   "id": 2,
+   "start": 24.4,
+   "end": 26.76,
+   "sung": true,
+   "roman": "English bhi Urdu bhi, har phone pe tez chale"
+  },
+  {
+   "id": 3,
+   "start": 26.76,
+   "end": 34.94,
+   "sung": true,
+   "roman": "Google pe mil jaaye, WhatsApp pe baat chale"
+  },
+  {
+   "id": 4,
+   "start": 36.58,
+   "end": 38.7,
+   "sung": true,
+   "roman": "Tera karobar, ab online"
+  },
+  {
+   "id": 5,
+   "start": 40.08,
+   "end": 46.2,
+   "sung": true,
+   "roman": "Google pe mile, WhatsApp pe aayein grahak"
+  },
+  {
+   "id": 6,
+   "start": 54.0,
+   "end": 55.62,
+   "sung": true,
+   "roman": "TalkEmber Studio"
+  },
+  {
+   "id": 7,
+   "start": 55.62,
+   "end": 58.16,
+   "sung": true,
+   "roman": "Website bane, grahak jeete"
+  },
+  {
+   "id": 8,
+   "start": 61.74,
+   "end": 66.38,
+   "sung": true,
+   "roman": "Internet WiFi walon ke liye packages aur coverage check"
+  },
+  {
+   "id": 9,
+   "start": 68.76,
+   "end": 70.7,
+   "sung": true,
+   "roman": "Shikayat karo online, mile ticket number ek dam"
+  },
+  {
+   "id": 10,
+   "start": 70.7,
+   "end": 74.76,
+   "sung": true,
+   "roman": "Solar walon ke liye savings calculator"
+  },
+  {
+   "id": 16,
+   "start": 75.2,
+   "end": 80.6,
+   "sung": false,
+   "roman": "Tera karobar, ab online"
+  },
+  {
+   "id": 17,
+   "start": 80.8,
+   "end": 87.3,
+   "sung": false,
+   "roman": "Google pe mile, WhatsApp pe aayein grahak"
+  },
+  {
+   "id": 18,
+   "start": 87.6,
+   "end": 89.6,
+   "sung": true,
+   "roman": "TalkEmber Studio"
+  },
+  {
+   "id": 19,
+   "start": 89.7,
+   "end": 95.0,
+   "sung": true,
+   "roman": "Website bane, grahak jeete"
+  },
+  {
+   "id": 11,
+   "start": 105.64,
+   "end": 109.8,
+   "sung": true,
+   "roman": "Net billing ki guide, projects ki gallery"
+  },
+  {
+   "id": 12,
+   "start": 111.64,
+   "end": 115.6,
+   "sung": true,
+   "roman": "School mein online admission, fees ka dhaancha"
+  },
+  {
+   "id": 13,
+   "start": 116.16,
+   "end": 120.42,
+   "sung": true,
+   "roman": "Notice board, result aur events ki gallery"
+  },
+  {
+   "id": 14,
+   "start": 120.42,
+   "end": 124.98,
+   "sung": true,
+   "roman": "Clinic mein doctor profile, timing saari"
+  },
+  {
+   "id": 15,
+   "start": 126.48,
+   "end": 131.8,
+   "sung": true,
+   "roman": "Online appointment, token number tayyar"
+  },
+  {
+   "id": 4,
+   "start": 131.9,
+   "end": 133.6,
+   "sung": true,
+   "roman": "Tera karobar, ab online"
+  },
+  {
+   "id": 5,
+   "start": 133.7,
+   "end": 137.07999999999998,
+   "sung": true,
+   "roman": "Google pe mile, WhatsApp pe aayein grahak"
+  },
+  {
+   "id": 6,
+   "start": 141.42000000000002,
+   "end": 143.42000000000002,
+   "sung": true,
+   "roman": "TalkEmber Studio"
+  },
+  {
+   "id": 7,
+   "start": 143.42000000000002,
+   "end": 145.32,
+   "sung": true,
+   "roman": "Website bane, grahak jeete"
+  },
+  {
+   "id": 20,
+   "start": 154.52,
+   "end": 160.68,
+   "sung": true,
+   "roman": "Umrah ke package, hotel aur visa madad"
+  },
+  {
+   "id": 21,
+   "start": 160.88,
+   "end": 166.244,
+   "sung": true,
+   "roman": "WhatsApp pe booking, fauran ho jaaye"
+  },
+  {
+   "id": 22,
+   "start": 167.04000000000002,
+   "end": 170.16,
+   "sung": true,
+   "roman": "Housing society mein plot ka naqsha"
+  },
+  {
+   "id": 23,
+   "start": 170.16,
+   "end": 175.6,
+   "sung": true,
+   "roman": "Qiston ka hisaab, manzoori ka darja"
+  },
+  {
+   "id": 24,
+   "start": 176.24,
+   "end": 179.3,
+   "sung": true,
+   "roman": "Exporter ke liye product catalogue"
+  },
+  {
+   "id": 25,
+   "start": 179.3,
+   "end": 183.66,
+   "sung": true,
+   "roman": "RFQ form, certificate videshi khareedaar ke liye"
+  },
+  {
+   "id": 26,
+   "start": 183.66,
+   "end": 187.8,
+   "sung": true,
+   "roman": "Dukaan ho, restaurant, salon ya factory"
+  },
+  {
+   "id": 27,
+   "start": 202.9,
+   "end": 207.86,
+   "sung": true,
+   "roman": "Batao humein, hum banayein plan tumhari"
+  },
+  {
+   "id": 28,
+   "start": 221.5,
+   "end": 228.5,
+   "sung": true,
+   "roman": "Pehle batao, WhatsApp pe bhejo logo aur photo"
+  },
+  {
+   "id": 29,
+   "start": 228.92000000000002,
+   "end": 235.44,
+   "sung": true,
+   "roman": "Phir demo chuno, rang tumhare brand ke"
+  },
+  {
+   "id": 30,
+   "start": 236.12,
+   "end": 239.6,
+   "sung": true,
+   "roman": "Preview link dekho, badlaav maango"
+  },
+  {
+   "id": 31,
+   "start": 239.6,
+   "end": 247.02,
+   "sung": true,
+   "roman": "Domain hosting SSL, website ho live"
+  },
+  {
+   "id": 32,
+   "start": 248.68,
+   "end": 253.64,
+   "sung": true,
+   "roman": "Starter 25,000, paanch page saat din"
+  },
+  {
+   "id": 33,
+   "start": 253.84,
+   "end": 256.666,
+   "sung": true,
+   "roman": "Business 55,000, baarah page chaudah din"
+  },
+  {
+   "id": 34,
+   "start": 257.18,
+   "end": 262.82,
+   "sung": true,
+   "roman": "Premium 1,10,000 se, 3D design"
+  },
+  {
+   "id": 35,
+   "start": 265.62,
+   "end": 271.82,
+   "sung": true,
+   "roman": "Admin panel, booking, online payment"
+  },
+  {
+   "id": 36,
+   "start": 282.26,
+   "end": 286.32,
+   "sung": true,
+   "roman": "Care plan 2,500 mahina"
+  },
+  {
+   "id": 37,
+   "start": 288.26,
+   "end": 291.08,
+   "sung": true,
+   "roman": "Hosting, backup, update, chhote badlaav har mahina"
+  },
+  {
+   "id": 38,
+   "start": 291.08,
+   "end": 295.34000000000003,
+   "sung": true,
+   "roman": "Aadha pehle, aadha live se pehle"
+  },
+  {
+   "id": 39,
+   "start": 296.02,
+   "end": 300.0,
+   "sung": true,
+   "roman": "Bank, JazzCash ya Easypaisa se"
+  },
+  {
+   "id": 40,
+   "start": 300.0,
+   "end": 302.92,
+   "sung": true,
+   "roman": "Tera karobar, ab online"
+  },
+  {
+   "id": 41,
+   "start": 303.3,
+   "end": 308.58,
+   "sung": true,
+   "roman": "Google pe mile, WhatsApp pe aayein grahak"
+  },
+  {
+   "id": 42,
+   "start": 308.58,
+   "end": 311.48,
+   "sung": true,
+   "roman": "TalkEmber Studio"
+  },
+  {
+   "id": 43,
+   "start": 311.48,
+   "end": 314.44,
+   "sung": true,
+   "roman": "Website bane, grahak jeete"
+  },
+  {
+   "id": 44,
+   "start": 314.64,
+   "end": 318.56399999999996,
+   "sung": true,
+   "roman": "visit.talkember.site"
+  },
+  {
+   "id": 45,
+   "start": 319.2,
+   "end": 322.7,
+   "sung": true,
+   "roman": "WhatsApp karo, aaj hi baat karo"
+  },
+  {
+   "id": 46,
+   "start": 347.4,
+   "end": 351.26,
+   "sung": true,
+   "roman": "TalkEmber Studio"
+  }
+ ],
+ "titles": [
+  {
+   "t": 96.4,
+   "dur": 8.6,
+   "label": "Industry demos",
+   "title": "A ready website for your field",
+   "sub": "Schools · Clinics · Umrah &amp; travel · Housing · Exporters"
+  },
+  {
+   "t": 212.9,
+   "dur": 8.0,
+   "label": "How it works",
+   "title": "From WhatsApp chat to live website",
+   "sub": "Tell us · Pick a demo · Review · Go live"
+  }
+ ]
+}
