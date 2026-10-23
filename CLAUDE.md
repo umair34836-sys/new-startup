@@ -119,3 +119,8 @@ Read this first in every session.
 6. Captions: per-word blur-in, 0.12 s stagger, over a bottom gradient; one gold accent word per line.
 7. Overlays: `floating_hearts.py`, light leak block, bokeh. Music from `library/music`.
 8. Deliver full quality plus a WhatsApp copy: `ffmpeg -i in.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart out.mp4`.
+
+## Agent tools (library/tools/setup-agent-tools.sh)
+- Agent-Reach 1.6 (`agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach youtube ...`, JSON output.
+  Its GitHub channel fails here (session gh API is repo-scoped); use WebSearch/Firecrawl for GitHub discovery.
+- graft 0.25 (`graft build`, `graft ask "<q>"`): code context graph; telemetry disabled. Don't commit its graft/ folder unless asked.
