@@ -71,7 +71,12 @@ def best_window(words, line):
             if s > best[0] + 1e-9 or (abs(s - best[0]) < 1e-9 and j - i < best[2] - best[1]):
                 best = (s, i, j)
     s, i, j = best
-    return s, (words[i][0], words[j - 1][1], "".join(w[2] for w in words[i:j]).strip()) if j else None
+    if not j:
+        return s, None
+    # Neighbouring words of the same take bound the cut, so no part of the next/previous line leaks in.
+    prev_end = words[i - 1][1] if i > 0 else 0.0
+    next_start = words[j][0] if j < len(words) else 1e9
+    return s, (words[i][0], words[j - 1][1], "".join(w[2] for w in words[i:j]).strip(), prev_end, next_start)
 
 # Stage 1: speak the script in groups of lines (a whole passage keeps the delivery natural; a lone short line
 # comes out garbled). Each round makes --takes takes of the group; every line keeps its best-matching stretch from
@@ -120,7 +125,8 @@ for g0 in range(0, len(lines), a.group):
                 sc, win = best_window(words, lines[i])
                 if win and sc > picks.get(i, {}).get("score", -1):
                     picks[i] = {"line": lines[i], "score": sc, "seed": sd, "heard": win[2], "start": win[0],
-                                "end": win[1], "src": os.path.join(gd, f"{sd}.flac")}
+                                "end": win[1], "prev_end": win[3], "next_start": win[4],
+                                "src": os.path.join(gd, f"{sd}.flac")}
         log("  " + "  ".join(f"L{i + 1} {picks[i]['score']:.0%}" if i in picks else f"L{i + 1} -" for i in group))
         if all(picks.get(i, {}).get("score", 0) >= a.good for i in group):
             break
@@ -135,7 +141,9 @@ for n, line in enumerate(lines):
     old = json.load(open(os.path.join(d, "pick.json"))) if os.path.exists(os.path.join(d, "pick.json")) else None
     if old != pick:
         x = read(pick["src"])
-        s0, s1 = max(0, int((pick["start"] - 0.12) * SR)), min(len(x), int((pick["end"] + 0.3) * SR))
+        t0 = max(pick["start"] - 0.12, (pick["prev_end"] + pick["start"]) / 2)
+        t1 = min(pick["end"] + 0.3, (pick["end"] + pick["next_start"]) / 2)
+        s0, s1 = max(0, int(t0 * SR)), min(len(x), int(t1 * SR))
         write(os.path.join(d, "take.wav"), x[s0:s1])
         json.dump(pick, open(os.path.join(d, "pick.json"), "w"), ensure_ascii=False, indent=1)
     report.append(pick)

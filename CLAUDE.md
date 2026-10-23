@@ -84,6 +84,11 @@ Read this first in every session.
 - RULE (owner, Oct 2026): "voice over / narration / awaaz" = spoken voice with ZERO music and every line present ->
   `library/tools/ai_voice.py`. "song / gaana / music" = with music -> `ai_song.py`. Skill: `.claude/skills/voice-or-song`.
   The owner prefers this ACE-Step voice over Kokoro (Kokoro sounded less natural and smooth to them).
+- ai_voice.py lessons (Oct 2026 test, 6 lines): a lone short line per take came out garbled (40-53% Whisper match);
+  the whole passage per take works (round 1: 65-100% per line, round 2: all >= 84%, overall 88%), so lines are
+  generated in groups of 6 and each line keeps its clearest stretch from any take. Cut each line between its
+  neighbouring words (a +0.3 s tail leaked the next line's first word). Music after separation: gaps at -86 dB.
+  Time: ~6.5 min per round of 3 x 25 s takes + ~1 min music removal per line.
 
 - AI songs with vocals that the owner LOVED ("perfect song"): `library/tools/ai_song.py` with seed 7,
   80 BPM, 60 s, caption "romantic hindi pop ballad, soft piano, acoustic guitar, strings, gentle tabla,
