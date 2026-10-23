@@ -81,6 +81,10 @@ Read this first in every session.
 
 ## Voice and songs with words
 
+- RULE (owner, Oct 2026): "voice over / narration / awaaz" = spoken voice with ZERO music and every line present ->
+  `library/tools/ai_voice.py`. "song / gaana / music" = with music -> `ai_song.py`. Skill: `.claude/skills/voice-or-song`.
+  The owner prefers this ACE-Step voice over Kokoro (Kokoro sounded less natural and smooth to them).
+
 - AI songs with vocals that the owner LOVED ("perfect song"): `library/tools/ai_song.py` with seed 7,
   80 BPM, 60 s, caption "romantic hindi pop ballad, soft piano, acoustic guitar, strings, gentle tabla,
   rainy evening mood, warm male vocals, clear hindi lyrics". Reuse this recipe/style for new songs; the
