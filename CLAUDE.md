@@ -125,6 +125,8 @@ Read this first in every session.
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
 - Agent-Reach 1.6 (`agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach web search "<q>"`,
   `agent-reach youtube search "<q>"` (works, via yt-dlp), JSON output.
-  Web read/search need r.jina.ai, s.jina.ai, mcp.exa.ai, api.exa.ai; Reddit needs www/old.reddit.com: blocked
-  until the owner allows them. GitHub channel fails here (session gh API is repo-scoped).
+  Owner allowed r.jina.ai, s.jina.ai, mcp.exa.ai, api.exa.ai, www/old.reddit.com (Oct 2026): web read (jina) and
+  web search (exa) WORK. For GitHub tool discovery use `agent-reach web search "<name> github"` (results show stars);
+  the github channel itself fails (session gh API is repo-scoped). Reddit search can hit Exa 429 (rate limit) and
+  its opencli fallback needs a GitHub release download (blocked): wait and retry once, else WebSearch.
 - graft 0.25 (`graft build`, `graft ask "<q>"`): code context graph; telemetry disabled. Don't commit its graft/ folder unless asked.
