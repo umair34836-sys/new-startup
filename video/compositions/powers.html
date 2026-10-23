@@ -1,0 +1,157 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Inter", sans-serif;
+      color: #f6edee;
+    }
+    #pw-flood {
+      position: absolute;
+      inset: 0;
+      background: #e8202e;
+      z-index: 5;
+    }
+    #pw-stage {
+      position: absolute;
+      inset: 0;
+    }
+    #pw-title {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 112px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .pw-fire {
+      background: linear-gradient(180deg, #ffb347 0%, #ff6a1a 55%, #e0281a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    #pw-sub {
+      position: absolute;
+      top: 436px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 500;
+      color: #b9aeaf;
+    }
+    #pw-row {
+      position: absolute;
+      top: 548px;
+      left: 135px;
+      width: 1650px;
+      display: flex;
+    }
+    .pw-slot {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .pw-orb {
+      width: 120px;
+      height: 120px;
+      filter: drop-shadow(0 0 18px rgba(255, 106, 26, 0.35));
+    }
+    .pw-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #e9dfe0;
+    }
+    #pw-ring {
+      position: absolute;
+      top: -8px;
+      left: 7px;
+      width: 136px;
+      height: 136px;
+      border-radius: 50%;
+      border: 5px solid #ffa827;
+      box-shadow: 0 0 28px rgba(255, 168, 39, 0.7), inset 0 0 18px rgba(255, 168, 39, 0.5);
+    }
+  </style>
+  <div id="root" data-composition-id="powers" data-width="1920" data-height="1080">
+    <div id="pw-flood"></div>
+    <div id="pw-stage">
+      <div id="pw-title"><span class="pw-fire">11</span> Custom Powers</div>
+      <div id="pw-sub">Spin the wheel on first join.</div>
+      <div id="pw-row">
+        <div id="pw-ring"></div>
+      <div class="pw-slot">
+        <img id="pw-o0" class="pw-orb" src="assets/powers/fire.png" alt="Fire power" />
+        <div id="pw-n0" class="pw-name">Fire</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o1" class="pw-orb" src="assets/powers/ice.png" alt="Ice power" />
+        <div id="pw-n1" class="pw-name">Ice</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o2" class="pw-orb" src="assets/powers/lightning.png" alt="Lightning power" />
+        <div id="pw-n2" class="pw-name">Lightning</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o3" class="pw-orb" src="assets/powers/wind.png" alt="Wind power" />
+        <div id="pw-n3" class="pw-name">Wind</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o4" class="pw-orb" src="assets/powers/dark.png" alt="Dark power" />
+        <div id="pw-n4" class="pw-name">Dark</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o5" class="pw-orb" src="assets/powers/rift.png" alt="Rift power" />
+        <div id="pw-n5" class="pw-name">Rift</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o6" class="pw-orb" src="assets/powers/trader.png" alt="Trader power" />
+        <div id="pw-n6" class="pw-name">Trader</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o7" class="pw-orb" src="assets/powers/warden.png" alt="Warden power" />
+        <div id="pw-n7" class="pw-name">Warden</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o8" class="pw-orb" src="assets/powers/wither.png" alt="Wither power" />
+        <div id="pw-n8" class="pw-name">Wither</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o9" class="pw-orb" src="assets/powers/dragon.png" alt="Dragon power" />
+        <div id="pw-n9" class="pw-name">Dragon</div>
+      </div>
+      <div class="pw-slot">
+        <img id="pw-o10" class="pw-orb" src="assets/powers/gravity.png" alt="Gravity power" />
+        <div id="pw-n10" class="pw-name">Gravity</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#pw-flood", { opacity: 1 }, { opacity: 0, duration: 0.38, ease: "power2.inOut" }, 0);
+    tl.fromTo("#pw-title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.12);
+    tl.fromTo("#pw-sub", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 0.4);
+    tl.fromTo(".pw-orb", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "back.out(1.5)", stagger: 0.05 }, 0.22);
+    tl.fromTo(".pw-name", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out", stagger: 0.05 }, 0.36);
+    // The wheel: the ring jumps orb to orb, slowing down, and lands on Lightning (13 steps, 13 % 11 = 2).
+    const spin = { v: 0 };
+    tl.fromTo("#pw-ring", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 1.0);
+    tl.fromTo(spin, { v: 0 }, {
+      v: 13,
+      duration: 1.0,
+      ease: "power2.out",
+      onUpdate: () => gsap.set("#pw-ring", { x: 150 * (Math.min(Math.floor(spin.v), 13) % 11) }),
+    }, 1.0);
+    tl.fromTo("#pw-o2", { scale: 1 }, { scale: 1.14, duration: 0.18, ease: "back.out(2)" }, 1.98);
+    tl.fromTo("#pw-n2", { color: "#e9dfe0" }, { color: "#ffa827", duration: 0.12 }, 1.98);
+    // Exit: whip left.
+    tl.to("#pw-stage", { x: -420, opacity: 0, filter: "blur(18px)", duration: 0.26, ease: "power3.in" }, 2.24);
+    window.__timelines["powers"] = tl;
+  </script>
+</template>

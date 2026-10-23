@@ -1,0 +1,82 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Inter", sans-serif;
+      color: #f6edee;
+    }
+    #st-stage {
+      position: absolute;
+      inset: 0;
+    }
+    #st-kicker {
+      position: absolute;
+      top: 318px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      color: #ff6a1a;
+    }
+    #st-row {
+      position: absolute;
+      top: 390px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+    .st-col {
+      width: 480px;
+      text-align: center;
+    }
+    .st-num {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 220px;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #ffb347 0%, #ff6a1a 55%, #e0281a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .st-label {
+      margin-top: 8px;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+  </style>
+  <div id="root" data-composition-id="stats" data-width="1920" data-height="1080">
+    <div id="st-stage">
+      <div id="st-kicker">100% FREE — NO PAYMENT EVER</div>
+      <div id="st-row">
+        <div class="st-col"><div id="st-mobs" class="st-num">63</div><div class="st-label">Tameable Mobs</div></div>
+        <div class="st-col"><div id="st-armor" class="st-num">5</div><div class="st-label">Armor Sets</div></div>
+        <div class="st-col"><div id="st-weapons" class="st-num">3</div><div class="st-label">Legendary Weapons</div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Enter: lands from the right, matching the powers whip.
+    tl.fromTo("#st-stage", { x: 420, opacity: 0, filter: "blur(18px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 0);
+    [["#st-mobs", 63], ["#st-armor", 5], ["#st-weapons", 3]].forEach(([sel, to], i) => {
+      const n = { v: 0 };
+      tl.fromTo(n, { v: 0 }, {
+        v: to,
+        duration: 0.7,
+        ease: "power2.out",
+        onUpdate: () => (document.querySelector(sel).textContent = Math.round(n.v)),
+      }, 0.08 + i * 0.08);
+    });
+    tl.fromTo(".st-label", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power2.out", stagger: 0.08 }, 0.3);
+    // Exit: blur swap onto the end card.
+    tl.to("#st-stage", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 1.68);
+    window.__timelines["stats"] = tl;
+  </script>
+</template>

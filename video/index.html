@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=1920, height=1080" />
     <script src="assets/vendor/gsap-3.14.2.min.js"></script>
     <style>
-      /* Placeholders: replace all three with the film's own palette and display face. */
-      :root {
-        --ground: #0f172a;
-        --ink: #ffffff;
-        --font-display: sans-serif;
-      }
       * {
         margin: 0;
         padding: 0;
@@ -22,21 +16,7 @@
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: var(--ground);
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-      }
-      #title {
-        color: var(--ink);
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
+        background: #060202;
       }
     </style>
   </head>
@@ -45,17 +25,18 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="4"
+      data-duration="10"
       data-width="1920"
       data-height="1080"
     >
-      <h1 id="title" class="clip" data-start="0" data-duration="4" data-track-index="0">New Startup</h1>
+      <div id="bg" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="10" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 0"></div>
+      <div id="hearts" data-composition-id="hearts" data-composition-src="compositions/hearts.html" data-start="0" data-duration="2.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 1"></div>
+      <div id="powers" data-composition-id="powers" data-composition-src="compositions/powers.html" data-start="2.5" data-duration="2.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 1"></div>
+      <div id="stats" data-composition-id="stats" data-composition-src="compositions/stats.html" data-start="5" data-duration="1.9" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 1"></div>
+      <div id="endcard" data-composition-id="endcard" data-composition-src="compositions/endcard.html" data-start="6.9" data-duration="3.1" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 1"></div>
     </div>
     <script>
-      const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#title", { opacity: 0, y: 40, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power4.out" }, 0.3);
-      window.__timelines["main"] = tl;
-      tl.seek(0);
+      window.__timelines["main"] = gsap.timeline({ paused: true });
     </script>
   </body>
 </html>

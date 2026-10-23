@@ -1,0 +1,104 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #060202;
+      overflow: hidden;
+    }
+    #bg-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 108%, rgba(255, 106, 26, 0.34), rgba(224, 40, 26, 0.12) 45%, transparent 75%),
+        radial-gradient(ellipse 50% 40% at 50% 45%, rgba(255, 106, 26, 0.08), transparent 70%);
+    }
+    .bg-ember {
+      position: absolute;
+      border-radius: 1px;
+      box-shadow: 0 0 10px 2px rgba(255, 120, 40, 0.55);
+    }
+  </style>
+  <div id="root" data-composition-id="bg" data-width="1920" data-height="1080">
+    <div id="bg-glow"></div>
+    <div id="bg-embers">
+      <i id="bg-e0" class="bg-ember" style="left:1662px;top:592px;width:6px;height:6px;background:#FFA827;opacity:0.64"></i>
+      <i id="bg-e1" class="bg-ember" style="left:242px;top:657px;width:3px;height:3px;background:#E0281A;opacity:0.64"></i>
+      <i id="bg-e2" class="bg-ember" style="left:1519px;top:637px;width:4px;height:4px;background:#FF6A1A;opacity:0.8"></i>
+      <i id="bg-e3" class="bg-ember" style="left:832px;top:773px;width:7px;height:7px;background:#FF6A1A;opacity:0.36"></i>
+      <i id="bg-e4" class="bg-ember" style="left:1750px;top:647px;width:5px;height:5px;background:#E0281A;opacity:0.62"></i>
+      <i id="bg-e5" class="bg-ember" style="left:561px;top:1093px;width:7px;height:7px;background:#FF6A1A;opacity:0.62"></i>
+      <i id="bg-e6" class="bg-ember" style="left:390px;top:588px;width:5px;height:5px;background:#FFA827;opacity:0.63"></i>
+      <i id="bg-e7" class="bg-ember" style="left:1786px;top:433px;width:7px;height:7px;background:#FFA827;opacity:0.39"></i>
+      <i id="bg-e8" class="bg-ember" style="left:1248px;top:1020px;width:3px;height:3px;background:#FF6A1A;opacity:0.88"></i>
+      <i id="bg-e9" class="bg-ember" style="left:1720px;top:389px;width:7px;height:7px;background:#E0281A;opacity:0.88"></i>
+      <i id="bg-e10" class="bg-ember" style="left:361px;top:693px;width:6px;height:6px;background:#FFA827;opacity:0.46"></i>
+      <i id="bg-e11" class="bg-ember" style="left:240px;top:625px;width:6px;height:6px;background:#FFA827;opacity:0.43"></i>
+      <i id="bg-e12" class="bg-ember" style="left:958px;top:516px;width:5px;height:5px;background:#FF6A1A;opacity:0.7"></i>
+      <i id="bg-e13" class="bg-ember" style="left:1512px;top:606px;width:5px;height:5px;background:#FF8A3D;opacity:0.54"></i>
+      <i id="bg-e14" class="bg-ember" style="left:831px;top:746px;width:5px;height:5px;background:#FF8A3D;opacity:0.56"></i>
+      <i id="bg-e15" class="bg-ember" style="left:612px;top:410px;width:4px;height:4px;background:#E0281A;opacity:0.62"></i>
+      <i id="bg-e16" class="bg-ember" style="left:171px;top:729px;width:4px;height:4px;background:#FF8A3D;opacity:0.49"></i>
+      <i id="bg-e17" class="bg-ember" style="left:435px;top:888px;width:3px;height:3px;background:#E0281A;opacity:0.76"></i>
+      <i id="bg-e18" class="bg-ember" style="left:296px;top:901px;width:5px;height:5px;background:#E0281A;opacity:0.48"></i>
+      <i id="bg-e19" class="bg-ember" style="left:1670px;top:820px;width:5px;height:5px;background:#FF8A3D;opacity:0.71"></i>
+      <i id="bg-e20" class="bg-ember" style="left:1433px;top:335px;width:7px;height:7px;background:#E0281A;opacity:0.53"></i>
+      <i id="bg-e21" class="bg-ember" style="left:1302px;top:939px;width:7px;height:7px;background:#E0281A;opacity:0.46"></i>
+      <i id="bg-e22" class="bg-ember" style="left:463px;top:456px;width:7px;height:7px;background:#FFA827;opacity:0.41"></i>
+      <i id="bg-e23" class="bg-ember" style="left:1725px;top:845px;width:5px;height:5px;background:#FFA827;opacity:0.47"></i>
+      <i id="bg-e24" class="bg-ember" style="left:217px;top:508px;width:5px;height:5px;background:#FF8A3D;opacity:0.49"></i>
+      <i id="bg-e25" class="bg-ember" style="left:825px;top:468px;width:4px;height:4px;background:#FFA827;opacity:0.77"></i>
+      <i id="bg-e26" class="bg-ember" style="left:1339px;top:894px;width:6px;height:6px;background:#E0281A;opacity:0.67"></i>
+      <i id="bg-e27" class="bg-ember" style="left:168px;top:1046px;width:4px;height:4px;background:#FF6A1A;opacity:0.67"></i>
+      <i id="bg-e28" class="bg-ember" style="left:1628px;top:313px;width:6px;height:6px;background:#FF8A3D;opacity:0.52"></i>
+      <i id="bg-e29" class="bg-ember" style="left:1107px;top:804px;width:4px;height:4px;background:#FF8A3D;opacity:0.72"></i>
+      <i id="bg-e30" class="bg-ember" style="left:1262px;top:996px;width:3px;height:3px;background:#FFA827;opacity:0.4"></i>
+      <i id="bg-e31" class="bg-ember" style="left:446px;top:399px;width:4px;height:4px;background:#FF6A1A;opacity:0.62"></i>
+      <i id="bg-e32" class="bg-ember" style="left:1066px;top:595px;width:7px;height:7px;background:#FFA827;opacity:0.63"></i>
+      <i id="bg-e33" class="bg-ember" style="left:971px;top:381px;width:4px;height:4px;background:#FF6A1A;opacity:0.41"></i>
+      <i id="bg-e34" class="bg-ember" style="left:611px;top:870px;width:7px;height:7px;background:#E0281A;opacity:0.54"></i>
+      <i id="bg-e35" class="bg-ember" style="left:956px;top:794px;width:4px;height:4px;background:#FF6A1A;opacity:0.67"></i>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#bg-glow", { opacity: 0.75 }, { opacity: 1, duration: 10, ease: "sine.inOut" }, 0);
+    tl.fromTo("#bg-e0", { x: 0, y: 0 }, { x: 1, y: -299, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e1", { x: 0, y: 0 }, { x: 50, y: -275, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e2", { x: 0, y: 0 }, { x: -18, y: -418, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e3", { x: 0, y: 0 }, { x: -19, y: -321, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e4", { x: 0, y: 0 }, { x: -35, y: -272, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e5", { x: 0, y: 0 }, { x: 50, y: -409, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e6", { x: 0, y: 0 }, { x: -24, y: -275, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e7", { x: 0, y: 0 }, { x: -37, y: -542, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e8", { x: 0, y: 0 }, { x: 35, y: -409, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e9", { x: 0, y: 0 }, { x: 9, y: -298, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e10", { x: 0, y: 0 }, { x: 41, y: -327, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e11", { x: 0, y: 0 }, { x: -58, y: -261, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e12", { x: 0, y: 0 }, { x: 48, y: -433, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e13", { x: 0, y: 0 }, { x: 7, y: -585, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e14", { x: 0, y: 0 }, { x: -33, y: -343, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e15", { x: 0, y: 0 }, { x: -31, y: -315, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e16", { x: 0, y: 0 }, { x: -43, y: -436, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e17", { x: 0, y: 0 }, { x: -36, y: -523, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e18", { x: 0, y: 0 }, { x: 5, y: -377, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e19", { x: 0, y: 0 }, { x: -10, y: -521, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e20", { x: 0, y: 0 }, { x: 15, y: -270, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e21", { x: 0, y: 0 }, { x: 26, y: -590, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e22", { x: 0, y: 0 }, { x: 15, y: -430, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e23", { x: 0, y: 0 }, { x: 53, y: -493, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e24", { x: 0, y: 0 }, { x: -18, y: -564, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e25", { x: 0, y: 0 }, { x: 12, y: -368, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e26", { x: 0, y: 0 }, { x: 45, y: -390, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e27", { x: 0, y: 0 }, { x: -20, y: -358, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e28", { x: 0, y: 0 }, { x: -35, y: -513, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e29", { x: 0, y: 0 }, { x: -27, y: -329, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e30", { x: 0, y: 0 }, { x: 8, y: -512, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e31", { x: 0, y: 0 }, { x: -44, y: -464, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e32", { x: 0, y: 0 }, { x: -1, y: -444, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e33", { x: 0, y: 0 }, { x: 43, y: -445, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e34", { x: 0, y: 0 }, { x: 48, y: -275, duration: 10, ease: "none" }, 0);
+    tl.fromTo("#bg-e35", { x: 0, y: 0 }, { x: -58, y: -515, duration: 10, ease: "none" }, 0);
+    window.__timelines["bg"] = tl;
+  </script>
+</template>

@@ -1,0 +1,139 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Inter", sans-serif;
+      color: #f6edee;
+    }
+    #hearts-kicker {
+      position: absolute;
+      top: 318px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      color: #ff6a1a;
+    }
+    #hearts-row {
+      position: absolute;
+      top: 400px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .heart {
+      position: relative;
+      width: 84px;
+      height: 72px;
+      transform-origin: 42px 30px;
+    }
+    .heart svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      shape-rendering: crispEdges;
+    }
+    .heart-empty {
+      fill: #2b1517;
+    }
+    .heart-full {
+      fill: #e8202e;
+      filter: drop-shadow(0 0 14px rgba(232, 32, 46, 0.45));
+    }
+    .heart-shine {
+      fill: #ff9aa2;
+    }
+    #hearts-title {
+      position: absolute;
+      top: 548px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 100px;
+      line-height: 1.04;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .hearts-w {
+      display: inline-block;
+    }
+    .hearts-red {
+      color: #e8202e;
+    }
+  </style>
+  <div id="root" data-composition-id="hearts" data-width="1920" data-height="1080">
+    <svg width="0" height="0" style="position: absolute">
+      <symbol id="hearts-shape" viewBox="0 0 7 6">
+        <path d="M1 0h2v1h-2zM4 0h2v1h-2zM0 1h7v2h-7zM1 3h5v1h-5zM2 4h3v1h-3zM3 5h1v1h-1z" />
+      </symbol>
+    </svg>
+    <div id="hearts-kicker">PRIVATE LIFESTEAL SMP</div>
+    <div id="hearts-row">
+      <div id="hearts-h0" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f0" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h1" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f1" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h2" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f2" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h3" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f3" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h4" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f4" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h5" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f5" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h6" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f6" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h7" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f7" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h8" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f8" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+      <div id="hearts-h9" class="heart">
+        <svg class="heart-empty" viewBox="0 0 7 6"><use href="#hearts-shape" /></svg>
+        <svg id="hearts-f9" class="heart-full" viewBox="0 0 7 6"><use href="#hearts-shape" /><rect class="heart-shine" x="1" y="1" width="1" height="1" /></svg>
+      </div>
+    </div>
+    <div id="hearts-title">
+      <div><span class="hearts-w">Kill</span> <span class="hearts-w">a</span> <span class="hearts-w">player.</span></div>
+      <div><span class="hearts-w hearts-red">Steal</span> <span class="hearts-w">their</span> <span class="hearts-w">heart.</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo(".heart", { scale: 0.6, opacity: 0.35 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.6)", stagger: 0.045 }, 0);
+    tl.fromTo(".hearts-w", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power2.out", stagger: 0.067 }, 0.5);
+    // Heart 10 is lost: it drains top-down while the row shakes it.
+    tl.fromTo("#hearts-f9", { clipPath: "inset(0% 0 0 0)" }, { clipPath: "inset(100% 0 0 0)", duration: 0.32, ease: "power2.in" }, 1.4);
+    tl.to("#hearts-h9", { keyframes: { x: [0, -7, 7, -5, 4, 0] }, duration: 0.32, ease: "none" }, 1.4);
+    // Exit: everything blurs away except heart 5, which grows into a red world.
+    tl.to(["#hearts-kicker", "#hearts-title"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 2.0);
+    tl.to(".heart:not(#hearts-h4)", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 2.0);
+    tl.to("#hearts-h4 .heart-shine", { opacity: 0, duration: 0.15 }, 2.05);
+    tl.to("#hearts-h4", { x: 50, y: 110, scale: 52, duration: 0.45, ease: "power3.in" }, 2.05);
+    window.__timelines["hearts"] = tl;
+  </script>
+</template>

@@ -1,0 +1,148 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Inter", sans-serif;
+      color: #f6edee;
+    }
+    .ec-center {
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #ec-fire-wrap {
+      top: 228px;
+    }
+    #ec-fire {
+      position: relative;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 184px;
+      line-height: 0.9;
+    }
+    #ec-fire-outline {
+      color: #1a0b08;
+      -webkit-text-stroke: 3px #ff6a1a;
+    }
+    #ec-fire-fill {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #ffb347 0%, #ff6a1a 55%, #e0281a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 28px rgba(255, 106, 26, 0.45));
+    }
+    #ec-craft-wrap {
+      top: 398px;
+    }
+    #ec-craft {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 124px;
+      line-height: 1;
+      text-shadow: 0 6px 0 #d9480f, 0 0 34px rgba(255, 106, 26, 0.3);
+    }
+    #ec-launch {
+      top: 580px;
+      gap: 26px;
+    }
+    #ec-pill {
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: #ff6a1a;
+      color: #060202;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    #ec-date {
+      font-size: 46px;
+      font-weight: 700;
+    }
+    .ec-w {
+      display: inline-block;
+    }
+    #ec-ip-wrap {
+      top: 676px;
+    }
+    #ec-ip {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 32px;
+      border-radius: 16px;
+      background: #120c0c;
+      border: 2px solid #2b2828;
+    }
+    #ec-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 14px rgba(34, 197, 94, 0.8);
+    }
+    #ec-ip-text {
+      font-family: "Space Mono", monospace;
+      font-size: 40px;
+      font-weight: 700;
+    }
+    #ec-ip-ed {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9a8f90;
+    }
+    #ec-apply-wrap {
+      top: 802px;
+    }
+    #ec-apply {
+      font-size: 32px;
+      font-weight: 600;
+      color: #b9aeaf;
+    }
+    #ec-apply b {
+      color: #ff8a3d;
+    }
+  </style>
+  <div
+    id="root"
+    data-composition-id="endcard"
+    data-width="1920"
+    data-height="1080"
+    data-composition-variables='[{"id":"launchDate","type":"string","label":"Launch date","default":"Sun 25 Oct · 2:00 PM PKT"},{"id":"serverIp","type":"string","label":"Server address","default":"play.firecraft.fun:20011"}]'
+  >
+    <div id="ec-fire-wrap" class="ec-center">
+      <div id="ec-fire">
+        <div id="ec-fire-outline" data-layout-allow-occlusion>FIRE</div>
+        <div id="ec-fire-fill" data-layout-allow-occlusion>FIRE</div>
+      </div>
+    </div>
+    <div id="ec-craft-wrap" class="ec-center"><div id="ec-craft">CRAFT SMP</div></div>
+    <div id="ec-launch" class="ec-center">
+      <div id="ec-pill">SEASON 2 LAUNCH</div>
+      <div id="ec-date" data-var-text="launchDate">Sun 25 Oct · 2:00 PM PKT</div>
+    </div>
+    <div id="ec-ip-wrap" class="ec-center">
+      <div id="ec-ip">
+        <div id="ec-dot"></div>
+        <div id="ec-ip-text" data-var-text="serverIp">play.firecraft.fun:20011</div>
+        <div id="ec-ip-ed">Java + Bedrock</div>
+      </div>
+    </div>
+    <div id="ec-apply-wrap" class="ec-center"><div id="ec-apply">Apply free for whitelist at <b>firecraft.fun</b></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // The mark is performed: the outline appears, then fire rises through it.
+    tl.fromTo("#ec-fire-outline", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.04);
+    tl.fromTo("#ec-fire-fill", { clipPath: "inset(100% 0 0 0)" }, { clipPath: "inset(0% 0 0 0)", duration: 0.5, ease: "power2.inOut" }, 0.1);
+    tl.fromTo("#ec-craft", { clipPath: "inset(0 100% 0 0)", x: -24 }, { clipPath: "inset(0 0% 0 0)", x: 0, duration: 0.4, ease: "power3.out" }, 0.4);
+    tl.fromTo("#ec-pill", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.4)" }, 0.64);
+    tl.fromTo("#ec-date", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0.72);
+    tl.fromTo("#ec-ip", { clipPath: "inset(0 50% 0 50% round 16px)" }, { clipPath: "inset(0 0% 0 0% round 16px)", duration: 0.3, ease: "power3.out" }, 0.84);
+    tl.fromTo("#ec-apply", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 0.98);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>
