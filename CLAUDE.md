@@ -16,7 +16,8 @@ Read this first in every session.
 - VERIFIED ONLY (owner, Oct 24 2026): never add anything from guesswork, not a single letter. Research notes,
   knowledge files and sub-session output may contain ONLY verified facts or results measured here, each with its
   reference (source URL + date checked, or "measured here on <date>" + command). Unverifiable -> leave out or mark
-  "unverified". Never invent Urdu/Pashto/Hindi words or translations.
+  "unverified". Never invent Urdu/Pashto/Hindi words or translations. Applies to EVERY session and sub-session:
+  first LOOK at the real source (or measure it), UNDERSTAND it, then WRITE only that, reference beside every item.
 - SAVE ALL USEFUL DATA (owner, Oct 2026): every fact, finding or result gathered through tools or research
   (web reads, searches, star counts, specs, measurements, what worked/failed) goes into `library/research/`
   (one topic per .md, with source and date) or this file, and is pushed, so nothing is fetched twice.
