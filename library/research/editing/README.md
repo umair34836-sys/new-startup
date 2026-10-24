@@ -21,6 +21,12 @@ or a section of this repo's own tested notes). Skill that points here: `.claude/
 3. Look up any technique in `skills/` by grep.
 4. Save anything new that worked or failed back here with source and date.
 
+## Audit
+
+Audited 2026-10-24 (`library/research/audit-2026-10-24-part2.md`): decision-guide.md and from-scratch.md fully;
+in skills/01-06 only every third skill (n % 3 == 1) plus every "(ran OK locally)" skill (276 of 560). The other ~284
+skills were not re-checked: open their source before relying on one.
+
 ## Research notes
 
 - Tested here on 2026-10-24 (self-study session, past observation, not re-counted): `agent-reach web search` (Exa) worked for ~250 queries in parallel (xargs -P 6).
