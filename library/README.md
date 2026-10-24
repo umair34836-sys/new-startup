@@ -49,6 +49,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   girl at a chai stall in the rain; lamps light, rain turns gold, umbrella pops on the song's peak). `build.py`
   writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
   `SPEC.md` has every shot. Copy the folder, copy assets (textures, skins, fonts, gsap, song) and edit `build.py`.
+- `brand-kit/`: client branding kit: `brand.json` schema + fake example, `brand_from_logo.py` (palette + WCAG text colours from a logo), `build_brand.py` (logo sting, lower third, contact card with local QR, watermark, CTA, offer badge; 9:16 and 16:9). Intake questionnaire: research/client-intake.md. Skill client-brand-kit.
 - `phone-clip-reel/build.py`: turns one short phone clip into a 9:16 "Boss mode" reel (Oct 2026 client edit): one shot per
   bar at 105 BPM, title card at 0 s, zoom-through / whip / light leak / punch-in / flash transitions, slow-mo end with
   letterbox bars and a check-mark pop, end card on a hero frame, Roman Urdu captions (Plus Jakarta 800 + Anton titles,
@@ -65,6 +66,9 @@ SIL OFL fonts (licences beside them). Load with `@font-face { src: url("assets/f
 
 - `GreatVibes-Regular.ttf`: elegant script for names and romantic titles.
 - `PlayfairDisplay-Italic.ttf`: serif italic for captions.
+- Urdu/Pashto/Hindi (specialist D, Oct 24 2026; see library/research/urdu-captions.md): `NotoNastaliqUrdu-Variable.ttf`,
+  `Gulzar-Regular.ttf` (Urdu only: no Pashto letters), `NotoNaskhArabic-Variable.ttf`, `NotoSansArabic-Variable.ttf`,
+  `Vazirmatn-Variable.ttf`, `NotoSansDevanagari-Variable.ttf`, `Mukta-Regular/Bold.ttf` (Hindi). OFL licences beside them.
 - `Anton-Regular.ttf` (+ `Anton-OFL.txt`): tall condensed display font for punchy titles ("BOSS", "PEHCHAAN").
 
 Bundled HyperFrames fonts (Inter, Archivo Black, Space Mono, Playfair Display, ...) need no file.
@@ -96,6 +100,7 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 | `romance_synth.py` | `python3 romance_synth.py out.wav`: the numpy piano/strings track, no installs needed. |
 | `voice_over_music.py` | `python3 voice_over_music.py spec.json out.wav`: places voice lines (cut from one take by transcript word timings) at chosen film times, speeds a line up only if it overruns, polishes the voice, ducks the bed 8 dB under it and sets the voice 5.5 dB over the bed. Spec format is in the file header. |
 | `ai_voice.py` | Script -> spoken Hindi/Hinglish voiceover, music ZERO: ACE-Step speaks each line, Whisper picks the best take per line, BS-RoFormer removes the music, lines joined with pauses. See skill voice-or-song. |
+| `urdu_captions.py` | Urdu/Pashto/Hindi captions for HyperFrames (Nastaliq shaping, RTL, per-word reveal; `--check` verifies a font has the needed letters). Block: `blocks/urdu-captions.html`. Skill urdu-captions. |
 | `vs_tts.py` | Script -> spoken voiceover through VoiceStudio (OmniVoice/VoxCPM2): Urdu/Hindi/Pashto, voice design text, cloning. Start the backend with `voicestudio.sh start`. OmniVoice is non-commercial. |
 | `voicestudio.sh` | start / stop / status of the VoiceStudio backend (:3900, OpenAPI + MCP). |
 | `bg_blur.py` | Portrait-mode background for phone footage: person (rembg u2net_human_seg + dark-shirt hull fill, temporally smoothed) and the desk stay sharp; background gets the subject inpainted out (no halo), lens/bokeh blur in linear light, blue/cyan objects desaturated into the wall, -14% exposure. Owner approved it on the client boss reel (Oct 2026). |

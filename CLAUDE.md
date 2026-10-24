@@ -219,7 +219,8 @@ Read this first in every session.
 - Specialists: A perception tools + CPU speed (session_01BdHJpuB2BTCGDxFdR7KV44, specialist-a-perception-cpu);
   B desi vocal songs + PK reels trends (session_016xxyoT1VWtQ74po5jdBMUC, specialist-b-desi-music-trends);
   C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym, specialist-c-broll-sfx-luts);
-  D Urdu/Pashto captions + client brand kit (session_01NZND2H5jzoXgcGVrFFtHH2, specialist-d-urdu-captions-branding).
+  D Urdu/Pashto captions + client brand kit (session_01NZND2H5jzoXgcGVrFFtHH2): DONE + merged Oct 24 2026 (fonts,
+  urdu_captions.py, blocks/urdu-captions.html, templates/brand-kit, skills urdu-captions + client-brand-kit).
   They add new files only; merge each branch into the main work branch when done, then update library/README.md,
   setup-all.sh (their setup-specialist-*.sh) and this file.
 

@@ -22,6 +22,8 @@ light() {
   command -v graft >/dev/null || { npm i -g -s @nanonets/graft@0.25.0 && graft telemetry disable >/dev/null; }
   # REA (morluto/rea): reverse-engineering CLI; its MCP server is registered in the repo's .mcp.json.
   command -v rea >/dev/null || npm i -g -s rea-agents@6.7.0
+  # Urdu/Pashto/Hindi captions + client brand kit (specialist D): fonttools, numpy, pillow, qrcode
+  bash "$HERE/setup-specialist-d.sh" >/dev/null
   # Crawl4AI (free local Firecrawl replacement, web_capture.py): own venv; playwright 1.56.0 = /opt/pw-browsers chromium-1194.
   [ -x "$T/crawl-venv/bin/python" ] || uv venv -q -p /usr/bin/python3.12 "$T/crawl-venv"
   "$T/crawl-venv/bin/python" -c "import crawl4ai" 2>/dev/null ||

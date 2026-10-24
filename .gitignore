@@ -19,3 +19,4 @@ video/.hyperframes/
 uploads/
 graft/
 .cache/
+__pycache__/
