@@ -236,7 +236,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
   (price "from ₹20/mo" was on /games, coupon from the top banner), brand colours from the site CSS (most frequent hex),
   logo/screens/flags downloaded from the site, owner-chosen VO, PREVIEW (contact sheet + VO/music mix) before render.
-- ElevenLabs (owner asked by name: "Viraj" Hindi): 25 Viraj voices exist; "Viraj – Viral Ad & Content Voice"
+- ElevenLabs (owner asked by name: "Viraj" Hindi): creative_list_voices showed 24 distinct voice names starting "Viraj"; "Viraj – Viral Ad & Content Voice"
   (pHG3exaXQt8bmTWbaVOs) fits reels. 2 takes of a 29 s script = 2 x 427 credits (2026-10-24).
 - IMPORTANT: creative_transcribe_audio on a flow's own TTS take returned the PROMPT text verbatim (incl. the "[excited]"
   tag) with 0 credits = the TTS alignment, NOT a real transcription. Use it for word timings only; verify words
