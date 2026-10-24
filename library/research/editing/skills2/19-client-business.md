@@ -271,4 +271,3 @@ Researched 2026-10-24 via agent-reach (Exa/jina) web reads, WebSearch to find pa
 ## Missing tools
 - None of the skills above needs a tool we lack: every tested command used ffmpeg/ffprobe 6.1, Python 3 + Pillow, sha256sum/md5sum and zip/unzip already in the container.
 - Review platforms (Frame.io, Vimeo review links, Fiverr/Upwork) are web services, not installable tools; their plan-gated features (Frame.io watermarking, comment attachments; Vimeo passwords/branding) need the client's or owner's paid plan.
-- No free tool was found or tested here for parsing Frame.io comment CSV exports into fix lists; Frame.io's own Print-to-PDF and NLE marker exports (Legacy) cover it.
