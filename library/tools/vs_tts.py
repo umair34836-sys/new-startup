@@ -19,10 +19,12 @@ ap.add_argument("--model", default="omnivoice")
 ap.add_argument("--ref", help="reference voice wav for cloning (only voices you may use)")
 ap.add_argument("--ref-text", default="", help="exact words spoken in --ref")
 ap.add_argument("--host", default="http://127.0.0.1:3900")
+ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
 
 lines = [l.strip() for l in open(a.script, encoding="utf-8") if l.strip()]
-tmp = tempfile.mkdtemp(prefix="vs_tts_")
+tmp = a.parts or tempfile.mkdtemp(prefix="vs_tts_")
+os.makedirs(tmp, exist_ok=True)
 
 
 def speech(text, path):
@@ -63,4 +65,11 @@ graph = ";".join(chains) + ";" + "".join(f"[a{i}]" for i in range(len(parts))) +
     f"concat=n={len(parts)}:v=0:a=1,loudnorm=I=-16:TP=-1.5[out]"
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", graph, "-map", "[out]", "-ar", "44100",
                 *(["-b:a", "192k"] if a.out.endswith(".mp3") else []), a.out], check=True)
+if a.parts:  # line i spans [start, start + its own duration] in OUT (each line is followed by --gap of silence)
+    spans, t = [], 0.0
+    for p in parts:
+        d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p],
+                                 capture_output=True, text=True).stdout)
+        spans.append([round(t, 3), round(t + d, 3)]); t += d + a.gap
+    json.dump(spans, open(os.path.join(a.parts, "lines.json"), "w"))
 print("wrote", a.out)
