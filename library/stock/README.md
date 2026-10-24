@@ -1,6 +1,6 @@
 # Stock video / b-roll library (`stock/`)
 
-72 short clips that need **no credit**, 231 MB in total, plus 42 Mixkit links (not downloaded, see below).
+67 short clips that need **no credit**, 212 MB in total, plus 42 Mixkit links (not downloaded, see below).
 H.264 (yuv420p) mp4, no audio, short side at most 1080 px (sources are never upscaled), fps capped at 30, 12 s or less.
 Every number in `index.json` (size, fps, duration, resolution) was measured with ffprobe after encoding (2026-10-24).
 Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for 9:16, `--all` to include SFX and LUTs).
@@ -10,9 +10,15 @@ Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for
 | Group | Clips | Proof |
 | --- | --- | --- |
 | Own overlays/backgrounds (`own-overlays/`) | 37 | Made here with `library/tools/make_overlays.py` (PIL + numpy, fixed seeds). No credit needed. |
-| Wikimedia Commons CC0 | 17 | Licence read from each file page's metadata via the Commons API (`extmetadata.LicenseShortName` = CC0). Page URL per clip in `index.json`. |
-| Wikimedia Commons public domain (US agencies: National Park Service, Forest Service, BLM, US Mint; the 1906 India film; uploaders who released their own work as PD) | 13 | Same check (`LicenseShortName` = Public domain). |
-| NASA (public domain, **licence doubt**) | 5 | NASA Media Usage Guidelines (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24): NASA content "generally [is] not subject to copyright in the United States", but "NASA should be acknowledged as the source" and commercial use "must not explicitly or implicitly convey NASA's endorsement". Marked `licence_doubt: true`: OK for space/gaming intros, avoid in client ads. |
+| Wikimedia Commons CC0 | 17 | The "Licensing" section of every source file page was opened and read (curl, 2026-10-24); the page URL and the licence sentence are stored per clip in `index.json` → `licence_proof`. |
+| Wikimedia Commons public domain (US agencies: National Park Service, US Mint; the 1906 India film; uploaders who released their own work as PD) | 11 | Same check: each page's Licensing section states public domain (quoted in `licence_proof`). |
+| NASA via Commons (public domain, **licence doubt**) | 2 | Commons pages say "in the public domain in the United States because it was solely created by NASA". NASA Media Usage Guidelines (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24): NASA content "generally [is] not subject to copyright in the United States", but "NASA should be acknowledged as the source" and commercial use "must not explicitly or implicitly convey NASA's endorsement". Marked `licence_doubt: true`: OK for space/gaming intros, avoid in client ads. |
+
+Removed after reading the pages (2026-10-24): "Time Lapse Clouds above Steens Mountain" (page also lists CC BY-SA 2.0),
+"Kaiser Canyon Fire extreme behavior" (page: "has not yet been reviewed ... to confirm that the above license is valid"),
+and three clips from NASA's "Earth Views from the International Space Station" (images.nasa.gov item and metadata carry no
+licence statement; only NASA's general guidelines, which ask for acknowledgement). The Commons API had reported
+"Public domain" for Steens Mountain: always read the page itself.
 
 Not stored here, and why (tested from this server on 2026-10-24):
 - **Pexels, Pixabay** (pexels.com, pixabay.com, cdn.pixabay.com): HTTP 403 to this server. Pexels API needs a key (401).
@@ -71,11 +77,10 @@ The repo `.gitignore` blocks `*.mp4`/`*.jpg` (safety net against personal media)
 | --- | --- | --- | --- | --- |
 | `city-traffic/city-traffic-timelapse-aerial.mp4` | 1920x1080 30fps | 12.0s | CC0 | high-angle time-lapse of busy city roads, buses and cars, tower blocks (Causeway Bay) |
 
-### fire (4)
+### fire (3)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
-| `fire/forest-fire-flames.mp4` | 1920x1080 30fps | 11.0s | Public domain | forest fire: tall flames and thick smoke among pine trees |
 | `fire/candles-many-flames.mp4` | 1920x1080 24fps | 12.0s | Public domain | rows of burning candles (white, red, green), slow camera move, dark background |
 | `fire/candles-closeup.mp4` | 1920x1080 24fps | 12.0s | Public domain | close-up of candle flames, shallow focus |
 | `fire/fire-flames-closeup.mp4` | 1920x1080 25fps | 12.0s | CC0 | orange flames rising from a metal can, green forest behind (close-up) |
@@ -174,24 +179,20 @@ The repo `.gitignore` blocks `*.mp4`/`*.jpg` (safety net against personal media)
 | `south-asia-vintage/india-street-1906-carts.mp4` | 1226x690 23.976fps | 12.01s | Public domain | 1906 film: street with carts and people in white clothes and turbans (black and white) |
 | `south-asia-vintage/india-street-1906-vertical.mp4` | 608x1080 23.976fps | 12.05s | Public domain | 9:16 crop of the 1906 Indian street film |
 
-### space (5)
+### space (2)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
 | `space/earth-at-night-rotating.mp4` | 1920x1080 30fps | 12.0s | Public domain (doubt) | animated globe at night with city lights, rotating, black background |
 | `space/earth-city-lights-from-space.mp4` | 1920x1080 29fps | 12.0s | Public domain (doubt) | view from orbit: clouds and city lights at night, ends with sunrise glow on the horizon |
-| `space/nasa-earth-horizon-iss.mp4` | 1280x720 30fps | 12.03s | Public domain (NASA) (doubt) | Earth's horizon and clouds seen from the International Space Station, part of a docked spacecraft at the edge |
-| `space/nasa-earth-clouds-iss.mp4` | 1280x720 30fps | 9.03s | Public domain (NASA) (doubt) | Earth's clouds and sea from the ISS (720p source) |
-| `space/nasa-sunrise-from-space.mp4` | 1280x720 30fps | 10.03s | Public domain (NASA) (doubt) | sunrise over Earth's horizon from the ISS: bright sun with lens flare, then a thin blue horizon; ISS parts and a thin vertical line artefact visible in the first ~6 s |
 
-### sunrise-sunset (6)
+### sunrise-sunset (5)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
 | `sunrise-sunset/sunset-golden-clouds.mp4` | 1920x1080 30fps | 12.0s | Public domain | golden sunset light on a sky full of altocumulus clouds, dark horizon |
 | `sunrise-sunset/sunset-paris-eiffel-tower.mp4` | 1920x1014 24fps | 12.0s | CC0 | sun setting behind the Eiffel Tower, purple-orange sky over Paris rooftops |
 | `sunrise-sunset/sunset-paris-eiffel-tower-vertical.mp4` | 570x1014 24fps | 12.0s | CC0 | 9:16 crop of the Eiffel Tower sunset |
-| `sunrise-sunset/sunset-clouds-mountain-timelapse.mp4` | 1920x1080 29.97fps | 12.05s | Public domain | sunset time-lapse, golden clouds racing over dark mountain ridge, sun rays |
 | `sunrise-sunset/sunrise-timelapse-orange-sky.mp4` | 1920x1080 25fps | 12.0s | CC0 | sunrise time-lapse: sun rises in an orange sky above a city horizon, plants in foreground |
 | `sunrise-sunset/sunset-sun-going-down-timelapse.mp4` | 1920x1080 25fps | 12.0s | CC0 | red sun setting on a flat horizon behind lamp posts (time-lapse) |
 

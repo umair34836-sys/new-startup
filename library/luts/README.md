@@ -10,7 +10,8 @@ Why own LUTs: free LUT packs found online usually carry their own licence terms;
 ## Previews (made here 2026-10-24 with `library/tools/lut_preview.py`)
 
 - `previews/<id>.jpg`: before (left) / after (right) on one frame from the public-domain Wikimedia Commons clip
-  "Altocumulus in sunset Galley Common 2 Jan 2022" (https://commons.wikimedia.org/wiki/File:Altocumulus_in_sunset_Galley_Common_2_Jan_2022.webm)
+  "Altocumulus in sunset Galley Common 2 Jan 2022" (https://commons.wikimedia.org/wiki/File:Altocumulus_in_sunset_Galley_Common_2_Jan_2022.webm); its Licensing section, read 2026-10-24, says
+  "This work has been released into the public domain by its author, User:Rubbish computer"
   above our own test chart (skin swatches, colours, grey ramp, hue ramp).
 - `previews/_all-luts-sunset.jpg`, `previews/_all-luts-chart.jpg`: all looks side by side.
 - Other frame: `python3 library/tools/lut_preview.py frame.jpg library/luts out.jpg` (first tile = original).

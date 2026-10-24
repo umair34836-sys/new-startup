@@ -39,8 +39,9 @@ from this cloud server on 2026-10-24 unless marked otherwise.
 - **Sonniss GDC bundles**: not checked in detail (site redirected); not used.
 
 ## What Commons has and lacks (searches 2026-10-24)
-- Good CC0/PD material: cloud and sunset time-lapses, rain, lightning, city traffic time-lapse, night city, wildfire
-  (US Forest Service), NASA/NOAA space and satellite clips, waterfalls, ocean waves, snow, birds, 1906 India street film.
+- Search hits whose API licence said CC0/PD (titles only; a licence counts only after its page is read, see the re-check
+  below): cloud and sunset time-lapses, rain, lightning, city traffic time-lapse, night city, wildfire, NASA/NOAA space
+  and satellite clips, waterfalls, ocean waves, snow, birds, a 1906 India street film.
 - Not found as usable CC0 b-roll: Pakistani/Lahore/Karachi street scenes (only news/CCTV), office, handshake,
   payments, delivery, tea pouring. Many "public domain" hits are US government news, police or CCTV videos: not b-roll.
 - Search tip: `generator=search&gsrsearch=filetype:video <words>&gsrnamespace=6` plus `viprop=derivatives` gives
@@ -59,3 +60,13 @@ own LUTs (hyperframes 0.8.188) and copied each to `.media/luts/lut_NNN.cube`.
 - Python's default urllib User-Agent got "Your request does not comply with our robot policy" (429) from
   upload.wikimedia.org while curl with a descriptive UA (name + repo URL) worked; after many requests the IP was
   throttled for every client (429).
+
+## Full licence re-check (2026-10-24, after the owner's "verified only" rule)
+- Every source page was opened and read again: 7 Kenney packs (asset page + License.txt), 33 OpenGameArt pages
+  (License(s) field: CC0 only), 28 Commons file pages (Licensing section), 42 Mixkit item pages (data-license).
+  The quoted statements are stored per file as `licence_proof` in each index.json.
+- Commons API `LicenseShortName` can be wrong or incomplete: it said "Public domain" for "Time Lapse Clouds above
+  Steens Mountain", whose page also lists CC BY-SA 2.0 (Flickr). "Kaiser Canyon Fire extreme behavior" is tagged PD
+  (US Forest Service) but its page says the licence "has not yet been reviewed". Both were removed.
+- The images.nasa.gov item "Earth Views from the International Space Station" and its metadata.json carry no licence or
+  rights field; only NASA's general guidelines apply (acknowledgement requested). Its 3 clips were removed.

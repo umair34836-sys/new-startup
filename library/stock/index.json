@@ -1,6 +1,6 @@
 {
- "notes": "Every clip needs no credit (own work, CC0, or public domain); NASA clips carry licence_doubt (see README). Sizes/fps/durations measured with ffprobe 2026-10-24. Descriptions written from contact sheets of the sources.",
- "count": 72,
+ "notes": "Every clip needs no credit: own work, or CC0/public domain as stated in the Licensing section of its Wikimedia Commons page (quoted in licence_proof, read 2026-10-24). The 2 NASA clips carry licence_doubt (see README). Sizes/fps/durations measured with ffprobe 2026-10-24. Descriptions written from contact sheets of the sources.",
+ "count": 67,
  "clips": [
   {
    "file": "weather/rain-dripping-from-roof.mp4",
@@ -23,9 +23,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:20240616_Raindrops_roof_basilica_Panewniki.webm",
    "author": "Abraham",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:20240616_Raindrops_roof_basilica_Panewniki.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Permission ( Reusing this file ) I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and per"
+   }
   },
   {
    "file": "nature-sky/clouds-timelapse-blue-sky.mp4",
@@ -47,9 +52,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:All4sounds_-_Cloud_Time_lapse.webm",
    "author": "All4sounds",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "40-52 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:All4sounds_-_Cloud_Time_lapse.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. http://creativecommons."
+   }
   },
   {
    "file": "sunrise-sunset/sunset-golden-clouds.mp4",
@@ -74,9 +84,14 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Altocumulus_in_sunset_Galley_Common_2_Jan_2022.webm",
    "author": "Rubbish computer",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Altocumulus_in_sunset_Galley_Common_2_Jan_2022.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Permission ( Reusing this file ) Public domain Public domain false false I, the copyright holder of this work, release this work into the public domain . This applies worldwide. In some countries this may not be legally possible; if so: I grant anyone the right to use this work for any purpose , without any conditions, unless such conditions are required by law. Licensing [ edit ] Public domain Public domain false false This work has been released into the public domain by its author, User:Rubbi"
+   }
   },
   {
    "file": "nature-sky/mountain-cloud-timelapse.mp4",
@@ -99,9 +114,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Lenticular_cloud_over_Longs_Peak,_Colorado_(time_lapse).ogv",
    "author": "Stepleton",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Lenticular_cloud_over_Longs_Peak,_Colorado_(time_lapse).ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "weather/rain-city-trees.mp4",
@@ -124,9 +144,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Rain_in_Rivne_1.webm",
    "author": "Ата",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "2-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Rain_in_Rivne_1.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "city-night/night-city-lights-rain.mp4",
@@ -149,9 +174,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Raindrops_against_the_window_in_the_night_city,_Las_Palmas.webm",
    "author": "slavikfi (Vjatseslav Robtsenkov)",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Raindrops_against_the_window_in_the_night_city,_Las_Palmas.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] This file is from Pixabay , where the creator has released it explicitly under the license Creative Commons Zero ( see here ) . File ID: 1501 This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by la"
+   }
   },
   {
    "file": "sunrise-sunset/sunset-paris-eiffel-tower.mp4",
@@ -175,9 +205,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Sunset_on_Eiffel_Tower_in_Paris_-_Vimeo.webm",
    "author": "Mythomen",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Sunset_on_Eiffel_Tower_in_Paris_-_Vimeo.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. http://creativecommons."
+   }
   },
   {
    "file": "sunrise-sunset/sunset-paris-eiffel-tower-vertical.mp4",
@@ -200,34 +235,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Sunset_on_Eiffel_Tower_in_Paris_-_Vimeo.webm",
    "author": "Mythomen",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
-  },
-  {
-   "file": "sunrise-sunset/sunset-clouds-mountain-timelapse.mp4",
-   "category": "sunrise-sunset",
-   "tags": [
-    "sunset",
-    "clouds",
-    "timelapse",
-    "mountains"
-   ],
-   "description": "sunset time-lapse, golden clouds racing over dark mountain ridge, sun rays",
-   "orientation": "horizontal",
-   "width": 1920,
-   "height": 1080,
-   "fps": 29.97,
-   "duration_s": 12.05,
-   "size_mb": 5.1,
-   "audio": false,
-   "licence": "Public domain",
-   "licence_url": "",
-   "source_page": "https://commons.wikimedia.org/wiki/File:Time_Lapse_Clouds_above_Steens_Mountain_(36203941112).webm",
-   "author": "BLM Oregon & Washington",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
-   "source_segment": "14-26 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Sunset_on_Eiffel_Tower_in_Paris_-_Vimeo.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. http://creativecommons."
+   }
   },
   {
    "file": "sunrise-sunset/sunrise-timelapse-orange-sky.mp4",
@@ -250,9 +265,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Time-lapse_sunrise_Berlin_Drachenberg.webm",
    "author": "NutzerAusBerlin",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "8-20 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Time-lapse_sunrise_Berlin_Drachenberg.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "sunrise-sunset/sunset-sun-going-down-timelapse.mp4",
@@ -274,9 +294,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Time-lapse_sunset_Berlin_Brandenburg_Airport.webm",
    "author": "NutzerAusBerlin",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "14-26 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Time-lapse_sunset_Berlin_Brandenburg_Airport.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "nature-sky/desert-tree-clouds-timelapse.mp4",
@@ -299,9 +324,14 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Timelapse_Joshua_Tree_Clouds_and_Sunset_Near_West_Entrance.webm",
    "author": "flickr.com/photos/joshuatreenp (Joshua Tree National Park account, per the Commons page link)",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Timelapse_Joshua_Tree_Clouds_and_Sunset_Near_West_Entrance.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This image or media file contains material based on a work of a National Park Service employee, created as part of that person's official duties. As a work of the U.S. federal government , such work is in the public domain in the United States. See the NPS website and NPS copyright policy for more information. This image, originally posted to Flickr , was reviewed on 6 August 2023 by the administrator or reviewer Юрий Д.К. , who confirme"
+   }
   },
   {
    "file": "own-overlays/light-leak-warm.mp4",
@@ -326,7 +356,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/light-leak-pink.mp4",
@@ -351,7 +386,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/light-leak-blue.mp4",
@@ -376,7 +416,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/light-leak-warm-vertical.mp4",
@@ -402,7 +447,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/film-grain.mp4",
@@ -426,7 +476,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/dust-scratches.mp4",
@@ -450,7 +505,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/film-burn-transition.mp4",
@@ -475,7 +535,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/glitch-overlay.mp4",
@@ -499,7 +564,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/bokeh-warm.mp4",
@@ -523,7 +593,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/bokeh-blue-pink.mp4",
@@ -548,7 +623,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/bokeh-warm-vertical.mp4",
@@ -573,7 +653,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/embers-rising.mp4",
@@ -597,7 +682,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/sparks-fountain.mp4",
@@ -621,7 +711,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/embers-rising-vertical.mp4",
@@ -646,7 +741,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/snow-falling.mp4",
@@ -670,7 +770,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/rain-streaks.mp4",
@@ -694,7 +799,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/smoke-fog.mp4",
@@ -718,7 +828,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/confetti-greenscreen.mp4",
@@ -742,7 +857,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/gradient-purple-blue.mp4",
@@ -767,7 +887,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/gradient-warm.mp4",
@@ -791,7 +916,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/gradient-teal-green.mp4",
@@ -816,7 +946,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/gradient-purple-blue-vertical.mp4",
@@ -842,7 +977,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/tech-grid.mp4",
@@ -866,7 +1006,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/particle-network.mp4",
@@ -890,7 +1035,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/starfield.mp4",
@@ -913,7 +1063,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/sparks-fountain-vertical.mp4",
@@ -938,7 +1093,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/snow-falling-vertical.mp4",
@@ -963,7 +1123,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/rain-streaks-vertical.mp4",
@@ -988,7 +1153,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/light-leak-pink-vertical.mp4",
@@ -1014,7 +1184,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/bokeh-blue-pink-vertical.mp4",
@@ -1040,7 +1215,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/gradient-warm-vertical.mp4",
@@ -1065,7 +1245,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/gradient-teal-green-vertical.mp4",
@@ -1091,7 +1276,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/tech-grid-vertical.mp4",
@@ -1116,7 +1306,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/particle-network-vertical.mp4",
@@ -1141,7 +1336,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/starfield-vertical.mp4",
@@ -1165,7 +1365,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/confetti-greenscreen-vertical.mp4",
@@ -1190,7 +1395,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "own-overlays/smoke-fog-vertical.mp4",
@@ -1215,7 +1425,12 @@
    "licence_url": "",
    "source_page": "library/tools/make_overlays.py",
    "author": "made here",
-   "measured": "ffprobe, 2026-10-24"
+   "measured": "ffprobe, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "statement": "Made in this session with library/tools/make_overlays.py (no third-party material).",
+    "url": ""
+   }
   },
   {
    "file": "city-night/bus-arriving-at-night.mp4",
@@ -1239,10 +1454,15 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:92A_Kaiserm%C3%BChlen-VIC.webm",
    "author": "Tokfo",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
    "notes": "Shows the bus operator's route display/branding.",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:92A_Kaiserm%C3%BChlen-VIC.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Permission ( Reusing this file ) I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and per"
+   }
   },
   {
    "file": "space/earth-at-night-rotating.mp4",
@@ -1267,11 +1487,16 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Animation_of_Rotating_Earth_at_Night.webm",
    "author": "NASA",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
    "measured": "ffprobe after encoding, 2026-10-24",
    "notes": "NASA material is generally not copyrighted in the US, but NASA's Media Usage Guidelines say 'NASA should be acknowledged as the source' and commercial use 'must not explicitly or implicitly convey NASA's endorsement' (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24). Licence doubt for the owner's no-credit rule: fine for space/gaming intros; avoid in client ads. Commons lists the author as NASA (Suomi NPP night-lights data over Blue Marble imagery).",
-   "licence_doubt": true
+   "licence_doubt": true,
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Animation_of_Rotating_Earth_at_Night.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This file is in the public domain in the United States because it was solely created by NASA . NASA copyright policy states that \"NASA material is not protected by copyright unless noted \". (See Template:PD-USGov , NASA copyright policy page or JPL Image Use Policy .) Warnings: Use of NASA logos , insignia and emblems is restricted per U.S. law 14 CFR 1221 . The NASA website hosts a large number of images from the Soviet / Russian space "
+   }
   },
   {
    "file": "city-traffic/city-traffic-timelapse-aerial.mp4",
@@ -1296,34 +1521,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Causeway_Bay_Time-lapse_videos_(afternoon).ogv",
    "author": "鄒延",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
-  },
-  {
-   "file": "fire/forest-fire-flames.mp4",
-   "category": "fire",
-   "tags": [
-    "fire",
-    "flames",
-    "smoke",
-    "aag"
-   ],
-   "description": "forest fire: tall flames and thick smoke among pine trees",
-   "orientation": "horizontal",
-   "width": 1920,
-   "height": 1080,
-   "fps": 30.0,
-   "duration_s": 11.0,
-   "size_mb": 7.3,
-   "audio": false,
-   "licence": "Public domain",
-   "licence_url": "",
-   "source_page": "https://commons.wikimedia.org/wiki/File:Kaiser_Canyon_Fire_extreme_behavior.webm",
-   "author": "U.S. Forest Service",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
-   "source_segment": "0-11 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Causeway_Bay_Time-lapse_videos_(afternoon).ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "weather/lightning-storm-night.mp4",
@@ -1347,9 +1552,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Lightning_storm_over_Colorado,_USA.ogg",
    "author": "NathanScientific",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "12-24 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Lightning_storm_over_Colorado,_USA.ogg",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "space/earth-city-lights-from-space.mp4",
@@ -1373,92 +1583,16 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Ocean_Moon_Glint_and_City_Night_Lights_in_4K.webm",
    "author": "NASA",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "4-16 s of the source",
    "measured": "ffprobe after encoding, 2026-10-24",
    "notes": "NASA material is generally not copyrighted in the US, but NASA's Media Usage Guidelines say 'NASA should be acknowledged as the source' and commercial use 'must not explicitly or implicitly convey NASA's endorsement' (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24). Licence doubt for the owner's no-credit rule: fine for space/gaming intros; avoid in client ads. Commons lists the author as NASA.",
-   "licence_doubt": true
-  },
-  {
-   "file": "space/nasa-earth-horizon-iss.mp4",
-   "category": "space",
-   "tags": [
-    "space",
-    "earth",
-    "nasa",
-    "orbit"
-   ],
-   "description": "Earth's horizon and clouds seen from the International Space Station, part of a docked spacecraft at the edge",
-   "orientation": "horizontal",
-   "width": 1280,
-   "height": 720,
-   "fps": 30.0,
-   "duration_s": 12.03,
-   "size_mb": 2.96,
-   "audio": false,
-   "licence": "Public domain (NASA)",
-   "licence_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "source_page": "https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station",
-   "author": "NASA",
-   "licence_checked": "2026-10-24: NASA Media Usage Guidelines read via agent-reach",
-   "source_segment": "15-27 s of the source",
-   "notes": "NASA material is generally not copyrighted in the US, but NASA's Media Usage Guidelines say 'NASA should be acknowledged as the source' and commercial use 'must not explicitly or implicitly convey NASA's endorsement' (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24). Licence doubt for the owner's no-credit rule: fine for space/gaming intros; avoid in client ads.",
    "licence_doubt": true,
-   "measured": "ffprobe after encoding, 2026-10-24"
-  },
-  {
-   "file": "space/nasa-earth-clouds-iss.mp4",
-   "category": "space",
-   "tags": [
-    "space",
-    "earth",
-    "nasa",
-    "orbit"
-   ],
-   "description": "Earth's clouds and sea from the ISS (720p source)",
-   "orientation": "horizontal",
-   "width": 1280,
-   "height": 720,
-   "fps": 30.0,
-   "duration_s": 9.03,
-   "size_mb": 2.08,
-   "audio": false,
-   "licence": "Public domain (NASA)",
-   "licence_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "source_page": "https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station",
-   "author": "NASA",
-   "licence_checked": "2026-10-24: NASA Media Usage Guidelines read via agent-reach",
-   "source_segment": "50-59 s of the source",
-   "notes": "NASA material is generally not copyrighted in the US, but NASA's Media Usage Guidelines say 'NASA should be acknowledged as the source' and commercial use 'must not explicitly or implicitly convey NASA's endorsement' (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24). Licence doubt for the owner's no-credit rule: fine for space/gaming intros; avoid in client ads.",
-   "licence_doubt": true,
-   "measured": "ffprobe after encoding, 2026-10-24"
-  },
-  {
-   "file": "space/nasa-sunrise-from-space.mp4",
-   "category": "space",
-   "tags": [
-    "space",
-    "earth",
-    "nasa",
-    "orbit"
-   ],
-   "description": "sunrise over Earth's horizon from the ISS: bright sun with lens flare, then a thin blue horizon; ISS parts and a thin vertical line artefact visible in the first ~6 s",
-   "orientation": "horizontal",
-   "width": 1280,
-   "height": 720,
-   "fps": 30.0,
-   "duration_s": 10.03,
-   "size_mb": 1.79,
-   "audio": false,
-   "licence": "Public domain (NASA)",
-   "licence_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "source_page": "https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station",
-   "author": "NASA",
-   "licence_checked": "2026-10-24: NASA Media Usage Guidelines read via agent-reach",
-   "source_segment": "164-174 s of the source",
-   "notes": "NASA material is generally not copyrighted in the US, but NASA's Media Usage Guidelines say 'NASA should be acknowledged as the source' and commercial use 'must not explicitly or implicitly convey NASA's endorsement' (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24). Licence doubt for the owner's no-credit rule: fine for space/gaming intros; avoid in client ads.",
-   "licence_doubt": true,
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Ocean_Moon_Glint_and_City_Night_Lights_in_4K.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This file is in the public domain in the United States because it was solely created by NASA . NASA copyright policy states that \"NASA material is not protected by copyright unless noted \". (See Template:PD-USGov , NASA copyright policy page or JPL Image Use Policy .) Warnings: Use of NASA logos , insignia and emblems is restricted per U.S. law 14 CFR 1221 . The NASA website hosts a large number of images from the Soviet / Russian space "
+   }
   },
   {
    "file": "fire/candles-many-flames.mp4",
@@ -1483,9 +1617,14 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Candles%2Bcamera_dolly.ogv",
    "author": "Pixelmaniac pictures",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Candles%2Bcamera_dolly.ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false I, the copyright holder of this work, release this work into the public domain . This applies worldwide. In some countries this may not be legally possible; if so: I grant anyone the right to use this work for any purpose , without any conditions, unless such conditions are required by law. PD-self"
+   }
   },
   {
    "file": "fire/candles-closeup.mp4",
@@ -1508,9 +1647,14 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Candles%2Bcamera_dolly.ogv",
    "author": "Pixelmaniac pictures",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "40-52 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Candles%2Bcamera_dolly.ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false I, the copyright holder of this work, release this work into the public domain . This applies worldwide. In some countries this may not be legally possible; if so: I grant anyone the right to use this work for any purpose , without any conditions, unless such conditions are required by law. PD-self"
+   }
   },
   {
    "file": "fire/fire-flames-closeup.mp4",
@@ -1533,9 +1677,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Fire_%D8%A2%D8%AA%D8%B4_08.ogv",
    "author": "Mostafameraji",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "4-16 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Fire_%D8%A2%D8%AA%D8%B4_08.ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "south-asia-vintage/india-street-1906-crowd.mp4",
@@ -1562,10 +1711,15 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:A_Native_Street_in_India_(1906).webm",
    "author": "BFI",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "20-32 s of the source",
    "notes": "1906 black-and-white film (public domain per Commons). The source copy carries a BFI logo top-left; this crop leaves it out (checked on a frame).",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:A_Native_Street_in_India_(1906).webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This work is in the public domain in India because its term of copyright has expired or it is ineligible for copyright. The Indian Copyright Act applies in India to works first published in India. According to the Indian Copyright Act, 1957, as amended up to Act No. 27 of 2012 (Chapter V, Section 25): Anonymous works, photographs, cinematographic works, sound recordings, government works, and works of corporate authorship or of internati"
+   }
   },
   {
    "file": "south-asia-vintage/india-street-1906-carts.mp4",
@@ -1590,10 +1744,15 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:A_Native_Street_in_India_(1906).webm",
    "author": "BFI",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "130-142 s of the source",
    "notes": "1906 black-and-white film (public domain per Commons). The source copy carries a BFI logo top-left; this crop leaves it out (checked on a frame).",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:A_Native_Street_in_India_(1906).webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This work is in the public domain in India because its term of copyright has expired or it is ineligible for copyright. The Indian Copyright Act applies in India to works first published in India. According to the Indian Copyright Act, 1957, as amended up to Act No. 27 of 2012 (Chapter V, Section 25): Anonymous works, photographs, cinematographic works, sound recordings, government works, and works of corporate authorship or of internati"
+   }
   },
   {
    "file": "south-asia-vintage/india-street-1906-vertical.mp4",
@@ -1617,10 +1776,15 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:A_Native_Street_in_India_(1906).webm",
    "author": "BFI",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "60-72 s of the source",
    "notes": "1906 black-and-white film (public domain per Commons). The source copy carries a BFI logo top-left; this crop leaves it out (checked on a frame).",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:A_Native_Street_in_India_(1906).webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This work is in the public domain in India because its term of copyright has expired or it is ineligible for copyright. The Indian Copyright Act applies in India to works first published in India. According to the Indian Copyright Act, 1957, as amended up to Act No. 27 of 2012 (Chapter V, Section 25): Anonymous works, photographs, cinematographic works, sound recordings, government works, and works of corporate authorship or of internati"
+   }
   },
   {
    "file": "celebration/firecrackers-street-smoke-vertical.mp4",
@@ -1645,9 +1809,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Firecrackers_for_Chinese_New_Year_in_Sibu,_Sarawak,_Malaysia.webm",
    "author": "Mx. Granger",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-7 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Firecrackers_for_Chinese_New_Year_in_Sibu,_Sarawak,_Malaysia.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "nature-sky/wetland-lake-birds-india.mp4",
@@ -1671,9 +1840,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Vaduvoor_Bird_Sanctuary_-_Birds_flying.ogv",
    "author": "deadrat",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "6-16 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Vaduvoor_Bird_Sanctuary_-_Birds_flying.ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "nature-sky/bee-on-white-flower.mp4",
@@ -1698,9 +1872,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Abeille_repos.ogv",
    "author": "Wisi eu",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "12-24 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Abeille_repos.ogv",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "weather/snow-falling-forest.mp4",
@@ -1724,9 +1903,14 @@
    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "source_page": "https://commons.wikimedia.org/wiki/File:Snow_falling_in_Charlton_MA_2025-12-14.webm",
    "author": "Peter Cooper Jr.",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Snow_falling_in_Charlton_MA_2025-12-14.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work,"
+   }
   },
   {
    "file": "nature-sky/night-sky-stars-clouds-timelapse.mp4",
@@ -1750,9 +1934,14 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Stars_and_Clouds_Over_Headstone_Rock_(30230087163).webm",
    "author": "Joshua Tree National Park",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Stars_and_Clouds_Over_Headstone_Rock_(30230087163).webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] This image, originally posted to Flickr , was reviewed on 8 December 2025 by the administrator or reviewer Leoboudv , who confirmed that it was available on Flickr under the stated license on that date. Public domain Public domain false false This image or media file contains material based on a work of a National Park Service employee, created as part of that person's official duties. As a work of the U.S. federal government , such work is in the public domain in the United S"
+   }
   },
   {
    "file": "nature-sky/aurora-night-sky-timelapse.mp4",
@@ -1777,9 +1966,14 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:Glacier_Bay_Entrance_Night_Sky_with_Aurora_and_Moon.webm",
    "author": "National Park Service",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "0-12 s of the source",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:Glacier_Bay_Entrance_Night_Sky_with_Aurora_and_Moon.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false This image or media file contains material based on a work of a National Park Service employee, created as part of that person's official duties. As a work of the U.S. federal government , such work is in the public domain in the United States. See the NPS website and NPS copyright policy for more information. This file, which was originally posted to https://www.flickr.com/photos/nationalparkservice/53943226099/ , was reviewed on 15 Oct"
+   }
   },
   {
    "file": "money/coins-bin-gloved-hands.mp4",
@@ -1804,10 +1998,15 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:West_Point_Quarters_B-Roll.webm",
    "author": "USMINT",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "6-16 s of the source",
    "notes": "US government (US Mint) b-roll, public domain per Commons. Coins shown are US quarters.",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:West_Point_Quarters_B-Roll.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false Public domain This image is a work of the United States Department of the Treasury , taken or made as part of an employee's official duties. As a work of the U.S. federal government , the image is in the public domain in the United States. US Treasury seal English ∙ español ∙ eesti ∙ 日本語 ∙ македонски ∙ polski ∙ português ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/− This file, which was originally posted to YouTube : West Point Quarters B-Roll ( arch"
+   }
   },
   {
    "file": "money/coins-pile-closeup.mp4",
@@ -1832,10 +2031,15 @@
    "licence_url": "",
    "source_page": "https://commons.wikimedia.org/wiki/File:West_Point_Quarters_B-Roll.webm",
    "author": "USMINT",
-   "licence_checked": "2026-10-24 via Wikimedia Commons API (extmetadata LicenseShortName)",
    "source_segment": "88-95.5 s of the source",
    "notes": "US government (US Mint) b-roll, public domain per Commons. Coins shown are US quarters.",
-   "measured": "ffprobe after encoding, 2026-10-24"
+   "measured": "ffprobe after encoding, 2026-10-24",
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://commons.wikimedia.org/wiki/File:West_Point_Quarters_B-Roll.webm",
+    "how": "Licensing section of the file page read with curl",
+    "statement": "Licensing [ edit ] Public domain Public domain false false Public domain This image is a work of the United States Department of the Treasury , taken or made as part of an employee's official duties. As a work of the U.S. federal government , the image is in the public domain in the United States. US Treasury seal English ∙ español ∙ eesti ∙ 日本語 ∙ македонски ∙ polski ∙ português ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/− This file, which was originally posted to YouTube : West Point Quarters B-Roll ( arch"
+   }
   }
  ]
 }

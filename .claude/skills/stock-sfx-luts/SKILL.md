@@ -21,9 +21,9 @@ python3 library/tools/find_stock.py --all "fire"             # everything
 - What exists: own overlays/backgrounds (light leaks, film grain, dust, film-burn transition, glitch bars, bokeh,
   embers, sparks, snow, rain, smoke, confetti on green, gradients, neon grid, dot network, stars; most also in 9:16),
   Commons CC0/public-domain sky and cloud time-lapses, sunset/sunrise, rain, snow, lightning, aurora, night sky,
-  city night, city traffic time-lapse, fire and candles, bee/flower, firecrackers (9:16), coins (US Mint), a 1906
-  Indian street film (black and white), and NASA space shots.
-- NASA clips have `licence_doubt: true` (NASA asks to be acknowledged and forbids implied endorsement): use them in
+  city night, city traffic time-lapse, fire close-up and candles, bee/flower, firecrackers (9:16), coins (US Mint), a 1906
+  Indian street film (black and white), and 2 NASA earth-at-night clips (licence doubt).
+- The 2 NASA clips have `licence_doubt: true` (NASA asks to be acknowledged and forbids implied endorsement): use them in
   space/gaming intros, not in client ads.
 - No modern CC0 Pakistani/desi street footage exists in the library (none found on Commons). For office/handshake/payment/delivery/shop
   shots use the Mixkit links (licence: no credit, commercial OK) and fetch ONE clip per need:
