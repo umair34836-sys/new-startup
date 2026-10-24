@@ -241,6 +241,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - IMPORTANT: creative_transcribe_audio on a flow's own TTS take returned the PROMPT text verbatim (incl. the "[excited]"
   tag) with 0 credits = the TTS alignment, NOT a real transcription. Use it for word timings only; verify words
   independently (Whisper small per line on cuts from those timings worked: all 8 lines heard; whole-file Whisper failed).
+- OWNER RULE (Oct 24 2026): client videos shown BEFORE payment get `library/tools/watermark.py` ("Made by MrCopper804"
+  tiled + PREVIEW corner tag + copyright metadata); the clean, open-licence file goes out only after payment.
 - QA after render: watch.py (fps, black/frozen) + listen.py (LUFS, clipping, voice span). Music under VO at volume 0.16
   (-13 LUFS track) and VO loudnormed to -16 gave a -16.0 LUFS mix, no clipping.
 
