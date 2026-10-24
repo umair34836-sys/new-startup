@@ -232,6 +232,18 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Pashto touch for Pashto-speaking clients: "Manana" (مننه) = thank you (omniglot.com/language/phrases/pashto.php via
   WebSearch, 2026-10-24). Captions stay Roman Urdu.
 
+## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
+- Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
+  (price "from ₹20/mo" was on /games, coupon from the top banner), brand colours from the site CSS (most frequent hex),
+  logo/screens/flags downloaded from the site, owner-chosen VO, PREVIEW (contact sheet + VO/music mix) before render.
+- ElevenLabs (owner asked by name: "Viraj" Hindi): 25 Viraj voices exist; "Viraj – Viral Ad & Content Voice"
+  (pHG3exaXQt8bmTWbaVOs) fits reels. 2 takes of a 29 s script = 2 x 427 credits (2026-10-24).
+- IMPORTANT: creative_transcribe_audio on a flow's own TTS take returned the PROMPT text verbatim (incl. the "[excited]"
+  tag) with 0 credits = the TTS alignment, NOT a real transcription. Use it for word timings only; verify words
+  independently (Whisper small per line on cuts from those timings worked: all 8 lines heard; whole-file Whisper failed).
+- QA after render: watch.py (fps, black/frozen) + listen.py (LUFS, clipping, voice span). Music under VO at volume 0.16
+  (-13 LUFS track) and VO loudnormed to -16 gave a -16.0 LUFS mix, no clipping.
+
 ## Sub-sessions (Oct 24 2026)
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
