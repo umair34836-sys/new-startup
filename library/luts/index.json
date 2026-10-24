@@ -1,0 +1,422 @@
+{
+ "notes": "32 own-made 3D LUTs. Descriptions state the recipe's intent (see make_luts.py); judge the actual look from previews/. Never read a .cube into an AI context (36k lines).",
+ "luts": [
+  {
+   "file": "teal-orange-cinematic.cube",
+   "id": "teal-orange-cinematic",
+   "description": "Blockbuster teal shadows + orange skin, strong contrast",
+   "tags": [
+    "cinematic"
+   ],
+   "preview": "previews/teal-orange-cinematic.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "teal-orange-soft.cube",
+   "id": "teal-orange-soft",
+   "description": "Gentle teal-orange for vlogs/people, skin stays natural",
+   "tags": [
+    "cinematic"
+   ],
+   "preview": "previews/teal-orange-soft.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "warm-skin-glow.cube",
+   "id": "warm-skin-glow",
+   "description": "Warm flattering skin, soft highlights, lifted shadows (portraits, interviews)",
+   "tags": [
+    "portrait",
+    "skin",
+    "warm"
+   ],
+   "preview": "previews/warm-skin-glow.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "golden-hour.cube",
+   "id": "golden-hour",
+   "description": "Strong sunset gold, orange highlights, warm shadows",
+   "tags": [
+    "sunset",
+    "warm"
+   ],
+   "preview": "previews/golden-hour.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "moody-desaturated.cube",
+   "id": "moody-desaturated",
+   "description": "Muted colours, deep blacks, cool shadows (drama, serious ads)",
+   "tags": [
+    "drama",
+    "moody"
+   ],
+   "preview": "previews/moody-desaturated.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "moody-green.cube",
+   "id": "moody-green",
+   "description": "Desaturated with green-cyan shadows (thriller)",
+   "tags": [
+    "drama",
+    "moody"
+   ],
+   "preview": "previews/moody-green.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "cold-blue-night.cube",
+   "id": "cold-blue-night",
+   "description": "Blue night look, cool highlights, dark",
+   "tags": [
+    "night"
+   ],
+   "preview": "previews/cold-blue-night.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "neon-night-city.cube",
+   "id": "neon-night-city",
+   "description": "Night city: magenta highlights, cyan shadows, punchy",
+   "tags": [
+    "night"
+   ],
+   "preview": "previews/neon-night-city.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "day-for-night.cube",
+   "id": "day-for-night",
+   "description": "Turns daylight footage into fake night (blue, dark, low saturation)",
+   "tags": [
+    "night"
+   ],
+   "preview": "previews/day-for-night.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "bw-classic.cube",
+   "id": "bw-classic",
+   "description": "Neutral black and white",
+   "tags": [
+    "black",
+    "monochrome",
+    "white"
+   ],
+   "preview": "previews/bw-classic.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "bw-high-contrast.cube",
+   "id": "bw-high-contrast",
+   "description": "Hard black and white, red filter look (dark skies)",
+   "tags": [
+    "black",
+    "monochrome",
+    "white"
+   ],
+   "preview": "previews/bw-high-contrast.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "bw-soft-matte.cube",
+   "id": "bw-soft-matte",
+   "description": "Soft faded black and white (memories, tributes)",
+   "tags": [
+    "black",
+    "monochrome",
+    "white"
+   ],
+   "preview": "previews/bw-soft-matte.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "sepia.cube",
+   "id": "sepia",
+   "description": "Old-photo sepia",
+   "tags": [
+    "old",
+    "vintage"
+   ],
+   "preview": "previews/sepia.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "vintage-70s.cube",
+   "id": "vintage-70s",
+   "description": "Warm faded 70s film, yellow-green mids, lifted blacks",
+   "tags": [
+    "old",
+    "retro"
+   ],
+   "preview": "previews/vintage-70s.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "vintage-matte.cube",
+   "id": "vintage-matte",
+   "description": "Instagram matte: faded blacks, soft contrast",
+   "tags": [
+    "old",
+    "retro"
+   ],
+   "preview": "previews/vintage-matte.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "film-warm-print.cube",
+   "id": "film-warm-print",
+   "description": "Warm print-film style: rich reds, soft shoulder (our own approximation, no brand emulation)",
+   "tags": [
+    "film",
+    "portrait",
+    "skin",
+    "warm"
+   ],
+   "preview": "previews/film-warm-print.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "film-cool-print.cube",
+   "id": "film-cool-print",
+   "description": "Cool print-film style: green-cyan shadows, clean highlights (our own approximation)",
+   "tags": [
+    "film"
+   ],
+   "preview": "previews/film-cool-print.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "bleach-bypass.cube",
+   "id": "bleach-bypass",
+   "description": "Silvery high contrast, low saturation (war, action, grit)",
+   "tags": [
+    "film",
+    "gritty"
+   ],
+   "preview": "previews/bleach-bypass.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "cross-process.cube",
+   "id": "cross-process",
+   "description": "Cross-processed: yellow highlights, blue shadows, strong",
+   "tags": [
+    "film",
+    "retro"
+   ],
+   "preview": "previews/cross-process.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "wedding-pastel.cube",
+   "id": "wedding-pastel",
+   "description": "Soft pastel wedding: lifted blacks, pink-peach highlights, low contrast",
+   "tags": [
+    "event",
+    "wedding"
+   ],
+   "preview": "previews/wedding-pastel.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "wedding-bright-airy.cube",
+   "id": "wedding-bright-airy",
+   "description": "Bright airy wedding/event: +exposure, clean whites, gentle warmth",
+   "tags": [
+    "event",
+    "wedding"
+   ],
+   "preview": "previews/wedding-bright-airy.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "wedding-royal-gold.cube",
+   "id": "wedding-royal-gold",
+   "description": "Rich desi wedding: deep reds and golds, warm contrast",
+   "tags": [
+    "event",
+    "wedding"
+   ],
+   "preview": "previews/wedding-royal-gold.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "pak-reel-punchy.cube",
+   "id": "pak-reel-punchy",
+   "description": "Punchy social reel: strong contrast and colour, slight warmth (shops, food, bikes)",
+   "tags": [
+    "pakistan",
+    "reel",
+    "social"
+   ],
+   "preview": "previews/pak-reel-punchy.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "pak-reel-clean.cube",
+   "id": "pak-reel-clean",
+   "description": "Clean bright reel for products/offices: lifted mids, neutral, crisp",
+   "tags": [
+    "pakistan",
+    "reel",
+    "social"
+   ],
+   "preview": "previews/pak-reel-clean.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "food-vivid.cube",
+   "id": "food-vivid",
+   "description": "Food: warm, saturated reds/oranges, appetising",
+   "tags": [
+    "food",
+    "restaurant"
+   ],
+   "preview": "previews/food-vivid.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "summer-vibrant.cube",
+   "id": "summer-vibrant",
+   "description": "Bright summer: blue skies, green grass, high saturation",
+   "tags": [
+    "bright",
+    "summer"
+   ],
+   "preview": "previews/summer-vibrant.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "autumn-orange.cube",
+   "id": "autumn-orange",
+   "description": "Greens turn olive/orange, warm overall",
+   "tags": [
+    "autumn",
+    "warm"
+   ],
+   "preview": "previews/autumn-orange.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "cyberpunk.cube",
+   "id": "cyberpunk",
+   "description": "Magenta-teal gamer look, crushed blacks",
+   "tags": [
+    "gaming",
+    "neon"
+   ],
+   "preview": "previews/cyberpunk.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "gaming-saturated.cube",
+   "id": "gaming-saturated",
+   "description": "Minecraft / gaming promo: very saturated, bright, crisp",
+   "tags": [
+    "gaming",
+    "minecraft"
+   ],
+   "preview": "previews/gaming-saturated.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "horror-green.cube",
+   "id": "horror-green",
+   "description": "Sickly green desaturated horror",
+   "tags": [
+    "horror"
+   ],
+   "preview": "previews/horror-green.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "dreamy-soft.cube",
+   "id": "dreamy-soft",
+   "description": "Dreamy: lifted, low contrast, warm-pink, slight haze",
+   "tags": [
+    "dreamy",
+    "soft"
+   ],
+   "preview": "previews/dreamy-soft.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  },
+  {
+   "file": "documentary-natural.cube",
+   "id": "documentary-natural",
+   "description": "Subtle: a touch of contrast and vibrance, keeps colours true",
+   "tags": [
+    "natural",
+    "subtle"
+   ],
+   "preview": "previews/documentary-natural.jpg",
+   "size": "33x33x33",
+   "licence": "Own work (made here with library/tools/make_luts.py), no credit needed",
+   "validated": "2026-10-24: ffmpeg lut3d rendered the previews; hyperframes 0.8.188 `media-use resolve --type lut --from <file>` returned ok:true"
+  }
+ ]
+}
