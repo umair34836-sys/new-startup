@@ -26,5 +26,5 @@ Tested 2026-10-24 (HyperFrames 0.8.188), with the example + a test `name_ur` (`Ø
   #000000 12.39. Formula check: white/black = 21.00, #777777/white = 4.48.
 - Snapshot of the last frame (16.005 s) showed the end card column lower than at 15.5 s; the rendered video frames at
   14.0 / 15.5 / 16.4 s are identical in layout, so it is a snapshot-only difference.
-Limits: the sting splits the name per word (safe for any script); long names (> ~18 Anton characters at 1080 wide) wrap to
-two lines, check the snapshot. No audio in the blocks: add a whoosh/pop from the media-use SFX when using them.
+Limits: the sting splits the name per word (safe for any script). Names longer than the 15-character demo name were
+not tested (unverified how they wrap): check the snapshot. No audio in the blocks: add a whoosh/pop from the media-use SFX when using them.

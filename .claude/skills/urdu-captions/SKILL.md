@@ -20,9 +20,10 @@ Findings and sources: `library/research/urdu-captions.md` (read it for the why).
 5. `npx hyperframes check --json`, then `snapshot --at` the middle of every line and LOOK: letters joined, words in
    RTL order, Latin/number runs readable left-to-right, nothing clipped.
 
-Hard rules (all tested):
+Hard rules (tested here 2026-10-24, details and commands in the research note):
 - Animate per WORD (inline-block spans). Never split a word into letter spans: the joins break.
-- Nastaliq `line-height: 2.0` or more, no `overflow: hidden` on the text box; Naskh 1.7; Devanagari 1.5.
+- Nastaliq `line-height: 2.0` or more (pixel-measured), no `overflow: hidden` on the text box; Naskh 1.7 and
+  Devanagari 1.5 looked clean in snapshots (not pixel-measured).
 - Noto Nastaliq needs `word-spacing: 0.25em` or words after د/ر look glued.
 - Consecutive Latin/number words go in ONE `<span dir="ltr">` (two separate spans flip to "1948 UDHR").
   Outside the block, wrap them in `<bdi dir="ltr" style="white-space:nowrap">`.
