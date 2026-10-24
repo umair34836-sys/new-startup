@@ -288,5 +288,75 @@
   "duration": 106,
   "page": "https://opengameart.org/content/medieval-the-old-tower-inn",
   "source_file": "https://opengameart.org/sites/default/files/The_Old_Tower_Inn_1.mp3"
+ },
+ {
+  "file": "desi-eastern--bollywood-groove.mp3",
+  "category": "desi-eastern",
+  "title": "Bollywood Groove",
+  "author": "Kevin MacLeod (FreePD)",
+  "license": "Public domain (FreePD)",
+  "duration": 150,
+  "page": "https://freepd.com",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Bollywood%20Groove.mp3"
+ },
+ {
+  "file": "desi-eastern--breaking-bollywood.mp3",
+  "category": "desi-eastern",
+  "title": "Breaking Bollywood",
+  "author": "Kevin MacLeod (FreePD)",
+  "license": "Public domain (FreePD)",
+  "duration": 225,
+  "page": "https://freepd.com",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Breaking%20Bollywood.mp3"
+ },
+ {
+  "file": "desi-eastern--damal-drumming-lahore.mp3",
+  "category": "desi-eastern",
+  "title": "Damal drumming in Pakistan (Lahore, field recording)",
+  "author": "nickcase",
+  "license": "CC0 1.0",
+  "duration": 149,
+  "page": "https://freesound.org/s/553179/",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freesound.org/553179__nickcase__damal-drumming-in-pakistan.wav"
+ },
+ {
+  "file": "desi-eastern--wedding-ceremony-music.mp3",
+  "category": "desi-eastern",
+  "title": "Hindu wedding ceremony music (field recording)",
+  "author": "bobv2",
+  "license": "CC0 1.0",
+  "duration": 176,
+  "page": "https://freesound.org/s/395024/",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freesound.org/395024__bobv2__hindu_wedding_ceremony_music.mp3"
+ },
+ {
+  "file": "desi-eastern--indian-drums-atmosphere.mp3",
+  "category": "desi-eastern",
+  "title": "Indian Drums Atmosphere",
+  "author": "maurolupo",
+  "license": "CC0 1.0",
+  "duration": 61,
+  "page": "https://freesound.org/s/331466/",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freesound.org/331466__maurolupo__indian-drums-atmosphere.wav"
+ },
+ {
+  "file": "desi-eastern--india-electric-dreams.mp3",
+  "category": "desi-eastern",
+  "title": "India electric dreams",
+  "author": "szegvari",
+  "license": "CC0 1.0",
+  "duration": 54,
+  "page": "https://freesound.org/s/593850/",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freesound.org/593850__szegvari__india-electric-dreams-cinematic-electric-music-east-japan-beat-chill-relax.wav"
+ },
+ {
+  "file": "desi-eastern--men-singing-traditional-song.mp3",
+  "category": "desi-eastern",
+  "title": "Group of men singing a traditional Indian song (field recording)",
+  "author": "florianreichelt",
+  "license": "CC0 1.0",
+  "duration": 81,
+  "page": "https://freesound.org/s/423453/",
+  "source_file": "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freesound.org/423453__florianreichelt__a-group-of-men-singing-one-half-of-a-traditional-indian-song.wav"
  }
 ]

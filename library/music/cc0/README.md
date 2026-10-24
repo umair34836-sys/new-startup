@@ -35,3 +35,19 @@ without credit. Pages that also listed CC BY were skipped. Source pages are kept
 | `desi-eastern--shalibah.mp3` | desi-eastern | 143s | Shalibah | https://opengameart.org/content/shalibah |
 | `piano--cyberpunk-moonlight-sonata.mp3` | piano | 117s | Cyberpunk Moonlight Sonata | https://opengameart.org/content/cyberpunk-moonlight-sonata |
 | `piano--vampires-piano.mp3` | piano | 89s | Vampire's Piano | https://opengameart.org/content/vampires-piano |
+
+## Desi additions (Oct 24 2026, via GitHub mirror SoundSafari/CC0-1.0-Music)
+Downloaded from raw.githubusercontent.com because Freesound blocks this server. Each Freesound licence was checked on
+its own page (read through Agent-Reach): CC0, no credit needed. The two Bollywood tracks are Kevin MacLeod's
+public-domain FreePD releases (freepd.com went offline in 2026; its homepage still calls the music "Public Domain").
+Field recordings (damal, wedding, men singing) are real events with crowd/voices: use as atmosphere, not as a clean song.
+
+| File | Mood | Length | Title | Source |
+|---|---|---|---|---|
+| `desi-eastern--bollywood-groove.mp3` | desi-eastern | 150s | Bollywood Groove | https://freepd.com |
+| `desi-eastern--breaking-bollywood.mp3` | desi-eastern | 225s | Breaking Bollywood | https://freepd.com |
+| `desi-eastern--damal-drumming-lahore.mp3` | desi-eastern | 149s | Damal drumming in Pakistan (Lahore, field recording) | https://freesound.org/s/553179/ |
+| `desi-eastern--wedding-ceremony-music.mp3` | desi-eastern | 176s | Hindu wedding ceremony music (field recording) | https://freesound.org/s/395024/ |
+| `desi-eastern--indian-drums-atmosphere.mp3` | desi-eastern | 61s | Indian Drums Atmosphere | https://freesound.org/s/331466/ |
+| `desi-eastern--india-electric-dreams.mp3` | desi-eastern | 54s | India electric dreams | https://freesound.org/s/593850/ |
+| `desi-eastern--men-singing-traditional-song.mp3` | desi-eastern | 81s | Group of men singing a traditional Indian song (field recording) | https://freesound.org/s/423453/ |

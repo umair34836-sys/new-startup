@@ -21,6 +21,7 @@ All self-made, copyright-free. 72 BPM, 4/4, so one bar = 3.333 s: cut scenes on 
 | File | Notes |
 | --- | --- |
 | `wheel-clicks-13-steps.wav` | 13 soft clicks slowing down over 1 s (a prize wheel landing). Click k is at `1 - sqrt(1 - k/13)` s. |
+| `phone-ring.wav` | 1.2 s desk-phone double ring (400+450 Hz, 20 Hz trill, 0.4 on / 0.2 off / 0.4 on). Made by us with numpy, no credit. Volume ~0.5. |
 
 19 more effects (whoosh, pop, impact-bass, riser, sparkle, ping, glitch, ...) ship inside
 `.claude/skills/media-use/audio/assets/sfx/` with `manifest.json`. Get them into a project with
@@ -48,6 +49,11 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   girl at a chai stall in the rain; lamps light, rain turns gold, umbrella pops on the song's peak). `build.py`
   writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
   `SPEC.md` has every shot. Copy the folder, copy assets (textures, skins, fonts, gsap, song) and edit `build.py`.
+- `phone-clip-reel/build.py`: turns one short phone clip into a 9:16 "Boss mode" reel (Oct 2026 client edit): one shot per
+  bar at 105 BPM, title card at 0 s, zoom-through / whip / light leak / punch-in / flash transitions, slow-mo end with
+  letterbox bars and a check-mark pop, end card on a hero frame, Roman Urdu captions (Plus Jakarta 800 + Anton titles,
+  gold accent words), SFX lanes and the cinematic-muted grade. Needs `assets/clips/c1..c6.mp4` (2.3 s each, 1080x1920)
+  and `hero.jpg`; run `python3 build.py`, then check / snapshot / render.
 
 ## Lyrics (`lyrics/`)
 
@@ -59,6 +65,7 @@ SIL OFL fonts (licences beside them). Load with `@font-face { src: url("assets/f
 
 - `GreatVibes-Regular.ttf`: elegant script for names and romantic titles.
 - `PlayfairDisplay-Italic.ttf`: serif italic for captions.
+- `Anton-Regular.ttf` (+ `Anton-OFL.txt`): tall condensed display font for punchy titles ("BOSS", "PEHCHAAN").
 
 Bundled HyperFrames fonts (Inter, Archivo Black, Space Mono, Playfair Display, ...) need no file.
 
@@ -105,6 +112,8 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 
 Apply with `npx hyperframes media-treatment --project . --file <scene.html> --selector '#<video-id>' --grading '<json>' --apply`.
 
+- Cinematic muted (office/shop phone footage with loud cyan/blue surfaces; tames the cyan, keeps skin warm; client reel):
+  `{"preset":"skin-soft","intensity":0.6,"adjust":{"exposure":-0.04,"contrast":0.18,"highlights":-0.35,"shadows":0.05,"blacks":-0.06,"temperature":0.1,"saturation":-0.22},"details":{"vignette":0.28,"grain":0.06,"grainSize":0.2}}`
 - Romantic glow (indoor phone footage, harsh window light, people):
   `{"preset":"warm-daylight","intensity":0.7,"adjust":{"exposure":0.04,"contrast":0.04,"highlights":-0.25,"shadows":0.2,"whites":-0.1,"temperature":0.12,"tint":0.04,"vibrance":0.08},"details":{"vignette":0.14}}`
 

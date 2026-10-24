@@ -177,6 +177,20 @@ Read this first in every session.
 7. Overlays: `floating_hearts.py`, light leak block, bokeh. Music from `library/music`.
 8. Deliver full quality plus a WhatsApp copy: `ffmpeg -i in.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart out.mp4`.
 
+## Client phone-video edits (Oct 2026, "Boss mode" reel; template library/templates/phone-clip-reel)
+- WhatsApp clips can report r_frame_rate 28.4 while really being ~12 fps (134 frames in 11 s). Check frame pts
+  (`ffprobe -show_entries frame=pts_time`) and motion-interpolate EVERY clip to 30 fps (minterpolate ...:scd=none),
+  not only the slow-mo ones, or 1x shots look choppy.
+- A clip with no usable speech (Whisper finds nothing) becomes a music reel: title at 0 s, one shot per bar, varied
+  transitions, Roman Urdu attitude lines that claim nothing specific about the client's business.
+- Mix levels that worked: music 1.0, impact-bass 0.35-0.4, whoosh 0.6-0.8, ring 0.5. At 0.8-0.9 the impacts were
+  8 dB over the music for 2 s. Measure the render per 0.5 s (numpy RMS) and `ebur128` (target about -16 LUFS).
+- HyperFrames lint: don't tween letterSpacing (use scaleX); GSAP "rough" ease is not in core GSAP (use a yoyo shake).
+  An <img> over 2 MB isn't inlined: use JPG. A scene's <img>/<video> data-duration must equal the scene length.
+- Pausing a harness background job with kill -STOP makes the harness mark it failed and kill it. Don't pause; queue
+  heavy jobs. music_pack.py skips finished tracks, so a restart only redoes the unfinished ones.
+- Pashto touch for Pashto-speaking clients: "Manana" = thank you (safe, well known). Captions stay Roman Urdu.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
