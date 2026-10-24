@@ -22,6 +22,12 @@ and this repo is public. Freesound (freesound.org, cdn.freesound.org) and Pixaba
 file's peak), cap long ambiences (max per file noted as `trimmed_to_max`, 0.4 s fade-out), peak-normalise to -1 dBFS, encode mp3,
 then measure: `length_s`, `hit_s` (centre of the loudest 10 ms RMS window = where the sound hits; line an effect up so
 `hit_s` lands on the cut) and `rms_dbfs` (average level; quiet ambiences need more volume than clicks).
+Cross-check (2026-10-24): `npx hyperframes audio <file> --json` (hyperframes 0.8.188) was run on all 164 files; its
+`moments.onset`, `moments.peak` and `moments.tailEnd` are stored as `hf_onset_s`, `hf_peak_s`, `hf_tail_end_s`.
+For 142 files `hit_s` and `hf_peak_s` agree within 50 ms; the 22 that differ are sounds with several events
+(ambiences, typing, door open+close, fireworks loop, engine hum), where "the hit" depends on the use.
+Own effects whose name carries a length (`riser-4s`, `whoosh-long-1.2s`) are shorter after the silence trim
+(the quiet start is cut): `riser-2s` 1.73 s, `riser-4s` 3.45 s, `riser-8s` 6.85 s; each still ends on its peak.
 
 Claude cannot listen: descriptions come from the source's file/folder names. The `*-202-*` files come from folders of the
 "202 More Sound Effects" pack (named Money, Phone, Drink, Camera); their exact content was not checked by ear.

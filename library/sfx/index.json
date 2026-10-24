@@ -1,5 +1,5 @@
 {
- "notes": "Every file needs NO credit: CC0 1.0 (Kenney packs, OpenGameArt pages whose licence field lists ONLY CC0) or own work made with library/tools/synth_sfx.py. hit_s/length_s are measured, not guessed. Descriptions come from the source file/folder names; files were not listened to (Claude cannot listen).",
+ "notes": "Every file needs NO credit: CC0 1.0 (Kenney packs, OpenGameArt pages whose licence field lists ONLY CC0) or own work made with library/tools/synth_sfx.py. hit_s/length_s are measured, not guessed. Descriptions come from the source file/folder names; files were not listened to (Claude cannot listen). hf_* fields: hyperframes 0.8.188 audio moments, measured 2026-10-24.",
  "count": 164,
  "files": [
   {
@@ -23,7 +23,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "click_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.018
   },
   {
    "file": "ui/click-2.mp3",
@@ -46,7 +49,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "click_003.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.007
   },
   {
    "file": "ui/select-1.mp3",
@@ -69,7 +75,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "select_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.033
   },
   {
    "file": "ui/confirm-1.mp3",
@@ -92,7 +101,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "confirmation_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.282
   },
   {
    "file": "ui/ui-error-1.mp3",
@@ -115,7 +127,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "error_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.146
   },
   {
    "file": "ui/toggle.mp3",
@@ -138,7 +153,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "toggle_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.004,
+   "hf_tail_end_s": 0.097
   },
   {
    "file": "ui/switch.mp3",
@@ -161,7 +179,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "switch_002.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.133
   },
   {
    "file": "ui/ui-open.mp3",
@@ -184,7 +205,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "open_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.02,
+   "hf_peak_s": 0.133,
+   "hf_tail_end_s": 0.147
   },
   {
    "file": "ui/ui-close.mp3",
@@ -207,7 +231,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "close_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.143
   },
   {
    "file": "ui/drop.mp3",
@@ -230,7 +257,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "drop_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.056
   },
   {
    "file": "ui/pluck.mp3",
@@ -253,7 +283,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "pluck_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.078
   },
   {
    "file": "ui/tick.mp3",
@@ -276,7 +309,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "tick_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.01
   },
   {
    "file": "ui/maximize.mp3",
@@ -299,7 +335,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "maximize_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.053,
+   "hf_peak_s": 0.245,
+   "hf_tail_end_s": 0.258
   },
   {
    "file": "ui/minimize.mp3",
@@ -322,7 +361,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "minimize_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.252
   },
   {
    "file": "ui/glass-tap.mp3",
@@ -345,7 +387,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "glass_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.188
   },
   {
    "file": "glitch/ui-glitch-1.mp3",
@@ -368,7 +413,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "glitch_001.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.017
   },
   {
    "file": "glitch/ui-glitch-2.mp3",
@@ -391,7 +439,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "glitch_003.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.011
   },
   {
    "file": "ui/rollover.mp3",
@@ -413,7 +464,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "rollover1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.058,
+   "hf_peak_s": 0.061,
+   "hf_tail_end_s": 0.177
   },
   {
    "file": "ui/mouse-click.mp3",
@@ -437,7 +491,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "mouseclick1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.013,
+   "hf_peak_s": 0.016,
+   "hf_tail_end_s": 0.051
   },
   {
    "file": "impact/punch-heavy.mp3",
@@ -460,7 +517,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactPunch_heavy_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.022,
+   "hf_peak_s": 0.035,
+   "hf_tail_end_s": 0.433
   },
   {
    "file": "impact/punch-medium.mp3",
@@ -483,7 +543,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactPunch_medium_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.01,
+   "hf_peak_s": 0.031,
+   "hf_tail_end_s": 0.228
   },
   {
    "file": "impact/metal-hit.mp3",
@@ -506,7 +569,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactMetal_heavy_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.001,
+   "hf_tail_end_s": 0.16
   },
   {
    "file": "impact/wood-hit.mp3",
@@ -529,7 +595,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactWood_heavy_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.299
   },
   {
    "file": "impact/glass-hit.mp3",
@@ -552,7 +621,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactGlass_heavy_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.232
   },
   {
    "file": "impact/bell-hit.mp3",
@@ -575,7 +647,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactBell_heavy_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.992
   },
   {
    "file": "impact/soft-thud.mp3",
@@ -598,7 +673,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactSoft_heavy_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.004,
+   "hf_tail_end_s": 0.412
   },
   {
    "file": "impact/pickaxe-hit.mp3",
@@ -621,7 +699,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "impactMining_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.013,
+   "hf_tail_end_s": 0.547
   },
   {
    "file": "foley/footstep-concrete.mp3",
@@ -644,7 +725,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "footstep_concrete_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.097
   },
   {
    "file": "foley/footstep-grass.mp3",
@@ -667,7 +751,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "footstep_grass_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.075
   },
   {
    "file": "foley/footstep-wood.mp3",
@@ -690,7 +777,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "footstep_wood_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.001,
+   "hf_tail_end_s": 0.249
   },
   {
    "file": "money/coins-stack.mp3",
@@ -714,7 +804,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "chips-stack-1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.008,
+   "hf_peak_s": 0.018,
+   "hf_tail_end_s": 0.102
   },
   {
    "file": "money/coins-handle.mp3",
@@ -737,7 +830,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "chips-handle-1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.078,
+   "hf_tail_end_s": 0.379
   },
   {
    "file": "foley/card-shuffle.mp3",
@@ -759,7 +855,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "card-shuffle.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.202,
+   "hf_peak_s": 0.258,
+   "hf_tail_end_s": 3.052
   },
   {
    "file": "money/coins-jingle-1.mp3",
@@ -782,7 +881,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "handleCoins.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.102,
+   "hf_peak_s": 0.108,
+   "hf_tail_end_s": 0.698
   },
   {
    "file": "door/door-open-wood.mp3",
@@ -804,7 +906,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "doorOpen_1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.056,
+   "hf_peak_s": 0.199,
+   "hf_tail_end_s": 0.873
   },
   {
    "file": "door/door-close-wood.mp3",
@@ -826,7 +931,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "doorClose_1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.013,
+   "hf_peak_s": 0.205,
+   "hf_tail_end_s": 0.431
   },
   {
    "file": "door/creak.mp3",
@@ -849,7 +957,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "creak1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.122,
+   "hf_peak_s": 0.375,
+   "hf_tail_end_s": 0.57
   },
   {
    "file": "foley/page-flip.mp3",
@@ -873,7 +984,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "bookFlip1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.52,
+   "hf_peak_s": 0.523,
+   "hf_tail_end_s": 0.618
   },
   {
    "file": "foley/book-open.mp3",
@@ -895,7 +1009,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "bookOpen.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.018,
+   "hf_peak_s": 0.062,
+   "hf_tail_end_s": 0.135
   },
   {
    "file": "foley/cloth.mp3",
@@ -917,7 +1034,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "cloth1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.082,
+   "hf_peak_s": 0.204,
+   "hf_tail_end_s": 0.539
   },
   {
    "file": "foley/knife-slice.mp3",
@@ -941,7 +1061,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "knifeSlice.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.006,
+   "hf_peak_s": 0.162,
+   "hf_tail_end_s": 0.343
   },
   {
    "file": "game/sword-draw.mp3",
@@ -964,7 +1087,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "drawKnife1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.09,
+   "hf_peak_s": 0.174,
+   "hf_tail_end_s": 0.372
   },
   {
    "file": "door/latch.mp3",
@@ -987,7 +1113,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "metalLatch.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.034,
+   "hf_peak_s": 0.038,
+   "hf_tail_end_s": 0.154
   },
   {
    "file": "game/digital-powerup-1.mp3",
@@ -1011,7 +1140,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "powerUp1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.014,
+   "hf_tail_end_s": 0.957
   },
   {
    "file": "game/laser-1.mp3",
@@ -1035,7 +1167,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "laser1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.008,
+   "hf_peak_s": 0.204,
+   "hf_tail_end_s": 0.765
   },
   {
    "file": "game/phaser-up.mp3",
@@ -1059,7 +1194,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "phaserUp1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.006,
+   "hf_peak_s": 0.075,
+   "hf_tail_end_s": 0.393
   },
   {
    "file": "game/phaser-down.mp3",
@@ -1083,7 +1221,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "phaserDown1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.104,
+   "hf_tail_end_s": 0.353
   },
   {
    "file": "game/zap.mp3",
@@ -1107,7 +1248,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "zap1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.018,
+   "hf_tail_end_s": 0.897
   },
   {
    "file": "game/blip-up.mp3",
@@ -1131,7 +1275,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "highUp.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.052,
+   "hf_tail_end_s": 0.365
   },
   {
    "file": "game/blip-down.mp3",
@@ -1155,7 +1302,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "lowDown.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.262,
+   "hf_tail_end_s": 0.567
   },
   {
    "file": "scifi/explosion-crunch.mp3",
@@ -1178,7 +1328,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "explosionCrunch_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.75
   },
   {
    "file": "scifi/explosion-low.mp3",
@@ -1201,7 +1354,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "lowFrequency_explosion_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.076,
+   "hf_peak_s": 0.226,
+   "hf_tail_end_s": 1.353
   },
   {
    "file": "scifi/laser-big.mp3",
@@ -1224,7 +1380,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "laserLarge_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.427
   },
   {
    "file": "scifi/force-field.mp3",
@@ -1247,7 +1406,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "forceField_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.032,
+   "hf_peak_s": 0.13,
+   "hf_tail_end_s": 0.677
   },
   {
    "file": "scifi/computer-noise.mp3",
@@ -1270,7 +1432,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "computerNoise_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 2.169,
+   "hf_tail_end_s": 4.999
   },
   {
    "file": "scifi/scifi-door.mp3",
@@ -1293,7 +1458,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "doorOpen_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.515
   },
   {
    "file": "scifi/thruster.mp3",
@@ -1316,7 +1484,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "thrusterFire_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.004,
+   "hf_peak_s": 1.137,
+   "hf_tail_end_s": 4.999
   },
   {
    "file": "scifi/engine-hum.mp3",
@@ -1339,7 +1510,10 @@
    "author": "Kenney (kenney.nl)",
    "original_file": "spaceEngine_000.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 1.107,
+   "hf_tail_end_s": 4.999
   },
   {
    "file": "transition/swish-1.mp3",
@@ -1363,7 +1537,10 @@
    "author": "artisticdude (OpenGameArt)",
    "original_file": "swish-1.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.015,
+   "hf_peak_s": 0.043,
+   "hf_tail_end_s": 0.099
   },
   {
    "file": "transition/swish-4.mp3",
@@ -1387,7 +1564,10 @@
    "author": "artisticdude (OpenGameArt)",
    "original_file": "swish-4.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.021,
+   "hf_peak_s": 0.047,
+   "hf_tail_end_s": 0.099
   },
   {
    "file": "transition/swish-7.mp3",
@@ -1411,7 +1591,10 @@
    "author": "artisticdude (OpenGameArt)",
    "original_file": "swish-7.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.017,
+   "hf_peak_s": 0.047,
+   "hf_tail_end_s": 0.122
   },
   {
    "file": "transition/air-whoosh.mp3",
@@ -1433,7 +1616,10 @@
    "author": "pyranostudios (OpenGameArt)",
    "original_file": "whoosh2_0.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 2.386,
+   "hf_tail_end_s": 5.246
   },
   {
    "file": "ambience/wind-loop.mp3",
@@ -1456,7 +1642,10 @@
    "author": "sketchman3 (OpenGameArt)",
    "original_file": "wind_woosh_loop.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 2.812,
+   "hf_tail_end_s": 5.959
   },
   {
    "file": "crowd/applause-hall.mp3",
@@ -1481,7 +1670,10 @@
    "author": "expl0it3r (OpenGameArt)",
    "original_file": "applause-clapping-church-crowd-immersive.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.512,
+   "hf_peak_s": 6.792,
+   "hf_tail_end_s": 11.981
   },
   {
    "file": "crowd/crowd-shouting.mp3",
@@ -1505,7 +1697,10 @@
    "author": "starninjas (OpenGameArt)",
    "original_file": "crowd_shouting.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.167,
+   "hf_peak_s": 4.647,
+   "hf_tail_end_s": 11.993
   },
   {
    "file": "weather/rain-1.mp3",
@@ -1528,7 +1723,10 @@
    "author": "ylmir (OpenGameArt)",
    "original_file": "1.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.07,
+   "hf_peak_s": 7.359,
+   "hf_tail_end_s": 14.989
   },
   {
    "file": "weather/rain-2.mp3",
@@ -1551,7 +1749,10 @@
    "author": "kresiek-the-furry (OpenGameArt)",
    "original_file": "amb_rain_loop_1.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.108,
+   "hf_peak_s": 2.773,
+   "hf_tail_end_s": 14.982
   },
   {
    "file": "weather/rain-thunder.mp3",
@@ -1575,7 +1776,10 @@
    "author": "wuxiascrub (OpenGameArt)",
    "original_file": "rain-thunder.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.091,
+   "hf_peak_s": 6.73,
+   "hf_tail_end_s": 19.989
   },
   {
    "file": "fire/fire-crackle.mp3",
@@ -1598,7 +1802,10 @@
    "author": "antumdeluge (OpenGameArt)",
    "original_file": "fire-1.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.102,
+   "hf_peak_s": 0.801,
+   "hf_tail_end_s": 2.87
   },
   {
    "file": "fire/fireplace.mp3",
@@ -1621,7 +1828,10 @@
    "author": "pagdev (OpenGameArt)",
    "original_file": "fire.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.107,
+   "hf_peak_s": 11.637,
+   "hf_tail_end_s": 14.982
   },
   {
    "file": "celebration/firework-1.mp3",
@@ -1645,7 +1855,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "fw_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.023,
+   "hf_peak_s": 0.073,
+   "hf_tail_end_s": 0.782
   },
   {
    "file": "celebration/firework-2.mp3",
@@ -1669,7 +1882,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "fw_03.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.004,
+   "hf_peak_s": 0.007,
+   "hf_tail_end_s": 1.037
   },
   {
    "file": "celebration/fireworks-loop.mp3",
@@ -1693,7 +1909,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "fw_loop.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.535,
+   "hf_peak_s": 0.549,
+   "hf_tail_end_s": 11.902
   },
   {
    "file": "impact/bang.mp3",
@@ -1717,7 +1936,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "bang_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.009,
+   "hf_peak_s": 0.06,
+   "hf_tail_end_s": 0.752
   },
   {
    "file": "impact/cannon.mp3",
@@ -1741,7 +1963,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "cannon_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.081,
+   "hf_peak_s": 0.084,
+   "hf_tail_end_s": 0.79
   },
   {
    "file": "camera/camera-shutter-1.mp3",
@@ -1765,7 +1990,10 @@
    "author": "themightyglider (OpenGameArt)",
    "original_file": "photo.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.132,
+   "hf_peak_s": 0.137,
+   "hf_tail_end_s": 0.875
   },
   {
    "file": "camera/camera-shutter-2.mp3",
@@ -1789,7 +2017,10 @@
    "author": "facadegaikan (OpenGameArt)",
    "original_file": "camera.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.049,
+   "hf_tail_end_s": 0.534
   },
   {
    "file": "typing/typing-keyboard-medium.mp3",
@@ -1813,7 +2044,10 @@
    "author": "unicaegames (OpenGameArt)",
    "original_file": "generated-004_medium.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.074,
+   "hf_peak_s": 2.15,
+   "hf_tail_end_s": 5.859
   },
   {
    "file": "typing/typing-keyboard-fast.mp3",
@@ -1837,7 +2071,10 @@
    "author": "unicaegames (OpenGameArt)",
    "original_file": "generated-005_fast.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.192,
+   "hf_peak_s": 5.838,
+   "hf_tail_end_s": 7.96
   },
   {
    "file": "typing/keypress.mp3",
@@ -1860,7 +2097,10 @@
    "author": "unicaegames (OpenGameArt)",
    "original_file": "keypress-001.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.036,
+   "hf_peak_s": 0.039,
+   "hf_tail_end_s": 0.235
   },
   {
    "file": "typing/typewriter-1.mp3",
@@ -1883,7 +2123,10 @@
    "author": "cassie-orbitgames (OpenGameArt)",
    "original_file": "typewriter1.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.06,
+   "hf_peak_s": 0.099,
+   "hf_tail_end_s": 0.635
   },
   {
    "file": "vehicle/car-engine-start.mp3",
@@ -1906,7 +2149,10 @@
    "author": "looneybits (OpenGameArt)",
    "original_file": "generic_car_startengine.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.097,
+   "hf_peak_s": 0.945,
+   "hf_tail_end_s": 1.646
   },
   {
    "file": "vehicle/car-accelerate.mp3",
@@ -1929,7 +2175,10 @@
    "author": "mikeask (OpenGameArt)",
    "original_file": "car_acceleration.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.055,
+   "hf_peak_s": 0.691,
+   "hf_tail_end_s": 4.243
   },
   {
    "file": "vehicle/car-door-open.mp3",
@@ -1952,7 +2201,10 @@
    "author": "looneybits (OpenGameArt)",
    "original_file": "door_opening.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.156,
+   "hf_peak_s": 0.172,
+   "hf_tail_end_s": 0.979
   },
   {
    "file": "vehicle/car-door-close.mp3",
@@ -1975,7 +2227,10 @@
    "author": "looneybits (OpenGameArt)",
    "original_file": "door_closing.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.095,
+   "hf_peak_s": 0.147,
+   "hf_tail_end_s": 0.367
   },
   {
    "file": "vehicle/car-blinker.mp3",
@@ -1998,7 +2253,10 @@
    "author": "looneybits (OpenGameArt)",
    "original_file": "blinker01.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.003,
+   "hf_peak_s": 0.006,
+   "hf_tail_end_s": 0.375
   },
   {
    "file": "door/door-open-close.mp3",
@@ -2020,7 +2278,10 @@
    "author": "qubodup (OpenGameArt)",
    "original_file": "montageAudio-20120408_130003.mp3",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.01,
+   "hf_peak_s": 4.376,
+   "hf_tail_end_s": 6.173
   },
   {
    "file": "door/doorbell.mp3",
@@ -2044,7 +2305,10 @@
    "author": "qubodup (OpenGameArt)",
    "original_file": "doorbell-old-tring.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.018,
+   "hf_peak_s": 0.213,
+   "hf_tail_end_s": 2.911
   },
   {
    "file": "impact/explosion-1.mp3",
@@ -2067,7 +2331,10 @@
    "author": "tinyworlds (OpenGameArt)",
    "original_file": "explosion.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.031,
+   "hf_tail_end_s": 0.964
   },
   {
    "file": "phone/ringtone-chirp.mp3",
@@ -2091,7 +2358,10 @@
    "author": "zane-little-music (OpenGameArt)",
    "original_file": "chirptone.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.002,
+   "hf_peak_s": 1.038,
+   "hf_tail_end_s": 2.002
   },
   {
    "file": "notification/alert.mp3",
@@ -2114,7 +2384,10 @@
    "author": "frosty-ham (OpenGameArt)",
    "original_file": "alert.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.158,
+   "hf_tail_end_s": 0.895
   },
   {
    "file": "notification/ding-real.mp3",
@@ -2137,7 +2410,10 @@
    "author": "robin-lamb (OpenGameArt)",
    "original_file": "Ding.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.004,
+   "hf_tail_end_s": 0.441
   },
   {
    "file": "notification/chimes.mp3",
@@ -2160,7 +2436,10 @@
    "author": "robin-lamb (OpenGameArt)",
    "original_file": "chimes.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.003,
+   "hf_peak_s": 0.185,
+   "hf_tail_end_s": 1.845
   },
   {
    "file": "notification/ding-deep.mp3",
@@ -2183,7 +2462,10 @@
    "author": "robin-lamb (OpenGameArt)",
    "original_file": "ding_deep.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 0.018,
+   "hf_tail_end_s": 1.22
   },
   {
    "file": "notification/negative.mp3",
@@ -2206,7 +2488,10 @@
    "author": "robin-lamb (OpenGameArt)",
    "original_file": "negative_sound.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 0.03,
+   "hf_tail_end_s": 0.986
   },
   {
    "file": "notification/alarm.mp3",
@@ -2229,7 +2514,10 @@
    "author": "robin-lamb (OpenGameArt)",
    "original_file": "alarm.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.041,
+   "hf_peak_s": 0.132,
+   "hf_tail_end_s": 0.422
   },
   {
    "file": "notification/bell-small.mp3",
@@ -2251,7 +2539,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "bell_02.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.017,
+   "hf_peak_s": 0.02,
+   "hf_tail_end_s": 0.384
   },
   {
    "file": "foley/paper.mp3",
@@ -2274,7 +2565,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "paper_03.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.028,
+   "hf_peak_s": 0.344,
+   "hf_tail_end_s": 0.517
   },
   {
    "file": "water/splash.mp3",
@@ -2297,7 +2591,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "splash_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.007,
+   "hf_peak_s": 0.018,
+   "hf_tail_end_s": 0.539
   },
   {
    "file": "pop/plop.mp3",
@@ -2319,7 +2616,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "plop_02.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.073,
+   "hf_peak_s": 0.076,
+   "hf_tail_end_s": 0.156
   },
   {
    "file": "ambience/traffic-highway.mp3",
@@ -2344,7 +2644,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "sfx100v2_loop_highway.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 2.306,
+   "hf_peak_s": 2.994,
+   "hf_tail_end_s": 11.964
   },
   {
    "file": "game/retro-coin.mp3",
@@ -2368,7 +2671,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "retro_coin_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.006,
+   "hf_peak_s": 0.014,
+   "hf_tail_end_s": 0.239
   },
   {
    "file": "game/retro-powerup.mp3",
@@ -2392,7 +2698,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "power_up_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 0.022,
+   "hf_tail_end_s": 0.436
   },
   {
    "file": "game/retro-explosion.mp3",
@@ -2416,7 +2725,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "retro_explosion_01.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.021,
+   "hf_peak_s": 0.119,
+   "hf_tail_end_s": 0.853
   },
   {
    "file": "game/synth-beep.mp3",
@@ -2440,7 +2752,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "synth_beep_02.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.006,
+   "hf_peak_s": 0.018,
+   "hf_tail_end_s": 0.146
   },
   {
    "file": "game/retro-die.mp3",
@@ -2464,7 +2779,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "retro_die_03.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 0.011,
+   "hf_tail_end_s": 0.476
   },
   {
    "file": "foley/water-boiling.mp3",
@@ -2489,7 +2807,10 @@
    "author": "rubberduck (OpenGameArt)",
    "original_file": "water_boiling.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.148,
+   "hf_tail_end_s": 4.491
   },
   {
    "file": "ambience/birds-park.mp3",
@@ -2513,7 +2834,10 @@
    "author": "thimras (OpenGameArt)",
    "original_file": "park_ambience_birds.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.099,
+   "hf_peak_s": 0.983,
+   "hf_tail_end_s": 19.979
   },
   {
    "file": "ambience/river.mp3",
@@ -2537,7 +2861,10 @@
    "author": "thimras (OpenGameArt)",
    "original_file": "park_ambience_river.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.052,
+   "hf_peak_s": 5.249,
+   "hf_tail_end_s": 19.993
   },
   {
    "file": "notification/kalimba.mp3",
@@ -2560,7 +2887,10 @@
    "author": "railkill (OpenGameArt)",
    "original_file": "kalimba.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.004,
+   "hf_peak_s": 0.162,
+   "hf_tail_end_s": 0.623
   },
   {
    "file": "sting/mystery-sting.mp3",
@@ -2583,7 +2913,10 @@
    "author": "railkill (OpenGameArt)",
    "original_file": "mystery_sting.ogg",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.261,
+   "hf_peak_s": 1.055,
+   "hf_tail_end_s": 4.938
   },
   {
    "file": "money/money-202-a.mp3",
@@ -2606,7 +2939,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Money/Money_01.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.389,
+   "hf_peak_s": 0.497,
+   "hf_tail_end_s": 0.727
   },
   {
    "file": "money/money-202-b.mp3",
@@ -2629,7 +2965,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Money/Money_10.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.004,
+   "hf_peak_s": 0.104,
+   "hf_tail_end_s": 0.37
   },
   {
    "file": "money/money-202-c.mp3",
@@ -2652,7 +2991,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Money/Money_20.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.217,
+   "hf_peak_s": 0.253,
+   "hf_tail_end_s": 0.424
   },
   {
    "file": "phone/phone-202-a.mp3",
@@ -2674,7 +3016,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Phone/Phone1.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.02,
+   "hf_peak_s": 0.301,
+   "hf_tail_end_s": 1.11
   },
   {
    "file": "phone/phone-202-b.mp3",
@@ -2696,7 +3041,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Phone/Phone2.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.027,
+   "hf_peak_s": 0.033,
+   "hf_tail_end_s": 0.142
   },
   {
    "file": "foley/drink-202.mp3",
@@ -2720,7 +3068,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Drink/Drink_01.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.053,
+   "hf_peak_s": 0.21,
+   "hf_tail_end_s": 0.442
   },
   {
    "file": "camera/camera-202.mp3",
@@ -2742,7 +3093,10 @@
    "author": "owlishmedia (OpenGameArt)",
    "original_file": "Camera/Camera_01.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.094,
+   "hf_peak_s": 0.245,
+   "hf_tail_end_s": 0.387
   },
   {
    "file": "transition/whoosh-up-0.6s.mp3",
@@ -2764,7 +3118,10 @@
    "author": "made here",
    "original_file": "whoosh-up-0.6s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.149,
+   "hf_peak_s": 0.321,
+   "hf_tail_end_s": 0.57
   },
   {
    "file": "transition/whoosh-down-0.6s.mp3",
@@ -2786,7 +3143,10 @@
    "author": "made here",
    "original_file": "whoosh-down-0.6s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.15,
+   "hf_peak_s": 0.322,
+   "hf_tail_end_s": 0.593
   },
   {
    "file": "transition/whoosh-fast-0.3s.mp3",
@@ -2808,7 +3168,10 @@
    "author": "made here",
    "original_file": "whoosh-fast-0.3s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.061,
+   "hf_peak_s": 0.168,
+   "hf_tail_end_s": 0.299
   },
   {
    "file": "transition/whoosh-long-1.2s.mp3",
@@ -2830,7 +3193,10 @@
    "author": "made here",
    "original_file": "whoosh-long-1.2s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.299,
+   "hf_peak_s": 0.659,
+   "hf_tail_end_s": 1.071
   },
   {
    "file": "transition/whoosh-heavy-0.8s.mp3",
@@ -2852,7 +3218,10 @@
    "author": "made here",
    "original_file": "whoosh-heavy-0.8s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.151,
+   "hf_peak_s": 0.454,
+   "hf_tail_end_s": 0.789
   },
   {
    "file": "transition/swipe-short.mp3",
@@ -2874,7 +3243,10 @@
    "author": "made here",
    "original_file": "swipe-short.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.035,
+   "hf_peak_s": 0.127,
+   "hf_tail_end_s": 0.217
   },
   {
    "file": "transition/swipe-long.mp3",
@@ -2896,7 +3268,10 @@
    "author": "made here",
    "original_file": "swipe-long.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.062,
+   "hf_peak_s": 0.202,
+   "hf_tail_end_s": 0.388
   },
   {
    "file": "riser/riser-2s.mp3",
@@ -2918,7 +3293,10 @@
    "author": "made here",
    "original_file": "riser-2s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.778,
+   "hf_peak_s": 1.713,
+   "hf_tail_end_s": 1.726
   },
   {
    "file": "riser/riser-4s.mp3",
@@ -2940,7 +3318,10 @@
    "author": "made here",
    "original_file": "riser-4s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 1.568,
+   "hf_peak_s": 3.415,
+   "hf_tail_end_s": 3.447
   },
   {
    "file": "riser/riser-8s.mp3",
@@ -2962,7 +3343,10 @@
    "author": "made here",
    "original_file": "riser-8s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 2.814,
+   "hf_peak_s": 6.831,
+   "hf_tail_end_s": 6.853
   },
   {
    "file": "riser/downlifter-2s.mp3",
@@ -2984,7 +3368,10 @@
    "author": "made here",
    "original_file": "downlifter-2s.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.008,
+   "hf_tail_end_s": 1.994
   },
   {
    "file": "impact/impact-boom.mp3",
@@ -3006,7 +3393,10 @@
    "author": "made here",
    "original_file": "impact-boom.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.027,
+   "hf_tail_end_s": 2.48
   },
   {
    "file": "impact/impact-punch.mp3",
@@ -3028,7 +3418,10 @@
    "author": "made here",
    "original_file": "impact-punch.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.077,
+   "hf_tail_end_s": 0.998
   },
   {
    "file": "impact/sub-drop.mp3",
@@ -3050,7 +3443,10 @@
    "author": "made here",
    "original_file": "sub-drop.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.014,
+   "hf_tail_end_s": 1.753
   },
   {
    "file": "glitch/glitch-short.mp3",
@@ -3072,7 +3468,10 @@
    "author": "made here",
    "original_file": "glitch-short.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.282,
+   "hf_tail_end_s": 0.299
   },
   {
    "file": "glitch/glitch-medium.mp3",
@@ -3094,7 +3493,10 @@
    "author": "made here",
    "original_file": "glitch-medium.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.383,
+   "hf_tail_end_s": 0.599
   },
   {
    "file": "glitch/glitch-long.mp3",
@@ -3116,7 +3518,10 @@
    "author": "made here",
    "original_file": "glitch-long.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 0.133,
+   "hf_tail_end_s": 1.166
   },
   {
    "file": "glitch/static-noise.mp3",
@@ -3138,7 +3543,10 @@
    "author": "made here",
    "original_file": "static-noise.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.002,
+   "hf_peak_s": 0.442,
+   "hf_tail_end_s": 0.998
   },
   {
    "file": "transition/tape-stop.mp3",
@@ -3160,7 +3568,10 @@
    "author": "made here",
    "original_file": "tape-stop.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.952,
+   "hf_tail_end_s": 0.999
   },
   {
    "file": "transition/record-scratch.mp3",
@@ -3182,7 +3593,10 @@
    "author": "made here",
    "original_file": "record-scratch.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.03,
+   "hf_peak_s": 0.124,
+   "hf_tail_end_s": 0.347
   },
   {
    "file": "pop/pop-high.mp3",
@@ -3204,7 +3618,10 @@
    "author": "made here",
    "original_file": "pop-high.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.09
   },
   {
    "file": "pop/pop-low.mp3",
@@ -3226,7 +3643,10 @@
    "author": "made here",
    "original_file": "pop-low.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.129
   },
   {
    "file": "pop/bubble-pop.mp3",
@@ -3248,7 +3668,10 @@
    "author": "made here",
    "original_file": "bubble-pop.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.023,
+   "hf_peak_s": 0.076,
+   "hf_tail_end_s": 0.144
   },
   {
    "file": "notification/ding.mp3",
@@ -3270,7 +3693,10 @@
    "author": "made here",
    "original_file": "ding.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.004,
+   "hf_tail_end_s": 1.599
   },
   {
    "file": "notification/notification-two-tone.mp3",
@@ -3292,7 +3718,10 @@
    "author": "made here",
    "original_file": "notification-two-tone.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.134,
+   "hf_tail_end_s": 0.881
   },
   {
    "file": "notification/success-chime.mp3",
@@ -3314,7 +3743,10 @@
    "author": "made here",
    "original_file": "success-chime.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.215,
+   "hf_tail_end_s": 1.271
   },
   {
    "file": "notification/error-buzz.mp3",
@@ -3336,7 +3768,10 @@
    "author": "made here",
    "original_file": "error-buzz.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.144,
+   "hf_tail_end_s": 0.433
   },
   {
    "file": "phone/phone-vibrate.mp3",
@@ -3358,7 +3793,10 @@
    "author": "made here",
    "original_file": "phone-vibrate.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.706,
+   "hf_tail_end_s": 1.061
   },
   {
    "file": "money/cash-register.mp3",
@@ -3380,7 +3818,10 @@
    "author": "made here",
    "original_file": "cash-register.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 1.461
   },
   {
    "file": "camera/camera-shutter-synth.mp3",
@@ -3402,7 +3843,10 @@
    "author": "made here",
    "original_file": "camera-shutter-synth.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.134
   },
   {
    "file": "ui/clock-tick-tock.mp3",
@@ -3424,7 +3868,10 @@
    "author": "made here",
    "original_file": "clock-tick-tock.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 1.502,
+   "hf_tail_end_s": 1.523
   },
   {
    "file": "ui/countdown-beeps.mp3",
@@ -3446,7 +3893,10 @@
    "author": "made here",
    "original_file": "countdown-beeps.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.075,
+   "hf_tail_end_s": 3.601
   },
   {
    "file": "impact/heartbeat.mp3",
@@ -3468,7 +3918,10 @@
    "author": "made here",
    "original_file": "heartbeat.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.004,
+   "hf_tail_end_s": 1.251
   },
   {
    "file": "typing/typing-synth.mp3",
@@ -3490,7 +3943,10 @@
    "author": "made here",
    "original_file": "typing-synth.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.66,
+   "hf_tail_end_s": 1.443
   },
   {
    "file": "game/game-coin.mp3",
@@ -3512,7 +3968,10 @@
    "author": "made here",
    "original_file": "game-coin.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.007,
+   "hf_tail_end_s": 0.317
   },
   {
    "file": "game/game-jump.mp3",
@@ -3534,7 +3993,10 @@
    "author": "made here",
    "original_file": "game-jump.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.004,
+   "hf_tail_end_s": 0.245
   },
   {
    "file": "game/game-powerup.mp3",
@@ -3556,7 +4018,10 @@
    "author": "made here",
    "original_file": "game-powerup.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.074,
+   "hf_tail_end_s": 0.442
   },
   {
    "file": "game/game-levelup.mp3",
@@ -3578,7 +4043,10 @@
    "author": "made here",
    "original_file": "game-levelup.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.291,
+   "hf_tail_end_s": 0.995
   },
   {
    "file": "game/game-hit.mp3",
@@ -3600,7 +4068,10 @@
    "author": "made here",
    "original_file": "game-hit.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0,
+   "hf_tail_end_s": 0.162
   },
   {
    "file": "game/game-lose.mp3",
@@ -3622,7 +4093,10 @@
    "author": "made here",
    "original_file": "game-lose.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.194,
+   "hf_tail_end_s": 0.741
   },
   {
    "file": "game/game-select.mp3",
@@ -3644,7 +4118,10 @@
    "author": "made here",
    "original_file": "game-select.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.058,
+   "hf_tail_end_s": 0.112
   },
   {
    "file": "game/game-explosion-8bit.mp3",
@@ -3666,7 +4143,10 @@
    "author": "made here",
    "original_file": "game-explosion-8bit.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.002,
+   "hf_tail_end_s": 1.194
   },
   {
    "file": "game/block-place.mp3",
@@ -3688,7 +4168,10 @@
    "author": "made here",
    "original_file": "block-place.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.003,
+   "hf_tail_end_s": 0.167
   },
   {
    "file": "game/block-break.mp3",
@@ -3710,7 +4193,10 @@
    "author": "made here",
    "original_file": "block-break.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.004,
+   "hf_peak_s": 0.019,
+   "hf_tail_end_s": 0.296
   },
   {
    "file": "magic/sparkle.mp3",
@@ -3732,7 +4218,10 @@
    "author": "made here",
    "original_file": "sparkle.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0.005,
+   "hf_peak_s": 0.448,
+   "hf_tail_end_s": 0.842
   },
   {
    "file": "magic/magic-shimmer.mp3",
@@ -3754,7 +4243,10 @@
    "author": "made here",
    "original_file": "magic-shimmer.wav",
    "licence_checked": "2026-10-24",
-   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)"
+   "measured": "measured here 2026-10-24 by library/tools/sfx_prep.py (length after silence trim at -45 dB below peak; hit_s = centre of the loudest 10 ms RMS window; peak normalised to -1 dBFS)",
+   "hf_onset_s": 0,
+   "hf_peak_s": 0.255,
+   "hf_tail_end_s": 1.051
   }
  ]
 }
