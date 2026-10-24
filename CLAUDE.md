@@ -5,6 +5,17 @@ Read this first in every session.
 
 ## Rules from the owner
 
+- SKILL-BASED ONLY (owner, Oct 24 2026): whenever the owner asks to MAKE or EDIT a video, never build or edit from
+  guesswork. Use the repo first, in this order, before writing anything new:
+  1. Client brief if one exists (library/clients/<name>/), then the matching template (library/templates/*).
+  2. `.claude/skills/video-edit-playbook` + library/research/editing/decision-guide.md (find the video type, follow
+     "Steps here"); look up every technique with `python3 library/tools/find_skill.py "<words>"` (prefer --tested).
+  3. Repo tools and assets: listen.py / watch.py on every input before deciding cuts; library/music (CC0), sfx, stock,
+     luts, fonts, blocks; vs_tts.py (free voice), watermark.py, screen_recorder.js, etc. (library/README.md lists them).
+  4. Repo skills for the job (desi-reels, urdu-captions, client-brand-kit, stock-sfx-luts, voice-or-song,
+     clean-video-voice, listen-and-watch, hyperframes).
+  If the repo has nothing for a step, say so to the owner, use a verified source (with reference), and save what worked
+  back to the repo. In the delivery message, name the template/skills/tools used.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable
   assets/tools in `library/` (music, sound effects, fonts, overlay blocks, models, scripts).
 - NEVER commit videos, photos, voice recordings, or personal data (family names, captions written about
@@ -28,7 +39,8 @@ Read this first in every session.
 - Every tool installed for the owner must be added to `library/tools/setup-all.sh` so it is present in
   every session (the SessionStart hook runs it).
 - Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
-  in that request. Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
+  in that request. OWNER (Oct 24 2026, Skillora v3 session): "ab agay se elaven labs use nhi kroge": from now on the
+  default voice is the free VoxCPM2 recipe (library/clients/moradosolution/brief.md "Voice"). Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
 - Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
 - DEFAULT HOST: when a video needs a host/presenter/character (or the owner says "character use karo"),
   use the owner's own skin `library/characters/host-skin.png` built with `library/tools/blocky_character.py`
@@ -263,6 +275,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - MISSED FACT (2026-10-24): the first reel listed India/Singapore/Dubai but the homepage also lists "Frankfurt(Germany)" /
   "Europe (Germany)"; the owner caught it. Before writing a script, grep the captures for EVERY item of a list
   (locations, games, plans), not just the first sentence that names some.
+- MISSED OFFER (2026-10-24, MoradoSolution): curl text of moradosolution.in/sales showed only "Live promo codes are
+  listed here as soon as they are published" (codes load by JavaScript); a browser crawl later the same day found
+  WELCOME30 = 30% OFF live. Read offer/price pages in a real browser (web_capture.py / Playwright), never curl text only.
 - Patching one VO line later: regenerate only that line with the same ElevenLabs voice (5.4 s line = 78 credits per take,
   2 takes, 2026-10-24), Whisper-check it, splice at the silences around the old line (silencedetect -40 dB), loudnorm the
   whole VO again, shift later scenes/SFX by the length difference. Its loudness matched the old line (-19.0 vs -19.3 LUFS).
@@ -271,6 +286,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   (-13 LUFS track) and VO loudnormed to -16 gave a -16.0 LUFS mix, no clipping.
 
 ## Sub-sessions (Oct 24 2026)
+- ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution client session.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -299,8 +316,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - FireCraft whitelist tutorial (session_01TPMNGNY1pArQWPm5nmzAfF): DONE + merged Oct 24 2026 (screen_recorder.js,
   wcheck_lines.py, templates/screen-tutorial, research/firecraft-whitelist-flow.md). 62.2 s 1080p, 19 clicks with cursor,
   nothing submitted; preview sent to the owner by that session, final waits for approval there.
-- SkilloraClouds reel v3 (session_01Se2FPfh8Ga51Fqqm2KT6cL, branch skillora-reel-v3): owner talks there (AMD EPYC 9 +
-  limited ₹20 Budget/Standard plans line).
+- SkilloraClouds reel v3 (session_01Se2FPfh8Ga51Fqqm2KT6cL, branch skillora-reel-v3): v3 draft 44.09 s sent (Viraj lines,
+  438 credits, generated before the switch; EPYC 9 at the client's request, not on the site). Site 2026-10-24: game
+  servers India/Singapore/Dubai; Germany = VPS/RDP/Dedicated only; Malaysia/Qatar/US list no services. Next videos: free voice.
+
+- Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
+  Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

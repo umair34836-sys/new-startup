@@ -161,7 +161,7 @@ d = d_of("s5")
 C["s5"] = comp("s5", f"""    <div id="s5-w" style="position:absolute;inset:0;">
       <div id="s5-img" style="position:absolute;inset:0;background:url(assets/img/games_hytale-card.jpg) center/cover;filter:brightness(0.6);" data-layout-allow-overflow></div>
       <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(5,5,5,0.2), rgba(5,5,5,0.85) 75%);"></div>
-      <div class="c anton shadow" id="s5-t" style="top:1170px;font-size:130px;color:#fff;">HYTALE BHI!</div>
+      <div class="c anton shadow" id="s5-t" style="top:1060px;font-size:130px;color:#fff;">HYTALE BHI!</div>
     </div>""",
                f'    tl.fromTo("#s5-img", {{ scale: 1.15 }}, {{ scale: 1.35, duration: {d}, ease: "none" }}, 0);\n'
                '    tl.fromTo("#s5-t", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 0.15);\n'

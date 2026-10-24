@@ -30,3 +30,6 @@ top 290 px for the Reels safe zone). Registry patterns used: `strikethrough-repl
 cash-register, keypress, pop-high, digital-powerup-1, sparkle), music = cc0 desi-eastern--bollywood-groove from 23.85 s.
 Checked here: `check` passed; render 1m17s (--workers 3); listen.py -14.4 LUFS, no clipping; watch.py 30.0 real fps;
 QR decoded from a rendered frame with OpenCV QRCodeDetector (perc-venv cv2 5.0.0).
+v2 (same day): checked against find_skill.py #3598 (Meta Reels margins: top 14 %, bottom 35 %, sides 6 %): "HYTALE BHI!"
+moved to top 1060 px; brand-end column changed to flex-start + padding-top 280 px, logo 230 px, QR 250 px so all of it
+ends above y=1248. Re-rendered 1m15s, -14.4 LUFS, QR decoded again. brand-end.html edits: code row, these sizes.
