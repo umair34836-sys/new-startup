@@ -270,7 +270,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - IMPORTANT: creative_transcribe_audio on a flow's own TTS take returned the PROMPT text verbatim (incl. the "[excited]"
   tag) with 0 credits = the TTS alignment, NOT a real transcription. Use it for word timings only; verify words
   independently (Whisper small per line on cuts from those timings worked: all 8 lines heard; whole-file Whisper failed).
-- OWNER RULE (Oct 24 2026): client videos shown BEFORE payment get `library/tools/watermark.py` ("Made by MrCopper804"
+- OWNER RULE (Oct 24 2026, MoradoSolution session, replaces the preview/watermark rule below): "Final video ab se
+  diya kro preview nhi": deliver the FINAL clean video (delivery-quality render + WhatsApp copy) directly, no
+  watermarked preview and no wait for approval. Still run check/snapshots/listen.py/watch.py before sending.
+- (superseded) OWNER RULE (Oct 24 2026): client videos shown BEFORE payment get `library/tools/watermark.py` ("Made by MrCopper804"
   tiled + PREVIEW corner tag + copyright metadata); the clean, open-licence file goes out only after payment.
 - MISSED FACT (2026-10-24): the first reel listed India/Singapore/Dubai but the homepage also lists "Frankfurt(Germany)" /
   "Europe (Germany)"; the owner caught it. Before writing a script, grep the captures for EVERY item of a list

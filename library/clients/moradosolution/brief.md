@@ -48,10 +48,11 @@ raw page text in site/pages, screenshots in site/screens, brand images in assets
   library/templates/hosting-promo-reel/build_moradosolution.py (8 scenes: hook, brand, hardware, DDoS, locations,
   ₹199 price, deploy/support, end card moradosolution.in + discord). A 64 s song version (ACE-Step seed 21) was
   previewed only.
-- Before payment: preview with library/tools/watermark.py; after payment: clean file (owner rule).
+- Delivery (owner, 2026-10-24): send the FINAL clean video + WhatsApp copy directly, no watermarked preview.
 - 2026-10-24: WELCOME30 offer reel, 9:16, 30.2 s, PREVIEW (watermarked) sent; final waits for owner approval/payment.
   Build: library/templates/hosting-promo-reel/build_moradosolution_welcome30.py. Claims (site-data.md): WELCOME30 30% OFF
   (/sales), Starter ₹199->₹139, Gold ₹699->₹489 (/minecraft-budget), Hytale plans included (/sales), AMD EPYC 7C13 + NVMe,
   "All plans include DDoS protection", "Deploy ... in minutes" (/minecraft-budget), "paste them at checkout".
   Left out on purpose (site contradicts itself): "limited offer" (/game-hosting) vs "No expiry" (/sales).
   VO: same VoxCPM2 clone recipe (ref regenerated seed 7, 4 min; 8 lines ~19 min); all words heard by Whisper small.
+- 2026-10-24: WELCOME30 reel FINAL delivered (delivery render 1m30s, 30.2 s, -14.4 LUFS, 30 fps, no watermark) + WhatsApp copy.
