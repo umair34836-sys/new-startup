@@ -1,4 +1,4 @@
-# hosting-promo-reel (9:16, ~32 s, VO-synced kinetic scenes)
+# hosting-promo-reel (9:16, ~44 s in v3, VO-synced kinetic scenes)
 
 Made for SkilloraClouds (skilloraclouds.com, a game/VPS hosting company) on 2026-10-24; the owner approved the preview
 and the render. `build.py` writes `index.html` + `compositions/{bg,s1..s8}.html` and the audio lanes.
@@ -18,3 +18,7 @@ Second variant: scene starts come from `assets/vo/lines.json` (per-line [start, 
 `vs_tts.py --parts`) so re-timing after a new VO needs no hand edits; `SONG=1 python3 build.py` builds the sung version
 from `assets/vo/song.wav` + `assets/vo/song_lines.json` (from `align_lyrics.py`) with no extra music bed.
 Free VoxCPM2 Hindi VO (one cloned voice) for the 32 s spoken cut, ACE-Step turbo seed 21 (64 s, 110 BPM) for the song cut.
+v3 (2026-10-24): spec chip/VO "AMD EPYC 9" (client's wording via the owner; skilloraclouds.com/minecraft itself shows
+"AMD EPYC" for Budget/Standard India and Premium India/Singapore, "AMD Ryzen" for Premium Dubai, checked 2026-10-24) and
+a new scene `s6b` after the price: "Budget & Standard plans LIMITED" + Discord / website cards. Scene starts live in
+`SCENES`; whoosh/pop/sparkle times are derived from them, so re-timing a scene moves its SFX too.

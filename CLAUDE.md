@@ -267,6 +267,15 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   cursor overlay divides by the zoom. Block ad hosts while recording (firecraft.fun loads AdSense + vignette ads). On firecraft.fun
   at window heights < ~900 CSS px the login modal's x sits under the fixed header (a click opened Leaderboard): reload instead.
   Voice is the clock: build.py speed-fits each recorded span (0.85-3x) to its VO line. Render 62 s in 2m01s (--workers 3).
+- Client screen-recording + free VO (SkilloraClouds reseller tutorial, measured here 2026-10-24): Google Drive file
+  downloads with `curl -L "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"` (169 MB,
+  200). VoxCPM2 cloned lines took ~3-4 min each on this box (23 lines 13:47-15:14); seed 7 designed ref ran on
+  ("...चाहते हैं? आई गेई"): trimmed at the silence (2.85 s). Seed 21 fixed 3 of 3 weak lines (doubled word, garbled
+  start/restart/stop, "MOTD Maker"). Whisper scores 11-86% were mostly spelling; read the HYP text, not the %.
+- ffmpeg OOM (exit 137) on 9 `trim` branches of one 1440x810 60 fps input in one filter graph: render each segment
+  to its own file (-ss/-t, setpts for 2x), concat -c copy, then one pass for `ass=` captions + audio (worked, 147 s).
+- `pkill -f "<words>"` also kills the Bash shell whose own command line contains those words (exit 144): use the PID.
+- Owner chose for this tutorial: no blur of the client's demo emails; dheema CC0 music under the VO; Roman captions.
 
 ## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
