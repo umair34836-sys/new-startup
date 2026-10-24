@@ -31,3 +31,12 @@
   aliyenidede/rea (rea-dev on PyPI) is a different, deprecated project.
 - nomadkaraoke python-audio-separator 0.47 + BS-RoFormer (vocals SDR 12.1): INSTALLED in the tools venv.
   Removes music completely (silent gaps at -180 dB) but is slow on CPU: ~6 min per 20 s clip.
+
+## Firecrawl replacements (Oct 24 2026, via Agent-Reach web search)
+- D4Vinci/Scrapling: ~89k stars, BSD-3; adaptive scraping framework (stealth fetchers). Not installed.
+- unclecode/crawl4ai: ~86k stars, Apache-2.0, v0.9.5; page -> LLM-ready markdown, full-page screenshots, PDF.
+  INSTALLED in /home/user/tools/crawl-venv (+ playwright==1.56.0 to match /opt/pw-browsers chromium-1194; newer
+  playwright asks for `playwright install`). Wrapper: library/tools/web_capture.py. Tested: huggingface.co/ace-step
+  -> 10.6k chars + 1440x1524 PNG. Fails on domains not allowed by the network policy (visit.talkember.site) and on
+  Cloudflare JS challenges (pixabay.com). Firecrawl itself is open source too but heavy to self-host (Docker stack).
+- Small Firecrawl-compatible clones (us/crw in Rust, servo-fetch, beecrawl): too few stars to rely on.

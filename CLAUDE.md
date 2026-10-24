@@ -168,6 +168,9 @@ Read this first in every session.
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
+- Screenshots / page capture: `library/tools/web_capture.py` (Crawl4AI, free, local Chromium) -> markdown + full-page
+  PNG. It only reaches domains allowed in the environment's network settings: for a blocked site ask the owner to
+  add the domain (e.g. visit.talkember.site, www.firecraft.fun) instead of spending Firecrawl credits.
 - Agent-Reach 1.6 (`agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach web search "<q>"`,
   `agent-reach youtube search "<q>"` (works, via yt-dlp), JSON output.
   Owner allowed r.jina.ai, s.jina.ai, mcp.exa.ai, api.exa.ai, www/old.reddit.com (Oct 2026): web read (jina) and
