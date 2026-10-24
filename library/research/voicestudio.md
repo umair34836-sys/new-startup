@@ -64,3 +64,12 @@ install steps and test timings below are past measurements in an earlier session
   "फिर लिखें कि आप फ़ायरक्राफ़्ट क्यों..." was garbled at seed 7 (33%) and fine at seed 33 (71%).
   "स्टाफ़ चौबीस से अड़तालीस घंटे..." stayed unclear in 3 seeds ("चाछ चाबिष", "अच्टाएद"); number words चौबीस/अड़तालीस
   and घंटे ("गड़े") were heard wrong in every take, so the numbers were also shown on screen.
+
+## VoxCPM2 WELCOME30 reel VO (MoradoSolution, measured here 2026-10-24)
+- Fresh container: `POST /models/install {"repo_id":"openbmb/VoxCPM2"}` finished in under 5 min (4,960,731,703 B on disk);
+  voxcpm already importable in VoiceStudio's .venv. Reference line (design, seed 7) took 3m58s incl. model load.
+- 8 cloned lines (`--parts`) took ~19 min. Whisper small heard every word of all 8 (scores 0-43% are spelling only:
+  it writes "30% OFF", "AMD Epic, NVMe" in Latin). One pass missed the first words of a line with spelled letters
+  ("ए एम डी एपिक, एन वी एम ई") but a second transcription heard them: re-run before regenerating.
+- `--parts` writes 000.wav..007.wav (zero-based). To give a scene more screen time without regenerating, rebuild the
+  VO from the parts with a longer silence after that line (numpy concat) and rewrite lines.json; then loudnorm.

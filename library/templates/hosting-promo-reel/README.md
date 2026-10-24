@@ -18,3 +18,15 @@ Second variant: scene starts come from `assets/vo/lines.json` (per-line [start, 
 `vs_tts.py --parts`) so re-timing after a new VO needs no hand edits; `SONG=1 python3 build.py` builds the sung version
 from `assets/vo/song.wav` + `assets/vo/song_lines.json` (from `align_lyrics.py`) with no extra music bed.
 Free VoxCPM2 Hindi VO (one cloned voice) for the 32 s spoken cut, ACE-Step turbo seed 21 (64 s, 110 BPM) for the song cut.
+
+## build_moradosolution_welcome30.py (MoradoSolution WELCOME30 offer reel, 2026-10-24)
+30.2 s offer reel, 8 scenes on 8 VO lines: hook "MINECRAFT SERVER? 30% OFF" (on screen at 0 s, confetti burst) ->
+coupon card typing WELCOME30 -> Starter ₹199 struck -> ₹139 -> Gold ₹699 struck -> ₹489 -> Hytale art + brand-kit
+`brand-offer` starburst -> AMD EPYC 7C13 / NVMe / DDoS chips over the site's rack image -> "SERVER MINUTES MEIN READY"
+-> brand-kit `brand-end` (code row added, QR = https://moradosolution.in). Also mounts brand-kit `brand-bug` (moved to
+top 290 px for the Reels safe zone). Registry patterns used: `strikethrough-replace` (price strike) and `confetti`
+(deterministic burst). Needs in the project: compositions/brand-{offer,end,bug}.html + assets/brand from
+`build_brand.py` (brand.json in the scratchpad), assets/img (site images as jpg), sfx (swish-4, punch-heavy,
+cash-register, keypress, pop-high, digital-powerup-1, sparkle), music = cc0 desi-eastern--bollywood-groove from 23.85 s.
+Checked here: `check` passed; render 1m17s (--workers 3); listen.py -14.4 LUFS, no clipping; watch.py 30.0 real fps;
+QR decoded from a rendered frame with OpenCV QRCodeDetector (perc-venv cv2 5.0.0).
