@@ -12,7 +12,9 @@
   "seed": 7,
   "measured": "2026-10-24 (MoradoSolution reel): reference median f0 166 Hz (the Viraj VO measured 172 Hz); 8 cloned lines f0 151-238 Hz; 7/8 lines heard right by Whisper first time, 1 fixed with seed 21. Owner set it as default 2026-10-24.",
   "target_f0": 172,
-  "target_f0_note": "owner asked 2026-10-24: same median pitch as the Viraj VO (172 Hz, pyworld harvest on skillora take 2)"
+  "target_f0_note": "owner asked 2026-10-24: same median pitch as the Viraj VO (172 Hz, pyworld harvest on skillora take 2)",
+  "ref_file": "library/voices/default-ref.wav",
+  "ref_file_note": "the exact 2.88 s AI-generated reference used for the MoradoSolution reel (not a real person). Rebuilding it by voice design is NOT deterministic: same instruct/seed/text gave a different 2.30 s clip (correlation 0.025, measured here 2026-10-24), so the file is kept in the repo."
  },
  "senpaispider": {
   "label": "Senpai Spider (client's own voice)",

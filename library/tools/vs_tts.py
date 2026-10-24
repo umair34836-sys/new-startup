@@ -53,6 +53,8 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
     v = reg[a.voice]
     vd = f"/home/user/tools/voices/{a.voice}"
     ref = os.path.join(vd, "ref.wav")
+    if v.get("ref_file"):  # the voice's fixed reference lives in the repo (AI voice, not a person)
+        ref = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", v["ref_file"])
     if os.path.exists(ref) and os.path.getsize(ref) < 1000:
         os.remove(ref)  # an empty/broken reference from an interrupted build
     if not os.path.exists(ref) and v.get("design"):  # designed voice: rebuild the reference line by voice design

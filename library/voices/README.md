@@ -12,5 +12,5 @@ Clone only voices the owner or their client has agreed to; never a celebrity or 
 
 | Name | Whose voice | Added |
 |---|---|---|
-| `default` | AI-designed young energetic Hindi ad narrator (not a real person); used when no voice is named | 2026-10-24 |
+| `default` | AI-designed young energetic Hindi ad narrator (not a real person; its fixed 2.88 s reference `default-ref.wav` is in the repo because voice design is not repeatable); used when no voice is named; pitch aimed at 172 Hz | 2026-10-24 |
 | `senpaispider` | the owner's client "Senpai Spider" (owner shared the clip, 2026-10-24) | 2026-10-24 |
