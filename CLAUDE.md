@@ -242,7 +242,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Specialist A measured (cpu-speed.md, 2026-10-24): HyperFrames `render --workers 3` took 25 s vs 40-50 s with auto on a
   10 s 1080p project; MediaPipe needs apt libgles2 + libegl1; bg_blur.py with RVM + cheaper fill: 2.08 -> 0.66 s/frame
   (patch in cpu-speed.md; RVM drops a second person at the frame edge; show the owner before/after before switching).
-  B desi vocal songs + PK reels trends (session_016xxyoT1VWtQ74po5jdBMUC, specialist-b-desi-music-trends);
+  B DONE + merged Oct 24 2026: library/music/desi-vocal (29 PD Urdu/Hindi vocal songs, 1905-1919 78 rpm; no Pashto PD song
+  found), research/pk-reels-trends.md + pk-reel-recipes.md, skill desi-reels. Rejected: Gallica/BnF (credit + fee),
+  FMA Excavated Shellac (CC BY).
   C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym, specialist-c-broll-sfx-luts);
   D Urdu/Pashto captions + client brand kit (session_01NZND2H5jzoXgcGVrFFtHH2): DONE + merged Oct 24 2026 (fonts,
   urdu_captions.py, blocks/urdu-captions.html, templates/brand-kit, skills urdu-captions + client-brand-kit).

@@ -19,6 +19,14 @@ vocal bed -16.0, piano -15.6, baarish -13.0, talkember promo song -13.5 (362.5 s
 | `baarish-ki-pehli-shaam-ai-song.mp3` | 60 s | AI Hindi song WITH vocals (ACE-Step 1.5 turbo), romantic pop ballad, piano/guitar/strings/tabla, beats pulled back under the sung words | Lyrics in `lyrics/baarish-ki-pehli-shaam.txt`. Owner loved it. Made with `ai_song.py` defaults (seed 7, 8 steps, INT8, 80 BPM) and the caption below. |
 | `romance-piano-72bpm.wav` | 21.6 s | Soft synthesized piano + strings + light pulse | Made by `tools/romance_synth.py` (numpy). Plainer than the Bollywood track. |
 
+## Desi songs with vocals (`music/desi-vocal/`)
+
+29 public-domain Urdu/Hindustani songs WITH vocals (14 Urdu, 15 Hindi, 0 Pashto): 78 rpm gramophone records 1905-1919
+from archive.org (Gauhar Jaan, Janki Bai, Iqbal's "Saare Jahan Se Achha" 1919...), 96 MB. Licence reasoning from the
+Indian/Pakistani/US law texts and every source page in `music/desi-vocal/README.md` + `index.json` (specialist B,
+2026-10-24; spot-checked by the main session: archive.org item a-4294903-1483330581-3381 says "Released: Jan 1916").
+Old shellac sound: noisy, mono. 446 more candidate records: research/data/archive-org-78rpm-hindustani-1902-1922.tsv.
+
 ## Sound effects (`sfx/`)
 
 | File | Notes |
@@ -142,7 +150,7 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 
 Facts gathered by tools and web research, one topic per file (source + date), so nothing is looked up twice:
 `firecraft-smp.md` (server facts for promos), `tools-landscape.md` (open-source tools and star counts),
-`video-editing.md` (editing techniques), `perception-tools.md` + `cpu-speed.md` (specialist A: what listen/watch measure; CPU benchmarks), `editing/` (decision guide for 29 video types + 560 cited editing skills), `talkember-studio.md` (the owner's website, for promos),
+`video-editing.md` (editing techniques), `pk-reels-trends.md` + `pk-reel-recipes.md` (Pakistani reels styles, 16 recipes), `desi-vocal-sources.md`, `perception-tools.md` + `cpu-speed.md` (specialist A: what listen/watch measure; CPU benchmarks), `editing/` (decision guide for 29 video types + 560 cited editing skills), `talkember-studio.md` (the owner's website, for promos),
 `free-music-sources.md` (no-credit music sources), `hinglish-tts.md` and `voicestudio.md` (voice models),
 `network-allowlist.md` (domains), `urdu-captions.md`, `client-intake.md`, `audit-2026-10-24-part1.md` (claim audit).
 
