@@ -1,10 +1,14 @@
 # TalkEmber Studio (visit.talkember.site): verified public facts, read Oct 23 2026
 
+Audit re-check 2026-10-24 (curl of the live HTML/CSS/JS of the 16 sitemap pages): all lines below confirmed on that
+date except where marked "corrected".
+
 Source: the site itself (16 pages from its sitemap, read with Agent-Reach/jina; full-page screenshots via Firecrawl
 because the host is not reachable from the container). Use for promos; re-check prices before a new video.
 
 - Brand: "TalkEmber Studio — Websites for Pakistani businesses", "a TalkEmber company". Dark theme #070A12, orange
-  #FC8802, WhatsApp green #25D366 buttons, font Plus Jakarta Sans (library/fonts). Nav: Industries, Services, Pricing,
+  #F97316 (CSS variable --ember in assets/style.css; corrected 2026-10-24, the old note said #FC8802, which is not in
+  the site's CSS), WhatsApp green #25D366 buttons, font Plus Jakarta Sans (library/fonts). Nav: Industries, Services, Pricing,
   FAQ, Contact, اردو switch, WhatsApp button. Hero: "Your business, online — built to win customers."
 - Promise chips: English + Urdu, Mobile-first & fast, Google-ready SEO, WhatsApp support.
 - 7 industry demos (/demo/<x>/; names and data are samples, per the site FAQ):
@@ -18,6 +22,8 @@ because the host is not reachable from the container). Use for promos; re-check 
   plot availability map, instalment calculator, site progress, reserve plot); exporter = Kestrel Sports, Sialkot
   (catalogue with MOQ, FOB price estimator, inquiry-to-shipment process, RFQ form, certifications).
   Plus "Your business? Shop, restaurant, salon, factory or office — tell us and we'll plan it."
+  Note 2026-10-24: the home page's static HTML still labels every industry card "Demo coming soon", although all 7
+  /demo/<x>/ pages load (HTTP 200).
 - What you get: Mobile-first & fast; English + Urdu (Nastaliq); Found on Google (SEO + Google Business Profile);
   Leads on WhatsApp; Secure & cared for (SSL, backups, updates); Industry features.
 - How it works: 01 Tell us (details, logo, photos on WhatsApp) · 02 Pick a demo · 03 Review (preview link) · 04 Go live
@@ -30,4 +36,5 @@ because the host is not reachable from the container). Use for promos; re-check 
   custom 100k-250k+, e-commerce 60k-250k+), what changes the price, yearly costs, Urdu summary at the bottom.
 - 7 SEO landing pages: /isp-, /solar-, /school-, /clinic-, /travel-agency-, /housing-society-, /exporter-website-design/.
 - Contact (public): Phone/WhatsApp +92 301 8858303, support@talkember.site.
-- Note: github.com/umair34836-sys/talkember is the TalkEmber NEWS blog (talkember.site), not the Studio site.
+- Note: github.com/umair34836-sys/talkember is the TalkEmber NEWS blog (talkember.site), not the Studio site
+  (not re-checked 2026-10-24: that repo is outside this session's GitHub access).
