@@ -14,6 +14,8 @@ light() {
   command -v ffmpeg >/dev/null || { apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg; }
   # System-python libraries the library/tools scripts import (PIL, numpy, mido, pyworld pitch analysis).
   python3 -c "import PIL, numpy, mido, pyworld" 2>/dev/null || pip install -q pillow numpy mido pyworld
+  # Editing skills catalogue (library/research/editing/skills2): font axis/coverage checks and ASS/SRT subtitle editing.
+  python3 -c "import fontTools, pysubs2" 2>/dev/null || pip install -q fonttools pysubs2
   command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
   command -v agent-reach >/dev/null || {
     uv tool install -q https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip &&

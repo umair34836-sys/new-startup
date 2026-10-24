@@ -250,6 +250,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
+- Self-study round 2 DONE + merged (Oct 24 2026): skills2/ = 4,832 new cited skills (#561-5556, 21 categories; 2,705
+  marked "(tested here 2026-10-24)"; target 5,000 not reached: no padding). Search ALL skills with
+  `python3 library/tools/find_skill.py "<words>" [--tested]`. Key: Urdu/Hindi burn-in needs ffmpeg `ass=` (subtitles=/drawtext
+  break Nastaliq + conjuncts); arnndn models in library/models/arnndn. Spot-checked on merge (2026-10-24): arnndn std.rnnn on
+  white noise -30.8 -> -43.1 dB mean; `ass=` + fontsdir=library/fonts rendered shaped Nastaliq. Missing-tools list: skills2/README.md.
 - Specialists: A perception tools + CPU speed (session_01BdHJpuB2BTCGDxFdR7KV44, specialist-a-perception-cpu);
   A DONE + merged Oct 24 2026: listen.py / watch.py / fast_matte.py (perc-venv), skill listen-and-watch: run them before
   editing instead of guessing (verified here: 105.0 BPM on a 105 BPM track; 12.4 real fps on the 12 fps WhatsApp clip).

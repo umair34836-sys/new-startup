@@ -22,5 +22,5 @@ Numbers are unique across files, so "skill #212" always means one thing.
 disagree (for example Reels/TikTok loudness -14 vs -16 LUFS, or how often to pattern-interrupt) both views are
 listed as separate items with their sources; pick by testing on the real video.
 
-Two colour chains in 03 (bleach-bypass and halation ffmpeg chains) are marked UNVERIFIED: our own combination of documented
-filters: they ran, but no guide gives that exact chain, so compare frames before using them.
+Two self-combined colour chains (bleach bypass, halation) were removed on 2026-10-24: no source gives those exact
+chains, and the owner allows verified items only.

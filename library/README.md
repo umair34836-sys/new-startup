@@ -87,6 +87,10 @@ License" and every font family has an OFL .txt here). Load with `@font-face { sr
 - `Kalam-Bold.ttf` (+ `OFL-Kalam.txt`) and `RozhaOne-Regular.ttf` (+ `OFL-RozhaOne.txt`): also present (found in the
   2026-10-24 audit; not described before).
 
+- Same Noto files, details (self-study skills2): `NotoNastaliqUrdu-Variable.ttf` (wght 400-700). Burn with ffmpeg `ass=` (not `subtitles=`, which
+  showed empty boxes in ffmpeg 6.1.1; skills2/10). `NotoSansDevanagari-Variable.ttf` (wght 100-900, wdth 62.5-100): Hindi.
+  `NotoNaskhArabic-Variable.ttf` (wght 400-700): Arabic Naskh. All SIL OFL 1.1 (Noto*-OFL.txt), from github.com/google/fonts (2026-10-24).
+
 Bundled HyperFrames fonts (Inter, Archivo Black, Space Mono, Playfair Display, ...) need no file.
 
 ## Blocks (`blocks/`)
@@ -99,6 +103,9 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 - `flash-warm.html`: a 0.65 s soft warm-white flash for a cut (host `data-duration="0.7"`, start 0.2 s before the cut).
 
 ## Models (`models/`)
+
+- `arnndn/`: 6 RNNoise `.rnnn` models for ffmpeg's `arnndn` speech de-noise (std = Xiph RNNoise, BSD-style; others by Gregor
+  Richards, not copyrighted). See `models/arnndn/README.md`.
 
 - `magenta/chord_pitches_improv/`: Magenta.js Improv RNN checkpoint (Apache-2.0 = @magenta/music licence on npm, checked 2026-10-24; from
   storage.googleapis.com/magentadata). Generates a melody over a chord progression.
@@ -125,7 +132,9 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 | `watermark.py` | Unpaid-preview copyright mark for client videos: diagonal tiled "Made by MrCopper804" over the whole frame (16% alpha, hard to crop), a solid "PREVIEW · © 2026 MrCopper804" corner tag, and copyright/artist/comment metadata. Send the clean render after payment. First used on the SkilloraClouds reel, 2026-10-24 (32.5 s 1080x1920 re-encode, crf 18). |
 | `bg_blur.py` | Portrait-mode background for phone footage: person (rembg u2net_human_seg + dark-shirt hull fill, temporally smoothed) and the desk stay sharp; background gets the subject inpainted out (no halo), lens/bokeh blur in linear light, blue/cyan objects desaturated into the wall, -14% exposure. Owner approved it on the client boss reel (Oct 2026). |
 | `clean_voice.py` | Video/audio with speech -> only the person's voice (BS-RoFormer vocals + Mel-RoFormer denoise, optional de-reverb), put back into the video as clean.mp4. Skill clean-video-voice. |
-| `web_capture.py` | Free Firecrawl replacement (Crawl4AI): URL -> markdown + full-page screenshot via local Chromium; domain must be network-allowed. 2026-10-24: FAILED in a container whose /opt/pw-browsers had chromium-1243 (crawl-venv has playwright 1.56.0, which wants chromium-1194): see research/tools-landscape.md. |
+| `find_skill.py` | `python3 find_skill.py "speed ramp"` searches the editing skills catalogue (skills + skills2) and prints the How lines; `--tested`, `#<id>`, `--build` (index.json). |
+| `youtube_chapters.py` | Validates/prints a YouTube chapter list (00:00 first, >=3, ascending, >=10 s each). |
+| `web_capture.py` | Free Firecrawl replacement (Crawl4AI): URL -> markdown + full-page screenshot via local Chromium; domain must be network-allowed. 2026-10-24: a container with only chromium-1243 made it fail (playwright 1.56.0 wants chromium-1194); fixed the same day: it then starts the image's own Chromium and attaches over CDP (tested on example.com). |
 | `music_pack.py` | Many own songs/instrumentals (ACE-Step) in ONE model load from a JSON spec -> mp3 normalised toward -14 LUFS (the 9 files in music/own measure -12.9 to -14.1 LUFS, ebur128 2026-10-24). Ours: no credit needed. |
 | `setup-ai-song.sh` | Installs ACE-Step 1.5 (lyrics -> song with vocals) and OpenAI Whisper into /home/user/tools/venv. Weights need huggingface.co + openaipublic.azureedge.net allowed. |
 | `ai_song.py` | Full pipeline: song with vocals from lyrics (turbo text2music) -> Whisper finds where words are sung -> bass and cymbal bands lowered there, voice band lifted -> Whisper transcript compared to the lyrics (`report.json`). Resumable; run it in the background (CPU). |
