@@ -8,7 +8,8 @@ T=/home/user/tools
 mkdir -p "$T" && cd "$T"
 [ -d ACE-Step-1.5 ] || GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 https://github.com/ace-step/ACE-Step-1.5
 
-# The repo pins torch to +cu128 builds on download.pytorch.org (blocked here); pypi has the same versions.
+# CPU-only box: install torch from the CPU wheel index. The pypi build pulls ~4.9 GB of nvidia-* CUDA libs + triton
+# that are useless here and filled the disk (Oct 2026); the +cpu build is the same version without them.
 cat > reqs-cpu.txt <<'EOF'
 torch==2.10.0
 torchvision==0.25.0
@@ -43,6 +44,7 @@ setuptools<72
 EOF
 [ -d venv ] || uv venv -q -p /usr/bin/python3.12 venv
 source venv/bin/activate
-uv pip install -q -r reqs-cpu.txt
+uv pip install -q -r reqs-cpu.txt --index-url https://download.pytorch.org/whl/cpu \
+  --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match
 uv pip install -q --no-deps -e ACE-Step-1.5 -e ACE-Step-1.5/acestep/third_parts/nano-vllm
 python -c "import torch, whisper, acestep; print('ready: torch', torch.__version__, '| whisper | acestep')"

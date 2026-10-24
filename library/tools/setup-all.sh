@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install every tool this repo uses into a fresh cloud container, skipping what is already there.
 #   bash library/tools/setup-all.sh light   # quick (~1 min): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI
-#   bash library/tools/setup-all.sh heavy   # music + AI song stack and its model weights (~15 min, ~17 GB)
+#   bash library/tools/setup-all.sh heavy   # music + AI song stack, VoiceStudio, model weights (~20 min, ~15 GB)
 # The SessionStart hook runs "all" in the background, logging to /home/user/tools/setup.log; it touches
 # /home/user/tools/.light-ready and then /home/user/tools/.heavy-ready as each part finishes.
 set -uo pipefail
@@ -45,6 +45,11 @@ heavy() {
     "$T/venv/bin/audio-separator" --download_model_only -m "$m" --model_file_dir "$T/sep-models" >/dev/null
   done
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
+  # VoiceStudio (debpalash/VoiceStudio, local ElevenLabs alternative): own uv venv with CPU torch; backend on :3900
+  # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).
+  [ -d "$T/VoiceStudio" ] || git clone -q --depth 1 https://github.com/debpalash/VoiceStudio.git "$T/VoiceStudio"
+  [ -x "$T/VoiceStudio/.venv/bin/python" ] || (cd "$T/VoiceStudio" && uv sync -q --locked --no-group cuda --group cpu)
+  uv cache clean >/dev/null 2>&1 || true
   touch "$T/.heavy-ready"
 }
 
