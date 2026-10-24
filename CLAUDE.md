@@ -232,6 +232,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Pashto touch for Pashto-speaking clients: "Manana" (مننه) = thank you (omniglot.com/language/phrases/pashto.php via
   WebSearch, 2026-10-24). Captions stay Roman Urdu.
 
+## Tutorials / screen videos
+- OWNER RULE (Oct 24 2026): in every tutorial or screen video, EVERY click is shown with a visible mouse cursor that moves
+  to the target and plays a click animation (ripple/press) at the moment of the click (plus a soft click sound).
+  Show only what really happens on the real site/app (recorded or screenshotted here), nothing invented.
+
 ## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
   (price "from ₹20/mo" was on /games, coupon from the top banner), brand colours from the site CSS (most frequent hex),
