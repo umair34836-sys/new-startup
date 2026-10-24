@@ -28,7 +28,8 @@ Every rule below points to where it was learned or researched. The knowledge bas
 ## 2. Pick the recipe
 
 - Find the video type in `library/research/editing/decision-guide.md` (input-triage table at the top, then one
-  section per type: goal, length, beat map, cuts, transitions, grade, captions, music, mistakes, steps here).
+  section per type: goal, structure, cut rhythm, transitions, mistakes, steps here, plus length, grade, captions and
+  music/SFX where the sources covered them; counted 2026-10-24: "Grade:" in 9 of 29 sections, "Captions:" in 17).
 - No footage at all -> `library/research/editing/from-scratch.md`.
 - Need a specific technique (a transition, a grade, a mix level, a caption style, a fix)? Search the numbered
   catalog: `grep -n -i "<word>" library/research/editing/skills/*.md` (index: `skills-catalog.md`).

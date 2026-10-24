@@ -181,32 +181,32 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 ## 14. Dance / trend reel
 
 - Goal: trends are repeatable formats (a hook, a few beats, often a sound) copied by many accounts at once. [Postdom, https://postdom.com/blog/tiktok-trends, 2026-10-08]
-- Length/aspect: 9:16; trend clips can be 10-15 s and live on replay and completion. [Shortimize, https://www.shortimize.com/blog/video-length-sweet-spots-tiktok-reels-shorts, 2025-12-01]
+- Length/aspect: 9:16 vertical fills the phone screen [Superprofile, https://superprofile.bio/guides/instagram-reel-size, checked 2026-10-24]; quick-trend clips of 10-15 s can rack up views through high replay value and completion rate. [Shortimize, https://www.shortimize.com/blog/video-length-sweet-spots-tiktok-reels-shorts, 2025-12-01]
 - Structure: add the music first, mark beats manually where you hear strong drops (auto beats add extras), split clips on the beat points. [Ka Production, https://thekaproduction.com/2026/01/26/trending-transition-reels-editing-capcut/, 2026-01-26]
 - Transitions: cut-out transition: freeze just before the beat, remove background, white stroke, keyframe it with a cubic ease. [Ka Production, https://thekaproduction.com/2026/01/26/trending-transition-reels-editing-capcut/, 2026-01-26]
 - Transitions: make it loop: end on a frame that leads into the first, trim music to whole bars before a downbeat. [EasyReels, https://easyreels.io/blog/seamless-loop-reel, 2026-10-10]
 - Common mistakes: using a trending copyrighted song; we never download copyrighted songs (ask the owner to upload an MP3 they have). [repo: CLAUDE.md "Environment facts (cloud container)"]
-- Steps here: CC0 upbeat track, cut one shot per bar; interpolate every clip to 30 fps; check/snapshot/render. [repo: library/README.md "music/cc0"]; [repo: CLAUDE.md "Client phone-video edits"]
+- Steps here: CC0 upbeat track, cut one shot per bar; interpolate every clip to 30 fps; check/snapshot/render. [repo: library/README.md "music/cc0"]; [repo: library/music/cc0/README.md]; [repo: CLAUDE.md "Client phone-video edits"]; [repo: CLAUDE.md "HyperFrames learnings"]
 
 ## 15. Tutorial / screen recording / course
 
 - Goal: outline 3-5 key steps before recording; record at 1080p, 30 fps, in a clean workspace. [Screenify Studio, https://www.screenify.studio/record/how-to/record-a-tutorial]
-- Structure: beginning (topic and why it matters), core content with examples, summary of takeaways. [Teachers Institute, https://teachers.institute/design-development-and-delivery-of-courseware/shoot-edit-educational-videos/, 2025-10-01]
+- Structure: beginning (topic and why it matters), core content with examples, summary of takeaways. [Teachers Institute, https://teachers.institute/design-development-and-delivery-of-courseware/shoot-edit-educational-videos/, 2025-10-02]
 - Cut rhythm: cut loading screens, long typing, menu hunting and hesitations; speed-ramp what must stay. [Kredos Media, https://www.kredosmedia.com/article/screen-recording-editing]
-- Transitions: zooms on the click that matters; back-to-back manual zooms make a pan without zooming out. [Tella, https://www.tella.com/help/editing/edit-a-video]
-- Captions: accurate captions and mobile readability. [Udemy, https://teach.udemy.com/recording/editing-tips/, 2021-06-01]
+- Transitions: push in on the part of the screen that matters, then pull back out for context [Kredos Media, https://www.kredosmedia.com/article/screen-recording-editing]; back-to-back manual zooms make a pan without zooming out. [Tella, https://www.tella.com/help/editing/edit-a-video]
+- Captions: accurate captions and mobile readability. [Udemy, https://teach.udemy.com/recording/editing-tips/, 2025-09-15]
 - Common mistakes: tiny text from huge screens, personal data on screen; use demo data and record one step per take. [Kredos Media, https://www.kredosmedia.com/article/screen-recording-editing]
-- Common mistakes: over-cutting. [Udemy, https://teach.udemy.com/recording/editing-tips/, 2021-06-01]
-- Steps here: narration with `vs_tts.py` or `ai_voice.py`, or the recorder's own voice through `clean_voice.py`; HyperFrames scale/x/y tweens on a wrapper for zooms; check/snapshot/render. [repo: CLAUDE.md "Voice and songs with words"]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]
+- Common mistakes: over-cutting. [Udemy, https://teach.udemy.com/recording/editing-tips/, 2025-09-15]
+- Steps here: narration with `vs_tts.py` or `ai_voice.py`, or the recorder's own voice through `clean_voice.py`; HyperFrames scale/x/y tweens on a wrapper for zooms; check/snapshot/render. [repo: CLAUDE.md "Voice and songs with words"]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: CLAUDE.md "HyperFrames learnings"]
 
 ## 16. Explainer / educational
 
 - Goal: make a concept clear: problem or topic, then the explanation, then a takeaway. [Adobe Video World, https://adobevideoworld.com/explainer-video-editing/, 2026-06-26]
 - Structure: keep asking "so what?" and connect the subject to everyday life. [Descript, https://www.descript.com/blog/article/making-better-educational-videos, 2024-09-10]
-- Cut rhythm: remove long pauses, filler words, false starts and tangents. [Teachers Institute, https://teachers.institute/design-development-and-delivery-of-courseware/shoot-edit-educational-videos/, 2025-10-01]
+- Cut rhythm: remove long pauses, filler words, false starts and tangents. [Teachers Institute, https://teachers.institute/design-development-and-delivery-of-courseware/shoot-edit-educational-videos/, 2025-10-02]
 - Transitions: explainers use stock footage + motion graphics + text overlays. [faceless-content-guide (GitHub), https://github.com/jakeolschewski/faceless-content-guide]
-- Captions: add only visuals that support key ideas, not clutter. [Udemy, https://teach.udemy.com/recording/editing-tips/, 2021-06-01]
-- Steps here: blocky host (`blocky_character.py --moves` idle/wave/talk/point) presents; voice from `vs_tts.py`/`ai_voice.py`; CC0 background/lofi bed ducked by `voice_over_music.py`. [repo: library/README.md "Tools (tools/)"]; [repo: CLAUDE.md "Rules from the owner"]
+- Captions: add only visuals that support key ideas, not clutter. [Udemy, https://teach.udemy.com/recording/editing-tips/, 2025-09-15]
+- Steps here: blocky host (`blocky_character.py --moves` idle/wave/talk/point) presents; voice from `vs_tts.py`/`ai_voice.py`; CC0 background/lofi bed ducked by `voice_over_music.py`. [repo: library/README.md "Tools (tools/)"]; [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "music/cc0"]
 
 ## 17. Faceless channel
 
@@ -227,7 +227,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Captions: social newsreels must work with or without audio; "innertitles" over moving or still backgrounds. [Wikimedia Foundation, https://wikimediafoundation.org/news/2018/01/11/how-to-video-newsreel/, 2018-01-11]
 - Music/SFX: mobile news is watched in crowded places, so music is common; edit to the beat with markers. [Multimedia Train, http://www.multimediatrain.com/short-news-video-editing/]
 - Common mistakes: narration over unrelated or repeated B-roll; shoot about three times the finished duration. [Infinite Creation, https://infinitecreation.io/tutorial-news-package-editing]
-- Steps here: free images from Wikimedia Commons (allowed host), verify licence; narration via `vs_tts.py`; check/snapshot/render. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: CLAUDE.md "Voice and songs with words"]
+- Steps here: free images from Wikimedia Commons (allowed host), verify licence; narration via `vs_tts.py`; check/snapshot/render. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: CLAUDE.md "Voice and songs with words"]; [repo: CLAUDE.md "HyperFrames learnings"]
 
 ## 19. Reaction
 
@@ -241,12 +241,12 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 ## 20. Sports / montage highlights
 
 - Goal: a compact story, not a pile of exciting clips. [CapCut, https://www.capcut.com/create/sports-highlight-editing-that-gets-shared, 2026-08-12]
-- Structure: hook, context, setup, action, clarification, reaction; open on the result, then cut back to the start of the play. [CapCut, https://www.capcut.com/create/sports-highlight-editing-that-gets-shared, 2026-08-12]
+- Structure: hook, context, setup, action, clarification, reaction; lead with the payoff (e.g. begin with the save), then return to the cross or shot that created the chance. [CapCut, https://www.capcut.com/create/sports-highlight-editing-that-gets-shared, 2026-08-12]
 - Captions: one clean context card (minute, score, label like "Winning Goal"). [CapCut, https://www.capcut.com/create/sports-highlight-editing-that-gets-shared, 2026-08-12]
 - Cut rhythm: show key action at full speed first; replay only to answer a real question. [CapCut, https://www.capcut.com/create/sports-highlight-editing-that-gets-shared, 2026-08-12]
 - Transitions: slow motion sparingly, for emotional moments. [Studio 91, https://www.studio91media.co.uk/2021/04/30/how-to-use-slow-motion-to-create-emotion/, 2021-04-30]
-- Structure: 20-40 short clips for a single reel is normal. [ReelWorkshop, https://reelworkshop.com/use-cases/sports-highlight-compilation]
-- Steps here: minterpolate slow-mo (ran OK locally); cinematic/battle CC0 track; impact-bass 0.35-0.4 to avoid impacts 8 dB over music. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: CLAUDE.md "Client phone-video edits"]; [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#minterpolate]
+- Structure: gather 20-40 short raw clips for a single reel; most get cut down to a few seconds or dropped. [ReelWorkshop, https://reelworkshop.com/use-cases/sports-highlight-compilation]
+- Steps here: minterpolate slow-mo (ran OK locally); cinematic/battle CC0 track; impact-bass 0.35-0.4 to avoid impacts 8 dB over music. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: CLAUDE.md "Client phone-video edits"]; [repo: library/README.md "music/cc0"]; [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#minterpolate]
 
 ## 21. Fitness
 
@@ -255,7 +255,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Structure: keep hands, feet and the whole movement in frame. [Vidmoat, https://www.vidmoat.com/use-cases/fitness]
 - Captions: text overlays and graphics give the instructions. [CapCut, https://www.capcut.com/create/fitness-video-maker]
 - Common mistakes: one edit doing all three jobs (slow-mo + timer + hype track + caption in 20 s); speeding up a follow-along. [Vidmoat, https://www.vidmoat.com/blog/edit-fitness-videos, 2026-09-04]
-- Steps here: set the frame rate from the highest-fps footage; minterpolate slow-mo for form (ran OK locally); upbeat-electronic CC0. [Vidmoat, https://www.vidmoat.com/blog/edit-fitness-videos, 2026-09-04]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: library/README.md "music/cc0"]
+- Steps here: set the frame rate from the highest-fps footage; minterpolate slow-mo for form (ran OK locally); upbeat-electronic CC0. [Vidmoat, https://www.vidmoat.com/blog/edit-fitness-videos, 2026-09-04]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: library/README.md "music/cc0"]; [repo: library/music/cc0/README.md]
 
 ## 22. Cooking / recipe
 
@@ -264,7 +264,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Cut rhythm: cut to the side angle a beat before the moment; back overhead as it resolves. [Vidmoat, https://www.vidmoat.com/blog/edit-cooking-videos, 2026-09-04]
 - Captions: ingredient visible ~0.5 s before it moves; quantity on screen ~2 s ("show it, name it, do it"). [Vidmoat, https://www.vidmoat.com/blog/edit-cooking-videos, 2026-09-04]
 - Common mistakes: only overhead, which gets repetitive. [Animoto, https://animoto.com/blog/video-ideas/tips-tasty-style-recipe-video, 2018-10-18]
-- Steps here: happy/lofi CC0 bed; per-word captions over a bottom gradient; vertical export. [repo: library/README.md "music/cc0"]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]
+- Steps here: happy/lofi CC0 bed; per-word captions over a bottom gradient; vertical export. [repo: library/README.md "music/cc0"]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [Vidmoat, https://www.vidmoat.com/blog/edit-cooking-videos, 2026-09-04]
 
 ## 23. Trailer / teaser
 
@@ -285,19 +285,19 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 
 ## 25. Slideshow from photos
 
-- Length: 3-5 s per photo (4-5 for group photos); photos needed = song length / seconds each. [Woven Video, https://www.woven.video/guides/photo-slideshow]
-- Structure: remove near-duplicates, order by time or story, open strong, end calm. [Woven Video, https://www.woven.video/guides/photo-slideshow]
-- Transitions: a slow zoom or pan keeps a still alive; use one motion for every photo. [Woven Video, https://www.woven.video/guides/photo-slideshow]
+- Length: 3-5 s per photo (4-5 for group photos); photos needed = song length / seconds each. [Woven Video, https://www.woven.video/guides/photo-slideshow, 2026-10-19]
+- Structure: remove near-duplicates, order by time or story, open strong, end calm. [Woven Video, https://www.woven.video/guides/photo-slideshow, 2026-10-19]
+- Transitions: a slow zoom or pan keeps a still alive; use one motion for every photo. [Woven Video, https://www.woven.video/guides/photo-slideshow, 2026-10-19]
 - Grade: one mood and one consistent treatment for all images. [CapCut, https://www.capcut.com/features/how-to-make-a-slideshow-look-aesthetic]
 - Captions: combine photos and captions so the slideshow both shows and tells. [VideoStudio, https://www.videostudiopro.com/en/tips/slideshows/]
-- Music/SFX: slow instrumental unless the song is the point; fade the end; check rights. [Woven Video, https://www.woven.video/guides/photo-slideshow]
-- Steps here: personal photos stay in the scratchpad; piano CC0 track; `floating_hearts.py` for warm memories; HyperFrames scale tweens for Ken Burns; WhatsApp copy. [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "music/cc0"]; [repo: library/README.md "Tools (tools/)"]
+- Music/SFX: slow instrumental unless the song is the point; fade the end; check rights. [Woven Video, https://www.woven.video/guides/photo-slideshow, 2026-10-19]
+- Steps here: personal photos stay in the scratchpad; piano CC0 track; `floating_hearts.py` for warm memories; HyperFrames scale tweens for Ken Burns; WhatsApp copy. [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "music/cc0"]; [repo: library/README.md "Tools (tools/)"]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]
 
 ## 26. App / website promo
 
 - Goal: walk through the REAL site: full-page screenshots scrolling in a browser frame, side panel with the site's headings, blocky host, captions, intro and end card. [repo: library/templates/website-promo/README.md]
 - Structure: research pages from the sitemap with Agent-Reach, save facts to library/research/<site>.md, only facts from the site in the script. [repo: library/templates/website-promo/README.md]
-- Transitions: device mockups for phone and laptop frames are a common app-promo format. [PromoGen, https://www.promogen.app/]
+- Transitions: device mockup videos with phone and laptop frames for app marketing and social. [PromoGen, https://www.promogen.app/]
 - Music/SFX: CC0 track by default; a promo song only when the owner asks. [repo: CLAUDE.md "Environment facts (cloud container)"]
 - Common mistakes: spending Firecrawl credits; capture with `web_capture.py` (network is full now). [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: CLAUDE.md "Agent tools (library/tools/setup-agent-tools.sh)"]
 - Steps here: edit `build.py` S table, `python3 build.py`, `npx hyperframes check`, snapshot ~20 times, render 1920x1080. [repo: library/templates/website-promo/README.md]
@@ -307,8 +307,8 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Goal: a live moment is worth most in the minutes after it happens. [ClipLive, https://cliplive.com/]
 - Structure: mark in/out on the stream's waveform (or grab the last 30 s), auto-frame the speaker into 9:16, captions in the same pass. [ClipLive, https://cliplive.com/]
 - Structure: hook (a stranger gets it), proof (one idea), payoff that ends where a rewatch feels natural. [Hookspring, https://hookspring.com/blog/first-three-seconds, 2026-10-20]
-- Captions: few words at a time, word-timed, active word in one colour; keep out of the bottom 420 px and right edge. [Clyper, https://www.clyper.io/guides/how-to-caption-short-videos, 2026-10-10]
-- Steps here: download only CC/public-domain media with yt-dlp; `clean_voice.py` on speech; vertical export. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: CLAUDE.md "Voice and songs with words"]
+- Captions: few words at a time, word-timed, active word in one colour; keep out of the bottom 420 px and the right edge of a 1080x1920 video. [Clyper, https://www.clyper.io/guides/how-to-caption-short-videos, 2026-10-10]
+- Steps here: download only CC/public-domain media with yt-dlp; `clean_voice.py` on speech; vertical export. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: CLAUDE.md "Voice and songs with words"]; [ClipLive, https://cliplive.com/]
 
 ## 28. Client phone-clip reel
 
@@ -328,7 +328,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Transitions: seamless and often humorous transitions, unexpected cuts, meme templates and playful sound effects (Ducky Bhai style). [UMT MCR, https://doi.org/10.32350/mcr.42.07, 2024-12-26]
 - Transitions: beat-synced cut-out and freeze-frame transitions on Hindi and romantic songs. [Ka Production, https://thekaproduction.com/2026/01/26/trending-transition-reels-editing-capcut/, 2026-01-26]
 - Music/SFX: Reels revive old Bollywood songs through 15-second dances, fashion transitions and wedding videos. [Brut India, https://www.brut.media/in/articles/from-in-the-night-no-control-to-sajna-hai-mujhe-how-instagram-is-bringing-old-bollywood-songs-back]
-- Grade: cinematic transitions and moody audio drive Reels aesthetics. [JL Agency, https://jl.agency/social/how-cinematic-transitions-moody-audio-are-shaping-reels-in-2025/, 2025-10-17]
+- Grade: grade with mood: warm shadows, desaturated highlights, soft contrast; don't go full filter. [JL Agency, https://jl.agency/social/how-cinematic-transitions-moody-audio-are-shaping-reels-in-2025/, 2025-10-16]
 - Captions: Roman Urdu captions; Pashto "Manana" (thank you) as a touch for Pashto-speaking clients. [repo: CLAUDE.md "Client phone-video edits"]
 - Common mistakes: using the Bollywood song itself; we never download copyrighted songs: use desi-eastern CC0 (tabla, sitar style, bollywood groove, damal drumming) or the owner's own MP3. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: library/music/cc0/README.md]
-- Steps here: phone-clip-reel template, Roman Urdu replies/captions, light text on bright walls in deep #6e0c20 with glow; `vs_tts.py` (Urdu 100%/97%) for Urdu narration. [repo: library/README.md "Templates (templates/)"]; [repo: CLAUDE.md "HyperFrames learnings"]; [repo: CLAUDE.md "Voice and songs with words"]
+- Steps here: phone-clip-reel template, Roman Urdu replies/captions, light text on bright walls in deep #6e0c20 with glow; `vs_tts.py` (Urdu 100%/97%) for Urdu narration. [repo: library/README.md "Templates (templates/)"]; [repo: CLAUDE.md "Rules from the owner"]; [repo: CLAUDE.md "HyperFrames learnings"]; [repo: CLAUDE.md "Voice and songs with words"]
