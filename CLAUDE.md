@@ -284,6 +284,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   They add new files only; merge each branch into the main work branch when done, then update library/README.md,
   setup-all.sh (their setup-specialist-*.sh) and this file.
 
+- FireCraft whitelist tutorial (session_01TPMNGNY1pArQWPm5nmzAfF, branch firecraft-whitelist-tutorial, started Oct 24 2026):
+  16:9 tutorial of the real apply flow on www.firecraft.fun, VoxCPM2 Hindi VO, cursor + click animation on every click,
+  no real submission. Merge its tools/notes when it reports.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
