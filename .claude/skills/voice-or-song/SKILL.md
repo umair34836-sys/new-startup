@@ -20,18 +20,24 @@ If it is genuinely unclear, ask one short question. Never use ElevenLabs unless 
 
 1. Tools: wait for `/home/user/tools/.heavy-ready` (the SessionStart hook installs ACE-Step, Whisper, audio-separator).
 2. Write the script one spoken line per row, ALL in Devanagari, English words included (वीडियो, माइनक्राफ्ट, लाइक).
-   Short lines (3-8 words) work best; each line is generated on its own.
+   Short lines (3-8 words) work best. Lines are spoken together in groups of 6 (`--group`, default 6 in ai_voice.py):
+   in the Oct 2026 test a lone short line per take came out garbled, a whole passage per take worked.
 3. Run in the background with a per-minute status monitor (the owner wants minute-by-minute updates):
    ```bash
    cd /home/user/tools && venv/bin/python -u /home/user/new-startup/library/tools/ai_voice.py \
      --script lines.txt --out <scratchpad>/voice --voice "warm friendly male"
    ```
-   `--voice "soft female"` etc. for another voice. Rerunning resumes; editing one line redoes only that line.
+   `--voice "soft female"` etc. for another voice. Rerunning resumes from the cached takes (out/groups/NN/<seed>.flac).
+   Caution (read from the code 2026-10-24): the cache is keyed by group number and seed, NOT by the text, so after
+   editing a line delete that line's `out/groups/NN/` folder (NN = first line index of its group, from 00) or the old
+   takes are re-scored against the new text instead of being regenerated.
 4. Check `report.json`: every line's `score` (Whisper match of that line) and `heard`. Below ~0.6, look at the
-   line: rewrite it shorter/simpler in Devanagari and rerun (only that line regenerates), or raise `--rounds`.
+   line: rewrite it shorter/simpler in Devanagari, delete its group's cache folder and rerun (that group regenerates),
+   or raise `--rounds`.
 5. Hand over `voice.mp3` with SendUserFile. Personal scripts and outputs stay in the scratchpad, never in git.
 
-Timing on this CPU box: ~1.5 min per round of 3 takes per line + ~1 min music removal per line.
+Timing on this CPU box (Oct 2026 test, 6 lines): ~6.5 min per round of 3 x 25 s takes of a group + ~1 min music
+removal per line.
 
 ## Song (ai_song.py)
 
@@ -42,10 +48,12 @@ another style. It keeps the music and pulls the beat back under the sung words.
 
 Clean spoken speech, no music at all, in 600+ languages incl. Urdu, Hindi and Pashto; voice design by text
 (`--instruct "male, middle-aged, low pitch"`) and zero-shot cloning (`--ref clip.wav --ref-text "..."`, only voices
-the owner may use). Oct 2026 test, Whisper word match: Urdu 100% / 97%, Hindi 92%, Pashto 81%; ~3-4x real time on CPU.
+the owner may use). Oct 24 2026 test, Whisper word match: Urdu 100% / 97%, Hindi 92%, Pashto 81%; 4.4-9.5 s clips
+took 22-36 s on CPU incl. model load (~4-5x the audio length).
 
 1. `bash library/tools/voicestudio.sh start` (needs `/home/user/tools/.heavy-ready`; backend on :3900). If GET /models
-   shows k2-fsa/OmniVoice not installed: POST /models/install {"repo_id":"k2-fsa/OmniVoice"} (3.3 GB, ~30 s).
+   shows k2-fsa/OmniVoice not installed: POST /models/install {"repo_id":"k2-fsa/OmniVoice"} (3.27 GB per HF API
+   2026-10-24; took ~30 s in Oct 2026).
    Licences must be accepted once per machine (owner chose to accept OmniVoice + VoxCPM2 on Oct 24 2026):
    GET /models/licenses/details/<repo> -> acceptance.fingerprint -> POST /models/licenses/accept.
 2. Script: one sentence per line in the language's own script (Urdu/Pashto Nastaliq, Hindi Devanagari).
@@ -53,4 +61,5 @@ the owner may use). Oct 2026 test, Whisper word match: Urdu 100% / 97%, Hindi 92
 4. Verify with Whisper (venv) before handing over.
 
 LICENCE: OmniVoice weights are NON-COMMERCIAL (CC-BY-NC): personal/own videos only. For client or paid videos use
-`--model voxcpm2` (Apache-2.0, Hindi among 30 languages, no Pashto, 5 GB download, slower) or ai_voice.py (ours).
+`--model voxcpm2` (Apache-2.0, Hindi among 30 languages, no Urdu, no Pashto, 4.96 GB download: HF API 2026-10-24;
+slower) or ai_voice.py (ours).

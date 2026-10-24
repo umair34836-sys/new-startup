@@ -24,6 +24,7 @@ person's voice is heard.
    listen.
 5. In an edit, use `voice.wav` as the voice track; add music under it with `voice_over_music.py` only if asked.
 
-Speed on this CPU box (26 s test): full = ~8 min vocals + ~3 min denoise (~25x the clip length); `--fast` = 43 s
+Speed on this CPU box (Oct 2026 test, 26 s clip; past measurement, not re-run in the 2026-10-24 audit; options and
+outputs above checked against clean_voice.py on 2026-10-24): full = ~8 min vocals + ~3 min denoise (~25x the clip length); `--fast` = 43 s
 vocals + ~3 min denoise. Full is clearly cleaner (pauses -106 dB vs -69 dB before denoise). For clips over ~1 minute
 say how long it will take and offer `--fast`. A background song with a singer stays (it is a voice too).
