@@ -212,7 +212,9 @@ Read this first in every session.
 - Pashto touch for Pashto-speaking clients: "Manana" = thank you (safe, well known). Captions stay Roman Urdu.
 
 ## Sub-sessions (Oct 24 2026)
-- Self-study (editing playbook + 500 skills): session_01NL5G8zFzaGE6NyNy9X54Uh -> branch editing-self-study.
+- Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
+  skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
+  before editing any new video.
 - Specialists: A perception tools + CPU speed (session_01BdHJpuB2BTCGDxFdR7KV44, specialist-a-perception-cpu);
   B desi vocal songs + PK reels trends (session_016xxyoT1VWtQ74po5jdBMUC, specialist-b-desi-music-trends);
   C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym, specialist-c-broll-sfx-luts);
