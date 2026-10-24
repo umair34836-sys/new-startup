@@ -3,10 +3,10 @@
 import os, subprocess
 
 VO_START = 0.4
-TOTAL = 32.5
+TOTAL = 34.02
 GREEN, GREEN2, DARK = "#22c55e", "#16a34a", "#070b12"   # site CSS: #22c55e x17, #16a34a x5
 SCENES = [("s1", 0.0, 4.5), ("s2", 4.5, 6.8), ("s3", 6.8, 12.6), ("s4", 12.6, 15.7),
-          ("s5", 15.7, 19.6), ("s6", 19.6, 22.6), ("s7", 22.6, 26.9), ("s8", 26.9, TOTAL)]
+          ("s5", 15.7, 21.12), ("s6", 21.12, 24.12), ("s7", 24.12, 28.42), ("s8", 28.42, TOTAL)]
 
 
 def dur(p):
@@ -128,11 +128,12 @@ C["s4"] = comp("s4", f"""    <div id="s4-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s4-num", { scale: 0.7 }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, 1.15);\n'
                '    tl.fromTo("#s4-ok", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 2.55);\n')
 
-# S5 locations (site: "Pick India, Singapore or Dubai for the lowest ping")
-d = 3.9
-locs = [("India", "india-flag.png", 0.1), ("Singapore", "singapore-flag.png", 0.7), ("Dubai", "dubai-flag.png", 1.26)]
+# S5 locations (site: India, Singapore, Dubai, "Frankfurt(Germany)" / "Europe (Germany)")
+d = 5.42
+locs = [("India", "india-flag.png", 0.05), ("Singapore", "singapore-flag.png", 0.46), ("Dubai", "dubai-flag.png", 1.36),
+        ("Germany", "germany-flag.png", 2.12)]
 loc_html = "".join(
-    f'<div class="card jk" id="s5-l{i}" style="position:absolute;left:140px;top:{470 + i * 250}px;width:800px;height:200px;display:flex;align-items:center;gap:40px;padding-left:50px;font-weight:800;font-size:72px;color:#fff;">'
+    f'<div class="card jk" id="s5-l{i}" style="position:absolute;left:140px;top:{430 + i * 215}px;width:800px;height:185px;display:flex;align-items:center;gap:40px;padding-left:50px;font-weight:800;font-size:72px;color:#fff;">'
     f'<img src="assets/img/{f}" style="width:150px;height:100px;object-fit:cover;border-radius:14px;" alt="{n} flag">{n}</div>'
     for i, (n, f, _) in enumerate(locs))
 loc_js = "".join(f'    tl.fromTo("#s5-l{i}", {{ x: 900, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }}, {t});\n'
@@ -143,7 +144,7 @@ C["s5"] = comp("s5", f"""    <div id="s5-w" style="position:absolute;inset:0;">
       <div class="c" id="s5-ping" style="top:1300px;"><span class="pill">LOWEST PING</span></div>
     </div>""",
                enter_exit("s5", d, "#s5-w") + loc_js +
-               '    tl.fromTo("#s5-ping", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 2.9);\n')
+               '    tl.fromTo("#s5-ping", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 3.86);\n')
 
 # S6 price (games page: "Java & Bedrock servers from ₹20/mo")
 d = 3.0
@@ -174,7 +175,7 @@ C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s7-off", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.4)" }, 3.05);\n')
 
 # S8 end card
-d = round(TOTAL - 26.9, 2)
+d = round(TOTAL - 28.42, 2)
 C["s8"] = comp("s8", f"""    <div id="s8-w" style="position:absolute;inset:0;">
       <img id="s8-logo" src="assets/img/logo.png" style="position:absolute;left:390px;top:380px;width:300px;height:300px;" alt="SkilloraClouds logo">
       <div class="c jk" id="s8-name" style="top:720px;font-weight:800;font-size:100px;color:#fff;">Skillora<span class="g">Clouds</span></div>
@@ -200,15 +201,15 @@ for k, s, e in SCENES:
 
 sfx = lambda n: f"assets/sfx/{n}.mp3"
 A = [("vo", "assets/vo/vo.wav", VO_START, dur("assets/vo/vo.wav"), 1.0, 10, 0),
-     ("m1", "assets/music/music.mp3", 0, 30.0, 0.16, 11, 0),
-     ("m2", "assets/music/music.mp3", 30.0, 2.5, 0.5, 12, 30.0),
+     ("m1", "assets/music/music.mp3", 0, 31.52, 0.16, 11, 0),
+     ("m2", "assets/music/music.mp3", 31.52, 2.5, 0.5, 12, 31.52),
      ("hit", sfx("impact-bass-1"), 3.0, dur(sfx("impact-bass-1")), 0.3, 13, 0)]
-for i, t in enumerate([4.38, 6.68, 12.48, 15.58, 19.48, 22.48, 26.78]):
+for i, t in enumerate([4.38, 6.68, 12.48, 15.58, 21.0, 24.0, 28.3]):
     A.append((f"wh{i}", sfx("whoosh-short"), t, dur(sfx("whoosh-short")), 0.45, 14 + i % 2, 0))
-for i, t in enumerate([6.88, 8.0, 9.44, 10.96, 15.8, 16.4, 16.96]):
+for i, t in enumerate([6.88, 8.0, 9.44, 10.96, 15.75, 16.16, 17.06, 17.82]):
     A.append((f"pop{i}", sfx("pop"), t, dur(sfx("pop")), 0.5, 16 + i % 2, 0))
-A += [("spk", sfx("sparkle"), 25.65, dur(sfx("sparkle")), 0.35, 18, 0),
-      ("spk2", sfx("sparkle"), 28.85, dur(sfx("sparkle")), 0.35, 19, 0)]
+A += [("spk", sfx("sparkle"), 27.17, dur(sfx("sparkle")), 0.35, 18, 0),
+      ("spk2", sfx("sparkle"), 30.37, dur(sfx("sparkle")), 0.35, 19, 0)]
 aud = "\n".join(f'      <audio id="{i}" src="{s}" data-start="{st}" data-duration="{d}" data-volume="{v}" data-track-index="{ln}"'
                 + (f' data-media-start="{ms}"' if ms else "") + (' data-fade-out="1.5"' if i == "m2" else "") + "></audio>"
                 for i, s, st, d, v, ln, ms in A)

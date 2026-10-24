@@ -243,6 +243,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   independently (Whisper small per line on cuts from those timings worked: all 8 lines heard; whole-file Whisper failed).
 - OWNER RULE (Oct 24 2026): client videos shown BEFORE payment get `library/tools/watermark.py` ("Made by MrCopper804"
   tiled + PREVIEW corner tag + copyright metadata); the clean, open-licence file goes out only after payment.
+- MISSED FACT (2026-10-24): the first reel listed India/Singapore/Dubai but the homepage also lists "Frankfurt(Germany)" /
+  "Europe (Germany)"; the owner caught it. Before writing a script, grep the captures for EVERY item of a list
+  (locations, games, plans), not just the first sentence that names some.
+- Patching one VO line later: regenerate only that line with the same ElevenLabs voice (5.4 s line = 78 credits per take,
+  2 takes, 2026-10-24), Whisper-check it, splice at the silences around the old line (silencedetect -40 dB), loudnorm the
+  whole VO again, shift later scenes/SFX by the length difference. Its loudness matched the old line (-19.0 vs -19.3 LUFS).
+  Never clone a real voice actor's voice with a free tool to avoid this (owner chose the ElevenLabs line instead).
 - QA after render: watch.py (fps, black/frozen) + listen.py (LUFS, clipping, voice span). Music under VO at volume 0.16
   (-13 LUFS track) and VO loudnormed to -16 gave a -16.0 LUFS mix, no clipping.
 
