@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2] / "library" / "research" / "editing"
 DIRS = [ROOT / "skills2", ROOT / "skills"]
 LINE = re.compile(r"^(\d+)\. \*\*(.+?)\*\*\s*[—-]+\s*(.*)$")
-REF = re.compile(r"\[([^\[\]]*(?:https?://|repo:|ffmpeg docs|tested here)[^\[\]]*)\]")
+REF = re.compile(r"\[([^\[\]]*(?:https?://|repo:|ffmpeg docs|tested here|--help|local install)[^\[\]]*)\]")
 
 
 def parse():
