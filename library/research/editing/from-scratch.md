@@ -138,7 +138,7 @@ Owner rule: background music/songs must need no credit (CC0, public domain or ma
 - LUFS meters use K-weighting: less sensitive below ~100 Hz, more above ~2 kHz [iZotope, https://www.izotope.com/community/blog/mastering-for-streaming-platforms, 2025-07-23].
 - Repo-tested levels: music 1.0, impact-bass 0.35-0.4, whoosh 0.6-0.8; measure the render per 0.5 s and with `ebur128` (target about -16 LUFS) [repo: CLAUDE.md "Client phone-video edits"].
 - Measure: `ffmpeg -i out.mp4 -af ebur128=peak=true -f null -` [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#ebur128] (ran OK locally).
-- Normalise: `ffmpeg -i in.mp4 -af loudnorm=I=-14:TP=-1:LRA=11 -c:v copy -c:a aac -b:a 160k out.mp4` [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#loudnorm] (ran OK locally; re-run 2026-10-24: -21.8 -> -14.0 LUFS, but the output audio came out at 96 kHz, so add `-ar 48000` for 48 kHz).
+- Normalise: `ffmpeg -i in.mp4 -af loudnorm=I=-14:TP=-1:LRA=11 -c:v copy -c:a aac -b:a 160k out.mp4` [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#loudnorm] (ran OK locally; re-run 2026-10-24: -21.8 -> -14.0 LUFS, but the output audio came out at 96 kHz (loudnorm upsamples to 192 kHz in dynamic mode; to WAV the audit measured 192000 Hz), so add `-ar 48000` for 48 kHz).
 - A `data-fade-out` on music must start after the last spoken word [repo: CLAUDE.md "Voice and songs with words"].
 
 ## 9. Export

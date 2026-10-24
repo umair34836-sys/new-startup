@@ -10,18 +10,18 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 | Phone clip | ffprobe (rotation, fps), contact sheet every ~0.4 s, find the best moments | Client phone-clip reel, Vlog/travel, Birthday/family | [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"] |
 | WhatsApp low-fps / low-res clip | r_frame_rate can read 28.4 while the clip is really ~12 fps: check frame pts with `ffprobe -show_entries frame=pts_time` (ran OK locally) | Client phone-clip reel | [repo: CLAUDE.md "Client phone-video edits"]; [FFmpeg Cookbook, https://ffmpeg-cookbook.com/en/articles/change-framerate/, 2026-04-08] |
 | Screen recording | Cut dead time first, then zooms and callouts | Tutorial/screen recording/course, Product demo, App/website promo | [TechSmith, https://www.techsmith.com/blog/edit-demo-recording/, 2026-07-07] |
-| Talking head | Hook in the first sentence, cut on breaths | Talking-head YouTube, Interview/testimonial | [The Beans Media, https://thebeansmedia.com/how-to-edit-talking-head-videos-for-youtube] |
+| Talking head | Hook in the first sentence, cut on breaths | Talking-head YouTube, Interview/testimonial | [The Beans Media, https://thebeansmedia.com/how-to-edit-talking-head-videos-for-youtube]; [Addaly, https://addaly.com/learn/video-editing/cutting-a-dialogue-scene] |
 | Clip with speech | Use that person's own voice, cleaned: clean_voice.py | Talking head, Interview, Vlog, Podcast | [repo: CLAUDE.md "Voice and songs with words"] |
 | Silent clip (Whisper finds no speech) | It becomes a music reel: title at 0 s, one shot per bar | Client phone-clip reel, Dance/trend reel, Slideshow | [repo: CLAUDE.md "Client phone-video edits"] |
 | Event footage | Decide the audience first (attendees, sponsors, future buyers) | Event aftermovie, Wedding highlight | [Omebly, https://omebly.com/blog/how-to-edit-an-event-recap-video/, 2026-10-16] |
 | Product shots | Edit toward hook, problem, benefit, proof, offer, CTA | Product ad/UGC ad, Product demo/unboxing | [FrameNotion, https://framenotion.com/blog/how-to-edit-product-videos-for-social-ads, 2026-10-08] |
-| Photos only | 3 to 5 s per photo, one motion style for all | Slideshow from photos, Birthday/family | [Woven Video, https://www.woven.video/guides/photo-slideshow] |
+| Photos only | 3 to 5 s per photo, one motion style for all | Slideshow from photos, Birthday/family | [Woven Video, https://www.woven.video/guides/photo-slideshow, 2026-10-19] |
 | No footage | Host = the owner's blocky skin (blocky_character.py); voice from ai_voice.py / vs_tts.py | Faceless channel, Explainer, App/website promo | [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "Tools (tools/)"] |
-| Game capture | Brighten Nether/night shots, tame loud game sounds | Gaming/Minecraft | [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19] |
+| Game capture | Brighten Nether/night shots (unverified); keep game audio under the voice | Gaming/Minecraft | [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Umbrella Creators, https://umbrellacreators.com/blog/how-to-edit-gaming-videos-for-youtube, 2026-09-27] |
 
 ## Rules that apply to every type
 
-- Music must need no credit: use CC0 tracks made by others from `library/music/cc0` (OpenGameArt tracks, each page checked for CC0 only; moods and files in library/music/cc0/README.md); our own ACE-Step songs only when the owner asks. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: library/README.md "music/cc0"]
+- Music must need no credit: use CC0 tracks made by others from `library/music/cc0` (OpenGameArt, Freesound/FreePD and FMA tracks, each licence checked for CC0/public domain only; moods and files in library/music/cc0/README.md); our own ACE-Step songs only when the owner asks. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: library/README.md "music/cc0"]; [repo: library/music/cc0/README.md]
 - Never commit videos, photos, voices or family data; work on personal media in the session scratchpad and hand it over with SendUserFile. [repo: CLAUDE.md "Rules from the owner"]
 - The first frame is the thumbnail: put a title or key image on screen at 0 s. [repo: CLAUDE.md "HyperFrames learnings"]; [Simplified Help, https://help.simplified.com/en/articles/7232323-how-to-add-a-cover-to-instagram-reels, 2024-04-10]
 - Vertical export: 1080x1920, 9:16, H.264 MP4, 25 or 30 fps, AAC 48 kHz; keep must-read text out of the top 15% and bottom 20%. [Addaly, https://addaly.com/learn/video-editing/export-settings-per-destination]
@@ -33,11 +33,11 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 ## 1. Talking-head YouTube
 
 - Goal: the first 30 seconds decide everything; open on the most interesting sentence and end on value, not a wind-down. [The Beans Media, https://thebeansmedia.com/how-to-edit-talking-head-videos-for-youtube]
-- Length/aspect: 16:9 long-form for YouTube; vertical cut-downs at 1080x1920. [Woven Video, https://www.woven.video/guides/social-media-video-sizes]
+- Length/aspect: 16:9 long-form for YouTube; vertical cut-downs at 1080x1920. [Woven Video, https://www.woven.video/guides/social-media-video-sizes, 2026-10-19]
 - Structure: keep the face on screen for the hook, personal reactions and the final instruction; B-roll enters on the phrase that names the subject. [Zupum, https://zupum.com/learning-hub]
 - Cut rhythm: cut on energy, not just silence, and give a new visual every 5 to 7 seconds (punch-in, B-roll, text, angle switch). [The Beans Media, https://thebeansmedia.com/how-to-edit-talking-head-videos-for-youtube]
 - Cut rhythm: move every cut to a breath; a cut inside a phrase sounds wrong. [Addaly, https://addaly.com/learn/video-editing/cutting-a-dialogue-scene]
-- Transitions: jump cuts are an accepted style; alternate a subtle 105-110% zoom on every other cut so they read as intentional. [Pristine Podcasts, https://app.pristinepodcasts.com/blog/editing-talking-head-video-podcast]
+- Transitions: jump cuts are an accepted style; alternate a subtle 105-110% zoom on every other cut so they read as intentional. [Pristine Podcasts, https://app.pristinepodcasts.com/blog/editing-talking-head-video-podcast, 2026-02-11]
 - Captions: captions are a retention tool, not optional. [The Beans Media, https://thebeansmedia.com/how-to-edit-talking-head-videos-for-youtube]
 - Music/SFX: lay continuous room tone under all speech cuts so the joins disappear; J/L-cut every join. [Addaly, https://addaly.com/learn/video-editing/cutting-a-dialogue-scene]
 - Common mistakes: covering the speaker with B-roll just because a few seconds passed; bad audio kills retention faster than bad light. [Zupum, https://zupum.com/learning-hub]; [The Beans Media, https://thebeansmedia.com/how-to-edit-talking-head-videos-for-youtube]
@@ -47,8 +47,8 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 
 - Goal: one full episode plus vertical clips for Shorts, with chapters. [Pacing House, https://pacinghouse.com/guides/how-to-edit-a-podcast-video/, 2026-10-16]
 - Length/aspect: clips in 9:16, 1:1, 4:5 and 16:9 from one transcript. [Castmagic, https://www.castmagic.io/tools/podcast-clip-generator]
-- Structure: group every camera and the sound recording into one multicam clip, switch to whoever talks, then tighten pauses, then a sound pass per mic, then pull clips. [B/side, https://bside.video/learn/how-to-edit-a-multicam-podcast/]
-- Cut rhythm: the camera follows whoever is speaking; the microphones show who that is. [podswitch, https://www.usepodswitch.com/guides/how-to-edit-a-multicam-podcast]
+- Structure: group every camera and the sound recording into one multicam clip, switch to whoever talks, then tighten pauses, then a sound pass per mic, then pull clips. [B/side, https://bside.video/learn/how-to-edit-a-multicam-podcast/, 2026-10-06]
+- Cut rhythm: the camera follows whoever is speaking; the microphones show who that is. [podswitch, https://www.usepodswitch.com/guides/how-to-edit-a-multicam-podcast, 2026-10-06]
 - Cut rhythm (clips): start every clip on a full sentence. [FastClip, https://fastclips.app/podcast-clip-maker]
 - Transitions: in vertical clips, a split screen stacks both people when both are in the shot. [Clyps, https://clyps.ai/podcast-clip-generator]
 - Grade: match colour across cameras. [Pacing House, https://pacinghouse.com/guides/how-to-edit-a-podcast-video/, 2026-10-16]
@@ -70,11 +70,11 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 
 ## 4. Documentary / mini-doc
 
-- Goal: interviews or narration anchor each sequence and images give "evidence" for what is said (evidentiary editing). [O'Reilly, Documentary Editing 2nd ed., https://www.oreilly.com/library/view/documentary-editing-2nd/9781000854671/xhtml/chapter6.xhtml]
+- Goal: interviews (or their audio) anchor each sequence and the editor backs up what is said with images that give evidence for it (evidentiary editing). [Beverly Boy Productions, https://beverlyboy.com/filmmaking/how-does-continuity-cutting-differ-from-evidentiary-editing/, 2021-05-05]
 - Structure: make selects, then a rough assembly from the strongest selects only, starting with an audio-only "radio cut" of interviews and narration. [LibreTexts, https://human.libretexts.org/Bookshelves/Theater_Film_and_Storytelling/Documentary_Culture/15%3A_Editing_the_Documentary/15.03%3A_Building_Assemblies, 2026-01-17]
-- Cut rhythm: tell a story with the B-roll too; rather keep a jump cut than cover it with meaningless B-roll. [NYFA, https://www.nyfa.edu/student-resources/how-to-edit-an-interview-for-a-documentary/, 2014-05-28]
-- Transitions: Ken Burns slow pans and zooms over photos and archival documents create motion from stills. [MasterClass, https://www.masterclass.com/articles/how-to-use-the-ken-burns-effect-in-a-documentary, 2020-09-21]
-- Common mistakes: archival used as "wallpaper" B-roll under talk. [Sundance Institute, https://www.sundance.org/blogs/contemplating-the-cut-takeaways-and-tips-for-documentary-editors-3/, 2017-06-26]; [IDA, https://documentary.org/feature/no-longer-just-wallpaper-archival-footage-can-inform-and-shape-your-films-story]
+- Cut rhythm: tell a story with the B-roll too; rather keep a jump cut in than cover it with random footage that doesn't fit. [NYFA, https://www.nyfa.edu/student-resources/how-to-edit-an-interview-for-a-documentary/, 2014-05-28]
+- Transitions: the Ken Burns effect puts still photographs in motion with slow zooms and pans (named after the documentarian; used when film or video material is not available). [Wikipedia, https://en.wikipedia.org/wiki/Ken_Burns_effect, checked 2026-10-24]
+- Common mistakes: treating archival as just "wallpaper" B-roll. [Sundance Institute, https://www.sundance.org/blogs/contemplating-the-cut-takeaways-and-tips-for-documentary-editors-3/, 2017-06-26]; [IDA, https://documentary.org/feature/no-longer-just-wallpaper-archival-footage-can-inform-and-shape-your-films-story, 2013-04-01]
 - Common mistakes: no naming system for archive sources; use a consistent shorthand and numbering. [IDA, https://www.documentary.org/blog/6-essential-tips-using-archival-footage, 2013-08-14]
 - Steps here: spoken narration with zero music via `ai_voice.py` or `vs_tts.py` (VoiceStudio; OmniVoice is non-commercial, client work uses `--model voxcpm2` or ai_voice.py); mix with `voice_over_music.py`; cinematic/piano CC0 bed. [repo: CLAUDE.md "Voice and songs with words"]; [repo: library/README.md "music/cc0"]
 
@@ -82,11 +82,11 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 
 - Goal and length: a 2-4 minute travel film from many clips. [Aerial Media, https://aerialmedia.com/resources/cinematic-travel-video-photographers-guide/, 2026-02-27]
 - Structure: rough selects first at 2-4x shuttle speed, marking in/out; aim to cut 60-70% of the footage at this stage. [EditBuddy, https://editbuddy.app/blog/how-to-edit-travel-vlogs-premiere-pro, 2026-04-29]
-- Cut rhythm: pacing is not just cut speed; it is also the frame you cut on and the length of each sequence. [YouTube, https://www.youtube.com/watch?v=W0ssQOv7s4c, 2020-10-24]
+- Cut rhythm: pacing is not just cut speed; it is also the frame you cut on and the length of each sequence (unverified). [YouTube (Aidin Robbins, "How to Nail the PACING of your Travel Film"), https://www.youtube.com/watch?v=W0ssQOv7s4c, 2020-03-28]
 - Cut rhythm: jump-cutting a direct-address monologue is a core vlog convention. [First Monday, https://firstmonday.org/ojs/index.php/fm/article/download/10547/11266]
 - Transitions: change scene on a beat or during a pause in the track. [Splice, https://spliceapp.com/blog/editing-travel-vlogs-with-music/, 2026-06-22]
 - Music/SFX: let the place's own sound play 2-3 s on establishing shots, with a music bed underneath for continuity. [Umbrella Creators, https://umbrellacreators.com/blog/youtube-editor-for-travel-vlogs, 2026-04-24]
-- Steps here: phone recipe (ffprobe, contact sheet, cut on bars, grade-compare); `clean_voice.py` on spoken parts; travel-ambient CC0 tracks; WhatsApp copy. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: library/README.md "music/cc0"]
+- Steps here: phone recipe (ffprobe, contact sheet, cut on bars, grade-compare); `clean_voice.py` on spoken parts; travel-ambient CC0 tracks; WhatsApp copy. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [repo: library/music/cc0/README.md]
 
 ## 6. Wedding highlight
 
@@ -109,7 +109,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Transitions: cut between synced multicam angles: wide, close-ups of key moments, crowd reactions. [Adobe Video World, https://adobevideoworld.com/event-video-editing/, 2026-06-26]
 - Music/SFX: choose one track with a real build and drop before touching clips. [Cevylo, https://cevylo.com/festival-aftermovie-editing-guide, 2026-08-05]
 - Common mistakes: editing from clips sent through messaging apps; missing a promised sponsor, person or logo. [Omebly, https://omebly.com/blog/how-to-edit-an-event-recap-video/, 2026-10-16]; [AutoEdit, https://autoedit.elevenpercent.net/learn/blog/corporate-event-recap]
-- Steps here: CC0 upbeat/electronic track from library/music/cc0, cut on bars; mix levels music 1.0, impact-bass 0.35-0.4, whoosh 0.6-0.8; vertical export. [repo: library/README.md "music/cc0"]; [repo: CLAUDE.md "Client phone-video edits"]
+- Steps here: CC0 upbeat/electronic track from library/music/cc0, cut on bars; mix levels music 1.0, impact-bass 0.35-0.4, whoosh 0.6-0.8; vertical export. [repo: library/music/cc0/README.md]; [repo: CLAUDE.md "Client phone-video edits"]
 
 ## 8. Birthday / family memory
 
@@ -119,7 +119,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Transitions: slow-mo for emotion, freeze frame end made seamless from the last slow-mo frame. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]
 - Captions: add the age or a short message as a caption. [PhotoForVideo, https://photoforvideo.com/blog/birthday-video-ideas]
 - Common mistakes: committing family media, names or captions about family to GitHub. [repo: CLAUDE.md "Rules from the owner"]
-- Steps here: work only in the scratchpad; smooth slow-mo `minterpolate=fps=<30/rate>:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=PTS/<rate>` (ran OK locally); `floating_hearts.py --burst-at` for the end card; kids-cute or happy CC0 track; SendUserFile + WhatsApp copy. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#minterpolate]; [repo: library/README.md "Tools (tools/)"]
+- Steps here: work only in the scratchpad; smooth slow-mo `minterpolate=fps=<30/rate>:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=PTS/<rate>` (ran OK locally); `floating_hearts.py --burst-at` for the end card; kids-cute or happy CC0 track; SendUserFile + WhatsApp copy. [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]; [ffmpeg docs, https://ffmpeg.org/ffmpeg-filters.html#minterpolate]; [repo: library/README.md "Tools (tools/)"]; [repo: library/music/cc0/README.md]
 
 ## 9. Product ad / UGC ad
 
@@ -135,19 +135,19 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 
 ## 10. Product demo / unboxing
 
-- Goal: write one sentence first: "after this demo the viewer should believe they can do X". [FrameCompose, https://www.framecompose.com/guides/how-to-make-a-product-demo-video]
+- Goal: write one sentence first: "after this demo the viewer should believe they can do X". [FrameCompose, https://www.framecompose.com/guides/how-to-make-a-product-demo-video, 2026-08-30]
 - Structure: trim dead air, zoom on what matters, add captions, tighten pacing; raw demos are often 40-60% filler. [InstaDemo, https://instademo.app/blog/how-to-edit-a-product-demo-video-beginner-guide, 2026-10-16]
 - Cut rhythm: cut mistakes, pauses and dead air before any effects, branding or captions. [TechSmith, https://www.techsmith.com/blog/edit-demo-recording/, 2026-07-07]
 - Transitions: picture-in-picture of a close-up angle over the wide reaction shot. [Clipchamp, https://clipchamp.com/en/blog/how-to-edit-unboxing-videos/, 2023-08-30]
 - Structure (unboxing): reveal the product name as it enters frame, show it doing its thing, keep it short, use cutaways. [Epidemic Sound, https://www.epidemicsound.com/blog/unboxing-videos/, 2024-04-11]
-- Common mistakes: empty states and fake-looking data; use a realistic account. [FrameCompose, https://www.framecompose.com/guides/how-to-make-a-product-demo-video]
+- Common mistakes: empty states and fake-looking data; use a realistic account. [FrameCompose, https://www.framecompose.com/guides/how-to-make-a-product-demo-video, 2026-08-30]
 - Steps here: voiceover with `vs_tts.py` / `ai_voice.py` (zero music) then `voice_over_music.py` over a CC0 bed; HyperFrames zoom tweens on a wrapper div; check/snapshot/render. [repo: CLAUDE.md "Voice and songs with words"]; [repo: CLAUDE.md "Editing a phone video into a professional edit (recipe that worked)"]
 
 ## 11. Real-estate walkthrough
 
-- Goal: show the property clearly, in a logical route, leading with the strongest feature. [Async, https://async.com/blog/how-to-make-a-real-estate-video/]
+- Goal: show the property clearly, in a logical route, leading with the strongest feature. [Async, https://async.com/blog/how-to-make-a-real-estate-video/, 2026-10-01]
 - Length/aspect: plan horizontal and vertical-safe options for the opening, signature feature and close. [Westby, https://www.westby.ai/resources/real-estate-video-shot-list, 2026-07-26]
-- Structure: exterior, entry, living, kitchen, primary bedroom, standout detail, outdoor, call to action, without doubling back. [Async, https://async.com/blog/how-to-make-a-real-estate-video/]
+- Structure: exterior, entry, living, kitchen, primary bedroom, standout detail, outdoor, call to action, without doubling back. [Async, https://async.com/blog/how-to-make-a-real-estate-video/, 2026-10-01]
 - Structure: first a silent spatial cut, then the property argument, then style, then finish. [Flickspeed, https://www.flickspeed.ai/guides/real-estate-video-editing]
 - Cut rhythm: 2-4 s clips cut on the beat; split a room that needs longer into wide + detail. [Propfade, https://propfade.com/real-estate-video/walkthrough-videos/, 2026-06-05]
 - Cut rhythm: slow down in high-stakes rooms, speed through connectors. [VirtualTourEasy, https://virtualtoureasy.com/articles/video-editing-real-estate/, 2026-06-11]
@@ -160,10 +160,10 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 ## 12. Gaming / Minecraft (FireCraft SMP promo)
 
 - Goal: watch time drives the algorithm; a consistent, recognisable thumbnail style conditions clicks. [VideoHighlight (Dream analysis), https://videohighlight.com/v/PVsLIPTdm6U, 2024-05-24]
-- Structure: no intro longer than 3 seconds (none is often better). [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
+- Structure: no intro longer than 3 seconds (none is often better) (unverified). [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
 - Cut rhythm: zooms, SFX hits and labels only point at moments that already work; add text for context the viewer lacks (a name, a number, a rule). [Umbrella Creators, https://umbrellacreators.com/blog/how-to-edit-gaming-videos-for-youtube, 2026-09-27]
-- Grade: brighten Nether and night footage. [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
-- Common mistakes: environment sounds too loud for viewers; nonstop flashing, SFX and subtitles (the kids-video style) can feel like overstimulation. [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Plugged In, https://www.pluggedin.com/youtube-reviews/eystreem/, 2026-10-13]
+- Grade: brighten Nether and night footage (unverified). [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
+- Common mistakes: environment sounds too loud for viewers (unverified); nonstop flashing, SFX and subtitles (the kids-video style) can feel like overstimulation. [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Plugged In, https://www.pluggedin.com/youtube-reviews/eystreem/, 2026-10-13]
 - Music/SFX: the CC0 set has a cinematic group (epic, choir, battle, boss-battle symphonic metal) for promos. [repo: library/README.md "music/cc0"]; [repo: library/music/cc0/README.md]
 - Steps here: start from the repo `video/` folder (FireCraft Season 2 launch video, template for promos); `ember_background.py` background; blocky host from `host-skin.png`; server facts from library/research/firecraft-smp.md; capture firecraft.fun with `web_capture.py`. [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "Tools (tools/)"]; [repo: library/README.md "research/"]; [repo: CLAUDE.md "Environment facts (cloud container)"]
 
