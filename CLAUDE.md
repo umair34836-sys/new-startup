@@ -31,7 +31,9 @@ Read this first in every session.
 ## Environment facts (cloud container)
 
 - Everything runs in an ephemeral cloud container, not the owner's PC.
-- Network is allowlisted. The owner has allowed (Oct 2026): npm, pypi, archive.ubuntu.com (apt),
+- NETWORK: since Oct 24 2026 the owner set Network access to FULL (any site works, e.g. visit.talkember.site,
+  www.firecraft.fun -> use web_capture.py for them, not Firecrawl). The old allowlist is saved in
+  library/research/network-allowlist.md: give it to the owner when asked. Previously the network was allowlisted (Oct 2026): npm, pypi, archive.ubuntu.com (apt),
   raw.githubusercontent.com, `git clone` of public repos, storage.googleapis.com, fonts.googleapis.com,
   huggingface.co + its CDNs (us.aws.cdn.hf.co, *.xethub.hf.co), openaipublic.azureedge.net (Whisper),
   YouTube (youtube.com, *.googlevideo.com, i.ytimg.com), pixabay, freesound, api.openverse.org,
