@@ -85,6 +85,11 @@ Read this first in every session.
 - Long AI songs (Oct 2026, TalkEmber promo): a 47-line, 200 s ACE-Step song SKIPPED half the lyrics (sang ~25 lines).
   Keep each generation to ~16-19 lines (~130-150 s) and join parts at an instrumental gap with a crossfade. Several
   parts in one Python process share one model load (first load + INT8 ~11 min, later ~1 min).
+- Promo jingle test (MoradoSolution, 8 dense Hindi ad lines, turbo, measured here 2026-10-24): 36 s @120 BPM sang only
+  ~4 lines (whole-mix Whisper similarity 38%); 64 s @110 BPM sang lines 3-8 but dropped the two hook lines 1-2 (61%).
+  ai_song.py's initialize_service re-downloads the unused 3.5 GB LM (acestep-5Hz-lm-1.7B) every run: delete it after.
+  Whisper on the UVR-separated vocals returned nothing for the first 30 s window (a lone hallucinated word at 30 s)
+  while the full-mix transcript had those lines: check both. library/tools/align_lyrics.py maps lines to times.
 - Whisper on a long song misses whole sung stretches: separate the vocals first (UVR-MDX-NET Voc FT, ~2 min for
   200 s), transcribe with condition_on_previous_text=False, then align lyric lines with a global in-order DP
   (video/dp_align.py pattern), never greedy first-match (one weak match pushes every later line out of place).
