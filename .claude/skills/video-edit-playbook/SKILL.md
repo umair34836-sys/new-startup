@@ -2,6 +2,9 @@
 name: video-edit-playbook
 description: Decide fast how to edit any video the owner sends (phone clip, WhatsApp clip, talking head, event, product, screen recording, silent clip, photos, or no footage at all). Use whenever the owner asks to edit, "professional bana do", make a reel/short/promo, or build a video from scratch. Gives the triage checklist and tells you which knowledge-base file to read (library/research/editing/).
 ---
+> OWNER RULE (Oct 24 2026): every video made or edited must be skill-based: use this playbook, decision-guide.md,
+> `find_skill.py`, the repo templates/tools/assets and client briefs first; never build or edit from guesswork.
+
 
 # Video edit playbook
 

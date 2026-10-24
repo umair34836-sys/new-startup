@@ -5,6 +5,17 @@ Read this first in every session.
 
 ## Rules from the owner
 
+- SKILL-BASED ONLY (owner, Oct 24 2026): whenever the owner asks to MAKE or EDIT a video, never build or edit from
+  guesswork. Use the repo first, in this order, before writing anything new:
+  1. Client brief if one exists (library/clients/<name>/), then the matching template (library/templates/*).
+  2. `.claude/skills/video-edit-playbook` + library/research/editing/decision-guide.md (find the video type, follow
+     "Steps here"); look up every technique with `python3 library/tools/find_skill.py "<words>"` (prefer --tested).
+  3. Repo tools and assets: listen.py / watch.py on every input before deciding cuts; library/music (CC0), sfx, stock,
+     luts, fonts, blocks; vs_tts.py (free voice), watermark.py, screen_recorder.js, etc. (library/README.md lists them).
+  4. Repo skills for the job (desi-reels, urdu-captions, client-brand-kit, stock-sfx-luts, voice-or-song,
+     clean-video-voice, listen-and-watch, hyperframes).
+  If the repo has nothing for a step, say so to the owner, use a verified source (with reference), and save what worked
+  back to the repo. In the delivery message, name the template/skills/tools used.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable
   assets/tools in `library/` (music, sound effects, fonts, overlay blocks, models, scripts).
 - NEVER commit videos, photos, voice recordings, or personal data (family names, captions written about
