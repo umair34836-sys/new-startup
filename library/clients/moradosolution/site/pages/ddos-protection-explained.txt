@@ -1,0 +1,92 @@
+URL: https://moradosolution.in/ddos-protection-explained
+HTTP: 200
+TITLE: DDoS Protection Explained: What It Stops and How | MoradoSolution
+FETCHED: 2026-10-24T12:22:23.194Z (Playwright Chromium, rendered innerText)
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+ENGINEERING
+
+DDoS protection explained: what it stops and how
+
+What an attack actually does to your server, which layers we filter, and why mitigation has to sit at the network edge rather than on the machine.
+
+Engineering
+4 October 2026
+Shivnath Dey, Director & Founder
+
+A distributed denial of service attack floods your server with traffic from many sources at once, so legitimate players cannot connect or your server runs out of resources handling junk packets. A public Minecraft or VPS IP is a target because it is easy to find and cheap to attack.
+
+Protection means detecting the flood and discarding the malicious traffic before it reaches your machine, so your server keeps serving real players while the attack is running. MoradoSolution filters attacks in house at the network edge, before traffic reaches your node, with Cloudflare Magic Transit available on the same network. It is always on, included on every plan at every location, and there is no premium tier and nothing to configure.
+
+Mitigation happens inline at the edge, not on your server. Your workload never sees the flood.
+Is DDoS protection an add-on or included?
+
+Included. There is no separate DDoS billing line on any MoradoSolution plan, game hosting, VPS, VDS or bare metal alike. You do not enable it, do not pick a tier and do not pay extra. Mitigation engages automatically when an attack signature appears, so there is no human in the loop and no window where you have to notice and react.
+
+Which kinds of attack does it stop?
+Attack layers covered by always-on filtering
+LAYER	WHAT IT IS	HOW IT IS HANDLED
+L3 and L4	Volumetric floods such as UDP and SYN amplification	Dropped at the edge over 10 Gbps capacity before reaching your server
+L7	HTTP request floods and protocol-level abuse	Filtered on request inspection, verified flows only are forwarded
+Game server traffic	Malformed Minecraft protocol packets and connection floods	Invalid sessions dropped inline, real player connections unaffected
+Why protection has to sit in front of the server
+
+Filtering on the server itself is too late. By the time junk packets arrive, they have already consumed the bandwidth, filled the connection table and taken CPU cycles away from your workload. Mitigation only works if it happens before the traffic reaches your NIC, which is why we run it at the network edge on our own routers and switches rather than installing an agent on your server.
+
+What protection cannot promise
+
+No mitigation can promise zero impact in every situation. Some attack traffic can still pass through, roughly 5 to 10 percent during an attack, and in rare cases even a fraction of that may have some effect. That is why we also run network-level protection with automatic null-routing above defined thresholds. Multiple layers reduce risk substantially, but honest providers tell you where the limit is.
+
+Full technical detail lives on the DDoS protection page, and the network behind it on the infrastructure page. Live status is on the status page.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

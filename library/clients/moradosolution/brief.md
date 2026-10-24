@@ -3,6 +3,9 @@
 Deal done 2026-10-24 (owner). Everything below was read on the live sites on 2026-10-24 unless marked otherwise.
 Re-read the site before every new video: prices and plans change.
 
+**FULL SITE DATA (all 37 pages, plans, offer, contradictions): `site-data.md` beside this file** (crawl 2026-10-24,
+raw page text in site/pages, screenshots in site/screens, brand images in assets/). Check it first; re-crawl only to diff.
+
 ## Sites
 - Real site: https://moradosolution.in (owner chose this URL for videos). https://moradosolution.com showed only the
   DirectAdmin placeholder ("Something amazing will be constructed here...") on 2026-10-24.
@@ -22,7 +25,7 @@ Re-read the site before every new video: prices and plans change.
 - Prices (home, 2026-10-24): Minecraft Starter ₹199, Stone ₹449, Gold ₹699 (Popular), Titan ₹1,599 /month;
   Hytale Starter ₹199, Standard ₹449, Pro ₹799 (Popular), Ultra ₹1,299; VPS 1 ₹676, VPS 2 ₹1,352, VPS 3 ₹1,690,
   VPS 4 ₹2,028. /minecraft-budget lists ₹199 up to ₹4,399. Rust, ARK, Valheim, Palworld: "Coming Soon".
-- "Deploy in minutes" (/game-hosting), "support answered by humans" (footer). Sales page: no live promo code on 2026-10-24.
+- "Deploy in minutes" (/game-hosting), "support answered by humans" (footer). Sales page: no live promo code earlier on 2026-10-24; the later full crawl (same day) shows WELCOME30 = 30% OFF, see site-data.md.
 
 ## Brand
 - Colours (site CSS): --bg #050505, text #f4f4f5 / #a2a2a8, cards #121215; accents from the logo: red #e11d48, blue #3b82f6.

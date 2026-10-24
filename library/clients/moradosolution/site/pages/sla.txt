@@ -1,0 +1,120 @@
+URL: https://moradosolution.in/sla
+HTTP: 200
+TITLE: Service Level Agreement — MoradoSolution
+FETCHED: 2026-10-24T12:23:01.772Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+SERVICE LEVEL AGREEMENT
+
+Last Updated: 28 August 2026
+
+MoradoSolution's service level commitments, uptime guarantees, and remediation policies.
+
+1. Service Availability
+
+MoradoSolution strives to maintain high-availability services. Specific uptime commitments vary by service plan:
+
+Shared Hosting: 99.9% monthly uptime target
+VPS/Dedicated: 99.95% monthly uptime target
+Premium plans: 99.99% monthly uptime target
+
+Uptime is measured at the network level and excludes scheduled maintenance, force majeure events, and issues caused by customer configuration.
+
+2. Scheduled Maintenance
+Announced at least 48 hours in advance via email and/or client area notifications
+Typically performed during low-usage windows (02:00-06:00 UTC)
+May include hardware upgrades, network improvements, security patches, or platform updates
+Maintenance windows do not count against uptime calculations
+3. Emergency Maintenance
+Performed without advance notice to address critical security vulnerabilities, hardware failures, or imminent service degradation
+Customers will be notified as soon as practicable via available channels
+Duration is kept to the minimum necessary to resolve the issue
+Emergency maintenance may count against uptime if exceeding 30 minutes
+4. Service Credits
+
+If uptime falls below the committed level for a given service plan, customers may be eligible for service credits:
+
+99.9% target: 5% of monthly fee per 0.1% below target (max 50%)
+99.95% target: 10% of monthly fee per 0.05% below target (max 50%)
+99.99% target: 20% of monthly fee per 0.01% below target (max 50%)
+
+Credits must be requested within 30 days of the affected month. Credits are applied as account credit, not cash refunds.
+
+5. Exclusions
+
+The SLA does not apply to:
+
+Issues caused by customer configuration, applications, or scripts
+Force majeure events (natural disasters, war, government action, etc.)
+Upstream provider failures outside MoradoSolution's direct control
+Scheduled maintenance windows
+Free or trial services
+6. Claims Process
+
+To claim service credits, open a support ticket with "SLA Claim" as subject, including affected dates, times, and service identifiers. Claims are reviewed within 5 business days.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

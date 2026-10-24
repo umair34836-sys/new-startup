@@ -1,0 +1,228 @@
+URL: https://moradosolution.in/infrastructure
+HTTP: 200
+TITLE: Server Infrastructure — AMD EPYC 7C13 Hardware | MoradoSolution
+FETCHED: 2026-10-24T12:22:45.125Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+01
+INFRASTRUCTURE
+
+Hardware configurations
+built for performance.
+
+We operate multiple hardware configurations across our network. Hardware can vary between locations and nodes, while every configuration is selected for reliable and consistent performance.
+
+View specifications
+Network & locations
+
+ANSWER UPDATED 4 OCTOBER 2026
+
+What hardware runs MoradoSolution servers?
+
+Every node in the MoradoSolution fleet runs on AMD EPYC 7C13 processors with DDR4 ECC memory and NVMe Gen 4 storage, connected over a 10 Gbps uplink and located in our own data centre in Delhi, India. Resources are dedicated rather than oversold, so the CPU and memory you are allocated are yours for as long as you hold the server. Mitigation is inline at the edge, which means attacks are filtered before they reach your node rather than after, and node telemetry watches hardware health continuously. We operate our own hardware and do not resell capacity from other providers, so the specification on this page is the specification your server actually runs on.
+
+Why does dedicated hardware matter for Minecraft?
+
+Minecraft is largely single thread bound, so per core clock speed and cache behaviour matter more than the raw core count. The EPYC platform provides both, and dedicated allocation means the clock behaviour you benchmark is the behaviour you get at peak hours. Full hardware and network detail is on the infrastructure page, and live node status is on the status page.
+
+02
+SPECIFICATIONS
+
+What powers every server.
+
+Every node in our fleet is built on the same AMD EPYC platform — dedicated resources, no overselling.
+
+Every node in the fleet uses the same AMD EPYC platform, with mitigation inline at the edge and telemetry watching hardware health.
+PROCESSOR
+AMD EPYC 7C13
+High clocks, sustained boost
+MEMORY
+DDR4 ECC
+Low latency channels
+STORAGE
+NVMe Gen 4
+High-speed disk
+UPLINK
+10 Gbps
+High-capacity networking
+MITIGATION
+Always-on filtering
+Inline at the edge
+MONITORING
+Node telemetry
+Continuous health checks
+
+Hardware configurations vary by location. Current specifications for each region are shown on the respective service and order pages.
+
+03
+DENSITY
+
+Headroom is not a luxury feature.
+
+We cap node density well below what the hardware could technically hold. Your workload gets consistent CPU time.
+
+~65%
+Typical CPU utilization ceiling per host node
+1:1
+vCPU to physical thread ratio. No overcommit.
+Reserved
+Memory headroom for burst workloads
+No CPU stealing
+
+Your vCPUs map to dedicated physical threads. No noisy neighbor stealing cycles.
+
+Memory guaranteed
+
+RAM is allocated, not ballooned. What you pay for is what you get.
+
+Storage isolation
+
+Each VPS and game server gets its own NVMe namespace. No noisy neighbor I/O.
+
+Transparent metrics
+
+Host-level utilization visible in the panel. You see what we see.
+
+04
+NETWORK
+
+Low latency by design, not accident.
+
+We peer directly with major transit providers and route for latency first.
+
+Frankfurt
+OPERATIONAL
+
+Europe
+
+Delhi
+OPERATIONAL
+
+North India
+
+Mumbai
+OPERATIONAL
+
+West India
+
+Direct peering
+
+We peer with 200+ networks at major IXPs. Fewer hops, lower latency.
+
+Anycast ready
+
+DDoS mitigation uses anycast to absorb attacks at the nearest scrubbing center.
+
+10 Gbps per node
+
+Dedicated uplink per host. No shared 1 Gbps bottlenecks between racks.
+
+Looking glass
+
+Public BGP looking glass and speed test endpoints per location.
+
+Live network status and BGP looking glass available on our status page.
+
+05
+RELIABILITY
+
+Built for uptime, operated for trust.
+
+Infrastructure choices that reduce the chance of surprises — and honest communication when they happen.
+
+Redundant power
+
+N+1 UPS and generator at every facility. Dual PDU feeds per rack.
+
+RAID storage
+
+NVMe mirrored (RAID 1) on every node. Drive failure equals zero downtime.
+
+Automated failover
+
+Node health monitored every 30 seconds. Unhealthy nodes drain automatically.
+
+Off-site backups
+
+Daily backups replicated to a geographically separate facility.
+
+Maintenance windows
+
+Scheduled, communicated in advance. Emergency maintenance is rare and transparent.
+
+Status page
+
+Real-time component status, incident history, and scheduled maintenance calendar.
+
+Infrastructure you can build on.
+
+High-frequency compute, NVMe storage, 10 Gbps networking, and DDoS protection included on every plan.
+
+Deploy a VPS
+Game hosting plans
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

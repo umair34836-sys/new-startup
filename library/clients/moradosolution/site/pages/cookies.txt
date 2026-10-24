@@ -1,0 +1,109 @@
+URL: https://moradosolution.in/cookies
+HTTP: 200
+TITLE: Cookie Policy — MoradoSolution
+FETCHED: 2026-10-24T12:22:19.801Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+COOKIE POLICY
+
+Last Updated: 28 August 2026
+
+How MoradoSolution uses cookies, local storage, and tracking technologies.
+
+1. Overview
+
+Our website uses cookies and similar technologies to provide functionality, analyze usage, and improve your experience. This policy explains what we use and why.
+
+2. Types of Cookies
+Essential Cookies: Required for website operation (session management, authentication, security)
+Preferences Cookies: Remember your settings (theme, language, interface preferences)
+Analytics Cookies: Help us understand how visitors use our site (anonymized)
+Marketing Cookies: We do not use marketing or advertising cookies
+3. Specific Cookies
+Name	Type	Purpose	Duration
+session_id	Essential	User session management	Session
+csrf_token	Essential	CSRF protection	Session
+theme	Preferences	Dark/light theme preference	1 year
+_ga	Analytics	Google Analytics (anonymized)	2 years
+4. Local Storage
+
+We use browser localStorage for:
+
+UI state persistence (sidebar open/closed, tab selections)
+Form draft data (preventing loss on navigation)
+No personal data is stored in localStorage
+5. Third-Party Cookies
+
+We do not allow third-party advertising networks to set cookies on our domains. Analytics providers (Google Analytics) may set cookies as described above.
+
+6. Managing Cookies
+Most browsers allow you to control cookies via settings
+Disabling essential cookies will break website functionality
+You can clear cookies at any time via browser settings
+Opt-out of Google Analytics: Google Analytics Opt-out
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
+↑ Top

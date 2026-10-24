@@ -1,0 +1,309 @@
+URL: https://moradosolution.in/ddos-protection
+HTTP: 200
+TITLE: DDoS Protection India — In-House Network Filtering | MoradoSolution
+FETCHED: 2026-10-24T12:22:26.537Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+Home
+/
+DDoS Protection
+
+NETWORK SECURITY
+
+Attacks end at the edge,
+not in your server.
+
+Always-on DDoS mitigation included on every plan, at every location. No configuration, no premium tier, no extra cost.
+
+How it works
+View plans
+L3–L7
+Always-on
+₹0 added
+Zero config
+
+ANSWER UPDATED 4 OCTOBER 2026
+
+What is DDoS protection, and why does a game server need it?
+
+A distributed denial of service attack floods your server with traffic from many sources at once, so legitimate players cannot connect or your server runs out of resources handling junk packets. A public Minecraft or VPS IP is a target because it is easy to find and cheap to attack. Protection means detecting the flood and discarding the malicious traffic before it reaches your machine, so your server keeps serving real players while the attack is running. MoradoSolution filters attacks in house at the network edge, before traffic reaches your node, with Cloudflare Magic Transit available on the same network. It is always on, included on every plan at every location, and there is no premium tier and nothing to configure.
+
+Is DDoS protection an add-on or included?
+
+Included. There is no separate DDoS billing line on any MoradoSolution plan, game hosting, VPS, VDS or bare metal alike. You do not enable it, do not pick a tier and do not pay extra. Mitigation engages automatically when an attack signature appears, so there is no human in the loop and no window where you have to notice and react.
+
+Which kinds of attack does it stop?
+Attack layers covered by always-on filtering
+LAYER	WHAT IT IS	HOW IT IS HANDLED
+L3 and L4	Volumetric floods such as UDP and SYN amplification	Dropped at the edge over 10 Gbps capacity before reaching your server
+L7	HTTP request floods and protocol-level abuse	Filtered on request inspection, verified flows only are forwarded
+Game server traffic	Malformed Minecraft protocol packets and connection floods	Invalid sessions dropped inline, real player connections unaffected
+
+The DDoS protection guide covers why mitigation has to sit at the network edge, what protection cannot promise, and how each layer is filtered.
+
+PROCESS
+
+Filtering happens before traffic reaches you.
+
+When an attack starts, mitigation engages automatically — nothing to toggle, nothing to configure.
+
+01
+Detect
+
+Traffic anomalies identified in real time across network-wide telemetry.
+
+02
+Engage
+
+Filtering activates automatically on attack signatures — no human in the loop.
+
+03
+Filter
+
+Malicious traffic dropped upstream, before it can touch your node.
+
+04
+Forward
+
+Only verified flows reach your server — with zero added latency.
+
+COVERAGE
+
+Comprehensive coverage across the stack.
+01
+Layer 3 — Network
+
+Volumetric floods (UDP, ICMP, fragmentation) absorbed at network edge via anycast scrubbing.
+
+UDP
+ICMP
+Frag
+02
+Layer 4 — Transport
+
+SYN floods, ACK floods, connection exhaustion — stateful filtering with rate limiting.
+
+SYN
+ACK
+Conn
+03
+Layer 7 — Application
+
+HTTP floods, Slowloris, DNS amplification, game-specific vectors — signatures and behavioral analysis.
+
+HTTP
+DNS
+Slowloris
+04
+Game protocol aware
+
+Minecraft, FiveM, Rust, Valheim — legitimate player traffic preserved during mitigation.
+
+25565
+30120
+28015
+05
+No false positives
+
+Legitimate players stay connected. We tune signatures per game to avoid blocking real traffic.
+
+Tuned
+Per game
+06
+Always included
+
+Not an add-on. Not a higher tier. Every VPS and game server gets full protection automatically.
+
+All plans
+₹0
+
+TECHNOLOGY
+
+Built on the kernel's fastest data paths.
+
+We use purpose-built Linux packet processing, each layer dropping traffic as early as possible.
+
+eBPF / XDP
+
+XDP runs eBPF programs directly at the network driver hook — before the main kernel stack. Malicious packets dropped at NIC line-rate.
+
+DPDK
+
+For extreme packet-per-second loads, DPDK bypasses the kernel entirely — sustaining tens of millions of packets per second per node.
+
+nftables rate control
+
+Per-port rate limits, dynamic IP reputation blacklists and connection budgets. Rules expire automatically.
+
+Anycast & BGP edge
+
+Your IP range announced across multiple scrubbing centers. Traffic lands on the nearest edge node.
+
+L3–L7 engine
+
+Layer 3 absorbs volumetric floods, layer 4 handles stateful attacks, layer 7 applies game-aware signatures.
+
+No permutation-lock
+
+Both DPDK and XDP used where they fit. Drop junk early, keep heavy logic where it pays.
+
+CAPACITY
+
+Absorption capacity that scales.
+3+ Tbps
+
+Global scrubbing capacity across all locations.
+
+15+
+
+Scrubbing centers in major transit hubs worldwide.
+
+< 5 s
+
+Typical time from detection to full mitigation engagement.
+
+Anycast routing
+
+Traffic routed to the nearest scrubbing center automatically.
+
+No latency penalty
+
+Clean traffic passes through without added latency.
+
+Continuous adaptation
+
+Signatures updated in real time from global threat intelligence.
+
+Post-attack reports
+
+Detailed breakdown of vectors, volume, and mitigation actions.
+
+STRAIGHT ANSWERS
+
+What protection can and cannot promise.
+
+We would rather set the expectation up front than let you find the edge cases during an incident.
+
+01
+Cloudflare is not 100% of the answer
+
+Using Cloudflare protection does not mean you are 100% protected from DDoS attacks. In some cases, when an attack occurs, around 5–10% of the attack traffic may still pass through Cloudflare, and there is also a possibility that even 1% of the attack traffic could still have an impact on your services.
+
+02
+We null-route at the network level too
+
+That is why we also handle DDoS attacks at the network level using our own automated protection software. We configure specific thresholds — when traffic exceeds the defined level, the system automatically null-routes the affected IP address for a set period, protecting the server and the wider network.
+
+03
+Attacks can reach you indirectly
+
+A DDoS attack does not necessarily have to target your specific IP address to affect your services. An attack targeting another IP address within the same network or infrastructure can potentially impact your services too, depending on the attack size and overall network conditions.
+
+While we run multiple layers of protection, no DDoS protection can guarantee 100% protection or zero impact in every situation. What we commit to is layered mitigation, honest thresholds, and a team that will tell you exactly what happened after an attack — see our SLA for the specifics.
+
+Common questions.
+Is DDoS protection really free on every plan?
+
+Yes. Every VPS and game server plan includes full L3–L7 mitigation at no additional cost. There is no "premium protection" tier.
+
+Do I need to configure anything?
+
+No. Protection is active by default. Mitigation engages automatically when attack patterns are detected. Zero configuration required.
+
+Will legitimate players be blocked during an attack?
+
+Our game-aware signatures are tuned to preserve legitimate player connections while dropping attack traffic. False positives are rare.
+
+Can I see attack details after the fact?
+
+Yes. Contact support and we will provide a breakdown of attack vectors, peak volume, duration, and mitigation actions taken.
+
+What if the attack exceeds your capacity?
+
+Our global anycast network provides 3+ Tbps aggregate scrubbing capacity. Attacks exceeding local capacity are distributed across multiple scrubbing centers.
+
+Does having Cloudflare mean I am 100% protected?
+
+No. Some attack traffic can still pass through Cloudflare — roughly 5–10% during an attack, and in rare cases even 1% of it may have some impact. That is why we also run network-level protection with automatic null-routing above defined thresholds. Multiple layers reduce risk substantially, but no mitigation can promise zero impact in every situation.
+
+Can an attack on someone else take my server down?
+
+It can. An attack aimed at another IP on the same network or infrastructure can affect your services as well, depending on the attack size and current network conditions. This is one of the reasons we null-route aggressively and keep capacity headroom on every segment.
+
+Does protection add latency to clean traffic?
+
+No. Clean traffic passes through our edge without measurable latency overhead. Mitigation logic only engages on detected attacks.
+
+INCLUDED
+
+Protection that ships with your server.
+
+No add-ons. No configuration. No extra cost. DDoS mitigation is simply part of the infrastructure.
+
+Deploy protected infrastructure
+Questions? Talk to us
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

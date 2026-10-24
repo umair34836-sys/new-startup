@@ -1,0 +1,109 @@
+URL: https://moradosolution.in/third-party
+HTTP: 200
+TITLE: Third-Party Services Policy — MoradoSolution
+FETCHED: 2026-10-24T12:23:17.104Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+THIRD-PARTY SERVICES POLICY
+
+Last Updated: 28 August 2026
+
+Use of third-party providers, upstream dependencies, and integration terms.
+
+1. Upstream Providers
+
+MoradoSolution relies on third-party providers for infrastructure, networking, payment processing, software, security, communication, and other operational services.
+
+Data center and colocation providers
+Network transit and IP transit providers
+Hardware vendors (servers, networking equipment)
+Cloud infrastructure providers (for specific services)
+Payment processors
+Email delivery services
+Monitoring and security providers
+2. Responsibility Limitations
+
+We are not responsible for outages, failures, policy changes, or limitations caused directly by third-party providers where such circumstances are outside our reasonable control.
+
+MoradoSolution cannot guarantee the actions, decisions, uptime, response time, refunds, compensation, or conduct of any upstream or third-party provider.
+
+If an upstream provider fails to provide a refund, compensation, replacement service, credit, or other remedy to MoradoSolution, MoradoSolution is not obligated to provide an equivalent refund or compensation to the customer for the provider's failure.
+
+3. Customer Third-Party Software
+Customers using third-party software, plugins, applications, or services are responsible for complying with the applicable third-party terms and licenses
+MoradoSolution does not endorse or guarantee any third-party service integrated with or used alongside our services
+Support for third-party software is provided at MoradoSolution's discretion
+4. Data Processing by Third Parties
+
+Certain customer data may be shared with third-party processors as described in the Privacy Policy. Processors are bound to process data only on our instructions and under contractual data protection obligations.
+
+5. Changes to Third-Party Relationships
+
+MoradoSolution may change third-party providers at any time. Material changes affecting service functionality will be communicated to affected customers where practicable.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
+↑ Top

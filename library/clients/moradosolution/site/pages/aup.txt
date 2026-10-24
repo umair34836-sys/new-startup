@@ -1,0 +1,120 @@
+URL: https://moradosolution.in/aup
+HTTP: 200
+TITLE: Acceptable Use Policy — MoradoSolution
+FETCHED: 2026-10-24T12:21:51.748Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+LEGAL
+
+Acceptable Use Policy
+
+The rules for using MoradoSolution services and infrastructure.
+
+Last updated: 28 August 2026
+
+Overview
+Prohibited Activities
+Enforcement
+Reporting Violations
+00The Provider
+
+MoradoSolution
+Operated by the MoradoSolution team
+
+01Overview
+
+This Acceptable Use Policy ("AUP") defines the rules for using MoradoSolution services. By using our services, you agree to comply with this policy. Violations may result in service suspension or termination.
+
+02Prohibited Activities
+
+The following activities are strictly prohibited on MoradoSolution infrastructure:
+
+Launching or participating in DDoS attacks.
+Hosting malware, phishing websites, viruses, or malicious software.
+Sending spam or unsolicited bulk messages.
+Engaging in illegal activities or distributing illegal content.
+Running cryptocurrency miners unless explicitly permitted in writing.
+Excessive resource usage that negatively affects other customers.
+Attempting unauthorized access to any system, account, server, or service.
+Scanning, attacking, or exploiting networks or systems without authorization.
+Hosting content intended to facilitate fraud, abuse, or other unlawful activity.
+Deliberately attempting to bypass platform security or resource restrictions.
+Hosting copyrighted material without proper licensing (DMCA violations).
+Running exit nodes, open proxies, or Tor relays without explicit written consent.
+Interfering with the operation of any MoradoSolution service or other customers' services.
+03Enforcement
+
+Violations may result in immediate suspension or permanent termination without refund. MoradoSolution reserves the right to investigate suspected violations and take appropriate action.
+
+04Reporting Violations
+
+To report AUP violations, contact abuse@moradosolution.com or use our abuse reporting form.
+
+Questions about this document? Reach us on Discord — open a ticket and the team will help you out.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
