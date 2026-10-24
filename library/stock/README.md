@@ -1,6 +1,6 @@
 # Stock video / b-roll library (`stock/`)
 
-58 short clips that need **no credit**, 157 MB in total, plus 42 Mixkit links (not downloaded, see below).
+66 short clips that need **no credit**, 196 MB in total, plus 42 Mixkit links (not downloaded, see below).
 H.264 (yuv420p) mp4, no audio, short side at most 1080 px (sources are never upscaled), fps capped at 30, 12 s or less.
 Every number in `index.json` (size, fps, duration, resolution) was measured with ffprobe after encoding (2026-10-24).
 Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for 9:16, `--all` to include SFX and LUTs).
@@ -10,8 +10,8 @@ Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for
 | Group | Clips | Proof |
 | --- | --- | --- |
 | Own overlays/backgrounds (`own-overlays/`) | 37 | Made here with `library/tools/make_overlays.py` (PIL + numpy, fixed seeds). No credit needed. |
-| Wikimedia Commons CC0 | 12 | Licence read from each file page's metadata via the Commons API (`extmetadata.LicenseShortName` = CC0). Page URL per clip in `index.json`. |
-| Wikimedia Commons public domain (US government: National Park Service, US Forest Service, BLM, etc.) | 4 | Same check (`LicenseShortName` = Public domain). |
+| Wikimedia Commons CC0 | 15 | Licence read from each file page's metadata via the Commons API (`extmetadata.LicenseShortName` = CC0). Page URL per clip in `index.json`. |
+| Wikimedia Commons public domain (US government: National Park Service, US Forest Service, BLM, etc.) | 9 | Same check (`LicenseShortName` = Public domain). |
 | NASA (public domain, **licence doubt**) | 5 | NASA Media Usage Guidelines (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24): NASA content "generally [is] not subject to copyright in the United States", but "NASA should be acknowledged as the source" and commercial use "must not explicitly or implicitly convey NASA's endorsement". Marked `licence_doubt: true`: OK for space/gaming intros, avoid in client ads. |
 
 Not stored here, and why (tested from this server on 2026-10-24):
@@ -35,13 +35,23 @@ Not stored here, and why (tested from this server on 2026-10-24):
 
 Black-background clips (light leaks, bokeh, embers, sparks, snow, rain, smoke, dust, glitch, film burn) go on top with
 `mix-blend-mode: screen` in HyperFrames, or ffmpeg `blend=all_mode=screen`. `film-grain` is mid-grey: use `overlay`/`soft-light`
-at 20-40% opacity. `confetti-greenscreen*` are on pure #00FF00: key with ffmpeg `colorkey=0x00FF00:0.3:0.1`.
+at 20-40% opacity. `confetti-greenscreen*` are on pure #00FF00. Both ffmpeg routes were tested here on 2026-10-24 (output frame checked):
+`ffmpeg -i bg.mp4 -i own-overlays/confetti-greenscreen.mp4 -filter_complex "[1:v]colorkey=0x00FF00:0.3:0.1[k];[0:v][k]overlay=shortest=1" out.mp4`
+and `ffmpeg -i bg.mp4 -i own-overlays/embers-rising.mp4 -filter_complex "[0:v]format=gbrp[a];[1:v]format=gbrp[b];[a][b]blend=all_mode=screen,format=yuv420p" out.mp4`.
+The CSS `mix-blend-mode: screen` route in HyperFrames was not render-tested here.
 `film-burn-transition` (3 s) fills the frame at about 1.4 s (frame checked): put the cut there.
 Re-make or change any of them: `python3 library/tools/make_overlays.py <dir> --only <name>` (`--list` for all).
 New stock cuts: `python3 library/tools/stock_prep.py in.webm out.mp4 --start S --dur D [--crop WxH+X+Y]`.
+The repo `.gitignore` blocks `*.mp4`/`*.jpg` (safety net against personal media): add licensed stock with `git add -f`.
 
 ## Clips
 
+
+### celebration (1)
+
+| File | Size | Dur | Licence | What |
+| --- | --- | --- | --- | --- |
+| `celebration/firecrackers-street-smoke-vertical.mp4` | 608x1080 29.5fps | 6.88s | CC0 | 9:16 phone video: string of firecrackers going off in a street, lots of smoke, houses and trees |
 
 ### city-night (2)
 
@@ -56,19 +66,23 @@ New stock cuts: `python3 library/tools/stock_prep.py in.webm out.mp4 --start S -
 | --- | --- | --- | --- | --- |
 | `city-traffic/city-traffic-timelapse-aerial.mp4` | 1920x1080 30fps | 12.0s | CC0 | high-angle time-lapse of busy city roads, buses and cars, tower blocks (Causeway Bay) |
 
-### fire (1)
+### fire (4)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
 | `fire/forest-fire-flames.mp4` | 1920x1080 30fps | 11.0s | Public domain | forest fire: tall flames and thick smoke among pine trees |
+| `fire/candles-many-flames.mp4` | 1920x1080 24fps | 12.0s | Public domain | rows of burning candles (white, red, green), slow camera move, dark background |
+| `fire/candles-closeup.mp4` | 1920x1080 24fps | 12.0s | Public domain | close-up of candle flames, shallow focus |
+| `fire/fire-flames-closeup.mp4` | 1920x1080 25fps | 12.0s | CC0 | orange flames rising from a metal can, green forest behind (close-up) |
 
-### nature-sky (3)
+### nature-sky (4)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
 | `nature-sky/clouds-timelapse-blue-sky.mp4` | 1920x1080 25fps | 12.0s | CC0 | white clouds moving fast over a blue sky (time-lapse, camera pointing up) |
 | `nature-sky/mountain-cloud-timelapse.mp4` | 1920x1080 30fps | 12.0s | CC0 | lenticular cloud over snowy mountains, blue sky (time-lapse) |
 | `nature-sky/desert-tree-clouds-timelapse.mp4` | 1920x1080 29.97fps | 12.01s | Public domain | desert with a Joshua tree, clouds and sun moving (time-lapse) |
+| `nature-sky/wetland-lake-birds-india.mp4` | 1920x1080 30fps | 10.0s | CC0 | lake with green weeds, small white birds flying in the distance, tree branch at the edge (Vaduvoor, Tamil Nadu) |
 
 ### own-abstract (12)
 
@@ -136,6 +150,14 @@ New stock cuts: `python3 library/tools/stock_prep.py in.webm out.mp4 --start S -
 | `own-overlays/rain-streaks.mp4` | 1920x1080 30fps | 10.0s | own | rain streaks on black |
 | `own-overlays/snow-falling-vertical.mp4` | 1080x1920 30fps | 10.0s | own | snow 9:16 |
 | `own-overlays/rain-streaks-vertical.mp4` | 1080x1920 30fps | 10.0s | own | rain streaks 9:16 |
+
+### south-asia-vintage (3)
+
+| File | Size | Dur | Licence | What |
+| --- | --- | --- | --- | --- |
+| `south-asia-vintage/india-street-1906-crowd.mp4` | 1226x690 23.976fps | 12.05s | Public domain | 1906 film: busy Indian street, crowds walking, horse carriages (black and white, old film) |
+| `south-asia-vintage/india-street-1906-carts.mp4` | 1226x690 23.976fps | 12.01s | Public domain | 1906 film: street with carts and people in white clothes and turbans (black and white) |
+| `south-asia-vintage/india-street-1906-vertical.mp4` | 608x1080 23.976fps | 12.05s | Public domain | 9:16 crop of the 1906 Indian street film |
 
 ### space (5)
 
