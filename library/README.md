@@ -106,6 +106,9 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 | `romance_synth.py` | `python3 romance_synth.py out.wav`: the numpy piano/strings track, no installs needed. |
 | `voice_over_music.py` | `python3 voice_over_music.py spec.json out.wav`: places voice lines (cut from one take by transcript word timings) at chosen film times, speeds a line up only if it overruns, polishes the voice, ducks the bed 8 dB under it and sets the voice 5.5 dB over the bed. Spec format is in the file header. |
 | `ai_voice.py` | Script -> spoken Hindi/Hinglish voiceover, music ZERO: ACE-Step speaks each line, Whisper picks the best take per line, BS-RoFormer removes the music, lines joined with pauses. See skill voice-or-song. |
+| `listen.py` | Audio/video -> facts (run with /home/user/tools/perc-venv/bin/python): BPM + beat grid, downbeats, hits, LUFS curve, sections, silence, voice activity, `--vocals` singing timeline, key, hum/hiss/clipping, Whisper words. Tested here 2026-10-24: pashto-rabab-folk-bg (made at 105 BPM) -> 105.0 BPM. Skill listen-and-watch. |
+| `watch.py` | Video -> facts: real fps from timestamps, cuts, shake, flicker, sharpness, exposure/cast per scene, faces/people, black/frozen frames, contact sheet, `compare` mode. Tested here 2026-10-24: client WhatsApp clip -> real 12.4 fps, 134 frames, flagged 'motion-interpolate to 30'. |
+| `fast_matte.py` | Fast CPU person matte (Robust Video Matting ONNX); benchmarks and the optional bg_blur.py switch in research/cpu-speed.md. |
 | `urdu_captions.py` | Urdu/Pashto/Hindi captions for HyperFrames (Nastaliq shaping, RTL, per-word reveal; `--check` verifies a font has the needed letters). Block: `blocks/urdu-captions.html`. Skill urdu-captions. |
 | `vs_tts.py` | Script -> spoken voiceover through VoiceStudio (OmniVoice/VoxCPM2): Urdu/Hindi/Pashto, voice design text, cloning. Start the backend with `voicestudio.sh start`. OmniVoice is non-commercial. |
 | `voicestudio.sh` | start / stop / status of the VoiceStudio backend (:3900, OpenAPI + MCP). |
@@ -139,7 +142,7 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 
 Facts gathered by tools and web research, one topic per file (source + date), so nothing is looked up twice:
 `firecraft-smp.md` (server facts for promos), `tools-landscape.md` (open-source tools and star counts),
-`video-editing.md` (editing techniques), `editing/` (decision guide for 29 video types + 560 cited editing skills), `talkember-studio.md` (the owner's website, for promos),
+`video-editing.md` (editing techniques), `perception-tools.md` + `cpu-speed.md` (specialist A: what listen/watch measure; CPU benchmarks), `editing/` (decision guide for 29 video types + 560 cited editing skills), `talkember-studio.md` (the owner's website, for promos),
 `free-music-sources.md` (no-credit music sources), `hinglish-tts.md` and `voicestudio.md` (voice models),
 `network-allowlist.md` (domains), `urdu-captions.md`, `client-intake.md`, `audit-2026-10-24-part1.md` (claim audit).
 

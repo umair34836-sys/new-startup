@@ -237,6 +237,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
 - Specialists: A perception tools + CPU speed (session_01BdHJpuB2BTCGDxFdR7KV44, specialist-a-perception-cpu);
+  A DONE + merged Oct 24 2026: listen.py / watch.py / fast_matte.py (perc-venv), skill listen-and-watch: run them before
+  editing instead of guessing (verified here: 105.0 BPM on a 105 BPM track; 12.4 real fps on the 12 fps WhatsApp clip).
+  Specialist A measured (cpu-speed.md, 2026-10-24): HyperFrames `render --workers 3` took 25 s vs 40-50 s with auto on a
+  10 s 1080p project; MediaPipe needs apt libgles2 + libegl1; bg_blur.py with RVM + cheaper fill: 2.08 -> 0.66 s/frame
+  (patch in cpu-speed.md; RVM drops a second person at the frame edge; show the owner before/after before switching).
   B desi vocal songs + PK reels trends (session_016xxyoT1VWtQ74po5jdBMUC, specialist-b-desi-music-trends);
   C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym, specialist-c-broll-sfx-luts);
   D Urdu/Pashto captions + client brand kit (session_01NZND2H5jzoXgcGVrFFtHH2): DONE + merged Oct 24 2026 (fonts,
