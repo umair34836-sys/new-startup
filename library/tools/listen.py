@@ -72,7 +72,7 @@ agree = None
 if tempo_e:
     ratio = tempo_e / max(tempo_l, 1e-6)
     agree = "same" if abs(ratio - 1) < 0.04 else ("double/half" if min(abs(ratio - 2), abs(ratio - 0.5)) < 0.08 else "differ")
-# essentia multifeature is the primary grid when it is confident (its confidence: <1 poor, >3.5 excellent)
+# essentia multifeature is the primary grid when it is confident (BeatTrackerMultiFeature docstring: (1.5,3.5] good, >3.5 excellent)
 use_e = tempo_e is not None and conf_e is not None and conf_e >= 1.5 and len(beats_e) > 4
 grid = beats_e if use_e else beats
 bpm = tempo_e if use_e else tempo_l

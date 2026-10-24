@@ -103,7 +103,7 @@ def main():
         rgb = np.asarray(Image.open(a.inp).convert("RGB"))
         t0 = time.perf_counter()
         al = M(rgb)
-        if a.model == "rvm":  # single image: feed the state back twice (measured: P3M MAD 7.2 -> 6.6 at 1024 px)
+        if a.model == "rvm":  # single image: feed the state back twice (measured on P3M at 1024 px, ratio 0.5: MAD 6.0 -> 5.5)
             al = M(rgb); al = M(rgb)
         Image.fromarray((al * 255).astype(np.uint8)).save(a.out)
         if a.composite:

@@ -170,7 +170,7 @@ def analyse(a):
         "frame_interval_ms_p5_p50_p95": [r(np.percentile(dts, q) * 1000, 2) for q in (5, 50, 95)],
         "gaps_over_1_5x": int((dts > 1.5 * med).sum()),
         "vfr": bool(np.percentile(dts, 95) > 1.2 * np.percentile(dts, 5)),
-        "note": "trust real_fps over the header rate; WhatsApp clips can claim 28 fps while carrying ~12",
+        "note": "trust real_fps over the header rate (CLAUDE.md: a WhatsApp clip said 28.4 fps but carried ~12)",
     }
     # shot cuts with PySceneDetect
     cuts = {}
