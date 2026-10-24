@@ -14,3 +14,7 @@ Result: 145 tracks, 6.8 hours. Vocals heard in 6:
 | `talkember-studio-promo-song.mp3` | 363 | hi | 47 |
 
 All other 139 tracks: no words heard (instrumental in the checked window).
+
+Audit 2026-10-24: track count re-counted (145 audio files). Note: when this scan ran,
+`cc0/desi-eastern--desert-calmness-and-fighting-orchestral-141.mp3` was a truncated 7 s file; it was re-downloaded
+(96.4 s) in the audit and has not been re-scanned. Total length now 6.87 h (ffprobe).

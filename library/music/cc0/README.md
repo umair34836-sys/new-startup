@@ -4,6 +4,13 @@ Downloaded Oct 24 2026 from OpenGameArt.org. Every page was checked: its licence
 CC0 1.0 (creativecommons.org/publicdomain/zero/1.0), so these can be used anywhere, also commercially,
 without credit. Pages that also listed CC BY were skipped. Source pages are kept below only as proof.
 
+Licence audit 2026-10-24 (curl of each source page, regex for creativecommons.org links): all 29 OpenGameArt pages
+link only to publicdomain/zero/1.0; 25 random FMA pages (seed 2026) link to publicdomain/zero/1.0 or the old
+licenses/publicdomain mark; the 5 saved Freesound pages show the CC0 text. 131 MP3s on disk = 131 index.json entries. All 131 decode without errors
+and match the table lengths within 1.5 s, after one fix: the desert-calmness file was a truncated 7 s copy; it was
+re-downloaded from its source_file (96.4 s) and re-encoded at 160 kbps like the others. Bitrates: 124 files 160 kbps,
+the 7 SoundSafari desi files 192 kbps (ffprobe 2026-10-24).
+
 | File | Mood | Length | Title | Source |
 |---|---|---|---|---|
 | `background--bossa-nova.mp3` | background | 60s | Bossa Nova | https://opengameart.org/content/bossa-nova |
@@ -38,8 +45,9 @@ without credit. Pages that also listed CC BY were skipped. Source pages are kept
 
 ## Desi additions (Oct 24 2026, via GitHub mirror SoundSafari/CC0-1.0-Music)
 Downloaded from raw.githubusercontent.com because Freesound blocks this server. Each Freesound licence was checked on
-its own page (read through Agent-Reach): CC0, no credit needed. The two Bollywood tracks are Kevin MacLeod's
-public-domain FreePD releases (freepd.com went offline in 2026; its homepage still calls the music "Public Domain").
+its own page (read through Agent-Reach): CC0, no credit needed. The two Bollywood tracks come from the freepd.com
+folder of that mirror (FreePD = public-domain site; that the composer is Kevin MacLeod is unverified). freepd.com now
+shows only a closure page ("Public Domain music downloads", "permanently closed", 2008-2025; re-checked 2026-10-24).
 Field recordings (damal, wedding, men singing) are real events with crowd/voices: use as atmosphere, not as a clean song.
 
 | File | Mood | Length | Title | Source |

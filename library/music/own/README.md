@@ -4,8 +4,10 @@ OWNER (Oct 24 2026): good, but do NOT use these by default; use CC0/public-domai
 (library/music/cc0). Use these only when the owner asks for our own music.
 
 Generated Oct 24 2026 with ACE-Step 1.5 turbo (CPU, INT8) by `library/tools/music_pack.py` in one model load
-(~5 min per track after an ~11 min first load). Loudness normalised to about -13 to -14 LUFS, 192 kbps MP3.
-Instrumentals end with a natural tail (one silence > 1.5 s at the very end). Songs with vocals have their lyrics in
+(~5 min per track after an ~11 min first load: past timing, not re-run). Loudness -12.9 to -14.1 LUFS, 192 kbps,
+44.1 kHz MP3, 75.05 s / 90.04 s long (ffmpeg ebur128 + ffprobe, measured 2026-10-24). Instrumentals end with a natural
+tail: silencedetect (-50 dB, 1.5 s) finds exactly one silence per file, starting 67-73 s and running to the end
+(measured 2026-10-24). Lyrics of the vocal songs: `lyrics/` in this folder. Songs with vocals have their lyrics in
 `lyrics/`. Pashto is not an ACE-Step language: `pashto-song-zama-watan` used Pashto-script lyrics with lang 'unknown',
 so its words are an attempt (check before using it for a Pashto audience). Urdu songs used lang 'ur'.
 
