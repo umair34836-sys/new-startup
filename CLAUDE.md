@@ -70,6 +70,13 @@ Read this first in every session.
   a part that takes 9 min alone took 35+). Queue them.
 - Background Bash jobs die at their timeout (default 30 min): give long jobs timeout up to 7200000 ms.
 
+- Realistic 3D model of a person (Oct 2026): the owner REJECTED the CPU results ("very bad"): TripoSR (full body from a
+  video frame / bust from a selfie; face blurry) and 3DDFA_V2 (face mask with photo texture, nothing behind). Don't offer
+  CPU image-to-3D of people again. For a realistic, identity-exact model: a GPU phone scan app (KIRI Engine, Polycam,
+  Luma) whose file the owner sends, or a Minecraft-style look-alike skin for the blocky host. (TripoSR needed: rembg
+  u2net_human_seg instead of the default BRIA model, which OOM-killed at 14 GB; PyMCubes instead of torchmcubes.)
+- Disk allowance is small: `uv cache clean` freed 8.7 GB; the unused ACE-Step base model (4.5 GB) was deleted.
+
 ## HyperFrames learnings
 
 - Load GSAP from `assets/vendor/gsap-3.14.2.min.js`, never the CDN (render fails with
