@@ -17,7 +17,7 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 | Product shots | Edit toward hook, problem, benefit, proof, offer, CTA | Product ad/UGC ad, Product demo/unboxing | [FrameNotion, https://framenotion.com/blog/how-to-edit-product-videos-for-social-ads, 2026-10-08] |
 | Photos only | 3 to 5 s per photo, one motion style for all | Slideshow from photos, Birthday/family | [Woven Video, https://www.woven.video/guides/photo-slideshow, 2026-10-19] |
 | No footage | Host = the owner's blocky skin (blocky_character.py); voice from ai_voice.py / vs_tts.py | Faceless channel, Explainer, App/website promo | [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "Tools (tools/)"] |
-| Game capture | Brighten Nether/night shots (unverified); keep game audio under the voice | Gaming/Minecraft | [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Umbrella Creators, https://umbrellacreators.com/blog/how-to-edit-gaming-videos-for-youtube, 2026-09-27] |
+| Game capture | Brighten Nether/night shots; keep game audio under the voice | Gaming/Minecraft | [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Umbrella Creators, https://umbrellacreators.com/blog/how-to-edit-gaming-videos-for-youtube, 2026-09-27] |
 
 ## Rules that apply to every type
 
@@ -160,10 +160,10 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 ## 12. Gaming / Minecraft (FireCraft SMP promo)
 
 - Goal: watch time drives the algorithm; a consistent, recognisable thumbnail style conditions clicks. [VideoHighlight (Dream analysis), https://videohighlight.com/v/PVsLIPTdm6U, 2024-05-24]
-- Structure: no intro longer than 3 seconds (none is often better) (unverified). [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
+- Structure: no intro longer than 3 seconds (no intro is preferable for many). [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
 - Cut rhythm: zooms, SFX hits and labels only point at moments that already work; add text for context the viewer lacks (a name, a number, a rule). [Umbrella Creators, https://umbrellacreators.com/blog/how-to-edit-gaming-videos-for-youtube, 2026-09-27]
-- Grade: brighten Nether and night footage (unverified). [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
-- Common mistakes: environment sounds too loud for viewers (unverified); nonstop flashing, SFX and subtitles (the kids-video style) can feel like overstimulation. [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Plugged In, https://www.pluggedin.com/youtube-reviews/eystreem/, 2026-10-13]
+- Grade: brighten Nether and night footage. [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]
+- Common mistakes: environment sounds too loud for viewers; nonstop flashing, SFX and subtitles (the kids-video style) can feel like overstimulation. [Reddit r/youtubers, https://www.reddit.com/r/youtubers/comments/11w1lk6/editing_minecraft_videos_protips/, 2023-03-19]; [Plugged In, https://www.pluggedin.com/youtube-reviews/eystreem/, 2026-10-13]
 - Music/SFX: the CC0 set has a cinematic group (epic, choir, battle, boss-battle symphonic metal) for promos. [repo: library/README.md "music/cc0"]; [repo: library/music/cc0/README.md]
 - Steps here: start from the repo `video/` folder (FireCraft Season 2 launch video, template for promos); `ember_background.py` background; blocky host from `host-skin.png`; server facts from library/research/firecraft-smp.md; capture firecraft.fun with `web_capture.py`. [repo: CLAUDE.md "Rules from the owner"]; [repo: library/README.md "Tools (tools/)"]; [repo: library/README.md "research/"]; [repo: CLAUDE.md "Environment facts (cloud container)"]
 

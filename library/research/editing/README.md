@@ -23,9 +23,9 @@ or a section of this repo's own tested notes). Skill that points here: `.claude/
 
 ## Audit
 
-Audited 2026-10-24 (`library/research/audit-2026-10-24-part2.md`): decision-guide.md and from-scratch.md fully;
-in skills/01-06 only every third skill (n % 3 == 1) plus every "(ran OK locally)" skill (276 of 560). The other ~284
-skills were not re-checked: open their source before relying on one.
+Audited 2026-10-24 (`library/research/audit-2026-10-24-part2.md`): decision-guide.md, from-scratch.md and all 560
+skills in skills/01-06 (round 1 + round 2), every citation opened and every "(ran OK locally)" command re-run. Items
+that could not be confirmed carry "(unverified)" in the line.
 
 ## Research notes
 
