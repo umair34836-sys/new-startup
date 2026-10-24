@@ -40,8 +40,8 @@ Read this first in every session.
 
 - Everything runs in an ephemeral cloud container, not the owner's PC.
 - NETWORK: since Oct 24 2026 the owner set Network access to FULL (any site works, e.g. visit.talkember.site,
-  www.firecraft.fun -> use web_capture.py for them, not Firecrawl; both answered 200 to curl on 2026-10-24, but
-  web_capture.py failed that day on a browser-version mismatch, see Agent tools below). The old allowlist is saved in
+  www.firecraft.fun -> use web_capture.py for them, not Firecrawl; both answered 200 to curl on 2026-10-24; a
+  browser-version mismatch that broke web_capture.py in one container is fixed, see Agent tools below). The old allowlist is saved in
   library/research/network-allowlist.md: give it to the owner when asked. Previously the network was allowlisted (Oct 2026): npm, pypi, archive.ubuntu.com (apt),
   raw.githubusercontent.com, `git clone` of public repos, storage.googleapis.com, fonts.googleapis.com,
   huggingface.co + its CDNs (us.aws.cdn.hf.co, *.xethub.hf.co), openaipublic.azureedge.net (Whisper),
@@ -248,9 +248,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
 - Screenshots / page capture: `library/tools/web_capture.py` (Crawl4AI, free, local Chromium) -> markdown + full-page
-  PNG. 2026-10-24: it FAILED ("playwright install") because /opt/pw-browsers held chromium-1243 while crawl-venv has
-  playwright 1.56.0 (wants chromium-1194). Check `ls /opt/pw-browsers` first; fallback that worked: `agent-reach read`
-  or curl of the HTML. It only reaches domains allowed in the environment's network settings: for a blocked site ask the owner to
+  PNG. 2026-10-24: one container had chromium-1243 while crawl-venv's playwright 1.56.0 wants chromium-1194, and it
+  failed ("playwright install"). FIXED the same day: if chromium-1194 is missing, web_capture.py starts the image's own
+  Chromium with remote debugging and attaches over CDP (tested here 2026-10-24 on https://example.com both ways:
+  953 chars + PNG). Fallback if it still fails: `agent-reach read` or curl of the HTML. It only reaches domains allowed in the environment's network settings: for a blocked site ask the owner to
   add the domain (e.g. visit.talkember.site, www.firecraft.fun) instead of spending Firecrawl credits.
 - Agent-Reach 1.6 (1.6.0 per `agent-reach doctor`, 2026-10-24; `agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach web search "<q>"`,
   `agent-reach youtube search "<q>"` (works, via yt-dlp), JSON output.

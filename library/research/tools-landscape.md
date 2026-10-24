@@ -58,6 +58,10 @@ Versions re-checked the same day with `npm view` / pypi.org JSON / `git clone --
   FAILED with "playwright install" (measured: `crawl-venv/bin/python web_capture.py https://www.firecraft.fun --out ...`).
   The browser build depends on the container image: check `ls /opt/pw-browsers` and match the playwright version.
   Workaround that worked the same day: `agent-reach read <url>` (Jina) or plain curl of the HTML.
+  FIX 2026-10-24 (main session): web_capture.py now falls back to launching the image's own Chromium
+  (/opt/pw-browsers/chromium-*/chrome-linux*/chrome) with --remote-debugging-port and attaching Crawl4AI over CDP
+  (BrowserConfig browser_mode="cdp", cdp_url, cdp_cleanup_on_close=True). Tested here 2026-10-24 on https://example.com
+  with chromium-1194 hidden: 953 chars + PNG, no errors.
   Fails on Cloudflare JS challenges (pixabay.com returned 403 to curl too, 2026-10-24).
   Firecrawl itself is open source too but heavy to self-host (Docker stack; not checked in detail).
 - Small Firecrawl-compatible clones (us/crw in Rust, servo-fetch, beecrawl): too few stars to rely on (Oct 2026 search,
