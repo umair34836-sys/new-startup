@@ -1,6 +1,8 @@
 # Voiceover with VoiceStudio (local ElevenLabs replacement): one line of the script per request, joined with short
 # pauses and loudness-normalised. Start the backend first: bash library/tools/voicestudio.sh start
 #
+#   python3 vs_tts.py SCRIPT.txt OUT.mp3                       # owner's DEFAULT voice (voices.json "default", Hindi)
+#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice senpaispider  # a saved voice by name
 #   python3 vs_tts.py SCRIPT.txt OUT.mp3 --lang ur --instruct "male, young adult" [--seed 7] [--gap 0.45]
 #          [--model omnivoice|voxcpm2] [--ref voice.wav --ref-text "words in voice.wav"]   (cloning)
 #
@@ -12,7 +14,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("script")
 ap.add_argument("out")
 ap.add_argument("--lang", default="ur")
-ap.add_argument("--instruct", default="male, young adult")
+ap.add_argument("--instruct", help="voice design text (default when not cloning: \"male, young adult\")")
 ap.add_argument("--seed", type=int, default=7)
 ap.add_argument("--gap", type=float, default=0.45)
 ap.add_argument("--model", default="omnivoice")
@@ -25,6 +27,8 @@ ap.add_argument("--steps", type=int, help="diffusion steps (VoxCPM2 default 10; 
 ap.add_argument("--cfg", type=float, help="guidance scale (default 2.0)")
 ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
+if not (a.voice or a.ref or a.instruct):
+    a.voice = "default"  # owner rule (2026-10-24): the saved "default" voice unless another voice is asked for
 
 if a.voice:  # saved voice: reference clip is rebuilt from its source (voice recordings never go into git)
     reg = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "voices", "voices.json")))
@@ -33,7 +37,15 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
     v = reg[a.voice]
     vd = f"/home/user/tools/voices/{a.voice}"
     ref = os.path.join(vd, "ref.wav")
-    if not os.path.exists(ref):
+    if not os.path.exists(ref) and v.get("design"):  # designed voice: rebuild the reference line by voice design
+        os.makedirs(vd, exist_ok=True)
+        d = v["design"]
+        body = {"model": v["model"], "input": d["text"], "language": v["lang"], "instruct": d["instruct"],
+                "response_format": "wav", "seed": d["seed"]}
+        req = urllib.request.Request(a.host + "/v1/audio/speech", data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json"})
+        open(ref, "wb").write(urllib.request.urlopen(req, timeout=1800).read())
+    elif not os.path.exists(ref):
         os.makedirs(vd, exist_ok=True)
         src = os.path.join(vd, "source.mp4")
         subprocess.run(["curl", "-sSL", "-o", src, v["source_url"]], check=True)
@@ -43,6 +55,7 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
                         "-t", str(v["ref_seconds"]), "-af", f"afade=t=in:d=0.05,afade=t=out:st={v['ref_seconds'] - 0.1}:d=0.1",
                         "-ac", "1", "-ar", "44100", ref], check=True)
     a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], v["lang"]
+    a.instruct = a.instruct or ""
     if a.seed == 7 and v.get("seed"):
         a.seed = v["seed"]
 
@@ -61,7 +74,7 @@ def speech(text, path):
             cmd += ["-F", f"engine={a.model}"]
         subprocess.run(cmd, check=True)
         return
-    body = {"model": a.model, "input": text, "language": a.lang, "instruct": a.instruct,
+    body = {"model": a.model, "input": text, "language": a.lang, "instruct": a.instruct or "male, young adult",
             "response_format": "wav", "seed": a.seed}
     if a.steps:
         body["num_step"] = a.steps

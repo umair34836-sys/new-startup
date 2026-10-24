@@ -1,15 +1,28 @@
 {
-  "senpaispider": {
-    "label": "Senpai Spider (client's own voice)",
-    "source_url": "https://drive.google.com/uc?export=download&id=1V1NvmUKnLPmw4VEdT_pUoZh7OlvAAEqA",
-    "source_note": "19.2 s 948x2160 mp4 the owner shared on 2026-10-24 (Google Drive, link-shared); the owner said it is his client's voice",
-    "clean": "clean_voice.py (BS-RoFormer vocals + denoise), measured here 2026-10-24: speech 0-18.1 s",
-    "ref_start": 0.1,
-    "ref_seconds": 12.0,
-    "ref_text": null,
-    "model": "voxcpm2",
-    "lang": "hi",
-    "seed": 7,
-    "measured": "2026-10-24: reference median f0 148 Hz (p10 115, p90 218); 5-line test: Whisper heard lines 2-4 well, line 1 partly, line 5 garbled; clone lines f0 109-161 Hz"
-  }
+ "default": {
+  "label": "Owner's default voice: free young energetic Hindi ad narrator (AI-designed, not a real person)",
+  "design": {
+   "instruct": "a young Indian man with a deep, confident, energetic voice, speaking Hindi like a TV advertisement",
+   "seed": 7,
+   "text": "Deploy minutes में, और support इंसानों से."
+  },
+  "ref_text": "Deploy minutes में, और support इंसानों से.",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "measured": "2026-10-24 (MoradoSolution reel): reference median f0 166 Hz (the Viraj VO measured 172 Hz); 8 cloned lines f0 151-238 Hz; 7/8 lines heard right by Whisper first time, 1 fixed with seed 21. Owner set it as default 2026-10-24."
+ },
+ "senpaispider": {
+  "label": "Senpai Spider (client's own voice)",
+  "source_url": "https://drive.google.com/uc?export=download&id=1V1NvmUKnLPmw4VEdT_pUoZh7OlvAAEqA",
+  "source_note": "19.2 s 948x2160 mp4 the owner shared on 2026-10-24 (Google Drive, link-shared); the owner said it is his client's voice",
+  "clean": "clean_voice.py (BS-RoFormer vocals + denoise), measured here 2026-10-24: speech 0-18.1 s",
+  "ref_start": 0.1,
+  "ref_seconds": 12.0,
+  "ref_text": null,
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "measured": "2026-10-24: reference median f0 148 Hz (p10 115, p90 218); 5-line test: Whisper heard lines 2-4 well, line 1 partly, line 5 garbled; clone lines f0 109-161 Hz"
+ }
 }

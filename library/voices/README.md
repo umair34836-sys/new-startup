@@ -12,4 +12,5 @@ Clone only voices the owner or their client has agreed to; never a celebrity or 
 
 | Name | Whose voice | Added |
 |---|---|---|
+| `default` | AI-designed young energetic Hindi ad narrator (not a real person); used when no voice is named | 2026-10-24 |
 | `senpaispider` | the owner's client "Senpai Spider" (owner shared the clip, 2026-10-24) | 2026-10-24 |
