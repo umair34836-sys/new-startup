@@ -125,3 +125,7 @@ Song + HyperFrames walkthrough video of a real website (TalkEmber Studio promo, 
 ## music (added)
 
 `music/talkember-studio-promo-song.mp3`: 6 min upbeat Hindi pop promo song about TalkEmber Studio (ACE-Step, 3 parts joined at 96.0 s and 212.5 s); line timings in `templates/website-promo/talkember-timing.json`.
+
+## music/cc0
+
+29 CC0 tracks (no credit needed) from OpenGameArt, verified per page: background (lofi, bossa nova, happy, town), cinematic (epic, choir, battle, tragic), piano, desi/eastern (tabla, sitar style, Arabic, desert, oriental). List and moods: `music/cc0/README.md`.

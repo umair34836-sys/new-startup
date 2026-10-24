@@ -20,3 +20,11 @@ CC BY (YouTube "Creative Commons" filter, Kevin MacLeod/incompetech, most Jamend
 - Wikimedia Commons API: needs a descriptive User-Agent; rate-limits bursts ("too many requests").
 - Our own music (ACE-Step, library/tools/music_pack.py): fully ours, no credit. ACE-Step 1.5 vocal languages include
   Urdu ('ur'); Pashto is not supported (try lyrics in Pashto script with lang 'unknown').
+
+## Update Oct 24 2026 (network now full)
+- cdn.freesound.org still returns 403 to this cloud IP (Freesound blocks it), even with browser headers.
+- upload.wikimedia.org returns 429 in bursts to this IP; a slow downloader (1 file/min, 3 min back-off) is the only way.
+- OpenGameArt.org WORKS: advanced search with field_art_type_tid[]=12 (music) & field_art_licenses_tid[]=4 (CC0).
+  Verify each page links only to publicdomain/zero (some list CC0 + CC BY: skip). Real files are
+  /sites/default/files/<name>.mp3|ogg (NOT the /styles/.../audio_preview/ links, which are truncated previews).
+  29 tracks saved in library/music/cc0 (see its README).
