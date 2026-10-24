@@ -23,7 +23,7 @@ or a section of this repo's own tested notes). Skill that points here: `.claude/
 
 ## Research notes
 
-- Web search: `agent-reach web search` (Exa) worked for ~250 queries in parallel (xargs -P 6) on 2026-10-24.
-- YouTube subtitles via `agent-reach youtube subtitle` hit HTTP 429 after the first video and the channel paused
+- Tested here on 2026-10-24: `agent-reach web search` (Exa) worked for ~250 queries in parallel (xargs -P 6) on 2026-10-24.
+- Tested here on 2026-10-24: YouTube subtitles via `agent-reach youtube subtitle` hit HTTP 429 after the first video and the channel paused
   for 3,599 s (2026-10-24), so this study used web pages, not YouTube transcripts. Next time: fetch at most a few
   subtitles, spaced out.
