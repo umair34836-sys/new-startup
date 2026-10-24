@@ -68,3 +68,18 @@ desi instrumentals, loops, field recordings and a few Pashto rhythm tracks. For 
 - aigei.com mirrors Nigar585's Pashto Rhythm files (labelled CC0) but needs a login.
 - nullrights.com: every track CC0 ("no attribution required"), general genres; songly.gift lists CC0 Hindi pages.
 - 7 of the verified desi files are saved in library/music/cc0 (desi-eastern--*), see its README.
+
+## FMA directly (Oct 24 2026, network full): the best no-credit source found so far
+- freemusicarchive.org pages load with curl (browser User-Agent). Public-domain search, 100 per page:
+  `https://freemusicarchive.org/search/?adv=1&music-filter-public-domain=1&pageSize=100&page=N` -> 9,457 tracks (95 pages).
+  Each result carries `data-track-info` JSON (id, title, artistName, url). The track PAGE's data-track-info has `fileUrl`
+  (files.freemusicarchive.org/...mp3, direct download, no login), the licence link and "Plays"/"Downloads" counts.
+  (Adding `&sort=interest` with pageSize returned nothing.)
+- Licence check per track: keep only creativecommons.org/publicdomain/zero/1.0 or /licenses/publicdomain/ (old PD mark),
+  reject any /licenses/by. Of 2,222 tracks by trusted artists, 2,188 passed (the rest had no licence link).
+- Mislabels exist: the PD filter also lists commercial uploads (e.g. "Mzansi Hooligans - Woza ft Busiswa"), so only use
+  artists who release everything CC0: Komiku 291, HoliznaCC0 690, Monplaisir 520, John Bartmann 340, TRG Banks 126,
+  Loyalty Freak Music 96, Kimiko Ishizaka 32 (Bach), Daniel Veesey 30 (Beethoven), Alpha Hydrae 64, Soundtrack 4 Life 33.
+  Kosta T (2,951) is experimental. Desi/Indian music on FMA PD: almost none (two Carnatic veena recordings).
+- 95 most-downloaded tracks saved in library/music/cc0 (see its README). Scripts: scratchpad fma/crawl.py, verify.py, dl.py
+  (logic described here; re-create if needed). Wikimedia slow downloader abandoned (FMA has the same Komiku tracks, fast).
