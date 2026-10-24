@@ -13,6 +13,10 @@ Read this first in every session.
 - Whenever something is downloaded or made that a future edit could reuse (a track, an effect, a font,
   a block, a model), add it to `library/` and list it in `library/README.md` so it is never fetched or
   rebuilt twice.
+- VERIFIED ONLY (owner, Oct 24 2026): never add anything from guesswork, not a single letter. Research notes,
+  knowledge files and sub-session output may contain ONLY verified facts or results measured here, each with its
+  reference (source URL + date checked, or "measured here on <date>" + command). Unverifiable -> leave out or mark
+  "unverified". Never invent Urdu/Pashto/Hindi words or translations.
 - SAVE ALL USEFUL DATA (owner, Oct 2026): every fact, finding or result gathered through tools or research
   (web reads, searches, star counts, specs, measurements, what worked/failed) goes into `library/research/`
   (one topic per .md, with source and date) or this file, and is pushed, so nothing is fetched twice.
@@ -206,6 +210,15 @@ Read this first in every session.
   bottom-up (a top-down search grabbed blue boxes). BiRefNet-portrait is cleaner but 39 s/frame and OOM-killed: not
   usable. Always show the owner a before/after frame and get approval before rendering.
 - Pashto touch for Pashto-speaking clients: "Manana" = thank you (safe, well known). Captions stay Roman Urdu.
+
+## Sub-sessions (Oct 24 2026)
+- Self-study (editing playbook + 500 skills): session_01NL5G8zFzaGE6NyNy9X54Uh -> branch editing-self-study.
+- Specialists: A perception tools + CPU speed (session_01BdHJpuB2BTCGDxFdR7KV44, specialist-a-perception-cpu);
+  B desi vocal songs + PK reels trends (session_016xxyoT1VWtQ74po5jdBMUC, specialist-b-desi-music-trends);
+  C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym, specialist-c-broll-sfx-luts);
+  D Urdu/Pashto captions + client brand kit (session_01NZND2H5jzoXgcGVrFFtHH2, specialist-d-urdu-captions-branding).
+  They add new files only; merge each branch into the main work branch when done, then update library/README.md,
+  setup-all.sh (their setup-specialist-*.sh) and this file.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
