@@ -49,6 +49,9 @@ heavy() {
   # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).
   [ -d "$T/VoiceStudio" ] || git clone -q --depth 1 https://github.com/debpalash/VoiceStudio.git "$T/VoiceStudio"
   [ -x "$T/VoiceStudio/.venv/bin/python" ] || (cd "$T/VoiceStudio" && uv sync -q --locked --no-group cuda --group cpu)
+  # VoxCPM2 engine (Apache-2.0, commercial OK, Hindi): package only; its 5 GB checkpoint downloads on first use.
+  "$T/VoiceStudio/.venv/bin/python" -c "import voxcpm" 2>/dev/null ||
+    VIRTUAL_ENV="$T/VoiceStudio/.venv" uv pip install -q "voxcpm>=2.0.3"
   uv cache clean >/dev/null 2>&1 || true
   touch "$T/.heavy-ready"
 }

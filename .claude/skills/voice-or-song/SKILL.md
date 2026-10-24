@@ -11,6 +11,7 @@ Decide from the owner's words (Roman Urdu/Hindi):
 |---|---|---|
 | "voice over", "voiceover", "narration", "awaaz", "sirf voice", "bol ke", host/dialogue lines | Spoken voice, music must be ZERO, every line present | `library/tools/ai_voice.py` |
 | "song", "gaana", "music", "beat", "music ke sath", "background music" | Song with vocals and music | `library/tools/ai_song.py` (loved recipe in CLAUDE.md) |
+| "VoiceStudio", "ElevenLabs jaisi awaaz", voice clone ("meri/is ki awaaz mein"), Urdu/Pashto voiceover | Spoken voice from VoiceStudio (local ElevenLabs replacement) | `library/tools/vs_tts.py` (section below) |
 | Voice over AND background music | Make the voice with ai_voice.py, music separately (library/music or ai_song.py instrumental), mix with `voice_over_music.py` | both |
 
 If it is genuinely unclear, ask one short question. Never use ElevenLabs unless the owner names it.
@@ -36,3 +37,20 @@ Timing on this CPU box: ~1.5 min per round of 3 takes per line + ~1 min music re
 
 Use the loved recipe from CLAUDE.md (seed 7, 80 BPM, the romantic Hindi ballad caption) unless the owner asks for
 another style. It keeps the music and pulls the beat back under the sung words.
+
+## VoiceStudio voice (vs_tts.py), the local ElevenLabs replacement (Oct 2026)
+
+Clean spoken speech, no music at all, in 600+ languages incl. Urdu, Hindi and Pashto; voice design by text
+(`--instruct "male, middle-aged, low pitch"`) and zero-shot cloning (`--ref clip.wav --ref-text "..."`, only voices
+the owner may use). Oct 2026 test, Whisper word match: Urdu 100% / 97%, Hindi 92%, Pashto 81%; ~3-4x real time on CPU.
+
+1. `bash library/tools/voicestudio.sh start` (needs `/home/user/tools/.heavy-ready`; backend on :3900). If GET /models
+   shows k2-fsa/OmniVoice not installed: POST /models/install {"repo_id":"k2-fsa/OmniVoice"} (3.3 GB, ~30 s).
+   Licences must be accepted once per machine (owner chose to accept OmniVoice + VoxCPM2 on Oct 24 2026):
+   GET /models/licenses/details/<repo> -> acceptance.fingerprint -> POST /models/licenses/accept.
+2. Script: one sentence per line in the language's own script (Urdu/Pashto Nastaliq, Hindi Devanagari).
+3. `python3 library/tools/vs_tts.py lines.txt <scratchpad>/voice.mp3 --lang ur --instruct "male, young adult"`.
+4. Verify with Whisper (venv) before handing over.
+
+LICENCE: OmniVoice weights are NON-COMMERCIAL (CC-BY-NC): personal/own videos only. For client or paid videos use
+`--model voxcpm2` (Apache-2.0, Hindi among 30 languages, no Pashto, 5 GB download, slower) or ai_voice.py (ours).

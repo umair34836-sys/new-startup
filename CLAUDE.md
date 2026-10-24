@@ -127,6 +127,12 @@ Read this first in every session.
   result is in `library/music/baarish-ki-pehli-shaam-ai-song.mp3`. Run it in the background with a
   per-minute status monitor (the owner likes minute-by-minute updates on long jobs).
 
+- VOICESTUDIO (owner, Oct 24 2026: "replacing ElevenLabs"): debpalash/VoiceStudio runs locally (setup-all heavy, backend
+  `library/tools/voicestudio.sh start`, script tool `vs_tts.py`, skill voice-or-song). OmniVoice engine: Urdu 100%/97%,
+  Hindi 92%, Pashto 81% Whisper match, voice design + cloning, ~3-4x real time on CPU. Its weights are NON-COMMERCIAL:
+  client/paid work -> `--model voxcpm2` (Apache-2.0, Hindi, 5 GB, download when needed) or ai_voice.py. Details:
+  library/research/voicestudio.md.
+- CPU-ONLY TORCH: the main venv now uses torch 2.10.0+cpu (the pypi CUDA build wasted ~5 GB of nvidia libs on disk).
 - ElevenLabs connector (ONLY when the owner asks for it; TTS only, costs the owner's credits; ~230 credits for 2 takes of a 16 s script,
   ~90 per transcription). Good warm Urdu/Hindi romantic male voice: "Ashar – Romantic, Warm Boyfriend"
   (`nq3gz2RQGRBB1SbrgTqF`), model `eleven_v4`. Write the script in Devanagari (English words stay

@@ -24,3 +24,8 @@
 - Disk: the main tools venv carried the CUDA torch build (nvidia-* + triton = ~5 GB) on this CPU-only box. Swapped to
   torch 2.10.0+cpu (download.pytorch.org/whl/cpu): free disk 3.2 -> 9.1 GB, ACE-Step/whisper/audio-separator still import
   (torchao prints harmless "Failed to load _C_mxfp8/_C_cutlass_90a" CUDA-kernel warnings). setup-ai-song.sh now does this.
+- Test Oct 24 2026 (OmniVoice, CPU, seed 7, instruct "male, young adult"/"male, middle-aged, low pitch"): Urdu 5.4 s in
+  29 s (incl. model load), Urdu 9.5 s in 36 s, Hindi 6.8 s in 32 s, Pashto 4.4 s in 22 s. Whisper small match vs the
+  script: Urdu 100% and 97%, Hindi 92%, Pashto 81% (Whisper's own Pashto is weak). Owner accepted the OmniVoice and
+  VoxCPM2 licences (Oct 24 2026). voxcpm 2.0.3 installed into VoiceStudio's venv (keeps torch 2.8.0+cpu); the VoxCPM2
+  checkpoint (4.96 GB) was NOT downloaded: only 4.7 GB disk free in this session.
