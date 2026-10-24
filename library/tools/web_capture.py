@@ -1,4 +1,4 @@
-# Free, local Firecrawl replacement (Crawl4AI 0.9, Apache-2.0, ~86k stars): page -> clean markdown + full-page
+# Free, local Firecrawl replacement (Crawl4AI 0.9, Apache-2.0, ~86k stars per Exa 2026-10-24): page -> clean markdown + full-page
 # screenshot, using this container's Chromium. Runs in /home/user/tools/crawl-venv (setup-all.sh light).
 #
 #   /home/user/tools/crawl-venv/bin/python web_capture.py URL [URL ...] --out DIR [--width 1440] [--no-shot]
@@ -8,7 +8,8 @@
 # servers, this does not), and Cloudflare-style anti-bot pages can refuse a headless browser.
 import argparse, asyncio, base64, os, re
 
-os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", "/opt/pw-browsers")  # playwright 1.56.0 matches chromium-1194 there
+os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", "/opt/pw-browsers")  # playwright 1.56.0 needs chromium-1194 there
+# (container-dependent: on 2026-10-24 the image had chromium-1243 only and this script failed with "playwright install")
 os.environ.setdefault("CRAWL4AI_NO_CLOUD_NOTICE", "1")
 from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 

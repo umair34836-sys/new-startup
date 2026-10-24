@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install every tool this repo uses into a fresh cloud container, skipping what is already there.
-#   bash library/tools/setup-all.sh light   # quick (~1 min): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI
+#   bash library/tools/setup-all.sh light   # quick (~1 min, Oct 2026 estimate): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI
 #   bash library/tools/setup-all.sh heavy   # music + AI song stack, VoiceStudio, model weights (~20 min, ~15 GB)
 # The SessionStart hook runs "all" in the background, logging to /home/user/tools/setup.log; it touches
 # /home/user/tools/.light-ready and then /home/user/tools/.heavy-ready as each part finishes.
@@ -24,7 +24,8 @@ light() {
   command -v rea >/dev/null || npm i -g -s rea-agents@6.7.0
   # Urdu/Pashto/Hindi captions + client brand kit (specialist D): fonttools, numpy, pillow, qrcode
   bash "$HERE/setup-specialist-d.sh" >/dev/null
-  # Crawl4AI (free local Firecrawl replacement, web_capture.py): own venv; playwright 1.56.0 = /opt/pw-browsers chromium-1194.
+  # Crawl4AI (free local Firecrawl replacement, web_capture.py): own venv; playwright 1.56.0 = /opt/pw-browsers chromium-1194
+  # (container-dependent: the 2026-10-24 image had chromium-1243 / system playwright 1.63.0, and web_capture.py failed).
   [ -x "$T/crawl-venv/bin/python" ] || uv venv -q -p /usr/bin/python3.12 "$T/crawl-venv"
   "$T/crawl-venv/bin/python" -c "import crawl4ai" 2>/dev/null ||
     VIRTUAL_ENV="$T/crawl-venv" uv pip install -q crawl4ai "playwright==1.56.0"
@@ -46,14 +47,14 @@ heavy() {
   for m in denoise_mel_band_roformer_aufr33_sdr_27.9959.ckpt UVR-DeEcho-DeReverb.pth UVR-MDX-NET-Voc_FT.onnx; do
     "$T/venv/bin/audio-separator" --download_model_only -m "$m" --model_file_dir "$T/sep-models" >/dev/null
   done
-  # bg_blur.py: person segmentation (u2net_human_seg weights download on first use, 168 MB)
+  # bg_blur.py: person segmentation (u2net_human_seg weights download on first use, 175,997,641 bytes = 168 MiB, 2026-10-24)
   "$T/venv/bin/python" -c "import rembg, cv2" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q "rembg[cpu]" opencv-python-headless
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
   # VoiceStudio (debpalash/VoiceStudio, local ElevenLabs alternative): own uv venv with CPU torch; backend on :3900
   # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).
   [ -d "$T/VoiceStudio" ] || git clone -q --depth 1 https://github.com/debpalash/VoiceStudio.git "$T/VoiceStudio"
   [ -x "$T/VoiceStudio/.venv/bin/python" ] || (cd "$T/VoiceStudio" && uv sync -q --locked --no-group cuda --group cpu)
-  # VoxCPM2 engine (Apache-2.0, commercial OK, Hindi): package only; its 5 GB checkpoint downloads on first use.
+  # VoxCPM2 engine (Apache-2.0, commercial OK, Hindi): package only; its 4.96 GB checkpoint (HF API 2026-10-24) downloads on first use.
   "$T/VoiceStudio/.venv/bin/python" -c "import voxcpm" 2>/dev/null ||
     VIRTUAL_ENV="$T/VoiceStudio/.venv" uv pip install -q "voxcpm>=2.0.3"
   uv cache clean >/dev/null 2>&1 || true

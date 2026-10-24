@@ -2,7 +2,7 @@
 # quantisation is the slow part). Everything it makes is ours: no copyright claims, no credit needed.
 #   cd /home/user/tools/ACE-Step-1.5 && ../venv/bin/python -u /home/user/new-startup/library/tools/music_pack.py SPEC.json OUTDIR
 # SPEC.json: [{"name", "caption", "lyrics" ("[Instrumental]" for music only), "lang" ("ur", "hi", "en", "unknown"...),
-#              "duration", "bpm", "seed"}]. Writes OUTDIR/<name>.mp3 (192k, -14 LUFS); skips names already done.
+#              "duration", "bpm", "seed"}]. Writes OUTDIR/<name>.mp3 (192k, normalised toward -14 LUFS; the 9 files in music/own measured -12.9 to -14.1); skips names already done.
 import json, os, shutil, subprocess, sys, time
 os.environ.setdefault("HF_HUB_DISABLE_XET", "1"); os.environ.setdefault("ACESTEP_GENERATION_TIMEOUT", "5400")
 from acestep.handler import AceStepHandler
