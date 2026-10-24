@@ -159,6 +159,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   neighbouring words (a +0.3 s tail leaked the next line's first word). Music after separation: gaps at -86 dB.
   Time: ~6.5 min per round of 3 x 25 s takes + ~1 min music removal per line.
 
+- SAVED VOICES (owner, Oct 24 2026): "senpaispider" = the owner's client Senpai Spider. When the owner says "senpai ki
+  voice me banao" (or names a saved voice), use `vs_tts.py --voice senpaispider` (VoxCPM2 clone, recipe in
+  library/voices/voices.json; reference rebuilt from the Drive link, never committed). Script in Devanagari,
+  Whisper-check every line (first test: lines 2-4 clear, line 1 partly, "सब्सक्राइब" garbled -> regenerate bad lines).
 - AI songs with vocals that the owner LOVED ("perfect song"): `library/tools/ai_song.py` with seed 7,
   80 BPM, 60 s, caption "romantic hindi pop ballad, soft piano, acoustic guitar, strings, gentle tabla,
   rainy evening mood, warm male vocals, clear hindi lyrics". Reuse this recipe/style for new songs; the

@@ -19,10 +19,32 @@ ap.add_argument("--model", default="omnivoice")
 ap.add_argument("--ref", help="reference voice wav for cloning (only voices you may use)")
 ap.add_argument("--ref-text", default="", help="exact words spoken in --ref")
 ap.add_argument("--host", default="http://127.0.0.1:3900")
+ap.add_argument("--voice", help="named saved voice from library/voices/voices.json (e.g. senpaispider): its reference is rebuilt "
+                "from the source link into /home/user/tools/voices/<name>/ref.wav on first use, then used as --ref")
 ap.add_argument("--steps", type=int, help="diffusion steps (VoxCPM2 default 10; more = slower, maybe cleaner)")
 ap.add_argument("--cfg", type=float, help="guidance scale (default 2.0)")
 ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
+
+if a.voice:  # saved voice: reference clip is rebuilt from its source (voice recordings never go into git)
+    reg = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "voices", "voices.json")))
+    if a.voice not in reg:
+        raise SystemExit(f"unknown voice {a.voice}; known: {', '.join(reg)}")
+    v = reg[a.voice]
+    vd = f"/home/user/tools/voices/{a.voice}"
+    ref = os.path.join(vd, "ref.wav")
+    if not os.path.exists(ref):
+        os.makedirs(vd, exist_ok=True)
+        src = os.path.join(vd, "source.mp4")
+        subprocess.run(["curl", "-sSL", "-o", src, v["source_url"]], check=True)
+        subprocess.run(["/home/user/tools/venv/bin/python", os.path.join(os.path.dirname(os.path.abspath(__file__)), "clean_voice.py"),
+                        src, "--out", os.path.join(vd, "clean")], check=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(vd, "clean", "voice.wav"), "-ss", str(v["ref_start"]),
+                        "-t", str(v["ref_seconds"]), "-af", f"afade=t=in:d=0.05,afade=t=out:st={v['ref_seconds'] - 0.1}:d=0.1",
+                        "-ac", "1", "-ar", "44100", ref], check=True)
+    a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], v["lang"]
+    if a.seed == 7 and v.get("seed"):
+        a.seed = v["seed"]
 
 lines = [l.strip() for l in open(a.script, encoding="utf-8") if l.strip()]
 tmp = a.parts or tempfile.mkdtemp(prefix="vs_tts_")
