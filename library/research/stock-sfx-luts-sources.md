@@ -49,3 +49,13 @@ from this cloud server on 2026-10-24 unless marked otherwise.
 ## HyperFrames LUT ingest (tested)
 `npx hyperframes media-use resolve --type lut --from <file.cube> --project . --json` returned `"ok":true` for all 32
 own LUTs (hyperframes 0.8.188) and copied each to `.media/luts/lut_NNN.cube`.
+
+## Spot checks of Commons file pages (Licensing section read with curl, 2026-10-24)
+- File:Causeway_Bay_Time-lapse_videos_(afternoon).ogv: "made available under the Creative Commons CC0 1.0 Universal
+  Public Domain Dedication" by the copyright holder (matches the API's CC0).
+- File:A_Native_Street_in_India_(1906).webm: "in the public domain in India because its term of copyright has expired"
+  (Indian Copyright Act: films enter the public domain 60 years after publication). The copy carries a BFI logo,
+  cropped out in the library clips.
+- Python's default urllib User-Agent got "Your request does not comply with our robot policy" (429) from
+  upload.wikimedia.org while curl with a descriptive UA (name + repo URL) worked; after many requests the IP was
+  throttled for every client (429).
