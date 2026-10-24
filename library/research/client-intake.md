@@ -1,7 +1,8 @@
 # Client intake (one message, collect everything once)
 
-Written 2026-10-24 for the brand kit (`library/templates/brand-kit`). The questions are our own wording;
-every field maps to `brand.schema.json`. Client answers are client data: keep them in the session scratchpad,
+Written 2026-10-24 for the brand kit (`library/templates/brand-kit`). The questions are our own wording.
+Questions 1-10 cover every `brand.schema.json` field except `fonts` (we pick fonts) (checked against the schema
+2026-10-24); questions 11-13 (platform/length, things to avoid, consent) are for the edit and have no schema field. Client answers are client data: keep them in the session scratchpad,
 never commit them.
 
 ## Message to send the client (Roman Urdu)
@@ -31,6 +32,9 @@ Shukriya! Sab ek saath mil jaye to hum jaldi video bana dete hain.
       `library/research/urdu-captions.md`); show the client a still of any Urdu/Pashto line to confirm.
 - [ ] `python3 brand_from_logo.py logo.png` run; every text colour PASS (>= 4.5:1, or >= 3:1 for large titles).
 - [ ] Phone/WhatsApp re-typed from the client's message, then read back on the end-card snapshot digit by digit.
+      `whatsapp` in brand.json: full international number, digits only, no plus, dashes, brackets or leading zeros
+      (e.g. 0300-0000000 -> 923000000000), since the QR link is `https://wa.me/<whatsapp>` [WhatsApp FAQ,
+      https://faq.whatsapp.com/425247423114725, read 2026-10-24; repo: library/templates/brand-kit/build_brand.py].
 - [ ] QR decoded from a rendered frame (jsQR) and it opens the right number/website.
 - [ ] `npx hyperframes check --json` ok in the delivery size(s); snapshot at the middle of every block.
 - [ ] Offer price, dates and conditions match the client's words exactly.

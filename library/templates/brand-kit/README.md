@@ -28,3 +28,10 @@ Tested 2026-10-24 (HyperFrames 0.8.188), with the example + a test `name_ur` (`�
   14.0 / 15.5 / 16.4 s are identical in layout, so it is a snapshot-only difference.
 Limits: the sting splits the name per word (safe for any script). Names longer than the 15-character demo name were
 not tested (unverified how they wrap): check the snapshot. No audio in the blocks: add a whoosh/pop from the media-use SFX when using them.
+
+Audit re-check 2026-10-24 (HyperFrames 0.8.191, `library/research/audit-2026-10-24-part2.md`): example + `name_ur` `امن`
+(found in udhr2 `urd.txt`, preamble: "آزادی، انصاف اور امن کی بنیاد"): `check --json` ok in 1080x1920 and 1920x1080;
+snapshots at 1.8/5/8.5/11.2/14.5/16.4 s looked at (Urdu name joined, all blocks visible); jsQR 1.4.0 decoded
+`https://wa.me/923000000000` from `qr.png` and from the 14.5 s and 16.4 s snapshots; the 16.005 s snapshot again showed
+the end card lower (snapshot-only, as noted above); `brand_from_logo.py demo-logo.png` printed the same three colours and
+ratios (7.70 / 19.24 / 12.39); formula check 21.00 and 4.48 reproduced.

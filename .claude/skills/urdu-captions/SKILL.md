@@ -22,7 +22,8 @@ Findings and sources: `library/research/urdu-captions.md` (read it for the why).
 
 Hard rules (tested here 2026-10-24, details and commands in the research note):
 - Animate per WORD (inline-block spans). Never split a word into letter spans: the joins break.
-- Nastaliq `line-height: 2.0` or more (pixel-measured), no `overflow: hidden` on the text box; Naskh 1.7 and
+- Nastaliq `line-height: 2.0` or more (pixel-measured; audit re-measure: ~1 px ink below the box at 2.0, none at 2.2),
+  no `overflow: hidden` on the text box; Naskh 1.7 and
   Devanagari 1.5 looked clean in snapshots (not pixel-measured).
 - Noto Nastaliq needs `word-spacing: 0.25em` or words after د/ر look glued.
 - Consecutive Latin/number words go in ONE `<span dir="ltr">` (two separate spans flip to "1948 UDHR").
