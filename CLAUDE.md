@@ -264,6 +264,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - MISSED FACT (2026-10-24): the first reel listed India/Singapore/Dubai but the homepage also lists "Frankfurt(Germany)" /
   "Europe (Germany)"; the owner caught it. Before writing a script, grep the captures for EVERY item of a list
   (locations, games, plans), not just the first sentence that names some.
+- MISSED OFFER (2026-10-24, MoradoSolution): curl text of moradosolution.in/sales showed only "Live promo codes are
+  listed here as soon as they are published" (codes load by JavaScript); a browser crawl later the same day found
+  WELCOME30 = 30% OFF live. Read offer/price pages in a real browser (web_capture.py / Playwright), never curl text only.
 - Patching one VO line later: regenerate only that line with the same ElevenLabs voice (5.4 s line = 78 credits per take,
   2 takes, 2026-10-24), Whisper-check it, splice at the silences around the old line (silencedetect -40 dB), loudnorm the
   whole VO again, shift later scenes/SFX by the length difference. Its loudness matched the old line (-19.0 vs -19.3 LUFS).
