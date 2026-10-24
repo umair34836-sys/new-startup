@@ -88,8 +88,8 @@ glyphs can still poke out: the block root carries `data-layout-allow-overflow`.
 - Urdu small yeh is U+06CC ی, large yeh U+06D2 ے; U+064A ي may be found in data but is incorrect for Urdu
   (SIL, "Notes on some Unicode Arabic characters", https://static-scripts.sil.org/cms/sites/nrsi/download/arabicletterusagenotes/ArabicLetterUsageNotes.pdf, read 2026-10-24).
 - Urdu kaf is U+06A9 ک; کھ = U+06A9 + U+06BE (r12a page above).
-- Presentation-form code points (U+FB50-FDFF, U+FE70-FEFF) bypass shaping: `urdu_captions.py --check` flags them
-  (rule from the Unicode block ranges; flagged, not auto-fixed).
+- Presentation-form code points (U+FB50-FDFF, U+FE70-FEFF) are flagged by `urdu_captions.py --check` so the text
+  can be re-checked with its supplier. Whether they render worse than base letters was **not tested here (unverified)**.
 
 ## Block and tool
 

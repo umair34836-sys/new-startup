@@ -134,7 +134,7 @@ def check(spec, font_dir):
             print("line %d: U+%04X %s not in %s" % (i, ord(c), unicodedata.name(c, "?"), FONTS[sc][0]))
         for c in sorted(set(PRESENTATION.findall(text))):
             problems += 1
-            print("line %d: presentation form U+%04X %s (type the base letter instead)" % (i, ord(c), unicodedata.name(c, "?")))
+            print("line %d: presentation form U+%04X %s (ask the supplier; effect on shaping untested)" % (i, ord(c), unicodedata.name(c, "?")))
         if sc in ("nastaliq", "sans") and l.get("lang", "ur") == "ur":
             for c in ("ي", "ك"):
                 if c in text:

@@ -10,8 +10,7 @@ Assalam o alaikum! Aap ki video professional aur aap ke brand ke mutabiq banane 
 
 1. Business ka naam (English spelling jaisa aap likhte hain) aur agar video mein Urdu/Pashto mein bhi chahiye to
    naam Urdu/Pashto likhai mein (khud type kar ke ya logo/board ki photo).
-2. Logo: asal file (PNG, transparent background ho to behtar). WhatsApp photo ki jagah "document" bana kar bhejein
-   taake quality kam na ho.
+2. Logo: asal file (PNG, transparent background ho to behtar).
 3. Brand ke rang: agar pata hain to color codes, warna "logo wale rang" likh dein.
 4. Tagline / slogan (agar hai) aur kis zuban mein: Roman Urdu, Urdu, Pashto, Hindi ya English.
 5. Phone number jo video mein dikhana hai, aur WhatsApp number (agar alag hai).
