@@ -255,7 +255,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Agent-Reach 1.6 (1.6.0 per `agent-reach doctor`, 2026-10-24; `agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach web search "<q>"`,
   `agent-reach youtube search "<q>"` (works, via yt-dlp), JSON output.
   Owner allowed r.jina.ai, s.jina.ai, mcp.exa.ai, api.exa.ai, www/old.reddit.com (Oct 2026): web read (jina) and
-  web search (exa) WORK (both worked 2026-10-24; after ~25 searches Exa answered RATE_LIMITED "wait 3512 s"). For GitHub tool discovery use `agent-reach web search "<name> github"` (results show stars);
+  web search (exa) WORK (both worked 2026-10-24; after many searches that day Exa answered RATE_LIMITED "wait 3512 s"). For GitHub tool discovery use `agent-reach web search "<name> github"` (results show stars);
   the github channel itself fails (session gh API is repo-scoped). Reddit search can hit Exa 429 (rate limit) and
   its opencli fallback needs a GitHub release download (blocked): wait and retry once, else WebSearch.
 - ECC (everything-claude-code) lives in .claude/ (agents, commands, quality skills; no hooks). REA (reverse engineering,
