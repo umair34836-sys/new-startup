@@ -18,4 +18,7 @@
 | Evil0ctal/Douyin_TikTok_Download_API | self-hosted TikTok/Douyin/Bilibili data + no-watermark download API, MCP, Docker | 20,859 | Apache-2.0 (LICENSE) | heavier: a server to run |
 | davidteather/TikTok-Api | unofficial TikTok API wrapper in Python (PyPI TikTokApi v7.3.3) | 6,715 | MIT | needs Playwright browsers (`python -m playwright install`) |
 
-Not installed: the owner decides. Use only for watching/summarising; never re-upload other people's TikToks.
+INSTALLED (owner said yes, 2026-10-24): `uv pip install curl_cffi` into /home/user/tools/venv (setup-all.sh heavy).
+After that the same `yt-dlp -o v.%(ext)s https://vm.tiktok.com/<code>/` downloaded the video (1.55 MiB stream, merged
+v.mp4, 101 s, 30 fps) and `--print "%(description)s"` gave the caption. Whisper small with language="ur" transcribed
+the Urdu speech well; language="hi" produced garbage after ~35 s on the same clip (measured here 2026-10-24). Use only for watching/summarising; never re-upload other people's TikToks.
