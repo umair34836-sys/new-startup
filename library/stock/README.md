@@ -11,7 +11,7 @@ Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for
 | --- | --- | --- |
 | Own overlays/backgrounds (`own-overlays/`) | 37 | Made here with `library/tools/make_overlays.py` (PIL + numpy, fixed seeds). No credit needed. |
 | Wikimedia Commons CC0 | 17 | Licence read from each file page's metadata via the Commons API (`extmetadata.LicenseShortName` = CC0). Page URL per clip in `index.json`. |
-| Wikimedia Commons public domain (US government: National Park Service, US Forest Service, BLM, etc.) | 13 | Same check (`LicenseShortName` = Public domain). |
+| Wikimedia Commons public domain (US agencies: National Park Service, Forest Service, BLM, US Mint; the 1906 India film; uploaders who released their own work as PD) | 13 | Same check (`LicenseShortName` = Public domain). |
 | NASA (public domain, **licence doubt**) | 5 | NASA Media Usage Guidelines (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24): NASA content "generally [is] not subject to copyright in the United States", but "NASA should be acknowledged as the source" and commercial use "must not explicitly or implicitly convey NASA's endorsement". Marked `licence_doubt: true`: OK for space/gaming intros, avoid in client ads. |
 
 Not stored here, and why (tested from this server on 2026-10-24):

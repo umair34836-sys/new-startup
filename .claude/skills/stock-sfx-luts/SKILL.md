@@ -20,11 +20,12 @@ python3 library/tools/find_stock.py --all "fire"             # everything
 
 - What exists: own overlays/backgrounds (light leaks, film grain, dust, film-burn transition, glitch bars, bokeh,
   embers, sparks, snow, rain, smoke, confetti on green, gradients, neon grid, dot network, stars; most also in 9:16),
-  Commons CC0/public-domain sky, sunset/sunrise, rain, lightning, city night, traffic time-lapse, fire, nature,
-  and NASA space shots.
+  Commons CC0/public-domain sky and cloud time-lapses, sunset/sunrise, rain, snow, lightning, aurora, night sky,
+  city night, city traffic time-lapse, fire and candles, bee/flower, firecrackers (9:16), coins (US Mint), a 1906
+  Indian street film (black and white), and NASA space shots.
 - NASA clips have `licence_doubt: true` (NASA asks to be acknowledged and forbids implied endorsement): use them in
   space/gaming intros, not in client ads.
-- No CC0 Pakistani street footage exists in the library (none found). For office/handshake/payment/delivery/shop
+- No modern CC0 Pakistani/desi street footage exists in the library (none found on Commons). For office/handshake/payment/delivery/shop
   shots use the Mixkit links (licence: no credit, commercial OK) and fetch ONE clip per need:
   `python3 library/tools/find_stock.py --fetch-mixkit <id> assets/broll/<name>.mp4`. Never bulk-download Mixkit and
   never commit Mixkit/Coverr files to this public repo (their terms forbid re-sharing as stock).
