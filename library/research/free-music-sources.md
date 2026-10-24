@@ -32,7 +32,7 @@ CC BY (YouTube "Creative Commons" filter, Kevin MacLeod/incompetech, most Jamend
 - OpenGameArt.org WORKS: advanced search with field_art_type_tid[]=12 (music) & field_art_licenses_tid[]=4 (CC0).
   Verify each page links only to publicdomain/zero (some list CC0 + CC BY: skip). Real files are
   /sites/default/files/<name>.mp3|ogg (NOT the /styles/.../audio_preview/ links, which are truncated previews).
-  29 tracks saved in library/music/cc0 (see its README).
+  29 tracks saved in library/music/cc0 at that point (see its README); the folder later grew to 131 (29 OGA + 7 desi + 95 FMA; counted 2026-10-24).
 
 ## Hindi / Urdu / Pashto music without credit: research Oct 24 2026 (GitHub + web)
 Short answer: CC0 or public-domain SONGS WITH VOCALS in Hindi, Urdu or Pashto barely exist. What does exist: CC0
