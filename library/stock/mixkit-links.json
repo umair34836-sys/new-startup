@@ -1,0 +1,929 @@
+{
+ "notes": "LINKS ONLY - these Mixkit files are NOT stored in this public repo. Mixkit User Terms clause 9 forbid making Items available 'on a stock or inventory basis' and mass downloading with scripts (https://mixkit.co/terms/, read 2026-10-24). Fetch one clip when a video needs it: python3 library/tools/find_stock.py --fetch-mixkit <id> <dst>. Licence text: https://mixkit.co/license/modal/videoFree/ ('Attribution is not required'; YouTube, social media, online ads, commercial projects allowed). Items marked videoRestricted (personal use only) were left out. Titles/durations are as shown on mixkit.co on 2026-10-24; the clips were not viewed here. Brands/logos visible in a clip (e.g. phone apps, laptops) are not covered by the licence.",
+ "clips": [
+  {
+   "category": "office",
+   "title": "Open office space",
+   "page": "https://mixkit.co/free-stock-video/open-office-space-914/",
+   "id": "914",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 21,
+   "file_720": "https://assets.mixkit.co/videos/914/914-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/914/914-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "office"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/open-office-space-914/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "office",
+   "title": "Business people at work meeting",
+   "page": "https://mixkit.co/free-stock-video/business-people-at-work-meeting-4809/",
+   "id": "4809",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 37,
+   "file_720": "https://assets.mixkit.co/videos/4809/4809-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4809/4809-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "office"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/business-people-at-work-meeting-4809/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "office",
+   "title": "Reflection of a screen in glasses",
+   "page": "https://mixkit.co/free-stock-video/reflection-of-a-screen-in-glasses-221/",
+   "id": "221",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 20,
+   "file_720": "https://assets.mixkit.co/videos/221/221-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/221/221-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "office"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/reflection-of-a-screen-in-glasses-221/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "office",
+   "title": "Close-Up of Hands Typing and Using Mouse",
+   "page": "https://mixkit.co/free-stock-video/close-up-of-hands-typing-and-using-mouse-101553/",
+   "id": "101553",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 9,
+   "file_720": "https://assets.mixkit.co/videos/101553/101553-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/101553/101553-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "office"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/close-up-of-hands-typing-and-using-mouse-101553/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "business",
+   "title": "Man working on his laptop",
+   "page": "https://mixkit.co/free-stock-video/man-working-on-his-laptop-308/",
+   "id": "308",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 21,
+   "file_720": "https://assets.mixkit.co/videos/308/308-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/308/308-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "business"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/man-working-on-his-laptop-308/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "business",
+   "title": "Business man exposing graphs",
+   "page": "https://mixkit.co/free-stock-video/business-man-exposing-graphs-42648/",
+   "id": "42648",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 6,
+   "file_720": "https://assets.mixkit.co/videos/42648/42648-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/42648/42648-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "business"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/business-man-exposing-graphs-42648/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "business",
+   "title": "Hands of a wrist watch",
+   "page": "https://mixkit.co/free-stock-video/hands-of-a-wrist-watch-3653/",
+   "id": "3653",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 12,
+   "file_720": "https://assets.mixkit.co/videos/3653/3653-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/3653/3653-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "business"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/hands-of-a-wrist-watch-3653/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "business",
+   "title": "Hands of a person typing on a cell phone",
+   "page": "https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/",
+   "id": "4915",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 15,
+   "file_720": "https://assets.mixkit.co/videos/4915/4915-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4915/4915-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "business"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "money",
+   "title": "Man counting a wad of bills seen very closely",
+   "page": "https://mixkit.co/free-stock-video/man-counting-a-wad-of-bills-seen-very-closely-18296/",
+   "id": "18296",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 10,
+   "file_720": "https://assets.mixkit.co/videos/18296/18296-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/18296/18296-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "money"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/man-counting-a-wad-of-bills-seen-very-closely-18296/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "money",
+   "title": "Fast sequence of detailed photos of banknote parts",
+   "page": "https://mixkit.co/free-stock-video/fast-sequence-of-detailed-photos-of-banknote-parts-18261/",
+   "id": "18261",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 12,
+   "file_720": "https://assets.mixkit.co/videos/18261/18261-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/18261/18261-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "money"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/fast-sequence-of-detailed-photos-of-banknote-parts-18261/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "shopping",
+   "title": "Antiques and second-hand market",
+   "page": "https://mixkit.co/free-stock-video/antiques-and-second-hand-market-4147/",
+   "id": "4147",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 20,
+   "file_720": "https://assets.mixkit.co/videos/4147/4147-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4147/4147-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "shopping"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/antiques-and-second-hand-market-4147/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "shopping",
+   "title": "Checking an item on a sales site on a cell phone",
+   "page": "https://mixkit.co/free-stock-video/checking-an-item-on-a-sales-site-on-a-cell-42123/",
+   "id": "42123",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 15,
+   "file_720": "https://assets.mixkit.co/videos/42123/42123-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/42123/42123-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "shopping"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/checking-an-item-on-a-sales-site-on-a-cell-42123/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "delivery",
+   "title": "Delivering a package to a woman at home",
+   "page": "https://mixkit.co/free-stock-video/delivering-a-package-to-a-woman-at-home-42130/",
+   "id": "42130",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 11,
+   "file_720": "https://assets.mixkit.co/videos/42130/42130-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/42130/42130-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "delivery"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/delivering-a-package-to-a-woman-at-home-42130/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "delivery",
+   "title": "Delivering a package to the door of a house",
+   "page": "https://mixkit.co/free-stock-video/delivering-a-package-to-the-door-of-a-house-31155/",
+   "id": "31155",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 10,
+   "file_720": "https://assets.mixkit.co/videos/31155/31155-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/31155/31155-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "delivery"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/delivering-a-package-to-the-door-of-a-house-31155/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "delivery",
+   "title": "Delivery man looking for an address on the street",
+   "page": "https://mixkit.co/free-stock-video/delivery-man-looking-for-an-address-on-the-street-31136/",
+   "id": "31136",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 11,
+   "file_720": "https://assets.mixkit.co/videos/31136/31136-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/31136/31136-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "delivery"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/delivery-man-looking-for-an-address-on-the-street-31136/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "delivery",
+   "title": "Hands of two people sealing a package with tape",
+   "page": "https://mixkit.co/free-stock-video/hands-of-two-people-sealing-a-package-with-tape-42137/",
+   "id": "42137",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 14,
+   "file_720": "https://assets.mixkit.co/videos/42137/42137-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/42137/42137-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "delivery"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/hands-of-two-people-sealing-a-package-with-tape-42137/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "city",
+   "title": "Aerial view of the glass corporate buildings of a big city at night",
+   "page": "https://mixkit.co/free-stock-video/aerial-view-of-the-glass-corporate-buildings-of-a-big-49845/",
+   "id": "49845",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 21,
+   "file_720": "https://assets.mixkit.co/videos/49845/49845-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/49845/49845-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "city"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/aerial-view-of-the-glass-corporate-buildings-of-a-big-49845/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "city",
+   "title": "City train driving under a bridge",
+   "page": "https://mixkit.co/free-stock-video/city-train-driving-under-a-bridge-1606/",
+   "id": "1606",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 20,
+   "file_720": "https://assets.mixkit.co/videos/1606/1606-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/1606/1606-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "city"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/city-train-driving-under-a-bridge-1606/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "city",
+   "title": "Big city at night from an aerial shot",
+   "page": "https://mixkit.co/free-stock-video/big-city-at-night-from-an-aerial-shot-49878/",
+   "id": "49878",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 14,
+   "file_720": "https://assets.mixkit.co/videos/49878/49878-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/49878/49878-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "city"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/big-city-at-night-from-an-aerial-shot-49878/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "city",
+   "title": "Pedestrian walk in Tokyo",
+   "page": "https://mixkit.co/free-stock-video/pedestrian-walk-in-tokyo-4231/",
+   "id": "4231",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 19,
+   "file_720": "https://assets.mixkit.co/videos/4231/4231-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4231/4231-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "city"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/pedestrian-walk-in-tokyo-4231/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "city",
+   "title": "Side by side aerial view of a city at night",
+   "page": "https://mixkit.co/free-stock-video/side-by-side-aerial-view-of-a-city-at-night-49846/",
+   "id": "49846",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 44,
+   "file_720": "https://assets.mixkit.co/videos/49846/49846-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/49846/49846-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "city"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/side-by-side-aerial-view-of-a-city-at-night-49846/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "traffic",
+   "title": "Two avenues with many cars traveling at night",
+   "page": "https://mixkit.co/free-stock-video/two-avenues-with-many-cars-traveling-at-night-34562/",
+   "id": "34562",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 8,
+   "file_720": "https://assets.mixkit.co/videos/34562/34562-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/34562/34562-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "traffic"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/two-avenues-with-many-cars-traveling-at-night-34562/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "traffic",
+   "title": "Busy Avenue in Las Vegas",
+   "page": "https://mixkit.co/free-stock-video/busy-avenue-in-las-vegas-4251/",
+   "id": "4251",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 10,
+   "file_720": "https://assets.mixkit.co/videos/4251/4251-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4251/4251-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "traffic"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/busy-avenue-in-las-vegas-4251/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "traffic",
+   "title": "Pedestrian traffic light with a timer reaching zero",
+   "page": "https://mixkit.co/free-stock-video/pedestrian-traffic-light-with-a-timer-reaching-zero-39825/",
+   "id": "39825",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 12,
+   "file_720": "https://assets.mixkit.co/videos/39825/39825-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/39825/39825-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "traffic"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/pedestrian-traffic-light-with-a-timer-reaching-zero-39825/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "food",
+   "title": "Top view of a woman slicing vegetables",
+   "page": "https://mixkit.co/free-stock-video/top-view-of-a-woman-slicing-vegetables-40524/",
+   "id": "40524",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 16,
+   "file_720": "https://assets.mixkit.co/videos/40524/40524-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/40524/40524-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "food"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/top-view-of-a-woman-slicing-vegetables-40524/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "food",
+   "title": "Preparing a bowl with yogurt and fruit",
+   "page": "https://mixkit.co/free-stock-video/preparing-a-bowl-with-yogurt-and-fruit-43925/",
+   "id": "43925",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 25,
+   "file_720": "https://assets.mixkit.co/videos/43925/43925-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/43925/43925-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "food"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/preparing-a-bowl-with-yogurt-and-fruit-43925/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "food",
+   "title": "Rinsing strawberries, apples and grapes holding hands",
+   "page": "https://mixkit.co/free-stock-video/rinsing-strawberries-apples-and-grapes-holding-hands-10434/",
+   "id": "10434",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 13,
+   "file_720": "https://assets.mixkit.co/videos/10434/10434-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/10434/10434-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "food"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/rinsing-strawberries-apples-and-grapes-holding-hands-10434/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "coffee",
+   "title": "Serving a sparkling cappuccino in a cup",
+   "page": "https://mixkit.co/free-stock-video/serving-a-sparkling-cappuccino-in-a-cup-41859/",
+   "id": "41859",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 13,
+   "file_720": "https://assets.mixkit.co/videos/41859/41859-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/41859/41859-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "coffee"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/serving-a-sparkling-cappuccino-in-a-cup-41859/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "coffee",
+   "title": "Cup being filled with coffee in a coffee machine",
+   "page": "https://mixkit.co/free-stock-video/cup-being-filled-with-coffee-in-a-coffee-machine-41865/",
+   "id": "41865",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 13,
+   "file_720": "https://assets.mixkit.co/videos/41865/41865-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/41865/41865-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "coffee"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/cup-being-filled-with-coffee-in-a-coffee-machine-41865/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "coffee",
+   "title": "Filling a white cup of coffee ",
+   "page": "https://mixkit.co/free-stock-video/filling-a-white-cup-of-coffee-236/",
+   "id": "236",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 20,
+   "file_720": "https://assets.mixkit.co/videos/236/236-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/236/236-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "coffee"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/filling-a-white-cup-of-coffee-236/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "tea",
+   "title": "Pouring Tea into a Cup on a Rustic Table Setting",
+   "page": "https://mixkit.co/free-stock-video/pouring-tea-into-a-cup-on-a-rustic-table-setting-100252/",
+   "id": "100252",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 29,
+   "file_720": "https://assets.mixkit.co/videos/100252/100252-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/100252/100252-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "tea"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/pouring-tea-into-a-cup-on-a-rustic-table-setting-100252/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "celebration",
+   "title": "Fireworks in the sky",
+   "page": "https://mixkit.co/free-stock-video/fireworks-in-the-sky-4151/",
+   "id": "4151",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 18,
+   "file_720": "https://assets.mixkit.co/videos/4151/4151-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4151/4151-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "celebration"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/fireworks-in-the-sky-4151/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "hands",
+   "title": "Hands Silhouette Against City Lights",
+   "page": "https://mixkit.co/free-stock-video/hands-silhouette-against-city-lights-100950/",
+   "id": "100950",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 5,
+   "file_720": "https://assets.mixkit.co/videos/100950/100950-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/100950/100950-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "hands"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/hands-silhouette-against-city-lights-100950/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "hands",
+   "title": "Silhouette of a woman's hands moving them gently",
+   "page": "https://mixkit.co/free-stock-video/silhouette-of-a-womans-hands-moving-them-gently-40938/",
+   "id": "40938",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 13,
+   "file_720": "https://assets.mixkit.co/videos/40938/40938-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/40938/40938-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "hands"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/silhouette-of-a-womans-hands-moving-them-gently-40938/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "phone",
+   "title": "Hands shown texting on a smartphone",
+   "page": "https://mixkit.co/free-stock-video/hands-shown-texting-on-a-smartphone-144/",
+   "id": "144",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 16,
+   "file_720": "https://assets.mixkit.co/videos/144/144-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/144/144-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "phone"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/hands-shown-texting-on-a-smartphone-144/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "phone",
+   "title": "Man answering a whatsapp",
+   "page": "https://mixkit.co/free-stock-video/man-answering-a-whatsapp-41165/",
+   "id": "41165",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 20,
+   "file_720": "https://assets.mixkit.co/videos/41165/41165-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/41165/41165-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "phone"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/man-answering-a-whatsapp-41165/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "phone",
+   "title": "Woman typing on her cell phone",
+   "page": "https://mixkit.co/free-stock-video/woman-typing-on-her-cell-phone-43270/",
+   "id": "43270",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 8,
+   "file_720": "https://assets.mixkit.co/videos/43270/43270-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/43270/43270-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "phone"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/woman-typing-on-her-cell-phone-43270/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "laptop",
+   "title": "Working on a Macbook Pro",
+   "page": "https://mixkit.co/free-stock-video/working-on-a-macbook-pro-41183/",
+   "id": "41183",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 6,
+   "file_720": "https://assets.mixkit.co/videos/41183/41183-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/41183/41183-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "laptop"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/working-on-a-macbook-pro-41183/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "laptop",
+   "title": "Typing on a laptop, close up. ",
+   "page": "https://mixkit.co/free-stock-video/typing-on-a-laptop-close-up-1781/",
+   "id": "1781",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 12,
+   "file_720": "https://assets.mixkit.co/videos/1781/1781-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/1781/1781-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "laptop"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/typing-on-a-laptop-close-up-1781/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "market",
+   "title": "Slow motion video of a fruit and veggie stand",
+   "page": "https://mixkit.co/free-stock-video/slow-motion-video-of-a-fruit-and-veggie-stand-991/",
+   "id": "991",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 25,
+   "file_720": "https://assets.mixkit.co/videos/991/991-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/991/991-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "market"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/slow-motion-video-of-a-fruit-and-veggie-stand-991/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "market",
+   "title": "People walking in the street in Japan",
+   "page": "https://mixkit.co/free-stock-video/people-walking-in-the-street-in-japan-4437/",
+   "id": "4437",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 37,
+   "file_720": "https://assets.mixkit.co/videos/4437/4437-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/4437/4437-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "market"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/people-walking-in-the-street-in-japan-4437/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  },
+  {
+   "category": "india",
+   "title": "Waving flag of india in slow motion",
+   "page": "https://mixkit.co/free-stock-video/waving-flag-of-india-in-slow-motion-42096/",
+   "id": "42096",
+   "licence_on_page": [
+    "videoFree"
+   ],
+   "duration_s": 9,
+   "file_720": "https://assets.mixkit.co/videos/42096/42096-720.mp4",
+   "file_1080": "https://assets.mixkit.co/videos/42096/42096-1080.mp4",
+   "licence": "Mixkit Stock Video Free License (no attribution required; commercial use allowed)",
+   "tags": [
+    "india"
+   ],
+   "licence_proof": {
+    "checked": "2026-10-24",
+    "url": "https://mixkit.co/free-stock-video/waving-flag-of-india-in-slow-motion-42096/",
+    "how": "item page read with curl: data-license=\"videoFree\"; licence text read at https://mixkit.co/license/modal/videoFree/",
+    "statement": "Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free ... Attribution is not required"
+   }
+  }
+ ]
+}

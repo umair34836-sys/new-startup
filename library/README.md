@@ -102,6 +102,21 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
   `leak` / `leak-root` / `leak-` classes so ids stay unique.
 - `flash-warm.html`: a 0.65 s soft warm-white flash for a cut (host `data-duration="0.7"`, start 0.2 s before the cut).
 
+## Stock b-roll, SFX and LUTs (specialist C, merged 2026-10-24)
+
+No-credit only; every entry's `licence_proof` (URL, date, quoted licence text) is in each folder's `index.json`.
+Search: `python3 tools/find_stock.py "<words>" [--sfx|--lut|--all] [--vertical]`. Skill: `stock-sfx-luts`.
+
+- `stock/`: 67 clips, 203 MB (37 own-made overlays/backgrounds, 17 CC0, 11 public domain, 2 NASA via Commons marked
+  `licence_doubt`: space/gaming intros only, not client ads). `stock/mixkit-links.json`: Mixkit links only (their terms
+  forbid re-sharing as stock): fetch one clip per need with `--fetch-mixkit <id> <dst>`, never commit Mixkit files.
+- `sfx/`: 164 files, 7.4 MB (Kenney + OpenGameArt CC0, plus own `tools/synth_sfx.py`), each with length, hit time, levels.
+- `luts/`: 32 own-made `.cube` LUTs (`tools/make_luts.py`, previews by `tools/lut_preview.py`).
+- Tools: `stock_prep.py`, `sfx_prep.py`, `make_overlays.py`, `synth_sfx.py`, `make_luts.py`, `lut_preview.py`, `find_stock.py`.
+- Merge check (2026-10-24, main session): Commons pages re-read here for rain-dripping (API: CC0, attribution not required)
+  and clouds time-lapse ("CC0 1.0 Universal Public Domain Dedication"); 5 clips the specialist dropped (CC BY-SA /
+  unreviewed / NASA no-licence) are not in this branch's history (squash merge).
+
 ## Models (`models/`)
 
 - `arnndn/`: 6 RNNoise `.rnnn` models for ffmpeg's `arnndn` speech de-noise (std = Xiph RNNoise, BSD-style; others by Gregor

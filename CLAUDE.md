@@ -271,7 +271,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   B DONE + merged Oct 24 2026: library/music/desi-vocal (29 PD Urdu/Hindi vocal songs, 1905-1919 78 rpm; no Pashto PD song
   found), research/pk-reels-trends.md + pk-reel-recipes.md, skill desi-reels. Rejected: Gallica/BnF (credit + fee),
   FMA Excavated Shellac (CC BY).
-  C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym, specialist-c-broll-sfx-luts);
+  C stock b-roll + SFX + LUTs (session_015uWvzd8vXhZJRw2ch8F5Ym): DONE + squash-merged Oct 24 2026: library/stock (67 clips),
+  library/sfx (164), library/luts (32 own), find_stock.py, skill stock-sfx-luts. Mixkit = links only, fetch one per need;
+  2 NASA clips licence_doubt (not for client ads). Every entry has licence_proof.
   D Urdu/Pashto captions + client brand kit (session_01NZND2H5jzoXgcGVrFFtHH2): DONE + merged Oct 24 2026 (fonts,
   urdu_captions.py, blocks/urdu-captions.html, templates/brand-kit, skills urdu-captions + client-brand-kit).
   They add new files only; merge each branch into the main work branch when done, then update library/README.md,
