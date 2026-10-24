@@ -56,6 +56,9 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 
 ## Templates (`templates/`)
 
+- `screen-tutorial/`: real-site tutorial (cursor + click ripple + click sound on every click, VO-timed speed-fit of the
+  recording, step chips, highlight rings). Recorder: tools/screen_recorder.js; VO check: tools/wcheck_lines.py. FireCraft whitelist, 2026-10-24.
+
 - `blocky-monsoon/`: the full 60 s voxel music video for "Baarish ki pehli shaam" (owner's character meets the
   girl at a chai stall in the rain; lamps light, rain turns gold, umbrella pops on the song's peak). `build.py`
   writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
@@ -152,6 +155,7 @@ Search: `python3 tools/find_stock.py "<words>" [--sfx|--lut|--all] [--vertical]`
 | `youtube_chapters.py` | Validates/prints a YouTube chapter list (00:00 first, >=3, ascending, >=10 s each). |
 | `web_capture.py` | Free Firecrawl replacement (Crawl4AI): URL -> markdown + full-page screenshot via local Chromium; domain must be network-allowed. 2026-10-24: a container with only chromium-1243 made it fail (playwright 1.56.0 wants chromium-1194); fixed the same day: it then starts the image's own Chromium and attaches over CDP (tested on example.com). |
 | `screen_recorder.js` | Tutorial/screen-video recorder (Node + Playwright): drives a real site, draws a visible mouse cursor that glides to each target and plays a press + ripple on every click, `fakeClick` = the same animation WITHOUT clicking (never submit live forms), records via the CDP screencast (sharp JPEG frames) and encodes recording.mp4 at 30 fps plus events.json (click times/positions for click sounds). `zoom: 1.25` makes UI text big and still sharp at 1080p (deviceScaleFactor does not help: screencast frames are DIP-sized). First used on the FireCraft whitelist tutorial, 2026-10-24 (66 s recording, 1,458 frames). Run with `NODE_PATH="$(npm root -g)"`. |
+| `wcheck_lines.py` | Whisper-check TTS lines: `venv/bin/python wcheck_lines.py script.txt 000.wav 001.wav ...` prints similarity to each script line and the last word's end (a run-on tail shows as extra words / end near the clip end). `--same` checks several takes of line 1. |
 | `music_pack.py` | Many own songs/instrumentals (ACE-Step) in ONE model load from a JSON spec -> mp3 normalised toward -14 LUFS (the 9 files in music/own measure -12.9 to -14.1 LUFS, ebur128 2026-10-24). Ours: no credit needed. |
 | `setup-ai-song.sh` | Installs ACE-Step 1.5 (lyrics -> song with vocals) and OpenAI Whisper into /home/user/tools/venv. Weights need huggingface.co + openaipublic.azureedge.net allowed. |
 | `ai_song.py` | Full pipeline: song with vocals from lyrics (turbo text2music) -> Whisper finds where words are sung -> bass and cymbal bands lowered there, voice band lifted -> Whisper transcript compared to the lyrics (`report.json`). Resumable; run it in the background (CPU). |
