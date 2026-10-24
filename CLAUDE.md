@@ -302,6 +302,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - SkilloraClouds reel v3 (session_01Se2FPfh8Ga51Fqqm2KT6cL, branch skillora-reel-v3): owner talks there (AMD EPYC 9 +
   limited ₹20 Budget/Standard plans line).
 
+- Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
+  Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
