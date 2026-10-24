@@ -44,6 +44,8 @@ Read this first in every session.
 - A blocked website can still be read and seen through the Firecrawl MCP: `firecrawl_scrape` with
   `formats: ["screenshot"]` (fullPage for the whole page) returns a storage.googleapis.com PNG you can
   curl and crop. Image URLs themselves can't be screenshotted.
+- OWNER RULE (Oct 24 2026): use FREE OPEN-SOURCE music MADE BY OTHERS (CC0 / public domain) for videos. Our own
+  ACE-Step tracks (library/music/own) are good but the owner does NOT want them used; make music ourselves only if asked.
 - OWNER RULE (Oct 2026): background music / songs must need NO credit: CC0, public domain or made by us. CC BY (YouTube
   CC filter, incompetech, most FMA/Jamendo) is not acceptable. Sources + findings: library/research/free-music-sources.md;
   own tracks: library/tools/music_pack.py (ACE-Step, one model load) -> library/music/own/.
