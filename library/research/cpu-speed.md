@@ -158,4 +158,4 @@ The help text (`render --help`, v0.8.191) says each worker is a separate Chrome 
 
 Measured here: two ONNX jobs at 2 threads each beat one-after-the-other at 4 threads (22.6 vs 32.3 s); two x264
 encodes gain ~8%. CLAUDE.md (earlier session) measured that ACE-Step + Whisper together made both 3-4x slower:
-that rule still stands for big torch models (memory bandwidth/RAM bound); it was not re-measured here.
+it was not re-measured here, and why it happens was not measured (unverified).
