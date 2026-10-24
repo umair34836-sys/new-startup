@@ -159,7 +159,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   neighbouring words (a +0.3 s tail leaked the next line's first word). Music after separation: gaps at -86 dB.
   Time: ~6.5 min per round of 3 x 25 s takes + ~1 min music removal per line.
 
-- DEFAULT VOICE (owner, Oct 24 2026): `vs_tts.py` with no --voice/--ref/--instruct uses voices.json "default": the free
+- DEFAULT VOICE (owner, Oct 24 2026; pitch set to a 172 Hz median like the Viraj VO via --target-f0): `vs_tts.py` with no --voice/--ref/--instruct uses voices.json "default": the free
   AI-designed young energetic Hindi ad narrator from the MoradoSolution reel (VoxCPM2, not a real person; the owner
   first asked for a Viraj clone, declined: real voice actor). Real Viraj only via ElevenLabs when the owner asks.
 - SAVED VOICES (owner, Oct 24 2026): "senpaispider" = the owner's client Senpai Spider. When the owner says "senpai ki

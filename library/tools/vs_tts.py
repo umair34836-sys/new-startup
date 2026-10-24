@@ -25,6 +25,8 @@ ap.add_argument("--voice", help="named saved voice from library/voices/voices.js
                 "from the source link into /home/user/tools/voices/<name>/ref.wav on first use, then used as --ref")
 ap.add_argument("--steps", type=int, help="diffusion steps (VoxCPM2 default 10; more = slower, maybe cleaner)")
 ap.add_argument("--cfg", type=float, help="guidance scale (default 2.0)")
+ap.add_argument("--target-f0", type=float, help="shift the whole voiceover so its median pitch lands here (Hz); "
+                "one factor for all lines, formants preserved (ffmpeg rubberband). Saved voices may set it.")
 ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
 if not (a.voice or a.ref or a.instruct):
@@ -37,6 +39,8 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
     v = reg[a.voice]
     vd = f"/home/user/tools/voices/{a.voice}"
     ref = os.path.join(vd, "ref.wav")
+    if os.path.exists(ref) and os.path.getsize(ref) < 1000:
+        os.remove(ref)  # an empty/broken reference from an interrupted build
     if not os.path.exists(ref) and v.get("design"):  # designed voice: rebuild the reference line by voice design
         os.makedirs(vd, exist_ok=True)
         d = v["design"]
@@ -44,7 +48,9 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
                 "response_format": "wav", "seed": d["seed"]}
         req = urllib.request.Request(a.host + "/v1/audio/speech", data=json.dumps(body).encode(),
                                      headers={"Content-Type": "application/json"})
-        open(ref, "wb").write(urllib.request.urlopen(req, timeout=1800).read())
+        data = urllib.request.urlopen(req, timeout=1800).read()
+        open(ref + ".part", "wb").write(data)
+        os.replace(ref + ".part", ref)  # never leave an empty ref.wav behind if the request fails
     elif not os.path.exists(ref):
         os.makedirs(vd, exist_ok=True)
         src = os.path.join(vd, "source.mp4")
@@ -56,6 +62,8 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
                         "-ac", "1", "-ar", "44100", ref], check=True)
     a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], v["lang"]
     a.instruct = a.instruct or ""
+    if a.target_f0 is None and v.get("target_f0"):
+        a.target_f0 = v["target_f0"]
     if a.seed == 7 and v.get("seed"):
         a.seed = v["seed"]
 
@@ -113,4 +121,28 @@ if a.parts:  # line i spans [start, start + its own duration] in OUT (each line 
                                  capture_output=True, text=True).stdout)
         spans.append([round(t, 3), round(t + d, 3)]); t += d + a.gap
     json.dump(spans, open(os.path.join(a.parts, "lines.json"), "w"))
+
+
+def median_f0(path):
+    import numpy as np, pyworld
+    x = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", "16000", "-f", "f64le", "-"],
+                       capture_output=True, check=True).stdout
+    f0, _ = pyworld.harvest(np.frombuffer(x, np.float64), 16000)
+    return float(np.median(f0[f0 > 0]))
+
+
+if a.target_f0:  # same factor for every line keeps the intonation; rubberband keeps the formants (no chipmunk)
+    before = median_f0(a.out)
+    ratio = a.target_f0 / before
+    tmp_out = os.path.join(tmp, "pitched" + os.path.splitext(a.out)[1])
+    for _ in range(3):  # the shifted file's measured median can miss by a few Hz: re-aim from the original
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a.out, "-af",
+                        f"rubberband=pitch={ratio:.5f}:formant=preserved:pitchq=quality,loudnorm=I=-16:TP=-1.5", "-ar", "44100",
+                        *(["-b:a", "192k"] if a.out.endswith(".mp3") else []), tmp_out], check=True)
+        after = median_f0(tmp_out)
+        if abs(after - a.target_f0) <= 1.5:
+            break
+        ratio *= a.target_f0 / after
+    os.replace(tmp_out, a.out)
+    print(f"pitch: median {before:.0f} Hz -> {after:.0f} Hz (target {a.target_f0:.0f}, x{ratio:.3f})")
 print("wrote", a.out)
