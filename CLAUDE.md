@@ -42,6 +42,9 @@ Read this first in every session.
 - A blocked website can still be read and seen through the Firecrawl MCP: `firecrawl_scrape` with
   `formats: ["screenshot"]` (fullPage for the whole page) returns a storage.googleapis.com PNG you can
   curl and crop. Image URLs themselves can't be screenshotted.
+- OWNER RULE (Oct 2026): background music / songs must need NO credit: CC0, public domain or made by us. CC BY (YouTube
+  CC filter, incompetech, most FMA/Jamendo) is not acceptable. Sources + findings: library/research/free-music-sources.md;
+  own tracks: library/tools/music_pack.py (ACE-Step, one model load) -> library/music/own/.
 - Never download copyrighted songs (YouTube rips etc.). Make music with `library/tools` or ask the
   owner to upload an MP3 they have.
 - AUTO-INSTALL (owner asked that tools be there every session): the SessionStart hook fetches HyperFrames'
