@@ -28,7 +28,8 @@ Read this first in every session.
 - Every tool installed for the owner must be added to `library/tools/setup-all.sh` so it is present in
   every session (the SessionStart hook runs it).
 - Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
-  in that request. Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
+  in that request. OWNER (Oct 24 2026, Skillora v3 session): "ab agay se elaven labs use nhi kroge": from now on the
+  default voice is the free VoxCPM2 recipe (library/clients/moradosolution/brief.md "Voice"). Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
 - Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
 - DEFAULT HOST: when a video needs a host/presenter/character (or the owner says "character use karo"),
   use the owner's own skin `library/characters/host-skin.png` built with `library/tools/blocky_character.py`
@@ -301,8 +302,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - FireCraft whitelist tutorial (session_01TPMNGNY1pArQWPm5nmzAfF): DONE + merged Oct 24 2026 (screen_recorder.js,
   wcheck_lines.py, templates/screen-tutorial, research/firecraft-whitelist-flow.md). 62.2 s 1080p, 19 clicks with cursor,
   nothing submitted; preview sent to the owner by that session, final waits for approval there.
-- SkilloraClouds reel v3 (session_01Se2FPfh8Ga51Fqqm2KT6cL, branch skillora-reel-v3): owner talks there (AMD EPYC 9 +
-  limited ₹20 Budget/Standard plans line).
+- SkilloraClouds reel v3 (session_01Se2FPfh8Ga51Fqqm2KT6cL, branch skillora-reel-v3): v3 draft 44.09 s sent (Viraj lines,
+  438 credits, generated before the switch; EPYC 9 at the client's request, not on the site). Site 2026-10-24: game
+  servers India/Singapore/Dubai; Germany = VPS/RDP/Dedicated only; Malaysia/Qatar/US list no services. Next videos: free voice.
 
 - Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
   Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
