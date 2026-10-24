@@ -1,0 +1,19 @@
+{
+  "_note": "FAKE demo business for testing the blocks. Phone/WhatsApp/address are placeholders, not a real shop.",
+  "name": "Demo Chai House",
+  "name_ur": "",
+  "tagline": "Har cup taaza",
+  "tagline_ur": "",
+  "logo": "demo-logo.png",
+  "colors": {"primary": "#8a3b12", "on_primary": "#ffffff", "secondary": "#f2c14e", "on_secondary": "#1a1208", "accent": "#f2c14e", "dark": "#140c08"},
+  "fonts": {"display": "Anton-Regular.ttf", "body": "PlusJakartaSans-Variable.ttf", "urdu": "NotoNastaliqUrdu-Variable.ttf"},
+  "phone": "0300-0000000",
+  "whatsapp": "923000000000",
+  "address": "Shop 0, Demo Bazaar, Demo City",
+  "website": "example.com",
+  "socials": {"instagram": "@demochaihouse", "facebook": "Demo Chai House"},
+  "language": "roman-urdu",
+  "tone": "friendly",
+  "cta": "Abhi call karein",
+  "offer": {"title": "Special offer", "price": "Rs 99", "note": "demo price"}
+}

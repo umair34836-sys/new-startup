@@ -1,0 +1,57 @@
+<template>
+  <style>
+    @font-face { font-family: "HiDeva"; src: url("assets/fonts/NotoSansDevanagari-Variable.ttf"); font-weight: 100 900; }
+    @font-face { font-family: "Jakarta"; src: url("assets/fonts/PlusJakartaSans-Variable.ttf"); font-weight: 100 900; }
+    @font-face { font-family: "UrNaskh"; src: url("assets/fonts/NotoNaskhArabic-Variable.ttf"); font-weight: 100 900; }
+    @font-face { font-family: "UrNastaliq"; src: url("assets/fonts/NotoNastaliqUrdu-Variable.ttf"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #ucap-veil { position: absolute; left: 0; right: 0; bottom: 0; height: 806px;
+      background: linear-gradient(to top, rgba(6, 8, 12, 0.88), rgba(6, 8, 12, 0.55) 45%, rgba(6, 8, 12, 0)); }
+    .line { position: absolute; left: 86px; right: 86px; bottom: 300px; text-align: center;
+      font-size: 74px; color: var(--text, #ffffff); unicode-bidi: isolate; visibility: hidden;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.7); }
+    .s-deva { font-family: "HiDeva", sans-serif; direction: ltr; font-weight: 700; line-height: 1.5; word-spacing: 0; }
+    .s-latin { font-family: "Jakarta", sans-serif; direction: ltr; font-weight: 800; line-height: 1.3; word-spacing: 0; }
+    .s-naskh { font-family: "UrNaskh", sans-serif; direction: rtl; font-weight: 700; line-height: 1.7; word-spacing: 0.12em; }
+    .s-nastaliq { font-family: "UrNastaliq", sans-serif; direction: rtl; font-weight: 700; line-height: 2.0; word-spacing: 0.25em; }
+    .line .w { display: inline-block; }
+    .line .gold { color: var(--accent, #ffc94a); }
+    .line .sub { font-family: "Jakarta", sans-serif; font-weight: 600; font-size: 37px; line-height: 1.3;
+      direction: ltr; word-spacing: 0; color: rgba(255, 255, 255, 0.86); margin-top: 6px; }
+  </style>
+  <div id="root" data-composition-id="ucap" data-width="1080" data-height="1920" data-layout-allow-overflow>
+    <div id="ucap-veil"></div>
+    <div id="ucap-l1" class="line s-nastaliq" lang="ur" dir="rtl"><span class="w ucap-l1-w">تمام</span> <span class="w ucap-l1-w">انسان</span> <span class="w ucap-l1-w">آزادی</span> <span class="w ucap-l1-w">اور</span> <span class="w ucap-l1-w">حقوق</span> <span class="w ucap-l1-w">و</span> <span class="w ucap-l1-w">عزت</span> <span class="w ucap-l1-w">کے</span> <span class="w ucap-l1-w">اعتبار</span> <span class="w ucap-l1-w">سے</span></div>
+    <div id="ucap-l2" class="line s-nastaliq" lang="ur" dir="rtl"><span class="w ucap-l2-w gold">برابر</span> <span class="w ucap-l2-w">پیدا</span> <span class="w ucap-l2-w">ہویٔے</span> <span class="w ucap-l2-w">ہیں۔</span></div>
+    <div id="ucap-l3" class="line s-nastaliq" lang="ur" dir="rtl"><span class="w ucap-l3-w" dir="ltr">UDHR 1948</span> <span class="w ucap-l3-w">انسانی</span> <span class="w ucap-l3-w">حقوق</span> <span class="w ucap-l3-w">کا</span> <span class="w ucap-l3-w gold">عالمی</span> <span class="w ucap-l3-w">منشور</span>
+      <div class="sub" dir="ltr">Universal Declaration of Human Rights</div></div>
+    <div id="ucap-l4" class="line s-naskh" lang="ps" dir="rtl"><span class="w ucap-l4-w">د</span> <span class="w ucap-l4-w">بشر</span> <span class="w ucap-l4-w">ټول</span> <span class="w ucap-l4-w">افراد</span> <span class="w ucap-l4-w gold">آزاد</span> <span class="w ucap-l4-w">نړۍ</span> <span class="w ucap-l4-w">ته</span> <span class="w ucap-l4-w">راځی</span></div>
+    <div id="ucap-l5" class="line s-deva" lang="hi" dir="ltr"><span class="w ucap-l5-w" dir="ltr">सभी मनुष्यों को</span> <span class="w ucap-l5-w gold" dir="ltr">गौरव</span> <span class="w ucap-l5-w" dir="ltr">और अधिकारों के मामले में</span></div>
+  </div>
+  <script>
+    gsap.set(".line .w", { opacity: 0 });
+    gsap.set("#ucap-l1", { visibility: "visible" });
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(".ucap-l1-w", { opacity: 0, y: 26, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out", stagger: 0.12 }, 0.000);
+    tl.to("#ucap-l1", { opacity: 0, filter: "blur(6px)", duration: 0.2, ease: "power2.in" }, 2.400);
+    tl.set("#ucap-l1", { visibility: "hidden" }, 2.600);
+    tl.set("#ucap-l2", { visibility: "visible" }, 2.600);
+    tl.fromTo(".ucap-l2-w", { opacity: 0, y: 26, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out", stagger: 0.12 }, 2.600);
+    tl.to("#ucap-l2", { opacity: 0, filter: "blur(6px)", duration: 0.2, ease: "power2.in" }, 5.000);
+    tl.set("#ucap-l2", { visibility: "hidden" }, 5.200);
+    tl.set("#ucap-l3", { visibility: "visible" }, 5.200);
+    tl.fromTo(".ucap-l3-w", { opacity: 0, y: 26, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out", stagger: 0.12 }, 5.200);
+    tl.fromTo("#ucap-l3 .sub", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 5.400);
+    tl.to("#ucap-l3", { opacity: 0, filter: "blur(6px)", duration: 0.2, ease: "power2.in" }, 7.600);
+    tl.set("#ucap-l3", { visibility: "hidden" }, 7.800);
+    tl.set("#ucap-l4", { visibility: "visible" }, 7.800);
+    tl.fromTo(".ucap-l4-w", { opacity: 0, y: 26, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out", stagger: 0.12 }, 7.800);
+    tl.to("#ucap-l4", { opacity: 0, filter: "blur(6px)", duration: 0.2, ease: "power2.in" }, 10.200);
+    tl.set("#ucap-l4", { visibility: "hidden" }, 10.400);
+    tl.set("#ucap-l5", { visibility: "visible" }, 10.400);
+    tl.fromTo(".ucap-l5-w", { opacity: 0, y: 26, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out", stagger: 0.12 }, 10.400);
+    tl.to("#ucap-l5", { opacity: 0, filter: "blur(6px)", duration: 0.2, ease: "power2.in" }, 12.800);
+    tl.set("#ucap-l5", { visibility: "hidden" }, 13.000);
+    window.__timelines["ucap"] = tl;
+  </script>
+</template>

@@ -1,0 +1,14 @@
+{
+  "_source": "Sample text only (replace with the video's captions). Urdu/Pashto/Hindi lines are copied verbatim from the Universal Declaration of Human Rights translations in the NLTK udhr2 corpus (udhr2/urd.txt, pbu.txt, hin.txt; https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/udhr2.zip, read 2026-10-24). Line 3's English sub line is the declaration's English title.",
+  "id": "ucap",
+  "width": 1080,
+  "height": 1920,
+  "duration": 13,
+  "lines": [
+    {"in": 0.0, "out": 2.6, "text": "تمام انسان آزادی اور حقوق و عزت کے اعتبار سے"},
+    {"in": 2.6, "out": 5.2, "text": "*برابر پیدا ہویٔے ہیں۔"},
+    {"in": 5.2, "out": 7.8, "text": "UDHR 1948 انسانی حقوق کا *عالمی منشور", "sub": "Universal Declaration of Human Rights"},
+    {"in": 7.8, "out": 10.4, "text": "د بشر ټول افراد *آزاد نړۍ ته راځی", "script": "naskh", "lang": "ps"},
+    {"in": 10.4, "out": 13.0, "text": "सभी मनुष्यों को *गौरव और अधिकारों के मामले में", "script": "deva"}
+  ]
+}

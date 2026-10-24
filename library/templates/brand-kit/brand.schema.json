@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Client brand kit for HyperFrames blocks",
+  "type": "object",
+  "required": ["name", "colors"],
+  "properties": {
+    "name": {"type": "string", "description": "Business name as the client writes it (Latin)."},
+    "name_ur": {"type": "string", "description": "Name in Urdu/Pashto script, exactly as the client supplies it. Leave empty if not supplied; never transliterate it yourself."},
+    "tagline": {"type": "string"},
+    "tagline_ur": {"type": "string", "description": "Client-supplied only."},
+    "logo": {"type": "string", "description": "Path to the logo PNG (transparent background preferred), relative to this file."},
+    "colors": {
+      "type": "object",
+      "required": ["primary", "on_primary"],
+      "properties": {
+        "primary": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+        "on_primary": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "description": "Text colour on primary; brand_from_logo.py picks one with WCAG contrast >= 4.5."},
+        "secondary": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+        "on_secondary": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+        "accent": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+        "dark": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"}
+      }
+    },
+    "fonts": {
+      "type": "object",
+      "properties": {
+        "display": {"type": "string", "description": "File in library/fonts for titles, e.g. Anton-Regular.ttf"},
+        "body": {"type": "string", "description": "e.g. PlusJakartaSans-Variable.ttf"},
+        "urdu": {"type": "string", "description": "e.g. NotoNastaliqUrdu-Variable.ttf (Pashto: NotoNaskhArabic-Variable.ttf)"}
+      }
+    },
+    "phone": {"type": "string"},
+    "whatsapp": {"type": "string", "description": "International digits only for the wa.me QR, e.g. 923000000000"},
+    "address": {"type": "string"},
+    "website": {"type": "string"},
+    "socials": {"type": "object", "additionalProperties": {"type": "string"}, "description": "e.g. {\"instagram\": \"@name\"}"},
+    "language": {"type": "string", "enum": ["roman-urdu", "urdu", "pashto", "hindi", "english"]},
+    "tone": {"type": "string", "description": "e.g. premium, friendly, bold, family"},
+    "cta": {"type": "string", "description": "Call-to-action sticker text"},
+    "offer": {"type": "object", "properties": {"title": {"type": "string"}, "price": {"type": "string"}, "note": {"type": "string"}}}
+  }
+}
