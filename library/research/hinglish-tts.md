@@ -1,18 +1,23 @@
 # Hindi / Hinglish voiceover (TTS) models: research, Oct 2026
 
-Status: no local TTS installed yet. ElevenLabs (Ashar voice) speaks Hinglish well but is owner-gated (see CLAUDE.md).
-ACE-Step makes sung vocals, not a speaking voiceover.
+Status (Oct 2026): local voiceover now = VoiceStudio (see voicestudio.md) and ai_voice.py (ACE-Step). ElevenLabs is
+owner-gated (see CLAUDE.md). Audit 2026-10-24: every item below re-checked on that date at the source in brackets
+(HF = huggingface.co/api/models/<id> card metadata).
 
 Candidates (open source):
-- hexgrad Kokoro-82M: Apache-2.0, tiny, fast on CPU; has Hindi voices (hf_alpha, hf_beta, hm_omega, hm_psi;
-  from memory, verify on install). A Hinglish TTS project reports it scored better than Indic Parler on
-  Hindi-English code-mixed text (github.com/harrrshall/hinglish-tts, self-reported).
-- ai4bharat/indic-parler-tts: 21 languages incl. Hindi + English, ~1.8k h data, Apache-2.0 on HF card (AIKosh says MIT),
-  GATED on Hugging Face (needs account approval + token). Voice/style set by a text description.
-- ai4bharat IndicF5: voice cloning from a reference clip + transcript, 11 Indian languages; ranked last among
-  tested systems in an Indian-language TTS preference study (arXiv 2604.21481).
-- harrrshall/hinglish-tts: Hinglish fine-tune built on IndicF5 (~330M params); harrrshall/xtts-v2-hinglish-synthetic:
-  XTTS-v2 fine-tune on synthetic data (XTTS licence is non-commercial CPML).
-- facebook mms-tts-hin: light, Hindi-only, robotic.
-Sources: huggingface.co/ai4bharat/indic-parler-tts, github.com/harrrshall/hinglish-tts, arxiv.org/pdf/2604.21481,
-huggingface.co/harrrshall/xtts-v2-hinglish-synthetic.
+- hexgrad/Kokoro-82M: licence apache-2.0, not gated [HF]. Hindi voice files in its repo: voices/hf_alpha.pt,
+  hf_beta.pt, hm_omega.pt, hm_psi.pt [HF tree listing]. "Tiny, fast on CPU": not measured here (unverified).
+- harrrshall/hinglish-tts: NOT a fine-tune; it is IndicF5 (330M params) plus "a two-line duration patch and automatic
+  script normalisation" (README says "No fine-tuning was applied"). Its own 30-sentence eval (self-reported): overall
+  4.70 vs Kokoro v1.0 Hindi 3.90 vs Indic Parler-TTS 3.40 [raw.githubusercontent.com/harrrshall/hinglish-tts/main/README.md].
+- ai4bharat/indic-parler-tts: licence apache-2.0 on the HF card (an AIKosh "MIT" claim was not re-checked); gated=auto
+  (click-to-accept with a logged-in HF account + token, auto-approved) [HF]. Card language codes (18): en, as, bn, gu, hi,
+  kn, ks, or, ml, mr, ne, pa, sa, sd, ta, te, ur, om [HF]. (The old "21 languages, ~1.8k h" figures could not be
+  re-read: the card README is behind the gate; unverified.) Voice/style set by a text description (unverified here).
+- ai4bharat/IndicF5: licence mit, gated=auto, 11 language codes: as, bn, gu, mr, hi, kn, ml, or, pa, ta, te (no Urdu)
+  [HF]. In arXiv 2604.21481 ("Preferences of a Voice-First Nation", 7 TTS systems, 120K+ pairwise votes) IndicF5 ranks
+  last (Table 3, 805.75) [arxiv.org/pdf/2604.21481].
+- harrrshall/xtts-v2-hinglish-synthetic: XTTS-v2 fine-tune, licence coqui-public-model-license (CPML, coqui.ai/cpml)
+  [its HF README]. CPML "allows only non-commercial use of a machine learning model and its outputs"
+  [huggingface.co/coqui/XTTS-v2/raw/main/LICENSE.txt].
+- facebook/mms-tts-hin: Hindi only, licence cc-by-nc-4.0 = NON-COMMERCIAL [HF]. "Robotic": not measured (unverified).
