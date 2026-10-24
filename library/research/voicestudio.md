@@ -49,3 +49,18 @@ install steps and test timings below are past measurements in an earlier session
 - Mixed script (English words in Latin inside Hindi) came out with garbled English per Whisper small ("India" ->
   "अरी अद्टीा", "included" -> "ख्लूदेड"); one line ran on for 8.4 s with nonsense after the real words
   (Whisper heard extra syllables after "फ्र्रंकफुट में"). Whisper-check every line; regenerate bad ones.
+
+## VoxCPM2 Hindi tutorial VO (FireCraft whitelist tutorial, measured here 2026-10-24)
+- Setup in a fresh container: setup-all.sh's `uv sync` for VoiceStudio failed once ("Failed to inspect Python interpreter
+  ... .venv/bin/python3"), a rerun worked; a second `uv sync` REMOVES voxcpm (not in the lock), so reinstall
+  `voxcpm>=2.0.3` after every sync. Model install via the API: 4.7 GB in ~/.cache/huggingface in about 2 min.
+  `POST /models/licenses/accept {"repo_id"}` alone returns 422 (needs fingerprint + accepted), but generation with
+  VoxCPM2 worked anyway in this container.
+- Design one line (`--instruct "male, young adult, friendly, clear, energetic youtube tutorial narrator"`): seed 7
+  said every word but added a run-on tail ("आप दिकनियाएका?", 4.5-5.3 s); seed 21 garbled more. Trimmed seed 7 at 4.3 s
+  (silence at 4.04-4.62 s) and used it as `--ref` for cloning: 11 lines, one consistent voice, no run-on tails
+  (last word end = clip end), each line 2.5-6.3 s, first request 2m30s incl. load, the 11 cloned lines ~15 min.
+- Whisper small similarity on cloned lines: 32-90%; low scores were mostly spelling (अकाँँट, स्तेटस), but line
+  "फिर लिखें कि आप फ़ायरक्राफ़्ट क्यों..." was garbled at seed 7 (33%) and fine at seed 33 (71%).
+  "स्टाफ़ चौबीस से अड़तालीस घंटे..." stayed unclear in 3 seeds ("चाछ चाबिष", "अच्टाएद"); number words चौबीस/अड़तालीस
+  and घंटे ("गड़े") were heard wrong in every take, so the numbers were also shown on screen.

@@ -241,6 +241,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - OWNER RULE (Oct 24 2026): in every tutorial or screen video, EVERY click is shown with a visible mouse cursor that moves
   to the target and plays a click animation (ripple/press) at the moment of the click (plus a soft click sound).
   Show only what really happens on the real site/app (recorded or screenshotted here), nothing invented.
+- FireCraft whitelist tutorial (Oct 24 2026, template library/templates/screen-tutorial, notes
+  library/research/firecraft-whitelist-flow.md): record real sites with `library/tools/screen_recorder.js` (cursor + ripple
+  drawn in the page, `fakeClick` for buttons that must NOT be sent: never create accounts or submit live forms). CDP screencast
+  frames are DIP-sized, so deviceScaleFactor does not sharpen them: use CSS zoom (`zoom: 1.25`) for big, sharp UI text; the
+  cursor overlay divides by the zoom. Block ad hosts while recording (firecraft.fun loads AdSense + vignette ads). On firecraft.fun
+  at window heights < ~900 CSS px the login modal's x sits under the fixed header (a click opened Leaderboard): reload instead.
+  Voice is the clock: build.py speed-fits each recorded span (0.85-3x) to its VO line. Render 62 s in 2m01s (--workers 3).
 
 ## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
@@ -289,9 +296,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   They add new files only; merge each branch into the main work branch when done, then update library/README.md,
   setup-all.sh (their setup-specialist-*.sh) and this file.
 
-- FireCraft whitelist tutorial (session_01TPMNGNY1pArQWPm5nmzAfF, branch firecraft-whitelist-tutorial, started Oct 24 2026):
-  16:9 tutorial of the real apply flow on www.firecraft.fun, VoxCPM2 Hindi VO, cursor + click animation on every click,
-  no real submission. Merge its tools/notes when it reports.
+- FireCraft whitelist tutorial (session_01TPMNGNY1pArQWPm5nmzAfF): DONE + merged Oct 24 2026 (screen_recorder.js,
+  wcheck_lines.py, templates/screen-tutorial, research/firecraft-whitelist-flow.md). 62.2 s 1080p, 19 clicks with cursor,
+  nothing submitted; preview sent to the owner by that session, final waits for approval there.
+- SkilloraClouds reel v3 (session_01Se2FPfh8Ga51Fqqm2KT6cL, branch skillora-reel-v3): owner talks there (AMD EPYC 9 +
+  limited ₹20 Budget/Standard plans line).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
