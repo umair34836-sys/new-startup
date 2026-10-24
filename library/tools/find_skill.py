@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2] / "library" / "research" / "editing"
 DIRS = [ROOT / "skills2", ROOT / "skills"]
 LINE = re.compile(r"^(\d+)\. \*\*(.+?)\*\*\s*[—-]+\s*(.*)$")
-REF = re.compile(r"\[([^\[\]]*(?:https?://|repo:|ffmpeg docs|tested here|--help|local install|checked 20|registry)[^\[\]]*)\]")
+REF = re.compile(r"\[([^\[\]]*(?:https?://|repo:|ffmpeg docs|tested here|--help|local|checked 20|registry)[^\[\]]*)\]")
 
 
 def parse():
@@ -39,7 +39,8 @@ def parse():
                     "id": int(num), "name": name.strip(), "category": cat, "section": head, "tags": tags,
                     "file": str(f.relative_to(ROOT.parents[2])), "what": REF.sub("", what).strip(" .;"),
                     "how": REF.sub("", how).strip(), "tested": "tested here" in rest or "ran OK locally" in rest,
-                    "refs": [r.strip() for r in REF.findall(rest)],
+                    "refs": [r.strip() for r in REF.findall(rest)]
+                    or (["tested here (command in How)"] if "tested here" in rest else []),
                 })
     return sorted(out, key=lambda s: s["id"])
 
