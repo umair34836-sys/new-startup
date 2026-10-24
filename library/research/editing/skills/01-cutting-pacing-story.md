@@ -104,9 +104,9 @@ Researched 2026-10-24 via agent-reach (Exa) web search.
 93. **Comedy: biggest laugh last, cut the shoe leather** — arrive late, leave early, cut everything between setup and punchline, and end the scene on its biggest laugh. [PremiumBeat, https://www.premiumbeat.com/blog/tips-cutting-comedy-comedians-cars/, 2018-04-17]
 94. **Comedy: cut to the reaction** — cutting away to a reaction after a punchline helps the joke land. [Descript, https://www.descript.com/blog/article/learn-how-to-edit-a-comedy-clip-and-make-your-jokes-land, 2022-03-02]
 95. **Pattern-interrupt rate: sources disagree** — quoted rates run from a visual change every 3-5 s (entertainment) or 7-10 s (talking head) to one interrupt every 45-90 s, or just 2-3 in a 30 s talking head; an interrupt works because it is rare compared with the baseline. [Editing Machine, https://editingmachine.com/blog/youtube-video-editor-for-retention-beyond-just-cuts, 2026-03-06] [PrePublish, https://prepublish.ai/guides/youtube-pattern-interrupts, 2026-03-05] [Headroom, https://headroomapp.ai/pattern-interrupts-for-reels]
-96. **Reel shot budget** — talking-head reels change something every 1.5-3 s, story/vlog every 3-4 s; nothing static longer than about 4 s. [Reelyze, https://getreelyze.com/guides/reel-pacing-and-cuts, 2026-06-01] [Zupum, https://zupum.com/learning-hub]
+96. **Reel shot budget** — talking-head reels change something every 1.5-3 s, story/vlog every 3-4 s; nothing static longer than about 4 s. [Reelyze, https://getreelyze.com/guides/reel-pacing-and-cuts, 2026-06-01]
 97. **Interrupts must carry meaning** — change frame before sentence, never interrupt during the payoff sentence; meaningless zooms become noise. [Viral Hook Analyzer, https://viralhookanalyzer.com/guides/pattern-interrupt-hooks]
-98. **Interrupt, explain, prove, reset** — a 20 s clip can lose attention at about 4, 9 and 15 s; reset the pattern before each drift. [CapCut, https://www.capcut.com/create/pattern-interrupt-technique-short-form-video, 2026-06-11]
+98. **Interrupt, explain, prove, reset** — a 20 s clip can lose attention at about 4, 9 and 15 s; reset the pattern before each drift. [CapCut, https://www.capcut.com/create/pattern-interrupt-technique-short-form-video, 2026-06-12]
 
 ## Story & structure
 
