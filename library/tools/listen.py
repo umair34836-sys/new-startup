@@ -21,6 +21,8 @@ ap.add_argument("--json", action="store_true", help="print the full JSON report 
 ap.add_argument("--out", help="write the JSON report here")
 ap.add_argument("--no-words", action="store_true", help="skip Whisper even when speech is found")
 ap.add_argument("--whisper-model", default="small")
+ap.add_argument("--vocals", action="store_true",
+                help="also separate the vocal stem (MDX-Net Voc FT, ~0.7x real time) and report when singing/voice is present")
 ap.add_argument("--bpm-hint", type=float, default=None, help="prior tempo for librosa (helps half/double errors)")
 a = ap.parse_args()
 
@@ -58,6 +60,8 @@ tempo_l = float(np.atleast_1d(tempo_l)[0])
 beats = librosa.frames_to_time(beats_f, sr=SR, hop_length=hop)
 tempo_e, beats_e, conf_e = None, None, None
 try:
+    import essentia
+    essentia.log.infoActive = False
     import essentia.standard as es
     y44 = decode(a.inp, 44100)
     bpm, ticks, conf, _, _ = es.RhythmExtractor2013(method="multifeature")(y44)
@@ -252,6 +256,43 @@ except Exception as e:
     vad["error"] = str(e)[:200]
 rep["voice_activity"] = vad
 
+# ---------- vocal stem presence (optional, separation in the main venv) ----------
+if a.vocals:
+    sep = "/home/user/tools/venv/bin/audio-separator"
+    vs = {"method": "UVR-MDX-NET-Voc_FT vocal stem, 100 ms RMS within 30 dB of its peak and above -50 dBFS"}
+    if os.path.exists(sep):
+        td = tempfile.mkdtemp(prefix="listen_sep_")
+        subprocess.run([sep, os.path.abspath(a.inp), "-m", "UVR-MDX-NET-Voc_FT.onnx", "--model_file_dir",
+                        "/home/user/tools/sep-models", "--output_format", "WAV", "--single_stem", "Vocals",
+                        "--output_dir", td], capture_output=True, text=True)
+        stems = [os.path.join(td, f) for f in os.listdir(td) if f.lower().endswith(".wav")]
+        if stems:
+            v16 = decode(stems[0], 16000)
+            fr = 1600
+            vr = np.array([np.sqrt(np.mean(v16[i * fr:(i + 1) * fr] ** 2)) for i in range(len(v16) // fr)])
+            vdb = 20 * np.log10(vr + 1e-9)
+            act = (vdb > vdb.max() - 30) & (vdb > -50)
+            segs_v, s0, gap = [], None, 0
+            for i, v in enumerate(np.append(act, False)):
+                if v:
+                    s0 = i if s0 is None else s0; gap = 0; last_i = i
+                elif s0 is not None:
+                    gap += 1
+                    if gap > 3 or i == len(act):
+                        if (last_i + 1 - s0) >= 3:
+                            segs_v.append([r(s0 / 10, 1), r((last_i + 1) / 10, 1)])
+                        s0, gap = None, 0
+            vs.update({"segments_s": segs_v, "vocal_fraction": r(act.mean(), 3),
+                       "vocal_stem_peak_dbfs": r(vdb.max(), 1)})
+            for f in os.listdir(td):
+                os.unlink(os.path.join(td, f))
+        else:
+            vs["error"] = "separation produced no stem"
+        os.rmdir(td)
+    else:
+        vs["error"] = "audio-separator not installed (bash library/tools/setup-all.sh heavy)"
+    rep["vocal_stem"] = vs
+
 # ---------- key and mood descriptors ----------
 keyinfo = {}
 try:
@@ -351,13 +392,27 @@ print("JSON:" + json.dumps(out, ensure_ascii=False))
         words = {"error": "main venv with whisper not installed (bash library/tools/setup-all.sh heavy)"}
 rep["speech"] = words
 
+# ---------- what kind of audio ----------
+sf_ = vad.get("speech_fraction") or 0
+ec = conf_e if conf_e is not None else 0
+if sf_ > 0.5 and ec < 1.0:
+    kind = "speech (tempo, key, mood and section labels are not meaningful)"
+elif sf_ > 0.15:
+    kind = "music with vocals or speech over music"
+elif ec >= 1.0 or (len(grid) > 8 and beat_stability is not None and beat_stability < 0.05):
+    kind = "music (no speech-like voice detected)"
+else:
+    kind = "unclear (no steady beat, little speech): ambience / sfx / free-time music"
+rep["content_type_guess"] = kind
+rep["content_type_rule"] = "speech_fraction>0.5 and essentia beat confidence<1 -> speech; >0.15 -> vocals/speech over music"
+
 # ---------- summary ----------
 def fmt_secs(lst, n=8):
     return ", ".join(f"{x:.2f}" for x in lst[:n]) + (" ..." if len(lst) > n else "")
 
 
 rh, ld = rep["rhythm"], rep["loudness"]
-lines = [f"LISTEN {os.path.basename(a.inp)}  ({dur:.1f} s)",
+lines = [f"LISTEN {os.path.basename(a.inp)}  ({dur:.1f} s)  type: {kind}",
          f"tempo {rh['bpm']} BPM ({rh['bpm_source']}; librosa {rh['bpm_librosa']}, essentia {rh['bpm_essentia']} conf {rh['essentia_confidence']}, {agree}), bar(4/4) {rh['bar_s_4_4']} s, beat-interval CV {rh['beat_interval_cv']}" + (f"  LOW CONFIDENCE: could be {rh['bpm_alternative']} BPM (rerun with --bpm-hint)" if rh['tempo_octave_ambiguous'] else ""),
          f"beats: {fmt_secs(rh['beats_s'])}",
          f"downbeats (est., clarity {rh['downbeat_phase_clarity']}): {fmt_secs(rh['downbeats_s_estimated'])}",
@@ -366,6 +421,7 @@ lines = [f"LISTEN {os.path.basename(a.inp)}  ({dur:.1f} s)",
          "sections: " + " | ".join(f"{s['start']:.1f}-{s['end']:.1f} {s['label_guess']} ({s['rms_db']} dB)" for s in sections),
          f"silence (<-50 dBFS, >=0.3 s): {len(sil)} spans, {rep['silence']['total_s']} s total" + (f": {sil[:6]}" if sil else ""),
          f"voice activity: {vad.get('speech_fraction')} of the time, {len(vad.get('segments_s', []))} segments " + str(vad.get('segments_s', [])[:6]),
+         *( [f"vocal stem: {rep['vocal_stem'].get('vocal_fraction')} of the time, segments {rep['vocal_stem'].get('segments_s', [])[:8]} {rep['vocal_stem'].get('error', '')}"] if a.vocals else []),
          f"key: {mood.get('key_best')} (votes {votes}), mood (heuristic): {mood.get('mood_heuristic')}",
          f"quality: noise floor p10 {qual['noise_floor_dbfs_p10']} dBFS, hum {qual.get('hum_suspected')}, hiss {qual.get('hiss_suspected')}"]
 if isinstance(words, dict) and "text" in words:
