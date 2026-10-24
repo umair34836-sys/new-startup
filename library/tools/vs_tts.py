@@ -8,7 +8,7 @@
 #
 # Script: one line per sentence, in the language's own script (Urdu/Pashto in Nastaliq, Hindi in Devanagari).
 # Licence: omnivoice weights are NON-COMMERCIAL (personal videos only); voxcpm2 is Apache-2.0 (client/paid work).
-import argparse, json, os, subprocess, tempfile, urllib.request
+import argparse, json, os, subprocess, tempfile, urllib.error, urllib.request
 
 ap = argparse.ArgumentParser()
 ap.add_argument("script")
@@ -32,6 +32,20 @@ a = ap.parse_args()
 if not (a.voice or a.ref or a.instruct):
     a.voice = "default"  # owner rule (2026-10-24): the saved "default" voice unless another voice is asked for
 
+def post_json(url, body, tries=40):
+    """POST JSON; wait and retry while the backend is busy or still loading (it answered 429/503 then)."""
+    import time
+    for i in range(tries):
+        req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
+        try:
+            return urllib.request.urlopen(req, timeout=1800).read()
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 503) and i < tries - 1:
+                time.sleep(15)
+                continue
+            raise SystemExit(f"VoiceStudio {e.code}: {e.read().decode()[:400]}")
+
+
 if a.voice:  # saved voice: reference clip is rebuilt from its source (voice recordings never go into git)
     reg = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "voices", "voices.json")))
     if a.voice not in reg:
@@ -46,9 +60,7 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
         d = v["design"]
         body = {"model": v["model"], "input": d["text"], "language": v["lang"], "instruct": d["instruct"],
                 "response_format": "wav", "seed": d["seed"]}
-        req = urllib.request.Request(a.host + "/v1/audio/speech", data=json.dumps(body).encode(),
-                                     headers={"Content-Type": "application/json"})
-        data = urllib.request.urlopen(req, timeout=1800).read()
+        data = post_json(a.host + "/v1/audio/speech", body)
         open(ref + ".part", "wb").write(data)
         os.replace(ref + ".part", ref)  # never leave an empty ref.wav behind if the request fails
     elif not os.path.exists(ref):
@@ -74,7 +86,7 @@ os.makedirs(tmp, exist_ok=True)
 
 def speech(text, path):
     if a.ref:  # native endpoint takes a reference clip for zero-shot cloning
-        cmd = ["curl", "-sf", "-o", path, "-X", "POST", a.host + "/generate", "-F", f"text={text}",
+        cmd = ["curl", "-sf", "--retry", "20", "--retry-delay", "15", "--retry-all-errors", "-o", path, "-X", "POST", a.host + "/generate", "-F", f"text={text}",
                "-F", f"language={a.lang}", "-F", f"seed={a.seed}", "-F", f"ref_audio=@{a.ref}"]
         if a.ref_text:
             cmd += ["-F", f"ref_text={a.ref_text}"]
@@ -88,12 +100,7 @@ def speech(text, path):
         body["num_step"] = a.steps
     if a.cfg:
         body["guidance_scale"] = a.cfg
-    req = urllib.request.Request(a.host + "/v1/audio/speech", data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json"})
-    try:
-        open(path, "wb").write(urllib.request.urlopen(req, timeout=1800).read())
-    except urllib.error.HTTPError as e:
-        raise SystemExit(f"VoiceStudio {e.code}: {e.read().decode()[:400]}")
+    open(path, "wb").write(post_json(a.host + "/v1/audio/speech", body))
 
 
 parts = []
