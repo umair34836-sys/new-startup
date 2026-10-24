@@ -1,7 +1,7 @@
 # Network domains for this environment (saved Oct 24 2026)
 
 On Oct 24 2026 the owner switched Network access to FULL (all sites open: visit.talkember.site and www.firecraft.fun
-answered 200). If it is ever switched back to "Limited / Allowed domains", this is the list to paste back, one per line.
+answered 200; both answered 200 again on 2026-10-24 in the audit, curl). If it is ever switched back to "Limited / Allowed domains", this is the list to paste back, one per line.
 
 ## Added by the owner
 ```
@@ -52,5 +52,9 @@ www.firecraft.fun
 firecraft.fun
 ```
 
-Notes: even with the network open, some services block this cloud IP: Freesound (cdn.freesound.org returns 403),
-Wikimedia (API and upload return 429 in bursts: go slowly), Jina reader without a key (401 "bad IP reputation").
+Notes: even with the network open, some services block this cloud IP: Freesound (cdn.freesound.org and freesound.org
+return 403; re-checked 2026-10-24), Wikimedia (commons API answered 429 to a single request on 2026-10-24; uploads 429
+in bursts: go slowly), pixabay.com (403, 2026-10-24). Jina reader without a key: an earlier session saw 401 "bad IP
+reputation"; on 2026-10-24 r.jina.ai answered 403 to a browser User-Agent but 200 to curl's default one, and
+`agent-reach read` worked. github.com pages/API: 403 for repos outside the session (proxy), but `git clone` and
+raw.githubusercontent.com of public repos worked (2026-10-24).
