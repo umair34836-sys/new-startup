@@ -80,6 +80,9 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 
 ## Models (`models/`)
 
+- `arnndn/`: 6 RNNoise `.rnnn` models for ffmpeg's `arnndn` speech de-noise (std = Xiph RNNoise, BSD-style; others by Gregor
+  Richards, not copyrighted). See `models/arnndn/README.md`.
+
 - `magenta/chord_pitches_improv/`: Magenta.js Improv RNN checkpoint (Apache-2.0, from
   storage.googleapis.com/magentadata). Generates a melody over a chord progression.
 
@@ -100,6 +103,8 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
 | `voicestudio.sh` | start / stop / status of the VoiceStudio backend (:3900, OpenAPI + MCP). |
 | `bg_blur.py` | Portrait-mode background for phone footage: person (rembg u2net_human_seg + dark-shirt hull fill, temporally smoothed) and the desk stay sharp; background gets the subject inpainted out (no halo), lens/bokeh blur in linear light, blue/cyan objects desaturated into the wall, -14% exposure. Owner approved it on the client boss reel (Oct 2026). |
 | `clean_voice.py` | Video/audio with speech -> only the person's voice (BS-RoFormer vocals + Mel-RoFormer denoise, optional de-reverb), put back into the video as clean.mp4. Skill clean-video-voice. |
+| `find_skill.py` | `python3 find_skill.py "speed ramp"` searches the editing skills catalogue (skills + skills2) and prints the How lines; `--tested`, `#<id>`, `--build` (index.json). |
+| `youtube_chapters.py` | Validates/prints a YouTube chapter list (00:00 first, >=3, ascending, >=10 s each). |
 | `web_capture.py` | Free Firecrawl replacement (Crawl4AI): URL -> markdown + full-page screenshot via local Chromium; domain must be network-allowed. |
 | `music_pack.py` | Many own songs/instrumentals (ACE-Step) in ONE model load from a JSON spec -> mp3 at -14 LUFS. Ours: no credit needed. |
 | `setup-ai-song.sh` | Installs ACE-Step 1.5 (lyrics -> song with vocals) and OpenAI Whisper into /home/user/tools/venv. Weights need huggingface.co + openaipublic.azureedge.net allowed. |
