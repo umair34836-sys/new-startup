@@ -271,6 +271,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   (-13 LUFS track) and VO loudnormed to -16 gave a -16.0 LUFS mix, no clipping.
 
 ## Sub-sessions (Oct 24 2026)
+- ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution client session.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
