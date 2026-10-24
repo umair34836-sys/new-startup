@@ -11,8 +11,8 @@ spec.json:
 script: nastaliq (Urdu, default) | naskh (Pashto, Urdu fallback) | sans (bold Arabic-script titles) | deva (Hindi) | latin.
 A word starting with * is the gold accent word. Words are split on spaces only, never inside a word,
 so Arabic-script joining is kept (splitting letters into spans breaks the joins: tested, see
-library/research/urdu-captions.md). A word with no Arabic-script letter (Latin, ASCII digits, phone
-numbers) gets dir="ltr" inside its own span, so it reads left-to-right inside the RTL line.
+library/research/urdu-captions.md). Words with no Arabic-script letter (Latin, ASCII digits, phone
+numbers) get dir="ltr"; consecutive ones share ONE span, so "UDHR 1948" reads left-to-right inside the RTL line.
 
 Copy into the project's assets/fonts/: NotoNastaliqUrdu-Variable.ttf, NotoNaskhArabic-Variable.ttf,
 NotoSansArabic-Variable.ttf, NotoSansDevanagari-Variable.ttf, PlusJakartaSans-Variable.ttf

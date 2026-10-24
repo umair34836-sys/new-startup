@@ -32,6 +32,17 @@ Sample lines are copied from the UDHR translations in NLTK's `udhr2` corpus
 `urd.txt` Article 1 and title, `pbu.txt` (Pashto) Article 1, `hin.txt` Article 1. The corpus Urdu writes
 hamza-on-yeh as U+06CC + U+0654 (`ہویٔے`); kept as is.
 
+## Audit re-check (2026-10-24, HyperFrames 0.8.191)
+
+Re-done by the audit session (`library/research/audit-2026-10-24-part2.md`): all 8 font files and their OFL.txt are
+byte-identical (md5) to `google/fonts` main, each family's METADATA.pb says `license: "OFL"`; versions, axes, hhea line
+and cmap coverage in the table above re-measured with fontTools and match (Lalezar: no Pashto letters, Lateef: all
+Pashto letters, re-checked). The 5 demo lines in `library/blocks/urdu-captions.json` were found verbatim in udhr2
+`urd.txt` (Article 1 = دفعہ ۱, and the title), `pbu.txt`, `hin.txt` (अनुच्छेद १). The block html is identical to a
+fresh `urdu_captions.py` run on that json; `--check` reports 0 problems. `check --json`: ok, only warning
+`first_frame_empty`; draft render 13.000 s; snapshots at 1.8/4.4/7.0/9.6/12.2 s looked at: Urdu and Pashto letters
+joined, RTL word order right, `UDHR 1948` in reading order, Hindi conjuncts right.
+
 ## What rendered correctly (tested here 2026-10-24, looked at the frames)
 
 - Noto Nastaliq Urdu 400 and 700, Gulzar, Noto Naskh 700, Noto Sans Arabic 900, Vazirmatn 900: letters join, RTL order
@@ -61,7 +72,13 @@ Noto Nastaliq 700, 60 px, Article 1 sentence wrapped to 2 lines, box outline, wh
 | 2.2 | 0 px | 0 px |
 
 At 1.2 with `overflow: hidden` the second line was cut off. So: Nastaliq `line-height: 2.0` (2.2 for safety with
-taller words); never `overflow: hidden` on a Nastaliq box. Naskh 1.7 and Devanagari 1.5 looked clean in the
+taller words); never `overflow: hidden` on a Nastaliq box.
+
+Re-measured in the audit (2026-10-24, Playwright Chromium, no text-shadow, Noto Nastaliq 700 60 px, box 908 px wide,
+text = the block's lines 1+2 joined (`تمام انسان ... ہیں۔`, 2 lines), white ink rows counted outside the box):
+1.2: 0 above / 25 below, 1.6: 0 / 13, 1.8: 0 / 7, 2.0: 0 / 1, 2.2: 0 / 0 (same numbers at 700 px wide, 3 lines).
+The numbers differ from the first table (different text and setup) but the result is the same direction: ink pokes
+out below the box under 2.0, about 1 px at 2.0, none at 2.2. Use 2.2 when nothing may touch the box edge. Naskh 1.7 and Devanagari 1.5 looked clean in the
 snapshots (not pixel-measured). Font extremes (head yMax/yMin): Noto Nastaliq +1.808 / -1.382 em, so single tall
 glyphs can still poke out: the block root carries `data-layout-allow-overflow`.
 
