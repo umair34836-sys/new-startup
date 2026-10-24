@@ -13,6 +13,9 @@ Read this first in every session.
 - Whenever something is downloaded or made that a future edit could reuse (a track, an effect, a font,
   a block, a model), add it to `library/` and list it in `library/README.md` so it is never fetched or
   rebuilt twice.
+- AUDIT (Oct 24 2026): claims in this file, library/README.md, library/music/*, library/research/*.md (not editing/,
+  urdu-captions, client-intake) and the voice skills were re-checked; every change and its evidence is listed in
+  library/research/audit-2026-10-24-part1.md. Timings marked "(Oct 2026)" are past measurements on this box, not re-run.
 - VERIFIED ONLY (owner, Oct 24 2026): never add anything from guesswork, not a single letter. Research notes,
   knowledge files and sub-session output may contain ONLY verified facts or results measured here, each with its
   reference (source URL + date checked, or "measured here on <date>" + command). Unverifiable -> leave out or mark
@@ -37,13 +40,17 @@ Read this first in every session.
 
 - Everything runs in an ephemeral cloud container, not the owner's PC.
 - NETWORK: since Oct 24 2026 the owner set Network access to FULL (any site works, e.g. visit.talkember.site,
-  www.firecraft.fun -> use web_capture.py for them, not Firecrawl). The old allowlist is saved in
+  www.firecraft.fun -> use web_capture.py for them, not Firecrawl; both answered 200 to curl on 2026-10-24, but
+  web_capture.py failed that day on a browser-version mismatch, see Agent tools below). The old allowlist is saved in
   library/research/network-allowlist.md: give it to the owner when asked. Previously the network was allowlisted (Oct 2026): npm, pypi, archive.ubuntu.com (apt),
   raw.githubusercontent.com, `git clone` of public repos, storage.googleapis.com, fonts.googleapis.com,
   huggingface.co + its CDNs (us.aws.cdn.hf.co, *.xethub.hf.co), openaipublic.azureedge.net (Whisper),
   YouTube (youtube.com, *.googlevideo.com, i.ytimg.com), pixabay, freesound, api.openverse.org,
   wikimedia commons/upload, archive.org, freemusicarchive.org, incompetech.com.
-  Still blocked: modelscope.cn, cdn.jsdelivr.net, download.pytorch.org, firecraft.fun, github.com web pages.
+  Blocked under that old allowlist: modelscope.cn, cdn.jsdelivr.net, download.pytorch.org, firecraft.fun, github.com web
+  pages. With FULL access (re-checked 2026-10-24): cdn.jsdelivr.net, download.pytorch.org, huggingface.co, us.aws.cdn.hf.co
+  answer 200; github.com pages + API stay 403 for repos outside the session (proxy), but `git clone` and
+  raw.githubusercontent.com of public repos work; freesound.org, cdn.freesound.org and pixabay.com answer 403.
   YouTube downloads: `yt-dlp` (in /home/user/tools/venv). Only download CC/public-domain/royalty-free
   media, check the licence, and credit it; never copyrighted songs.
 - A blocked website can still be read and seen through the Firecrawl MCP: `firecrawl_scrape` with
@@ -57,19 +64,22 @@ Read this first in every session.
 - Never download copyrighted songs (YouTube rips etc.). Make music with `library/tools` or ask the
   owner to upload an MP3 they have.
 - AUTO-INSTALL (owner asked that tools be there every session): the SessionStart hook fetches HyperFrames'
-  Chrome, then runs `library/tools/setup-all.sh all` in the background: light part (~1 min: ffmpeg,
-  PIL/numpy/mido/pyworld, Agent-Reach, graft; flag /home/user/tools/.light-ready), then heavy part (music,
-  ACE-Step/Whisper + weights, yt-dlp link; ~15 min fresh; flag .heavy-ready). Log /home/user/tools/setup.log.
+  Chrome, then runs `library/tools/setup-all.sh all` in the background: light part (ffmpeg,
+  PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, specialist-D tools, Crawl4AI; flag /home/user/tools/.light-ready;
+  "~1 min" was an Oct 2026 estimate, not re-timed), then heavy part (music, ACE-Step/Whisper + weights,
+  audio-separator, VoiceStudio, yt-dlp link; ~15 min fresh, Oct 2026; flag .heavy-ready). Log /home/user/tools/setup.log.
   Before using a tool early in a session, check its flag. Installed programs and the ~10 GB weights
   can't live in the repo (GitHub 100 MB file limit). Any new tool: add it to setup-all.sh, not only to chat.
-- Song-with-vocals (ACE-Step 1.5, 13.9k stars) and transcription (OpenAI Whisper, 111k stars) install
-  with `library/tools/setup-ai-song.sh` into /home/user/tools/venv (Py 3.12, CPU, ~7.6 GB, ~10 min).
+- Song-with-vocals (ACE-Step 1.5, 13,969 stars, MIT) and transcription (OpenAI Whisper, 111,152 stars, MIT; Exa
+  snapshot 2026-10-24) install with `library/tools/setup-ai-song.sh` into /home/user/tools/venv (Py 3.12, CPU;
+  ~7.6 GB, ~10 min in Oct 2026).
   Their WEIGHTS download from huggingface.co, whose big files are served from us.aws.cdn.hf.co
   (non-Xet path, forced in ai_song.py with HF_HUB_DISABLE_XET=1) or cas-server/transfer.xethub.hf.co (Xet),
-  and Whisper's from openaipublic.azureedge.net (works now: small model, 461 MB in ~20 s): until the owner allows those hosts in the environment's network
-  settings, both fail with 403. No GPU here, so ACE-Step runs on CPU: load the DiT with quantization=int8_weight_only (fp32 OOMs
-  at VAE decode), raise ACESTEP_GENERATION_TIMEOUT (default 600 s). Turbo 60 s song ~5 min; base 32
-  steps ~16 min. The base model's `lego` task (add vocals over an instrumental) did NOT add vocals on
+  and Whisper's from openaipublic.azureedge.net (small.pt = 483,617,219 bytes = 461 MiB, curl -I 2026-10-24; it took
+  ~20 s in Oct 2026). Under the old allowlist these hosts failed with 403 until the owner allowed them; with FULL access
+  they answer 200 (2026-10-24). No GPU here, so ACE-Step runs on CPU: load the DiT with quantization=int8_weight_only (fp32 OOMs
+  at VAE decode), raise ACESTEP_GENERATION_TIMEOUT (default 600 s: acestep source, checked 2026-10-24). Turbo 60 s song ~5 min;
+  base 32 steps ~16 min (Oct 2026). The base model's `lego` task (add vocals over an instrumental) did NOT add vocals on
   CPU (output = 0.97 copy of the input): make vocal songs with turbo text2music + lyrics instead.
 
 - Long AI songs (Oct 2026, TalkEmber promo): a 47-line, 200 s ACE-Step song SKIPPED half the lyrics (sang ~25 lines).
@@ -78,18 +88,22 @@ Read this first in every session.
 - Whisper on a long song misses whole sung stretches: separate the vocals first (UVR-MDX-NET Voc FT, ~2 min for
   200 s), transcribe with condition_on_previous_text=False, then align lyric lines with a global in-order DP
   (video/dp_align.py pattern), never greedy first-match (one weak match pushes every later line out of place).
-- NEVER run two heavy torch jobs at once on this 4-core box (ACE-Step + Whisper together: load 8, both 3-4x slower;
+- NEVER run two heavy torch jobs at once on this 4-core box (nproc = 4, RAM 15 GB: checked 2026-10-24; the slowdown below is from Oct 2026) (ACE-Step + Whisper together: load 8, both 3-4x slower;
   a part that takes 9 min alone took 35+). Queue them.
-- Background Bash jobs die at their timeout (default 30 min): give long jobs timeout up to 7200000 ms.
+- Background Bash jobs die at their timeout (default 30 min = 1800000 ms, max 7200000 ms per the Bash tool's own
+  description, 2026-10-24): give long jobs a timeout up to 7200000 ms.
 
 - Realistic 3D model of a person (Oct 2026): the owner REJECTED the CPU results ("very bad"): TripoSR (full body from a
   video frame / bust from a selfie; face blurry) and 3DDFA_V2 (face mask with photo texture, nothing behind). Don't offer
   CPU image-to-3D of people again. For a realistic, identity-exact model: a GPU phone scan app (KIRI Engine, Polycam,
   Luma) whose file the owner sends, or a Minecraft-style look-alike skin for the blocky host. (TripoSR needed: rembg
   u2net_human_seg instead of the default BRIA model, which OOM-killed at 14 GB; PyMCubes instead of torchmcubes.)
-- Disk allowance is small: `uv cache clean` freed 8.7 GB; the unused ACE-Step base model (4.5 GB) was deleted.
+- Disk allowance is small (Oct 2026): `uv cache clean` freed 8.7 GB; the unused ACE-Step base model (4.5 GB) was deleted.
 
 ## HyperFrames learnings
+
+(Observed in renders here, Oct 2026. Re-measured 2026-10-24: the riser/error timings and that whoosh = whoosh-short and
+click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" ease. The rest is not re-tested.)
 
 - Load GSAP from `assets/vendor/gsap-3.14.2.min.js`, never the CDN (render fails with
   `sub_timeline_script_failure`). Registry blocks (`npx hyperframes add ...`) also point at the CDN: fix them.
@@ -136,10 +150,13 @@ Read this first in every session.
 
 - VOICESTUDIO (owner, Oct 24 2026: "replacing ElevenLabs"): debpalash/VoiceStudio runs locally (setup-all heavy, backend
   `library/tools/voicestudio.sh start`, script tool `vs_tts.py`, skill voice-or-song). OmniVoice engine: Urdu 100%/97%,
-  Hindi 92%, Pashto 81% Whisper match, voice design + cloning, ~3-4x real time on CPU. Its weights are NON-COMMERCIAL:
-  client/paid work -> `--model voxcpm2` (Apache-2.0, Hindi, 5 GB, download when needed) or ai_voice.py. Details:
+  Hindi 92%, Pashto 81% Whisper match, voice design + cloning; Oct 24 test: 4.4-9.5 s clips took 22-36 s incl. model load
+  (~4-5x the audio length; the old "~3-4x" did not match those numbers). Its weights are NON-COMMERCIAL:
+  client/paid work -> `--model voxcpm2` (Apache-2.0, Hindi, 4.96 GB: HF API 2026-10-24; download when needed) or ai_voice.py. Details:
   library/research/voicestudio.md.
-- CPU-ONLY TORCH: the main venv now uses torch 2.10.0+cpu (the pypi CUDA build wasted ~5 GB of nvidia libs on disk).
+- CPU-ONLY TORCH: the main venv now uses torch 2.10.0+cpu (wheel exists on download.pytorch.org/whl/cpu, checked
+  2026-10-24; the pypi CUDA build wasted ~5 GB of nvidia libs on disk, Oct 2026).
+- ElevenLabs notes below are from Oct 2026 and NOT re-checked in the audit (ElevenLabs is owner-gated).
 - ElevenLabs connector (ONLY when the owner asks for it; TTS only, costs the owner's credits; ~230 credits for 2 takes of a 16 s script,
   ~90 per transcription). Good warm Urdu/Hindi romantic male voice: "Ashar – Romantic, Warm Boyfriend"
   (`nq3gz2RQGRBB1SbrgTqF`), model `eleven_v4`. Write the script in Devanagari (English words stay
@@ -161,6 +178,8 @@ Read this first in every session.
   quiet bed at -30 dB. Usable as a sing-song narrator, not a flat newsreader; it can drop lines: check report.json.
 
 ## CSS 3D voxel films (learned on the Blocky Monsoon video)
+
+(Observed in Chrome renders here, Oct 2026; not re-tested.)
 
 - `mix-blend-mode` (and opacity < 1 / filter on a preserve-3d container) flattens the whole 3D world: camera pitch
   stops working and the ground vanishes. Use plain rgba/gradients on faces; put blends only in separate 2D overlay
@@ -210,7 +229,8 @@ Read this first in every session.
   convex hull (open 23 px to drop thin shelf lines). Keep the desk sharp via a RANSAC line on the cyan mats found
   bottom-up (a top-down search grabbed blue boxes). BiRefNet-portrait is cleaner but 39 s/frame and OOM-killed: not
   usable. Always show the owner a before/after frame and get approval before rendering.
-- Pashto touch for Pashto-speaking clients: "Manana" = thank you (safe, well known). Captions stay Roman Urdu.
+- Pashto touch for Pashto-speaking clients: "Manana" (مننه) = thank you (omniglot.com/language/phrases/pashto.php via
+  WebSearch, 2026-10-24). Captions stay Roman Urdu.
 
 ## Sub-sessions (Oct 24 2026)
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
@@ -228,12 +248,14 @@ Read this first in every session.
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
 - Screenshots / page capture: `library/tools/web_capture.py` (Crawl4AI, free, local Chromium) -> markdown + full-page
-  PNG. It only reaches domains allowed in the environment's network settings: for a blocked site ask the owner to
+  PNG. 2026-10-24: it FAILED ("playwright install") because /opt/pw-browsers held chromium-1243 while crawl-venv has
+  playwright 1.56.0 (wants chromium-1194). Check `ls /opt/pw-browsers` first; fallback that worked: `agent-reach read`
+  or curl of the HTML. It only reaches domains allowed in the environment's network settings: for a blocked site ask the owner to
   add the domain (e.g. visit.talkember.site, www.firecraft.fun) instead of spending Firecrawl credits.
-- Agent-Reach 1.6 (`agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach web search "<q>"`,
+- Agent-Reach 1.6 (1.6.0 per `agent-reach doctor`, 2026-10-24; `agent-reach`, skill auto-installed): `agent-reach read <url>`, `agent-reach web search "<q>"`,
   `agent-reach youtube search "<q>"` (works, via yt-dlp), JSON output.
   Owner allowed r.jina.ai, s.jina.ai, mcp.exa.ai, api.exa.ai, www/old.reddit.com (Oct 2026): web read (jina) and
-  web search (exa) WORK. For GitHub tool discovery use `agent-reach web search "<name> github"` (results show stars);
+  web search (exa) WORK (both worked 2026-10-24; after ~25 searches Exa answered RATE_LIMITED "wait 3512 s"). For GitHub tool discovery use `agent-reach web search "<name> github"` (results show stars);
   the github channel itself fails (session gh API is repo-scoped). Reddit search can hit Exa 429 (rate limit) and
   its opencli fallback needs a GitHub release download (blocked): wait and retry once, else WebSearch.
 - ECC (everything-claude-code) lives in .claude/ (agents, commands, quality skills; no hooks). REA (reverse engineering,
