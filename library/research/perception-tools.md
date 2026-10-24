@@ -21,7 +21,7 @@ Setup: `bash library/tools/setup-specialist-a.sh` (venv `/home/user/tools/perc-v
 | UVR-MDX-NET Voc FT via audio-separator (main venv) | `--vocals` stem | not checked here | installed by setup-all.sh heavy |
 
 Notes from the sources: Google's page says BlazeFace short-range is "optimized for front-facing phone camera
-images at short range" (so small/far faces can be missed). Essentia's own docstring
+images at short range"; how it does on small or far faces was not tested here (unverified). Essentia's own docstring
 (`essentia.standard.BeatTrackerMultiFeature.__doc__`, read 2026-10-24) grades the multifeature confidence:
 [0,1) very low, [1,1.5] low, (1.5,3.5] good ("accuracy around 80% in AMLt"), (3.5,5.32] excellent, and says the
 input must be 44100 Hz. listen.py uses essentia's grid only when confidence >= 1.5 and feeds it 44.1 kHz.
@@ -112,8 +112,8 @@ near-neutral pixels and shot-to-shot matching uses whole-frame values against th
 
 - Near-neutral-pixel cast misses grades that only touch shadows/mids (see table). Read both numbers.
 - Sharpness is Laplacian variance: compare scenes inside one video only (`sharp_rel`), not across videos.
-- Faces: BlazeFace short-range, so far/small faces can be missed (Google: "short range"); people: EfficientDet-
+- Faces: BlazeFace short-range (Google: "short range"; far/small faces not tested, unverified); people: EfficientDet-
   Lite0 "person" score >= 0.4. Not tested on crowds (unverified).
-- Shake is in pixels at the analysis width (320 default); camera pans also add to it when they are not smooth.
-- Dissolves/fades: not tested (unverified); ContentDetector is tuned for hard cuts.
+- Shake is in pixels at the analysis width (320 default): by the method, any camera movement that is not smooth over 0.5 s counts; real pans were not tested (unverified).
+- Dissolves/fades: not tested (unverified); only hard cuts were tested.
 - The contact sheet must still be LOOKED at (Read the PNG): the numbers don't say whether a shot is good.
