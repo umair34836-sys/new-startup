@@ -37,3 +37,15 @@ install steps and test timings below are past measurements in an earlier session
   script: Urdu 100% and 97%, Hindi 92%, Pashto 81% (Whisper's own Pashto is weak). Owner accepted the OmniVoice and
   VoxCPM2 licences (Oct 24 2026). voxcpm 2.0.3 installed into VoiceStudio's venv (keeps torch 2.8.0+cpu); the VoxCPM2
   checkpoint (4.96 GB) was NOT downloaded: only 4.7 GB disk free in this session.
+
+## VoxCPM2 Hindi test (MoradoSolution promo, measured here 2026-10-24)
+- Install: freed disk (OmniVoice HF cache 3.1 GB, npm cache, ACE-Step LM 1.7B 3.5 GB), then
+  `curl -X POST :3900/models/install -d '{"repo_id":"openbmb/VoxCPM2"}'` -> 4.7 GB in ~/.cache/huggingface in a few
+  minutes (model.safetensors 4,580,080,592 B + audiovae.pth 376,951,122 B: HF tree API 2026-10-24). Licence: apache-2.0.
+- Speed on this 4-core CPU: first request 2m22s for a 2.1 s line (model load + 28 s warm-up); later lines 2.1-8.4 s of audio
+  took ~1-3 min each (file mtimes); 8 lines ~13 min.
+- Voice design per line (`--instruct`, one request per line) gave a DIFFERENT voice per line: median f0 164-240 Hz across
+  the 8 lines (pyworld harvest). For one consistent narrator, clone one good line instead (`--ref` + `--ref-text`).
+- Mixed script (English words in Latin inside Hindi) came out with garbled English per Whisper small ("India" ->
+  "अरी अद्टीा", "included" -> "ख्लूदेड"); one line ran on for 8.4 s with nonsense after the real words
+  (Whisper heard extra syllables after "फ्र्रंकफुट में"). Whisper-check every line; regenerate bad ones.

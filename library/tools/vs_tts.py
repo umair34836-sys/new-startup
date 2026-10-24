@@ -19,6 +19,8 @@ ap.add_argument("--model", default="omnivoice")
 ap.add_argument("--ref", help="reference voice wav for cloning (only voices you may use)")
 ap.add_argument("--ref-text", default="", help="exact words spoken in --ref")
 ap.add_argument("--host", default="http://127.0.0.1:3900")
+ap.add_argument("--steps", type=int, help="diffusion steps (VoxCPM2 default 10; more = slower, maybe cleaner)")
+ap.add_argument("--cfg", type=float, help="guidance scale (default 2.0)")
 ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
 
@@ -39,6 +41,10 @@ def speech(text, path):
         return
     body = {"model": a.model, "input": text, "language": a.lang, "instruct": a.instruct,
             "response_format": "wav", "seed": a.seed}
+    if a.steps:
+        body["num_step"] = a.steps
+    if a.cfg:
+        body["guidance_scale"] = a.cfg
     req = urllib.request.Request(a.host + "/v1/audio/speech", data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json"})
     try:
