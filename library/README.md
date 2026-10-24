@@ -67,6 +67,10 @@ SIL OFL fonts (licences beside them). Load with `@font-face { src: url("assets/f
 - `PlayfairDisplay-Italic.ttf`: serif italic for captions.
 - `Anton-Regular.ttf` (+ `Anton-OFL.txt`): tall condensed display font for punchy titles ("BOSS", "PEHCHAAN").
 
+- `NotoNastaliqUrdu-Variable.ttf` (wght 400-700): Urdu Nastaliq captions/titles. Burn with ffmpeg `ass=` (not `subtitles=`, which
+  showed empty boxes in ffmpeg 6.1.1; skills2/10). `NotoSansDevanagari-Variable.ttf` (wght 100-900, wdth 62.5-100): Hindi.
+  `NotoNaskhArabic-Variable.ttf` (wght 400-700): Arabic Naskh. All SIL OFL 1.1 (OFL-Noto*.txt), from github.com/google/fonts (2026-10-24).
+
 Bundled HyperFrames fonts (Inter, Archivo Black, Space Mono, Playfair Display, ...) need no file.
 
 ## Blocks (`blocks/`)
