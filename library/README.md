@@ -63,6 +63,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   girl at a chai stall in the rain; lamps light, rain turns gold, umbrella pops on the song's peak). `build.py`
   writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
   `SPEC.md` has every shot. Copy the folder, copy assets (textures, skins, fonts, gsap, song) and edit `build.py`.
+- `kinetic-laptop-type/build.py`: 16:9 kinetic typography inside a CSS laptop (search bar, word-by-word blur reveal, end screen); skills #404, #2560/#2561, #3107. First used for SkilloraClouds, 2026-10-24. See its README.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
 - `brand-kit/`: client branding kit: `brand.json` schema + fake example, `brand_from_logo.py` (palette + WCAG text colours from a logo), `build_brand.py` (logo sting, lower third, contact card with local QR, watermark, CTA, offer badge; 9:16 and 16:9). Intake questionnaire: research/client-intake.md. Skill client-brand-kit.
