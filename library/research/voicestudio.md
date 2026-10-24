@@ -1,9 +1,13 @@
 # VoiceStudio (debpalash/VoiceStudio): checked Oct 24 2026
 
+Audit 2026-10-24: licences/sizes re-read on huggingface.co API and the repo README (raw.githubusercontent.com); the
+install steps and test timings below are past measurements in an earlier session the same day (not re-run).
+
 - What: "open-source, fully-local ElevenLabs alternative": voice cloning, voice design, video dubbing, dictation,
   transcription, audiobooks; 16+ TTS and 11 ASR engines behind one FastAPI backend + Electron app. Formerly
-  OmniVoice-Studio. Repo licence AGPL-3.0 (commercial licence on request). Version tested: 0.5.7-beta.2 (commit 80a01e5).
-  A dev.to post calls it "82k stars" (not verified here; GitHub web pages blocked for the API in this session).
+  OmniVoice-Studio. Repo licence AGPL-3.0 (README badge + Exa repo metadata, 2026-10-24; the README says a paid app licence exists but does
+  not cover model weights). Version tested: 0.5.7-beta.2 (commit 80a01e5).
+  Stars: 79,257 (Exa snapshot via agent-reach web search, 2026-10-24; a dev.to post had said "82k").
 - Install here (no GPU, no display): clone, `uv sync --locked --no-group cuda --group cpu` (CPU torch 2.8.0, venv 2.3 GB,
   Python 3.11), then `library/tools/voicestudio.sh start` = `uv run --no-sync uvicorn main:app --app-dir backend --port 3900`.
   Skip `scripts/setup.py` (Windows VC++/CUDA/ROCm only). /health -> {"status":"ok","device":"cpu"}.
@@ -11,15 +15,19 @@
   response_format}; native `POST /generate` (multipart: text, language, ref_audio + ref_text for cloning, instruct,
   profile_id, num_step, guidance_scale, speed, effect_preset); `/v1/audio/transcriptions`; profiles `/profiles`;
   model catalogue `GET /models`, `POST /models/install {"repo_id"}`, status `/models/install/status`; MCP at /mcp.
-- Model downloads need 2 GB headroom beyond the model; OmniVoice (3.27 GB incl. audio tokenizer) took 30 s.
+- Model downloads need 2 GB headroom beyond the model; OmniVoice (repo files total 3.27 GB, HF API tree 2026-10-24) took 30 s.
 - LICENCES (VoiceStudio's own registry, GET /models/licenses/details/<repo>): generation is blocked (403
   model_licence_required) until the licence is accepted (POST /models/licenses/accept).
   * k2-fsa/OmniVoice (default engine, 600+ languages incl. Urdu/Hindi/Pashto, cloning + design):
-    "CC-BY-NC; Higgs Audio 2; Meta Llama 3" = NON-COMMERCIAL. Not for client/paid videos.
+    "CC-BY-NC; Higgs Audio 2; Meta Llama 3" = NON-COMMERCIAL. Not for client/paid videos. (Confirmed 2026-10-24 on the HF
+    card: "The pre-trained model is licensed under the CC-BY-NC"; card lists 646 language codes incl. ur, hi, ps, pbt.)
     Its tokenizer eustlb/higgs-audio-v2-tokenizer: licence NOASSERTION.
-  * openbmb/VoxCPM2 (5 GB, 30 languages incl. Hindi, cloning + design, slow on CPU): apache-2.0.
-  * FunAudioLLM CosyVoice3 0.5B (9.8 GB): apache-2.0, no Hindi/Urdu. GPT-SoVITS: MIT (zh/en/ja/ko/yue).
-  * MOSS-TTS-Nano 100M (20 langs, CPU realtime), KittenTTS (English): apache-2.0.
+  * openbmb/VoxCPM2 (4.96 GB, 30 language codes incl. hi, no ur/ps; apache-2.0: HF API 2026-10-24; cloning + design
+    and "slow on CPU" not re-checked).
+  * FunAudioLLM CosyVoice3 0.5B (9.8 GB): apache-2.0 (HF Fun-CosyVoice3-0.5B-2512, 2026-10-24), no Hindi/Urdu (registry).
+    GPT-SoVITS: MIT (HF lj1995/GPT-SoVITS, 2026-10-24) (zh/en/ja/ko/yue per registry).
+  * MOSS-TTS-Nano 100M (20 langs, CPU realtime): apache-2.0 per the registry (HF repo id not found in the audit:
+    unverified). KittenTTS (English): apache-2.0 (HF KittenML/kitten-tts-nano-0.1, 2026-10-24).
   Registry note: "Licence identifier is upstream model-card metadata, not verified".
 - Disk: the main tools venv carried the CUDA torch build (nvidia-* + triton = ~5 GB) on this CPU-only box. Swapped to
   torch 2.10.0+cpu (download.pytorch.org/whl/cpu): free disk 3.2 -> 9.1 GB, ACE-Step/whisper/audio-separator still import
