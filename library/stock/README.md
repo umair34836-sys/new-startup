@@ -1,6 +1,6 @@
 # Stock video / b-roll library (`stock/`)
 
-66 short clips that need **no credit**, 196 MB in total, plus 42 Mixkit links (not downloaded, see below).
+72 short clips that need **no credit**, 231 MB in total, plus 42 Mixkit links (not downloaded, see below).
 H.264 (yuv420p) mp4, no audio, short side at most 1080 px (sources are never upscaled), fps capped at 30, 12 s or less.
 Every number in `index.json` (size, fps, duration, resolution) was measured with ffprobe after encoding (2026-10-24).
 Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for 9:16, `--all` to include SFX and LUTs).
@@ -10,8 +10,8 @@ Search: `python3 library/tools/find_stock.py "rain night"` (add `--vertical` for
 | Group | Clips | Proof |
 | --- | --- | --- |
 | Own overlays/backgrounds (`own-overlays/`) | 37 | Made here with `library/tools/make_overlays.py` (PIL + numpy, fixed seeds). No credit needed. |
-| Wikimedia Commons CC0 | 15 | Licence read from each file page's metadata via the Commons API (`extmetadata.LicenseShortName` = CC0). Page URL per clip in `index.json`. |
-| Wikimedia Commons public domain (US government: National Park Service, US Forest Service, BLM, etc.) | 9 | Same check (`LicenseShortName` = Public domain). |
+| Wikimedia Commons CC0 | 17 | Licence read from each file page's metadata via the Commons API (`extmetadata.LicenseShortName` = CC0). Page URL per clip in `index.json`. |
+| Wikimedia Commons public domain (US government: National Park Service, US Forest Service, BLM, etc.) | 13 | Same check (`LicenseShortName` = Public domain). |
 | NASA (public domain, **licence doubt**) | 5 | NASA Media Usage Guidelines (https://www.nasa.gov/nasa-brand-center/images-and-media/, read 2026-10-24): NASA content "generally [is] not subject to copyright in the United States", but "NASA should be acknowledged as the source" and commercial use "must not explicitly or implicitly convey NASA's endorsement". Marked `licence_doubt: true`: OK for space/gaming intros, avoid in client ads. |
 
 Not stored here, and why (tested from this server on 2026-10-24):
@@ -27,9 +27,14 @@ Not stored here, and why (tested from this server on 2026-10-24):
   "Am I allowed to sell or redistribute the videos ...? No" and no AI training/datasets. Download by hand from coverr.co when needed.
 - **Mazwai and Videvo uploads on Commons**: CC BY 3.0 (credit required): rejected.
 - **Pakistani / South-Asian street footage**: Commons searches for Pakistan, Lahore, Karachi, bazaar, tea and street food
-  (2026-10-24) returned only news/CCTV clips or US-government event videos, nothing usable as CC0 b-roll. For desi street
-  shots use the owner's own footage or a Mixkit/Coverr clip fetched per project.
-- Wikimedia's upload server answers bursts with HTTP 429 ("robot policy"); `commons_dl` style downloads need ~20-60 s gaps.
+  (2026-10-24) returned only news/CCTV clips or US-government event videos, nothing modern usable as CC0 b-roll. The only
+  South-Asian clips here are the public-domain 1906 film "A Native Street in India" (black and white, `south-asia-vintage/`)
+  and a wetland at Vaduvoor (Tamil Nadu). For modern desi street shots use the owner's own footage or a Mixkit/Coverr
+  clip fetched per project.
+- Wikimedia's upload server answers bursts with HTTP 429 ("robot policy"). Downloads one at a time with 20 s gaps and curl
+  with a descriptive User-Agent worked for ~40 files, then the server throttled this IP (429 for every request). Candidates
+  found but not downloaded for that reason: "Ocean surface waves 06/09" (CC0), "Delaneys Falls" (CC0, downloaded but the
+  waterfall is barely visible: skipped), "Stars over Skull Rock" (PD), "Chestnut automatic agitator" (CC0, street food).
 
 ## Own overlays: how to use them
 
@@ -75,7 +80,14 @@ The repo `.gitignore` blocks `*.mp4`/`*.jpg` (safety net against personal media)
 | `fire/candles-closeup.mp4` | 1920x1080 24fps | 12.0s | Public domain | close-up of candle flames, shallow focus |
 | `fire/fire-flames-closeup.mp4` | 1920x1080 25fps | 12.0s | CC0 | orange flames rising from a metal can, green forest behind (close-up) |
 
-### nature-sky (4)
+### money (2)
+
+| File | Size | Dur | Licence | What |
+| --- | --- | --- | --- | --- |
+| `money/coins-bin-gloved-hands.mp4` | 1920x1080 23.976fps | 10.01s | Public domain | gloved hands working in a bin full of new coins (US Mint b-roll) |
+| `money/coins-pile-closeup.mp4` | 1920x1080 23.976fps | 7.51s | Public domain | close-up of a pile of shiny coins, slow move |
+
+### nature-sky (7)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
@@ -83,6 +95,9 @@ The repo `.gitignore` blocks `*.mp4`/`*.jpg` (safety net against personal media)
 | `nature-sky/mountain-cloud-timelapse.mp4` | 1920x1080 30fps | 12.0s | CC0 | lenticular cloud over snowy mountains, blue sky (time-lapse) |
 | `nature-sky/desert-tree-clouds-timelapse.mp4` | 1920x1080 29.97fps | 12.01s | Public domain | desert with a Joshua tree, clouds and sun moving (time-lapse) |
 | `nature-sky/wetland-lake-birds-india.mp4` | 1920x1080 30fps | 10.0s | CC0 | lake with green weeds, small white birds flying in the distance, tree branch at the edge (Vaduvoor, Tamil Nadu) |
+| `nature-sky/bee-on-white-flower.mp4` | 1920x1080 30fps | 12.0s | CC0 | close-up: a bee resting on a white daisy-like flower, garden behind |
+| `nature-sky/night-sky-stars-clouds-timelapse.mp4` | 1920x1080 23.976fps | 12.01s | Public domain | night time-lapse: stars and lit clouds moving over desert rocks and Joshua trees |
+| `nature-sky/aurora-night-sky-timelapse.mp4` | 1920x1080 29.97fps | 12.01s | Public domain | green aurora and bright moon over a tree line, stars, clouds moving (night time-lapse) |
 
 ### own-abstract (12)
 
@@ -180,12 +195,13 @@ The repo `.gitignore` blocks `*.mp4`/`*.jpg` (safety net against personal media)
 | `sunrise-sunset/sunrise-timelapse-orange-sky.mp4` | 1920x1080 25fps | 12.0s | CC0 | sunrise time-lapse: sun rises in an orange sky above a city horizon, plants in foreground |
 | `sunrise-sunset/sunset-sun-going-down-timelapse.mp4` | 1920x1080 25fps | 12.0s | CC0 | red sun setting on a flat horizon behind lamp posts (time-lapse) |
 
-### weather (3)
+### weather (4)
 
 | File | Size | Dur | Licence | What |
 | --- | --- | --- | --- | --- |
 | `weather/rain-dripping-from-roof.mp4` | 1920x1080 29.693fps | 12.02s | CC0 | rain dripping from a roof edge, copper roofs behind |
 | `weather/rain-city-trees.mp4` | 1906x1080 29.917fps | 10.03s | CC0 | rain falling over trees and apartment blocks, grey day |
 | `weather/lightning-storm-night.mp4` | 1920x1080 25fps | 12.0s | CC0 | night thunderstorm on the horizon with repeated lightning flashes |
+| `weather/snow-falling-forest.mp4` | 1920x1080 30fps | 12.0s | CC0 | snow falling in a snowy pine forest |
 
 Descriptions of downloaded clips were written after looking at contact sheets of each source (frames every 1.5-3.5 s).
