@@ -44,6 +44,8 @@ heavy() {
   for m in denoise_mel_band_roformer_aufr33_sdr_27.9959.ckpt UVR-DeEcho-DeReverb.pth UVR-MDX-NET-Voc_FT.onnx; do
     "$T/venv/bin/audio-separator" --download_model_only -m "$m" --model_file_dir "$T/sep-models" >/dev/null
   done
+  # bg_blur.py: person segmentation (u2net_human_seg weights download on first use, 168 MB)
+  "$T/venv/bin/python" -c "import rembg, cv2" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q "rembg[cpu]" opencv-python-headless
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
   # VoiceStudio (debpalash/VoiceStudio, local ElevenLabs alternative): own uv venv with CPU torch; backend on :3900
   # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).

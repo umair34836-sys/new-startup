@@ -197,6 +197,14 @@ Read this first in every session.
   An <img> over 2 MB isn't inlined: use JPG. A scene's <img>/<video> data-duration must equal the scene length.
 - Pausing a harness background job with kill -STOP makes the harness mark it failed and kill it. Don't pause; queue
   heavy jobs. music_pack.py skips finished tracks, so a restart only redoes the unfinished ones.
+- BACKGROUND BLUR the owner approved (Oct 2026): `library/tools/bg_blur.py`. First tries looked "awkward": plain
+  Gaussian, a halo around the person (the blur smeared his own dark pixels outward), hard edges, blue boxes still
+  visible as blue blobs. What fixed it: inpaint the subject out of the background BEFORE blurring, disc (bokeh) blur in
+  linear light, desaturate blue/cyan background objects into the wall hue, background -14% exposure, soft temporally
+  smoothed mask. u2net_human_seg misses dark shirt between arm and body: add dark pixels inside the silhouette's
+  convex hull (open 23 px to drop thin shelf lines). Keep the desk sharp via a RANSAC line on the cyan mats found
+  bottom-up (a top-down search grabbed blue boxes). BiRefNet-portrait is cleaner but 39 s/frame and OOM-killed: not
+  usable. Always show the owner a before/after frame and get approval before rendering.
 - Pashto touch for Pashto-speaking clients: "Manana" = thank you (safe, well known). Captions stay Roman Urdu.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
