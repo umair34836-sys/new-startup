@@ -287,6 +287,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - ffmpeg OOM (exit 137) on 9 `trim` branches of one 1440x810 60 fps input in one filter graph: render each segment
   to its own file (-ss/-t, setpts for 2x), concat -c copy, then one pass for `ass=` captions + audio (worked, 147 s).
 - `pkill -f "<words>"` also kills the Bash shell whose own command line contains those words (exit 144): use the PID.
+- Same trap for waiting: `while pgrep -f transcribe.py; do sleep; done` never ends, because pgrep matches the waiting
+  shell's own command line (Mr Aloo session, 2026-10-25). Wait on the PID (`while kill -0 $PID`) or on the output file.
+- Whisper MEDIUM on this box (measured 2026-10-25, language=hi, condition_on_previous_text=False, beam 5, word timestamps):
+  load 37 s; 100.4 s VO -> 520 s, 279.7 s VO -> 1335 s (~5x audio length). Same VO with small (listen.py default) stopped
+  transcribing after 72 s of a 100 s VO and garbled words; medium got all 13 lines incl. repeated retakes.
 - Owner chose for this tutorial: no blur of the client's demo emails; dheema CC0 music under the VO; Roman captions.
 - OWNER RULE (Oct 25 2026, SkilloraClouds): after the client approves the script, deliver the FINAL video directly (no
   watermarked PREVIEW step for this client).
@@ -367,13 +372,17 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Merged into the main branch WITHOUT its 170 photos (site screenshots, food photos, banners): the client branch had
   force-added them past .gitignore, against the no-photos rule. Re-download them per job with crawl.js / site/images.json.
 
+- Client Mr Aloo (ALOO SMP, Minecraft server) home session: session_01MXn9cJzR1SB9sUWZnsT4n4 (branch client-mraloo, Oct 25 2026).
+  Brief library/clients/mraloo/brief.md. OWNER RULE for this client: zero guesswork (not even 1%), every edit decision
+  from repo skills/learnings with an edit log (edit-log-short-v1.md), must NOT look AI-edited, memes + GFX + SFX wherever
+  the situation calls for them (skill-based; memes: library/research/memes.md, CC0 library/memes/; no copyrighted
+  film/TV clips without asking the owner). Short v1 delivered 2026-10-25 from template library/templates/minecraft-smp-short.
+- 9:16 crops of 1080p gameplay are a 1.78x upscale: add `cas=strength=0.5` after the lanczos scale (skill #489;
+  Laplacian variance 39 -> 62 on a test frame, measured 2026-10-25). watch.py "soft" is RELATIVE (sharp_rel < 0.35
+  of the sharpest scene), so a video with crisp text cards flags most footage scenes.
+
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.
-
-- Client Mr Aloo home session: session_01MXn9cJzR1SB9sUWZnsT4n4 (branch client-mraloo, Oct 25 2026). OWNER RULE for this client:
-  zero guesswork (not even 1%), every edit decision from repo skills/learnings with an edit log, must NOT look AI-edited,
-  memes + GFX + SFX wherever the situation calls for them (skill-based). Repo has no meme library yet: research ->
-  library/research/memes.md, licence-clean meme assets -> library/memes/ (no copyrighted film/TV clips without asking the owner).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
