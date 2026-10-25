@@ -186,7 +186,7 @@ Facts gathered by tools and web research, one topic per file (source + date), so
 `firecraft-smp.md` (server facts for promos), `firecraft-whitelist-flow.md` (real whitelist steps + exact field labels, 2026-10-24), `tools-landscape.md` (open-source tools and star counts),
 `video-editing.md` (editing techniques), `pk-reels-trends.md` + `pk-reel-recipes.md` (Pakistani reels styles, 16 recipes), `desi-vocal-sources.md`, `perception-tools.md` + `cpu-speed.md` (specialist A: what listen/watch measure; CPU benchmarks), `editing/` (decision guide for 29 video types + 560 cited editing skills), `talkember-studio.md` (the owner's website, for promos),
 `free-music-sources.md` (no-credit music sources), `hinglish-tts.md` and `voicestudio.md` (voice models),
-`network-allowlist.md` (domains), `urdu-captions.md`, `client-intake.md`, `audit-2026-10-24-part1.md` (claim audit).
+`network-allowlist.md` (domains), `urdu-captions.md`, `client-intake.md`, `audit-2026-10-24-part1.md` (claim audit), `tiktok-access.md`, `artemis.md` (google/artemis Android phone agent: installed in /home/user/tools/artemis, needs a phone + API key).
 
 ## templates/website-promo
 

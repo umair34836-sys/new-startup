@@ -63,6 +63,11 @@ heavy() {
   # VoxCPM2 engine (Apache-2.0, commercial OK, Hindi): package only; its 4.96 GB checkpoint (HF API 2026-10-24) downloads on first use.
   "$T/VoiceStudio/.venv/bin/python" -c "import voxcpm" 2>/dev/null ||
     VIRTUAL_ENV="$T/VoiceStudio/.venv" uv pip install -q "voxcpm>=2.0.3"
+  # Artemis (google/artemis, Apache-2.0): AI agent that drives an Android phone over ADB. Own uv venv (1.1 GB, 2026-10-25).
+  # Needs a connected phone/emulator + a multimodal API key to run tasks (library/research/artemis.md).
+  command -v adb >/dev/null || apt-get install -y -qq adb >/dev/null 2>&1 || true
+  [ -d "$T/artemis" ] || git clone -q --depth 1 https://github.com/google/artemis.git "$T/artemis"
+  [ -x "$T/artemis/.venv/bin/python" ] || (cd "$T/artemis" && uv sync -q --frozen --no-dev)
   uv cache clean >/dev/null 2>&1 || true
   touch "$T/.heavy-ready"
 }
