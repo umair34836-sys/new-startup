@@ -256,6 +256,18 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Pashto touch for Pashto-speaking clients: "Manana" (مننه) = thank you (omniglot.com/language/phrases/pashto.php via
   WebSearch, 2026-10-24). Captions stay Roman Urdu.
 
+## Food / restaurant promo reels (Pizza Base PK, Oct 25 2026; template library/templates/food-promo-reel)
+- Indolj storefronts (pizzabasepk.com): curl gets Cloudflare 520; Playwright works. The whole menu + branches + timings
+  load as JSON from console.indolj.io WebApiV2 (StructuredMenu, BranchDetails); crawl.js / crawl_items.js in
+  library/clients/pizzabasepk/ save it and every item popup (prices matched JSON 100%, 2026-10-25). The menu list is
+  lazy: full-page screenshots show empty sections, scroll in steps. Same item names in several deal categories
+  ("Deal 1"): click by occurrence index, not first match.
+- Site FAQ pages on such platforms are generic template text (hours/payment differed from the branch JSON): never quote.
+- VoxCPM2 default voice, 8 promo lines = 38.5 s at 1x (2026-10-25). For a ~30 s reel: 1.2x atempo on the whole VO
+  garbled "Crown Crust" and the URL (Whisper); 1.15x on lines 1-7 + the URL line at 1x + 0.25 s gaps gave 33.1 s
+  with every line heard. Keep URL/CTA lines at 1x.
+- Killing the Bash shell that ran `voicestudio.sh start` (background time limit) did NOT stop the backend.
+
 ## Tutorials / screen videos
 - OWNER RULE (Oct 24 2026): in every tutorial or screen video, EVERY click is shown with a visible mouse cursor that moves
   to the target and plays a click animation (ripple/press) at the moment of the click (plus a soft click sound).
@@ -350,11 +362,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
   Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
 
+- Client Pizza Base PK home session: session_01G1P3KGwamyc7yXaT4s4W1y (branch client-pizzabasepk, Oct 25 2026).
+  Brief: library/clients/pizzabasepk/brief.md; first 9:16 promo reel FINAL delivered Oct 25 2026.
+  Merged into the main branch WITHOUT its 170 photos (site screenshots, food photos, banners): the client branch had
+  force-added them past .gitignore, against the no-photos rule. Re-download them per job with crawl.js / site/images.json.
+
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.
-
-- Client Pizza Base PK home session: session_01G1P3KGwamyc7yXaT4s4W1y (branch client-pizzabasepk, Oct 25 2026).
-  Full browser crawl of https://pizzabasepk.com/ first, then a promotional video with the default free voiceover.
 
 - Client Mr Aloo home session: session_01MXn9cJzR1SB9sUWZnsT4n4 (branch client-mraloo, Oct 25 2026). OWNER RULE for this client:
   zero guesswork (not even 1%), every edit decision from repo skills/learnings with an edit log, must NOT look AI-edited,

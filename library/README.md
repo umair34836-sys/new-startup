@@ -71,6 +71,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
   `SPEC.md` has every shot. Copy the folder, copy assets (textures, skins, fonts, gsap, song) and edit `build.py`.
 - `kinetic-laptop-type/build.py`: 16:9 kinetic typography inside a CSS laptop (search bar, word-by-word blur reveal, end screen); skills #404, #2560/#2561, #3107. First used for SkilloraClouds, 2026-10-24. See its README.
+- `food-promo-reel/build_pizzabase.py`: 9:16 ~36 s restaurant deal promo from the site's own food photos + deal posters, scenes timed from VO lines.json (Pizza Base PK, 2026-10-25; README in the folder).
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
 - `brand-kit/`: client branding kit: `brand.json` schema + fake example, `brand_from_logo.py` (palette + WCAG text colours from a logo), `build_brand.py` (logo sting, lower third, contact card with local QR, watermark, CTA, offer badge; 9:16 and 16:9). Intake questionnaire: research/client-intake.md. Skill client-brand-kit.
@@ -95,6 +96,7 @@ License" and every font family has an OFL .txt here). Load with `@font-face { sr
   `Gulzar-Regular.ttf` (Urdu only: no Pashto letters), `NotoNaskhArabic-Variable.ttf`, `NotoSansArabic-Variable.ttf`,
   `Vazirmatn-Variable.ttf`, `NotoSansDevanagari-Variable.ttf`, `Mukta-Regular/Bold.ttf` (Hindi). OFL licences beside them.
 - `Anton-Regular.ttf` (+ `Anton-OFL.txt`): tall condensed display font for punchy titles ("BOSS", "PEHCHAAN").
+- `Poppins-SemiBold/Bold/ExtraBold.ttf` (+ `Poppins-OFL.txt`, from github.com/google/fonts ofl/poppins, 2026-10-25): Pizza Base PK site font (computed CSS).
 - `Kalam-Bold.ttf` (+ `OFL-Kalam.txt`) and `RozhaOne-Regular.ttf` (+ `OFL-RozhaOne.txt`): also present (found in the
   2026-10-24 audit; not described before).
 
