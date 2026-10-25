@@ -75,4 +75,19 @@ before every new video: prices and offers change.
   with a visible cursor on every click), `library/templates/website-promo`.
 
 ## Delivered
-- (nothing yet)
+- Owner (2026-10-25): PakWebHoster is a new client: send WATERMARKED previews first (library/tools/watermark.py);
+  the clean file goes out only after payment / owner's go-ahead.
+- 2026-10-25: three 9:16 reels, PREVIEWS (watermarked) sent; clean renders kept in the session scratchpad only.
+  Pages re-read in Chromium the same day before building (/, /shared-hosting, store shared-hosting: unchanged).
+  1. Rs 200 shared-hosting reel, 30.0 s, free default VO (vs_tts.py; 3 weak lines redone with seed 21 / rewording, joined
+     with tools/vo_join.py), CC0 "Sunglasses", -16.6 LUFS. Build: templates/hosting-promo-reel/build_pakwebhoster.py.
+     VO script (Devanagari, 7 lines): "अपनी वेबसाइट, ऑनलाइन लाना चाहते हैं?" / "पाक वेब होस्टर, पाकिस्तान में वेब होस्टिंग।" /
+     "दस जीबी एनवीएमई स्टोरेज, और अनलिमिटेड बैंडविड्थ।" / "फ्री एसएसएल, लाइटस्पीड सर्वर, और मैलवेयर स्कैनर।" /
+     "चौबीस घंटे लाइव सपोर्ट।" / "सिर्फ दो सौ रुपये महीना, साल भर का लें तो दो महीने फ्री।" / "आज ही विज़िट करें, पाक वेब होस्टर डॉट कॉम।"
+     ("स्टार्टर लाइट प्लान" at the start of a line came out garbled 3 times (Whisper 0-11%), so the plan name is on screen only.)
+  2. Kinetic typography reel, 20.0 s, no VO, CC0 "High Technologic Beat Explosion" from 42.4 s. Build: templates/kinetic-type-reel.
+  3. Typewriter reel, 20.0 s, no VO, CC0 "Chills" (HoliznaCC0) from 2.51 s. Build: templates/typewriter-reel.
+  Claims used (site-data.md, all from /shared-hosting unless noted): Starter Lite PKR 200 /mo, PKR 2000 / Year (2 Month Free),
+  10 GB NVMe, Unlimited Bandwidth, Free SSL, LiteSpeed Webserver, Realtime Malware Scanner, 24/7 Live Support,
+  "Web Hosting in Pakistan" [/ title], "Cheap web hosting" [/ meta], logo tagline, phone +92 324 3458649, pakwebhoster.com.
+  Left out on purpose (pages disagree): money-back days, uptime %, "20x faster", Flash Sale.

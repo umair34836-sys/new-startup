@@ -347,6 +347,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   (index.php/store/index.php/...): skip URLs with "index.php" twice. Hero images can be stock photos of people, even
   inside .svg files: screenshots for the repo must hide every big image (pakwebhoster/site/tools/shots.js) and be
   checked visually; the Read tool can show a cached old image for a re-written path, so view a new filename.
+- PakWebHoster reels (2026-10-25, measured here): `bash voicestudio.sh start 2>&1 | tail -3; python3 vs_tts.py ...` in one
+  Bash call HANGS: the backend keeps the pipe open, tail never exits, vs_tts never starts (lost 9 min). Start the backend
+  without a pipe. vs_tts default voice: 7 lines took ~10 min; "स्टार्टर लाइट प्लान" at a line start was garbled in 3 takes
+  (seeds 7/21, Devanagari and Latin): keep hard brand/plan names on screen, not in the VO. Takes from different runs differ
+  in pitch (153-207 Hz median): join them with library/tools/vo_join.py (pitch-matched to 172 Hz). Owner chose for this
+  NEW client: watermarked previews first. New templates: kinetic-type-reel, typewriter-reel; GSAP plugins in library/vendor.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

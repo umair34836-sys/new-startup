@@ -22,3 +22,12 @@ v3 (2026-10-24): spec chip/VO "AMD EPYC 9" (client's wording via the owner; skil
 "AMD EPYC" for Budget/Standard India and Premium India/Singapore, "AMD Ryzen" for Premium Dubai, checked 2026-10-24) and
 a new scene `s6b` after the price: "Budget & Standard plans LIMITED" + Discord / website cards. Scene starts live in
 `SCENES`; whoosh/pop/sparkle times are derived from them, so re-timing a scene moves its SFX too.
+
+## build_pakwebhoster.py (PakWebHoster, 2026-10-25)
+Light theme (site --color-four #f0f7fd, green #2a862e, logo navy #1a2f3b; the logo PNG has a white background, so it
+sits on white "logo cards"), 7 scenes = 7 VO lines: hook -> logo + "Web Hosting in Pakistan" -> Starter Lite chips
+(10 GB NVMe, Unlimited bandwidth) -> SSL / LiteSpeed / Malware Scanner chips -> 24/7 Live Support -> PKR 200 / mahina +
+"PKR 2000 / Year, 2 Month FREE" -> end card (URL pill, Call / WhatsApp). TOTAL = VO end + 3.7 s = 30.0 s (owner asked 30 s).
+VO: vs_tts.py default voice; weak lines regenerated (seed 21 / reworded) and the chosen takes joined with
+library/tools/vo_join.py (pitch-matched to 172 Hz, gap 0.55 s). Music: CC0 "Sunglasses" (Loyalty Freak Music) from
+19.6 s at volume 0.16. Render -w 3: 69 s; -16.6 LUFS after loudnorm; watch.py 30.0 real fps.
