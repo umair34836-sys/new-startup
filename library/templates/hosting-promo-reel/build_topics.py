@@ -122,7 +122,7 @@ for k, ((kind, d), (s0, s1), (vs, ve)) in enumerate(zip(spec["scenes"], zip(star
         c += (f'<div class="fill" style="background:url(assets/img/hero-minecraft.jpg) center/cover;"></div>'
               f'<div class="fill" style="background:linear-gradient(to bottom, rgba(7,11,18,0.5), rgba(7,11,18,0.2) 35%, rgba(7,11,18,0.88) 68%, {DARK});"></div>'
               f'<div id="{sid}a" class="c jk sh" style="top:1000px;font-weight:800;font-size:64px;color:#e5e7eb;letter-spacing:4px;">{d["a"]}</div>'
-              f'<div id="{sid}b" class="c anton sh g" style="top:1090px;font-size:190px;">{d["b"]}</div>'
+              f'<div id="{sid}b" class="c anton sh g" style="top:1090px;font-size:{190 if len(d["b"]) <= 9 else 140}px;">{d["b"]}</div>'
               f'<div id="{sid}p" class="c" style="top:1360px;"><span class="pill" style="background:{AMBER};box-shadow:0 0 60px rgba(251,191,36,0.5);">{d["pill"]}</span></div>')
         word_in(f"#{sid}a", 0.05); T.append(f'tl.fromTo("#{sid}b", {{scale:1.15}}, {{scale:1, duration:1.0, ease:"power2.out"}}, 0);')
         pop_in(f"#{sid}p", beat(0.6)); sfx("impact-bass-1", beat(0.6), 0.3, 13)

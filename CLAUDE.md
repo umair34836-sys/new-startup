@@ -247,6 +247,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Owner chose for this tutorial: no blur of the client's demo emails; dheema CC0 music under the VO; Roman captions.
 - OWNER RULE (Oct 25 2026, SkilloraClouds): after the client approves the script, deliver the FINAL video directly (no
   watermarked PREVIEW step for this client).
+- 4 SkilloraClouds topic reels (measured here 2026-10-25, build_topics.py): VoxCPM2 cloned 31 lines in 06:27-07:56 (first
+  line ~13 min incl. model load, then ~3 min each). Same text + same seed gives the same take (two identical LIMITED
+  lines). Seed 21/33 retries fixed 5 of 7 weak lines; "दो सौ पचास" and "हाई पिंग...हार" stayed unclear in 3 seeds, so
+  the number is shown big on screen. A hyperframes check run during VoxCPM2 generation crashed the TTS backend once
+  (it restarted itself): never run check/render while TTS runs. Renders: 4 x ~31 s 1080x1920 took 08:40-08:47 with
+  -w 3; loudness -14.6..-15.5 LUFS, 0 clipped samples.
 
 ## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
