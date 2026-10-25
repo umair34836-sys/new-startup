@@ -140,7 +140,7 @@ it_html = "".join(
     for n, (f, t, _) in enumerate(items))
 it_js = "".join(f'    tl.fromTo("#s5-i{n}", {{ scale: 0, rotation: {[-20, 20, -10][n]} }}, {{ scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2)" }}, {rel(4, f)});\n'
                 for n, (*_, f) in enumerate(items))
-C["s5"] = comp("s5", f"""    <div id="s5-w" style="position:absolute;inset:0;">
+C["s5"] = comp("s5", f"""    <div id="s5-w" style="position:absolute;inset:0;" data-layout-allow-overflow>
       <div class="c" id="s5-t" style="top:330px;"><span class="pill" style="background:{YEL};color:{DARK};font-size:84px;">NAYA AAYA HAI!</span></div>
       {it_html}
     </div>""", enter_exit("#s5-w", d) +
@@ -149,9 +149,9 @@ C["s5"] = comp("s5", f"""    <div id="s5-w" style="position:absolute;inset:0;">
 # S6 Bazuka Platter (hero slide "BAZUKA PLATTER One Platter. Endless Cravings."; item 811423 Rs. 2099)
 d = d_of("s6")
 C["s6"] = comp("s6", f"""    <div id="s6-w" style="position:absolute;inset:0;">
-      <div class="c anton y sh" style="top:290px;font-size:140px;">BAZUKA PLATTER</div>
-      <div class="c pop sh" style="top:450px;font-weight:600;font-size:52px;color:#fff;font-style:italic;">One Platter. Endless Cravings.</div>
-      <img id="s6-p" class="food" src="assets/img/bazuka.png" style="left:40px;top:470px;width:1000px;height:1000px;" alt="Bazuka Platter" data-layout-allow-overflow>
+      <div class="c anton y sh" style="top:290px;font-size:140px;z-index:2;">BAZUKA PLATTER</div>
+      <div class="c pop sh" style="top:450px;font-weight:600;font-size:52px;color:#fff;font-style:italic;z-index:2;">One Platter. Endless Cravings.</div>
+      <img id="s6-p" class="food" src="assets/img/bazuka.png" style="left:40px;top:540px;width:1000px;height:1000px;" alt="Bazuka Platter" data-layout-allow-overflow>
       <div class="stamp" id="s6-s" style="left:650px;top:1020px;width:330px;height:330px;">
         <div style="font-size:44px;line-height:1;">Rs.</div><div style="font-size:86px;line-height:1.05;">2,099</div></div>
     </div>""", enter_exit("#s6-w", d) +
