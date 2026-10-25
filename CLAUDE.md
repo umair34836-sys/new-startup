@@ -353,6 +353,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.
 
+- Client Pizza Base PK home session: session_01G1P3KGwamyc7yXaT4s4W1y (branch client-pizzabasepk, Oct 25 2026).
+  Full browser crawl of https://pizzabasepk.com/ first, then a promotional video with the default free voiceover.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
