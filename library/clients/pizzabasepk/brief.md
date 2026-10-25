@@ -39,7 +39,7 @@ names those URLs give.
 ## Brand
 - Red #D80101 (site buttons), banner deep red ~#980000-#A00000 + yellow ~#F8C000, white. Font Poppins (site CSS).
 - Logo `assets/brand/1768998138-logo--60-.png` (600x600, red/yellow wordmark on white circle).
-- Food photos: `assets/food/` (60 item photos; most PNGs are transparent cut-outs of pizzas/starters, good for
+- Food photos: `assets/food/` (60 item photos; NOT transparent: food on a solid #A50000 red background, measured 2026-10-25, good for
   push-ins over brand-red backgrounds; deal photos are the client's own price posters). Category banners and hero
   slides: `assets/banners/`. `site/images.json` maps every file to its item/category and source URL.
 - Not committed (people in the photo): Nowshera "OPEN NOW" banners (URLs listed in site/images.json).
