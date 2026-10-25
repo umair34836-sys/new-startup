@@ -18,6 +18,16 @@ Home session: this branch `client-mraloo` (opened 2026-10-25).
   player "TheBiswas001", "Rank: OWNER", "Oct 25, 2026". Chat/plugin update messages and "YOU ARE AFK" screens appear
   in the first ~1 min (contact sheet every 6 s).
 
+## Client data for videos (owner, 2026-10-25)
+
+- IP play.aloosmp.fun (resolves to 46.232.234.65, getent 2026-10-25), Bedrock port 19132, Discord
+  discord.gg/e89HSbjd5Y (discord.com API 2026-10-25: guild "ALOO SMP ☀", no expiry, 641 members).
+- The in-game tab list (spawn recording, 50 s) advertises discord.gg/aloosmp, which the Discord API answers
+  "Unknown Invite" (2026-10-25): told the owner; videos use the client's link.
+- Tab list at that moment: "Online: 14", header "ALOO SMP / play.aloosmp.fun".
+- Brand colours sampled from the winter emblem: gold #fcb43c, orange #fc9c24, ice #84ccfc / #cce4fc, navy #0c0c24.
+- Delivered 2026-10-25: YouTube Short v1 (62.6 s), template library/templates/minecraft-smp-short.
+
 ## Not known yet (do not assume)
 
 - Channel/page links, video style, caption language, length, aspect ratio.

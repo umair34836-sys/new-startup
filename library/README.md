@@ -71,6 +71,11 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   writes `compositions/world.html` (village, characters, camera); `sky/rain/grade/titles.html` are the layers;
   `SPEC.md` has every shot. Copy the folder, copy assets (textures, skins, fonts, gsap, song) and edit `build.py`.
 - `kinetic-laptop-type/build.py`: 16:9 kinetic typography inside a CSS laptop (search bar, word-by-word blur reveal, end screen); skills #404, #2560/#2561, #3107. First used for SkilloraClouds, 2026-10-24. See its README.
+- `minecraft-smp-short/build.py`: 9:16 ~62 s Minecraft server promo Short from a client's own VO + gameplay recordings
+  (ALOO SMP, 2026-10-25): word-timed Hinglish captions (Whisper medium words, one gold word, never overlapping groups),
+  shots cut on the music's beat grid and matched to each VO line, 9:16 crop + lanczos + CAS sharpen, blurred-fill for
+  readable chat shots, hook title at 0 s, logo flash/shake reveal, feature checklist chips on the spoken words,
+  24x7/NO WHITELIST stamp, JAVA+BEDROCK cards, end card (logo, IP, port, join, Discord), SFX lanes. See its README.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
 - `brand-kit/`: client branding kit: `brand.json` schema + fake example, `brand_from_logo.py` (palette + WCAG text colours from a logo), `build_brand.py` (logo sting, lower third, contact card with local QR, watermark, CTA, offer badge; 9:16 and 16:9). Intake questionnaire: research/client-intake.md. Skill client-brand-kit.

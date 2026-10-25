@@ -355,6 +355,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
   Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
 
+- Client Mr Aloo (ALOO SMP, Minecraft server) home session: session_01MXn9cJzR1SB9sUWZnsT4n4 (branch client-mraloo, Oct 25 2026).
+  Brief library/clients/mraloo/brief.md; owner rule for this client: zero guesswork, log every decision's source
+  (edit-log-short-v1.md). Short v1 delivered 2026-10-25 from template library/templates/minecraft-smp-short.
+- 9:16 crops of 1080p gameplay are a 1.78x upscale: add `cas=strength=0.5` after the lanczos scale (skill #489;
+  Laplacian variance 39 -> 62 on a test frame, measured 2026-10-25). watch.py "soft" is RELATIVE (sharp_rel < 0.35
+  of the sharpest scene), so a video with crisp text cards flags most footage scenes.
+
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.
 

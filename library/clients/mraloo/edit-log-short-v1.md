@@ -62,3 +62,14 @@ Every decision -> where it came from.
 - "Indian Gamers Ignore This Warning… Until It's Too Late.mp3": a different topic (PC security), not part of this promo.
 - No copyrighted meme clips or sounds; no Vine Boom (memes.md rules 1, 3).
 - No claims the VO does not make (no player counts, no prices).
+
+## QA (measured here 2026-10-25)
+| Round | Found | Fix |
+| --- | --- | --- |
+| v1 render | caption groups "yahan hai" + "custom" overlapped at 17.6 s; level-up (49.3 s) and sub-drop (2.8 s) 6 dB over the VO; owner name tag too close at 23.7 s | group end clamped to next group start (asserted); SFX levels lowered; shop in-point 63.0 -> 63.6 |
+| v1 render (frames 39-62 s) | shot at 49 s opened on a wall in front of the camera | rec 178.0 -> 172.4 |
+| v2 render | tab-list clip 1.03 s for a 1.21 s shot (0.17 s hold); Whisper medium on the mix: 157/157 words, all lines present | previous shot ends at 48.1; clip-length check added |
+| v3 render | watch.py: footage scenes "soft" (9:16 crop = 1.78x upscale) | cas=strength=0.5 after lanczos (skill #489; Laplacian var 39 -> 62 on a test frame) |
+| v4 render (final) | 62.6 s, 1080x1920, 30.0 fps real, 0 frame gaps, 0 black, 0 frozen spans; -16.1 LUFS integrated, 0 clipped samples; only 1 of 250 windows (39.25 s, whoosh + pop in a VO pause) over VO+4 dB; full 1.6 s contact sheet looked at | delivered |
+
+Deliverables: ALOO-SMP-Short-FINAL.mp4 (200 MB, delivery quality) + ALOO-SMP-Short-WhatsApp.mp4 (CRF 23, 63 MB).
