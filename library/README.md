@@ -56,6 +56,8 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 
 ## Templates (`templates/`)
 
+- `typewriter-promo/`: text-only typewriter promo (per-character jittered typing, caret, numpy-mixed key sounds + bell, images that
+  pop in when named). FireCraft SMP typewriter video, 2026-10-25.
 - `screen-tutorial/`: real-site tutorial (cursor + click ripple + click sound on every click, VO-timed speed-fit of the
   recording, step chips, highlight rings). Recorder: tools/screen_recorder.js; VO check: tools/wcheck_lines.py. FireCraft whitelist, 2026-10-24.
 

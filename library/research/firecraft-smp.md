@@ -38,3 +38,19 @@ Sources: [home] https://www.firecraft.fun/ , [guide] https://www.firecraft.fun/b
 - Weapons [features]: Void Blade (netherite sword, Soul Slash), Thunder Axe (netherite axe, Ground Slam), Ancient Pickaxe
   (netherite pickaxe: Tunnel, Vein Mine, Auto Smelt).
 - Join: 3 steps (read rules, submit application of 8 short questions, staff review in 24-48 h) [home].
+
+## Re-check 2026-10-25 (typewriter video)
+Re-read on 2026-10-25: [home] curl of https://www.firecraft.fun/ (text after stripping tags) and [admin] list_announcements +
+get_settings (read-only).
+- [home] still has: "PRIVATE LIFESTEAL SMP — APPLY FREE"; "11 Custom Elemental Powers • 63 Tameable Mobs • 5 Armor Sets";
+  "3 legendary weapons"; "You Start with 10 Hearts"; "Kill a player and steal their heart. Die and lose one.";
+  "0 Hearts = Eliminated"; "Craft Heart Crystals before it's too late."; "Spin the Power Wheel on first login.";
+  "Level them up to 100 and bring up to 3 into battle."; "100% FREE — NO PAYMENT EVER";
+  "Staff reviews within 24–48 hours. Check My Status to see your whitelist result and the server IP."
+- Power icon images: /images/powers/{fire,ice,wind,dark,lightning,trader,rift,warden,wither,dragon,gravity}.jpg (200x200 JPEG).
+- [admin] announcement "⏳ SEASON 2 — 3 DIN BAAKI" (enabled) still says "Sun 25 Oct, 2:00 PM PKT — sab ek saath spawn pe",
+  "Pehla 1 ghanta PvP off", "Doosre hafte se weekly events". Server message still "Maintenance • Season 2 coming soon",
+  website banner "⚔ Season 2 is coming soon — server maintenance pe hai."
+- The whitelist form now has 12 fields (see firecraft-whitelist-flow.md), so the old "8 short questions" note above is out of date.
+- "Season 2 applications are open" (seen on /leaderboard/ in a browser on 2026-10-24) is rendered by JavaScript: plain curl does
+  not contain it.

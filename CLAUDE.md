@@ -244,6 +244,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   at window heights < ~900 CSS px the login modal's x sits under the fixed header (a click opened Leaderboard): reload instead.
   Voice is the clock: build.py speed-fits each recorded span (0.85-3x) to its VO line. Render 62 s in 2m01s (--workers 3).
 
+## Typewriter videos (FireCraft SMP, Oct 25 2026; template library/templates/typewriter-promo)
+- Text-only promo built from verified site text: per-character jittered reveal on the timeline, one caret per line,
+  key sounds mixed into ONE wav with numpy (not hundreds of <audio> clips), bell per card, real power icons from the site.
+  The raw mix came out at -22.2 LUFS: loudnorm the final audio (-17.8 LUFS after). `line_unread` counts per-char spans as words.
+
 ## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
   (price "from ₹20/mo" was on /games, coupon from the top banner), brand colours from the site CSS (most frequent hex),
