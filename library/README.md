@@ -39,6 +39,13 @@ Old shellac sound: noisy, mono. 446 more candidate records: research/data/archiv
 `npx hyperframes media-use resolve --type sfx --intent "<name>" --project . --local-only`. See the
 gotchas in the root `CLAUDE.md` (the riser crests at 3.47 s, the error tone is late and quiet: both re-measured 2026-10-24).
 
+## Meme SFX (`memes/sfx/`, added 2026-10-25)
+
+10 CC0 comedy / meme-style sounds (sad trombone, ba-dum-tss + crickets, cricket chirp, wink sparkle, cartoon blink,
+cartoon fall, cartoon squeak, boing, squeaky toy honk, spring boing), MP3 from StoryCut's free page, each original's
+Freesound page checked as "Creative Commons 0" on 2026-10-25. No credit needed. Proof + lengths/levels:
+`memes/sfx/licence_proof.json`. How/when to use meme SFX and the copyright rules: `research/memes.md`.
+
 ## Characters (`characters/`)
 
 - `host-skin.png`: the owner's own Minecraft skin (64x64 classic: white hoodie with hood, black hair, blue
