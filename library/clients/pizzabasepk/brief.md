@@ -31,6 +31,11 @@ video (`node crawl.js <dir>` then `node crawl_items.js <dir>`; prices/deals chan
 Opening hours (11 AM-2 AM vs FAQ 11 AM-11 PM, and "closed right now" at 5 PM Sunday), card/online payment, delivery
 minutes, dine-in, thin/stuffed crust, delivery areas inside the cities, branch phone numbers other than the main line.
 
+## Images (main-session rule, 2026-10-25)
+Photos are NOT kept in git on main (CLAUDE.md: never commit photos). Re-download the site's food/banner/logo images
+for each job into the scratchpad from the URLs in `site/images.json` (or re-run crawl.js); paths below are the file
+names those URLs give.
+
 ## Brand
 - Red #D80101 (site buttons), banner deep red ~#980000-#A00000 + yellow ~#F8C000, white. Font Poppins (site CSS).
 - Logo `assets/brand/1768998138-logo--60-.png` (600x600, red/yellow wordmark on white circle).
