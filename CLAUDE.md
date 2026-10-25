@@ -341,6 +341,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
   Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
+- Client PakWebHoster (pakwebhoster.com) home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster,
+  Oct 25 2026). Full crawl + brief: library/clients/pakwebhoster/ (site-data.md lists contradictions to ask about).
+- Client-site crawl lessons (PakWebHoster, measured here 2026-10-25): a WHMCS client area's relative links nest forever
+  (index.php/store/index.php/...): skip URLs with "index.php" twice. Hero images can be stock photos of people, even
+  inside .svg files: screenshots for the repo must hide every big image (pakwebhoster/site/tools/shots.js) and be
+  checked visually; the Read tool can show a cached old image for a re-written path, so view a new filename.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

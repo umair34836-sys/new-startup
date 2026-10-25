@@ -179,6 +179,15 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 ## fonts (added)
 
 `fonts/PlusJakartaSans-Variable.ttf` (OFL, weights 200-800): TalkEmber Studio's brand font.
+`fonts/Manrope-Variable.ttf` (+ `OFL-Manrope.txt`, weights 200-800) and `fonts/Ubuntu-Regular.ttf` / `Ubuntu-Bold.ttf`
+(+ `Ubuntu-UFL.txt`, Ubuntu Font Licence 1.0, free to use and embed): PakWebHoster's site fonts (Manrope body/headings,
+Ubuntu theme font; loaded fonts read in Chromium 2026-10-25). From github.com/google/fonts (ofl/manrope, ufl/ubuntu), 2026-10-25.
+
+## clients/
+
+One folder per client: `brief.md` (facts + brand + voice + delivered), `site-data.md` (every fact from a full browser
+crawl, with page + date), `site/` (page text, screenshots, crawl tools), `assets/` (logos/icons from their site).
+`moradosolution/` (branch client-moradosolution), `pakwebhoster/` (pakwebhoster.com, crawl 2026-10-25).
 
 ## research/
 

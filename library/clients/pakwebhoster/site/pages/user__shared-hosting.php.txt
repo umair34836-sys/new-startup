@@ -1,0 +1,188 @@
+URL: https://user.pakwebhoster.com/shared-hosting.php
+FINAL_URL: https://user.pakwebhoster.com/shared-hosting.php
+HTTP: 200
+TITLE: Shared Web Hosting Pakistan | Affordable cPanel Hosting | PAK WEB HOSTER
+FETCHED: 2026-10-25T05:05:34.188Z (Playwright Chromium, rendered innerText)
+
+ Hosting Flash Sale: Starting at Rs 200/mo for a limited time
+ Account
+ English
+Login
+ Home
+ Domain
+ Services
+ Support
+ Billing
+FASTER WEBSITE
+Shared Hosting - At it's Simplest Best
+Flexible, Easy to Use Control Panel
+Unmetered Bandwidth
+99% Uptime Guarantee
+30-Day Money-Back Guarantee
+ View Plan
+Select Your Plan
+Lightning Fast Website
+
+Just what you need for a Basic Web Presence
+
+Lightning Fast Website
+
+Our web application accelerator, powered by Varnish Cache, ensures the maximum performance of your website at all times!
+
+Email included
+
+Advanced email management features in cPanel allow you manage your emails, mailing lists and more without any hassles.
+
+cPanel for Management
+
+cPanel, an intuitive and powerful control panel, is available on all plans which makes your hosting package management a breeze!
+
+Under the hood
+State-of-the-Art Servers
+Dual Intel Xeon Processor E5-2630
+64 GB RAM
+256 GB SSD in RAID 1
+Octa Core with 2.40 GHz
+2 TB SATA in RAID 1
+Program in Any Language
+PHP 7.3/7.4, Perl, Python, RoR, GD, cURL, CGI, mcrypt3
+Apache 2.4x
+MySQL 5
+Ruby On Rails
+Zend Optimizer, Zend Engine, ionCube Loader
+Top-Notch Security
+Anti Spam & Virus Protection
+Password Protect Directories
+Secure FTP Access
+IP Blocking
+phpMyAdmin Access
+Hotlink & Leech Protection
+Cron Jobs for Scheduled Tasks
+Customizable Error Page
+Website Statistics with AWstats
+CONTACT US
+Any query ? let's talk
+
+Any questions or topics you'd like to discuss? Feel free to share your thoughts, and let's engage in a conversation. I'm here to help and chat with you.
+
+Support Center
+Email Us
+example@gmail.com
+Call
++91 123 456 7890
+Our Location
+Open Google Maps
+Your favorite hosting app is one click away.
+Read More 
+Hear from happy customers
+Aaron Sweeney
+Co-Founder
+
+ Great support, like i have never seen before. Thanks to the support team, they are very helpfull. This company provide customers great solution, that makes them best. 
+
+Sara Wilsson
+Designer
+
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perferendis, commodi veritatis unde magnam magni? Eaque, reprehenderit dignissimos? 
+
+Simon Deubele
+Team Member
+
+ I chose you because you create added value over the price offered by other hosting companies. it's been a great experience for me. I'm leaving happy. Thank you. 
+
+Frequntly Asked Question
+What is Shared Web hosting ?
+In Shared Web Hosting, multiple clients are hosted on a single server i.e. the clients share the server's resources. This helps reduce the cost, since the cost of the server and its resources are spread over all the clients/packages hosted on the server. Shared Hosting is perfect for personal websites, small and mid-sized businesses that do not require all the resources of a server.
+Can I host multiple Web sites within one Shared Hosting plan ?
+Is there a Money Back Guarantee ?
+Is Email hosting included in my package ?
+Can I upgrade to a higher plan ?
+Is my data safe? Do you take backups ?
+Do you include protection from viruses ?
+Can I divide my Shared Hosting package and resell it ?
+Do you offer SSH access ?
+Who do I get in touch with if I need help ?
+24 x 7 Customer Support
+99% Uptime Guarantee
+100+ Running Promos
+30-day Money-back guarantee
+
+At PAK WEB HOSTER , we aim at fulfilling all the business needs with perfectly crafted hosting plans and endless customer service day in, day out! We promise to deliver above and beyond the expectations of our clients!
+
+House 168/170, Jaipur, Rajasthan India
+info@pakwebhoster.com
+Domains
+My Domains
+Renew Domains
+Register a Domain
+Transfer Your Domain
+Domain Promos
+Useful Links
+Linux Hosting
+WordPress Hosting
+Linux Reseller Hosting
+VPS Server
+Dedicated Servers
+My Services
+View Available Addons
+Support
+Open Ticket
+Tickets
+Announcements
+Knowledgebase
+Network Status
+Contact Us
+Legal Agreement
+Privacy Policy
+Contact Us
+Hotline 24/7 :
++92 324 345 8649
+Email Address :
+info@pakwebhoster.com
+Security By :
+Copyright © 2026 PAK WEB HOSTER. All Rights Reserved.
+
+--- hidden text (accordions/tabs/dropdowns opened) ---
+Register
+Fotgot Password
+العربية
+Azerbaijani
+Català
+中文
+Hrvatski
+Čeština
+Dansk
+Nederlands
+Estonian
+Persian
+Français
+Deutsch
+עברית
+Magyar
+Italiano
+Macedonian
+Norwegian
+Português
+Português
+Română
+Русский
+Español
+Svenska
+Türkçe
+Українська
+Register A Domain
+Transfer Domain To Us
+Order New Services
+My Invoices
+My Quotes
+Mass Payment
+Affiliates
+Yes! Our Pro and Business shared hosting plans allow you to host more than one Website, by adding secondary domains through your hosting control panel i.e. cPanel.
+Yes, we offer a 100% Risk Free, 30 day Money Back Guarantee.
+Yes, all our Hosting packages come with Unlimited Email Hosting.
+Yes, you can easily upgrade to one of our higher plans at any time.
+Yes, your data is a 100% secure and is backed-up every 5 days.
+Yes, all our servers are protected by Clam AV.
+While a Shared Hosting package cannot be used for this purpose, you can easily resell custom packages with our Reseller Hosting. To view our Reseller Hosting plans, click here
+Yes, we provide SSH access to your domain. Because this is a shared environment, you will not get root access. However, you will be able to achieve most of your requirements by having the rights to access only the files relevant to your domain.
+Our Support team is always at hand to assist you. You can take a look at all our contact details here

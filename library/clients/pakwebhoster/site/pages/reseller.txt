@@ -1,0 +1,235 @@
+URL: https://pakwebhoster.com/reseller
+FINAL_URL: https://pakwebhoster.com/reseller
+HTTP: 200
+TITLE: Reseller Hosting Pakistan with Free WHMCS | PAK WEB HOSTER
+FETCHED: 2026-10-25T05:02:54.507Z (Playwright Chromium, rendered innerText)
+
+Login
+ Home
+ Domain
+ Hosting
+ Email & Security
+ Tools
+ More
+RESELLER
+Powerful Linux Reseller Hosting
+
+Get all the raw performance of the server for your resource-intensive websites & applications
+
+State-of-the-Art Hosting Infrastructure
+99.9% Uptime Guarantee
+30-Day Money-Back Guarantee
+ View Plan
+Get your business online today
+
+99% uptime for rock-solid performance
+
+Reseller Lite
+Rs 800.00 /mo
+25 Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+70 GB NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+Purchase Plan
+Reseller Basic
+Rs 2000.00 /mo
+60 Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+150 GB NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+Purchase Plan
+Reseller Medium
+Rs 3500.00 /mo
+100 Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+500 GB NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+Purchase Plan
+Reseller Enterprise
+Rs 5000.00 /mo
+Unlimited Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+Unlimited NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+Purchase Plan
+Powerful Linux Reseller Hosting Features
+Powerful Hosting Control Panel - WHM
+Complete Administrative Control
+Monitor Server Status around the clock
+Create Hosting Packages - Limit Disk Space, Bandwidth, Email, Databases etc.
+All in one Billing & Client Management Solution - WHMCS
+Easily manage all Billing, Client Management and Support functions
+Integrated Domain Management
+Customizable, Simple and Secure
+Easy to Use Customer Control Panel - cPanel
+World's Leading Customer Control Panel
+Manage Web Pages, View Website Statistics, Create Email Accounts etc.
+Comes with Softaculous Script Installer - Install Blogs, Shopping Carts etc.
+Reliable Support
+99.9% Uptime Guarantee
+30 Day Money Back Guarantee
+24x7x365 Support
+Robust Infrastructure
+State-of-the-art Datacenters
+Dual Quad-Core Xeon powered Servers
+Redundant Scalable Servers
+Advanced Email Hosting Included
+Unlimited POP3 Email Accounts with SMTP
+IMAP Support
+Easy to use Webmail Interface
+Hosting Features & Addons
+Unlimited Sub-Domains
+Unlimited Add-On Domains
+Unlimited Databases
+Private SSL Available
+Add-on Dedicated IP
+Your favorite hosting app is one click away.
+
+Install a Shopping Cart, Photo Gallery, a Blog or any other module in just 1 click 50+ Plugins - Powered by Softaculous
+
+Read More 
+Server Specifications
+Dual E5530 2.40GHz Xeon quad core hyperthreaded processors
+24 GB RAM
+250 GB RAID 1 (mirrored) OS drive
+1 TB RAID 1 (mirrored) customer data drive cached
+Battery backed, RAID controller for all drives
+Redundant Power, HVAC & Fire-Detection Systems
+ Server Specifications
+ Programming Support
+ WHM (Admin Control Panel) Features
+ cPanel (Client Control Panel) Features
+ Email & Domain Name Features
+Hear from happy customers
+Aaron Sweeney
+Co-Founder
+
+ Great support, like i have never seen before. Thanks to the support team, they are very helpfull. This company provide customers great solution, that makes them best. 
+
+Sara Wilsson
+Designer
+
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perferendis, commodi veritatis unde magnam magni? Eaque, reprehenderit dignissimos? 
+
+Simon Deubele
+Team Member
+
+ I chose you because you create added value over the price offered by other hosting companies. it's been a great experience for me. I'm leaving happy. Thank you. 
+
+24 x 7 Customer Support
+99% Uptime Guarantee
+10+ Running Promos
+14-day Money-back guarantee
+
+At PAK WEB HOSTER , we aim at fulfilling all the business needs with perfectly crafted hosting plans and endless customer service day in, day out! We promise to deliver above and beyond the expectations of our clients!
+
+Pakistan,punajab,city bahawalnagar,area farooqbad st 18
+info@pakwebhoster.com
+Domains
+Register Domain Name
+View Domain Pricing
+Whois Lookup
+Name Suggestion Tool
+Hosting
+Shared Hosting
+WordPress Hosting
+Business Hosting
+Reseller Hosting
+Useful Links
+Terms & Conditions
+Privacy Policy
+Refund Policy
+Affilate Program
+View Knowledge Base
+Contact Support
+Career
+Contact Us
+Hotline 24/7:
++923243458649
+Email Address:
+info@pakwebhoster.com
+Security By :
+Copyright © 2026 PAK WEB HOSTER. All Rights Reserved.
+
+--- after clicking [Programming Support] ---
+PHP 7.3/7.4, Perl, Python, RoR, GD, cURL, CGI, mcrypt3
+Apache 2.4x
+MySQL 5
+Zend Optimizer, Zend Engine, ionCube Loader
+
+--- after clicking [WHM (Admin Control Panel) Features] ---
+Create Hosting Plans
+Set up and Modify Customer Accounts
+Receive Server Downtime Alerts
+Install 250+ applications and programming language modules
+
+--- after clicking [cPanel (Client Control Panel) Features] ---
+Upload and Manage Web Pages
+View Website Statistics with AWstats
+Brandable with your Company's Logo
+Install Over 250 Scripts with the Softaculous Script Library
+
+--- after clicking [Email & Domain Name Features] ---
+Outlook, Thunderbird and Windows Mail compatible
+Blackberry, iPhone, Android and PDA support
+Feature packed Webmail
+Advance Spam/Virus Protection
+Mail Forwards, Email Aliases, Auto Responders
+Unlimited Mailing Lists, Catch All Accounts, Mail Spam Filters
+Parked Domains
+Free DNS Management
+Domain Forwarding, Path Forwarding, URL Masking
+
+--- hidden text (accordions/tabs/dropdowns opened) ---
+Register A Domain
+Email (Coming Soon)
+Security
+Sitelock
+Codeguard Backup
+Useful Extension
+Whatsapp Marketing
+Term & Condition
