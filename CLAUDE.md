@@ -245,6 +245,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   to its own file (-ss/-t, setpts for 2x), concat -c copy, then one pass for `ass=` captions + audio (worked, 147 s).
 - `pkill -f "<words>"` also kills the Bash shell whose own command line contains those words (exit 144): use the PID.
 - Owner chose for this tutorial: no blur of the client's demo emails; dheema CC0 music under the VO; Roman captions.
+- OWNER RULE (Oct 25 2026, SkilloraClouds): after the client approves the script, deliver the FINAL video directly (no
+  watermarked PREVIEW step for this client).
 
 ## Website/hosting promo reels (SkilloraClouds, Oct 24 2026; template library/templates/hosting-promo-reel)
 - Owner flow that worked: capture the site (web_capture.py: homepage + pricing pages), quote ONLY what the pages say
