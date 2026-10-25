@@ -314,7 +314,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 ## Sub-sessions (Oct 24 2026)
 - ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
-  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution client session.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo client sessions.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -355,6 +355,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - Client Pizza Base PK home session: session_01G1P3KGwamyc7yXaT4s4W1y (branch client-pizzabasepk, Oct 25 2026).
   Full browser crawl of https://pizzabasepk.com/ first, then a promotional video with the default free voiceover.
+
+- Client Mr Aloo home session: session_01MXn9cJzR1SB9sUWZnsT4n4 (branch client-mraloo, Oct 25 2026). OWNER RULE for this client:
+  zero guesswork (not even 1%), every edit decision from repo skills/learnings with an edit log, must NOT look AI-edited,
+  memes + GFX + SFX wherever the situation calls for them (skill-based). Repo has no meme library yet: research ->
+  library/research/memes.md, licence-clean meme assets -> library/memes/ (no copyrighted film/TV clips without asking the owner).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
