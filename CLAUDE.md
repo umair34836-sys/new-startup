@@ -275,6 +275,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - ffmpeg OOM (exit 137) on 9 `trim` branches of one 1440x810 60 fps input in one filter graph: render each segment
   to its own file (-ss/-t, setpts for 2x), concat -c copy, then one pass for `ass=` captions + audio (worked, 147 s).
 - `pkill -f "<words>"` also kills the Bash shell whose own command line contains those words (exit 144): use the PID.
+- Same trap for waiting: `while pgrep -f transcribe.py; do sleep; done` never ends, because pgrep matches the waiting
+  shell's own command line (Mr Aloo session, 2026-10-25). Wait on the PID (`while kill -0 $PID`) or on the output file.
+- Whisper MEDIUM on this box (measured 2026-10-25, language=hi, condition_on_previous_text=False, beam 5, word timestamps):
+  load 37 s; 100.4 s VO -> 520 s, 279.7 s VO -> 1335 s (~5x audio length). Same VO with small (listen.py default) stopped
+  transcribing after 72 s of a 100 s VO and garbled words; medium got all 13 lines incl. repeated retakes.
 - Owner chose for this tutorial: no blur of the client's demo emails; dheema CC0 music under the VO; Roman captions.
 - OWNER RULE (Oct 25 2026, SkilloraClouds): after the client approves the script, deliver the FINAL video directly (no
   watermarked PREVIEW step for this client).
