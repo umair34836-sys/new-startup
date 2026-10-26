@@ -56,6 +56,8 @@ heavy() {
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
   # TikTok / TikTok Lite links: yt-dlp's TikTok extractor needs curl_cffi for browser impersonation (research/tiktok-access.md)
   "$T/venv/bin/python" -c "import curl_cffi" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q curl_cffi
+  # Google Drive folder downloads (owner's music Drive folder, library/music/owner-drive/README.md)
+  "$T/venv/bin/python" -c "import gdown" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q gdown
   # VoiceStudio (debpalash/VoiceStudio, local ElevenLabs alternative): own uv venv with CPU torch; backend on :3900
   # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).
   [ -d "$T/VoiceStudio" ] || git clone -q --depth 1 https://github.com/debpalash/VoiceStudio.git "$T/VoiceStudio"

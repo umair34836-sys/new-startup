@@ -90,6 +90,10 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 
 - `baarish-ki-pehli-shaam.txt`: 1-minute Hindi love story (rain, a tea stall, first meeting), ACE-Step section tags.
 
+## Emoji (`emoji/noto/`)
+
+21 Noto Emoji 512 px PNGs (Apache-2.0, no on-screen credit needed). Upstream match is md5-checked; see `emoji/noto/README.md`.
+
 ## Fonts (`fonts/`)
 
 SIL OFL fonts (licences beside them; audit 2026-10-24: every .ttf's name table says "licensed under the SIL Open Font
@@ -101,6 +105,7 @@ License" and every font family has an OFL .txt here). Load with `@font-face { sr
   `Gulzar-Regular.ttf` (Urdu only: no Pashto letters), `NotoNaskhArabic-Variable.ttf`, `NotoSansArabic-Variable.ttf`,
   `Vazirmatn-Variable.ttf`, `NotoSansDevanagari-Variable.ttf`, `Mukta-Regular/Bold.ttf` (Hindi). OFL licences beside them.
 - `Anton-Regular.ttf` (+ `Anton-OFL.txt`): tall condensed display font for punchy titles ("BOSS", "PEHCHAAN").
+- `TikTokSans-Variable.ttf` (+ `TikTokSans-OFL.txt`, OFL 1.1, Copyright 2024 TikTok Inc., github.com/tiktok/TikTokSans): variable font with axes opsz 12-36, wdth 75-150, wght 300-900, slnt -6-0 (fontTools, 2026-10-26). From the owner's Drive folder, 2026-10-26.
 - `Poppins-SemiBold/Bold/ExtraBold.ttf` (+ `Poppins-OFL.txt`, from github.com/google/fonts ofl/poppins, 2026-10-25): Pizza Base PK site font (computed CSS).
 - `Kalam-Bold.ttf` (+ `OFL-Kalam.txt`) and `RozhaOne-Regular.ttf` (+ `OFL-RozhaOne.txt`): also present (found in the
   2026-10-24 audit; not described before).
