@@ -236,7 +236,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
    soft flash, seamless freeze.
 6. Captions: per-word blur-in, 0.12 s stagger, over a bottom gradient; one gold accent word per line.
 7. Overlays: `floating_hearts.py`, light leak block, bokeh. Music from `library/music`.
-8. Deliver full quality plus a WhatsApp copy: `ffmpeg -i in.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart out.mp4`.
+8. (OWNER RULE 2026-10-26, Mr Aloo session: "next time se whatsapp copy mat dena" -> deliver ONLY the full-quality file,
+   no WhatsApp copy, unless the owner asks for one.) Old step: deliver full quality plus a WhatsApp copy: `ffmpeg -i in.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart out.mp4`.
 
 ## Client phone-video edits (Oct 2026, "Boss mode" reel; template library/templates/phone-clip-reel)
 - WhatsApp clips can report r_frame_rate 28.4 while really being ~12 fps (134 frames in 11 s). Check frame pts
