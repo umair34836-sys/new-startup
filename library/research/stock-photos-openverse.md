@@ -55,3 +55,28 @@ Measured here on 2026-10-26 (PC-security explainer for Indian gamers, 16:9). Pho
 - No CC0/PD photo found of an email inbox on a screen or of a phone showing a notification. The only email match,
   "Scam-phishing-fraud-email-attack..." (Mohamed Hassan, CC0 per Openverse, https://commons.wikimedia.org/w/index.php?curid=149797851),
   is a flat illustration, not a photo.
+
+## Minecraft images (CC0/PDM via Openverse, checked 2026-10-26)
+
+Measured here 2026-10-26: anonymous Openverse API caps `page_size` at 20 (50 returned 0 results) and returns nothing
+after page 4 (80 results) for "minecraft" (result_count 240). Direct Flickr downloads answered "Rate limited - CIDR
+range blocked" and upload.wikimedia.org answered HTTP 429; `https://api.openverse.org/v1/images/<id>/thumb/?full_size=true&compressed=false`
+returned the Flickr images (1024 px). Queries: minecraft, + creeper/tnt/screenshot/shader/mod/server/gaming/player/
+computer/lava/night/zombie/diamond/skeleton/house/death -> 145 unique results, most are LEGO, toys, 3D prints or OKSparks
+lab photos. Each kept image was looked at.
+
+| Use | Openverse id | Creator | Licence | Landing page |
+|---|---|---|---|---|
+| gamer at PC (face cropped out, 600 px) | d6da1ed1 | OpenDataInstitute | CC0 1.0 | https://www.flickr.com/photos/93591348@N03/26933655085 |
+| landscape (shader look) | 32183762 | vahid.kazemi | PDM 1.0 | https://www.flickr.com/photos/32754076@N08/6828971230 |
+| glowing shader scene | 13d8aeaf | vahid.kazemi | PDM 1.0 | https://www.flickr.com/photos/32754076@N08/6828971318 |
+| night scene | 1f8df529 | alim75 | PDM 1.0 | https://www.flickr.com/photos/187087518@N05/51309473504 |
+| zombie (toy figure) | 3b43bccb | dankeck | CC0 1.0 | https://www.flickr.com/photos/140641142@N05/33494119855 |
+| lava pool (Pocket Edition UI) | 7ca8c188 | fire destroyer | PDM 1.0 | https://www.flickr.com/photos/187143678@N05/49586606382 |
+| server players with heart tags | 7bb10a76 | derexXD | PDM 1.0 | https://www.flickr.com/photos/203772916@N05/54907365661 |
+| server city under construction | 581dce3d | derexXD | PDM 1.0 | https://www.flickr.com/photos/203772916@N05/54907365616 |
+
+Not found as clean CC0/PDM Minecraft images: creeper (only a LEGO set photo with (c) text + logo, and Thingiverse
+renders), TNT, death screen, diamond (only a 768 px diamond-ore lamp toy, c30e2bd6). Wikimedia CC0 items (e.g.
+35d67e92 "MINECRAFT" 3840x2160, 9f310541 Minecraft Dungeons arcade) were not downloadable (429) and not looked at.
+CC0/PDM is the uploader's claim; the game art is Mojang's (Mojang usage terms not checked: unverified).
