@@ -118,6 +118,17 @@ HyperFrames scenes. They load GSAP from `assets/vendor/gsap-3.14.2.min.js` (copy
   `leak` / `leak-root` / `leak-` classes so ids stay unique.
 - `flash-warm.html`: a 0.65 s soft warm-white flash for a cut (host `data-duration="0.7"`, start 0.2 s before the cut).
 
+## Emoji + line icons (`elements/`, added 2026-10-26)
+
+Licence-clean pack for explainer/faceless videos (PC security for gamers): 41 Microsoft Fluent 3D emoji (MIT, 256 px PNG),
+43 Google Noto emoji (Apache-2.0, 512 px PNG) + India flag (public domain, flat PNG + waved SVG), 36 Lucide (ISC) and
+4 Tabler (MIT) line-icon SVGs. Concepts: warning, siren, skull, bug, virus, lock/unlock, key, shield, laptop, desktop,
+fan/wind, mail, money, coin, chart down, controller, joystick, download, package/folder/zip, link, speech, robot,
+thinking/scream/exploding faces, check/cross, no entry/prohibited, eyes, red flag, hourglass, detective/magnifier,
+globe, fire, thumbs up, India flag. Concept table: `elements/README.md`; per-file proof (pinned source URL, licence
+line, date, sha256): `elements/licence_proof.json`; licence texts: `elements/licences/`. No on-screen credit needed;
+no Twemoji/OpenMoji, no brand logos. Notes: `research/emoji-icon-sets.md`.
+
 ## Stock b-roll, SFX and LUTs (specialist C, merged 2026-10-24)
 
 No-credit only; every entry's `licence_proof` (URL, date, quoted licence text) is in each folder's `index.json`.
@@ -198,7 +209,7 @@ Facts gathered by tools and web research, one topic per file (source + date), so
 `firecraft-smp.md` (server facts for promos), `firecraft-whitelist-flow.md` (real whitelist steps + exact field labels, 2026-10-24), `tools-landscape.md` (open-source tools and star counts),
 `video-editing.md` (editing techniques), `pk-reels-trends.md` + `pk-reel-recipes.md` (Pakistani reels styles, 16 recipes), `desi-vocal-sources.md`, `perception-tools.md` + `cpu-speed.md` (specialist A: what listen/watch measure; CPU benchmarks), `editing/` (decision guide for 29 video types + 560 cited editing skills), `talkember-studio.md` (the owner's website, for promos),
 `free-music-sources.md` (no-credit music sources), `hinglish-tts.md` and `voicestudio.md` (voice models),
-`network-allowlist.md` (domains), `urdu-captions.md`, `client-intake.md`, `audit-2026-10-24-part1.md` (claim audit), `tiktok-access.md`, `artemis.md` (google/artemis Android phone agent: installed in /home/user/tools/artemis, needs a phone + API key).
+`network-allowlist.md` (domains), `urdu-captions.md`, `client-intake.md`, `audit-2026-10-24-part1.md` (claim audit), `tiktok-access.md`, `emoji-icon-sets.md` (Fluent/Noto/Lucide/Tabler licences + layout, 2026-10-26), `artemis.md` (google/artemis Android phone agent: installed in /home/user/tools/artemis, needs a phone + API key).
 
 ## templates/website-promo
 
