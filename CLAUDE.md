@@ -136,6 +136,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Check before render, then `snapshot --at ...` and look at the frames. Layout warnings for decorative
   overflow are fixed with `data-layout-allow-overflow`; stacked text effects with `data-layout-allow-occlusion`.
 - The first frame is the thumbnail: put a title or key image on screen at 0 s.
+- GSAP yoyo shakes: `fromTo(... {x: -16} -> {x: 0}, repeat: 3, yoyo: true)` ENDS ON THE FROM values (an even number of
+  passes plays backwards last), so the element stays offset/skewed; use an EVEN repeat (4) to end at rest (seen in
+  snapshots 2026-10-26, Mr Aloo explainer: a warning dialog stayed skewed after its glitch shake).
+- Anton has no "≠" glyph: it renders as "=" (snapshot 2026-10-26: "DELAY ≠ SAFE" showed "DELAY = SAFE", the opposite
+  meaning). Draw "=" plus a rotated red bar, or use a font that has U+2260, and look at the frame.
 - Light text on a bright wall fails contrast: use a deep colour (#6e0c20) with a light glow, or put
   captions over the darker lower part of the frame with a bottom gradient veil.
 
