@@ -23,6 +23,10 @@ ap.add_argument("--y", type=float, default=None, help="feet y in px (default: 80
 ap.add_argument("--turn", type=float, default=-22)
 ap.add_argument("--tilt", type=float, default=-6, help="camera tilt in degrees (negative looks slightly down)")
 ap.add_argument("--moves", default='[[0,"idle"]]')
+ap.add_argument("--beats", default=None, help='JSON [[t, strength 0-1], ...] speech onsets (e.g. word starts): "talk" nods on these '
+                "instead of every 0.5 s, so the head moves with the voice")
+ap.add_argument("--path", default=None, help='JSON [[t, x, y, scale, flip, dur], ...]: move/resize the character over time '
+                "(x/y = feet px, scale = multiplier, flip = 1 faces the other way, dur = tween seconds; first entry is the start)")
 # (name, uv origin of the base layer, uv origin of the overlay, size w,h,d, box centre, pivot, overlay grow), skin px, y up.
 PARTS = [
     ("head", (0, 0), (32, 0), (8, 8, 8), (0, 28, 0), (0, 24, 0), 0.5),
@@ -80,8 +84,9 @@ def rig_html(P, S, indent="      "):
     return f'{indent}<div id="{P}-rig" class="{P}-rig">\n' + "\n".join(parts) + f"\n{indent}</div>"
 
 
-def pose_js(P, S, moves, duration, turn=0.0):
-    """GSAP lines (for a timeline named tl) that play keyed poses: [[t, "idle"|"wave"|"talk"|"walk"|"run"|"point"|"hold"|"spin"], ...]."""
+def pose_js(P, S, moves, duration, turn=0.0, beats=None):
+    """GSAP lines (for a timeline named tl) that play keyed poses: [[t, "idle"|"wave"|"talk"|"walk"|"run"|"point"|"hold"|"spin"|
+    "shrug"|"think"|"shock"|"no"|"nod"], ...]. beats = [[t, strength], ...] speech onsets that "talk" nods on."""
     js = [f'    tl.set("#{P}-rig", {{ rotationY: {turn}, y: 0 }}, 0);',
           f'    tl.set(["#{P}-head", "#{P}-body", "#{P}-rleg", "#{P}-lleg"], {{ rotationX: 0, rotationY: 0, rotationZ: 0 }}, 0);',
           f'    tl.set("#{P}-rarm", {{ rotationX: 0, rotationZ: 3 }}, 0);',
@@ -95,7 +100,9 @@ def pose_js(P, S, moves, duration, turn=0.0):
     REST = {"rarm": {"rotationX": 0, "rotationZ": 3}, "larm": {"rotationX": 0, "rotationZ": -3},
             "rleg": {"rotationX": 0}, "lleg": {"rotationX": 0}, "head": {"rotationX": 0, "rotationY": 0}}
     OWN = {"idle": {"rarm", "larm"}, "wave": {"rarm", "head"}, "talk": {"head", "larm"}, "hold": {"rarm"},
-           "walk": {"rarm", "larm", "rleg", "lleg"}, "run": {"rarm", "larm", "rleg", "lleg"}, "point": {"rarm"}, "spin": set()}
+           "walk": {"rarm", "larm", "rleg", "lleg"}, "run": {"rarm", "larm", "rleg", "lleg"}, "point": {"rarm"}, "spin": set(),
+           "shrug": {"rarm", "larm", "head"}, "think": {"rarm", "head"}, "shock": {"rarm", "larm", "head"},
+           "no": {"head", "rarm"}, "nod": {"head", "larm"}}
     for (t0, pose), (t1, _) in zip(segs, segs[1:]):
         span = t1 - t0
         if span <= 0:
@@ -125,10 +132,18 @@ def pose_js(P, S, moves, duration, turn=0.0):
             tw("head", {"rotationZ": -6}, up, t0)
             tw("head", {"rotationZ": 0}, up, t1 - up)
         elif pose == "talk":
-            n = max(1, int(span / 0.5))
-            for k in range(n):
-                s = t0 + k * span / n
-                tw("head", {"rotationX": -7 if k % 2 == 0 else 3, "rotationY": 8 if k % 3 == 0 else -6}, span / n, s)
+            bt = [(float(b), float(v)) for b, v in (beats or []) if t0 <= float(b) < t1 - 0.08]
+            if bt:   # one nod per spoken onset: dip on the word, recover before the next
+                for k, (b, v) in enumerate(bt):
+                    nxt = bt[k + 1][0] if k + 1 < len(bt) else t1
+                    d = max(0.06, min(0.14, (nxt - b) / 2))
+                    tw("head", {"rotationX": -4 - 8 * v, "rotationY": (6 if k % 2 == 0 else -6) * (0.5 + v)}, d, b, "power2.out")
+                    tw("head", {"rotationX": 2, "rotationY": 0}, max(0.06, min(0.3, nxt - b - d)), b + d)
+            else:
+                n = max(1, int(span / 0.5))
+                for k in range(n):
+                    s = t0 + k * span / n
+                    tw("head", {"rotationX": -7 if k % 2 == 0 else 3, "rotationY": 8 if k % 3 == 0 else -6}, span / n, s)
             e = min(0.4, span / 4)
             tw("larm", {"rotationX": -40, "rotationZ": -12}, e, t0, "back.out(1.4)")
             tw("larm", {"rotationX": -25}, max(0.05, span - 2 * e), t0 + e)
@@ -156,6 +171,41 @@ def pose_js(P, S, moves, duration, turn=0.0):
             tw("rarm", {"rotationX": -55, "rotationZ": -10}, e, t0, "power2.out")
             tw("rarm", {"rotationX": -50}, max(0.05, span - 2 * e), t0 + e)
             tw("rarm", {"rotationX": 0, "rotationZ": 3}, e, t1 - e)
+        elif pose == "shrug":   # both arms out, head tilt: a question ("kya sochte hain?")
+            e = min(0.3, span / 3)
+            tw("rarm", {"rotationZ": 55, "rotationX": -20}, e, t0, "back.out(1.6)")
+            tw("larm", {"rotationZ": -55, "rotationX": -20}, e, t0, "back.out(1.6)")
+            tw("head", {"rotationZ": 10}, e, t0)
+            for part, props in (("rarm", REST["rarm"]), ("larm", REST["larm"]), ("head", {"rotationZ": 0})):
+                tw(part, props, e, t1 - e)
+        elif pose == "think":   # hand to chin, head tilted up
+            e = min(0.35, span / 3)
+            tw("rarm", {"rotationX": -120, "rotationZ": -35}, e, t0, "power2.out")
+            tw("head", {"rotationX": 8, "rotationZ": 6}, e, t0)
+            tw("rarm", REST["rarm"], e, t1 - e)
+            tw("head", {"rotationX": 0, "rotationZ": 0}, e, t1 - e)
+        elif pose == "shock":   # both hands up to the head, small jump back
+            e = min(0.2, span / 3)
+            tw("rarm", {"rotationZ": 150, "rotationX": -30}, e, t0, "back.out(2)")
+            tw("larm", {"rotationZ": -150, "rotationX": -30}, e, t0, "back.out(2)")
+            tw("head", {"rotationX": 10}, e, t0)
+            tw("rig", {"y": -0.8 * S}, e, t0, "power2.out")
+            tw("rig", {"y": 0}, e, t0 + e, "power2.in")
+            for part, props in (("rarm", REST["rarm"]), ("larm", REST["larm"]), ("head", {"rotationX": 0})):
+                tw(part, props, e, t1 - e)
+        elif pose == "no":   # head shake + flat hand: "bilkul nahi"
+            e = min(0.3, span / 3)
+            tw("rarm", {"rotationX": -70, "rotationZ": 30}, e, t0, "power2.out")
+            n = max(2, int((span - 2 * e) / 0.22))
+            for k in range(n):
+                tw("head", {"rotationY": 14 if k % 2 == 0 else -14}, 0.11, t0 + e + k * 0.22)
+                tw("head", {"rotationY": 0}, 0.11, t0 + e + k * 0.22 + 0.11)
+            tw("rarm", REST["rarm"], e, t1 - e)
+        elif pose == "nod":   # slow yes nods: agreement / "safe hai bro"
+            n = max(1, int(span / 0.45))
+            for k in range(n):
+                tw("head", {"rotationX": -12}, 0.2, t0 + k * span / n)
+                tw("head", {"rotationX": 2}, 0.2, t0 + k * span / n + 0.2)
         elif pose == "spin":
             js.append(f'    tl.fromTo("#{P}-rig", {{ rotationY: {turn} }}, {{ rotationY: {turn + 360}, duration: {span:.3f}, ease: "power1.inOut" }}, {t0:.3f});')
             js.append(f'    tl.set("#{P}-rig", {{ rotationY: {turn} }}, {t1:.3f});')
@@ -167,7 +217,16 @@ def main():
     P, S = a.id, a.scale
     X = a.width / 2 if a.x is None else a.x
     Y = a.height * 0.8 if a.y is None else a.y
-    js = pose_js(P, S, json.loads(a.moves), a.duration, a.turn)
+    js = pose_js(P, S, json.loads(a.moves), a.duration, a.turn, json.loads(a.beats) if a.beats else None)
+    path = json.loads(a.path) if a.path else []
+    MOVE0 = ""
+    if path:   # the stage itself moves: x/y in px from the initial feet point, scale and facing flip on #P-move
+        t, x0, y0, sc, fl, _ = path[0]
+        X, Y = x0, y0
+        MOVE0 = f"transform:scale({-sc if fl else sc},{sc});"   # inline: a tl.set at 0 does not render on frame 0
+        for t, x, y, sc, fl, d in path[1:]:
+            js.append(f'    tl.to("#{P}-move", {{ x: {x - x0:g}, y: {y - y0:g}, scaleX: {-sc if fl else sc}, scaleY: {sc}, duration: {d}, '
+                      f'ease: "power3.inOut" }}, {t:.3f});')
     nl = "\n"
     open(a.out, "w").write(f"""<template>
   <style>
@@ -177,11 +236,11 @@ def main():
     {css(P, a.skin)}
   </style>
   <div id="root" data-composition-id="{P}" data-layout-allow-overflow data-width="{a.width}" data-height="{a.height}">
-    <div class="{P}-stage">
+    <div class="{P}-stage"><div id="{P}-move" style="position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0;{MOVE0}">
       <div class="{P}-cam" style="transform: rotateX({a.tilt}deg)">
 {rig_html(P, S, "      ")}
       </div>
-    </div>
+    </div></div>
   </div>
   <script>
     const tl = gsap.timeline({{ paused: true }});
