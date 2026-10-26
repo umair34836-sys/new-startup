@@ -51,3 +51,4 @@ Build script, VO, music and photos stay in the session scratchpad (no media in g
 QA fixes before the final: yoyo shakes left the dialog skewed (even repeat), Anton has no ≠ (drawn), long list row wrapped (nowrap),
 section titles under moments hidden, host transform conflict (fromTo), heading captions duplicated (hidden), Whisper word
 start before the real gap (index-based shift).
+| final v2 (measured here 2026-10-26) | 220.6 s, 1920x1080, 30.0 fps real, 0 frame gaps; -16.8 LUFS, peak -1.7 dBFS, 0 clipped; only 4 windows (topic glitch hits at 16.0, 58.5, 142.5 s) up to 2.2 dB over the VO's p95; watch.py "dark" = the navy design, shake flags = the intended impact shakes | delivered + WhatsApp copy (CRF 23) |
