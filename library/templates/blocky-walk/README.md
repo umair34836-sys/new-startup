@@ -29,3 +29,6 @@ Cuts fall on the music's downbeats (listen.py: 91.6 BPM, bar 2.621 s; downbeats 
 
 ## Measured here
 - `hyperframes check` passed, with one warning: first_frame_empty, because there is no title at 0 s.
+- Render: `--quality high --workers 3`, 21.5 s 1920x1080, 48 MB.
+- watch.py: 30.0 real fps, cuts at 5.367 / 13.3 / 18.533 s (on the downbeats), no black or frozen spans. The shake flag at second 5 is the S1 to S2 cut.
+- listen.py: -14.6 LUFS, true peak -4.0 dBTP, 0 clipped samples.
