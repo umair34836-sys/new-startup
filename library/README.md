@@ -79,6 +79,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   24x7/NO WHITELIST stamp, JAVA+BEDROCK cards, end card (logo, IP, port, join, Discord), SFX lanes. See its README.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
+- `blocky-walk/build.py`: 16:9 21.5 s, host + girl skins walk down a sunny voxel village lane (4 shots cut on music downbeats, CC0 town-theme-rpg). Made 2026-10-26; see its README.
 - `kinetic-type-reel/build_pakwebhoster.py`: 9:16 20 s kinetic typography reel, no VO (beat-synced word slams out of masks,
   full-screen colour flips per spec, price slam, end card); beat grid from listen.py. PakWebHoster, 2026-10-25. See its README.
 - `typewriter-reel/build_pakwebhoster.py`: 9:16 20 s typewriter reel, no VO (editor window, characters typed with uneven
