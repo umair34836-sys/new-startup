@@ -73,3 +73,12 @@ Every decision -> where it came from.
 | v4 render (final) | 62.6 s, 1080x1920, 30.0 fps real, 0 frame gaps, 0 black, 0 frozen spans; -16.1 LUFS integrated, 0 clipped samples; only 1 of 250 windows (39.25 s, whoosh + pop in a VO pause) over VO+4 dB; full 1.6 s contact sheet looked at | delivered |
 
 Deliverables: ALOO-SMP-Short-FINAL.mp4 (200 MB, delivery quality) + ALOO-SMP-Short-WhatsApp.mp4 (CRF 23, 63 MB).
+
+## v2 (2026-10-26): owner asked for the spawn video as overlays, then laptop + phone for Java/Bedrock
+| Decision | Source |
+| --- | --- |
+| Server-list card (real "aloo / ALOO SMP / VANILLA SURVIVAL • Play Now!" entry, still from 0.5 s) on "kyunki aaj" | skills #439, #578; overlays.md; owner approved the mockup |
+| Join sequence (Encrypting/Joining world -> "ALOO SMP >> Welcome") as PiP on "abhi server ko join karo"; logo steps aside, returns on "Discord" | same; owner approved the mockup |
+| Laptop = JAVA, phone = BEDROCK with gameplay on the screens | minecraft.net article (library/research/minecraft-editions.md); laptop from templates/kinetic-laptop-type; skill #3107; owner approved the mockup |
+| Not placed: top 168 px, chip sections, moving holograms | types/vertical.md; < 28 px readability |
+| QA v6: 62.6 s, 30.0 fps, 0 gaps/black/frozen, -16.2 LUFS, 0 clipped, only the known 39.25 s window over VO+4 dB; full 1.6 s contact sheet looked at | measured here 2026-10-26 |

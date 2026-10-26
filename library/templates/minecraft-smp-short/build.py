@@ -221,19 +221,39 @@ C["online"] = comp("online", f"""    <div id="o-w" style="position:absolute;inse
     f'    tl.to("#o-w", {{ scale: 1.35, filter: "blur(14px)", opacity: 0, duration: 0.22, ease: "power3.in" }}, {d - 0.22:.2f});')
 G.append(("online", st, d))
 
-# Java + Bedrock
+# Java + Bedrock on two devices (owner idea 2026-10-26). minecraft.net: Java = Windows/Mac/Linux, Bedrock incl.
+# Android/iOS (library/research/minecraft-editions.md). Laptop from templates/kinetic-laptop-type, phone = same style
+# (skill #3107 device stage, hand-built CSS); screens play the client's gameplay.
 st = 31.15; d = round(35.41 - st, 2)
-C["jb"] = comp("jb", f"""    <div id="jb-w" style="position:absolute;inset:0;">
+LX, LY, LW, LH = 50, 530, 600, 338        # laptop screen
+PX, PY, PW, PH = 720, 450, 236, 420       # phone screen
+C["jb"] = comp("jb", f"""    <div id="jb-veil" style="position:absolute;inset:0;background:rgba(8,10,20,0.55);"></div>
+    <div id="jb-w" style="position:absolute;inset:0;">
       <div class="c jk stroke sh" style="top:290px;font-weight:800;font-size:58px;color:{ICE2};letter-spacing:6px;">SABSE BADI BAAT</div>
-      <div class="c" id="jb-j" style="top:420px;"><span class="chip" style="font-size:96px;padding:22px 60px;border-color:{GOLD};">JAVA</span></div>
-      <div class="c anton stroke" id="jb-p" style="top:590px;font-size:130px;color:{GOLD};">+</div>
-      <div class="c" id="jb-b" style="top:740px;"><span class="chip" style="font-size:96px;padding:22px 60px;border-color:{ICE};">BEDROCK</span></div>
+      <div id="jb-lap" style="position:absolute;left:0;top:0;width:1080px;height:1920px;">
+        <div style="position:absolute;left:{LX - 18}px;top:{LY - 18}px;width:{LW + 36}px;height:{LH + 36}px;background:#0e1014;border-radius:22px 22px 6px 6px;border:2px solid #2a2e36;box-shadow:0 30px 70px rgba(0,0,0,0.6);"></div>
+        <div style="position:absolute;left:{LX}px;top:{LY}px;width:{LW}px;height:{LH}px;overflow:hidden;border-radius:4px;">
+          <video id="jb-lv" class="clip" src="assets/clips/dev_laptop.mp4" data-start="0" data-duration="{d}" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>
+        <div style="position:absolute;left:{LX - 40}px;top:{LY + LH + 18}px;width:{LW + 80}px;height:22px;background:linear-gradient(#c9ced6,#8b919b);border-radius:2px 2px 16px 16px;"></div>
+        <div style="position:absolute;left:{LX + LW // 2 - 90}px;top:{LY + LH + 18}px;width:180px;height:8px;background:#7d838d;border-radius:0 0 9px 9px;"></div>
+        <div style="position:absolute;left:{LX}px;width:{LW}px;top:{LY + LH + 66}px;text-align:center;"><span class="chip" style="font-size:64px;padding:14px 46px;border-color:{GOLD};">JAVA</span></div>
+      </div>
+      <div class="anton stroke" id="jb-p" style="position:absolute;top:{LY + 110}px;left:{LX + LW}px;width:{PX - LX - LW}px;text-align:center;font-size:100px;color:{GOLD};">+</div>
+      <div id="jb-ph" style="position:absolute;left:0;top:0;width:1080px;height:1920px;">
+        <div style="position:absolute;left:{PX - 14}px;top:{PY - 14}px;width:{PW + 28}px;height:{PH + 28}px;background:#0e1014;border-radius:42px;border:2px solid #2a2e36;box-shadow:0 30px 70px rgba(0,0,0,0.6);"></div>
+        <div style="position:absolute;left:{PX}px;top:{PY}px;width:{PW}px;height:{PH}px;overflow:hidden;border-radius:30px;">
+          <video id="jb-pv" class="clip" src="assets/clips/dev_phone.mp4" data-start="0" data-duration="{d}" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>
+        <div style="position:absolute;left:{PX + PW // 2 - 40}px;top:{PY + 10}px;width:80px;height:20px;border-radius:12px;background:#0e1014;"></div>
+        <div style="position:absolute;left:{PX - 100}px;width:{PW + 200}px;top:{PY + PH + 40}px;text-align:center;"><span class="chip" style="font-size:52px;padding:14px 34px;border-color:{ICE};">BEDROCK</span></div>
+      </div>
     </div>""",
-    f'    tl.fromTo("#jb-j", {{ x: -900 }}, {{ x: 0, duration: 0.35, ease: "power3.out" }}, {ws(74) - st:.2f});\n'
-    f'    tl.fromTo("#jb-p", {{ scale: 0, rotation: -90 }}, {{ scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2.4)" }}, {ws(75) - st - 0.15:.2f});\n'
-    f'    tl.fromTo("#jb-b", {{ x: 900 }}, {{ x: 0, duration: 0.35, ease: "power3.out" }}, {ws(75) - st:.2f});\n'
-    f'    tl.fromTo("#jb-w", {{ scale: 1 }}, {{ scale: 1.05, duration: 0.25, ease: "power2.out", yoyo: true, repeat: 1 }}, {ws(78) - st:.2f});\n'
-    f'    tl.to("#jb-w", {{ scale: 1.35, filter: "blur(14px)", opacity: 0, duration: 0.22, ease: "power3.in" }}, {d - 0.22:.2f});')
+    f'    tl.fromTo("#jb-veil", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 0);\n'
+    f'    tl.fromTo("#jb-lap", {{ y: 1300, rotation: -6, opacity: 0 }}, {{ y: 0, rotation: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, {ws(74) - st - 0.1:.2f});\n'
+    f'    tl.fromTo("#jb-p", {{ scale: 0, rotation: -90, opacity: 0 }}, {{ scale: 1, rotation: 0, opacity: 1, duration: 0.3, ease: "back.out(2.4)" }}, {ws(75) - st - 0.15:.2f});\n'
+    f'    tl.fromTo("#jb-ph", {{ y: 1300, rotation: 8, opacity: 0 }}, {{ y: 0, rotation: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, {ws(75) - st - 0.05:.2f});\n'
+    f'    tl.fromTo("#jb-w", {{ scale: 1 }}, {{ scale: 1.04, duration: 0.25, ease: "power2.out", yoyo: true, repeat: 1 }}, {ws(78) - st:.2f});\n'
+    f'    tl.to("#jb-w", {{ scale: 1.35, filter: "blur(14px)", opacity: 0, duration: 0.22, ease: "power3.in" }}, {d - 0.22:.2f});\n'
+    f'    tl.to("#jb-veil", {{ opacity: 0, duration: 0.22 }}, {d - 0.22:.2f});')
 G.append(("jb", st, d))
 
 POPS += checklist("f4", [("APNA BASE", ws(89)), ("PAISE", ws(91))], ws(87), 39.36, top=330)
@@ -374,6 +394,8 @@ sfx("sparkle", ws(150), 0.3)               # Discord card
 sfx("whoosh", 50.9, 0.4)
 sfx("pop", ws(20), 0.3)                   # PiP 1 card pops in
 sfx("whoosh", ws(133), 0.35)              # PiP 2 join-sequence card
+sfx("whoosh", ws(74) - 0.1, 0.35)          # laptop rises (JAVA)
+sfx("whoosh", ws(75) - 0.05, 0.35)         # phone rises (BEDROCK)
 aud = "\n".join(
     f'      <audio id="{i}" src="{s}" data-start="{st}" data-duration="{d}" data-volume="{v}" data-track-index="{ln}"'
     + (f' data-media-start="{ms}"' if ms else "") + (f' data-fade-out="{fo}"' if fo else "") + "></audio>"

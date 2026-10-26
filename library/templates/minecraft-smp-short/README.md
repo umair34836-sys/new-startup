@@ -36,3 +36,8 @@ overlays.md). Placed only where the frame is free and the overlay proves the VO 
 Rejected (looked at here): the top 168 px (platform UI, types/vertical.md), feature-chip sections (no room between chips
 and captions), spawn holograms ("PvP Enabled", "Difficulty HARD"): the camera moves, so in a small card the text drifts
 and is unreadable (< 28 px rule).
+- Java + Bedrock (31.2-35.4 s) on two devices (owner idea, mockup approved 2026-10-26): CSS laptop (from
+  templates/kinetic-laptop-type) playing a 16:9 gameplay clip = JAVA, CSS phone playing a 9:16 crop = BEDROCK, dark veil
+  over the footage, whoosh on each rise. Source for the pairing: library/research/minecraft-editions.md.
+- v6 render needed ~2.5 GB free disk during capture (it failed once at 0.6 GB free; /tmp/hyperframes-extract-cache-0
+  held 1.7 GB from earlier renders). Free space before rendering.
