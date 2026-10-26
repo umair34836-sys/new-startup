@@ -267,6 +267,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   garbled "Crown Crust" and the URL (Whisper); 1.15x on lines 1-7 + the URL line at 1x + 0.25 s gaps gave 33.1 s
   with every line heard. Keep URL/CTA lines at 1x.
 - Killing the Bash shell that ran `voicestudio.sh start` (background time limit) did NOT stop the backend.
+- Korba Restaurant (2026-10-26, template build_korba.py): the client's "website" was a Localoria directory listing
+  (korba-restaurant.localoria.com): no videos, 10 photos + 10 menu-card photos, and 2 images that are NOT Korba's
+  (another shop's flyer, a YouTuber frame). Look at every downloaded image before using it. Prices only exist inside the
+  menu-card photos ("excluded tax"): zoom in to read, ask the owner before quoting, show "+ tax".
+- vs_tts.py with the default voice crashed at the end (`No module named 'pyworld'` in /home/user/tools/venv) AFTER writing
+  all parts + an unpitched vo.mp3 (2026-10-26). The 172 Hz pitch step was then run with system python3 (has pyworld).
+  VoxCPM2 took ~1 min per line here once loaded (8 lines 05:08-05:17), much faster than the ~3 min of Oct 24-25.
 
 ## Tutorials / screen videos
 - OWNER RULE (Oct 24 2026): in every tutorial or screen video, EVERY click is shown with a visible mouse cursor that moves
@@ -380,6 +387,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - 9:16 crops of 1080p gameplay are a 1.78x upscale: add `cas=strength=0.5` after the lanczos scale (skill #489;
   Laplacian variance 39 -> 62 on a test frame, measured 2026-10-25). watch.py "soft" is RELATIVE (sharp_rel < 0.35
   of the sharpest scene), so a video with crisp text cards flags most footage scenes.
+
+- Client Korba Restaurant home session: session_01FDH7RUAdSgv8cUNXbZzyHs (branch client-korba, Oct 26 2026).
+  Brief library/clients/korba/brief.md; 9:16 promo reel FINAL delivered 2026-10-26 (site photos only, no images committed).
 
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.

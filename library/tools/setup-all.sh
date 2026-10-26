@@ -58,6 +58,8 @@ heavy() {
   "$T/venv/bin/python" -c "import curl_cffi" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q curl_cffi
   # Google Drive folder downloads (owner's music Drive folder, library/music/owner-drive/README.md)
   "$T/venv/bin/python" -c "import gdown" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q gdown
+  # vs_tts.py --target-f0 pitch step runs in this venv too (Korba session 2026-10-26: "No module named pyworld")
+  "$T/venv/bin/python" -c "import pyworld" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q pyworld "setuptools<81"  # pyworld imports pkg_resources
   # VoiceStudio (debpalash/VoiceStudio, local ElevenLabs alternative): own uv venv with CPU torch; backend on :3900
   # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).
   [ -d "$T/VoiceStudio" ] || git clone -q --depth 1 https://github.com/debpalash/VoiceStudio.git "$T/VoiceStudio"
