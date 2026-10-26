@@ -1,0 +1,115 @@
+URL: https://moradosolution.in/security
+HTTP: 200
+TITLE: Security Policy — MoradoSolution
+FETCHED: 2026-10-24T12:22:55.701Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+SECURITY POLICY
+
+Last Updated: 28 August 2026
+
+Infrastructure security, data protection, vulnerability reporting, and incident response.
+
+1. Infrastructure Security
+Network-level DDoS mitigation on all services
+Intrusion detection and prevention systems (IDS/IPS)
+Regular vulnerability scanning and patch management
+Network segmentation and isolation between tenants
+Hardware firewalls at network edge
+2. Data Protection
+Traffic encrypted in transit using TLS 1.2+
+Passwords hashed with bcrypt/argon2 (never stored in plaintext)
+Database encryption at rest for sensitive data
+Regular automated backups with encryption
+Secure key management for encryption keys
+3. Access Control
+Principle of least privilege for all staff access
+Multi-factor authentication required for all administrative access
+Access logging and audit trails for sensitive operations
+Regular access reviews and deprovisioning procedures
+Customer data access limited to support necessity only
+4. Vulnerability Reporting
+
+MoradoSolution encourages responsible disclosure of security vulnerabilities. Report vulnerabilities to security@moradosolution.com.
+
+We acknowledge reports within 48 hours
+We provide regular updates on investigation progress
+We do not pursue legal action against good-faith researchers
+Coordinated disclosure timeline: 90 days default
+5. Incident Response
+24/7 monitoring and alerting for security events
+Defined incident response procedures and escalation paths
+Customer notification within 72 hours of confirmed data breach (where legally required)
+Post-incident review and remediation tracking
+6. Customer Responsibilities
+Maintain security of applications, containers, and OS
+Apply security patches promptly
+Use strong, unique passwords and enable 2FA
+Restrict access by IP where possible
+Monitor for unusual activity in your services
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
+↑ Top

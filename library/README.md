@@ -224,3 +224,9 @@ Song + HyperFrames walkthrough video of a real website (TalkEmber Studio promo, 
 131 no-credit tracks (counted 2026-10-24; index.json has 131 entries): 29 CC0 from OpenGameArt (background, cinematic,
 piano, desi/eastern), 7 desi from the SoundSafari mirror (5 Freesound CC0 + 2 FreePD), 95 CC0/PD from FMA. List,
 moods, sources and the licence audit: `music/cc0/README.md`.
+
+## Clients
+- `library/clients/moradosolution/`: brief.md (verified facts, voice recipe, deliveries) + **site-data.md** (full crawl of
+  moradosolution.in on 2026-10-24: every plan/price, WELCOME30 offer, contacts, policies, contradictions) + site/pages
+  (rendered text of 37 pages), site/screens (full-page screenshots, webp), assets/ (logo, icons, game/service images
+  from the site), site/tools/crawl.js + shots.js (re-crawl).

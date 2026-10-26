@@ -1,0 +1,271 @@
+URL: https://moradosolution.in/hytale
+HTTP: 200
+TITLE: Hytale Server Hosting India — Plans from ₹199/month | MoradoSolution
+FETCHED: 2026-10-24T12:22:41.971Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+LIMITED OFFER
+WELCOME30
+30% OFF on selected plans
+COPY CODE
+Home
+/
+Game Hosting
+/
+Hytale
+
+HYTALE HOSTING PLANS
+
+Hytale servers, ready on day one.
+
+NVMe storage, Cloudflare Magic Transit DDoS protection, and our own in-house traffic filtering layer. Deploy instantly, scale freely.
+
+View plans
+Network & Security
+
+PRICING
+
+Choose your plan.
+
+Every plan includes Cloudflare Magic Transit plus in-house DDoS filtering, instant setup, and a Pterodactyl panel to manage your server. Scale up or down anytime.
+
+CURRENT OFFERS
+Codes apply automatically when you tap Buy Now — or paste them at checkout.
+WELCOME30
+30% OFF
+Hytale Starter + 3 more plans
+COPY
+01
+Starter
+
+Small Hytale adventures and testing.
+
+₹199₹139/mo
+SAVE ₹60 · 30% OFF
+
+RAM
+2 GB
+CPU
+50% EPYC
+Storage
+6 GB NVMe
+Buy Now
+Add to Cart
+02
+Standard
+
+Modded servers and communities.
+
+₹449₹314/mo
+SAVE ₹135 · 30% OFF
+
+RAM
+6 GB
+CPU
+150% EPYC
+Storage
+18 GB NVMe
+Buy Now
+Add to Cart
+03
+Pro
+POPULAR
+
+Large worlds and minigames.
+
+₹799₹559/mo
+SAVE ₹240 · 30% OFF
+
+RAM
+12 GB
+CPU
+300% EPYC
+Storage
+36 GB NVMe
+Buy Now
+Add to Cart
+04
+Ultra
+
+Big networks and custom servers.
+
+₹1,299₹909/mo
+SAVE ₹390 · 30% OFF
+
+RAM
+20 GB
+CPU
+400% EPYC
+Storage
+60 GB NVMe
+Buy Now
+Add to Cart
+
+All prices in INR, billed monthly. Need help picking? Join our Discord
+
+SERVER INFRASTRUCTURE
+
+Built for performance.
+CPU
+
+AMD EPYC 7C13
+
+STORAGE
+
+High-performance NVMe SSD
+
+CONTROL PANEL
+
+Pterodactyl Panel
+
+NETWORK
+
+High-speed connectivity with DDoS-protected routing
+
+SECURITY
+
+Cloudflare Magic Transit + In-house traffic filtering
+
+DEPLOYMENT
+
+Instant server provisioning
+
+BACKUPS
+
+Scheduled backup support
+
+ACCESS
+
+Full console, SFTP and file-manager access
+
+WHY CHOOSE OUR HOSTING
+
+Built for Hytale.
+01
+AMD EPYC 7C13
+
+High-performance server CPUs designed for demanding workloads.
+
+02
+NVMe Storage
+
+Fast storage for quicker world loading, plugin operations and server management.
+
+03
+Multi-Layer DDoS Protection
+
+Cloudflare Magic Transit combined with our own in-house filtering layer.
+
+04
+Full Control
+
+Manage your server through Pterodactyl with console, files, SFTP and configuration access.
+
+05
+Java + Bedrock
+
+Support for both Java Edition and Bedrock Edition setups.
+
+06
+Scalable Plans
+
+Upgrade your resources as your Hytale community grows.
+
+Common questions.
+How many players can each plan support?
+
+Starter (2 GB) supports 5-10 players, Standard (6 GB) supports 20-30, Pro (12 GB) supports 70-100, Ultra (20 GB) supports 150-200.
+
+Can I install Hytale mods?
+
+Yes. All plans support Hytale mods and custom content with one-click install through the Pterodactyl panel.
+
+Does Hytale support crossplay?
+
+Yes. Hytale supports crossplay, and our servers come ready for it out of the box.
+
+Can I upgrade my plan later?
+
+Yes. You can scale up or down anytime from your dashboard. Changes take effect immediately with prorated billing.
+
+What hardware do you use?
+
+AMD EPYC 7C13 processors (64 cores, 128 threads, Zen 3), DDR4 ECC memory, NVMe Gen4 SSDs, and 10 Gbps networking.
+
+Where are your servers located?
+
+Our primary datacenter is in Delhi, India. This provides 5-25ms ping to all major Indian cities.
+
+READY TO START?
+
+Deploy your Hytale server in minutes.
+
+Choose a plan, pick your game version, and start playing. Instant setup, no waiting.
+
+View plans
+Contact support
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

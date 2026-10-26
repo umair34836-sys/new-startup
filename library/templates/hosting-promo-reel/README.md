@@ -22,3 +22,18 @@ v3 (2026-10-24): spec chip/VO "AMD EPYC 9" (client's wording via the owner; skil
 "AMD EPYC" for Budget/Standard India and Premium India/Singapore, "AMD Ryzen" for Premium Dubai, checked 2026-10-24) and
 a new scene `s6b` after the price: "Budget & Standard plans LIMITED" + Discord / website cards. Scene starts live in
 `SCENES`; whoosh/pop/sparkle times are derived from them, so re-timing a scene moves its SFX too.
+
+## build_moradosolution_welcome30.py (MoradoSolution WELCOME30 offer reel, 2026-10-24)
+30.2 s offer reel, 8 scenes on 8 VO lines: hook "MINECRAFT SERVER? 30% OFF" (on screen at 0 s, confetti burst) ->
+coupon card typing WELCOME30 -> Starter ₹199 struck -> ₹139 -> Gold ₹699 struck -> ₹489 -> Hytale art + brand-kit
+`brand-offer` starburst -> AMD EPYC 7C13 / NVMe / DDoS chips over the site's rack image -> "SERVER MINUTES MEIN READY"
+-> brand-kit `brand-end` (code row added, QR = https://moradosolution.in). Also mounts brand-kit `brand-bug` (moved to
+top 290 px for the Reels safe zone). Registry patterns used: `strikethrough-replace` (price strike) and `confetti`
+(deterministic burst). Needs in the project: compositions/brand-{offer,end,bug}.html + assets/brand from
+`build_brand.py` (brand.json in the scratchpad), assets/img (site images as jpg), sfx (swish-4, punch-heavy,
+cash-register, keypress, pop-high, digital-powerup-1, sparkle), music = cc0 desi-eastern--bollywood-groove from 23.85 s.
+Checked here: `check` passed; render 1m17s (--workers 3); listen.py -14.4 LUFS, no clipping; watch.py 30.0 real fps;
+QR decoded from a rendered frame with OpenCV QRCodeDetector (perc-venv cv2 5.0.0).
+v2 (same day): checked against find_skill.py #3598 (Meta Reels margins: top 14 %, bottom 35 %, sides 6 %): "HYTALE BHI!"
+moved to top 1060 px; brand-end column changed to flex-start + padding-top 280 px, logo 230 px, QR 250 px so all of it
+ends above y=1248. Re-rendered 1m15s, -14.4 LUFS, QR decoded again. brand-end.html edits: code row, these sizes.

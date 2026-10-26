@@ -374,6 +374,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - Client MoradoSolution home session: session_01CQ1ajF7SNBueqvBiNGWsLX (branch client-moradosolution, Oct 24 2026).
   Brief: library/clients/moradosolution/brief.md. Deal done; clean FINAL reel delivered Oct 24 2026.
+  Oct 26 2026: 16:9 "Indian RDP + BUSY setup" explainer (1m52s, owner's script) delivered from new template
+  library/templates/explainer-host-steps; WELCOME30 offer reel builder in hosting-promo-reel. Merged into the main branch
+  WITHOUT its 34 site images/screenshots (no-photos rule): re-capture with site/tools/crawl.js + shots.js per job.
 
 - Client Pizza Base PK home session: session_01G1P3KGwamyc7yXaT4s4W1y (branch client-pizzabasepk, Oct 25 2026).
   Brief: library/clients/pizzabasepk/brief.md; first 9:16 promo reel FINAL delivered Oct 25 2026.

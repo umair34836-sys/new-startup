@@ -1,0 +1,434 @@
+URL: https://moradosolution.in/refund
+HTTP: 200
+TITLE: Refund Policy — MoradoSolution
+FETCHED: 2026-10-24T12:22:50.423Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+LEGAL
+
+Refund Policy
+
+This policy explains the circumstances under which MoradoSolution may issue refunds for services purchased from us.
+
+Last Updated: 28 August 2026
+
+MoradoSolution is a hosting service operated as a branch/service of MoradoSolution. MoradoSolution is the owner and operator of MoradoSolution, under the proprietorship of Vandana Shankarmal Kumardey, who is responsible for the overall management and operation of the service.
+
+General Policy
+Eligibility
+Request Period
+Non-Refundable
+Customer Issues
+Third-Party
+Suspension/Termination
+Cancellation
+Duplicates
+Chargebacks
+Method & Timing
+Abuse & Exceptions
+How to Request
+Contact
+1General Refund Policy
+
+MoradoSolution provides digital hosting and infrastructure services that may involve immediate resource allocation, server provisioning, IP allocation, storage allocation, bandwidth usage, software installation, and other infrastructure costs.
+
+Because our services involve resources being provisioned specifically for a customer, payments are generally non-refundable once a service has been provisioned or activated, except where a refund is expressly approved under this policy.
+
+A refund is not an automatic right and every refund request may be reviewed individually.
+
+2Refund Eligibility
+
+A customer may request a refund where:
+
+The service has not been substantially used.
+The service cannot be provisioned due to an issue on MoradoSolution's side.
+MoradoSolution is unable to deliver the purchased service.
+A duplicate payment was accidentally processed.
+MoradoSolution specifically approves a refund as an exception.
+
+Submitting a refund request does not guarantee that a refund will be issued.
+
+MoradoSolution reserves the right to determine whether a particular request qualifies for a refund.
+
+3Refund Request Period
+
+Where a service is eligible for a refund, the customer should submit the refund request within 24 hours of the original payment or service activation, unless otherwise stated by MoradoSolution.
+
+Requests submitted after this period may be rejected.
+
+The 24-hour period does not mean that every payment made within 24 hours is automatically refundable.
+
+4Non-Refundable Services and Situations
+
+Refunds will generally not be provided for:
+
+Services that have already been substantially used.
+Used bandwidth, storage, compute resources, or other consumed resources.
+Dedicated or specially allocated IP addresses and infrastructure costs.
+Domain registrations, transfers, or renewals where applicable.
+Add-ons or third-party services where the underlying provider does not provide a refund.
+Backup storage or backup-related resources that have already been provisioned or consumed.
+Software licenses or third-party products purchased through MoradoSolution where the applicable provider does not allow refunds.
+Services cancelled because of customer-side issues.
+Services suspended or terminated due to violation of our Terms of Service, Acceptable Use Policy, or Abuse Policy.
+Services affected by customer misconfiguration.
+Data loss caused by customer actions, unsupported software, or customer-side configuration.
+Services that have been used for abusive, fraudulent, illegal, malicious, or prohibited activities.
+Payments associated with fraudulent activity or suspected payment abuse.
+Payments made through unauthorized payment methods.
+Chargebacks or payment disputes initiated after a service has been delivered.
+Any service where the customer has already received the primary benefit of the purchased service.
+5Customer-Side Issues
+
+MoradoSolution is not responsible for providing refunds where the purchased service is functioning as intended but the customer is unable to use it because of:
+
+Incorrect configuration.
+Incorrect software installation.
+Unsupported applications.
+Customer-created firewall or networking rules.
+Incorrect DNS configuration.
+Customer-created server modifications.
+Incompatible operating systems or applications.
+Customer mistakes or negligence.
+Failure to follow provided documentation.
+Issues caused by third-party software or services.
+
+Customers are responsible for properly configuring and maintaining their own services unless a separate managed-service agreement states otherwise.
+
+6Staff, Contractors, Partners, and Third-Party Issues
+
+A refund will not automatically become due merely because an issue, communication problem, configuration problem, or other incident involves a MoradoSolution employee, contractor, partner, supplier, or third-party service provider.
+
+MoradoSolution will review such situations based on the actual circumstances, service impact, applicable agreements, and this Refund Policy.
+
+Any unauthorized promise of a refund, credit, compensation, or other financial adjustment made by an individual employee, contractor, reseller, partner, or third party does not constitute a binding commitment by MoradoSolution unless formally approved through an authorized MoradoSolution channel.
+
+7Service Suspension or Termination
+
+If a service is suspended or terminated because of:
+
+Abuse;
+Fraud;
+Illegal activity;
+Security violations;
+Network abuse;
+Spam;
+Malware;
+Attacks against other systems;
+Copyright or intellectual-property violations;
+Payment fraud;
+Chargeback abuse;
+Violation of the Terms of Service;
+Violation of the Acceptable Use Policy; or
+Any other prohibited activity,
+
+the customer may not be entitled to a refund.
+
+Termination of an account or service does not create an obligation for MoradoSolution to return previously paid fees.
+
+8Cancellation
+
+Customers may cancel their services through the applicable MoradoSolution customer or billing interface, where available.
+
+Cancellation normally prevents future renewals and does not automatically generate a refund for the current billing period.
+
+Unless explicitly stated otherwise, unused time remaining on a prepaid service is not automatically refundable.
+
+Customers are responsible for cancelling services before their next billing date if they do not wish to continue the service.
+
+9Recurring Services
+
+For monthly or other recurring services, cancellation does not normally result in a refund of the current billing cycle.
+
+Once a recurring payment has successfully processed and the service has been provisioned or renewed, the payment may be considered final unless MoradoSolution approves an exception.
+
+Customers should cancel recurring services before the next renewal date.
+
+10Duplicate Payments
+
+If a customer accidentally makes the same payment more than once for the same service, MoradoSolution may review the transaction and refund the duplicate amount where the duplicate payment can be verified.
+
+Any applicable transaction or payment-processing limitations may affect the method or timing of the refund.
+
+11Failed or Unsuccessful Payments
+
+If a payment is marked as failed, declined, reversed, or otherwise unsuccessful by the payment processor, MoradoSolution will generally not consider the transaction a completed payment.
+
+If money has nevertheless been deducted from the customer's account, the customer should first allow the payment processor or bank to complete its reversal process.
+
+Where MoradoSolution actually receives the funds and the transaction is subsequently reversed or determined to be invalid, the matter may be reviewed accordingly.
+
+12Payment Disputes and Chargebacks
+
+Customers should contact MoradoSolution before initiating a payment dispute or chargeback.
+
+A chargeback or payment dispute may result in:
+
+Immediate service suspension;
+Account restrictions;
+Termination of affected services;
+Investigation of the payment;
+Recovery of outstanding amounts; and/or
+Other action permitted under our Terms of Service.
+
+A customer who receives a refund directly from MoradoSolution must not additionally retain a chargeback for the same transaction.
+
+Fraudulent or abusive chargebacks may result in permanent account termination.
+
+13Refund Method
+
+Approved refunds will normally be issued through the original payment method used for the transaction, where technically possible.
+
+MoradoSolution may be unable to refund a payment to a different payment method for security and fraud-prevention reasons.
+
+The final time required for the funds to appear in the customer's account may depend on the payment gateway, bank, card issuer, or financial institution.
+
+MoradoSolution does not control third-party processing times.
+
+14Processing Time
+
+Once a refund has been approved, MoradoSolution will initiate the refund within a reasonable processing period.
+
+The actual time for the refunded amount to reach the customer may vary depending on:
+
+Payment gateway;
+Bank;
+Card issuer;
+Payment method;
+Payment-processing network; and
+Applicable financial institution.
+
+A delay by a payment provider does not constitute a failure by MoradoSolution to process an approved refund.
+
+15Partial Refunds and Service Credits
+
+At its sole discretion, MoradoSolution may provide:
+
+A partial refund;
+Account credit;
+Service credit;
+Extension of service;
+Replacement service; or
+Another appropriate resolution
+
+instead of a full monetary refund.
+
+Any such resolution will be determined based on the individual circumstances.
+
+Service credits are not automatically convertible into cash unless MoradoSolution expressly agrees otherwise.
+
+16Promotional Pricing and Discounts
+
+Services purchased using promotional pricing, coupons, discounts, credits, introductory offers, or special pricing may be subject to additional refund restrictions.
+
+Where a refund is approved, the refunded amount may be calculated based on the actual amount paid rather than the standard retail price of the service.
+
+Promotional credits and bonus credits are generally non-refundable and have no cash value.
+
+17Third-Party Services
+
+Some MoradoSolution services may rely on third-party infrastructure, software, networks, payment processors, registrars, data centers, or other providers.
+
+If a third-party provider experiences an outage, limitation, suspension, policy change, or other issue, a refund is not automatically guaranteed.
+
+MoradoSolution may, where appropriate, attempt to provide an alternative solution or service credit depending on the circumstances.
+
+18Data and Backups
+
+Customers are responsible for maintaining appropriate backups of their data unless a separate backup service or agreement expressly states otherwise.
+
+Cancellation, suspension, termination, expiry, or deletion of a service may result in the deletion or unavailability of associated data.
+
+Refund eligibility does not create an obligation for MoradoSolution to restore deleted or lost data.
+
+Fees paid for backup storage or consumed backup resources may be non-refundable.
+
+19Abuse and Fraud
+
+MoradoSolution reserves the right to deny refunds where a customer is found to have engaged in:
+
+Fraudulent activity;
+Payment abuse;
+Account abuse;
+Resource abuse;
+Network abuse;
+Spam;
+Phishing;
+Malware distribution;
+Unauthorized access;
+Attacks against third-party systems;
+Illegal activity;
+Circumvention of service restrictions;
+Abuse of promotional offers; or
+Any activity prohibited under MoradoSolution policies.
+
+Accounts involved in such activity may also be suspended or permanently terminated.
+
+20No Refund for Downtime Caused by Customer
+
+Refunds are not normally provided for downtime or service interruptions caused by:
+
+Customer configuration;
+Customer software;
+Customer-installed applications;
+Customer firewall rules;
+Customer DNS settings;
+Customer scripts;
+Customer resource exhaustion;
+Unsupported modifications;
+DDoS or attacks where mitigation is outside the purchased service scope;
+Third-party services; or
+Other circumstances outside the reasonable control of MoradoSolution.
+
+Any service-level credits, if applicable, are governed separately by the applicable service agreement or SLA.
+
+21Exceptional Refunds
+
+MoradoSolution may, at its sole discretion, approve a refund even when a request does not strictly satisfy the normal eligibility requirements.
+
+Such an approval is an exception and does not create a precedent, entitlement, or continuing right to receive refunds in similar situations.
+
+22Refund Abuse
+
+Repeated refund requests, repeated payment reversals, fraudulent claims, manipulation of refund policies, or attempts to obtain services without payment may result in:
+
+Refund denial;
+Account restrictions;
+Service suspension;
+Account termination;
+Loss of promotional eligibility; and/or
+Recovery of amounts owed to MoradoSolution.
+23How to Request a Refund
+
+To request a refund, customers should contact MoradoSolution through an official support channel and provide:
+
+Account information;
+Order or invoice information;
+Payment reference, where applicable;
+Service name;
+Date of payment;
+Reason for the refund request; and
+Any relevant supporting information.
+
+Providing incomplete or inaccurate information may delay the review.
+
+MoradoSolution may request additional information before making a decision.
+
+24Refund Review
+
+All refund requests are subject to review.
+
+During the review, MoradoSolution may consider:
+
+Service usage;
+Resource consumption;
+Account history;
+Payment history;
+Reason for the request;
+Service availability;
+Customer configuration;
+Policy violations;
+Abuse history;
+Third-party involvement;
+Payment-provider information; and
+Other relevant circumstances.
+
+The final determination will be made by MoradoSolution based on the applicable policies and circumstances of the case.
+
+25Changes to This Refund Policy
+
+MoradoSolution reserves the right to modify, update, or replace this Refund Policy at any time.
+
+Changes will become effective when published on the MoradoSolution website unless otherwise stated.
+
+Customers are responsible for reviewing the current version of this policy.
+
+26Contact
+
+For refund-related questions or requests, please contact MoradoSolution through the official support channels provided on our website.
+
+MoradoSolution
+
+Website: https://moradosolution.in/
+
+For additional legal terms, please refer to our:
+
+Terms of Service
+Privacy Policy
+Acceptable Use / Abuse Policy
+Cancellation Policy
+Backup Policy
+Service Level Agreement, where applicable
+
+Final Notice
+
+Purchasing a MoradoSolution service constitutes acceptance of this Refund Policy. Refunds are provided only where the applicable requirements are satisfied or where MoradoSolution expressly approves an exception.
+
+Nothing in this Refund Policy is intended to remove or restrict any consumer rights that cannot lawfully be excluded or restricted under applicable law.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

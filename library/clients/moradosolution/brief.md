@@ -3,6 +3,9 @@
 Deal done 2026-10-24 (owner). Everything below was read on the live sites on 2026-10-24 unless marked otherwise.
 Re-read the site before every new video: prices and plans change.
 
+**FULL SITE DATA (all 37 pages, plans, offer, contradictions): `site-data.md` beside this file** (crawl 2026-10-24,
+raw page text in site/pages, screenshots in site/screens, brand images in assets/). Check it first; re-crawl only to diff.
+
 ## Sites
 - Real site: https://moradosolution.in (owner chose this URL for videos). https://moradosolution.com showed only the
   DirectAdmin placeholder ("Something amazing will be constructed here...") on 2026-10-24.
@@ -22,7 +25,7 @@ Re-read the site before every new video: prices and plans change.
 - Prices (home, 2026-10-24): Minecraft Starter ₹199, Stone ₹449, Gold ₹699 (Popular), Titan ₹1,599 /month;
   Hytale Starter ₹199, Standard ₹449, Pro ₹799 (Popular), Ultra ₹1,299; VPS 1 ₹676, VPS 2 ₹1,352, VPS 3 ₹1,690,
   VPS 4 ₹2,028. /minecraft-budget lists ₹199 up to ₹4,399. Rust, ARK, Valheim, Palworld: "Coming Soon".
-- "Deploy in minutes" (/game-hosting), "support answered by humans" (footer). Sales page: no live promo code on 2026-10-24.
+- "Deploy in minutes" (/game-hosting), "support answered by humans" (footer). Sales page: no live promo code earlier on 2026-10-24; the later full crawl (same day) shows WELCOME30 = 30% OFF, see site-data.md.
 
 ## Brand
 - Colours (site CSS): --bg #050505, text #f4f4f5 / #a2a2a8, cards #121215; accents from the logo: red #e11d48, blue #3b82f6.
@@ -45,4 +48,16 @@ Re-read the site before every new video: prices and plans change.
   library/templates/hosting-promo-reel/build_moradosolution.py (8 scenes: hook, brand, hardware, DDoS, locations,
   ₹199 price, deploy/support, end card moradosolution.in + discord). A 64 s song version (ACE-Step seed 21) was
   previewed only.
-- Before payment: preview with library/tools/watermark.py; after payment: clean file (owner rule).
+- Delivery (owner, 2026-10-24): send the FINAL clean video + WhatsApp copy directly, no watermarked preview.
+- 2026-10-24: WELCOME30 offer reel, 9:16, 30.2 s, PREVIEW (watermarked) sent; final waits for owner approval/payment.
+  Build: library/templates/hosting-promo-reel/build_moradosolution_welcome30.py. Claims (site-data.md): WELCOME30 30% OFF
+  (/sales), Starter ₹199->₹139, Gold ₹699->₹489 (/minecraft-budget), Hytale plans included (/sales), AMD EPYC 7C13 + NVMe,
+  "All plans include DDoS protection", "Deploy ... in minutes" (/minecraft-budget), "paste them at checkout".
+  Left out on purpose (site contradicts itself): "limited offer" (/game-hosting) vs "No expiry" (/sales).
+  VO: same VoxCPM2 clone recipe (ref regenerated seed 7, 4 min; 8 lines ~19 min); all words heard by Whisper small.
+- 2026-10-24: WELCOME30 reel FINAL delivered (delivery render 1m30s, 30.2 s, -14.4 LUFS, 30 fps, no watermark) + WhatsApp copy.
+- 2026-10-26: "Indian RDP + BUSY setup" explainer, 16:9, 1m52s, FINAL + WhatsApp copy delivered. Script = owner's own
+  words (Roman Hindi); price from the owner, NOT on moradosolution.in: 16GB RDP ₹3,000/month (owner confirmed per month;
+  site has no RDP/BUSY product, checked 2026-10-26). Owner chose MoradoSolution branding and no fake screens.
+  Build: library/templates/explainer-host-steps/build_moradosolution_rdp_busy.py. Line 6 reworded (BUSY "pehle se install aur
+  configure hoga") because "pre-installed and pre-configured" garbled in every take; "Hello everyone" unverified by Whisper.
