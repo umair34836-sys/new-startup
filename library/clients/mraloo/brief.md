@@ -36,3 +36,12 @@ Home session: this branch `client-mraloo` (opened 2026-10-25).
 ## Not known yet (do not assume)
 
 - Channel/page links, video style, caption language, length, aspect ratio.
+
+## Drive folders (owner, 2026-10-26)
+- CLIENT INPUT folder (the client uploads new videos / VOs / logos here; start every new Mr Aloo job by listing it):
+  https://drive.google.com/drive/folders/1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx (folder id 1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx).
+  List with the Google Drive MCP (`search_files` query `parentId = '1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx'`), download each
+  file with `curl -L "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"` into the
+  scratchpad (never commit the media).
+- Owner's own "Mr_Aloo" folder in his Drive (id 1dNd_UTL3Gv1-lr0XObfR1-D7kN2pyWoC). The Drive MCP cannot upload a
+  ~100 MB video (content must go inline as base64), so finished videos go to the owner via SendUserFile.

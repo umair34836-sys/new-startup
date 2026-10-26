@@ -364,6 +364,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Client Mr Aloo (ALOO SMP, Minecraft server) home session: session_01MXn9cJzR1SB9sUWZnsT4n4 (branch client-mraloo, Oct 25 2026).
   Brief library/clients/mraloo/brief.md; owner rule for this client: zero guesswork, log every decision's source
   (edit-log-short-v1.md). Short v1 delivered 2026-10-25 from template library/templates/minecraft-smp-short.
+  CLIENT DRIVE FOLDER (owner 2026-10-26): new inputs arrive in https://drive.google.com/drive/folders/1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx
+  -> list it first for every new Mr Aloo job and edit from there (details: library/clients/mraloo/brief.md "Drive folders").
 - Whisper medium can MERGE a whole stretch into one long word (Mr Aloo warning VO, 2026-10-26: 107.5-120.5 s came back as
   one "हैं" although RMS showed speech every 0.5 s). After transcribing, list words longer than ~1.5 s and re-run those
   stretches alone; check unclear words again with language="en" (it resolved "extra tool", "first week", "keep it on").
