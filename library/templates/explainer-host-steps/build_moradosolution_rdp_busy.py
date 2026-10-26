@@ -1,5 +1,5 @@
 # MoradoSolution "Indian RDP + BUSY" setup explainer, 1920x1080. Script = the owner's own words (2026-10-26),
-# price from the owner: 16GB RDP ₹3,000/month. No fake Windows/BUSY screens (owner chose "bina screen ke"):
+# price + specs from the owner: 16 GB RAM, 8 vCore, 150 GB NVMe, ₹3,000/month. No fake Windows/BUSY screens (owner chose "bina screen ke"):
 # step cards with generic drawn icons, the owner's blocky host (library/characters/host-skin.png), Roman captions.
 # Scene/caption times follow the VO line starts in assets/vo/lines.json (vs_tts.py --parts), shifted by VO_START.
 import json, os, subprocess, html as H
@@ -147,15 +147,29 @@ C["offer"] = comp("offer", f'<div class="panel">{b}</div>', pop("#off-a", at(5, 
 for t in (at(5, 0.5, "offer"), at(5, 0.75, "offer"), at(6, 0.2, "offer")):
     mark("offer", t, "ok")
 
-# price (line 7): owner's price
-b = (f'<div class="card" id="pr-card" style="position:absolute;left:80px;top:60px;width:900px;height:560px;border:4px solid {RED};opacity:0;">'
-     '<div class="anton" style="position:absolute;top:50px;width:100%;text-align:center;font-size:90px;color:#fff;">16 GB RDP</div>'
-     f'<div class="anton" id="pr-p" style="position:absolute;top:180px;width:100%;text-align:center;font-size:220px;color:{RED};text-shadow:0 0 60px rgba(225,29,72,0.5);">₹3,000</div>'
-     '<div class="gr" style="position:absolute;top:440px;width:100%;text-align:center;font-weight:700;font-size:56px;color:#fff;">per month</div></div>')
+# price (line 7): owner's price + specs (owner 2026-10-26: 16 GB RAM, 8 vCore, 150 GB NVMe, ₹3,000/month)
+SPECS = [("ram", "16 GB", "RAM"), ("cpu", "8", "vCore"), ("disk", "150 GB", "NVMe")]
+SIC = {"ram": '<rect x="6" y="20" width="62" height="34" rx="4" fill="none" stroke="#fff" stroke-width="5"/><path d="M18 54v8M30 54v8M44 54v8M56 54v8M18 30v14M30 30v14M44 30v14M56 30v14" stroke="#fff" stroke-width="4"/>',
+       "cpu": '<rect x="18" y="18" width="38" height="38" rx="4" fill="none" stroke="#fff" stroke-width="5"/><rect x="29" y="29" width="16" height="16" fill="#fff"/><path d="M28 8v10M46 8v10M28 56v10M46 56v10M8 28h10M8 46h10M56 28h10M56 46h10" stroke="#fff" stroke-width="4"/>',
+       "disk": '<rect x="8" y="22" width="58" height="30" rx="6" fill="none" stroke="#fff" stroke-width="5"/><circle cx="54" cy="37" r="4" fill="#fff"/><path d="M18 37h22" stroke="#fff" stroke-width="5" stroke-linecap="round"/>'}
+chips = "".join(
+    f'<div class="sp" id="pr-s{i}" style="position:absolute;left:{40 + i * 280}px;top:150px;width:260px;height:150px;border-radius:20px;'
+    f'background:rgba(255,255,255,0.07);border:2px solid rgba(255,255,255,0.16);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;">'
+    f'<svg viewBox="0 0 74 74" style="width:52px;height:52px;">{SIC[k]}</svg>'
+    f'<div class="gr" style="font-weight:700;font-size:44px;color:#fff;line-height:1.1;">{v} <span style="font-size:32px;color:#d4d4d8;">{u}</span></div></div>'
+    for i, (k, v, u) in enumerate(SPECS))
+b = (f'<div class="card" id="pr-card" style="position:absolute;left:100px;top:20px;width:880px;height:640px;border:4px solid {RED};opacity:0;">'
+     '<div class="anton" style="position:absolute;top:34px;width:100%;text-align:center;font-size:78px;color:#fff;">INDIAN RDP PLAN</div>'
+     + chips +
+     f'<div class="anton" id="pr-p" style="position:absolute;top:330px;width:100%;text-align:center;font-size:190px;color:{RED};text-shadow:0 0 60px rgba(225,29,72,0.5);">₹3,000</div>'
+     '<div class="gr" style="position:absolute;top:548px;width:100%;text-align:center;font-weight:700;font-size:50px;color:#fff;">per month</div></div>')
 C["price"] = comp("price", f'<div class="panel">{b}</div>',
                   '    tl.fromTo("#pr-card", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.1);\n'
-                  f'    tl.fromTo("#pr-p", {{ scale: 0.4 }}, {{ scale: 1, duration: 0.4, ease: "back.out(2.4)" }}, {at(7, 0.45, "price")});\n')
-mark("price", at(7, 0.45, "price"), "cash")
+                  + "".join(f'    tl.fromTo("#pr-s{i}", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)" }}, {0.35 + i * 0.15:.2f});\n' for i in range(3))
+                  + f'    tl.fromTo("#pr-p", {{ scale: 0.4 }}, {{ scale: 1, duration: 0.4, ease: "back.out(2.4)" }}, {at(7, 0.6, "price")});\n')
+for i in range(3):
+    mark("price", 0.35 + i * 0.15)
+mark("price", at(7, 0.6, "price"), "cash")
 
 # RDP login steps (lines 8-11)
 b = (row("rdp-r0", 0, '<div class="num">1</div>' + icon("monitor"), "Remote Desktop Connection", "computer / laptop par open karein")

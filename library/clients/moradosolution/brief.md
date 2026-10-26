@@ -65,3 +65,7 @@ raw page text in site/pages, screenshots in site/screens, brand images in assets
   it is NOT stored in the repo (client-brand-kit rule: brand.json with phone stays in the scratchpad). Ask the owner for it again
   in a new session. Done with build_brand.py (phone field) -> brand-end phone row restyled as a white pill with a call icon,
   pulses + ding when the VO says "contact". Rendered 4m02s, -14.4 LUFS, 30 fps; FINAL v2 + WhatsApp copy delivered.
+- 2026-10-26: RDP + BUSY explainer v3: owner gave the plan specs "16gb ram 8v core 150gb nvme" (shown as 16 GB RAM · 8 vCore ·
+  150 GB NVMe; owner info, not on the site): spec chips with icons on the price card + a spec row on the end card (end
+  column moved to flex-start, padding-top 90 px, so captions don't overlap). FINAL v3 delivered (full quality only: new
+  owner rule, no WhatsApp copy). Rendered 3m58s, -14.4 LUFS, 30 fps.
