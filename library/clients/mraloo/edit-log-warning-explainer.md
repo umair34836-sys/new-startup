@@ -36,3 +36,18 @@ Build script, VO, music and photos stay in the session scratchpad (no media in g
 | preview 4 | gameplay cards (owner rejected them) | online images |
 | preview 5 | label overlap at 23.6 s (two cards at once) | each card ends where the next one starts |
 | full build | 2-line titles over the cards; empty frame 0 | one-line title size; inline opacity |
+
+## v2 (2026-10-26): client feedback "music by mood, cyber visuals, sync the character, vary layouts" + owner "use every skill"
+| Decision | Source |
+| --- | --- |
+| Mood bed: suspense on the hook (Apocalyptic Echoes), light under explanations (On The Flip, Kicking It), serious on the hack story / malware / signs (Restless Heart, Risen), emotional outro (Days Are Long); owner's Drive YT Audio Library folders, measured with listen.py, loudnorm -14 per piece, 0.8 s crossfades, sidechain-ducked | client feedback; decision-guide 17 "music changes with sections"; skills #316/#317 |
+| Padlock / electrical DANGER sign / paper envelopes removed. Where no licence-clean cyber image matched the line: motion-graphic icon cards and UI moments instead of a loose photo | client feedback; decision-guide 16 (#207 explainers = stock + motion graphics + text), 17 (#219 mistake: visuals that only loosely match), #75 |
+| Host: talks only while words are spoken, head dips on every word (harder on gold caption words), idle in pauses; gestures on the VO's own words (shock, shrug, think, no, nod, wave, point) | client feedback; blocky_character.py --beats + new poses (repo tool, committed) |
+| Layouts rotate (full-screen visual, host left, host right, centre card with host in the corner), held >= 6 s; section openers full-screen; cards enter from right/top/left/bottom/zoom/wipe | client feedback; blocky_character.py --path |
+| Moments on key lines: hook slam rows, "This file may harm your device" dialog typed word by word with glitch + shake + error SFX, "100% working" comment cards, logout / new-login notifications, numbered malware / signs / rules lists (✗ / ✓ / flags), SHORTCUT = DANGEROUS, DELAY ≠ SAFE, FREE ≠ HARMLESS, COMMENT / SHARE KARO; chapter progress bar | owner: hook / kinetic / tutorial skills; #99, #103, #104, #404, #405, #150, #161 |
+| Topic changes: section title bumper rides the spoken heading (each word glitch-slams in as spoken), 0.1-0.25 s RGB-split bursts, music stops just before the heading, 0.5 s beat after it, heading captions hidden under the bumper | client voice reply ("pause after the topic + glitch + sound"), owner ("glitch while the word is spoken"); #405, #138, #2035, #87, #63 |
+| Reference tutorial from the client (Zapnow playz) covers recording / voice / storytelling / thumbnails, not editing | library/research/ref-zapnow-gameplay-tutorial.md |
+
+QA fixes before the final: yoyo shakes left the dialog skewed (even repeat), Anton has no ≠ (drawn), long list row wrapped (nowrap),
+section titles under moments hidden, host transform conflict (fromTo), heading captions duplicated (hidden), Whisper word
+start before the real gap (index-based shift).
