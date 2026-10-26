@@ -273,6 +273,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   menu-card photos ("excluded tax"): zoom in to read, ask the owner before quoting, show "+ tax".
 - vs_tts.py with the default voice crashed at the end (`No module named 'pyworld'` in /home/user/tools/venv) AFTER writing
   all parts + an unpitched vo.mp3 (2026-10-26). The 172 Hz pitch step was then run with system python3 (has pyworld).
+  FIXED 2026-10-26: pyworld + "setuptools<81" (pyworld imports pkg_resources) installed in the venv and added to setup-all heavy.
   VoxCPM2 took ~1 min per line here once loaded (8 lines 05:08-05:17), much faster than the ~3 min of Oct 24-25.
 
 ## Tutorials / screen videos
@@ -390,13 +391,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - Client Korba Restaurant home session: session_01FDH7RUAdSgv8cUNXbZzyHs (branch client-korba, Oct 26 2026).
   Brief library/clients/korba/brief.md; 9:16 promo reel FINAL delivered 2026-10-26 (site photos only, no images committed).
+  OWNER RULE for this client: best promotional video, VO + music fully promotional, visuals ONLY the restaurant's own
+  website pictures/videos (nothing from elsewhere, no guesswork).
 
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.
 
-- Client Korba Restaurant home session: session_01FDH7RUAdSgv8cUNXbZzyHs (branch client-korba, Oct 26 2026). Site
-  https://korba-restaurant.localoria.com/. OWNER RULE: best promotional video, VO + music fully promotional, visuals ONLY
-  the restaurant's own website pictures/videos (nothing from elsewhere, no guesswork). Template food-promo-reel.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
