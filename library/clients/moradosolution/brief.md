@@ -61,3 +61,7 @@ raw page text in site/pages, screenshots in site/screens, brand images in assets
   site has no RDP/BUSY product, checked 2026-10-26). Owner chose MoradoSolution branding and no fake screens.
   Build: library/templates/explainer-host-steps/build_moradosolution_rdp_busy.py. Line 6 reworded (BUSY "pehle se install aur
   configure hoga") because "pre-installed and pre-configured" garbled in every take; "Hello everyone" unverified by Whisper.
+- 2026-10-26: RDP + BUSY explainer v2: the client asked for his phone number on the end card. The owner sent it in chat;
+  it is NOT stored in the repo (client-brand-kit rule: brand.json with phone stays in the scratchpad). Ask the owner for it again
+  in a new session. Done with build_brand.py (phone field) -> brand-end phone row restyled as a white pill with a call icon,
+  pulses + ding when the VO says "contact". Rendered 4m02s, -14.4 LUFS, 30 fps; FINAL v2 + WhatsApp copy delivered.

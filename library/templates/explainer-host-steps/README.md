@@ -13,3 +13,6 @@ music cc0 background--chill-lofi-inspired (volume 0.2). Run with REPO=<repo> pyt
 Measured here 2026-10-26: check passed (only zero-length host tween overlap warnings); 112 s rendered in 4m04s
 (--quality delivery --workers 3); listen.py -14.4 LUFS, true peak -1.53 dBTP, no clipping; watch.py 30.0 real fps;
 QR decoded from the rendered end card (OpenCV) = https://moradosolution.in.
+v2 (2026-10-26): phone on the end card = brand.json "phone" + build_brand.py, then the brand-end phone row styled as
+a 58 px white pill with a red call icon; build.py injects a pulse (yoyo x3) + notification/ding-real.mp3 at 75 % of the
+"contact" VO line (T_PH). Check passed; end frame read back from the render shows the number.

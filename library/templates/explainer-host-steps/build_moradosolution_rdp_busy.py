@@ -277,6 +277,12 @@ divs.append(host("brand-end", S0["end"], TOTAL - S0["end"], 1, 2))
 divs.append(f'      <div id="caps" data-composition-id="caps" data-composition-src="compositions/caps.html" data-start="0" data-duration="{TOTAL}" '
             f'data-track-index="5" data-track-kind="captions" data-width="1920" data-height="1080" style="z-index: 6"></div>')
 
+# phone pill on the end card pulses when line 22 says "contact" (client asked for his number at the end)
+T_PH = round(T0[22] + 0.75 * (T1[22] - T0[22]), 2)
+be = open("compositions/brand-end.html").read()
+import re as _re
+be = _re.sub(r"\}, (PHONE_PULSE|[0-9.]+)\);\n    window.__timelines\[\"brand-end\"\]", "}, %.2f);\n    window.__timelines[\"brand-end\"]" % (T_PH - S0["end"]), be)
+open("compositions/brand-end.html", "w").write(be)
 sfx = lambda n: f"assets/sfx/{n}.mp3"
 A = [("vo", VO_FILE, VO_START, dur(VO_FILE), 1.0, 10, 0),
      ("m1", "assets/music/music.mp3", 0, round(T1[-1] + 0.3, 2), 0.2, 11, 0),
@@ -287,6 +293,7 @@ hit = {"pop": ("pop-high", 0.006, 0.45), "ok": ("confirm-1", 0.005, 0.5), "cash"
 for j, (t, kind) in enumerate(POPS):
     n, h, v = hit[kind]
     A.append((f"p{j}", sfx(n), round(t - h, 2), dur(sfx(n)), v, 15 + j % 2, 0))
+A.append(("ding", sfx("ding-real"), round(T_PH - 0.007, 2), dur(sfx("ding-real")), 0.5, 18, 0))
 A.append(("chime", sfx("success-chime"), round(S0["end"] + 0.1, 2), dur(sfx("success-chime")), 0.4, 17, 0))
 aud = "\n".join(f'      <audio id="{i}" src="{s}" data-start="{a}" data-duration="{dd}" data-volume="{v}" data-track-index="{ln}"'
                 + (f' data-media-start="{ms}"' if ms else "") + (' data-fade-out="2"' if i == "m2" else "") + "></audio>"
