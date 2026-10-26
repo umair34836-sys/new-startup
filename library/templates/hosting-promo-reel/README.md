@@ -37,3 +37,12 @@ QR decoded from a rendered frame with OpenCV QRCodeDetector (perc-venv cv2 5.0.0
 v2 (same day): checked against find_skill.py #3598 (Meta Reels margins: top 14 %, bottom 35 %, sides 6 %): "HYTALE BHI!"
 moved to top 1060 px; brand-end column changed to flex-start + padding-top 280 px, logo 230 px, QR 250 px so all of it
 ends above y=1248. Re-rendered 1m15s, -14.4 LUFS, QR decoded again. brand-end.html edits: code row, these sizes.
+
+## build_pakwebhoster.py (PakWebHoster, 2026-10-25)
+Light theme (site --color-four #f0f7fd, green #2a862e, logo navy #1a2f3b; the logo PNG has a white background, so it
+sits on white "logo cards"), 7 scenes = 7 VO lines: hook -> logo + "Web Hosting in Pakistan" -> Starter Lite chips
+(10 GB NVMe, Unlimited bandwidth) -> SSL / LiteSpeed / Malware Scanner chips -> 24/7 Live Support -> PKR 200 / mahina +
+"PKR 2000 / Year, 2 Month FREE" -> end card (URL pill, Call / WhatsApp). TOTAL = VO end + 3.7 s = 30.0 s (owner asked 30 s).
+VO: vs_tts.py default voice; weak lines regenerated (seed 21 / reworded) and the chosen takes joined with
+library/tools/vo_join.py (pitch-matched to 172 Hz, gap 0.55 s). Music: CC0 "Sunglasses" (Loyalty Freak Music) from
+19.6 s at volume 0.16. Render -w 3: 69 s; -16.6 LUFS after loudnorm; watch.py 30.0 real fps.

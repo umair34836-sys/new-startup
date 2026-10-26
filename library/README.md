@@ -79,6 +79,11 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   24x7/NO WHITELIST stamp, JAVA+BEDROCK cards, end card (logo, IP, port, join, Discord), SFX lanes. See its README.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
+- `kinetic-type-reel/build_pakwebhoster.py`: 9:16 20 s kinetic typography reel, no VO (beat-synced word slams out of masks,
+  full-screen colour flips per spec, price slam, end card); beat grid from listen.py. PakWebHoster, 2026-10-25. See its README.
+- `typewriter-reel/build_pakwebhoster.py`: 9:16 20 s typewriter reel, no VO (editor window, characters typed with uneven
+  gaps + caret + keyboard SFX, URL typed into an address bar). PakWebHoster, 2026-10-25. See its README.
+- `hosting-promo-reel/build_pakwebhoster.py`: light-theme 30 s Rs 200 shared-hosting reel with the free default voice. PakWebHoster, 2026-10-25.
 - `brand-kit/`: client branding kit: `brand.json` schema + fake example, `brand_from_logo.py` (palette + WCAG text colours from a logo), `build_brand.py` (logo sting, lower third, contact card with local QR, watermark, CTA, offer badge; 9:16 and 16:9). Intake questionnaire: research/client-intake.md. Skill client-brand-kit.
 - `phone-clip-reel/build.py`: turns one short phone clip into a 9:16 "Boss mode" reel (Oct 2026 client edit): one shot per
   bar at 105 BPM, title card at 0 s, zoom-through / whip / light leak / punch-in / flash transitions, slow-mo end with
@@ -177,6 +182,7 @@ Search: `python3 tools/find_stock.py "<words>" [--sfx|--lut|--all] [--vertical]`
 | `fast_matte.py` | Fast CPU person matte (Robust Video Matting ONNX); benchmarks and the optional bg_blur.py switch in research/cpu-speed.md. |
 | `urdu_captions.py` | Urdu/Pashto/Hindi captions for HyperFrames (Nastaliq shaping, RTL, per-word reveal; `--check` verifies a font has the needed letters). Block: `blocks/urdu-captions.html`. Skill urdu-captions. |
 | `vs_tts.py` | Script -> spoken voiceover through VoiceStudio (OmniVoice/VoxCPM2): Urdu/Hindi/Pashto, voice design text, cloning. Start the backend with `voicestudio.sh start`. OmniVoice is non-commercial. |
+| `vo_join.py` | Join chosen VO line takes (other seeds/rewordings from several vs_tts.py --parts runs) into one VO: each line pitch-matched to one median f0 (default 172 Hz), gap, loudnorm -16, lines.json. Made 2026-10-25 (PakWebHoster reel). |
 | `voicestudio.sh` | start / stop / status of the VoiceStudio backend (:3900, OpenAPI + MCP). |
 | `align_lyrics.py` | `python3 align_lyrics.py lyrics.txt words.json out.json`: start/end of every lyric line inside a song from Whisper word timings, by one global in-order character alignment (a weak line can't shift later ones). Smoke-tested 2026-10-24 on Whisper words of a VoxCPM2 take. |
 | `watermark.py` | Unpaid-preview copyright mark for client videos: diagonal tiled "Made by MrCopper804" over the whole frame (16% alpha, hard to crop), a solid "PREVIEW · © 2026 MrCopper804" corner tag, and copyright/artist/comment metadata. Send the clean render after payment. First used on the SkilloraClouds reel, 2026-10-24 (32.5 s 1080x1920 re-encode, crf 18). |
@@ -209,6 +215,22 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 ## fonts (added)
 
 `fonts/PlusJakartaSans-Variable.ttf` (OFL, weights 200-800): TalkEmber Studio's brand font.
+`fonts/Manrope-Variable.ttf` (+ `OFL-Manrope.txt`, weights 200-800) and `fonts/Ubuntu-Regular.ttf` / `Ubuntu-Bold.ttf`
+(+ `Ubuntu-UFL.txt`, Ubuntu Font Licence 1.0, free to use and embed): PakWebHoster's site fonts (Manrope body/headings,
+Ubuntu theme font; loaded fonts read in Chromium 2026-10-25). From github.com/google/fonts (ofl/manrope, ufl/ubuntu), 2026-10-25.
+
+## vendor/
+
+`gsap-3.14.2.min.js`, `TextPlugin-3.14.2.min.js`, `SplitText-3.14.2.min.js`: from `npm pack gsap@3.14.2` (dist/),
+GreenSock standard "no charge" licence (https://gsap.com/standard-license), fetched 2026-10-25. Copy into a project's
+assets/vendor/ (never load GSAP from the CDN in HyperFrames).
+
+## clients/
+
+One folder per client: `brief.md` (facts + brand + voice + delivered), `site-data.md` (every fact from a full browser
+crawl, with page + date), `site/` (page text, crawl/screenshot tools, images.json). Site photos/screenshots are never
+committed (owner rule 2026-10-26): re-make them per job in the scratchpad.
+`moradosolution/` (branch client-moradosolution), `pakwebhoster/` (pakwebhoster.com, crawl 2026-10-25).
 
 ## research/
 

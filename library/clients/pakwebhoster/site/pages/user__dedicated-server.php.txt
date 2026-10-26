@@ -1,0 +1,183 @@
+URL: https://user.pakwebhoster.com/dedicated-server.php
+FINAL_URL: https://user.pakwebhoster.com/dedicated-server.php
+HTTP: 200
+TITLE: Dedicated Servers Pakistan | High Performance Servers | PAK WEB HOSTER
+FETCHED: 2026-10-25T05:06:02.821Z (Playwright Chromium, rendered innerText)
+
+ Hosting Flash Sale: Starting at Rs 200/mo for a limited time
+ Account
+ English
+Login
+ Home
+ Domain
+ Services
+ Support
+ Billing
+DEDICATED
+Dedicated Server
+
+Get all the raw performance of the server for your resource-intensive websites & applications
+
+Choose from SSD or HDD plans
+High-memory servers
+New Generation Processors
+Basic Dedicated server
+30 Days Money Return Available
+99.999% uptime
+Get started within minutes
+Get Started Now
+Choose The Best Dedicated Server Plan
+Maximum Performance, Total Control
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit
+
+Powerful Configurations
+
+Our servers are powered by SSD storage, DDR4 Memory and Xenon D processors, and can smoothly handle any type of workload — from a critical business application to a high-traffic website.
+
+Quick Provisioning
+
+We get you online quickly. Your server is provisioned within minutes.
+
+Server Administration Panel
+
+Never lose access to your server. Our Server Administration Panel gives you total control at all times. With features like Rebuild, Web-based VNC, Restart, Shutdown and Resource Monitoring you can manage your server easily.
+
+Additional Storage*
+
+Our HDD servers come with the flexibility of additional storage. You can easily scale the storage as your business grows.
+
+Easily Configurable
+
+Choose from multiple Linux flavours and hosting panels. You can even add WHMCS add-on to have a complete billing solution.
+
+99.99% uptime
+
+Our servers are located a top-tier data centres which are backed by redundant ISP links and Neustar DDoS protection to ensure your site is up and available all the time.
+
+CONTACT US
+Any query ? let's talk
+
+Any questions or topics you'd like to discuss? Feel free to share your thoughts, and let's engage in a conversation. I'm here to help and chat with you.
+
+Support Center
+Email Us
+example@gmail.com
+Call
++91 123 456 7890
+Our Location
+Open Google Maps
+Hear from happy customers
+Aaron Sweeney
+Co-Founder
+
+ Great support, like i have never seen before. Thanks to the support team, they are very helpfull. This company provide customers great solution, that makes them best. 
+
+Sara Wilsson
+Designer
+
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perferendis, commodi veritatis unde magnam magni? Eaque, reprehenderit dignissimos? 
+
+Simon Deubele
+Team Member
+
+ I chose you because you create added value over the price offered by other hosting companies. it's been a great experience for me. I'm leaving happy. Thank you. 
+
+Frequntly Asked Question
+Which hosting control panels do you offer ?
+You can buy Plesk or cPanel license during the server purchase, or at a later time when the need arises.
+Which billing panels do you offer ?
+What are the functions of the Server Administration Panel ?
+Can I configure my own RAID for drives ?
+What is the port speed of the server ?
+How long does it take for the server to be ready ?
+How long does it take for the server to be ready ?
+Is Additional Storage available for all server configurations ?
+Can I use a Dedicated Server for email marketing ?
+Can I use virtualisation software on the server ?
+Do you provide any backup service ?
+24 x 7 Customer Support
+99% Uptime Guarantee
+100+ Running Promos
+30-day Money-back guarantee
+
+At PAK WEB HOSTER , we aim at fulfilling all the business needs with perfectly crafted hosting plans and endless customer service day in, day out! We promise to deliver above and beyond the expectations of our clients!
+
+House 168/170, Jaipur, Rajasthan India
+info@pakwebhoster.com
+Domains
+My Domains
+Renew Domains
+Register a Domain
+Transfer Your Domain
+Domain Promos
+Useful Links
+Linux Hosting
+WordPress Hosting
+Linux Reseller Hosting
+VPS Server
+Dedicated Servers
+My Services
+View Available Addons
+Support
+Open Ticket
+Tickets
+Announcements
+Knowledgebase
+Network Status
+Contact Us
+Legal Agreement
+Privacy Policy
+Contact Us
+Hotline 24/7 :
++92 324 345 8649
+Email Address :
+info@pakwebhoster.com
+Security By :
+Copyright © 2026 PAK WEB HOSTER. All Rights Reserved.
+
+--- hidden text (accordions/tabs/dropdowns opened) ---
+Register
+Fotgot Password
+العربية
+Azerbaijani
+Català
+中文
+Hrvatski
+Čeština
+Dansk
+Nederlands
+Estonian
+Persian
+Français
+Deutsch
+עברית
+Magyar
+Italiano
+Macedonian
+Norwegian
+Português
+Português
+Română
+Русский
+Español
+Svenska
+Türkçe
+Українська
+Register A Domain
+Transfer Domain To Us
+Order New Services
+My Invoices
+My Quotes
+Mass Payment
+Affiliates
+We offer WHMCS as a billing panel for your dedicated server. You can purchase the license from us at a minimal cost and install the application on your dedicated server.
+Every server comes with its Server Administration Panel by default. This panel allows you to carry out crucial server administration tasks and monitor resource consumption like GUI-based CPU, Memory, Storage & Inodes utilisation, IPs and Storage (for HDD servers only) details and functions to Rebuild, Restart, Web-based VNC and reset access credentials.
+The Dedicated Servers come pre-configured with RAID 1. At present, we don’t allow customisation of RAID level. Would love to hear about such new features requests to help us serve you better.
+The server uplink port speed is up to 1 Gbps.
+After the payment, your server will be provisioned in about 30 minutes and you can access it via SSH. The disk resize operation, however, may still run in the background for a while after provisioning.
+To ensure high uptime and accessibility at all times, we are available 24x7 for any hardware, network, booting, O.S. or login issues. Our System Administration Support will also assist you with basic cPanel & Firewall setup and their issues.
+At present, the additional storage feature is only available with our HDD servers in the US data centre.Would love to hear about such new features requests to help us serve you better.
+Dedicated Servers can be used for Websites, Databases, Custom Applications, Ecommerce, DNS, File Storage and Emails. Emails, however, must be restricted to personal, organisational or professional purposes. The use of Dedicated Servers to send out mass emails/marketing is NOT recommended and can attract penalties.
+Our Dedicated Servers are virtualised (1:1). Thus, nested virtualisation will not work due to network restrictions on the host system.
+We don’t have any backup solution at the moment. Yet, we strongly recommend that you maintain a remote backup to avoid any hassles during any ill-fated incident.
