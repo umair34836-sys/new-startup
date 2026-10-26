@@ -25,3 +25,19 @@ Lessons from QA (2026-10-25):
 - 9:16 crop of 1080p = 1.78x upscale: `cas=strength=0.5` after lanczos raised Laplacian variance 39 -> 62 on a test
   frame without halos (skill #489).
 - watch.py "soft" is relative to the sharpest scene (sharp_rel < 0.35), so text-heavy cards make footage read "soft".
+
+## v5 (2026-10-26): PiP overlays from a second recording (owner asked to use the spawn video on top)
+`pipcard()` puts real footage in an ice-bordered card (skills #439 picture-in-picture, #578 place on top; HyperFrames
+overlays.md). Placed only where the frame is free and the overlay proves the VO line:
+- "kyunki aaj ... ALOO SMP": the server-list entry (still from 0.5 s; from ~1.0 s the cursor hovered and the icon
+  changed to an arrow) at 40, 560, 1000x232, just before the logo flash.
+- "abhi server ko join karo": the join sequence (Encrypting/Joining world -> "ALOO SMP >> Welcome") at 140, 175, 800x450
+  while the logo steps aside; logo returns on "to join karo apna Discord".
+Rejected (looked at here): the top 168 px (platform UI, types/vertical.md), feature-chip sections (no room between chips
+and captions), spawn holograms ("PvP Enabled", "Difficulty HARD"): the camera moves, so in a small card the text drifts
+and is unreadable (< 28 px rule).
+- Java + Bedrock (31.2-35.4 s) on two devices (owner idea, mockup approved 2026-10-26): CSS laptop (from
+  templates/kinetic-laptop-type) playing a 16:9 gameplay clip = JAVA, CSS phone playing a 9:16 crop = BEDROCK, dark veil
+  over the footage, whoosh on each rise. Source for the pairing: library/research/minecraft-editions.md.
+- v6 render needed ~2.5 GB free disk during capture (it failed once at 0.6 GB free; /tmp/hyperframes-extract-cache-0
+  held 1.7 GB from earlier renders). Free space before rendering.

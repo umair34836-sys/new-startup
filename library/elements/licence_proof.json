@@ -1,0 +1,1255 @@
+{
+ "_note": "Per-file licence proof. Licences read on the source repo files on 2026-10-26; files pinned to the commit in source_url.",
+ "files": {
+  "emoji/fluent-3d/bug.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Bug/3D/bug_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "f8fca56bd7f689e758c7de388c343acecf1c40cc09e666e6fcc99c2e38df0031"
+  },
+  "emoji/fluent-3d/chart_down.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Chart%20decreasing/3D/chart_decreasing_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "def4556976f4ea37549cdff95a9e677994acb2fe359a1b21dcd38ebc92b82925"
+  },
+  "emoji/fluent-3d/check_mark.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Check%20mark%20button/3D/check_mark_button_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "256e3dd950cf1705ab72511ab242472b4bd7db519aa402a6182c1aaf8c58def9"
+  },
+  "emoji/fluent-3d/coin.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Coin/3D/coin_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "17e2a0c226342fe2cdd2612c56f5dd188870d1435076f47600313c04876f843b"
+  },
+  "emoji/fluent-3d/cross_mark.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Cross%20mark/3D/cross_mark_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "2753b89dcd790c7f25fa3c5fd5641821860257364163abd87a2f57bb268466b9"
+  },
+  "emoji/fluent-3d/dashing_away.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Dashing%20away/3D/dashing_away_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "2e14654199310bce25f21e276f6f4888ff415063a517abf74ea346e29c7440a2"
+  },
+  "emoji/fluent-3d/desktop.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Desktop%20computer/3D/desktop_computer_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "f0ec12ccf1e9a2ff83f95cd8ba85e357e401d8dcdbc6bae596d23d77be7f74da"
+  },
+  "emoji/fluent-3d/detective.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Detective/Default/3D/detective_3d_default.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "5d5457e74d826d1981eb510bc34c8f1755aacfb7be2d9e28512b0e8a9aeecb68"
+  },
+  "emoji/fluent-3d/down_arrow.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Down%20arrow/3D/down_arrow_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "cb1059241bdc6409798f70be74381e4683042a33181f887de1e6b551f39a2513"
+  },
+  "emoji/fluent-3d/download.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Inbox%20tray/3D/inbox_tray_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "a2b6a259ec8cc69aba97b26bbe1c82ee6e96f43ecec27811972b0e0a4215d55c"
+  },
+  "emoji/fluent-3d/envelope.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Envelope/3D/envelope_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "9671859aa64b65b6977b7ab6adc2e64220e75edf531a8e67c4b76e01ace04230"
+  },
+  "emoji/fluent-3d/exploding_head.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Exploding%20head/3D/exploding_head_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "a915d5b325dbe3130fed54ebaf793777ab88b54c130560f8f3c17ad1af2bcdaf"
+  },
+  "emoji/fluent-3d/eyes.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Eyes/3D/eyes_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "b3049f399cb0947b423610f5876077efa86bc640fba5cb9d138b149773d4c793"
+  },
+  "emoji/fluent-3d/fan_wind.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Wind%20face/3D/wind_face_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "15725deaeed9ba043402f676670daff2720f09c145b815140cb160b16e98317d"
+  },
+  "emoji/fluent-3d/file_folder.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/File%20folder/3D/file_folder_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "d07ff91df2a4ad9f08e281e9b99ad66924b6db0c0afd2a938feca4dd6b7a9039"
+  },
+  "emoji/fluent-3d/fire.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Fire/3D/fire_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "d56355132d73df1741edcf37cb4e21ad54f1c46eeb76fa17224607abf4128c3f"
+  },
+  "emoji/fluent-3d/game_controller.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Video%20game/3D/video_game_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "4b01e22089defe553717d49624e673cb5492ecdd9c6a8eddb7e6ba12d400c0da"
+  },
+  "emoji/fluent-3d/globe.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Globe%20with%20meridians/3D/globe_with_meridians_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "4a9f820aa69194995d91c6a23432814d67ea6740acc9939eadcc8d6ad1b90546"
+  },
+  "emoji/fluent-3d/hourglass.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Hourglass%20not%20done/3D/hourglass_not_done_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "ab4183328a0ec7a0440a6fb48113fdb9145f51235e960c7f17097ebb9f13af97"
+  },
+  "emoji/fluent-3d/incoming_envelope.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Incoming%20envelope/3D/incoming_envelope_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "9c9ea80e76d7a325197183f8b380803b96229bc7efba64ef9032ca6437b8f93a"
+  },
+  "emoji/fluent-3d/joystick.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Joystick/3D/joystick_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "bd09340c1f65269351e469798f30124902785b128073d86e2c20e7945f56b3c2"
+  },
+  "emoji/fluent-3d/key.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Key/3D/key_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "ae59ce2b8dcfaa1afcdfe91bde7cc88cf06a8493686a6676706d1c891bb349eb"
+  },
+  "emoji/fluent-3d/laptop.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Laptop/3D/laptop_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "3b8a267f6c3d2721af925782bdbc11c4e1bc9ae806c5c875557b100393665aab"
+  },
+  "emoji/fluent-3d/link.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Link/3D/link_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "5183597c8e1b092dadb3c88607c9b1405c1bea3b82219edc50caa4a8590fd8a8"
+  },
+  "emoji/fluent-3d/lock.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Locked/3D/locked_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "8c8e9209b8420ac7caf8c94fde6586044d9b91e85728aaaf4b98c2482761ea16"
+  },
+  "emoji/fluent-3d/magnifying_glass.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Magnifying%20glass%20tilted%20left/3D/magnifying_glass_tilted_left_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "e8fea91e4652a36486aa9392a67873c987a13389afdae06bbcdae78ab30b4f4f"
+  },
+  "emoji/fluent-3d/money_bag.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Money%20bag/3D/money_bag_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "cec19b9cf0beac5bbd27a07dcbe1e68c54b04112b4641165705ccb920f230292"
+  },
+  "emoji/fluent-3d/no_entry.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/No%20entry/3D/no_entry_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "dc34988e83af66a6c9485d3bc64975908da6c857c73261e7bca125acc1e31198"
+  },
+  "emoji/fluent-3d/package.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Package/3D/package_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "9c7c74bb551e7f0a3a088791ac715c4ece8c45b2d1910915bc34159f148dee0e"
+  },
+  "emoji/fluent-3d/prohibited.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Prohibited/3D/prohibited_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "20d8e0eba08431ab2df0cf16b20780cf0edbfe54043890b0e4c5d5412af3af2e"
+  },
+  "emoji/fluent-3d/red_flag.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Triangular%20flag/3D/triangular_flag_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "fe5fe3f28813fb339bb1084ddc2367522edfd9dd29bccc64809aa47f8985a2e6"
+  },
+  "emoji/fluent-3d/robot.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Robot/3D/robot_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "3f9b5a00b53c8bddda36b6a3f68d00718d9d7d8c04f986a3248e55ae93a7961b"
+  },
+  "emoji/fluent-3d/screaming_face.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Face%20screaming%20in%20fear/3D/face_screaming_in_fear_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "fe82efcca47346ff85d85b6e947f9c70dcb9e8ba463b1900053b23f1faf37789"
+  },
+  "emoji/fluent-3d/shield.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Shield/3D/shield_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "3c1cc1b14f8dd43e8532f9fb751769cd68382a9f25c012b0549e352a8d953a94"
+  },
+  "emoji/fluent-3d/skull.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Skull/3D/skull_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "9920d9e79017306b7af9eef09117070ff7fde28d7711fdb4861c14c446b5bf45"
+  },
+  "emoji/fluent-3d/speech_bubble.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Speech%20balloon/3D/speech_balloon_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "b9bdb19ef2e550923bc4f541de049f1633883619564b2aa140a968eaf1d69a0d"
+  },
+  "emoji/fluent-3d/thinking_face.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Thinking%20face/3D/thinking_face_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "cd29da5c3886e1e25726d3cf6ff79faa2f0d631b1c0873b115be287d358fc4be"
+  },
+  "emoji/fluent-3d/thumbs_up.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Thumbs%20up/Default/3D/thumbs_up_3d_default.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "a48dbe89a1a16969593db76f5bec45e9e537e0f090e7609caa8d9a3ff598d1d2"
+  },
+  "emoji/fluent-3d/unlocked.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Unlocked/3D/unlocked_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "0bf5a01afbe49e92a7e5f20cbae121daef47445a1b07ce79941d926c80541e0e"
+  },
+  "emoji/fluent-3d/virus.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Microbe/3D/microbe_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "181c4b85ca6529ca8001a370106a0aa81d5434f4732d2bf175c1da86d2b79e51"
+  },
+  "emoji/fluent-3d/warning.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Warning/3D/warning_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-26",
+   "sha256": "318f534c5d93100443f6e48defc47d76140473d797087af5821587f0feb8003c"
+  },
+  "emoji/noto/bug.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f41b.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "cfd159b2fbdd714081d7368c93ba81e4a371aa868208e2f43cfa58c3e08af27c"
+  },
+  "emoji/noto/chart_down.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4c9.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "39eb05eb23f3800ad923982df66daa8b8cb3d518a265bc282e1d180c79f442d0"
+  },
+  "emoji/noto/check_mark.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u2705.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "15498400df3a3df6255ec1de724a4ec0da2bedb1f9d799f5d0accab7eab07603"
+  },
+  "emoji/noto/coin.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1fa99.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "d429f12102f12e99356279682c545d94a891e46e064da58e29ddc5a580c9425e"
+  },
+  "emoji/noto/cross_mark.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u274c.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "f0807f27df1e90a027a19e862d04845a4a885a200fa64f37c1a8e349266c3cf3"
+  },
+  "emoji/noto/dashing_away.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4a8.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "66c347288e8b53d60eff59345a16a9866e7a02c6160a284dab632a13337853d0"
+  },
+  "emoji/noto/desktop.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f5a5.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "fb0b9546a88924cc0c955e2a56dff2ec0b5b74a587742d0d763646a64469998c"
+  },
+  "emoji/noto/detective.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f575.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "924cfd5a4fbb15945fadc78bf4174f7c1b25feb38c414917142ffd34c267b07f"
+  },
+  "emoji/noto/down_arrow.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u2b07.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "6e1998466a4f37c9e7953d8e61de53abb4256ba65b8a9bec4edc9f3cca630f84"
+  },
+  "emoji/noto/download.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4e5.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "7e46dc08326f3ee512039ee6b7f11e22477db0bd0d38ff9e9568f774b53c37f7"
+  },
+  "emoji/noto/envelope.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u2709.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "d35898ab72fc472dd0fb8ec800cc9ebfaeb695c39b497618838945e52e789b26"
+  },
+  "emoji/noto/exploding_head.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f92f.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "9a37f3ef091c6ce08fe8333a13a3912fae9b992a8857cec58124cee2a4ef1d2a"
+  },
+  "emoji/noto/eyes.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f440.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "5dad11e1033a02196a2da35a13209677f978c9dc618c2f1eb86f07daf56747f2"
+  },
+  "emoji/noto/fan_wind.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f32c.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "b963af249c7500b2c9fdca75d2988f2c9dd411adabcaf4d2aaa58d663f1e7dc4"
+  },
+  "emoji/noto/file_folder.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4c1.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "51fe17622b292492499d2e3b01543c940c50fc11026ccb34819bb90b7334e7db"
+  },
+  "emoji/noto/fire.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f525.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "961bd999ffe3518f728f675091812a7f601941c49260b67d480f31794cbf0dd2"
+  },
+  "emoji/noto/game_controller.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f3ae.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "4240397047d08b8448a1e2666de0caa77fc30d92d1c553f4daada46604bf0cfc"
+  },
+  "emoji/noto/globe.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f310.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "f5097b7837d60ab6a1ee8535d6d22cf9e7337c8a64850f5b45fb49c93203b5ee"
+  },
+  "emoji/noto/hourglass.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u23f3.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "5d4e064d62d33af3e351bf188fddf8517ed7bf57ffac71f2ec4cc2fd0c030d80"
+  },
+  "emoji/noto/incoming_envelope.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4e8.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "efcce6793b76b71ae78852ec8ea7c9b2c57e158368d112460a40f8c9862a25f0"
+  },
+  "emoji/noto/india_flag_flat.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/third_party/region-flags/png/IN.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Public domain",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/third_party/region-flags/LICENSE",
+   "licence_line": "region-flags/LICENSE: 'The flags in this package were downloaded from Wikipedia and checked to be in Public Domain or otherwise exempt from Copyright.' (IN not in its exceptions list)",
+   "date_checked": "2026-10-26",
+   "sha256": "2dcac9aff1fa9c0137fa32e0f12bed2c6234283e087eb856a92478ba40da89a4"
+  },
+  "emoji/noto/india_flag_waved.svg": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/third_party/region-flags/waved-svg/emoji_u1f1ee_1f1f3.svg",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Public domain",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/third_party/region-flags/LICENSE",
+   "licence_line": "region-flags/LICENSE: 'The flags in this package were downloaded from Wikipedia and checked to be in Public Domain or otherwise exempt from Copyright.' (IN not in its exceptions list)",
+   "date_checked": "2026-10-26",
+   "sha256": "ddb33b4d00e421132533e5ccdd059f7e2e4c1b3805d0ca184f50d2d6537333e8"
+  },
+  "emoji/noto/joystick.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f579.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "fa17122dd7b4a766d28fe3f562be3f9c1b74e82d85b6db39978f745a2640053a"
+  },
+  "emoji/noto/key.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f511.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "d6e499cfcfeeb4c98e9c7884bb1b7a2f3678f321999ccf9d1a928aab81a7949b"
+  },
+  "emoji/noto/laptop.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4bb.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "4f0a029ec8c6b34b6f99e43569baed228edfac770b13d216a9ca23b672ce51d7"
+  },
+  "emoji/noto/link.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f517.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "6d6155c923634d618685abc662e5f5fd30b167acf747db63082967020f388ac7"
+  },
+  "emoji/noto/lock.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f512.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "43cdf92c8762967e6e9248ee29911bd2609a83f7e8b87e94f2e7edfdbc24338e"
+  },
+  "emoji/noto/magnifying_glass.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f50d.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "2198ef1268880433f149e3d076db58d4ec234a134c1d9bb40b12323bf5c8d615"
+  },
+  "emoji/noto/money_bag.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4b0.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "d53b65b4441fc5cd167da3be5681491912c3867ac6234e8598f2b0a35509aa9b"
+  },
+  "emoji/noto/no_entry.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u26d4.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "488959b79713808e2745f59a99422848ce2dcc11a5e518fc8ed344f2bc7941f3"
+  },
+  "emoji/noto/package.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4e6.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "690068d117910d75a3d765d8eeef08be1ac3b32d4776416b21fc638912cc61d5"
+  },
+  "emoji/noto/police_light.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f6a8.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "5a39b0daab6255dfd109190688237ccf8709401b70e1b30575f6fe4c99a2e572"
+  },
+  "emoji/noto/prohibited.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f6ab.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "e3e4c213b6fb9d3558db776d06212ca936094bb4a86f180b46844a1ca7cea63f"
+  },
+  "emoji/noto/red_flag.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f6a9.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "1265d1260667c377b6e32fb643f5ac5525ea276a45b35c89cdedddc9cb3a0f93"
+  },
+  "emoji/noto/robot.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f916.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "98f6f4bdbd98d55100c0c379a25a70f63d347fb869e8e55d6f7b6bb8c1b1bc3b"
+  },
+  "emoji/noto/screaming_face.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f631.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "65f793ae604dfeaf1f18a3b8b58c4bf4ec90169420e6f50d9e117c1b96ad3ea3"
+  },
+  "emoji/noto/shield.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f6e1.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "37b4cab9c23e85c5f5fe4a469be317cf4b4783c6ccf3ce2ef534af9121638f3c"
+  },
+  "emoji/noto/skull.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f480.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "42810b2ab228b297fd11b68708a7298b522e15559e7d2b85709ea0026f075b2b"
+  },
+  "emoji/noto/speech_bubble.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f4ac.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "77ba1eceb71f27c2c45253309714e876718d8c47165f0fde50096c29e11277e2"
+  },
+  "emoji/noto/thinking_face.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f914.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "b7a0a21f48dbda12c7b07cd6f52cf146f932e2a94fedf78b9eabefad399e04c9"
+  },
+  "emoji/noto/thumbs_up.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f44d.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "6a1f498cda7323b89f55291994f9276b43fd4642607f90380ed379ff4b25057e"
+  },
+  "emoji/noto/unlocked.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f513.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "dfd5b9905e9f1b3788c95ce89b60efa092755d74e7de85460dd77e9fe559f9bf"
+  },
+  "emoji/noto/virus.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u1f9a0.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "782b9096d631e212c1247eeb154941ae2247823b67e5d02df2552719891b5f64"
+  },
+  "emoji/noto/warning.png": {
+   "source_url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e/2D/png/512/emoji_u26a0.png",
+   "set": "googlefonts/noto-emoji",
+   "commit": "e20cbc2bbec1926686be9f9bee7d1d2cfa1fea0e",
+   "licence": "Apache-2.0",
+   "licence_url": "https://github.com/googlefonts/noto-emoji/blob/main/2D/svg/LICENSE",
+   "licence_line": "README.md: 'Tools and most image resources are under the Apache license, version 2.0'; 2D/svg/LICENSE: 'Copyright 2013 Google, Inc. ... Licensed under the Apache License, Version 2.0'. Note: the repo-root LICENSE file text is SIL OFL 1.1 (also permissive, no on-screen credit).",
+   "date_checked": "2026-10-26",
+   "sha256": "71a956aaa4f3cd0fc078eaccac46010f919a342094fa840f29bff915f3877647"
+  },
+  "icons/lucide/bug__bug.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/bug.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "c4fddf0d43b4c4f0b8fc52eb8810173c8d8bd25618034a70f162d85e8189d69d"
+  },
+  "icons/lucide/chart_down__trending-down.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/trending-down.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "53c9d3a1a05426edfcd6772bd1805b60b7a941e6a45365ba403c935352547c27"
+  },
+  "icons/lucide/check_mark__circle-check.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/circle-check.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "9711e045a5999f8a3b0782eb88e09b04e0559bc7b379dcc0a4ae645223e10345"
+  },
+  "icons/lucide/coin__coins.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/coins.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "bcfec9236fd10d0aadbf90951f61dd31ec7cedc72dd38d2639f95c2b8437b9f1"
+  },
+  "icons/lucide/cross_mark__circle-x.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/circle-x.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "bcd8788901e6f29e1b231a81ba5e707d083d06cb4848a28f29407fab4f8e0b64"
+  },
+  "icons/lucide/desktop__monitor.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/monitor.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "d1a443233345724859de8e4fb48968ba91e885e12ddbd710701548bd91b39428"
+  },
+  "icons/lucide/download__download.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/download.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "3daeee13ded5a3afa2198b1bb4e2262d163922f97d96ac6ff9953e8ed4fe039d"
+  },
+  "icons/lucide/envelope__mail.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/mail.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "3236a51d5b8ce9b0528cf2e6ad07e527bd636dded6f5a9d656072052b99caea8"
+  },
+  "icons/lucide/exploding_head__brain.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/brain.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "91830115f859daa12e7f2f63fc072311329e363bb8b0b4707f510bcb60c2ab18"
+  },
+  "icons/lucide/eyes__eye.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/eye.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "5bf90197dd7629cad64a2e48d1186a71559deb6121207d10e3dc5b19ebaffdcf"
+  },
+  "icons/lucide/fan_wind__fan.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/fan.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "6ed585fa7a183086480baf6aaeb531cbe65e977222c6462dcb1e4662a6744b54"
+  },
+  "icons/lucide/file_folder__folder.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/folder.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "f0d92b94b797a8ab7d4c4ae33c3236c47f64068351b4e14bdb5014ee42898a39"
+  },
+  "icons/lucide/fire__flame.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/flame.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "cede1462a46a7a3b3daf9d101f0b59484b1d882a4c42a75670810a6d4f8d42fb"
+  },
+  "icons/lucide/game_controller__gamepad-2.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/gamepad-2.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "b0671de7afbebdafc4d655d867d9851947170b906fb187e749410039df867509"
+  },
+  "icons/lucide/globe__globe.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/globe.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "82c6b8fa0b8e8d775ec9becd86f74a4e50bff7bee4c81f7362de45348504f14d"
+  },
+  "icons/lucide/hourglass__hourglass.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/hourglass.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "76475d4ca3299fa243ef83de602b78621487daad45ca54fea2e3718bfba5ef2c"
+  },
+  "icons/lucide/joystick__joystick.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/joystick.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "73e5481260335dc44f627ceacd0c5b954fc41bfd2ccd8b8e6b80d3f638174090"
+  },
+  "icons/lucide/key__key-round.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/key-round.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "f8cdea843754ed360e36b04bf6aa2c2b3610935dd39ffc685a36c4d0a05be248"
+  },
+  "icons/lucide/laptop__laptop.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/laptop.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "b8389056d3b7125670b60a4bd03e6d4ecc440e228f4140e7b66c4e97dcb0dc70"
+  },
+  "icons/lucide/link__link.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/link.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "4f3237183dcaabfac92f4e94c776a9a9e45c3c5e77a921061a6b34b61eb5413f"
+  },
+  "icons/lucide/lock__lock.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/lock.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "d2cfe60cac8deaef36442b5c8218c1e61abe18222784b2a370ea090d13fca840"
+  },
+  "icons/lucide/magnifying_glass__search.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/search.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "283d371c2e433817bb9c0c8310caa6c77fa4177c0f4f1168d9c83b97af7389dc"
+  },
+  "icons/lucide/money_bag__badge-dollar-sign.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/badge-dollar-sign.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "766e630b40c6a588d818685b97a6d074ff6d2ec6d1862c8a99b62f6cdc3d80f2"
+  },
+  "icons/lucide/package__package.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/package.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "69d6bc7650d26c4d24dd55eb22791607b982ce7637073944c256f1f61575509d"
+  },
+  "icons/lucide/police_light__siren.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/siren.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "27281c5d58ac4d60bc2ffbbc30374dee1171bb3cec3a9c78d5c010b5efd6ac16"
+  },
+  "icons/lucide/prohibited__ban.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/ban.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "2eba67f86d70bbd5d22e4211d44d7dda86c3397410f714765a12c3cd3ca0ebe3"
+  },
+  "icons/lucide/red_flag__flag.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/flag.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "e99f1de2fea87cd2e3decc28a1f021a2a8182f907b3b350f604909de2030d8b9"
+  },
+  "icons/lucide/robot__bot.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/bot.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "e46fe72fc5b33d7a17b0112df85da9ded851860312e8353f4fe23d87a4ce77f5"
+  },
+  "icons/lucide/shield__shield.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/shield.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "be32f6a86df7cbe43a83c439dd8849e5bcf5145e484d23420c20d8b98a78e82b"
+  },
+  "icons/lucide/skull__skull.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/skull.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "fa2d1cc99e2a27e18ec6b8cb07cf9ec93d120f7dade3dad3987cf555c75a9724"
+  },
+  "icons/lucide/speech_bubble__message-circle.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/message-circle.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "146f39740fe50844394d56ae1f8821937655bcfff3842bf6fe8ffc0bcd324076"
+  },
+  "icons/lucide/thumbs_up__thumbs-up.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/thumbs-up.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "04cb4caea0872de431a04be01189054c9f5abb093ca8841cdde4b72cff4285b2"
+  },
+  "icons/lucide/unlocked__lock-open.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/lock-open.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "f167153e8fec4008d6946f28035607636ed0b04dcfecdf58d7204db0b3d030f2"
+  },
+  "icons/lucide/virus__virus.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/virus.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "c5134299eaa078fb6f3c87121b05a94c18f76aab237b88ba64f3995bad7591fa"
+  },
+  "icons/lucide/warning__triangle-alert.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/triangle-alert.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "4866f38b8560d410f21e3226413e0b77997b6dfbb6931fadfe0a0d5aef9ffeb4"
+  },
+  "icons/lucide/zip_file__file-archive.svg": {
+   "source_url": "https://raw.githubusercontent.com/lucide-icons/lucide/7faf87628a1ad6175975bc595344337ce14a7db4/icons/file-archive.svg",
+   "set": "lucide-icons/lucide",
+   "commit": "7faf87628a1ad6175975bc595344337ce14a7db4",
+   "licence": "ISC",
+   "licence_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+   "licence_line": "ISC License / Copyright (c) 2026 Lucide Icons and Contributors (Feather-derived icons: MIT, Copyright (c) 2013-present Cole Bemis)",
+   "date_checked": "2026-10-26",
+   "sha256": "203682f219d2f51c1a9e43c9b74c045ceae1b4f72c016a11e3670edee6725999"
+  },
+  "icons/tabler/detective__spy.svg": {
+   "source_url": "https://raw.githubusercontent.com/tabler/tabler-icons/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/spy.svg",
+   "set": "tabler/tabler-icons",
+   "commit": "a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d",
+   "licence": "MIT",
+   "licence_url": "https://github.com/tabler/tabler-icons/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) 2020-2026 Paweł Kuna",
+   "date_checked": "2026-10-26",
+   "sha256": "ee04d7937aad9ff6726d70840c02b16c0d9c9c8fd5a00a359e5b815d51fc1f5e"
+  },
+  "icons/tabler/incoming_envelope__mail-down.svg": {
+   "source_url": "https://raw.githubusercontent.com/tabler/tabler-icons/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/mail-down.svg",
+   "set": "tabler/tabler-icons",
+   "commit": "a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d",
+   "licence": "MIT",
+   "licence_url": "https://github.com/tabler/tabler-icons/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) 2020-2026 Paweł Kuna",
+   "date_checked": "2026-10-26",
+   "sha256": "8fd5bc2a52476a1ea60be3a2b6d9d6e0521c0765f9c5c08ebe94fe0fa27a7698"
+  },
+  "icons/tabler/screaming_face__mood-surprised.svg": {
+   "source_url": "https://raw.githubusercontent.com/tabler/tabler-icons/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/mood-surprised.svg",
+   "set": "tabler/tabler-icons",
+   "commit": "a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d",
+   "licence": "MIT",
+   "licence_url": "https://github.com/tabler/tabler-icons/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) 2020-2026 Paweł Kuna",
+   "date_checked": "2026-10-26",
+   "sha256": "dbab02cfd932f41ba02694607d344b53dd15a3388d2c754ca803dd8f042b957d"
+  },
+  "icons/tabler/thinking_face__mood-puzzled.svg": {
+   "source_url": "https://raw.githubusercontent.com/tabler/tabler-icons/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/mood-puzzled.svg",
+   "set": "tabler/tabler-icons",
+   "commit": "a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d",
+   "licence": "MIT",
+   "licence_url": "https://github.com/tabler/tabler-icons/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) 2020-2026 Paweł Kuna",
+   "date_checked": "2026-10-26",
+   "sha256": "4a2724aa9026645df0aeea99f3463d8d45cced490c468cdc3bb5d6345ec9a925"
+  }
+ }
+}

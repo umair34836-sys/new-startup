@@ -28,6 +28,11 @@ Home session: this branch `client-mraloo` (opened 2026-10-25).
 - Brand colours sampled from the winter emblem: gold #fcb43c, orange #fc9c24, ice #84ccfc / #cce4fc, navy #0c0c24.
 - Delivered 2026-10-25: YouTube Short v1 (62.6 s), template library/templates/minecraft-smp-short.
 
+## Owner feedback
+- 2026-10-26: a kinetic-typography version of Short v2 (VO words big in Anton, gold accent words, blurred dark
+  gameplay behind, 17 s draft preview) was REJECTED by the owner ("acha nai laga"). Don't offer that style again
+  for this client unless asked.
+
 ## Not known yet (do not assume)
 
 - Channel/page links, video style, caption language, length, aspect ratio.

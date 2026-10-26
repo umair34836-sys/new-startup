@@ -136,6 +136,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Check before render, then `snapshot --at ...` and look at the frames. Layout warnings for decorative
   overflow are fixed with `data-layout-allow-overflow`; stacked text effects with `data-layout-allow-occlusion`.
 - The first frame is the thumbnail: put a title or key image on screen at 0 s.
+- GSAP yoyo shakes: `fromTo(... {x: -16} -> {x: 0}, repeat: 3, yoyo: true)` ENDS ON THE FROM values (an even number of
+  passes plays backwards last), so the element stays offset/skewed; use an EVEN repeat (4) to end at rest (seen in
+  snapshots 2026-10-26, Mr Aloo explainer: a warning dialog stayed skewed after its glitch shake).
+- Anton has no "≠" glyph: it renders as "=" (snapshot 2026-10-26: "DELAY ≠ SAFE" showed "DELAY = SAFE", the opposite
+  meaning). Draw "=" plus a rotated red bar, or use a font that has U+2260, and look at the frame.
 - Light text on a bright wall fails contrast: use a deep colour (#6e0c20) with a light glow, or put
   captions over the darker lower part of the frame with a bottom gradient veil.
 
@@ -231,7 +236,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
    soft flash, seamless freeze.
 6. Captions: per-word blur-in, 0.12 s stagger, over a bottom gradient; one gold accent word per line.
 7. Overlays: `floating_hearts.py`, light leak block, bokeh. Music from `library/music`.
-8. Deliver full quality plus a WhatsApp copy: `ffmpeg -i in.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart out.mp4`.
+8. (OWNER RULE 2026-10-26, Mr Aloo session: "next time se whatsapp copy mat dena" -> deliver ONLY the full-quality file,
+   no WhatsApp copy, unless the owner asks for one.) Old step: deliver full quality plus a WhatsApp copy: `ffmpeg -i in.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart out.mp4`.
 
 ## Client phone-video edits (Oct 2026, "Boss mode" reel; template library/templates/phone-clip-reel)
 - WhatsApp clips can report r_frame_rate 28.4 while really being ~12 fps (134 frames in 11 s). Check frame pts
@@ -388,6 +394,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   from repo skills/learnings with an edit log (edit-log-short-v1.md), must NOT look AI-edited, memes + GFX + SFX wherever
   the situation calls for them (skill-based; memes: library/research/memes.md, CC0 library/memes/; no copyrighted
   film/TV clips without asking the owner). Short v1 delivered 2026-10-25 from template library/templates/minecraft-smp-short.
+- Whisper medium can MERGE a whole stretch into one long word (Mr Aloo warning VO, 2026-10-26: 107.5-120.5 s came back as
+  one "हैं" although RMS showed speech every 0.5 s). After transcribing, list words longer than ~1.5 s and re-run those
+  stretches alone; check unclear words again with language="en" (it resolved "extra tool", "first week", "keep it on").
+- Mr Aloo explainer images (owner, 2026-10-26): no client gameplay recordings; online CC0/PDM images that match the
+  VO line's topic (Minecraft image when the line is about gaming, else a real photo of the thing said). Log:
+  library/clients/mraloo/edit-log-warning-explainer.md.
 - 9:16 crops of 1080p gameplay are a 1.78x upscale: add `cas=strength=0.5` after the lanczos scale (skill #489;
   Laplacian variance 39 -> 62 on a test frame, measured 2026-10-25). watch.py "soft" is RELATIVE (sharp_rel < 0.35
   of the sharpest scene), so a video with crisp text cards flags most footage scenes.
