@@ -130,8 +130,8 @@ def pose_js(P, S, moves, duration, turn=0.0):
                 s = t0 + k * span / n
                 tw("head", {"rotationX": -7 if k % 2 == 0 else 3, "rotationY": 8 if k % 3 == 0 else -6}, span / n, s)
             e = min(0.4, span / 4)
-            tw("larm", {"rotationX": -40, "rotationZ": -12}, e, t0, "back.out(1.4)")
-            tw("larm", {"rotationX": -25}, max(0.05, span - 2 * e), t0 + e)
+            tw("larm", {"rotationX": 40, "rotationZ": -12}, e, t0, "back.out(1.4)")
+            tw("larm", {"rotationX": 25}, max(0.05, span - 2 * e), t0 + e)
             tw("larm", {"rotationX": 0, "rotationZ": -3}, e, t1 - e)
         elif pose in ("walk", "run"):
             step, swing, bob = (0.5, 30, 0.6) if pose == "walk" else (0.3, 50, 1.0)
@@ -148,13 +148,14 @@ def pose_js(P, S, moves, duration, turn=0.0):
                 tw("rig", {"y": 0}, d / 2, s + d / 2)
             for part in ("rleg", "lleg", "rarm", "larm"):
                 tw(part, {"rotationX": 0}, 0.2, t1 - 0.2)
+        # CSS rotateX: positive angle swings a hanging arm toward the viewer (z' = y*sin), negative swings it behind
         elif pose == "point":
-            tw("rarm", {"rotationX": -85, "rotationZ": 8}, min(0.35, span / 3), t0, "back.out(1.6)")
+            tw("rarm", {"rotationX": 85, "rotationZ": 8}, min(0.35, span / 3), t0, "back.out(1.6)")
             tw("rarm", {"rotationX": 0, "rotationZ": 3}, min(0.35, span / 3), t1 - min(0.35, span / 3))
         elif pose == "hold":
             e = min(0.35, span / 3)
-            tw("rarm", {"rotationX": -55, "rotationZ": -10}, e, t0, "power2.out")
-            tw("rarm", {"rotationX": -50}, max(0.05, span - 2 * e), t0 + e)
+            tw("rarm", {"rotationX": 55, "rotationZ": -10}, e, t0, "power2.out")
+            tw("rarm", {"rotationX": 50}, max(0.05, span - 2 * e), t0 + e)
             tw("rarm", {"rotationX": 0, "rotationZ": 3}, e, t1 - e)
         elif pose == "spin":
             js.append(f'    tl.fromTo("#{P}-rig", {{ rotationY: {turn} }}, {{ rotationY: {turn + 360}, duration: {span:.3f}, ease: "power1.inOut" }}, {t0:.3f});')
