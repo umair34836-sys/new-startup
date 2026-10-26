@@ -17,3 +17,6 @@ v2 (2026-10-26): phone on the end card = brand.json "phone" + build_brand.py, th
 a 58 px white pill with a red call icon; build.py injects a pulse (yoyo x3) + notification/ding-real.mp3 at 75 % of the
 "contact" VO line (T_PH). Check passed; end frame read back from the render shows the number.
 v3 (2026-10-26): price card = title + 3 spec chips (RAM/CPU/disk icons, staggered pop + pop SFX) + price; end card has a spec row; brand-end column flex-start + padding-top 90 px keeps it above the captions.
+v4 (2026-10-26): the owner noticed the host's hands moved BACKWARD on talk/point. Cause: blocky_character.py used negative
+rotationX for talk/point/hold; in CSS rotateX a positive angle swings a hanging arm toward the viewer (z' = y*sin θ).
+Signs flipped in the tool; checked with a side view (--turn 70): point arm and talk arm now go forward.
