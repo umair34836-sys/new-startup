@@ -181,7 +181,7 @@ def pose_js(P, S, moves, duration, turn=0.0, beats=None):
                 tw(part, props, e, t1 - e)
         elif pose == "think":   # hand to chin, head tilted up
             e = min(0.35, span / 3)
-            tw("rarm", {"rotationX": -120, "rotationZ": -35}, e, t0, "power2.out")
+            tw("rarm", {"rotationX": 120, "rotationZ": -35}, e, t0, "power2.out")
             tw("head", {"rotationX": 8, "rotationZ": 6}, e, t0)
             tw("rarm", REST["rarm"], e, t1 - e)
             tw("head", {"rotationX": 0, "rotationZ": 0}, e, t1 - e)
@@ -196,7 +196,7 @@ def pose_js(P, S, moves, duration, turn=0.0, beats=None):
                 tw(part, props, e, t1 - e)
         elif pose == "no":   # head shake + flat hand: "bilkul nahi"
             e = min(0.3, span / 3)
-            tw("rarm", {"rotationX": -70, "rotationZ": 30}, e, t0, "power2.out")
+            tw("rarm", {"rotationX": 70, "rotationZ": 30}, e, t0, "power2.out")
             n = max(2, int((span - 2 * e) / 0.22))
             for k in range(n):
                 tw("head", {"rotationY": 14 if k % 2 == 0 else -14}, 0.11, t0 + e + k * 0.22)
