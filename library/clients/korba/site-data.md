@@ -36,7 +36,7 @@ The site has **no videos** (no `<video>`, only a Google Maps iframe).
 | llphoto-1 (1200x675) | night exterior, "I ❤ KORBA" sign, "KORBA Cocktails & Juices", lit arch | yes, hero |
 | llphoto-2 (675x1200) | a man in turban giving thumbs up, "Taim Alam / SUBSCRIBE" overlay (a YouTuber's frame) | NO (person + third-party overlay) |
 | llphoto-3 (900x1200) | soup bowl with spoon | yes |
-| llphoto-4 (900x1200) | night exterior, lights, "KORBA" sign, stairs; watermark "by Khalid Ali Rahman" | yes (watermark visible) |
+| llphoto-4 (900x1200) | night exterior, lights, "KORBA" sign, stairs; watermark "By Khalid Ur Rahman" (re-read 2026-10-26; first read "Ali" was wrong) | yes (watermark visible) |
 | llphoto-5 (900x1200) | grilled fish on foil, chutney | yes |
 | llphoto-6 (675x1200) | fried fish / tikka plate with chutney | yes |
 | llphoto-7 (1080x810) | fried fish with lemon and salad | yes |

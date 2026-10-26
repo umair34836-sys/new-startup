@@ -3,7 +3,8 @@
 # from the menu-card photos on that site ("Rs/- EXCLUDED TAX"). Same structure as build_pizzabase.py: scene starts =
 # VO line starts (assets/vo/lines.json from vs_tts.py --parts) + VO_START. Visuals are ONLY the site's own photos.
 # The site's photos are phone shots on varied backgrounds (not one solid colour like Pizza Base), so each scene puts its
-# photo in a white-border card over a blurred, darkened copy of the same photo on the menu card's red.
+# photo in a white-border card over a blurred, darkened copy of the same photo (<name>_bg.jpg, made with ffmpeg: a
+# separate file, because the same src twice in one scene triggers lint duplicate_media_discovery_risk).
 import json, os, subprocess
 
 VO_START = 0.4
@@ -47,8 +48,7 @@ CSS = f"""
     .pop {{ font-family: Pop; }}
     .y {{ color: {YEL}; }}
     .sh {{ text-shadow: 0 6px 24px rgba(20,0,0,0.85); }}
-    .bgimg {{ position: absolute; left: -60px; top: -60px; width: 1200px; height: 2040px; object-fit: cover;
-              filter: blur(38px) brightness(0.45) saturate(1.2); }}
+    .bgimg {{ position: absolute; left: -60px; top: -60px; width: 1200px; height: 2040px; object-fit: cover; }}
     .veil {{ position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(117,28,26,0.55), rgba(117,28,26,0.25) 40%, rgba(40,5,5,0.75)); }}
     .card {{ position: absolute; object-fit: cover; border-radius: 34px; border: 6px solid #fff;
              box-shadow: 0 30px 80px rgba(20,0,0,0.7); }}
@@ -78,7 +78,7 @@ def comp(cid, html, js):
 
 
 def bg(k, img):
-    return (f'    <img class="bgimg" id="{k}-bg" src="assets/img/{img}" alt="" data-layout-allow-overflow>\n'
+    return (f'    <img class="bgimg" id="{k}-bg" src="assets/img/{img.rsplit('.', 1)[0]}_bg.jpg" alt="" data-layout-allow-overflow>\n'
             f'    <div class="veil"></div>\n')
 
 
@@ -120,7 +120,8 @@ C["s1"] = comp("s1", bg("s1", "p1.jpg") + f"""    <div id="s1-w" style="position
     </div>""",
                bg_js("s1", d) +
                f'    tl.fromTo("#s1-p", {{ scale: 1.0 }}, {{ scale: 1.06, duration: {d}, ease: "none" }}, 0);\n'
-               '    tl.fromTo("#s1-w .anton", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.12, ease: "power3.out" }, 0.1);\n'
+               # title stays visible at t=0 (first frame = thumbnail): only a scale settle, no fade-in
+               '    tl.fromTo("#s1-w .anton", { scale: 1.15 }, { scale: 1, duration: 0.5, stagger: 0.1, ease: "power3.out" }, 0);\n'
                f'    tl.fromTo("#s1-r", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.2)" }}, {rel(0, f(0, 0.25))});\n'
                f'    tl.fromTo("#s1-logo", {{ scale: 0, rotation: -40 }}, {{ scale: 1, rotation: 0, duration: 0.55, ease: "back.out(2)" }}, {rel(0, f("0b", 0.75))});\n'
                + enter_exit("#s1-w", d, enter=False))
