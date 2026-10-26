@@ -252,6 +252,8 @@ C["end"] = comp("end", f"""    <div id="e-w" style="position:absolute;inset:0;">
       <div class="c" id="e-ip2" style="top:930px;"><span class="chip" style="font-size:58px;border-color:{GOLD};"><span style="color:{GOLD};">IP</span>play.aloosmp.fun</span></div>
     </div>""",
     '    tl.fromTo("#e-logo", { scale: 0.3, rotation: -20, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.5, ease: "back.out(1.8)" }, 0.1);\n'
+    f'    tl.to("#e-logo", {{ scale: 0.6, opacity: 0, duration: 0.25, ease: "power2.in" }}, {ws(133) - st - 0.25:.2f});\n'
+    f'    tl.to("#e-logo", {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }}, {ws(147) - st:.2f});\n'
     f'    tl.fromTo("#e-ip", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {ws(129) - st:.2f});\n'
     f'    tl.fromTo("#e-port", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {ws(132) - st:.2f});\n'
     f'    tl.fromTo("#e-join", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }}, {ws(136) - st:.2f});\n'
@@ -301,6 +303,24 @@ for g, (idx, text) in enumerate(GROUPS):
     js.append(f'    tl.to("#g{g}", {{ opacity: 0, duration: 0.1, ease: "power2.in" }}, {end - 0.1:.2f});')
     js.append(f'    tl.set("#g{g}", {{ opacity: 0, visibility: "hidden" }}, {end:.2f});')
 C["captions"] = comp("captions", "\n".join(html), "\n".join(js))
+
+# ---------------------------------------------------------------- PiP overlays from the spawn recording (skill #439/#578,
+# hyperframes overlays.md; owner request 2026-10-26). Card = real footage, ice border, drop shadow.
+def pipcard(cid, src, x, y, w, h, start, end, vstart=0):
+    d = round(end - start, 2)
+    media = (f'<img id="{cid}-v" class="clip" src="{src}" data-start="0" data-duration="{d}" alt="ALOO SMP server list entry" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">'
+             if src.endswith(".jpg") else
+             f'<video id="{cid}-v" class="clip" src="{src}" data-start="0" data-duration="{d}" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>')
+    C[cid] = comp(cid, f"""    <div id="{cid}-w" style="position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;border-radius:26px;overflow:hidden;border:5px solid {ICE};box-shadow:0 24px 60px rgba(0,0,0,0.65), 0 0 40px rgba(132,204,252,0.35);">
+      {media}
+    </div>""",
+        f'    tl.fromTo("#{cid}-w", {{ scale: 0.5, y: 80, opacity: 0 }}, {{ scale: 1, y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.7)" }}, 0);\n'
+        f'    tl.to("#{cid}-w", {{ scale: 0.6, y: 60, opacity: 0, duration: 0.22, ease: "power2.in" }}, {d - 0.22:.2f});')
+    G.append((cid, round(start, 2), d))
+
+
+pipcard("pip1", "assets/img/pip_slist.jpg",    40, 560, 1000, 232, ws(20), 7.85)          # "kyunki aaj ... ALOO SMP": real server-list entry
+pipcard("pip2", "assets/clips/pip_join.mp4", 140, 175, 800, 450, ws(133), ws(147))      # "abhi server ko join karo": real join sequence
 
 os.makedirs("compositions", exist_ok=True)
 for k, v in C.items():
@@ -352,6 +372,8 @@ sfx("level", ws(119), 0.07)                # "SMP journey shuru karo"
 sfx("chime", ws(136), 0.3)                 # join karo
 sfx("sparkle", ws(150), 0.3)               # Discord card
 sfx("whoosh", 50.9, 0.4)
+sfx("pop", ws(20), 0.3)                   # PiP 1 card pops in
+sfx("whoosh", ws(133), 0.35)              # PiP 2 join-sequence card
 aud = "\n".join(
     f'      <audio id="{i}" src="{s}" data-start="{st}" data-duration="{d}" data-volume="{v}" data-track-index="{ln}"'
     + (f' data-media-start="{ms}"' if ms else "") + (f' data-fade-out="{fo}"' if fo else "") + "></audio>"

@@ -25,3 +25,14 @@ Lessons from QA (2026-10-25):
 - 9:16 crop of 1080p = 1.78x upscale: `cas=strength=0.5` after lanczos raised Laplacian variance 39 -> 62 on a test
   frame without halos (skill #489).
 - watch.py "soft" is relative to the sharpest scene (sharp_rel < 0.35), so text-heavy cards make footage read "soft".
+
+## v5 (2026-10-26): PiP overlays from a second recording (owner asked to use the spawn video on top)
+`pipcard()` puts real footage in an ice-bordered card (skills #439 picture-in-picture, #578 place on top; HyperFrames
+overlays.md). Placed only where the frame is free and the overlay proves the VO line:
+- "kyunki aaj ... ALOO SMP": the server-list entry (still from 0.5 s; from ~1.0 s the cursor hovered and the icon
+  changed to an arrow) at 40, 560, 1000x232, just before the logo flash.
+- "abhi server ko join karo": the join sequence (Encrypting/Joining world -> "ALOO SMP >> Welcome") at 140, 175, 800x450
+  while the logo steps aside; logo returns on "to join karo apna Discord".
+Rejected (looked at here): the top 168 px (platform UI, types/vertical.md), feature-chip sections (no room between chips
+and captions), spawn holograms ("PvP Enabled", "Difficulty HARD"): the camera moves, so in a small card the text drifts
+and is unreadable (< 28 px rule).
