@@ -213,7 +213,7 @@ Song + HyperFrames walkthrough video of a real website (TalkEmber Studio promo, 
 
 ## Owner Drive music index (`music/owner-drive/`)
 
-23 tracks (11 YouTube Audio Library = YouTube only, 10 Mixkit = social/client OK, 2 own ElevenLabs intro stings) indexed with BPM/LUFS/key; files stay on the owner's Drive (fetch with gdown). See its README.
+47 tracks (35 YouTube Audio Library = YouTube only, 10 Mixkit = social/client OK, 2 own ElevenLabs intro stings) indexed with BPM/LUFS/key; files stay on the owner's Drive (fetch with gdown). See its README.
 
 ## music (added)
 

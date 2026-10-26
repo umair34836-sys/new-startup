@@ -48,6 +48,30 @@ The numbers were measured here on 2026-10-26 with `listen.py <file> --no-words`:
 | upbeat | mrcopper_intro_eleven_full | Eleven | 11 | 128.5 | -11.6 | Ab major |
 | assets/music/promo | 360 No Scope - The Soundlings | YT-ALib | 187 | 120.0 | -9.7 | C major |
 | assets/music/promo | Fusion of Dhol - Aakash Gandhi | YT-ALib | 181 | 89.1 (178.2) | -18.1 | C# minor |
+| music/desi | Crash & Burn - Aakash Gandhi | YT-ALib | 127 | 98.1 | -14.0 | F minor |
+| music/desi | Shake It - Aakash Gandhi | YT-ALib | 112 | 119.9 | -14.0 | G minor |
+| music/desi | The Mumbai Beat - Hanu Dixit | YT-ALib | 116 | 86.7 | -8.7 | C minor |
+| music/emotional | Days Are Long - Silent Partner | YT-ALib | 187 | 143.6 (71.8) | -7.9 | E major |
+| music/emotional | Renunciation - Asher Fulero | YT-ALib | 222 | 136.0 (68.0) | -17.4 | F major |
+| music/emotional | Restless Heart - Jimena Contreras | YT-ALib | 96 | 152.0 (76.0) | -14.3 | D minor |
+| music/funny | Demented 90s Cartoon Theme - Rod Kim | YT-ALib | 91 | 111.9 | -10.3 | F# major |
+| music/funny | Pouncin and Bouncin - The Soundlings | YT-ALib | 116 | 118.2 | -11.5 | F minor |
+| music/funny | Silly Snickerdoodle - Joel Cummins | YT-ALib | 124 | 99.0 | -13.1 | C major |
+| music/happy | Dove Love - Quincas Moreira | YT-ALib | 175 | 101.0 | -12.0 | C major |
+| music/happy | Hopping Trains - Nathan Moore | YT-ALib | 118 | 137.0 | -11.8 | E major |
+| music/happy | Island Summer Breeze - Coyote Hearing | YT-ALib | 129 | 112.0 | -22.4 | C major |
+| music/sting | Detour (Sting) - Gunnar Olsen | YT-ALib | 8 | 100.9 | -9.4 | Bb minor |
+| music/sting | Dizzy (Sting) - Max Surla_Media Right Productions | YT-ALib | 6 | 125.2 | -9.6 | A major |
+| music/sting | Dub Hub (Sting) - Jimmy Fontanez_Media Right Productions | YT-ALib | 6 | 152.5 | -8.1 | F major |
+| music/suspense | Battle Of The Beast - The Soundings | YT-ALib | 128 | 120.0 | -8.4 | E minor |
+| music/suspense | Challenge Accepted - The Soundings | YT-ALib | 155 | 140.0 | -10.3 | D minor |
+| music/suspense | Risen - Density & Time | YT-ALib | 186 | 116.0 | -12.4 | C minor |
+| music/tutorial | All For You - Anno Domini Beats | YT-ALib | 134 | 115.8 | -10.1 | F major |
+| music/tutorial | Kicking It - Dyalla | YT-ALib | 157 | 88.0 | -12.9 | G minor |
+| music/tutorial | Misdirection - The Grey Room _ Density & Time | YT-ALib | 184 | 120.0 | -11.7 | C major |
+| music/upbeat | All The Smoke - The Soundlings | YT-ALib | 144 | 128.4 | -10.4 | B minor |
+| music/upbeat | Euphoria - Dyalla | YT-ALib | 134 | 124.9 | -13.6 | D minor |
+| music/upbeat | No Combat - Telecasted | YT-ALib | 156 | 95.0 | -11.6 | G minor |
 
 Notes on the two `assets/music/promo/` tracks (added by the owner 2026-10-26):
 - The folder's `assets/music/CREDITS.md` gives 120 BPM for both, "measured on the kick/dhol band". For Fusion of Dhol, listen.py's full-mix tempo (89.1, alt 178.2) disagrees.
@@ -56,6 +80,14 @@ Notes on the two `assets/music/promo/` tracks (added by the owner 2026-10-26):
 
 Since 2026-10-26 the folder also has an `assets/` subfolder. Apart from `assets/music/promo/` and its CREDITS.md, every file in it is byte-identical (md5) to the root copies.
 `assets/music/` has no `upbeat/` YT tracks (After Sunset, Club Love, Lion): those are only in the root `music/upbeat/`.
+
+The 24 `music/{tutorial,funny,desi,upbeat,suspense,emotional,happy,sting}/` rows were added by the owner on 2026-10-26.
+They came from the download list given in chat. Per the folder's `music/CREDITS.md` ("Library expansion"), each one was
+"checked 'Attribution not required' / 'YouTube Audio Library License'", so they are for YouTube use only.
+Where CREDITS.md (kick-band estimate) and listen.py (full mix) disagree on BPM, check the beat grid before cutting:
+All For You (~96 vs 115.8), The Mumbai Beat (~112/136 vs 86.7), No Combat (~126 vs 95.0), Misdirection (~117 vs 120.0).
+Island Summer Breeze is very quiet (-22.4 LUFS) and Renunciation is quiet (-17.4 LUFS): normalise them before mixing.
+The root `music/promo/` and `assets/music/upbeat/` are byte-identical copies of tracks listed above (md5, 2026-10-26).
 
 The folder also contains other files:
 - `sfx/`: 19 Pixabay files, byte-identical (md5) to HyperFrames' bundled media-use SFX, so already available. Also 2 Mixkit vinyl scratches.
