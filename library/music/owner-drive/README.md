@@ -46,6 +46,16 @@ The numbers were measured here on 2026-10-26 with `listen.py <file> --no-words`:
 | upbeat | Lion - Dyalla | YT-ALib | 183 | 123.0 (61.5) | -10.5 | D major |
 | upbeat | mrcopper_intro_5s_eleven | Eleven | 5 | 129.2 (64.6) | -13.1 | Eb minor |
 | upbeat | mrcopper_intro_eleven_full | Eleven | 11 | 128.5 | -11.6 | Ab major |
+| assets/music/promo | 360 No Scope - The Soundlings | YT-ALib | 187 | 120.0 | -9.7 | C major |
+| assets/music/promo | Fusion of Dhol - Aakash Gandhi | YT-ALib | 181 | 89.1 (178.2) | -18.1 | C# minor |
+
+Notes on the two `assets/music/promo/` tracks (added by the owner 2026-10-26):
+- The folder's `assets/music/CREDITS.md` gives 120 BPM for both, "measured on the kick/dhol band". For Fusion of Dhol, listen.py's full-mix tempo (89.1, alt 178.2) disagrees.
+  Check the beat grid before cutting to it.
+- Fusion of Dhol is quiet (-18.1 LUFS): raise its volume against VO more than the other tracks.
+
+Since 2026-10-26 the folder also has an `assets/` subfolder. Apart from `assets/music/promo/` and its CREDITS.md, every file in it is byte-identical (md5) to the root copies.
+`assets/music/` has no `upbeat/` YT tracks (After Sunset, Club Love, Lion): those are only in the root `music/upbeat/`.
 
 The folder also contains other files:
 - `sfx/`: 19 Pixabay files, byte-identical (md5) to HyperFrames' bundled media-use SFX, so already available. Also 2 Mixkit vinyl scratches.
