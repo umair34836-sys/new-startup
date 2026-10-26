@@ -223,7 +223,9 @@ def main():
     if path:   # the stage itself moves: x/y in px from the initial feet point, scale and facing flip on #P-move
         t, x0, y0, sc, fl, _ = path[0]
         X, Y = x0, y0
-        MOVE0 = f"transform:scale({-sc if fl else sc},{sc});"   # inline: a tl.set at 0 does not render on frame 0
+        # fromTo renders its from-values immediately (frame 0 too) and owns the whole transform (no CSS transform)
+        js.append(f'    tl.fromTo("#{P}-move", {{ x: 0, y: 0, scaleX: {-sc if fl else sc}, scaleY: {sc} }}, '
+                  f'{{ x: 0, y: 0, scaleX: {-sc if fl else sc}, scaleY: {sc}, duration: 0.001 }}, 0);')
         for t, x, y, sc, fl, d in path[1:]:
             js.append(f'    tl.to("#{P}-move", {{ x: {x - x0:g}, y: {y - y0:g}, scaleX: {-sc if fl else sc}, scaleY: {sc}, duration: {d}, '
                       f'ease: "power3.inOut" }}, {t:.3f});')
