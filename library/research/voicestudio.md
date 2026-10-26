@@ -73,3 +73,14 @@ install steps and test timings below are past measurements in an earlier session
   ("ए एम डी एपिक, एन वी एम ई") but a second transcription heard them: re-run before regenerating.
 - `--parts` writes 000.wav..007.wav (zero-based). To give a scene more screen time without regenerating, rebuild the
   VO from the parts with a longer silence after that line (numpy concat) and rewrite lines.json; then loudnorm.
+
+## VoxCPM2 long Hindi VO (MoradoSolution RDP + BUSY explainer, measured here 2026-10-26)
+- First /generate right after `voicestudio.sh start` returned HTTP 400 after 12 s (vs_tts.py curl exit 22); the same request
+  a minute later succeeded (200) but took 604 s, because the first call loads the model. Send one short warm-up request and
+  wait for its 200 before a long batch.
+- 24 cloned lines (seed 7, ref from the brief recipe) took 08:16-09:35 (~3.3 min per line, 0.6-7.0 s lines).
+- Whisper small could not hear "हेलो एवरीवन!" in any of 5 takes (seeds 7/21/33, Latin "Hello everyone!", spelling हेल्लो),
+  even joined to the next line; listen.py voice activity does show speech there (0.67-1.6 s). Unverified, kept.
+- "इंडियन आर डी पी" came back as "अद्टिन अद्टीपी" / "अईंदिन अड़िपी" in every take (Devanagari, hyphenated, Latin "Indian RDP")
+  and "प्री-इंस्टॉल्ड और प्री-कॉन्फ़िगर्ड" garbled in all 3 seeds; rewording to "पहले से इंस्टॉल और कॉन्फ़िगर होगा" was heard.
+- "थैंक यू फ़ॉर चूज़िंग अवर सर्विस" garbled at seeds 7 and 33, clear at seed 21. Regenerate weak lines with 2 more seeds.

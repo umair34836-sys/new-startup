@@ -56,3 +56,8 @@ raw page text in site/pages, screenshots in site/screens, brand images in assets
   Left out on purpose (site contradicts itself): "limited offer" (/game-hosting) vs "No expiry" (/sales).
   VO: same VoxCPM2 clone recipe (ref regenerated seed 7, 4 min; 8 lines ~19 min); all words heard by Whisper small.
 - 2026-10-24: WELCOME30 reel FINAL delivered (delivery render 1m30s, 30.2 s, -14.4 LUFS, 30 fps, no watermark) + WhatsApp copy.
+- 2026-10-26: "Indian RDP + BUSY setup" explainer, 16:9, 1m52s, FINAL + WhatsApp copy delivered. Script = owner's own
+  words (Roman Hindi); price from the owner, NOT on moradosolution.in: 16GB RDP ₹3,000/month (owner confirmed per month;
+  site has no RDP/BUSY product, checked 2026-10-26). Owner chose MoradoSolution branding and no fake screens.
+  Build: library/templates/explainer-host-steps/build_moradosolution_rdp_busy.py. Line 6 reworded (BUSY "pehle se install aur
+  configure hoga") because "pre-installed and pre-configured" garbled in every take; "Hello everyone" unverified by Whisper.
