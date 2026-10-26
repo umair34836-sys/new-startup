@@ -12,12 +12,11 @@ Files beside this one:
 - `site/pages/<slug>.txt`: rendered text of every fetched URL (`home.txt` = /, `user__*` = client area);
   `site/pages/_index.json`: every URL + HTTP status + final URL + every external / not-crawled link.
   `site/pages/user__domain_pricing_all.txt`: the full TLD price table (tool `site/tools/domain_pricing.js`).
-- `site/screens/*.webp`: full-page screenshots (1440 px wide) of the 30 pages with real content (tool
-  `site/tools/shots.js`). Every big image is HIDDEN in them on purpose: the hero/feature images are stock photos
-  of people (some embedded inside .svg files), and the repo never stores people's photos.
-- `site/images.json`: every image URL used on each page. `site/sitemap.xml`, `site/robots.txt`: as fetched.
-- `assets/`: logo, client-area favicon and non-people images from the site (see brief.md "Brand").
-  NOT downloaded/kept on purpose: og-home.jpg, fast.svg, sharedhosting.svg, wordpresspage.png (stock photos of people).
+- Screenshots and site images are NOT in git (owner rule 2026-10-26: never commit site photos/screenshots). Re-make
+  them per job into the scratchpad: `site/tools/shots.js` (full-page screenshots with every big image hidden: the
+  site's hero images are stock photos of people, some inside .svg files) and download images from `site/images.json`
+  (every image URL used per page). Do not use: og-home.jpg, fast.svg, sharedhosting.svg, wordpresspage.png (people).
+- `site/sitemap.xml`, `site/robots.txt`: as fetched.
 
 ## Sites and what is on them
 - Main site https://pakwebhoster.com (LiteSpeed, Cloudflare). sitemap.xml (lastmod 2026-10-08) lists 15 URLs.
@@ -54,7 +53,7 @@ Files beside this one:
   (/shared-hosting, /wordpress). "Shared Hosting powers 27% of websites on the Internet" [/shared-hosting];
   "WordPress powers 27% of websites on the Internet" [/wordpress]. "over 25,000+ themes"; "50+ Plugins - Powered by
   Softaculous" [/shared-hosting].
-- Logo tagline (in the logo image): "FAST • SECURE • RELIABLE". [assets/logo.png]
+- Logo tagline (in the logo image): "FAST • SECURE • RELIABLE". [https://pakwebhoster.com/images/logo.png]
 
 ## Shared Hosting [/shared-hosting] (PKR; card shows monthly + yearly)
 | Plan | Monthly | Yearly (as printed) | Websites | NVMe | Subdomains | Emails | Databases |

@@ -5,7 +5,8 @@ live sites on 2026-10-25 (full browser crawl) unless marked otherwise. Re-read t
 before every new video: prices and offers change.
 
 **FULL SITE DATA (every plan, price, domain table, offer, policy, contradiction): `site-data.md` beside this file**
-(raw page text in site/pages, people-free screenshots in site/screens, crawl tools in site/tools, brand images in assets/).
+(raw page text in site/pages, crawl/screenshot tools in site/tools). Site images and screenshots are NOT in git
+(owner rule 2026-10-26): download them per job into the scratchpad (URLs below and in site/images.json).
 
 ## Sites
 - Main site: https://pakwebhoster.com (use this URL in videos). 9 real pages; 7 sitemap URLs 404 and /sitelock,
@@ -39,11 +40,11 @@ before every new video: prices and offers change.
 ## Brand
 - Name as written on the site: "PAK WEB HOSTER" (titles, footer); logo wordmark "PAKWEBHOSTER" (PAKWEB navy + HOSTER
   green) with tagline "FAST • SECURE • RELIABLE" and a green cloud + server-stack icon.
-- Logo: https://pakwebhoster.com/images/logo.png (1957x452, white background, no transparency) = `assets/logo.png`
+- Logo: https://pakwebhoster.com/images/logo.png (1957x452, white background, no transparency)
   (byte-identical to the client-area logo). Favicon: main-site /images/favicon.png and /images/favicon.ico are 404;
-  client-area favicon https://user.pakwebhoster.com/templates/zhostv2/custom/images/favicon.png = `assets/favicon-client-area.png` (64x64).
+  client-area favicon https://user.pakwebhoster.com/templates/zhostv2/custom/images/favicon.png (64x64).
 - Colours:
-  - Logo (measured on assets/logo.png with PIL 2026-10-25): green #01c062 ("HOSTER"), navy #1a2f3b ("PAKWEB").
+  - Logo (measured on the downloaded logo.png with PIL 2026-10-25): green #01c062 ("HOSTER"), navy #1a2f3b ("PAKWEB").
     `brand_from_logo.py` palette: #07ac5e (36%, black text 7.08:1), #1d323e (16%, white text 13.34:1), #43d04d, #cee4da, #7eb9a4.
   - Site CSS (https://pakwebhoster.com/css/style.css): --color-one #2a862e (buttons/badges), --color-one-dark #257629,
     --color-two #ffd900 (yellow underline accents in the client area), --color-three #1372de, --color-four #f0f7fd;
@@ -51,11 +52,10 @@ before every new video: prices and offers change.
     #eff2f7, #f6f9ff, WhatsApp button #25d366.
 - Fonts (loaded in Chromium on /, 2026-10-25): Manrope (headings + body, 114 text nodes) and Ubuntu (34). Both in
   `library/fonts/` (Manrope-Variable.ttf OFL; Ubuntu-Regular/Bold.ttf, Ubuntu Font Licence).
-- Other site images kept in `assets/` (no people): finddomain.png, client-area herobannerimg/migrate/2.png illustrations,
-  icon1-4.png (white line icons), app logos (WordPress, Joomla, Drupal), money/guarantee/discount/customer/
+- Other site images without people (download per job; URLs in site/images.json): finddomain.png, client-area
+  herobannerimg/migrate/2.png illustrations, icon1-4.png (white line icons), app logos, money/guarantee/discount/customer/
   performance/transferdomain .svg icons, Norton + "trust" badges (third-party marks: do not use as our claims).
-  Stock photos of people on the site (hero images, og-home.jpg, fast.svg, sharedhosting.svg, wordpresspage.png) are NOT
-  stored and must not be used.
+  Stock photos of people on the site (hero images, og-home.jpg, fast.svg, sharedhosting.svg, wordpresspage.png): never use.
 
 ## Contact (for end cards; read back digit by digit on the render)
 - Call / WhatsApp: +92 324 3458649 (site: "+923243458649", wa.me/923243458649). Email: info@pakwebhoster.com.
@@ -75,6 +75,7 @@ before every new video: prices and offers change.
   with a visible cursor on every click), `library/templates/website-promo`.
 
 ## Delivered
+- Owner (2026-10-26, all clients): deliver ONLY the full-quality file, no WhatsApp copy, unless asked.
 - Owner (2026-10-25): PakWebHoster is a new client: send WATERMARKED previews first (library/tools/watermark.py);
   the clean file goes out only after payment / owner's go-ahead.
 - 2026-10-25: three 9:16 reels, PREVIEWS (watermarked) sent; clean renders kept in the session scratchpad only.

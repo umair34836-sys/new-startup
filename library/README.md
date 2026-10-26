@@ -198,7 +198,8 @@ assets/vendor/ (never load GSAP from the CDN in HyperFrames).
 ## clients/
 
 One folder per client: `brief.md` (facts + brand + voice + delivered), `site-data.md` (every fact from a full browser
-crawl, with page + date), `site/` (page text, screenshots, crawl tools), `assets/` (logos/icons from their site).
+crawl, with page + date), `site/` (page text, crawl/screenshot tools, images.json). Site photos/screenshots are never
+committed (owner rule 2026-10-26): re-make them per job in the scratchpad.
 `moradosolution/` (branch client-moradosolution), `pakwebhoster/` (pakwebhoster.com, crawl 2026-10-25).
 
 ## research/
