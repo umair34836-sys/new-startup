@@ -331,7 +331,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 ## Sub-sessions (Oct 24 2026)
 - ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
-  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo client sessions.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba client sessions.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -383,6 +383,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - Client PakWebHoster home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster, Oct 25 2026).
   First job: full browser crawl of https://pakwebhoster.com/ -> library/clients/pakwebhoster/site-data.md + brief.md.
+
+- Client Korba Restaurant home session: session_01FDH7RUAdSgv8cUNXbZzyHs (branch client-korba, Oct 26 2026). Site
+  https://korba-restaurant.localoria.com/. OWNER RULE: best promotional video, VO + music fully promotional, visuals ONLY
+  the restaurant's own website pictures/videos (nothing from elsewhere, no guesswork). Template food-promo-reel.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
