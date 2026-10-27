@@ -41,6 +41,9 @@ removal per line.
 
 ## Song (ai_song.py)
 
+First, if the ACE-Step weights are missing (`/home/user/tools/ACE-Step-1.5/checkpoints`), run `bash library/tools/setup-all.sh acestep` (~6 GB, on demand since 2026-10-27).
+
+
 Use the loved recipe from CLAUDE.md (seed 7, 80 BPM, the romantic Hindi ballad caption) unless the owner asks for
 another style. It keeps the music and pulls the beat back under the sung words.
 

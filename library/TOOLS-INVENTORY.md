@@ -39,13 +39,13 @@ So the repo keeps the INSTALL RECIPE instead: `library/tools/setup-all.sh`, whic
 | perc-venv + perc-models | listen.py / watch.py / fast_matte.py (BPM, LUFS, VAD, faces, mattes) | /home/user/tools/perc-venv, perc-models | 1.3 GB + 22 MB | setup-specialist-a.sh | research/perception-tools.md |
 | crawl-venv (Crawl4AI + playwright 1.56.0) | web_capture.py page capture | /home/user/tools/crawl-venv | 697 MB | setup-all light | not checked |
 | main venv (torch CPU, Whisper, ACE-Step, audio-separator, rembg, yt-dlp, curl_cffi, gdown, pyworld) | songs, transcription, vocal separation, bg blur, downloads | /home/user/tools/venv | 2.0 GB | setup-music.sh, setup-ai-song.sh, setup-all heavy | Whisper MIT, ACE-Step MIT (CLAUDE.md) |
-| ACE-Step 1.5 code (+ checkpoints) | AI songs with vocals | /home/user/tools/ACE-Step-1.5 | 32 MB (checkpoints 6.0 GB, deleted here 2026-10-27) | setup-ai-song.sh + heavy | MIT (CLAUDE.md) |
+| ACE-Step 1.5 code (+ checkpoints) | AI songs with vocals | /home/user/tools/ACE-Step-1.5 | 32 MB (checkpoints 6.0 GB, deleted here 2026-10-27) | code: setup-ai-song.sh (heavy); weights ON DEMAND: setup-all.sh acestep | MIT (CLAUDE.md) |
 | sep-models | BS-RoFormer, denoise, de-reverb, MDX-Net vocal models | /home/user/tools/sep-models | 1.6 GB | setup-all heavy | not checked |
 | VoiceStudio (+ VoxCPM2) | free voiceover: design + cloning (vs_tts.py) | /home/user/tools/VoiceStudio | 3.1 GB (+ VoxCPM2 4.7 GB in ~/.cache/huggingface) | setup-all heavy | OmniVoice non-commercial; VoxCPM2 Apache-2.0 (research/voicestudio.md) |
 | saved voices | voice references rebuilt from voices.json | /home/user/tools/voices | 58 MB | vs_tts.py on first use | client/AI voices, never committed |
-| Artemis | AI agent that uses an Android phone | /home/user/tools/artemis | 1.2 GB | setup-all heavy | Apache-2.0 (research/artemis.md) |
-| Node 24 | runtime for OpenDesign | /home/user/tools/node24 | 208 MB | setup-all heavy | not checked |
-| OpenDesign | AI design agent workspace (od CLI / MCP) | /home/user/tools/open-design | 3.8 GB (+ pnpm store 2.7 GB) | setup-all heavy | Apache-2.0 (research/open-design.md) |
+| Artemis | AI agent that uses an Android phone | /home/user/tools/artemis | 1.2 GB | ON DEMAND: setup-all.sh artemis | Apache-2.0 (research/artemis.md) |
+| Node 24 | runtime for OpenDesign | /home/user/tools/node24 | 208 MB | ON DEMAND: setup-all.sh opendesign | not checked |
+| OpenDesign | AI design agent workspace (od CLI / MCP) | /home/user/tools/open-design | 3.8 GB (+ pnpm store 2.7 GB) | ON DEMAND: setup-all.sh opendesign | Apache-2.0 (research/open-design.md) |
 | HyperFrames + its Chrome | HTML -> video renders (npx hyperframes) | ~/.npm/_npx, ~/.cache/hyperframes | 0.5 + 0.4 GB | npx on first use / SessionStart hook | not checked |
 
 ## Models (weights)
@@ -53,7 +53,7 @@ So the repo keeps the INSTALL RECIPE instead: `library/tools/setup-all.sh`, whic
 |---|---|---|---|
 | VoxCPM2 (openbmb) | default free voice, cloning | ~/.cache/huggingface | 4.7 GB |
 | Whisper small (+ medium when used) | transcription, VO checks | ~/.cache/whisper | 0.46 GB |
-| ACE-Step turbo + VAE + text encoder + LM | ai_song.py | /home/user/tools/ACE-Step-1.5/checkpoints | 6.0 GB (deleted here 2026-10-27; setup-all heavy re-downloads) |
+| ACE-Step turbo + VAE + text encoder + LM | ai_song.py | /home/user/tools/ACE-Step-1.5/checkpoints | 6.0 GB (ON DEMAND: setup-all.sh acestep; deleted in this container 2026-10-27) |
 | BS-RoFormer, denoise mel-band RoFormer, UVR-DeEcho-DeReverb, UVR-MDX-NET-Voc_FT | clean_voice.py, ai_song.py | /home/user/tools/sep-models | 1.6 GB |
 | silero_vad, blaze_face, efficientdet_lite0, selfie_segmenter, rvm_mobilenetv3 | listen.py / watch.py / fast_matte.py | /home/user/tools/perc-models | 22 MB |
 | u2net_human_seg | bg_blur.py (downloads on first use; not present in this container on 2026-10-27) | rembg default cache | 168 MiB (CLAUDE.md) |

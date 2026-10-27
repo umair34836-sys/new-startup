@@ -80,6 +80,10 @@ Read this first in every session.
   PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, specialist-D tools, Crawl4AI; flag /home/user/tools/.light-ready;
   "~1 min" was an Oct 2026 estimate, not re-timed), then heavy part (music, ACE-Step/Whisper + weights,
   audio-separator, VoiceStudio, yt-dlp link; ~15 min fresh, Oct 2026; flag .heavy-ready). Log /home/user/tools/setup.log.
+  ON DEMAND since 2026-10-27 (owner said "haan kar do" to faster sessions): ACE-Step song weights (~6 GB), Artemis (1.2 GB)
+  and OpenDesign (Node 24 + 3.8 GB + 2.7 GB pnpm store) are NOT installed at session start. Run
+  `bash library/tools/setup-all.sh acestep | artemis | opendesign` before a job that needs one (ai_song.py / music_pack.py
+  need `acestep`). Inventory of everything with sizes: library/TOOLS-INVENTORY.md.
   Before using a tool early in a session, check its flag. Installed programs and the ~10 GB weights
   can't live in the repo (GitHub 100 MB file limit). Any new tool: add it to setup-all.sh, not only to chat.
 - Song-with-vocals (ACE-Step 1.5, 13,969 stars, MIT) and transcription (OpenAI Whisper, 111,152 stars, MIT; Exa
@@ -116,6 +120,8 @@ Read this first in every session.
   Luma) whose file the owner sends, or a Minecraft-style look-alike skin for the blocky host. (TripoSR needed: rembg
   u2net_human_seg instead of the default BRIA model, which OOM-killed at 14 GB; PyMCubes instead of torchmcubes.)
 - Disk allowance is small (Oct 2026): `uv cache clean` freed 8.7 GB; the unused ACE-Step base model (4.5 GB) was deleted.
+  2026-10-27: OpenDesign's pnpm install hit ENOSPC (ERR_PNPM_ENOSPC); the owner chose to delete the ACE-Step checkpoints
+  (6.0 GB) in that container. Re-download with `bash library/tools/setup-all.sh acestep` before ai_song.py / music_pack.py.
 
 ## HyperFrames learnings
 

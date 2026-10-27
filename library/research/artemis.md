@@ -41,3 +41,5 @@ If the owner meant another one, install that one instead.
    - reach the phone over network adb (`adb connect <ip>:5555`, Android 11+ wireless debugging).
 
    Remote network adb is untested here.
+
+Since 2026-10-27 this tool is ON DEMAND: it is not installed at session start. Install it with `bash library/tools/setup-all.sh artemis`.

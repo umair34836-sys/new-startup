@@ -26,3 +26,5 @@ Installed here on 2026-10-27 because the owner asked: "Nex-io/open-design github
 ## Use
 - Run it with `cd /home/user/tools/open-design && PATH=/home/user/tools/node24/bin:$PATH pnpm tools-dev run web`.
 - The cloud box has no browser for the owner, so they can't open the 127.0.0.1 URL. Use it through the `od` CLI / MCP, or run it on the owner's PC.
+
+Since 2026-10-27 this tool is ON DEMAND: it is not installed at session start. Install it with `bash library/tools/setup-all.sh opendesign`.

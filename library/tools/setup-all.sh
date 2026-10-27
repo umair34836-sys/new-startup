@@ -1,7 +1,8 @@
 #!/bin/bash
 # Install every tool this repo uses into a fresh cloud container, skipping what is already there.
 #   bash library/tools/setup-all.sh light   # quick (~1 min, Oct 2026 estimate): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI
-#   bash library/tools/setup-all.sh heavy   # music + AI song stack, VoiceStudio, model weights (~20 min, ~15 GB)
+#   bash library/tools/setup-all.sh heavy   # music + AI song stack code, Whisper, separators, VoiceStudio (no ACE-Step weights)
+#   bash library/tools/setup-all.sh acestep|artemis|opendesign|ondemand   # big, rarely used tools: only when a job needs them
 # The SessionStart hook runs "all" in the background, logging to /home/user/tools/setup.log; it touches
 # /home/user/tools/.light-ready and then /home/user/tools/.heavy-ready as each part finishes.
 set -uo pipefail
@@ -38,9 +39,7 @@ light() {
 heavy() {
   bash "$HERE/setup-music.sh"
   bash "$HERE/setup-ai-song.sh"
-  # Weights: ACE-Step turbo + VAE + text encoder + LM (huggingface, non-Xet path) and Whisper small.
-  cd "$T/ACE-Step-1.5" && HF_HUB_DISABLE_XET=1 "$T/venv/bin/python" -c \
-    "from acestep.model_downloader import ensure_main_model as e; print(e(prefer_source='huggingface'))"
+  # Whisper small (ACE-Step song weights are on demand: setup-all.sh acestep).
   "$T/venv/bin/python" -c "import whisper; whisper.load_model('small'); print('whisper small ready')"
   # Vocal separation (music -> zero under a voice): audio-separator + BS-RoFormer weights (GitHub release download).
   VIRTUAL_ENV="$T/venv" uv pip install -q "audio-separator[cpu]" audioread pydub onnxruntime librosa samplerate \
@@ -67,11 +66,27 @@ heavy() {
   # VoxCPM2 engine (Apache-2.0, commercial OK, Hindi): package only; its 4.96 GB checkpoint (HF API 2026-10-24) downloads on first use.
   "$T/VoiceStudio/.venv/bin/python" -c "import voxcpm" 2>/dev/null ||
     VIRTUAL_ENV="$T/VoiceStudio/.venv" uv pip install -q "voxcpm>=2.0.3"
+  uv cache clean >/dev/null 2>&1 || true
+  touch "$T/.heavy-ready"
+}
+
+# ---- ON DEMAND (owner, 2026-10-27): rarely used, big tools are NOT installed at session start.
+# Install one only when a job needs it:  bash library/tools/setup-all.sh acestep | artemis | opendesign | ondemand (all three)
+acestep() {
+  # ACE-Step turbo + VAE + text encoder + LM weights, ~6.0 GB (huggingface, non-Xet path); needs heavy (venv + code) first.
+  cd "$T/ACE-Step-1.5" && HF_HUB_DISABLE_XET=1 "$T/venv/bin/python" -c \
+    "from acestep.model_downloader import ensure_main_model as e; print(e(prefer_source='huggingface'))"
+}
+
+artemis() {
   # Artemis (google/artemis, Apache-2.0): AI agent that drives an Android phone over ADB. Own uv venv (1.1 GB, 2026-10-25).
   # Needs a connected phone/emulator + a multimodal API key to run tasks (library/research/artemis.md).
   command -v adb >/dev/null || apt-get install -y -qq adb >/dev/null 2>&1 || true
   [ -d "$T/artemis" ] || git clone -q --depth 1 https://github.com/google/artemis.git "$T/artemis"
   [ -x "$T/artemis/.venv/bin/python" ] || (cd "$T/artemis" && uv sync -q --frozen --no-dev)
+}
+
+opendesign() {
   # OpenDesign (nexu-io/open-design, Apache-2.0): AI design agent workspace. Needs Node ~24 + pnpm 10.33 (corepack).
   # node_modules 2.7 GB + clone 0.47 GB + Node 24 0.2 GB (2026-10-27, library/research/open-design.md).
   if [ ! -x "$T/node24/bin/node" ]; then
@@ -81,12 +96,14 @@ heavy() {
   [ -d "$T/open-design" ] || git clone -q --depth 1 https://github.com/nexu-io/open-design.git "$T/open-design"
   [ -d "$T/open-design/node_modules" ] || (cd "$T/open-design" && PATH="$T/node24/bin:$PATH" corepack enable &&
     PATH="$T/node24/bin:$PATH" pnpm install --frozen-lockfile)
-  uv cache clean >/dev/null 2>&1 || true
-  touch "$T/.heavy-ready"
 }
 
 case "${1:-all}" in
   light) light && touch "$T/.light-ready" ;;
   heavy) heavy ;;
   all) light && touch "$T/.light-ready"; heavy ;;
+  acestep) acestep ;;
+  artemis) artemis ;;
+  opendesign) opendesign ;;
+  ondemand) acestep; artemis; opendesign ;;
 esac
