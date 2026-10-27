@@ -12,8 +12,10 @@ Read this first in every session.
      "Steps here"); look up every technique with `python3 library/tools/find_skill.py "<words>"` (prefer --tested).
   3. Repo tools and assets: listen.py / watch.py on every input before deciding cuts; library/music (CC0), sfx, stock,
      luts, fonts, blocks; vs_tts.py (free voice), watermark.py, screen_recorder.js, etc. (library/README.md lists them).
-  4. Repo skills for the job (desi-reels, urdu-captions, client-brand-kit, stock-sfx-luts, voice-or-song,
-     clean-video-voice, listen-and-watch, hyperframes).
+  4. Repo skills for the job (music-for-video, desi-reels, urdu-captions, client-brand-kit, stock-sfx-luts, voice-or-song,
+     clean-video-voice, listen-and-watch, hyperframes). MUSIC (owner 2026-10-27, "sessions sahi music pickup nhi kerte"):
+     every pick/cut/mix goes through `.claude/skills/music-for-video` (find_music.py, music_fit.py, mix_vo_music.py,
+     library/music/catalogue.md; research library/research/music-for-video.md) and the reasons go in the edit log.
   If the repo has nothing for a step, say so to the owner, use a verified source (with reference), and save what worked
   back to the repo. In the delivery message, name the template/skills/tools used.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable

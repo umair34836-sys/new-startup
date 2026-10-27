@@ -1,6 +1,6 @@
 #!/home/user/tools/perc-venv/bin/python
 # Usage: /home/user/tools/perc-venv/bin/python library/tools/mix_vo_music.py VO.wav MUSIC.wav OUT.wav
-#            [--vo-at 0.0] [--duck-db -10] [--gap 12] [--dip-db -4] [--lufs -14] [--tp -1] [--sfx sfx.wav]
+#            [--vo-at 0.0] [--duck-db -10] [--gap 15] [--dip-db -4] [--lufs -16] [--tp -1] [--sfx sfx.wav]
 # Mixes a FINISHED voice-over (one file, already timed, e.g. vs_tts.py output) over a fitted music bed
 # (music_fit.py output) the way a mixer does it, and measures the result:
 #   * the bed ducks --duck-db under speech (attack 60 ms, release 400 ms, gaps < 0.5 s held so it does not pump);
@@ -24,9 +24,9 @@ ap.add_argument("music")
 ap.add_argument("out")
 ap.add_argument("--vo-at", type=float, default=0.0, help="where the VO file starts in the music (s)")
 ap.add_argument("--duck-db", type=float, default=-10.0)
-ap.add_argument("--gap", type=float, default=12.0, help="voice loudness over the ducked music during speech (LU)")
+ap.add_argument("--gap", type=float, default=15.0, help="voice loudness over the ducked music during speech (LU)")
 ap.add_argument("--dip-db", type=float, default=-4.0, help="extra cut of the music's 1.5-4 kHz band under speech")
-ap.add_argument("--lufs", type=float, default=-14.0)
+ap.add_argument("--lufs", type=float, default=-16.0, help="integrated target (music-for-video.md 8)")
 ap.add_argument("--tp", type=float, default=-1.0)
 ap.add_argument("--sfx", help="optional SFX stem (already timed, same start as the music) mixed at its own level")
 a = ap.parse_args()
