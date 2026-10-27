@@ -1,8 +1,9 @@
 # Voiceover with VoiceStudio (local ElevenLabs replacement): one line of the script per request, joined with short
 # pauses and loudness-normalised. Start the backend first: bash library/tools/voicestudio.sh start
 #
-#   python3 vs_tts.py SCRIPT.txt OUT.mp3                       # owner's DEFAULT voice (voices.json "default", Hindi)
-#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice senpaispider  # a saved voice by name
+#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice promo-male    # a saved voice by name (10 field voices: library/voices/README.md)
+#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice senpaispider  # a client's cloned voice
+#   (no default voice since 2026-10-27: the owner removed it; running without --voice lists the saved voices)
 #   python3 vs_tts.py SCRIPT.txt OUT.mp3 --lang ur --instruct "male, young adult" [--seed 7] [--gap 0.45]
 #          [--model omnivoice|voxcpm2] [--ref voice.wav --ref-text "words in voice.wav"]   (cloning)
 #
@@ -30,7 +31,10 @@ ap.add_argument("--target-f0", type=float, help="shift the whole voiceover so it
 ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
 if not (a.voice or a.ref or a.instruct):
-    a.voice = "default"  # owner rule (2026-10-24): the saved "default" voice unless another voice is asked for
+    # owner (2026-10-27): no default voice any more; pick the field voice that fits the video (library/voices/README.md)
+    _reg = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "voices", "voices.json")))
+    raise SystemExit("choose a voice with --voice NAME (no default since 2026-10-27):\n" +
+                     "\n".join(f"  {k:16s} {v.get('use', v.get('label', ''))}" for k, v in _reg.items()))
 
 def post_json(url, body, tries=40):
     """POST JSON; wait and retry while the backend is busy or still loading (it answered 429/503 then)."""
