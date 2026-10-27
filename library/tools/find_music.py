@@ -146,7 +146,7 @@ for e in cat:
         warn.append("ends in a fade-out: no button; music_fit ends on a downbeat hit + ring-out")
     if need_drop:
         if e.get("main_drop_s"):
-            s += 3; why.append(f"drop at {e['main_drop_s']} s (+{e.get('main_drop_rise_db')} dB) for the reveal")
+            s += 3; why.append(f"drop at {e['main_drop_s']} s (+{e.get('main_drop_rise_db') or 0:.1f} dB) for the reveal")
         else:
             s -= 2; warn.append("no measured drop (energy rise >= 3 dB)")
     ff = e.get("first_full_s")
@@ -168,6 +168,8 @@ for e in cat:
             s -= 3; warn.append("voice-like sound detected (VAD): listen before using under VO")
         if (e.get("centroid_hz") or 0) > 3000:
             s -= 0.5; warn.append(f"bright mix (centroid {e['centroid_hz']:.0f} Hz) competes with speech: EQ or duck more")
+    if e.get("vocals"):
+        warn.append(f"has vocals ({e.get('vocals_source')}): OK only with no voice-over and no on-screen speech")
     if e.get("field_recording"):
         s -= 3; warn.append("field recording (crowd/voices): atmosphere only")
     if e.get("vocals") is None:

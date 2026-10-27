@@ -38,7 +38,7 @@ def derive(path, rep):
         bars = [seg_db(t, t + bar) for t in dbs]
         body = float(np.median(bars))
         p80 = float(np.percentile(bars, 80))
-        out["body_bar_rms_db"] = round(body, 1)
+        out["body_bar_rms_db"] = round(float(body), 1)
         ff = next((float(t) for t, b in zip(dbs, bars) if b >= p80 - 4), None)
         out["first_full_s"] = round(ff, 2) if ff is not None else None
         best, bt = 0.0, None
@@ -47,10 +47,10 @@ def derive(path, rep):
             if rise > best:
                 best, bt = rise, float(dbs[i])
         out["main_drop_s"] = round(bt, 2) if bt is not None and best >= 3 else None
-        out["main_drop_rise_db"] = round(best, 1) if bt is not None and best >= 3 else None
+        out["main_drop_rise_db"] = round(float(best), 1) if bt is not None and best >= 3 else None
     else:
         body = float(np.median(e[e > -80])) if (e > -80).any() else -80
-        out["body_bar_rms_db"] = round(body, 1)
+        out["body_bar_rms_db"] = round(float(body), 1)
         out["first_full_s"], out["main_drop_s"], out["main_drop_rise_db"] = None, None, None
     # ending
     tail_end = float(np.mean(e[-3:])) if len(e) >= 3 else -140
