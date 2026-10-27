@@ -72,6 +72,15 @@ heavy() {
   command -v adb >/dev/null || apt-get install -y -qq adb >/dev/null 2>&1 || true
   [ -d "$T/artemis" ] || git clone -q --depth 1 https://github.com/google/artemis.git "$T/artemis"
   [ -x "$T/artemis/.venv/bin/python" ] || (cd "$T/artemis" && uv sync -q --frozen --no-dev)
+  # OpenDesign (nexu-io/open-design, Apache-2.0): AI design agent workspace. Needs Node ~24 + pnpm 10.33 (corepack).
+  # node_modules 2.7 GB + clone 0.47 GB + Node 24 0.2 GB (2026-10-27, library/research/open-design.md).
+  if [ ! -x "$T/node24/bin/node" ]; then
+    V=$(curl -s https://nodejs.org/dist/index.json | python3 -c "import json,sys; print(next(r['version'] for r in json.load(sys.stdin) if r['version'].startswith('v24.')))")
+    mkdir -p "$T/node24" && curl -sL "https://nodejs.org/dist/$V/node-$V-linux-x64.tar.xz" | tar -xJ -C "$T/node24" --strip-components=1
+  fi
+  [ -d "$T/open-design" ] || git clone -q --depth 1 https://github.com/nexu-io/open-design.git "$T/open-design"
+  [ -d "$T/open-design/node_modules" ] || (cd "$T/open-design" && PATH="$T/node24/bin:$PATH" corepack enable &&
+    PATH="$T/node24/bin:$PATH" pnpm install --frozen-lockfile)
   uv cache clean >/dev/null 2>&1 || true
   touch "$T/.heavy-ready"
 }
