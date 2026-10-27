@@ -4,6 +4,8 @@ Assets and tools made or downloaded once, kept here so new edits don't download 
 Copy what a project needs into its own `assets/` (HyperFrames paths are project-root-relative).
 Nothing personal lives here: no footage, photos, names or captions from anyone's private videos.
 
+Full inventory of installed tools, models, scripts and skills (sizes, licences, where they live): `TOOLS-INVENTORY.md`.
+
 ## Music (`music/`)
 
 The table below is self-made, copyright-free. The three 72 BPM tracks are 4/4, so one bar = 3.333 s: cut scenes on
