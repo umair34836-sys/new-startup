@@ -49,6 +49,19 @@ another style. It keeps the music and pulls the beat back under the sung words.
 
 ## VoiceStudio voice (vs_tts.py), the local ElevenLabs replacement (Oct 2026)
 
+**Pick a field voice first (owner, 2026-10-27; there is no default voice).** `--voice <name>` with one of:
+- promo-male, promo-female (promos, offers)
+- tutorial-calm (tutorials)
+- explainer-pro (explainers)
+- gaming-hype (gaming / Minecraft)
+- food-warm (food)
+- story-emotional (stories / shayari)
+- kids-cheerful (kids / funny)
+- luxury-deep (luxury / premium)
+- news-anchor (announcements)
+
+The table with what each one fits and its measurements is in library/voices/README.md. Hindi, VoxCPM2, Apache-2.0.
+
 Clean spoken speech, no music at all, in 600+ languages incl. Urdu, Hindi and Pashto; voice design by text
 (`--instruct "male, middle-aged, low pitch"`) and zero-shot cloning (`--ref clip.wav --ref-text "..."`, only voices
 the owner may use). Oct 24 2026 test, Whisper word match: Urdu 100% / 97%, Hindi 92%, Pashto 81%; 4.4-9.5 s clips

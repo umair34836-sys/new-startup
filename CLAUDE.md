@@ -40,7 +40,7 @@ Read this first in every session.
   every session (the SessionStart hook runs it).
 - Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
   in that request. OWNER (Oct 24 2026, Skillora v3 session): "ab agay se elaven labs use nhi kroge": from now on the
-  default voice is the free VoxCPM2 recipe (library/clients/moradosolution/brief.md "Voice"). Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
+  voice is a free VoxCPM2 field voice (library/voices/README.md; no default since 2026-10-27). Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
 - Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
 - DEFAULT HOST: when a video needs a host/presenter/character (or the owner says "character use karo"),
   use the owner's own skin `library/characters/host-skin.png` built with `library/tools/blocky_character.py`
@@ -170,9 +170,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   neighbouring words (a +0.3 s tail leaked the next line's first word). Music after separation: gaps at -86 dB.
   Time: ~6.5 min per round of 3 x 25 s takes + ~1 min music removal per line.
 
-- DEFAULT VOICE (owner, Oct 24 2026; pitch set to a 172 Hz median like the Viraj VO via --target-f0): `vs_tts.py` with no --voice/--ref/--instruct uses voices.json "default": the free
-  AI-designed young energetic Hindi ad narrator from the MoradoSolution reel (VoxCPM2, not a real person; the owner
-  first asked for a Viraj clone, declined: real voice actor). Real Viraj only via ElevenLabs when the owner asks.
+- NO DEFAULT VOICE (owner, 2026-10-27: "Default voice mujhe pasand nhi hai also usko bhi remove kro or 10 different fields
+  or skill k hisaab se alag alag voices bana ker save rakho"): the old "default" (Oct 24 MoradoSolution ad narrator) is
+  removed. Pick one of 10 AI-designed FIELD VOICES by the video type (table + measurements: library/voices/README.md):
+  promo-male, promo-female, tutorial-calm, explainer-pro, gaming-hype, food-warm, story-emotional, kids-cheerful,
+  luxury-deep, news-anchor -> `vs_tts.py script.txt out.wav --voice <name>` (VoxCPM2 clone of a fixed reference in
+  library/voices/, Apache-2.0). Without --voice, vs_tts.py lists them. Real Viraj only via ElevenLabs when the owner asks.
 - SAVED VOICES (owner, Oct 24 2026): "senpaispider" = the owner's client Senpai Spider. When the owner says "senpai ki
   voice me banao" (or names a saved voice), use `vs_tts.py --voice senpaispider` (VoxCPM2 clone, recipe in
   library/voices/voices.json; reference rebuilt from the Drive link, never committed). Script in Devanagari,
