@@ -188,6 +188,10 @@ Search: `python3 tools/find_stock.py "<words>" [--sfx|--lut|--all] [--vertical]`
 | render | `fluidsynth -ni -q -g 0.7 -r 48000 -F out.wav /usr/share/sounds/sf2/FluidR3_GM.sf2 out.mid`, then `ffmpeg -af "atrim=0:21.6,afade=t=out:st=20.2:d=1.4,loudnorm=I=-16:TP=-1.5"`. |
 | `romance_synth.py` | `python3 romance_synth.py out.wav`: the numpy piano/strings track, no installs needed. |
 | `voice_over_music.py` | `python3 voice_over_music.py spec.json out.wav`: places voice lines (cut from one take by transcript word timings) at chosen film times, speeds a line up only if it overruns, polishes the voice, ducks the bed 8 dB under it and sets the voice 5.5 dB over the bed. Spec format is in the file header. |
+| `find_music.py` | `python3 find_music.py "<video type / mood>" [--length 30] [--client] [--vo] [--drop] [--platform youtube]`: ranks catalogue tracks for a video (type tag, energy, tempo band, steady grid, real ending, drop, fast intro, steady level under VO) and prints why each fits / what to watch. Licence filters: client = CC0/PD only, YT Audio Library only for YouTube, own tracks only with --own, vocals never under a VO. Skill music-for-video. |
+| `music_fit.py` | perc-venv: cuts/stitches a track to an EXACT length on downbeat->downbeat joins (40 ms equal-power, snapped to the onset), loops by 4-bar phrases, `--drop-at T` lands the measured drop on T, `--end resolve` keeps the real ending (loops/fade-outs end on a downbeat hit + ring-out), `--check` re-measures beat phase across each join. |
+| `mix_vo_music.py` | perc-venv: finished VO + fitted bed -> mix: duck -10 dB (60/400 ms, 0.5 s hold), 1.5-4 kHz dip under speech, voice 15 LU over the ducked bed, -16 LUFS / -1 dBTP; reports the music-vs-VO gap. |
+| `music_catalogue.py` / `music_analysis.py` | perc-venv: measures every repo track with listen.py (one at a time, resumable; raw reports in /home/user/tools/music-reports) -> `music/catalogue.json` + `catalogue.md` (BPM/alt, key, LUFS, energy, first full bar, drop, ending type + where it starts, vocals, licence/client OK, video types). `--owner-drive DIR` adds the owner's Drive tracks. |
 | `ai_voice.py` | Script -> spoken Hindi/Hinglish voiceover, music ZERO: ACE-Step speaks each line, Whisper picks the best take per line, BS-RoFormer removes the music, lines joined with pauses. See skill voice-or-song. |
 | `listen.py` | Audio/video -> facts (run with /home/user/tools/perc-venv/bin/python): BPM + beat grid, downbeats, hits, LUFS curve, sections, silence, voice activity, `--vocals` singing timeline, key, hum/hiss/clipping, Whisper words. Tested here 2026-10-24: pashto-rabab-folk-bg (made at 105 BPM) -> 105.0 BPM. Skill listen-and-watch. |
 | `watch.py` | Video -> facts: real fps from timestamps, cuts, shake, flicker, sharpness, exposure/cast per scene, faces/people, black/frozen frames, contact sheet, `compare` mode. Tested here 2026-10-24: client WhatsApp clip -> real 12.4 fps, 134 frames, flagged 'motion-interpolate to 30'. |
@@ -266,6 +270,10 @@ Song + HyperFrames walkthrough video of a real website (TalkEmber Studio promo, 
 ## music (added)
 
 `music/talkember-studio-promo-song.mp3`: 6 min upbeat Hindi pop promo song about TalkEmber Studio (ACE-Step, 3 parts joined at 96.0 s and 212.5 s); line timings in `templates/website-promo/talkember-timing.json`.
+
+## music catalogue
+
+`music/catalogue.json` + `catalogue.md`: every usable track measured and tagged (music_catalogue.py, 2026-10-27). Pick with `tools/find_music.py`, fit with `tools/music_fit.py`; workflow = skill music-for-video; research library/research/music-for-video.md.
 
 ## music/cc0
 
