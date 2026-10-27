@@ -25,7 +25,7 @@ w, h = map(int, subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:
 side = int(math.hypot(w, h)) + 200
 tile = Image.new("RGBA", (side, side), (0, 0, 0, 0))
 d = ImageDraw.Draw(tile)
-f = ImageFont.truetype(FONT, max(28, w // 16))
+f = ImageFont.truetype(FONT, max(28, min(w, h) // 16))  # short side: same look in 9:16 and 16:9
 tw, th = d.textbbox((0, 0), a.text, font=f)[2:]
 alpha = int(255 * a.opacity)
 for row, y in enumerate(range(0, side, int(th * 3.2))):
@@ -37,9 +37,9 @@ layer = tile.crop((L, T, L + w, T + h))
 
 # corner tag: dark pill, full-opacity text, top-left (away from end-card URLs at the bottom)
 d = ImageDraw.Draw(layer)
-ft = ImageFont.truetype(FONT, max(18, w // 30))
+ft = ImageFont.truetype(FONT, max(18, min(w, h) // 30))
 bw, bh = d.textbbox((0, 0), a.tag, font=ft)[2:]
-pad = bh // 2; x0 = y0 = w // 30
+pad = bh // 2; x0 = y0 = min(w, h) // 30
 d.rounded_rectangle((x0, y0, x0 + bw + 2 * pad, y0 + bh + 2 * pad), radius=bh, fill=(0, 0, 0, 150))
 d.text((x0 + pad, y0 + pad * 0.7), a.tag, font=ft, fill=(255, 255, 255, 235))
 

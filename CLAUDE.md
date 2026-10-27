@@ -448,6 +448,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   `curl :3900/health` and restart before TTS; the first VoxCPM2 request after start took 532 s (warm-up). VoxCPM2 voice
   design with a "radio ad woman" instruct ran on for 7.8 s of nonsense at seed 7 (seed 21 fixed it). Hindi number/acronym
   lines ("नौ प्लान", "डीडॉस प्रोटेक्शन") were the weak ones again: retake with seeds 21/33 and keep numbers on screen.
+  Brand identity reveal (2026-10-27, template library/templates/brand-identity-reveal): a 16:9 HyperFrames render with
+  music at volume 0.9 measured -19.8 LUFS. Gain + alimiter reached -15.0 LUFS and kept LRA 6.7 LU. Two-pass loudnorm
+  reached -14.9 LUFS but flattened LRA to 2.8 LU (lost the quiet intro). watermark.py text was sized by width
+  (1.8x too big on 16:9); it is now sized by the short side.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

@@ -65,6 +65,11 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 
 ## Templates (`templates/`)
 
+- `brand-identity-reveal/`: 16:9 ~30 s music-only brand identity / guidelines film driven by one reveal.json (logo construction
+  from the real traced mark via mark_to_svg.py, lockup, browser/phone mockups, stacked page cards, typography, colour
+  swatches, stat widgets, price chart, photo inserts, social post, end logo; scenes counted in beats from the music drop).
+  HostLixo, 2026-10-27; README has QA numbers and the gain+limiter mastering step.
+
 - `screen-tutorial/`: real-site tutorial (cursor + click ripple + click sound on every click, VO-timed speed-fit of the
   recording, step chips, highlight rings). Recorder: tools/screen_recorder.js; VO check: tools/wcheck_lines.py. FireCraft whitelist, 2026-10-24.
 

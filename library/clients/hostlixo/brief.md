@@ -33,3 +33,5 @@ Images and screenshots are NOT in git (owner rule): re-download per job into the
 - 2026-10-27: 30 s 9:16 promo, watermarked PREVIEW delivered (builder library/templates/hosting-promo-reel/build_hostlixo.py,
   edit log `edit-log-promo-v1.md`, voice `promo-male`, owner chose watermark option (a): tiled "Made by MrCopper804" +
   PREVIEW tag + metadata). Clean file only when the owner says so.
+- 2026-10-27: 30 s 16:9 brand identity reveal (music only, site images only), watermarked PREVIEW delivered (template
+  library/templates/brand-identity-reveal, config reveal.json, edit log edit-log-reveal-v1.md).
