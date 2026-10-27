@@ -133,8 +133,10 @@ for e in cat:
         s -= 1; warn.append(f"{e['bpm']} BPM is outside {lo:.0f}-{hi:.0f}")
     if (e.get("bpm_essentia_conf") or 0) >= 1.5 and (e.get("beat_cv") or 1) < 0.05:
         s += 1; why.append(f"steady beat grid (CV {e['beat_cv']}) -> clean bar cuts")
-    elif (e.get("beat_cv") or 1) >= 0.1:
-        s -= 1.5; warn.append(f"loose beat grid (CV {e.get('beat_cv')}): bar cuts may not be clean")
+    elif (e.get("beat_cv") or 1) >= 0.05 or (e.get("bpm_essentia_conf") or 0) < 1.0:
+        # tests 2026-10-27: 'Everyone is so alive' (CV 0.055, conf 1.08) and 'Dome of grey' (conf -0.16) had no grid to cut on
+        s -= 1.5; warn.append(f"loose beat grid (CV {e.get('beat_cv')}, essentia conf {e.get('bpm_essentia_conf')}): "
+                              "bar cuts may not be clean")
     # ---- structure for the edit ----
     if e.get("ending") == "natural":
         s += 1.5; why.append(f"real ending from {e.get('ending_from_s')} s -> music_fit --end resolve")

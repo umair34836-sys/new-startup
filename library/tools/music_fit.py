@@ -119,6 +119,7 @@ def plan():
                 while D + J < T:
                     J += bar
             b0 = D - J if D - J >= dbs[0] - 0.01 else float(dbs[0])
+            b0 = float(dbs[np.argmin(abs(dbs - b0))])  # a real downbeat: bar lengths drift when the tempo breathes
             s = D + (D - b0) - T
             segs += [[s, D], [b0, D]]
             notes.append(f"head: source {s:.2f}-{D:.2f} s, then the {D - b0:.2f} s build before the drop repeats "

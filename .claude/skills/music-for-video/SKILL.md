@@ -50,6 +50,8 @@ groove; food: light/breezy or matching the cuisine). If nothing fits, say so to 
   another moment, e.g. a section start from listen.py).
 - Ending: `--end resolve` (default) keeps the composer's real ending; a loop or fade-out track ends on a downbeat hit
   with a ring-out. Never a fade in the middle of a phrase. `--end fade` only for a soft outro under an end card.
+- If the edit allows, put the reveal ON the track's own drop time (or whole bars later): on tracks whose tempo
+  changes at the drop, a repeated build bar is harder to check (tests file, test 3).
 - Always `--check`: every join's `beat_phase_error_after_join_ms` must be close to `phase_error_no_edit_median_ms`
   (the tracker's own noise). If a join is far worse, move the drop/length by one bar or pick another track.
 - Cut picture on bars only where the edit should be felt (music reels, section changes, the reveal); in VO videos cut

@@ -200,9 +200,12 @@ in those READMEs; no ducking found in either template, grep for "duck"/"sidechai
 
 ## 10. Measured here (this study, 2026-10-27)
 
-- 174 repo tracks measured with listen.py (`music_catalogue.py`, numbers in library/music/catalogue.json).
+- 221 tracks measured with listen.py (`music_catalogue.py`): 174 in the repo + 47 on the owner's Drive; 160 client-OK
+  (CC0/PD), 35 with vocals, 164 with a measured drop (>= 3 dB rise); endings: 132 fade-out, 58 natural, 17 soft-tail,
+  14 abrupt (so most tracks need music_fit's hit + ring-out ending, not a fade).
 - music_fit.py joins: the beat-phase error after each join equals the beat tracker's own error at unedited points
-  (e.g. 33.0 / 39.5 / 1.0 ms at joins vs 33.7 ms median with no edit, loading-screen-loop stretched to 45 s).
+  (e.g. 33.0 / 39.5 / 1.0 ms at joins vs 33.7 ms median with no edit, loading-screen-loop stretched to 45 s; 22.0 vs
+  20.0 ms in test 1). On a track whose tempo changes at the drop the tracker itself is off by 46-93 ms with no edit.
 - mix_vo_music.py: voice 15 LU over the ducked bed during speech, final within 0.2 LU of the target, 0 clipped samples.
 - Full numbers and the three worked examples: library/research/music-for-video-tests.md.
 
