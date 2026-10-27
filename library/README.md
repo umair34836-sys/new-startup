@@ -92,7 +92,8 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 - `typewriter-reel/build_pakwebhoster.py`: 9:16 20 s typewriter reel, no VO (editor window, characters typed with uneven
   gaps + caret + keyboard SFX, URL typed into an address bar). PakWebHoster, 2026-10-25. See its README.
 - `editor-portfolio/build.py`: video-editor portfolio / showreel, 16:9 and 9:16 from one JSON config (avatar + "Hi, I'M
-  NAME" + freelance tag, "Want a video EDITOR?", one real client clip per bar with client name + type, 6-clip wall with
+  NAME" + freelance tag, "Want a video EDITOR?", one section per brand with its real clips (verticals side by side),
+  SFX placed by measured peak on the beat, 6-clip wall with
   counted "N VIDEOS • M BRANDS", contact end card). MrCopper804's own portfolio, 2026-10-27. See its README.
 - `hosting-promo-reel/build_pakwebhoster.py`: light-theme 30 s Rs 200 shared-hosting reel with the free default voice. PakWebHoster, 2026-10-25.
 - `brand-kit/`: client branding kit: `brand.json` schema + fake example, `brand_from_logo.py` (palette + WCAG text colours from a logo), `build_brand.py` (logo sting, lower third, contact card with local QR, watermark, CTA, offer badge; 9:16 and 16:9). Intake questionnaire: research/client-intake.md. Skill client-brand-kit.

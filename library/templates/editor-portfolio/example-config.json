@@ -3,7 +3,7 @@
  "role": "Video Editor",
  "tag": "Available For Freelance Work",
  "cta_sub": "For all type of video editing",
- "bpm": 140,
+ "bpm": 110,
  "drop": 6.85,
  "contacts": [
   [
@@ -22,56 +22,36 @@
    "#E1306C"
   ]
  ],
- "clips": [
+ "music_volume": 0.8,
+ "brands": [
   {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
+   "client": "Client A",
+   "clips": [
+    {
+     "src": "/path/to/a-reel.mp4",
+     "start": 12.0,
+     "type": "Promo Reel"
+    },
+    {
+     "src": "/path/to/a-tutorial-16x9.mp4",
+     "start": 20.0,
+     "type": "Tutorial"
+    }
+   ]
   },
   {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
-  },
-  {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
-  },
-  {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
-  },
-  {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
-  },
-  {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
-  },
-  {
-   "src": "/path/to/client-reel.mp4",
-   "start": 12.0,
-   "client": "Client Name",
-   "type": "Promo Reel"
+   "client": "Client B",
+   "clips": [
+    {
+     "src": "/path/to/b-reel.mp4",
+     "start": 8.0,
+     "type": "Offer Reel"
+    }
+   ]
   }
  ],
  "grid": [
   0,
-  1,
-  2,
-  3,
-  4,
-  5
+  2
  ]
 }
