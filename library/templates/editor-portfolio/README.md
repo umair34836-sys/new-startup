@@ -69,3 +69,14 @@ Avatar (`assets/img/avatar.png`): the owner's skin waving, made with blocky_char
 - Choosing clips: per-second ffmpeg tile sheets (`fps=1,scale=160:-2,drawtext t,tile=12xN`) were much faster than
   watch.py (2-4 min per video here) for finding each video's strongest second (a price slam, a list building up).
   Watermarked previews (tiled "Made by MrCopper804") and duplicate drafts were left out.
+
+## v3 music + hook (owner feedback 2026-10-27: "music taste bad", "music me jan dallo ... hook bana rahay")
+- Two picks from library/music/cc0 were rejected. v3 uses Mixkit "Uplifting Bass" (Lily J) from the owner's Drive
+  (library/music/owner-drive: Mixkit licence = any platform, no credit; the file is not in this repo).
+  listen.py: 133.8 BPM, CV 0.023, bright/upbeat; energy step at 29.605 s; bar hits at 29.605 + n x 1.7935 s
+  (38.59, 40.38, 43.96, 52.92, 54.71, 65.46 s all matched). Cut from 22.755 s so that step is the montage drop (6.85 s);
+  in the cut, detected beats stay within ~30 ms of drop + n x 0.4484 s up to 38 s.
+- Hook gaps (config "hook_gaps", default on): the music is muted for the beat before the drop and the half beat
+  before the wall (20 ms ramps, music_hook.mp3); riser-2s (peak 1.68 s) peaks on the drop / wall, impact-boom +
+  sub-drop on the drop. Measured in the cut: -180 dB inside the gaps, -4.4 dB right after the drop.
+- When unsure what music the owner likes, send 4-6 loudness-matched 20 s samples (loudnorm -14) and let them pick.
