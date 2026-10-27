@@ -418,6 +418,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   OWNER RULE for this client: best promotional video, VO + music fully promotional, visuals ONLY the restaurant's own
   website pictures/videos (nothing from elsewhere, no guesswork).
 
+- MUSIC STUDY session (owner, 2026-10-27: sessions pick the wrong music for the situation): session_01JK8Ts7AvTSnyA58KRuRWBG
+  (branch study-music). Deliverables: research/music-for-video.md, music catalogue with measured tags, find_music.py,
+  music_fit.py, skill music-for-video. Merge when it reports, then ARCHIVE it (owner asked to close it after the work).
+
 - OWNER'S PERSONAL session (his own channel / FireCraft / family videos): session_01JK8TsAUkqDcak9G4pNdxVK (branch
   personal-mrcopper, Oct 27 2026). No watermark on his own videos unless he asks; personal media never committed.
 
