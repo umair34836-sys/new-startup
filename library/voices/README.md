@@ -27,6 +27,12 @@ These 10 are AI-designed with VoxCPM2 voice design (Apache-2.0, OK for client/pa
 | `luxury-deep` | luxury, real estate, premium brand, trailers | जहाँ हर पल ख़ास है। | 139 Hz | 0.90 |
 | `news-anchor` | announcements, news-style updates, launch / season news | आज की बड़ी ख़बर, सीधे आप तक। | 122 Hz | 0.80 |
 
+### Clone test (measured here 2026-10-27)
+Each voice was given the same new line through `vs_tts.py --voice <name>`: "नमस्ते दोस्तों, आज हम आपके लिए कुछ नया लेकर आए हैं।"
+- Whisper small similarity: promo-male 0.90, promo-female 0.86, tutorial-calm 0.87, explainer-pro 0.77, gaming-hype 0.82, food-warm 0.76, story-emotional 0.93, kids-cheerful 0.96, luxury-deep 0.88, news-anchor 0.90.
+- Clone median f0: 204, 259, 120, 187, 133, 298, 118, 318, 126 and 113 Hz (same order).
+- One line took about 2-4 min each (03:15-03:41 for all 10), with the model already loaded.
+
 ### How they were made (2026-10-27)
 - Each voice had 2 design takes (seeds 7 and 21). Two voices got 2 more seeds (33, 42), because their first takes "ran on" past the sentence with extra sounds: promo-male seed 7, both tutorial-calm takes, news-anchor seed 21 and promo-female seed 7.
 - The take with the cleanest Whisper transcript was kept and saved as 24 kHz mono.
