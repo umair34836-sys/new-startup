@@ -16,6 +16,9 @@ Read this first in every session.
      clean-video-voice, listen-and-watch, hyperframes). MUSIC (owner 2026-10-27, "sessions sahi music pickup nhi kerte"):
      every pick/cut/mix goes through `.claude/skills/music-for-video` (find_music.py, music_fit.py, mix_vo_music.py,
      library/music/catalogue.md; research library/research/music-for-video.md) and the reasons go in the edit log.
+     MORE MUSIC (owner 2026-10-27, "GitHub per tools dondhoo ... songs or musics la ker dingay"): fetch no-credit tracks with
+     `library/tools/fetch_free_music.py "<words>" --category <cat>` (FMA CC0/PD, licence re-read per page) + `ia` CLI;
+     song rippers (musicdl, spotDL) are rejected (copyrighted). Findings: library/research/music-fetch-tools.md.
   If the repo has nothing for a step, say so to the owner, use a verified source (with reference), and save what worked
   back to the repo. In the delivery message, name the template/skills/tools used.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable

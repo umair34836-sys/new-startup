@@ -6,7 +6,7 @@ without credit. Pages that also listed CC BY were skipped. Source pages are kept
 
 Licence audit 2026-10-24 (curl of each source page, regex for creativecommons.org links): all 29 OpenGameArt pages
 link only to publicdomain/zero/1.0; 25 random FMA pages (seed 2026) link to publicdomain/zero/1.0 or the old
-licenses/publicdomain mark; the 5 saved Freesound pages show the CC0 text. 131 MP3s on disk = 131 index.json entries. All 131 decode without errors
+licenses/publicdomain mark; the 5 saved Freesound pages show the CC0 text. 131 MP3s on disk = 131 index.json entries (audit date; later fetches are listed at the end). All 131 decode without errors
 and match the table lengths within 1.5 s, after one fix: the desert-calmness file was a truncated 7 s copy; it was
 re-downloaded from its source_file (96.4 s) and re-encoded at 160 kbps like the others. Bitrates: 124 files 160 kbps,
 the 7 SoundSafari desi files 192 kbps (ffprobe 2026-10-24).
@@ -169,3 +169,12 @@ Categories: lofi-indie 12, classical-piano 12, travel-ambient 10, cinematic 9, e
 | `world-african--john-bartmann--robot-gypsy-jazz.mp3` | world-african | 66s | Robot Gypsy Jazz | John Bartmann | 2000 | https://freemusicarchive.org/music/John_Bartmann/Public_Domain_Soundtrack_Music_Album_One/robot-gypsy-jazz/ |
 
 Note: these keep the artists' own loudness (about -6 to -15 LUFS). Normalise when using one (e.g. ffmpeg loudnorm=I=-14 or a lower data-volume); Soundtrack 4 Life tracks are very loud.
+
+## Fetched with tools/fetch_free_music.py
+
+Each row: FMA track page re-read on the date shown; its licence links were CC0 1.0 / PD mark only (no licenses/by). Artist marked * = outside the trusted CC0 list (--any-artist): check the artist before client use.
+
+| File | Category | Length | Title | Artist | Licence | Checked | Page |
+|---|---|---|---|---|---|---|---|
+| `lofi-chill--holiznacc0--first-snow.mp3` | lofi-chill | 174s | First Snow.mp3 | HoliznaCC0 | CC0 1.0 | 2026-10-27 | https://freemusicarchive.org/music/holiznacc0/winter-lofi/first-snowmp3/ |
+| `lofi-chill--holiznacc0--winter-blues.mp3` | lofi-chill | 223s | Winter Blues | HoliznaCC0 | CC0 1.0 | 2026-10-27 | https://freemusicarchive.org/music/holiznacc0/winter-lofi/winter-blues/ |

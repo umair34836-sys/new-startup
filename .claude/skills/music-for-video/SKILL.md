@@ -42,7 +42,7 @@ the ending, LUFS, any voice activity. Look at the short-term loudness curve arou
 
 Pick the one whose emotion, energy and tempo match the type row, whose arc fits the video (music "in" by ~1-2 s;
 a drop or build for the reveal; a real ending or a usable hit), and that fits the brand (tech brand != Bollywood
-groove; food: light/breezy or matching the cuisine). If nothing fits, say so to the owner instead of forcing one.
+groove; food: light/breezy or matching the cuisine). If nothing fits, fetch more no-credit tracks first: `python3 library/tools/fetch_free_music.py "<mood words>" --category <cat> --n 5` (FMA CC0/PD, licence re-checked per page), measure them with `music_catalogue.py --only`, run find_music.py again; if still nothing fits, say so to the owner instead of forcing one.
 
 ## 5. Fit it to the exact length (music_fit.py)
 

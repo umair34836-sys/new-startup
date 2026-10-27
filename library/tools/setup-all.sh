@@ -17,6 +17,9 @@ light() {
   python3 -c "import PIL, numpy, mido, pyworld" 2>/dev/null || pip install -q pillow numpy mido pyworld
   # Editing skills catalogue (library/research/editing/skills2): font axis/coverage checks and ASS/SRT subtitle editing.
   python3 -c "import fontTools, pysubs2" 2>/dev/null || pip install -q fonttools pysubs2
+  # Internet Archive CLI `ia` (jjjake/internetarchive, AGPL-3.0): search/download archive.org items (PD 78s etc.;
+  # archive.org licence tags are uploader-set, check each item: library/research/music-fetch-tools.md).
+  command -v ia >/dev/null || pip install -q internetarchive
   command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
   command -v agent-reach >/dev/null || {
     uv tool install -q https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip &&
