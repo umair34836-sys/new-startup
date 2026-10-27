@@ -99,9 +99,9 @@ def enter_exit(sel, d, enter=True, exit_=True):
     return js
 
 
-def photo_bg(key, img, d, dim=0.55, z0=1.0, z1=1.12):
+def photo_bg(key, img, d, dim=0.55, z0=1.0, z1=1.12, blur=0):
     """full-bleed site image with a slow push-in and a dark veil (site look: black, white type)"""
-    html = (f'<div id="{key}-ph" style="position:absolute;inset:0;background:url(assets/img/{img}) center/cover;"></div>'
+    html = (f'<div id="{key}-ph" style="position:absolute;inset:0;background:url(assets/img/{img}) center/cover;filter:blur({blur}px);"></div>'
             f'<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,5,5,{dim}) 0%, rgba(5,5,5,{dim - 0.2}) 40%, rgba(5,5,5,0.92) 100%);"></div>')
     js = f'    tl.fromTo("#{key}-ph", {{ scale: {z0} }}, {{ scale: {z1}, duration: {d}, ease: "none" }}, 0);\n'
     return html, js
@@ -142,24 +142,25 @@ C["s2"] = comp("s2", f"""    <div id="s2-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s2-logo", { scale: 0.5, opacity: 0, filter: "blur(20px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "back.out(1.6)" }, 0.08);\n'
                f'    tl.fromTo("#s2-lab", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.3 }}, {max(0.3, rel(1, 0.35) - 0.25):.2f});\n'
                f'    tl.fromTo("#s2-p", {{ scale: 0.2, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.2)" }}, {rel(1, 0.45)});\n'
+               f'    tl.to("#s2-p", {{ scale: 1.07, duration: {max(0.5, d - rel(1, 0.45) - 0.7):.2f}, ease: "none" }}, {rel(1, 0.45) + 0.45:.2f});\n'
                f'    tl.fromTo("#s2-s", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {rel(1, 0.5)});\n')
 
 # S3 real plans grid screenshot scrolling + "9 PLANS" / "2–32 GB DDR5 ECC RAM"
 d = d_of("s3")
 C["s3"] = comp("s3", f"""    <div id="s3-w" style="position:absolute;inset:0;">
       <div class="shot" style="position:absolute;left:70px;top:300px;width:940px;height:1000px;background:#080808;">
-        <div style="height:64px;border-bottom:2px solid rgba(255,255,255,0.16);display:flex;align-items:center;gap:12px;padding-left:24px;">
+        <div style="position:relative;z-index:2;background:#080808;height:64px;border-bottom:2px solid rgba(255,255,255,0.16);display:flex;align-items:center;gap:12px;padding-left:24px;">
           <span style="width:16px;height:16px;border-radius:50%;background:#5e5e5e;"></span><span style="width:16px;height:16px;border-radius:50%;background:#5e5e5e;"></span><span style="width:16px;height:16px;border-radius:50%;background:#5e5e5e;"></span>
           <span style="margin-left:24px;font-family:JB;font-size:30px;color:{GREY};">hostlixo.in/minecraft</span></div>
-        <img id="s3-img" src="assets/img/plans-grid.jpg" style="position:absolute;left:0;top:64px;width:1300px;height:1807px;" alt="HostLixo Minecraft plans">
+        <img id="s3-img" src="assets/img/plans-grid.jpg" style="position:absolute;left:0;top:64px;width:940px;height:1307px;" alt="HostLixo Minecraft plans">
       </div>
       <div class="c" id="s3-a" style="top:1330px;"><span class="lab w" style="font-size:44px;padding:16px 34px;">9 PLANS</span></div>
       <div class="c sg" id="s3-b" style="top:1430px;font-size:76px;letter-spacing:-1px;">2–32 GB DDR5 ECC RAM</div>
     </div>""",
                enter_exit("#s3-w", d) +
-               f'    tl.fromTo("#s3-img", {{ x: 0, y: 0 }}, {{ x: -360, y: -560, duration: {d:.2f}, ease: "sine.inOut" }}, 0);\n'
+               f'    tl.fromTo("#s3-img", {{ y: 0 }}, {{ y: -370, duration: {d:.2f}, ease: "sine.inOut" }}, 0);\n'
                f'    tl.fromTo("#s3-a", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.4)" }}, {rel(2, 0.05)});\n'
-               f'    tl.fromTo("#s3-b", {{ y: 40, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }}, {rel(2, 0.45)});\n')
+               f'    tl.fromTo("#s3-b", {{ y: 40, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }}, {rel(2, 0.3)});\n')
 POPS = [W["s3"][0] + rel(2, 0.05)]
 
 
@@ -210,14 +211,15 @@ C["s6"] = comp("s6", f"""    <div id="s6-w" style="position:absolute;inset:0;">
       <div class="shot" id="s6-shot" style="position:absolute;left:70px;top:980px;width:940px;height:172px;"><img src="assets/img/refund.jpg" style="width:940px;height:172px;" alt="HostLixo 24-hour money-back guarantee"></div>
     </div>""",
                enter_exit("#s6-w", d) +
-               f'    tl.fromTo("#s6-n", {{ scale: 0.3, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }}, {rel(5, 0.3)});\n'
-               f'    tl.fromTo("#s6-t", {{ y: 40, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }}, {rel(5, 0.5)});\n'
+               f'    tl.fromTo("#s6-n", {{ scale: 0.3, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }}, 0.12);\n'
+               f'    tl.to("#s6-n", {{ scale: 1.06, duration: {d - 0.8:.2f}, ease: "none" }}, 0.6);\n'
+               f'    tl.fromTo("#s6-t", {{ y: 40, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }}, {rel(5, 0.3)});\n'
                f'    tl.fromTo("#s6-shot", {{ y: 80, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, {rel(5, 0.65)});\n')
-IMPACT = W["s6"][0] + rel(5, 0.3)
+IMPACT = W["s6"][0] + 0.12
 
 # S7 end card: mark, wordmark, "Order on Discord" button, URL pill, payment badges (site footer), mc_2 behind
 d = d_of("s7")
-ph, phjs = photo_bg("s7", "mc_2.jpg", d, dim=0.78, z0=1.0, z1=1.1)
+ph, phjs = photo_bg("s7", "mc_2.jpg", d, dim=0.78, z0=1.05, z1=1.15, blur=8)  # blur hides the in-game crosshair behind the CTA
 pay = "".join(f'<span style="font-family:JB;font-weight:700;font-size:30px;letter-spacing:1px;color:{GREY};border:2px solid rgba(255,255,255,0.16);border-radius:8px;padding:10px 16px;">{p}</span>'
               for p in ["VISA", "MASTERCARD", "UPI", "PAYTM", "CRYPTO"])
 C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
@@ -235,6 +237,8 @@ C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
                f'    tl.fromTo("#s7-btn", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.2)" }}, {rel(6, 0.2)});\n'
                f'    tl.fromTo("#s7-url", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.2)" }}, {rel(6, 0.62)});\n'
                f'    tl.to("#s7-url", {{ scale: 1.06, duration: 0.45, ease: "sine.inOut", yoyo: true, repeat: 3 }}, {rel(6, 0.62) + 0.45:.2f});\n'
+               f'    tl.fromTo("#s7-mark", {{ y: 0 }}, {{ y: -26, duration: {d - 0.7:.2f}, ease: "sine.inOut" }}, 0.65);\n'
+               f'    tl.to("#s7-name", {{ scale: 1.05, duration: {d - 0.8:.2f}, ease: "none" }}, 0.7);\n'
                f'    tl.fromTo("#s7-pay", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.4 }}, {rel(6, 0.62) + 0.5:.2f});\n')
 
 os.makedirs("compositions", exist_ok=True)

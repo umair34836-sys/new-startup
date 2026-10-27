@@ -30,4 +30,6 @@ Images and screenshots are NOT in git (owner rule): re-download per job into the
 - UI look: thin-border dark cards, small mono uppercase pill labels ("AVAILABLE PLANS", "RECOMMENDED"), big ₹ prices.
 
 ## Videos made
-- 2026-10-27: 30 s 9:16 promo (this session; edit log `edit-log-promo-v1.md`).
+- 2026-10-27: 30 s 9:16 promo, watermarked PREVIEW delivered (builder library/templates/hosting-promo-reel/build_hostlixo.py,
+  edit log `edit-log-promo-v1.md`, voice `promo-male`, owner chose watermark option (a): tiled "Made by MrCopper804" +
+  PREVIEW tag + metadata). Clean file only when the owner says so.
