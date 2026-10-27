@@ -1,0 +1,137 @@
+URL: https://hostlixo.in/vps.html
+FINAL_URL: https://www.hostlixo.in/vps.html
+HTTP: 200
+TITLE: HostLixo VPS & Dedicated Servers | Coming Soon
+FETCHED: 2026-10-27T02:22:51.426Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+EXPANSION ROADMAP
+Cloud VPS & Bare-Metal Dedicated
+
+HostLixo Cloud VPS and dedicated servers are on the roadmap. Join the community for launch announcements; service regions, specifications, and availability will be confirmed before launch.
+
+COMING Q4 2026
+Planned Cloud VPS and Dedicated Services
+
+Cloud VPS and dedicated hosting are being considered for a future launch. The configurations shown here are previews and may change before any service becomes available.
+
+NVMe Cloud VPS
+2 to 8 vCPU • DDR5 RAM • 1-click Linux/Windows OS • Automated Snapshots
+Planned; details to be announced
+Bare-Metal Dedicated
+16 to 128 Cores • 64GB - 512GB DDR5 • IPMI / iDRAC Console • Private VLAN
+Planned; details to be announced
+BGP Anycast Subnets
+Custom BGP sessions • Bring Your Own IP (BYOIP) • /24 to /22 IPv4 subnets • Network protection details to be announced
+Planned; details to be announced
+Email for a launch update request
+Request an Update
+This opens an email draft to support; the page does not store your address.
+UPCOMING SPECIFICATIONS
+Planned VPS Configurations
+
+Example configurations for planning only; final specifications and availability are not confirmed.
+
+DEV CLOUD
+VPS Starter
+
+For web applications, bots, proxies, and test benches.
+
+PRICING TBA • LAUNCHING SOON
+2 vCPU
+AMD EPYC 9654 Cores
+4 GB
+DDR5 ECC RAM
+80 GB
+PCIe Gen4 NVMe RAID 10
+10 TB
+Bandwidth @ 10 Gbps Port
+Full Root / SSH & VNC Console
+Coming Soon • Join Discord
+RECOMMENDED
+PRODUCTION READY
+VPS Pro Speed
+
+Engineered for production SaaS, database clusters, & APIs.
+
+PRICING TBA • LAUNCHING SOON
+4 vCPU
+AMD Ryzen 9 9950X (5.7GHz Boost)
+8 GB
+High-Performance DDR5
+160 GB
+Enterprise Gen4 NVMe (7.4 GB/s)
+25 TB
+Bandwidth @ 10 Gbps Uplink
+Automated Snapshot Backups
+Coming Soon • Join Discord
+ENTERPRISE CLOUD
+VPS Ultra Max
+
+Maximum compute throughput for heavy multithreaded loads.
+
+PRICING TBA • LAUNCHING SOON
+8 vCPU
+Dedicated Compute Cores
+16 GB
+Ultra DDR5 RAM
+350 GB
+Gen4 NVMe RAID 10 High-IOPS
+Unmetered
+Fair-Use 10 Gbps Traffic
+Full BGP Anycast Session Support
+Coming Soon • Join Discord
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+

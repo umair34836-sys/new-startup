@@ -442,6 +442,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   mat dena" -> deliver ONLY the full-quality file unless asked; never commit site photos/screenshots (PakWebHoster's
   site/screens + assets were removed from git on 2026-10-26; re-make them per job in the scratchpad).
 
+- Client HostLixo (hostlixo.in, Minecraft hosting) home session: branch client-hostlixo (2026-10-27). Brief + site-data in
+  library/clients/hostlixo/. 30 s promo PREVIEW delivered 2026-10-27 (watermark option (a), voice `promo-male`).
+  Learnings (measured here 2026-10-27): a running VoiceStudio backend can be gone after the container idles: check
+  `curl :3900/health` and restart before TTS; the first VoxCPM2 request after start took 532 s (warm-up). VoxCPM2 voice
+  design with a "radio ad woman" instruct ran on for 7.8 s of nonsense at seed 7 (seed 21 fixed it). Hindi number/acronym
+  lines ("नौ प्लान", "डीडॉस प्रोटेक्शन") were the weak ones again: retake with seeds 21/33 and keep numbers on screen.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.

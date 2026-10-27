@@ -1,0 +1,123 @@
+URL: https://hostlixo.in/network.html
+FINAL_URL: https://www.hostlixo.in/network.html
+HTTP: 200
+TITLE: HostLixo Network & DDoS Protection | India
+FETCHED: 2026-10-27T02:22:34.297Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+MINECRAFT NETWORK INFORMATION
+Network & DDoS Protection
+
+See how DDoS-filtered protection is described for HostLixo plans and preview reference latency estimates. Estimates on this page are generated from configured values; they do not measure your current connection.
+
+LATENCY ESTIMATOR
+Preview Latency Estimates
+
+Choose a reference location to view sample latency values. This tool does not measure a live route from your device.
+
+🇮🇳
+Mumbai, India
+SAMPLE ESTIMATE
+Configured reference location; not live routing data
+~14 ms sample
+🇸🇬
+Singapore
+SAMPLE ESTIMATE
+Configured reference value; not live routing data
+~48 ms sample
+🇦🇪
+Dubai, UAE
+SAMPLE ESTIMATE
+Configured reference value; not live routing data
+~35 ms sample
+Estimate profile: Mumbai, India
+Run Estimate
+HostLixo latency estimate preview
+Configured reference values; no live route test has been run.
+Select a location and run an estimate to view sample values.
+MEASUREMENT:
+Estimates only
+ROUTE TEST:
+Not performed
+DATA SOURCE:
+Configured reference values
+CYBER DEFENSE ARCHITECTURE
+DDoS-Filtered Network Protection
+
+HostLixo Minecraft plan listings describe DDoS-filtered network protection. Review the current plan details and service terms for coverage, limits, and availability.
+
+Game Server Traffic Filtering
+
+The service listings describe filtering intended for game server traffic. Check the current plan terms for details.
+
+Network-Level DDoS Filtering
+
+DDoS filtering is listed as an included network feature on current plans. Contact support for service-specific coverage and limits.
+
+Review Plan Coverage
+
+Server performance depends on software, configuration, player count, and network conditions. Compare plan resources and review service terms before ordering.
+
+Network Protection
+Minecraft Query Botnet
+See plan details
+UDP Amplification (DNS/NTP)
+See plan details
+TCP SYN Flood
+See plan details
+Layer 7 Handshake Spam
+See plan details
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+

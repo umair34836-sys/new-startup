@@ -221,6 +221,9 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 `fonts/Manrope-Variable.ttf` (+ `OFL-Manrope.txt`, weights 200-800) and `fonts/Ubuntu-Regular.ttf` / `Ubuntu-Bold.ttf`
 (+ `Ubuntu-UFL.txt`, Ubuntu Font Licence 1.0, free to use and embed): PakWebHoster's site fonts (Manrope body/headings,
 Ubuntu theme font; loaded fonts read in Chromium 2026-10-25). From github.com/google/fonts (ofl/manrope, ufl/ubuntu), 2026-10-25.
+`fonts/JetBrainsMono-Variable.ttf` (+ `OFL-JetBrainsMono.txt`, OFL, weights 100-800): HostLixo's mono label font (site
+loads Space Grotesk 700 + Plus Jakarta Sans + JetBrains Mono, read in Chromium 2026-10-27). From github.com/google/fonts
+(ofl/jetbrainsmono), 2026-10-27.
 
 ## vendor/
 

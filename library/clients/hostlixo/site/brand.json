@@ -1,0 +1,454 @@
+{
+ "https://hostlixo.in/": {
+  "bg": [
+   [
+    "rgb(8, 8, 8)",
+    1716997.5
+   ],
+   [
+    "rgb(12, 12, 12)",
+    1534213.2690429688
+   ],
+   [
+    "rgb(10, 10, 10)",
+    699097.5
+   ],
+   [
+    "rgb(5, 5, 5)",
+    593302.5
+   ],
+   [
+    "rgb(11, 11, 11)",
+    257974.875
+   ],
+   [
+    "rgb(16, 16, 16)",
+    179370.3125
+   ],
+   [
+    "rgb(17, 17, 17)",
+    111249.56201171875
+   ],
+   [
+    "rgba(5, 5, 5, 0.95)",
+    110880
+   ],
+   [
+    "rgb(255, 255, 255)",
+    44542.0205078125
+   ],
+   [
+    "rgb(15, 15, 15)",
+    13128.4755859375
+   ],
+   [
+    "rgb(28, 28, 28)",
+    8912.4287109375
+   ],
+   [
+    "rgb(25, 25, 25)",
+    5292
+   ]
+  ],
+  "fg": [
+   [
+    "rgb(153, 153, 153)",
+    66
+   ],
+   [
+    "rgb(255, 255, 255)",
+    51
+   ],
+   [
+    "rgb(94, 94, 94)",
+    9
+   ],
+   [
+    "rgb(0, 0, 0)",
+    5
+   ],
+   [
+    "rgb(237, 237, 237)",
+    3
+   ],
+   [
+    "rgb(8, 8, 8)",
+    2
+   ],
+   [
+    "rgba(255, 255, 255, 0.88)",
+    2
+   ],
+   [
+    "rgba(255, 255, 255, 0.82)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.9)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.14)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "\"Plus Jakarta Sans\", -apple-system, sans-serif",
+    104
+   ],
+   [
+    "\"Space Grotesk\", -apple-system, sans-serif",
+    28
+   ],
+   [
+    "\"JetBrains Mono\", monospace",
+    9
+   ]
+  ],
+  "cssVars": {
+   "--bg-pitch": "#000000",
+   "--bg-main": "#050505",
+   "--bg-surface": "#0a0a0a",
+   "--bg-surface-elevated": "#111111",
+   "--bg-card": "#0c0c0c",
+   "--bg-card-hover": "#141414",
+   "--border-light": "rgba(255, 255, 255, 0.08)",
+   "--border-medium": "rgba(255, 255, 255, 0.16)",
+   "--border-strong": "rgba(255, 255, 255, 0.32)",
+   "--border-white": "#ffffff",
+   "--text-white": "#ffffff",
+   "--text-primary": "#ededed",
+   "--text-secondary": "#999999",
+   "--text-muted": "#5e5e5e",
+   "--font-display": "'Space Grotesk', -apple-system, sans-serif",
+   "--font-main": "'Plus Jakarta Sans', -apple-system, sans-serif",
+   "--font-mono": "'JetBrains Mono', monospace",
+   "--radius-xs": "4px",
+   "--radius-sm": "8px",
+   "--radius-md": "12px",
+   "--transition": "all 0.18s ease"
+  },
+  "images": [
+   "https://www.hostlixo.in/logo.png",
+   "https://www.hostlixo.in/hero-logo.png",
+   "https://www.hostlixo.in/images/mc_world.jpg",
+   "https://www.hostlixo.in/images/mc_1.jpg",
+   "https://www.hostlixo.in/images/mc_2.jpg",
+   "https://www.hostlixo.in/icon-mark.png"
+  ],
+  "inlineSvgs": 26,
+  "loadedFonts": [
+   "JetBrains Mono 500",
+   "JetBrains Mono 700",
+   "Plus Jakarta Sans 400",
+   "Plus Jakarta Sans 500",
+   "Plus Jakarta Sans 600",
+   "Plus Jakarta Sans 700",
+   "Plus Jakarta Sans 800",
+   "Space Grotesk 700"
+  ]
+ },
+ "https://hostlixo.in/minecraft.html": {
+  "bg": [
+   [
+    "rgb(12, 12, 12)",
+    3164743.598876953
+   ],
+   [
+    "rgb(8, 8, 8)",
+    2130390
+   ],
+   [
+    "rgb(5, 5, 5)",
+    593302.5
+   ],
+   [
+    "rgb(17, 17, 17)",
+    118707.68872070312
+   ],
+   [
+    "rgba(5, 5, 5, 0.95)",
+    110880
+   ],
+   [
+    "rgb(255, 255, 255)",
+    29608.149169921875
+   ],
+   [
+    "rgb(23, 23, 23)",
+    19853.298828125
+   ],
+   [
+    "rgb(14, 14, 14)",
+    19501.125
+   ],
+   [
+    "rgb(16, 16, 16)",
+    11641.9375
+   ],
+   [
+    "rgb(28, 28, 28)",
+    10957.990234375
+   ],
+   [
+    "rgb(18, 18, 18)",
+    3498.578125
+   ],
+   [
+    "rgba(255, 255, 255, 0.08)",
+    3006
+   ]
+  ],
+  "fg": [
+   [
+    "rgb(255, 255, 255)",
+    134
+   ],
+   [
+    "rgb(153, 153, 153)",
+    122
+   ],
+   [
+    "rgb(94, 94, 94)",
+    22
+   ],
+   [
+    "rgb(0, 0, 0)",
+    4
+   ],
+   [
+    "rgb(160, 160, 160)",
+    2
+   ],
+   [
+    "rgb(8, 8, 8)",
+    2
+   ],
+   [
+    "rgba(255, 255, 255, 0.88)",
+    2
+   ],
+   [
+    "rgba(255, 255, 255, 0.82)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.9)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.14)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "\"Plus Jakarta Sans\", -apple-system, sans-serif",
+    241
+   ],
+   [
+    "\"Space Grotesk\", -apple-system, sans-serif",
+    41
+   ],
+   [
+    "\"JetBrains Mono\", monospace",
+    9
+   ]
+  ],
+  "cssVars": {
+   "--bg-pitch": "#000000",
+   "--bg-main": "#050505",
+   "--bg-surface": "#0a0a0a",
+   "--bg-surface-elevated": "#111111",
+   "--bg-card": "#0c0c0c",
+   "--bg-card-hover": "#141414",
+   "--border-light": "rgba(255, 255, 255, 0.08)",
+   "--border-medium": "rgba(255, 255, 255, 0.16)",
+   "--border-strong": "rgba(255, 255, 255, 0.32)",
+   "--border-white": "#ffffff",
+   "--text-white": "#ffffff",
+   "--text-primary": "#ededed",
+   "--text-secondary": "#999999",
+   "--text-muted": "#5e5e5e",
+   "--font-display": "'Space Grotesk', -apple-system, sans-serif",
+   "--font-main": "'Plus Jakarta Sans', -apple-system, sans-serif",
+   "--font-mono": "'JetBrains Mono', monospace",
+   "--radius-xs": "4px",
+   "--radius-sm": "8px",
+   "--radius-md": "12px",
+   "--transition": "all 0.18s ease"
+  },
+  "images": [
+   "https://www.hostlixo.in/logo.png",
+   "https://www.hostlixo.in/images/mc_world.jpg",
+   "https://www.hostlixo.in/images/mc_1.jpg",
+   "https://www.hostlixo.in/images/mc_2.jpg",
+   "https://www.hostlixo.in/icon-mark.png"
+  ],
+  "inlineSvgs": 74,
+  "loadedFonts": [
+   "JetBrains Mono 500",
+   "JetBrains Mono 700",
+   "Plus Jakarta Sans 400",
+   "Plus Jakarta Sans 500",
+   "Plus Jakarta Sans 600",
+   "Plus Jakarta Sans 700",
+   "Plus Jakarta Sans 800",
+   "Space Grotesk 700"
+  ]
+ },
+ "https://hostlixo.in/about.html": {
+  "bg": [
+   [
+    "rgba(12, 12, 12, 0.96)",
+    689050.78125
+   ],
+   [
+    "rgb(5, 5, 5)",
+    593302.5
+   ],
+   [
+    "rgb(8, 8, 8)",
+    531900
+   ],
+   [
+    "rgba(12, 12, 12, 0.97)",
+    389839.421875
+   ],
+   [
+    "rgb(12, 12, 12)",
+    337783
+   ],
+   [
+    "rgb(9, 9, 9)",
+    335777.9265136719
+   ],
+   [
+    "rgba(5, 5, 5, 0.95)",
+    110880
+   ],
+   [
+    "rgb(255, 255, 255)",
+    33746.46337890625
+   ],
+   [
+    "rgb(17, 17, 17)",
+    17813.438232421875
+   ],
+   [
+    "rgb(16, 16, 16)",
+    11641.9375
+   ],
+   [
+    "rgb(18, 18, 18)",
+    3498.578125
+   ],
+   [
+    "rgb(11, 11, 11)",
+    2904
+   ]
+  ],
+  "fg": [
+   [
+    "rgb(255, 255, 255)",
+    51
+   ],
+   [
+    "rgb(153, 153, 153)",
+    45
+   ],
+   [
+    "rgb(170, 170, 170)",
+    6
+   ],
+   [
+    "rgb(94, 94, 94)",
+    4
+   ],
+   [
+    "rgb(204, 204, 204)",
+    3
+   ],
+   [
+    "rgb(8, 8, 8)",
+    3
+   ],
+   [
+    "rgb(237, 237, 237)",
+    2
+   ],
+   [
+    "rgba(255, 255, 255, 0.88)",
+    2
+   ],
+   [
+    "rgb(0, 0, 0)",
+    1
+   ],
+   [
+    "rgb(51, 51, 51)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.82)",
+    1
+   ],
+   [
+    "rgba(255, 255, 255, 0.9)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "\"Plus Jakarta Sans\", -apple-system, sans-serif",
+    73
+   ],
+   [
+    "\"Space Grotesk\", -apple-system, sans-serif",
+    33
+   ],
+   [
+    "\"JetBrains Mono\", monospace",
+    15
+   ]
+  ],
+  "cssVars": {
+   "--bg-pitch": "#000000",
+   "--bg-main": "#050505",
+   "--bg-surface": "#0a0a0a",
+   "--bg-surface-elevated": "#111111",
+   "--bg-card": "#0c0c0c",
+   "--bg-card-hover": "#141414",
+   "--border-light": "rgba(255, 255, 255, 0.08)",
+   "--border-medium": "rgba(255, 255, 255, 0.16)",
+   "--border-strong": "rgba(255, 255, 255, 0.32)",
+   "--border-white": "#ffffff",
+   "--text-white": "#ffffff",
+   "--text-primary": "#ededed",
+   "--text-secondary": "#999999",
+   "--text-muted": "#5e5e5e",
+   "--font-display": "'Space Grotesk', -apple-system, sans-serif",
+   "--font-main": "'Plus Jakarta Sans', -apple-system, sans-serif",
+   "--font-mono": "'JetBrains Mono', monospace",
+   "--radius-xs": "4px",
+   "--radius-sm": "8px",
+   "--radius-md": "12px",
+   "--transition": "all 0.18s ease"
+  },
+  "images": [
+   "https://www.hostlixo.in/logo.png",
+   "https://www.hostlixo.in/icon-mark.png"
+  ],
+  "inlineSvgs": 2,
+  "loadedFonts": [
+   "JetBrains Mono 700",
+   "Plus Jakarta Sans 400",
+   "Plus Jakarta Sans 500",
+   "Plus Jakarta Sans 600",
+   "Plus Jakarta Sans 700",
+   "Plus Jakarta Sans 800",
+   "Space Grotesk 700"
+  ]
+ }
+}
