@@ -80,3 +80,12 @@ Avatar (`assets/img/avatar.png`): the owner's skin waving, made with blocky_char
   before the wall (20 ms ramps, music_hook.mp3); riser-2s (peak 1.68 s) peaks on the drop / wall, impact-boom +
   sub-drop on the drop. Measured in the cut: -180 dB inside the gaps, -4.4 dB right after the drop.
 - When unsure what music the owner likes, send 4-6 loudness-matched 20 s samples (loudnorm -14) and let them pick.
+
+## Final YouTube music (owner pick, 2026-10-27; music-for-video skill)
+- Shortlist: `find_music.py "editor showreel portfolio" --no-vo --drop --platform youtube` (run by the main session):
+  1 Lion - Dyalla (owner Drive, YT-ALib, YouTube only), 2 High Technologic Beat Explosion (rejected by the owner as v1),
+  3 Traveling in Your Mind, 4 Euphoria - Dyalla. The owner heard a 22 s loudness-matched sample of Lion and said "haan".
+- Lion (listen.py): 123.0 BPM, D major, bright/upbeat; intro 0-12.7 s at -24 dB, then -7 dB; downbeat 23.452 s starts
+  the loud section. `music_fit.py lion.mp3 fit.wav --length 42.97 --drop-at 6.85 --src-drop 23.452 --end resolve --check`:
+  segments [16.602-56.61] + the composer's ending [179.56-182.52], join at 40.008 s 35 ms from a beat, phase error median
+  4 ms. Config bpm 123.0, drop 6.85. The 9:16 TikTok cut keeps Mixkit "Uplifting Bass" (YT-ALib is YouTube only).
