@@ -351,7 +351,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 ## Sub-sessions (Oct 24 2026)
 - ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
-  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba client sessions.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo client sessions.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -414,6 +414,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Brief library/clients/korba/brief.md; 9:16 promo reel FINAL delivered 2026-10-26 (site photos only, no images committed).
   OWNER RULE for this client: best promotional video, VO + music fully promotional, visuals ONLY the restaurant's own
   website pictures/videos (nothing from elsewhere, no guesswork).
+
+- Client Hostlixo home session: session_01JK8TsABjeKqpfnaMdmraR5 (branch client-hostlixo, Oct 27 2026), site https://hostlixo.in.
+  OWNER RULES for this job: 30 s promo from website data only; owner's copyright in the video (watermark.py; ask visible
+  tiled vs corner credit); NOT the default voice: a new professional promotional AI voice (VoxCPM2 design, samples to the
+  owner first, saved as "hostlixo-promo"); real elements from the site (logo, screenshots, icons) over emojis.
 
 - Client PakWebHoster (pakwebhoster.com) home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster,
   Oct 25 2026). Full crawl + brief: library/clients/pakwebhoster/ (site-data.md lists contradictions to ask about).
