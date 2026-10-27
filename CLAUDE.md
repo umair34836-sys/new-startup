@@ -422,7 +422,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - MUSIC STUDY session (owner, 2026-10-27: sessions pick the wrong music for the situation): session_01JK8Ts7AvTSnyA58KRuRWBG
   (branch study-music). Deliverables: research/music-for-video.md, music catalogue with measured tags, find_music.py,
-  music_fit.py, skill music-for-video. Merge when it reports, then ARCHIVE it (owner asked to close it after the work).
+  music_fit.py, skill music-for-video. DONE + merged 2026-10-27 (catalogue 221 tracks, 160 client-OK; mix_vo_music.py), session ARCHIVED.
 
 - OWNER'S PERSONAL session (his own channel / FireCraft / family videos): session_01JK8TsAUkqDcak9G4pNdxVK (branch
   personal-mrcopper, Oct 27 2026). No watermark on his own videos unless he asks; personal media never committed.
