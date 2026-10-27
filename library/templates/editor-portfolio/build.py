@@ -39,7 +39,7 @@ DROP = C["drop"]
 random.seed(7)
 
 # measured here 2026-10-27 (numpy RMS envelope, 10 ms window): seconds from file start to the loudest point
-PEAK = {"whoosh-fast-0.3s": 0.17, "whoosh-up-0.6s": 0.30, "swish-1": 0.04, "impact-punch": 0.01, "sub-drop": 0.02,
+PEAK = {"riser-2s": 1.68, "impact-boom": 0.03, "whoosh-fast-0.3s": 0.17, "whoosh-up-0.6s": 0.30, "swish-1": 0.04, "impact-punch": 0.01, "sub-drop": 0.02,
         "pop-high": 0.01, "pluck": 0.0, "click-1": 0.0, "sparkle": 0.45, "typing-keyboard-fast": 0.04}
 
 
@@ -231,7 +231,7 @@ for k, n in ((1, -6), (2, -5), (3, -4), (4, -2)):
         sfx("pluck", t, 0.45)
 T.append(f'tl.fromTo("#w4", {{rotation:-4}}, {{rotation:4, duration:0.1, yoyo:true, repeat:4, ease:"none"}}, {r3(bt(-2) + 0.1)});')
 T.append(f'tl.to("#s2", {{scale:3, opacity:0, duration:0.3, ease:"power3.in"}}, {r3(DROP - 0.3)});')
-sfx("whoosh-up-0.6s", DROP, 0.5)
+sfx("riser-2s", DROP, 0.45)          # rises through the words and the silent beat, peaks on the drop
 win("#s2", T_WANT, DROP)
 
 # ---------------------------------------------------------------- S3 montage: one section per brand
@@ -300,6 +300,7 @@ for gi, g in enumerate(GROUPS):
     win(f"#g{gi}", r3(s0 - 0.15), r3(s0 + BAR))
 HTML.append('<div id="s3" style="position:absolute;inset:0;">' + "\n  ".join(mont) + "</div>")
 sfx("sub-drop", DROP, 0.4)
+sfx("impact-boom", DROP, 0.45)
 
 # ---------------------------------------------------------------- S4 wall: the grid clips at once (2 bars)
 G = C["grid"]
@@ -325,6 +326,7 @@ HTML.append(f'''<div id="s4" style="position:absolute;inset:0;">{"".join(cells)}
 </div>''')
 T.append(f'tl.fromTo("#w-cap", {{opacity:0, scale:1.5}}, {{opacity:1, scale:1, duration:0.2, ease:"power4.out"}}, {r3(T_GRID + BAR - 0.12)});')
 sfx("whoosh-fast-0.3s", T_GRID, 0.5)
+sfx("riser-2s", T_GRID, 0.35)         # second lift into the wall (half-beat music gap before it)
 sfx("impact-punch", r3(T_GRID + BAR), 0.45)
 T.append(f'tl.to("#s4", {{scale:0.6, opacity:0, duration:0.25, ease:"power3.in"}}, {r3(T_END - 0.25)});')
 sfx("whoosh-fast-0.3s", T_END - 0.05, 0.5)
@@ -407,8 +409,14 @@ html, body {{ width:{W}px; height:{H}px; overflow:hidden; background:#e3e3e3; }}
 .crow {{ display:flex; align-items:center; gap:18px; font-size:{40 if WIDE else 44}px; margin:12px 0; white-space:nowrap; }}
 .cdot {{ width:22px; height:22px; border-radius:50%; flex:none; }}
 """
-music_d = dur("assets/music/music.mp3")
-audio = [f'<audio id="music" src="assets/music/music.mp3" data-start="0" data-duration="{min(TOTAL, music_d)}" data-volume="{C.get("music_volume", 0.8)}" '
+# hook gaps (owner, 2026-10-27: "music me jan dallo ... hook bana rahay"): the music drops out for the beat before the
+# montage drop and the half beat before the wall, so the riser + impact land in silence (20 ms ramps, no clicks)
+GAPS = [(r3(DROP - BEAT), DROP), (r3(T_GRID - BEAT / 2), T_GRID)] if C.get("hook_gaps", True) else []
+vol = "*".join(f"(1-between(t,{g0},{g1})*min(1,min(t-{g0},{g1}-t)/0.02))" for g0, g1 in GAPS) or "1"
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/music.mp3", "-af", f"volume='{vol}':eval=frame",
+                "-c:a", "libmp3lame", "-q:a", "2", "assets/music/music_hook.mp3"], check=True)
+music_d = dur("assets/music/music_hook.mp3")
+audio = [f'<audio id="music" src="assets/music/music_hook.mp3" data-start="0" data-duration="{min(TOTAL, music_d)}" data-volume="{C.get("music_volume", 0.8)}" '
          f'data-track-index="1" data-fade-out="1.5"></audio>']
 lanes = []                            # greedy lane per sfx so overlapping clips never share a track (lint)
 for n, (f, s, v, d) in enumerate(sorted(A, key=lambda x: x[1])):
