@@ -140,6 +140,8 @@ for e in cat:
         s += 1.5; why.append(f"real ending from {e.get('ending_from_s')} s -> music_fit --end resolve")
     elif e.get("ending") in ("abrupt",):
         warn.append("loop-style abrupt end: music_fit will end on a downbeat hit + ring-out")
+    elif e.get("ending") == "soft-tail":
+        warn.append("quiet outro that stops without a decay: music_fit ends on a downbeat hit + ring-out")
     elif e.get("ending") == "fade-out":
         warn.append("ends in a fade-out: no button; music_fit ends on a downbeat hit + ring-out")
     if need_drop:

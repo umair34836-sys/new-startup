@@ -95,7 +95,7 @@ phrase = 4 * bar
 def plan():
     """list of (src_a, src_b) segments whose lengths sum to L; joins are downbeats (except the first start)."""
     segs, notes = [], []
-    natural = info.get("ending") in ("natural", "soft-tail") and info.get("ending_from_s")
+    natural = info.get("ending") == "natural" and info.get("ending_from_s")  # soft-tail = quieter outro that stops without a decay
     end_mode = a.end
     if end_mode == "resolve" and not natural:
         end_mode = "hit"
