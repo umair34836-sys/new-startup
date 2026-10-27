@@ -354,7 +354,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 ## Sub-sessions (Oct 24 2026)
 - ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
-  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo client sessions.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo client sessions + the owner's Personal session.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -417,6 +417,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Brief library/clients/korba/brief.md; 9:16 promo reel FINAL delivered 2026-10-26 (site photos only, no images committed).
   OWNER RULE for this client: best promotional video, VO + music fully promotional, visuals ONLY the restaurant's own
   website pictures/videos (nothing from elsewhere, no guesswork).
+
+- OWNER'S PERSONAL session (his own channel / FireCraft / family videos): session_01JK8TsAUkqDcak9G4pNdxVK (branch
+  personal-mrcopper, Oct 27 2026). No watermark on his own videos unless he asks; personal media never committed.
 
 - Client Hostlixo home session: session_01JK8TsABjeKqpfnaMdmraR5 (branch client-hostlixo, Oct 27 2026), site https://hostlixo.in.
   OWNER RULES for this job: 30 s promo from website data only; owner's copyright in the video (watermark.py; ask visible
