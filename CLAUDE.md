@@ -448,7 +448,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   (branch client-heavendeveloper). Discord development server (websites, bots, Minecraft mods/plugins/packs); only input
   = a phone screen recording of its Discord (Drive ID in library/clients/heavendeveloper/brief.md). 9:16 30 s English
   promo PREVIEW (watermarked; clean file after payment) delivered 2026-10-28 from new template
-  library/templates/discord-server-promo. vs_tts.py: `--voice promo-male --lang en` for English scripts.
+  library/templates/discord-server-promo. vs_tts.py: `--voice <name> --lang en` for English scripts (promo-male is BANNED since 2026-10-28).
 
 - Client AethelGrid (hosting; site https://aethelgrid.cloud/, panel https://gp.aethelgrid.cloud/) home session:
   session_01JK8Ts8oyBGZKRH6CAr36yA (branch client-aethelgrid, 2026-10-28). Client brief (verbatim): "so we want a 60 sec
@@ -472,7 +472,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   site/screens + assets were removed from git on 2026-10-26; re-make them per job in the scratchpad).
 
 - Client HostLixo (hostlixo.in, Minecraft hosting) home session: branch client-hostlixo (2026-10-27). Brief + site-data in
-  library/clients/hostlixo/. 30 s promo PREVIEW delivered 2026-10-27 (watermark option (a), voice `promo-male`).
+  library/clients/hostlixo/. 30 s promo PREVIEW delivered 2026-10-27 (watermark option (a), voice `promo-male`, now BANNED: re-voice with another field voice if this reel is redone).
   Learnings (measured here 2026-10-27): a running VoiceStudio backend can be gone after the container idles: check
   `curl :3900/health` and restart before TTS; the first VoxCPM2 request after start took 532 s (warm-up). VoxCPM2 voice
   design with a "radio ad woman" instruct ran on for 7.8 s of nonsense at seed 7 (seed 21 fixed it). Hindi number/acronym
