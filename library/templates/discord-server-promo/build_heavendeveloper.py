@@ -257,7 +257,8 @@ C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
       <div class="c h gold" id="s7-n" style="top:600px;font-size:96px;">HEAVEN DEVELOPER</div>
       <div class="c" id="s7-st" style="top:740px;display:flex;justify-content:center;gap:20px;">{steps}</div>
       <div class="c" id="s7-btn" style="top:1000px;"><span class="btn"><svg viewBox="0 0 24 24" style="width:70px;height:70px;" fill="#fff">{DISCORD}</svg>JOIN ON DISCORD</span></div>
-      <div class="c" id="s7-p" style="top:1170px;font-family:JB;font-weight:700;font-size:32px;letter-spacing:3px;color:{GOLD2};">FREE • PAID • PREMIUM PLANS</div>
+      <div class="c" id="s7-url" style="top:1160px;"><span class="lab" style="font-size:44px;padding:16px 36px;color:#fff;">discord.gg/<span style="color:{GOLD2};">heavendeveloper</span></span></div>
+      <div class="c" id="s7-p" style="top:1270px;font-family:JB;font-weight:700;font-size:32px;letter-spacing:3px;color:{GOLD2};">FREE • PAID • PREMIUM PLANS</div>
     </div>""",
                '    tl.fromTo("#s7-w", { scale: 1.12, filter: "blur(14px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.3, ease: "power3.out" }, 0);\n'
                '    tl.fromTo("#s7-logo", { scale: 0.3, opacity: 0, rotation: -15 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.55, ease: "back.out(1.8)" }, 0.05);\n'
@@ -266,6 +267,7 @@ C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
                          for i in range(3)) +
                f'    tl.fromTo("#s7-btn", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.42, ease: "back.out(2.2)" }}, {rel(6, 0.6)});\n'
                f'    tl.to("#s7-btn", {{ scale: 1.06, duration: 0.45, ease: "sine.inOut", yoyo: true, repeat: 5 }}, {rel(6, 0.6) + 0.45:.2f});\n'
+               f'    tl.fromTo("#s7-url", {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.2)" }}, {rel(6, 0.6) + 0.3:.2f});\n'
                f'    tl.fromTo("#s7-p", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.4 }}, {rel(6, 0.6) + 0.4:.2f});\n'
                f'    tl.fromTo("#s7-ph", {{ scale: 1.0 }}, {{ scale: 1.12, duration: {d}, ease: "none" }}, 0);\n')
 STEP_T = [W["s7"][0] + rel(6, 0.02 + i * 0.16) for i in range(3)]

@@ -43,6 +43,10 @@ Every fact below = read from a frame of that recording on 2026-10-28 (time in th
   invites, Discord ToS.
 - Brand look (from the frames): black + gold (logo), Discord blurple (#5865F2-like banner/buttons), gold left bar on embeds.
 
+## Invite link (owner, 2026-10-28)
+- https://discord.gg/heavendeveloper - Discord API `GET /api/v10/invites/heavendeveloper?with_counts=true` (curl,
+  2026-10-28): guild "Heaven Developer", same description as the profile, approximate_member_count 2521, presence 16.
+
 ## Owner choices for job 1 (2026-10-28)
 Promo reel, 9:16, ~30 s, English VO with field voice `promo-male` (vs_tts.py), watermarked PREVIEW first (new client),
 clean file after payment. Use recording frames/screens. Only promotional data; ignore the rest.
