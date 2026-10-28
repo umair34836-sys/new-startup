@@ -133,6 +133,8 @@ Read this first in every session.
 (Observed in renders here, Oct 2026. Re-measured 2026-10-24: the riser/error timings and that whoosh = whoosh-short and
 click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" ease. The rest is not re-tested.)
 
+- Pin the CLI: bare `npx hyperframes` tried to fetch 0.8.212 and failed (npm notarget, Heaven Developer session
+  2026-10-28); `npx -y hyperframes@0.8.210` worked.
 - Load GSAP from `assets/vendor/gsap-3.14.2.min.js`, never the CDN (render fails with
   `sub_timeline_script_failure`). Registry blocks (`npx hyperframes add ...`) also point at the CDN: fix them.
 - `media-treatment --apply` rewrites the scene markup (adds `data-hf-id`, reorders attributes): later
@@ -453,6 +455,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   = a phone screen recording of its Discord (Drive ID in library/clients/heavendeveloper/brief.md). 9:16 30 s English
   promo PREVIEW (watermarked) then clean FINAL delivered 2026-10-28 from new template
   library/templates/discord-server-promo. vs_tts.py: `--voice <name> --lang en` for English scripts (promo-male is BANNED since 2026-10-28).
+  Also 2026-10-28 (clean finals): FULL 119 s 9:16 promo (24 scenes, 2 Discord recordings, voice explainer-pro;
+  build_heavendeveloper_full.py) and a 16:9 78 s walkthrough of https://bhupendra.pages.dev (new template
+  library/templates/portfolio-site-promo). VoiceStudio backend crashed mid-run: restart it and resume from the failed line.
 
 - Client AethelGrid (hosting; site https://aethelgrid.cloud/, panel https://gp.aethelgrid.cloud/) home session:
   session_01JK8Ts8oyBGZKRH6CAr36yA (branch client-aethelgrid, 2026-10-28). Client brief (verbatim): "so we want a 60 sec
