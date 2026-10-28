@@ -34,3 +34,4 @@ Paths inside a spec are relative to the spec file, or absolute.
 - `thumb_check.py` compares boxed text with its box colour, not with the photo behind it. Without that, it flagged a boxed line wrongly (2.31 vs the real 14.67).
 
 Test media: a Mixkit clip (41165, "Man answering a whatsapp", videoFree licence, links in library/stock/mixkit-links.json), used in the scratchpad only. No images are committed here.
+- First real job (Heaven Developer, 2026-10-28): 6 thumbnails, 2 directions per video, specs + design log in library/clients/heavendeveloper/thumbnails/. Added `tools/thumb_card.py` (bordered shadow cards for stickers) and a subject `bottom` option in thumb_make.py. rembg isnet on a Minecraft avatar made the shirt pattern transparent: use the square avatar as a card instead of a cutout.
