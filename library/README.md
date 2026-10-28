@@ -84,6 +84,11 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   shots cut on the music's beat grid and matched to each VO line, 9:16 crop + lanczos + CAS sharpen, blurred-fill for
   readable chat shots, hook title at 0 s, logo flash/shake reveal, feature checklist chips on the spoken words,
   24x7/NO WHITELIST stamp, JAVA+BEDROCK cards, end card (logo, IP, port, join, Discord), SFX lanes. See its README.
+- `discord-server-promo/build_heavendeveloper.py`: 9:16 30 s promo for a Discord-based dev service from a phone screen
+  recording of the client's server (Heaven Developer, 2026-10-28): banner hook, gold logo reveal with shine, the real
+  #services scroll inside a CSS phone frame + service cards, 'STARTING FROM $4' price card, invite-rewards card, member
+  count-up + real review, 3-step end card with a Discord JOIN button. English VO (vs_tts.py --voice <field voice> --lang en; promo-male used in v1 is BANNED since 2026-10-28).
+  See its README.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
 - `blocky-walk/build.py`: 16:9 21.5 s, host + girl skins walk down a sunny voxel village lane (4 shots cut on music downbeats, CC0 town-theme-rpg). Made 2026-10-26; see its README.

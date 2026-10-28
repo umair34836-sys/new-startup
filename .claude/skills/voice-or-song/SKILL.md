@@ -50,7 +50,7 @@ another style. It keeps the music and pulls the beat back under the sung words.
 ## VoiceStudio voice (vs_tts.py), the local ElevenLabs replacement (Oct 2026)
 
 **Pick a field voice first (owner, 2026-10-27; there is no default voice).** `--voice <name>` with one of:
-- promo-male, promo-female (promos, offers)
+- promo-female (promos, offers); promo-male is BANNED (owner 2026-10-28), never use it
 - tutorial-calm (tutorials)
 - explainer-pro (explainers)
 - gaming-hype (gaming / Minecraft)

@@ -181,7 +181,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - NO DEFAULT VOICE (owner, 2026-10-27: "Default voice mujhe pasand nhi hai also usko bhi remove kro or 10 different fields
   or skill k hisaab se alag alag voices bana ker save rakho"): the old "default" (Oct 24 MoradoSolution ad narrator) is
   removed. Pick one of 10 AI-designed FIELD VOICES by the video type (table + measurements: library/voices/README.md):
-  promo-male, promo-female, tutorial-calm, explainer-pro, gaming-hype, food-warm, story-emotional, kids-cheerful,
+  promo-male (BANNED: owner 2026-10-28 "ye wali voice kisi bhi session me use mat kernaa"; vs_tts.py refuses it),
+  promo-female, tutorial-calm, explainer-pro, gaming-hype, food-warm, story-emotional, kids-cheerful,
   luxury-deep, news-anchor -> `vs_tts.py script.txt out.wav --voice <name>` (VoxCPM2 clone of a fixed reference in
   library/voices/, Apache-2.0). Without --voice, vs_tts.py lists them. Real Viraj only via ElevenLabs when the owner asks.
 - SAVED VOICES (owner, Oct 24 2026): "senpaispider" = the owner's client Senpai Spider. When the owner says "senpai ki
@@ -362,7 +363,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 ## Sub-sessions (Oct 24 2026)
 - ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
-  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo, Heaven Developer client sessions + the owner's Personal session.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo, Heaven Developer, AethelGrid client sessions + the owner's Personal session.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -444,8 +445,15 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   owner first, saved as "hostlixo-promo"); real elements from the site (logo, screenshots, icons) over emojis.
 
 - Client Heaven Developer home session (owner wrote "heaven devolpur", 2026-10-28): session_01JK8Ts8hnNQ61GDZt5FVxhy
-  (branch client-heavendeveloper). Nothing known yet: the session first asks the owner for name, links, video type, inputs;
-  brief will be library/clients/heavendeveloper/brief.md. New client: ask about watermarked previews.
+  (branch client-heavendeveloper). Discord development server (websites, bots, Minecraft mods/plugins/packs); only input
+  = a phone screen recording of its Discord (Drive ID in library/clients/heavendeveloper/brief.md). 9:16 30 s English
+  promo PREVIEW (watermarked; clean file after payment) delivered 2026-10-28 from new template
+  library/templates/discord-server-promo. vs_tts.py: `--voice <name> --lang en` for English scripts (promo-male is BANNED since 2026-10-28).
+
+- Client AethelGrid (hosting; site https://aethelgrid.cloud/, panel https://gp.aethelgrid.cloud/) home session:
+  session_01JK8Ts8oyBGZKRH6CAr36yA (branch client-aethelgrid, 2026-10-28). Client brief (verbatim): "so we want a 60 sec
+  video showing the core features of our host including site and panel". Panel likely needs a login: never create
+  accounts; ask the owner for a demo login / client recording. New client: ask about watermarked previews.
 
 - Client PakWebHoster (pakwebhoster.com) home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster,
   Oct 25 2026). Full crawl + brief: library/clients/pakwebhoster/ (site-data.md lists contradictions to ask about).
@@ -464,7 +472,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   site/screens + assets were removed from git on 2026-10-26; re-make them per job in the scratchpad).
 
 - Client HostLixo (hostlixo.in, Minecraft hosting) home session: branch client-hostlixo (2026-10-27). Brief + site-data in
-  library/clients/hostlixo/. 30 s promo PREVIEW delivered 2026-10-27 (watermark option (a), voice `promo-male`).
+  library/clients/hostlixo/. 30 s promo PREVIEW delivered 2026-10-27 (watermark option (a), voice `promo-male`, now BANNED: re-voice with another field voice if this reel is redone).
   Learnings (measured here 2026-10-27): a running VoiceStudio backend can be gone after the container idles: check
   `curl :3900/health` and restart before TTS; the first VoxCPM2 request after start took 532 s (warm-up). VoxCPM2 voice
   design with a "radio ad woman" instruct ran on for 7.8 s of nonsense at seed 7 (seed 21 fixed it). Hindi number/acronym
