@@ -154,6 +154,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Check before render, then `snapshot --at ...` and look at the frames. Layout warnings for decorative
   overflow are fixed with `data-layout-allow-overflow`; stacked text effects with `data-layout-allow-occlusion`.
 - The first frame is the thumbnail: put a title or key image on screen at 0 s.
+- /tmp/hyperframes-extract-cache-0 grew to 1.7 GB (Mr Aloo Promo 2, 2026-10-28): clear it before long renders when disk is low.
+- Overlays that come and go in a recording (chat spam etc.): check frames every 0.2 s, not a 2 fps contact sheet; the 2 fps
+  sheet hid that only 21.8-22.6 s of a 6-24 s stretch was clean (Mr Aloo Promo 2, 2026-10-28).
 - Element ids must be unique across the whole composition: a shot wrapper and a text both called `s{k}c` hid whole
   shots for seconds (Mr Aloo GTA preview 1, 2026-10-28; ffmpeg blackdetect found 6 near-black spans). Run blackdetect
   (or watch.py) on every render.
