@@ -39,3 +39,5 @@ Every decision and its source:
 | --- | --- | --- |
 | check 1 | 49 heavy-overlay elements (black-frame risk), video without id | linear gradients, no blur filters, hidden shots use display:none; ids |
 | snapshots 1 | captions unreadable on the white-ish Google page, overlay text on the recording, circle off the Ultra Lite title, "FAKE?" stamp over "100% WORKING!!", empty frame after the file shrinks | caption band, dark panels, nowrap title + smaller circle, stamp moved, "EK CHHOTI SI FILE MEIN?" text |
+| preview 1 render | blackdetect: 6 near-black spans; cause = duplicate element id `s{k}c` (shot wrapper and a text) hid whole shots for seconds; design shots showed only the background for 1-3 s before their first element | unique ids; a design shot now starts when its first element enters (previous shot holds); caption band hugs the spoken words |
+| preview 2 (2026-10-28, measured here) | 304.1 s, 30.0 fps; -17.1 LUFS, peak -1.6 dBFS, 0 clipped; no mix window > 2 dB over the VO's p95; blackdetect (d 0.2, pix_th 0.10) finds nothing | sent to the owner; GTA gameplay slots wait for the client's footage |

@@ -252,16 +252,16 @@ def s_compressed(k, a, b):   # recording frame at 12.6 s: real result title "Gta
 
 
 def s_ultra(k, a, b):   # safe recreated result (guide): fictional title from the VO, reserved .example domain
-    card = (f'<div id="s{k}c" style="position:absolute;left:260px;top:260px;width:1400px;padding:46px 56px;border-radius:26px;background:#202124;'
+    card = (f'<div id="s{k}card" style="position:absolute;left:260px;top:260px;width:1400px;padding:46px 56px;border-radius:26px;background:#202124;'
             f'border:2px solid #3c4043;box-shadow:0 30px 80px rgba(0,0,0,0.55);opacity:0;">'
             f'<div style="font-family:Jakarta;font-size:30px;color:#bdc1c6;">random-website.example › gta-5-android</div>'
             f'<div style="font-family:Jakarta;font-size:66px;color:#8ab4f8;margin:12px 0 18px;white-space:nowrap;">GTA V Ultra Lite (10 MB) - Free Download</div>'
             f'<div style="font-family:Jakarta;font-size:34px;color:#bdc1c6;">100% working!! no root!! full game!! ...</div>'
             f'<div id="s{k}o" style="position:absolute;left:30px;top:78px;width:700px;height:120px;border:9px solid {RED};border-radius:50%;transform:rotate(-3deg) scale(0);"></div></div>')
     h = dark() + card + txt(f"s{k}t", "SAFE RECREATION", 30, "#ffffffaa", "position:absolute;left:260px;top:200px;", "Jakarta")
-    j = [slide(f"#s{k}c", a + 0.05, y=80), ft(f"#s{k}t", dict(opacity=0), dict(opacity=1, duration=0.2), a + 0.1),
+    j = [slide(f"#s{k}card", a + 0.05, y=80), ft(f"#s{k}t", dict(opacity=0), dict(opacity=1, duration=0.2), a + 0.1),
          ft(f"#s{k}o", dict(scale=0, rotation=-30), dict(scale=1, rotation=-3, duration=0.35, ease="back.out(2)"), ws(150)),
-         ft(f"#s{k}c", dict(scale=1), dict(scale=1.12, duration=0.5, ease="power3.out", immediateRender=False), ws(150))]
+         ft(f"#s{k}card", dict(scale=1), dict(scale=1.12, duration=0.5, ease="power3.out", immediateRender=False), ws(150))]
     return h, j, [("pop-high", ws(150), 0.4)]
 
 
@@ -358,10 +358,10 @@ def s_install(k, a, b):
            f'<div style="font-family:Jakarta;font-weight:800;font-size:30px;color:#fff;text-align:left;">gta5_ultra_lite.apk<br><span style="color:#9aa0b4;font-size:26px;">10 MB · complete</span></div></div>'
            f'<div id="s{k}i" style="margin-top:40px;padding:18px 70px;border-radius:40px;background:{GREEN};font-family:Jakarta;font-weight:800;font-size:40px;color:#0b2a14;opacity:0;">INSTALL</div></div>')
     h = dark() + phone(f"s{k}ph", scr, left=1180, top=75) + (
-        f'<div style="position:absolute;left:110px;top:280px;width:1000px;">{txt(f"s{k}a", "APK MIL BHI GAYA...", 120)}{txt(f"s{k}b", "DOWNLOAD ✓", 120, GREEN)}{txt(f"s{k}c", "AB INSTALL...", 120, ORANGE)}</div>'
+        f'<div style="position:absolute;left:110px;top:280px;width:1000px;">{txt(f"s{k}a", "APK MIL BHI GAYA...", 120)}{txt(f"s{k}b", "DOWNLOAD ✓", 120, GREEN)}{txt(f"s{k}ab", "AB INSTALL...", 120, ORANGE)}</div>'
         f'<div style="position:absolute;left:110px;top:200px;">{txt(f"s{k}n", "ILLUSTRATIVE RECREATION", 30, "#ffffffaa", "", "Jakarta")}</div>')
     j = [slide(f"#s{k}ph", a + 0.05, y=500, d=0.45), ft(f"#s{k}n", dict(opacity=0), dict(opacity=1, duration=0.2), a + 0.2),
-         slam(f"#s{k}a", ws(271)), pop(f"#s{k}f", ws(278)), slam(f"#s{k}b", ws(278)), pop(f"#s{k}i", ws(283)), slam(f"#s{k}c", ws(283)),
+         slam(f"#s{k}a", ws(271)), pop(f"#s{k}f", ws(278)), slam(f"#s{k}b", ws(278)), pop(f"#s{k}i", ws(283)), slam(f"#s{k}ab", ws(283)),
          ft(f"#s{k}i", dict(scale=1), dict(scale=0.88, duration=0.08, yoyo=True, repeat=1, immediateRender=False), ws(285))]
     return h, j, [("pop-high", ws(278), 0.35), ("mouse-click", ws(285), 0.8)]
 
@@ -544,7 +544,7 @@ def s_compare(k, a, b):   # guide + script: "10 MB - Website ka promise" vs "Ful
 
 
 def s_cloud(k, a, b):
-    h = dark() + (f'<div id="s{k}c" style="position:absolute;left:180px;top:200px;text-align:center;opacity:0;">{em("cloud", 300)}'
+    h = dark() + (f'<div id="s{k}cl" style="position:absolute;left:180px;top:200px;text-align:center;opacity:0;">{em("cloud", 300)}'
                   f'<div class="stroke" style="font-family:Anton;font-size:80px;color:{CYAN};">REMOTE SERVER</div>'
                   f'<div style="font-family:Jakarta;font-weight:800;font-size:44px;color:#fff;">game yahan run hota hai</div></div>'
                   f'<div id="s{k}l" style="position:absolute;left:720px;top:420px;width:540px;height:14px;border-radius:7px;'
@@ -552,7 +552,7 @@ def s_cloud(k, a, b):
                   f'<div id="s{k}p" style="position:absolute;left:1320px;top:200px;text-align:center;opacity:0;">{em("mobile_phone", 300)}'
                   f'<div class="stroke" style="font-family:Anton;font-size:80px;color:#fff;">INTERNET SE STREAM</div></div>'
                   + txt(f"s{k}t", "CLOUD GAMING = ALAG CHEEZ", 100, ORANGE, "position:absolute;left:0;right:0;top:40px;text-align:center;"))
-    j = [slam(f"#s{k}t", ws(530)), pop(f"#s{k}c", ws(538)), pop(f"#s{k}p", ws(544)),
+    j = [slam(f"#s{k}t", ws(528)), pop(f"#s{k}cl", ws(538)), pop(f"#s{k}p", ws(544)),
          ft(f"#s{k}l", dict(scaleX=0), dict(scaleX=1, duration=0.5, ease="power2.out"), ws(544)),
          ft(f"#s{k}l", dict(backgroundPositionX="0px"), dict(backgroundPositionX="210px", duration=max(0.5, b - ws(544) - 0.5), ease="none", immediateRender=False), ws(544) + 0.5)]
     return h, j, [("pop-high", ws(538), 0.3), ("blip-up", ws(544), 0.3)]
@@ -622,9 +622,9 @@ def s_legit(k, a, b):
     h = dark() + center(txt(f"s{k}a", "GTA MOBILE PAR KHELNA HAI?", 110)
                         + f'<div id="s{k}b" style="display:flex;align-items:center;gap:30px;padding:26px 50px;border-radius:40px;background:rgba(43,217,107,0.15);border:5px solid {GREEN};opacity:0;">'
                         f'{em("cloud", 140)}<div class="stroke" style="font-family:Anton;font-size:110px;color:{GREEN};">LEGIT CLOUD GAMING</div></div>'
-                        + f'<div id="s{k}c" style="display:flex;align-items:center;gap:24px;opacity:0;">{em("globe", 100)}'
+                        + f'<div id="s{k}rg" style="display:flex;align-items:center;gap:24px;opacity:0;">{em("globe", 100)}'
                         f'<div style="font-family:Jakarta;font-weight:800;font-size:58px;color:#fff;">agar tumhare region mein available ho</div></div>', bottom=150, gap=34)
-    return h, [slide(f"#s{k}a", ws(692), y=40), pop(f"#s{k}b", ws(704)), slide(f"#s{k}c", ws(711), y=40)], [("success-chime", ws(704), 0.3)]
+    return h, [slide(f"#s{k}a", ws(692), y=40), pop(f"#s{k}b", ws(704)), slide(f"#s{k}rg", ws(711), y=40)], [("success-chime", ws(704), 0.3)]
 
 
 # Scene 6 - final roast (guide: suspense before the punchline, dramatic zoom + shake, short silence, final text)
@@ -747,6 +747,21 @@ def comp(cid, html, js):
 
 
 C = {}
+# no empty screens (guide: no black/blank frames): a design shot whose first element enters > 0.6 s after its cut
+# starts later instead, so the previous shot holds over the lead-in words
+import re
+MEDIA_BG = {"s_google", "s_results", "s_compressed", "s_milega"}
+starts = [x[0] for x in SH]
+for k, (a, fn) in enumerate(SH):
+    if k == 0 or getattr(fn, "__name__", "") in MEDIA_BG or f'id="g{k}"' in fn(k, a, a + 5)[0]:
+        continue
+    j = fn(k, a, a + 5)[1]
+    ts = [float(t) for sel, t in re.findall(r'tl\.fromTo\("([^"]+)", \{[^}]*opacity: 0[^}]*\}, \{[^}]*\}, ([\d.]+)\);', "\n".join(j))
+          if re.match(rf'[#.]s{k}[a-zA-Z]', sel)]
+    if ts and min(ts) - a > 0.6:
+        starts[k] = round(min(ts) - 0.1, 3)
+SH = [(starts[k], fn) for k, (_, fn) in enumerate(SH)]
+GP.clear()
 html, js, shots_meta = [], [], []
 bounds = [x[0] for x in SH] + [TOTAL]
 for k, (a, fn) in enumerate(SH):
@@ -824,11 +839,12 @@ for g, (i0, i1, text) in enumerate(CAP):
         gold = w.startswith("*")
         w = w.lstrip("*").replace("_", " ")
         t = max(ws(i0 + min(n - 1, int(m * n / len(words)))), st)
-        sp.append(f'<span id="c{g}w{m}" style="display:inline-block;margin:0 0.12em;color:{ORANGE if gold else WHITE};{"font-size:1.18em;" if gold else ""}">{w}</span>')
+        rad = ("border-radius:18px 0 0 18px;" if m == 0 else "") + ("border-radius:0 18px 18px 0;" if m == len(words) - 1 else "") if len(words) > 1 else "border-radius:18px;"
+        sp.append(f'<span id="c{g}w{m}" style="display:inline-block;padding:4px 0.16em 8px;background:rgba(10,5,20,0.55);{rad}color:{ORANGE if gold else WHITE};{"font-size:1.18em;" if gold else ""}">{w}</span>')
         js.append(f'    tl.fromTo("#c{g}w{m}", {{ opacity: 0, y: 14 }}, {{ opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }}, {t:.3f});')
     html.append(f'    <div id="c{g}" style="position:absolute;left:160px;right:160px;top:920px;text-align:center;opacity:0;visibility:hidden;">'
-                f'<div class="stroke" style="display:inline-block;padding:6px 26px 10px;border-radius:22px;background:rgba(10,5,20,0.5);font-family:Jakarta;font-weight:800;'
-                f'font-size:56px;line-height:1.1;">{" ".join(sp)}</div></div>')
+                f'<div class="stroke" style="display:inline-block;font-family:Jakarta;font-weight:800;'
+                f'font-size:56px;line-height:1.25;">{"".join(sp)}</div></div>')
     js.append(f'    tl.set("#c{g}", {{ opacity: 1, visibility: "visible" }}, {st:.3f});')
     js.append(f'    tl.to("#c{g}", {{ opacity: 0, duration: 0.08 }}, {end - 0.08:.3f});')
     js.append(f'    tl.set("#c{g}", {{ opacity: 0, visibility: "hidden" }}, {end:.3f});')
