@@ -366,6 +366,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   (edit-log-short-v1.md). Short v1 delivered 2026-10-25 from template library/templates/minecraft-smp-short.
   CLIENT DRIVE FOLDER (owner 2026-10-26): new inputs arrive in https://drive.google.com/drive/folders/1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx
   -> list it first for every new Mr Aloo job and edit from there (details: library/clients/mraloo/brief.md "Drive folders").
+  SPECIAL CLIENT (owner 2026-10-28): keep ALL of this client's data in library/clients/mraloo/ (README.md = index of every
+  doc, Drive file ID, delivered video, rule; projects/<job>/ per job: client docs, inputs index, transcript, plan). Media
+  stays in Drive and is re-downloaded by ID (never committed). Update the index with every new input or delivery.
 - Whisper medium can MERGE a whole stretch into one long word (Mr Aloo warning VO, 2026-10-26: 107.5-120.5 s came back as
   one "हैं" although RMS showed speech every 0.5 s). After transcribing, list words longer than ~1.5 s and re-run those
   stretches alone; check unclear words again with language="en" (it resolved "extra tool", "first week", "keep it on").
