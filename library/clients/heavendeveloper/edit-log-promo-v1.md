@@ -35,3 +35,20 @@ Privacy: crops avoid the status bar, server sidebar, the owner's account bar and
   black/gold "premium" brand.
 - music_fit.py --length 30 --end resolve --check: segments [0-27.9] + own ending [222.13-224.14]; join phase error
   22 ms vs 20 ms tracker noise; last 1 s -62.7 dBFS (real decay).
+
+## Voice (skill voice-or-song; library/voices/README.md)
+- `vs_tts.py script.txt vo.wav --voice promo-male --lang en --parts parts` (VoxCPM2 clone of the promo-male reference;
+  --lang en is new, 2026-10-28). Measured here 2026-10-28: first run downloaded VoxCPM2 (~5 GB) and generated 7 lines
+  07:32-07:44; Whisper small (language en) heard all 7 lines word-perfect ("$4", "2500" as digits).
+- Raw VO 30.2 s of speech (+0.45 s gaps = 30.6 s): too long for 30 s. Lines 1-6 atempo 1.06, CTA line at 1x, gaps
+  0.3 s -> 28.06 s; Whisper re-check of the 1.06x lines: all still word-perfect. VO placed at 0.35 s.
+
+## Mix + QA (measured here 2026-10-28)
+- mix_vo_music.py (duck -10 dB, gap 15 LU, -16 LUFS): music_vs_vo_gap_lu 15.0, 0 clipped. SFX lanes: sub-drop at 0,
+  whoosh per scene change 0.5, pops 0.35, sparkle on the logo shine/gift, cash-register on $4, impact on the review,
+  clicks on the 3 steps, confirm on the JOIN button.
+- check passed (0 errors); snapshots at 15 times looked at; fixes: hook word size (edge overflow), review enters at 15%
+  of its line (was 45%: on screen only ~1 s), end title 86 px, $4 pop on "four dollars" (68% of the line).
+- render -w 3: 1m28s. listen.py: -15.7 LUFS, TP -1.45 dBTP, 0 clipped, voice 0.45-28.42 s, music decays to silence at
+  28.77 s (its own ending). watch.py: 30.0 real fps, 900 frames, no black frames; "frozen" = static text holds.
+- Preview: watermark.py (tiled "Made by MrCopper804" + PREVIEW tag); clean render kept in the scratchpad for after payment.

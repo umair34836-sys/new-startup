@@ -199,13 +199,13 @@ C["s4"] = comp("s4", f"""    <div id="s4-w" style="position:absolute;inset:0;">
     </div>""",
                enter_exit("#s4-w", d) +
                '    tl.fromTo("#s4-l", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 0.08);\n'
-               f'    tl.fromTo("#s4-a", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.3 }}, {max(0.25, rel(3, 0.3) - 0.3):.2f});\n'
-               f'    tl.fromTo("#s4-p", {{ scale: 0.2, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.4)" }}, {rel(3, 0.55)});\n'
-               f'    tl.to("#s4-p", {{ scale: 1.06, duration: {max(0.5, d - rel(3, 0.55) - 0.7):.2f}, ease: "none" }}, {rel(3, 0.55) + 0.45:.2f});\n'
+               f'    tl.fromTo("#s4-a", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.3 }}, {max(0.25, rel(3, 0.45) - 0.3):.2f});\n'
+               f'    tl.fromTo("#s4-p", {{ scale: 0.2, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.4)" }}, {rel(3, 0.68)});\n'
+               f'    tl.to("#s4-p", {{ scale: 1.06, duration: {max(0.5, d - rel(3, 0.68) - 0.7):.2f}, ease: "none" }}, {rel(3, 0.68) + 0.45:.2f});\n'
                + "".join(f'    tl.fromTo("#s4-r{i}", {{ x: {-900 if i % 2 == 0 else 900}, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }}, {0.25 + i * 0.12:.2f});\n'
                          for i in range(len(PR))) +
                f'    tl.fromTo("#s4-f", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {rel(3, 0.8)});\n')
-CASH = W["s4"][0] + rel(3, 0.55)
+CASH = W["s4"][0] + rel(3, 0.68)
 
 # S5 invite rewards: gift icon, "INVITE 3 FRIENDS = 1 FREE PROJECT", 7 invites line, the real #invite-rewards post
 d = d_of("s5")
@@ -240,10 +240,10 @@ C["s6"] = comp("s6", f"""    <div id="s6-w" style="position:absolute;inset:0;">
                '    tl.to(cnt, { v: 2521, duration: 1.3, ease: "power2.out", onUpdate: () => { document.querySelector("#s6-n").textContent = Math.round(cnt.v).toLocaleString("en-US"); } }, 0.1);\n'
                '    tl.fromTo("#s6-n", { scale: 0.7 }, { scale: 1, duration: 1.3, ease: "power2.out" }, 0.1);\n'
                '    tl.fromTo("#s6-t", { opacity: 0, scaleX: 0.6 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.out" }, 0.3);\n'
-               f'    tl.fromTo("#s6-s", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.35 }}, {rel(5, 0.45)});\n'
-               f'    tl.fromTo("#s6-shot", {{ y: 260, rotation: 4, opacity: 0 }}, {{ y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, {rel(5, 0.45) + 0.1:.2f});\n'
-               f'    tl.fromTo("#s6-shot img", {{ y: 0 }}, {{ y: -280, duration: {max(1, d - rel(5, 0.45)):.2f}, ease: "sine.inOut" }}, {rel(5, 0.45) + 0.2:.2f});\n')
-STARS = W["s6"][0] + rel(5, 0.45)
+               f'    tl.fromTo("#s6-s", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.35 }}, {rel(5, 0.15)});\n'
+               f'    tl.fromTo("#s6-shot", {{ y: 260, rotation: 4, opacity: 0 }}, {{ y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, {rel(5, 0.15) + 0.1:.2f});\n'
+               f'    tl.fromTo("#s6-shot img", {{ y: 0 }}, {{ y: -280, duration: {max(1, d - rel(5, 0.15)):.2f}, ease: "sine.inOut" }}, {rel(5, 0.15) + 0.2:.2f});\n')
+STARS = W["s6"][0] + rel(5, 0.15)
 
 # S7 end card: logo, name, the welcome post's 3 steps, Discord "JOIN" button, plans line; banner behind (blurred)
 d = d_of("s7")
@@ -254,7 +254,7 @@ C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
       <div id="s7-ph" style="position:absolute;left:-60px;top:1240px;width:1200px;height:566px;background:url(assets/img/banner.jpg) center/cover;filter:blur(10px) brightness(0.45);" data-layout-allow-overflow></div>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,6,10,0) 50%, rgba(7,6,10,0.6) 75%, rgba(7,6,10,0.9) 100%);"></div>
       <div id="s7-logo" style="position:absolute;left:390px;top:270px;width:300px;height:300px;border-radius:50%;overflow:hidden;border:4px solid {GOLD};box-shadow:0 0 70px rgba(226,184,92,0.5);"><img src="assets/img/logo.jpg" style="width:306px;height:301px;margin:-2px 0 0 -3px;" alt="Heaven Developer logo"></div>
-      <div class="c h gold" id="s7-n" style="top:600px;font-size:96px;">HEAVEN DEVELOPER</div>
+      <div class="c h gold" id="s7-n" style="top:605px;font-size:86px;">HEAVEN DEVELOPER</div>
       <div class="c" id="s7-st" style="top:740px;display:flex;justify-content:center;gap:20px;">{steps}</div>
       <div class="c" id="s7-btn" style="top:1000px;"><span class="btn"><svg viewBox="0 0 24 24" style="width:70px;height:70px;" fill="#fff">{DISCORD}</svg>JOIN ON DISCORD</span></div>
       <div class="c" id="s7-url" style="top:1160px;"><span class="lab" style="font-size:44px;padding:16px 36px;color:#fff;">discord.gg/<span style="color:{GOLD2};">heavendeveloper</span></span></div>
