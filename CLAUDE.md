@@ -147,6 +147,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Check before render, then `snapshot --at ...` and look at the frames. Layout warnings for decorative
   overflow are fixed with `data-layout-allow-overflow`; stacked text effects with `data-layout-allow-occlusion`.
 - The first frame is the thumbnail: put a title or key image on screen at 0 s.
+- Element ids must be unique across the whole composition: a shot wrapper and a text both called `s{k}c` hid whole
+  shots for seconds (Mr Aloo GTA preview 1, 2026-10-28; ffmpeg blackdetect found 6 near-black spans). Run blackdetect
+  (or watch.py) on every render.
 - GSAP yoyo shakes: `fromTo(... {x: -16} -> {x: 0}, repeat: 3, yoyo: true)` ENDS ON THE FROM values (an even number of
   passes plays backwards last), so the element stays offset/skewed; use an EVEN repeat (4) to end at rest (seen in
   snapshots 2026-10-26, Mr Aloo explainer: a warning dialog stayed skewed after its glitch shake).
@@ -408,6 +411,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   from repo skills/learnings with an edit log (edit-log-short-v1.md), must NOT look AI-edited, memes + GFX + SFX wherever
   the situation calls for them (skill-based; memes: library/research/memes.md, CC0 library/memes/; no copyrighted
   film/TV clips without asking the owner). Short v1 delivered 2026-10-25 from template library/templates/minecraft-smp-short.
+  CLIENT DRIVE FOLDER (owner 2026-10-26): new inputs arrive in https://drive.google.com/drive/folders/1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx
+  -> list it first for every new Mr Aloo job and edit from there (details: library/clients/mraloo/brief.md "Drive folders").
+  SPECIAL CLIENT (owner 2026-10-28): keep ALL of this client's data in library/clients/mraloo/ (README.md = index of every
+  doc, Drive file ID, delivered video, rule; projects/<job>/ per job: client docs, inputs index, transcript, plan). Media
+  stays in Drive and is re-downloaded by ID (never committed). Update the index with every new input or delivery.
 - Whisper medium can MERGE a whole stretch into one long word (Mr Aloo warning VO, 2026-10-26: 107.5-120.5 s came back as
   one "हैं" although RMS showed speech every 0.5 s). After transcribing, list words longer than ~1.5 s and re-run those
   stretches alone; check unclear words again with language="en" (it resolved "extra tool", "first week", "keep it on").

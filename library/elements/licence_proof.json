@@ -1250,6 +1250,356 @@
    "licence_line": "MIT License / Copyright (c) 2020-2026 Paweł Kuna",
    "date_checked": "2026-10-26",
    "sha256": "4a2724aa9026645df0aeea99f3463d8d45cced490c468cdc3bb5d6345ec9a925"
+  },
+  "emoji/fluent-3d/rocket.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Rocket/3D/rocket_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "4636925a1dfc76a45dc83c08b983699d39143a0978f794a4e2dfb6cbffdcd7ab"
+  },
+  "emoji/fluent-3d/astronaut.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Astronaut/Default/3D/astronaut_3d_default.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "10d50b3d7e191facfd106f192d688f194d203b2483e46a0b866d834ba39b4ace"
+  },
+  "emoji/fluent-3d/brain.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Brain/3D/brain_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "37906c3f0b0495215df114d72565a389496dc4c5b2af02398abf9dc7dc5a2a43"
+  },
+  "emoji/fluent-3d/light_bulb.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Light%20bulb/3D/light_bulb_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "df7b09aa18301507e6fb8c279df66d9afa465b6fed3e63d2efa84dacebdbbf79"
+  },
+  "emoji/fluent-3d/ring.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Ring/3D/ring_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "eebc92da46a996d0ed851c8de8d794e17fdea92f0fd8df22b370dfecd2f9a7ae"
+  },
+  "emoji/fluent-3d/mobile_phone.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Mobile%20phone/3D/mobile_phone_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "c72cf9f888cb74cb8852679184e0dac945ed0340839c98a86c653f51e1e3504d"
+  },
+  "emoji/fluent-3d/cloud.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Cloud/3D/cloud_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "a4d4629711661a80f6b6b0081c0f84e65352518b2bf23f4c1bec55e297a9fafc"
+  },
+  "emoji/fluent-3d/star.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Star/3D/star_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "b935cdf502b69054bc2b08e7ba4e4eaba6499564a2041dd77d6291e21bf8cfe8"
+  },
+  "emoji/fluent-3d/clown_face.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Clown%20face/3D/clown_face_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "9a4c1f94b7bc3fa43ce6695213dd8a001d972d4609bbd58d988bd7f9128db9c7"
+  },
+  "emoji/fluent-3d/sparkles.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Sparkles/3D/sparkles_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "e4490c9ff74a3fd73a8f99c760d65b6ed51b8a3e4ad28da137fec050b77e1058"
+  },
+  "emoji/fluent-3d/magic_wand.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Magic%20wand/3D/magic_wand_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "ba15c729deed09fc6d51114ab14356135e08e8562cb82d040dfe601594138308"
+  },
+  "emoji/fluent-3d/bell.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Bell/3D/bell_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "e1c9efed838326cb746462b824456ef382742237017871f4d0fe54c407a9d5bf"
+  },
+  "emoji/fluent-3d/old_man.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Old%20man/Default/3D/old_man_3d_default.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "2ec0e2e1e4ef60792f2c1d0096982d8476c57e21da30801455a1186393e07e6c"
+  },
+  "emoji/fluent-3d/astonished_face.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Astonished%20face/3D/astonished_face_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "7b4fd7ff6da369b503ad95c4a33e984f6ba1fbd9e08f7851d9d5ad7e67c7c51f"
+  },
+  "emoji/fluent-3d/rolling_laughing.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Rolling%20on%20the%20floor%20laughing/3D/rolling_on_the_floor_laughing_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "22ebfd950c4df297e784babe1e31bc1713144615f78cb0262c8dc2ce0da90ca0"
+  },
+  "emoji/fluent-3d/mobile_phone_arrow.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Mobile%20phone%20with%20arrow/3D/mobile_phone_with_arrow_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "23bb087df4fbea61a1601b43db0258c18a5fc3d12f73095abdfa897b9742b5c5"
+  },
+  "emoji/fluent-3d/satellite_antenna.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Satellite%20antenna/3D/satellite_antenna_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "0d06d85fff90343e09ce91e75baaf3fe83f309d3f7866c4dc235fea6f706084a"
+  },
+  "emoji/fluent-3d/face_with_monocle.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Face%20with%20monocle/3D/face_with_monocle_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "de447e866d16da68cf6c87e88a35b3312b76b20492056604259bd16e2148570e"
+  },
+  "emoji/fluent-3d/red_heart.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Red%20heart/3D/red_heart_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "7218cb9f08ed1ef38fcd83fe699a1125d07f50725f4c87a68cb7c9f4efb3c32b"
+  },
+  "emoji/fluent-3d/speaking_head.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Speaking%20head/3D/speaking_head_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "b7ce2c76cf77f1a5130a9843ab77959571ce830727a39cbb6fa4d1fd6364636c"
+  },
+  "emoji/fluent-3d/open_mailbox.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Open%20mailbox%20with%20raised%20flag/3D/open_mailbox_with_raised_flag_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "f94060c1a5d4b1cb46cec599f44eb64d813a24154a8b68c5689fa83d59af1482"
+  },
+  "emoji/fluent-3d/framed_picture.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Framed%20picture/3D/framed_picture_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "e70eeb3cd3b5c8bd6633a9ddf0c5f0bb7e0c4be45c89b9b2aad689276aad35bc"
+  },
+  "emoji/fluent-3d/busts.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Busts%20in%20silhouette/3D/busts_in_silhouette_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "1169de2f4d600067bc3a135d584cbbfc38ef5212148089dcaff7dedb0dc3d805"
+  },
+  "emoji/fluent-3d/speech_balloon.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Speech%20balloon/3D/speech_balloon_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "b9bdb19ef2e550923bc4f541de049f1633883619564b2aa140a968eaf1d69a0d"
+  },
+  "emoji/fluent-3d/office_building.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Office%20building/3D/office_building_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "a7bb5b154e6ea40eb22c2221333d51522c65ae0021320801383fe50ae32b0649"
+  },
+  "emoji/fluent-3d/automobile.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Automobile/3D/automobile_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "0fabb870cfe90fb7ba7cebfa689a0e62012ff5658fd6cab05898573d9d268b73"
+  },
+  "emoji/fluent-3d/cityscape.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Cityscape/3D/cityscape_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "7b47d6331e8ed149495dd78d403c7066eec22c05d835ef87a6148bd2ce5aec68"
+  },
+  "emoji/fluent-3d/speaker.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Speaker%20high%20volume/3D/speaker_high_volume_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "fd343b44a0fd2de6019a24a061d7954b2f9efcc6c2fc805895fec132e09beb71"
+  },
+  "emoji/fluent-3d/artist_palette.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Artist%20palette/3D/artist_palette_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "147e62f6523e7e923add4ed5497bf90982d22e04eb2e65ab916b743de2dbe1d2"
+  },
+  "emoji/fluent-3d/floppy.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Floppy%20disk/3D/floppy_disk_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "6c0bf4706265b25d742ce2159e68e191036760765c2f7361dc1898d19836e8ab"
+  },
+  "emoji/fluent-3d/party.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Party%20popper/3D/party_popper_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "70a8e2f9daf1646be9e773751b7f3b6b281a2415cf29c3c3aeebd9c923cdc3e0"
+  },
+  "emoji/fluent-3d/pinched.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Pinched%20fingers/Default/3D/pinched_fingers_3d_default.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "654785fb6e5c26df24ba2157f6608c1498e47592976ed17612afb97c814ccfa2"
+  },
+  "emoji/fluent-3d/bust.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Bust%20in%20silhouette/3D/bust_in_silhouette_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "4fe6381e0754dd1f9096fe8d0c99ca9ec7e238c43ccf0b45501f8e154a77ff56"
+  },
+  "emoji/fluent-3d/anxious.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Anxious%20face%20with%20sweat/3D/anxious_face_with_sweat_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "89fb24fcf00ec4da643912e0fe1fe4168decbdc599a8460c405984e7baf336de"
+  },
+  "emoji/fluent-3d/electric_plug.png": {
+   "source_url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Electric%20plug/3D/electric_plug_3d.png",
+   "set": "microsoft/fluentui-emoji",
+   "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+   "licence": "MIT",
+   "licence_url": "https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE",
+   "licence_line": "MIT License / Copyright (c) Microsoft Corporation.",
+   "date_checked": "2026-10-28",
+   "sha256": "e0ba4840a13c08caea817f9fde77a63fdb8f18813984175466577e975a409788"
   }
  }
 }
