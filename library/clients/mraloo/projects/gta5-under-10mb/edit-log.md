@@ -41,3 +41,23 @@ Every decision and its source:
 | snapshots 1 | captions unreadable on the white-ish Google page, overlay text on the recording, circle off the Ultra Lite title, "FAKE?" stamp over "100% WORKING!!", empty frame after the file shrinks | caption band, dark panels, nowrap title + smaller circle, stamp moved, "EK CHHOTI SI FILE MEIN?" text |
 | preview 1 render | blackdetect: 6 near-black spans; cause = duplicate element id `s{k}c` (shot wrapper and a text) hid whole shots for seconds; design shots showed only the background for 1-3 s before their first element | unique ids; a design shot now starts when its first element enters (previous shot holds); caption band hugs the spoken words |
 | preview 2 (2026-10-28, measured here) | 304.1 s, 30.0 fps; -17.1 LUFS, peak -1.6 dBFS, 0 clipped; no mix window > 2 dB over the VO's p95; blackdetect (d 0.2, pix_th 0.10) finds nothing | sent to the owner; GTA gameplay slots wait for the client's footage |
+
+## v3 audio (owner 2026-10-28: "voice bhot slow hai, customize karo; bolte waqt music kam; SFX/music pro editor ki tarah, hype + hook")
+| Decision | Source |
+| --- | --- |
+| VO rebuilt from the retake-free cut (vo_hype.py): both later retakes removed, every pause > 0.28 s shortened to 0.20 s (124 cuts, 64.1 s), dramatic beats kept (before "lekin bhai", after each spoken heading, after the punchline), tempo 1.2x (rubberband), high-pass 80 Hz, +2.5 dB at 3 kHz, compressor 3:1, loudnorm -16 -> 242.9 s, 202 words/min (was 304 s) | owner request; skills #188/#2348, #289, #316; measured here |
+| Music no longer sidechain-compressed: gain automation from the VO envelope (mix.py): -5 dB in pauses, -20 dB under speech, 60 ms down / 350 ms up, no pumping in gaps < ~0.4 s. Measured: music+SFX sit 15.4 dB under the voice while it speaks | owner request; skills #316/#317 |
+| Music stops on each topic bumper and drops back in right after the spoken heading; stops before "lekin bhai" and the punchline (mood_bed2.py, anchored to VO words) | guide (scam reveal: music band; punchline: short silence), client voice note (glitch + sound on topic change) |
+| SFX level-matched per type (impacts loudest, UI clicks quietest), -3 dB when they land on speech except reveal hits; added a sub-drop under the opening title and a riser into "SCAM HO RAHA HAI" | guide "Sound effects" (restraint), hook skills #99/#103 |
+| Master: two-pass loudnorm -15 LUFS linear + limiter -1.5 dBTP. Measured: -15.0 LUFS, peak -1.5 dBFS; only the opening boom and the punchline hit go 3-4 dB over the voice's p95 (intended) | measured here |
+
+## Final v1 (2026-10-28)
+| Decision | Source |
+| --- | --- |
+| Four stumbles left in the v3 VO, found by Whisper medium (full pass + per-region hi/en passes) and cut, keeping the corrected take: "na da, na 100 GB," false start (7.60-9.45 s), first of "bina, bina verify" (121.30-121.78), first "to thoda suspicious" (187.45-188.60), "kyunki kisi..." restart (194.12-195.08). Re-checked: all four lines whole. VO 238.5 s | owner: "mistake hata ker theek wala rakho"; VERIFIED ONLY |
+| Checked and kept: "sab sab pehle" (0.36 s, heard as "first of all" in the en pass), "install karo" (present), "ek APK" (single) | per-region Whisper, measured here |
+| GTA gameplay = the client's recording (Drive 1nZX4fI3_pHjqgs6-Ci4jE8YZxzBV5fSI, "GTA 5 ... No Copyright Gameplay 4K 60fps _ 197 (720P_HD).mp4", 408 s, 1280x720 60 fps; client allowed its use, owner 2026-10-28). Upscaled lanczos + cas 0.5. Slots: hook driving 37 s, phone/action 140, city 64, in-phone 220, Franklin walk 0.5, freeze at 6 (grey), city wide 16, skyline 20, Franklin 118.5, Michael line -> car shot 384 (no Michael in the recording), Trevor line -> underpass 196 (no Trevor), open world 164, montage city/cars/buildings/missions/characters/audio/textures/data = 76/40/80.5/148/88.5/228/136/208, PC 356, dramatic 260, police chase 296. Blood shots (112, 156, 336 s) not used | contact sheets look/gp_sheet_*.jpg; guide "relevant GTA 5 gameplay" |
+| Minecraft resource-pack joke: the client's own ALOO SMP spawn recording (Drive 1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA) from 20 s | guide scene 4 |
+| Owner: "final video bhej dena" -> delivery render directly, full quality only (no WhatsApp copy) | owner 2026-10-28; CLAUDE.md |
+| Final QA (measured here): 239.9 s, 1920x1080 30 fps h264 + aac, 145 MB; -15.8 LUFS, peak -1.4 dBFS; blackdetect (d 0.2, pix_th 0.10) and freezedetect (2 s) find nothing; thumbnail = frame at 1.2 s (title over gameplay) | delivered with SendUserFile |
+| Credit note for the client: the gameplay file name says it is a "No Copyright Gameplay" upload; such channels often ask for credit in the description, so the client should credit the source channel | told the owner |

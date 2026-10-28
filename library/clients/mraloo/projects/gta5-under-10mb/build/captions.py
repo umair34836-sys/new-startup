@@ -3,7 +3,7 @@
 CAP = [
  (0, 5, "Agar main tumhe bolun ki tum"), (6, 14, "*GTA_5 apne phone mein download kar sakte ho,"),
  (15, 20, "woh bhi sirf *10_MB mein,"), (21, 24, "toh kya tum maanoge?"),
- (25, 28, "Bhai socho, na..."), (29, 31, "na *100_GB,"), (32, 37, "na 100 GB storage ki tension,"),
+ (25, 26, "Bhai socho,"), (32, 37, "na *100_GB storage ki tension,"),
  (38, 42, "na *gaming_PC ki zarurat,"), (43, 47, "na *expensive_laptop ki zarurat!"),
  (48, 54, "Bas *10_MB download karo, install karo"), (55, 60, "aur *Los_Santos tumhari jeb mein!"),
  (61, 69, "Toh aaj main tumhe iska *secret batane wala hoon"),

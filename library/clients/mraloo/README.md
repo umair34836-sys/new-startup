@@ -47,3 +47,7 @@ List a shared folder without the Drive MCP (works for "anyone with the link" fol
 - Visuals must match the narration (no loose images); motion graphics when no licence-clean image fits.
 - No client gameplay recordings in the warning explainer (owner 2026-10-26); the GTA guide asks for GTA 5 gameplay.
 - No WhatsApp copy (owner 2026-10-26); deliver the full-quality file only.
+
+## GTA 5 under 10 MB (2026-10-28)
+- Inputs: VO 1aObjrk974YADkUBi3oaJEPB5IPRmCePk; search recording 12yBLfTxrN9RkarWj_5e60lc4q6aRi5cF; GTA gameplay 1nZX4fI3_pHjqgs6-Ci4jE8YZxzBV5fSI (client allowed; credit the source channel); ALOO SMP spawn 1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA (Minecraft cut).
+- Delivered: GTA5-Under-10MB-FINAL-v1.mp4 (1080p, 3:59.9, -15.8 LUFS) + thumbnail PNG, 2026-10-28, via SendUserFile. Log: projects/gta5-under-10mb/edit-log.md.
