@@ -420,6 +420,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Whisper medium can MERGE a whole stretch into one long word (Mr Aloo warning VO, 2026-10-26: 107.5-120.5 s came back as
   one "हैं" although RMS showed speech every 0.5 s). After transcribing, list words longer than ~1.5 s and re-run those
   stretches alone; check unclear words again with language="en" (it resolved "extra tool", "first week", "keep it on").
+  Update (Mr Aloo GTA final, 2026-10-28): self-corrections/stumbles also hide inside one long word: flag words > 0.9 s
+  and re-run those regions with both language="hi" and "en" (found 4 stumbles to cut). Envelope ducking from the VO
+  (-20 dB under speech, -5 dB in gaps; library/clients/mraloo/projects/gta5-under-10mb/build/mix.py) measured
+  music+SFX 15.4 dB under the voice; final -15.8 LUFS, peak -1.4 dBTP.
 - Mr Aloo explainer images (owner, 2026-10-26): no client gameplay recordings; online CC0/PDM images that match the
   VO line's topic (Minecraft image when the line is about gaming, else a real photo of the thing said). Log:
   library/clients/mraloo/edit-log-warning-explainer.md.
