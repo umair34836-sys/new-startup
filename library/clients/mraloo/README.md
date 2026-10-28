@@ -50,4 +50,4 @@ List a shared folder without the Drive MCP (works for "anyone with the link" fol
 
 ## GTA 5 under 10 MB (2026-10-28)
 - Inputs: VO 1aObjrk974YADkUBi3oaJEPB5IPRmCePk; search recording 12yBLfTxrN9RkarWj_5e60lc4q6aRi5cF; GTA gameplay 1nZX4fI3_pHjqgs6-Ci4jE8YZxzBV5fSI (client allowed; credit the source channel); ALOO SMP spawn 1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA (Minecraft cut).
-- Delivered: GTA5-Under-10MB-FINAL-v1.mp4 (1080p, 3:59.9, -15.8 LUFS) + thumbnail PNG, 2026-10-28, via SendUserFile. Log: projects/gta5-under-10mb/edit-log.md.
+- Delivered: FINAL-v1 (3:59.9) and FINAL-v2 (3:57.9, client fixes: repeat at 2:05, varied pops, real-footage backgrounds, client GTA 6 picture) + thumbnail PNG, 2026-10-28, via SendUserFile. Log: projects/gta5-under-10mb/edit-log.md.
