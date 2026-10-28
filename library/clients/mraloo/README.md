@@ -55,3 +55,4 @@ List a shared folder without the Drive MCP (works for "anyone with the link" fol
 ## ALOO SMP Promo 2 (started 2026-10-28)
 - Client voice note (2026-10-28): new script/guide + VO "aloosmp promo 2" in the main folder; use the old clips, different footage where possible; the client will upload a new clip for the bigger SMP parts.
 - Docs: projects/smp-promo-2/ (guide PDF + text). Deliverable per guide: 60 s 9:16 + an alternate first-5-s hook.
+- Delivered 2026-10-28 (owner asleep, sent via SendUserFile): ALOO-SMP-Promo2-FINAL-A.mp4 + FINAL-B-alt-hook.mp4 (62.5 s 1080x1920 60 fps) + thumbnail. Client's new clip for the bigger SMP parts still pending.

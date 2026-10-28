@@ -95,15 +95,15 @@ for k, (st, src, inp, cx, why) in enumerate(SH):
     out = f"assets/clips/{HOOK}{k:02d}_{inp}_{d:.2f}.mp4"
     if not os.path.exists(out):
         x = int(max(0, min(1920 - 608, 1920 * cx - 304)))               # sources are 1920x1080
-        vf = f"crop=608:1080:{x}:0,scale=1080:1920:flags=lanczos,cas=strength=0.5,fps=30"
+        vf = f"crop=608:1080:{x}:0,scale=1080:1920:flags=lanczos,cas=strength=0.5,fps=60"
         if blur:
             vf += ",boxblur=18:8,eq=brightness=-0.10"
         args = ["-vf", vf]
         if fill:
             args = ["-filter_complex", "[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=20:10,eq=brightness=-0.12[bg];"
-                    "[b]scale=1080:-2:flags=lanczos,cas=strength=0.5[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2-120,fps=30[o]", "-map", "[o]"]
+                    "[b]scale=1080:-2:flags=lanczos,cas=strength=0.5[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2-120,fps=60[o]", "-map", "[o]"]
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(inp), "-t", f"{d + 0.1:.3f}", "-i", f"{SRC}/{src}", "-an", *args,
-                        "-c:v", "libx264", "-crf", "17", "-preset", "veryfast", "-g", "30", "-pix_fmt", "yuv420p", out], check=True)
+                        "-c:v", "libx264", "-crf", "17", "-preset", "veryfast", "-g", "60", "-pix_fmt", "yuv420p", out], check=True)
     SHOTS.append(dict(k=k, start=round(st, 3), dur=d, file=out, why=why, src=src, inp=inp))
 json.dump(SHOTS, open(f"shots_{HOOK}.json", "w"), indent=1)
 
@@ -285,7 +285,7 @@ open("index.html", "w").write(f"""<!doctype html>
     <style>* {{ margin: 0; padding: 0; box-sizing: border-box; }} html, body {{ margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: {NAVY}; }}</style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-fps="60" data-start="0" data-duration="{TOTAL}" data-width="1080" data-height="1920">
 {hosts}
       <audio id="mix" src="assets/mix.wav" data-start="0" data-duration="{TOTAL}" data-volume="1.0" data-track-index="10"></audio>
     </div>

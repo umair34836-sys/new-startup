@@ -22,3 +22,6 @@ Guide deliverable: 1 final 60 s 9:16 video + 1 alternate first-5-s hook (rest id
 | Captions: Hinglish Roman, 3-6 words, Jakarta ExtraBold 80 px with dark outline, gold keywords, centre-lower (y 1330, end card y 1420) | guide 4 |
 | Alternate hook (B): opens on the busy spawn crowd with "1000 PLAYERS / 0 FRIENDS?" + record scratch, then the server list; from 5 s identical to A | guide "EDITOR DELIVERABLE" |
 | Pending: the client's new clip for the bigger SMP parts (not received yet) | client voice note |
+| Guide export checklist: source is 60 fps -> clips cut at 60 fps and rendered with `-f 60` (a 30 fps render was stopped) | guide 6 "Source 60 FPS hai toh 60 FPS export" |
+| Final QA (measured here 2026-10-28): A and B both 62.5 s, 1080x1920, 60 fps; -15.0 LUFS, peaks -1.2 / -1.1 dBFS; blackdetect (d 0.2, pix_th 0.10) + freezedetect (2 s) clean; Whisper medium on A's mix hears every line; Discord invite valid (discord.com API: "ALOO SMP ☀", no expiry, 660 members) and play.aloosmp.fun resolves (46.232.234.65) | delivered with SendUserFile: ALOO-SMP-Promo2-FINAL-A.mp4, ...-FINAL-B-alt-hook.mp4, thumbnail PNG (frame 1 s of A) |
+| Disk: /tmp/hyperframes-extract-cache-0 held 1.7 GB from earlier renders; deleted before the 60 fps renders (A 9m56s, B 13m27s) | template minecraft-smp-short README note |
