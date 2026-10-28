@@ -451,7 +451,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Client Heaven Developer home session (owner wrote "heaven devolpur", 2026-10-28): session_01JK8Ts8hnNQ61GDZt5FVxhy
   (branch client-heavendeveloper). Discord development server (websites, bots, Minecraft mods/plugins/packs); only input
   = a phone screen recording of its Discord (Drive ID in library/clients/heavendeveloper/brief.md). 9:16 30 s English
-  promo PREVIEW (watermarked; clean file after payment) delivered 2026-10-28 from new template
+  promo PREVIEW (watermarked) then clean FINAL delivered 2026-10-28 from new template
   library/templates/discord-server-promo. vs_tts.py: `--voice <name> --lang en` for English scripts (promo-male is BANNED since 2026-10-28).
 
 - Client AethelGrid (hosting; site https://aethelgrid.cloud/, panel https://gp.aethelgrid.cloud/) home session:
