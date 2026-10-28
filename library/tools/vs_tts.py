@@ -14,7 +14,7 @@ import argparse, json, os, subprocess, tempfile, urllib.error, urllib.request
 ap = argparse.ArgumentParser()
 ap.add_argument("script")
 ap.add_argument("out")
-ap.add_argument("--lang", default="ur")
+ap.add_argument("--lang", help="language code (default ur; with --voice the voice's own language unless given, e.g. --lang en for an English script)")
 ap.add_argument("--instruct", help="voice design text (default when not cloning: \"male, young adult\")")
 ap.add_argument("--seed", type=int, default=7)
 ap.add_argument("--gap", type=float, default=0.45)
@@ -78,13 +78,14 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(vd, "clean", "voice.wav"), "-ss", str(v["ref_start"]),
                         "-t", str(v["ref_seconds"]), "-af", f"afade=t=in:d=0.05,afade=t=out:st={v['ref_seconds'] - 0.1}:d=0.1",
                         "-ac", "1", "-ar", "44100", ref], check=True)
-    a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], v["lang"]
+    a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], a.lang or v["lang"]
     a.instruct = a.instruct or ""
     if a.target_f0 is None and v.get("target_f0"):
         a.target_f0 = v["target_f0"]
     if a.seed == 7 and v.get("seed"):
         a.seed = v["seed"]
 
+a.lang = a.lang or "ur"
 lines = [l.strip() for l in open(a.script, encoding="utf-8") if l.strip()]
 tmp = a.parts or tempfile.mkdtemp(prefix="vs_tts_")
 os.makedirs(tmp, exist_ok=True)
