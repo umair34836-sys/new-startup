@@ -12,7 +12,8 @@
   "lang": "hi",
   "seed": 7,
   "ref_file": "library/voices/promo-male-ref.wav",
-  "measured": "2026-10-27: reference 2.58 s, median f0 240 Hz (pyworld harvest); Whisper small heard 'अप शुरूगरे सर्फ एक लिक में' (similarity 0.78). Picked from seeds [7, 21, 33, 42]."
+  "measured": "2026-10-27: reference 2.58 s, median f0 240 Hz (pyworld harvest); Whisper small heard 'अप शुरूगरे सर्फ एक लिक में' (similarity 0.78). Picked from seeds [7, 21, 33, 42].",
+  "banned": "OWNER 2026-10-28 (Heaven Developer session): \"next time ye wali voice kisi bhi session me use mat kernaa\" -> never use promo-male in any session"
  },
  "promo-female": {
   "use": "offers, shopping, salon, brand promos (female)",

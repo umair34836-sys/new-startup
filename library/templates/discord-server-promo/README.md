@@ -13,7 +13,7 @@ Prepare the project (scratchpad only, never git):
    banner and the logo with PIL. Crop away the phone status bar, the server sidebar and other members' chats.
 2. Real motion: `ffmpeg -ss 45 -t 5 -i rec.mp4 -an -vf "crop=948:2040:0:100,fps=30" assets/clips/services.mp4`
    (a scroll through the channel, played inside the phone frame).
-3. VO: `vs_tts.py script.txt vo.wav --voice promo-male --lang en --parts parts` (--lang en added 2026-10-28: a saved
+3. VO: `vs_tts.py script.txt vo.wav --voice <field voice> --lang en; promo-male used in v1 is BANNED since 2026-10-28 --parts parts` (--lang en added 2026-10-28: a saved
    voice otherwise forces its own language, hi).
 4. Music: skill music-for-video (find_music.py -> listen.py -> music_fit.py -> mix_vo_music.py).
 5. `python3 build_heavendeveloper.py && npx hyperframes check && npx hyperframes snapshot --at ...`, render -w 3.

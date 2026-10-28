@@ -181,7 +181,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - NO DEFAULT VOICE (owner, 2026-10-27: "Default voice mujhe pasand nhi hai also usko bhi remove kro or 10 different fields
   or skill k hisaab se alag alag voices bana ker save rakho"): the old "default" (Oct 24 MoradoSolution ad narrator) is
   removed. Pick one of 10 AI-designed FIELD VOICES by the video type (table + measurements: library/voices/README.md):
-  promo-male, promo-female, tutorial-calm, explainer-pro, gaming-hype, food-warm, story-emotional, kids-cheerful,
+  promo-male (BANNED: owner 2026-10-28 "ye wali voice kisi bhi session me use mat kernaa"; vs_tts.py refuses it),
+  promo-female, tutorial-calm, explainer-pro, gaming-hype, food-warm, story-emotional, kids-cheerful,
   luxury-deep, news-anchor -> `vs_tts.py script.txt out.wav --voice <name>` (VoxCPM2 clone of a fixed reference in
   library/voices/, Apache-2.0). Without --voice, vs_tts.py lists them. Real Viraj only via ElevenLabs when the owner asks.
 - SAVED VOICES (owner, Oct 24 2026): "senpaispider" = the owner's client Senpai Spider. When the owner says "senpai ki

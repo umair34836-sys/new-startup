@@ -87,7 +87,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 - `discord-server-promo/build_heavendeveloper.py`: 9:16 30 s promo for a Discord-based dev service from a phone screen
   recording of the client's server (Heaven Developer, 2026-10-28): banner hook, gold logo reveal with shine, the real
   #services scroll inside a CSS phone frame + service cards, 'STARTING FROM $4' price card, invite-rewards card, member
-  count-up + real review, 3-step end card with a Discord JOIN button. English VO (vs_tts.py --voice promo-male --lang en).
+  count-up + real review, 3-step end card with a Discord JOIN button. English VO (vs_tts.py --voice <field voice> --lang en; promo-male used in v1 is BANNED since 2026-10-28).
   See its README.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
