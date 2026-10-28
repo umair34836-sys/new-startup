@@ -50,3 +50,14 @@ Every decision and its source:
 | Music stops on each topic bumper and drops back in right after the spoken heading; stops before "lekin bhai" and the punchline (mood_bed2.py, anchored to VO words) | guide (scam reveal: music band; punchline: short silence), client voice note (glitch + sound on topic change) |
 | SFX level-matched per type (impacts loudest, UI clicks quietest), -3 dB when they land on speech except reveal hits; added a sub-drop under the opening title and a riser into "SCAM HO RAHA HAI" | guide "Sound effects" (restraint), hook skills #99/#103 |
 | Master: two-pass loudnorm -15 LUFS linear + limiter -1.5 dBTP. Measured: -15.0 LUFS, peak -1.5 dBFS; only the opening boom and the punchline hit go 3-4 dB over the voice's p95 (intended) | measured here |
+
+## Final v1 (2026-10-28)
+| Decision | Source |
+| --- | --- |
+| Four stumbles left in the v3 VO, found by Whisper medium (full pass + per-region hi/en passes) and cut, keeping the corrected take: "na da, na 100 GB," false start (7.60-9.45 s), first of "bina, bina verify" (121.30-121.78), first "to thoda suspicious" (187.45-188.60), "kyunki kisi..." restart (194.12-195.08). Re-checked: all four lines whole. VO 238.5 s | owner: "mistake hata ker theek wala rakho"; VERIFIED ONLY |
+| Checked and kept: "sab sab pehle" (0.36 s, heard as "first of all" in the en pass), "install karo" (present), "ek APK" (single) | per-region Whisper, measured here |
+| GTA gameplay = the client's recording (Drive 1nZX4fI3_pHjqgs6-Ci4jE8YZxzBV5fSI, "GTA 5 ... No Copyright Gameplay 4K 60fps _ 197 (720P_HD).mp4", 408 s, 1280x720 60 fps; client allowed its use, owner 2026-10-28). Upscaled lanczos + cas 0.5. Slots: hook driving 37 s, phone/action 140, city 64, in-phone 220, Franklin walk 0.5, freeze at 6 (grey), city wide 16, skyline 20, Franklin 118.5, Michael line -> car shot 384 (no Michael in the recording), Trevor line -> underpass 196 (no Trevor), open world 164, montage city/cars/buildings/missions/characters/audio/textures/data = 76/40/80.5/148/88.5/228/136/208, PC 356, dramatic 260, police chase 296. Blood shots (112, 156, 336 s) not used | contact sheets look/gp_sheet_*.jpg; guide "relevant GTA 5 gameplay" |
+| Minecraft resource-pack joke: the client's own ALOO SMP spawn recording (Drive 1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA) from 20 s | guide scene 4 |
+| Owner: "final video bhej dena" -> delivery render directly, full quality only (no WhatsApp copy) | owner 2026-10-28; CLAUDE.md |
+| Final QA (measured here): 239.9 s, 1920x1080 30 fps h264 + aac, 145 MB; -15.8 LUFS, peak -1.4 dBFS; blackdetect (d 0.2, pix_th 0.10) and freezedetect (2 s) find nothing; thumbnail = frame at 1.2 s (title over gameplay) | delivered with SendUserFile |
+| Credit note for the client: the gameplay file name says it is a "No Copyright Gameplay" upload; such channels often ask for credit in the description, so the client should credit the source channel | told the owner |
