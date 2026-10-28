@@ -89,6 +89,9 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   #services scroll inside a CSS phone frame + service cards, 'STARTING FROM $4' price card, invite-rewards card, member
   count-up + real review, 3-step end card with a Discord JOIN button. English VO (vs_tts.py --voice <field voice> --lang en; promo-male used in v1 is BANNED since 2026-10-28).
   See its README.
+- `portfolio-site-promo/`: 16:9 real-website walkthrough (recorder with cursor clicks -> speed-fit to VO lines, browser
+  frame + side panel with the site's words, end card). Bhupendra portfolio, 2026-10-28. `discord-server-promo/build_heavendeveloper_full.py`:
+  the 24-scene 2-minute version covering every promotional fact of a Discord server. See their READMEs.
 - `hosting-promo-reel/build.py`: 9:16 ~32 s website/hosting promo synced to a voiceover (hook, logo, specs over a real
   panel screenshot, '<60 SECONDS' ring, location flags, price card, coupon card, end card). See its README.
 - `blocky-walk/build.py`: 16:9 21.5 s, host + girl skins walk down a sunny voxel village lane (4 shots cut on music downbeats, CC0 town-theme-rpg). Made 2026-10-26; see its README.
@@ -123,6 +126,8 @@ License" and every font family has an OFL .txt here). Load with `@font-face { sr
 
 - `GreatVibes-Regular.ttf`: elegant script for names and romantic titles.
 - `PlayfairDisplay-Italic.ttf`: serif italic for captions.
+- `NotoSerif-Variable.ttf` (+ `OFL-NotoSerif.txt`, SIL OFL 1.1): Latin serif, wght 100-900, from github.com/google/fonts ofl/notoserif
+  (downloaded 2026-10-28, 1,887,192 bytes); first used for the Bhupendra portfolio video (site --serif stack).
 - Urdu/Pashto/Hindi (specialist D, Oct 24 2026; see library/research/urdu-captions.md): `NotoNastaliqUrdu-Variable.ttf`,
   `Gulzar-Regular.ttf` (Urdu only: no Pashto letters), `NotoNaskhArabic-Variable.ttf`, `NotoSansArabic-Variable.ttf`,
   `Vazirmatn-Variable.ttf`, `NotoSansDevanagari-Variable.ttf`, `Mukta-Regular/Bold.ttf` (Hindi). OFL licences beside them.
