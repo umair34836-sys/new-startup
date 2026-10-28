@@ -66,3 +66,13 @@ Not found: Fluent has no "Police car light" and no country flags (checked the re
 2026-10-26); there is no zip emoji in Unicode (zip only as a line icon). Line icons are monochrome: set the SVG
 `stroke` (or CSS `color`) to recolour. All 84 emoji PNGs (41 Fluent, 43 Noto), the waved flag SVG and the 40 icon SVGs were looked at on a contact sheet
 (headless Chrome) on 2026-10-26.
+
+## Added 2026-10-28 (Mr Aloo "GTA 5 under 10 MB" video), Fluent 3D only, same commit 1ffb34c, MIT
+rocket, astronaut (Default skin), brain, light_bulb, ring, mobile_phone, mobile_phone_arrow, cloud, star, clown_face,
+sparkles, magic_wand, bell, old_man (Default), astonished_face, rolling_laughing, satellite_antenna, face_with_monocle,
+red_heart, speaking_head, open_mailbox, framed_picture, busts, bust, speech_balloon, office_building, automobile,
+cityscape, speaker, artist_palette, floppy, party, pinched (Default), anxious, electric_plug (35 files, each in
+licence_proof.json with sha256). "Direct hit" was not found at assets/Direct hit/3D/ (curl failed, 2026-10-28).
+Rocket, astronaut, brain, light_bulb, ring, clown_face, sparkles, magic_wand, bell, old_man, astonished_face, cloud,
+mobile_phone, busts, speech_balloon, framed_picture, face_with_monocle, anxious, floppy, speaking_head, cityscape,
+automobile, office_building, bust, speaker, artist_palette were looked at in HyperFrames snapshots on 2026-10-28.
