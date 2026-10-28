@@ -444,8 +444,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   owner first, saved as "hostlixo-promo"); real elements from the site (logo, screenshots, icons) over emojis.
 
 - Client Heaven Developer home session (owner wrote "heaven devolpur", 2026-10-28): session_01JK8Ts8hnNQ61GDZt5FVxhy
-  (branch client-heavendeveloper). Nothing known yet: the session first asks the owner for name, links, video type, inputs;
-  brief will be library/clients/heavendeveloper/brief.md. New client: ask about watermarked previews.
+  (branch client-heavendeveloper). Discord development server (websites, bots, Minecraft mods/plugins/packs); only input
+  = a phone screen recording of its Discord (Drive ID in library/clients/heavendeveloper/brief.md). 9:16 30 s English
+  promo PREVIEW (watermarked; clean file after payment) delivered 2026-10-28 from new template
+  library/templates/discord-server-promo. vs_tts.py: `--voice promo-male --lang en` for English scripts.
 
 - Client AethelGrid (hosting; site https://aethelgrid.cloud/, panel https://gp.aethelgrid.cloud/) home session:
   session_01JK8Ts8oyBGZKRH6CAr36yA (branch client-aethelgrid, 2026-10-28). Client brief (verbatim): "so we want a 60 sec
