@@ -27,7 +27,10 @@ const out = process.argv[2];
   await rec.mark('contact'); await rec.click('nav a[href="#contact"]', { after: 1600 });
   await rec.fakeClick('a[href*="guns.lol"] >> nth=-1', { label: 'guns.lol', after: 900 });
   await rec.fakeClick('a[href*="youtube.com"]', { label: 'YouTube', after: 900 });
-  await rec.mark('faq'); await smooth(600, 3500);
+  await rec.mark('faq'); await smooth(380, 1800);
+  for (const q of ['What can you build', 'How long does', 'How do I get a quote', 'How can I contact'])  // open every FAQ answer
+    await rec.click(`summary:has-text("${q}")`, { fx: 0.3, after: 650 });
+  await smooth(250, 1200);
   await rec.mark('footer'); await smooth(400, 2000); await rec.wait(1500);
   await rec.finish();
 })().catch(e => { console.error(e); process.exit(1); });

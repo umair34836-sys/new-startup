@@ -12,7 +12,7 @@ import numpy as np
 
 REC, PARTS = sys.argv[1], sys.argv[2]
 BG, PANEL, INK, MUTED, ICE, GOLD = "#07090d", "#0d1218", "#eef4f8", "#8e9bab", "#6fd3ff", "#d4af6a"
-SERIF = '"Iowan Old Style","Palatino Linotype",Palatino,"Noto Serif",Georgia,serif'
+SERIF = '"NS", serif'  # Noto Serif = a font in the site's own --serif stack (bundled: library/fonts, OFL), lint needs @font-face
 
 
 def dur(p):
@@ -96,9 +96,10 @@ PANELS = [
     ("DESIGNED AND CODED BY", "Bhupendra", ["bhupendra.pages.dev"]),
 ]
 CSS = f"""
+    @font-face {{ font-family: "NS"; src: url("assets/fonts/NotoSerif-Variable.ttf"); font-weight: 100 900; }}
     #root {{ position: absolute; inset: 0; overflow: hidden; }}
     .se {{ font-family: {SERIF}; color: {INK}; }}
-    .lab {{ display: inline-block; font-family: system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 4px; color: {ICE};
+    .lab {{ display: inline-block; font-family: system-ui, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 4px; color: {ICE};
             padding: 10px 20px; border: 1.5px solid rgba(111,211,255,.35); border-radius: 999px; background: rgba(13,18,24,.9); }}
     .chip {{ display: inline-block; font-family: system-ui, sans-serif; font-weight: 600; font-size: 27px; color: {INK}; margin: 0 10px 14px 0;
              padding: 12px 20px; border-radius: 14px; background: {PANEL}; border: 1.5px solid rgba(111,211,255,.16); }}
@@ -131,14 +132,14 @@ BW, BH = 1270, 714  # 1920x1080 recording at 0.6615
 C["browser"] = comp("browser", f"""    <div id="br" style="position:absolute;left:56px;top:150px;width:{BW}px;height:{BH + 52}px;border-radius:18px;overflow:hidden;background:{PANEL};border:1.5px solid rgba(111,211,255,.25);box-shadow:0 40px 120px rgba(0,0,0,.7), 0 0 60px rgba(111,211,255,.10);">
       <div style="height:52px;display:flex;align-items:center;gap:10px;padding-left:20px;background:#0b1016;border-bottom:1.5px solid rgba(111,211,255,.16);">
         <span style="width:14px;height:14px;border-radius:50%;background:#ff5f57;"></span><span style="width:14px;height:14px;border-radius:50%;background:#febc2e;"></span><span style="width:14px;height:14px;border-radius:50%;background:#28c840;"></span>
-        <span style="margin-left:24px;font-family:system-ui,sans-serif;font-size:22px;color:{MUTED};background:{BG};padding:6px 22px;border-radius:10px;">bhupendra.pages.dev</span></div>
+        <span style="margin-left:24px;font-family:system-ui,sans-serif;font-size:28px;color:{MUTED};background:{BG};padding:4px 22px;border-radius:10px;">bhupendra.pages.dev</span></div>
       <video id="br-v" src="assets/screen.mp4" data-start="0" data-duration="{TOTAL}" muted playsinline style="display:block;width:{BW}px;height:{BH}px;"></video>
     </div>""",
-                    '    tl.fromTo("#br", { y: 60, opacity: 0, scale: 0.96 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 0);\n')
+                    '    tl.fromTo("#br", { scale: 0.97 }, { scale: 1, duration: 1.2, ease: "power2.out" }, 0);\n')  # visible at 0 s (thumbnail)
 # top title strip (on screen from 0 s = thumbnail)
 C["top"] = comp("top", f"""    <div id="tp" style="position:absolute;left:56px;top:46px;display:flex;align-items:baseline;gap:22px;">
       <span class="se" style="font-size:62px;">Bhupendra</span><span style="font-family:system-ui,sans-serif;font-size:28px;color:{ICE};letter-spacing:5px;">PORTFOLIO • INDEPENDENT DEVELOPER</span></div>""",
-                '    tl.fromTo("#tp", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0);\n')
+                '    tl.fromTo("#tp", { x: -20 }, { x: 0, duration: 0.8, ease: "power3.out" }, 0);\n')
 
 times = json.load(open("assets/vo/times.json"))
 scenes = []
@@ -148,7 +149,7 @@ for i, (lab, title, chips) in enumerate(PANELS):
     d = round(e - s, 2)
     k = f"p{i + 1}"
     ch = "".join(f'<span class="chip" id="{k}-c{j}">{c}</span>' for j, c in enumerate(chips))
-    js = (f'    tl.fromTo("#{k}-l", {{ y: 20, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }}, 0.05);\n'
+    js = "" if i == 0 else (f'    tl.fromTo("#{k}-l", {{ y: 20, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }}, 0.05);\n'
           f'    tl.fromTo("#{k}-t", {{ y: 40, opacity: 0, filter: "blur(10px)" }}, {{ y: 0, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power3.out" }}, 0.12);\n'
           f'    tl.fromTo("#{k}-bar", {{ scaleX: 0 }}, {{ scaleX: 1, duration: 0.5, ease: "power3.out" }}, 0.2);\n')
     for j in range(len(chips)):

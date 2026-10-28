@@ -197,12 +197,12 @@ SPECIAL.append(("sparkle", W["s2"][0] + 0.55, 0.4))
 
 # 3-8 services, each with the real #services post panned to that entry (y offsets in services.jpg, 780 px wide)
 SY = 780 / 741  # services.jpg is 741 px wide
-feature(2, "SERVICE 01 • DISCORD BOTS", "bot", "DISCORD BOTS", ["Moderation", "Tickets", "Economy", "Music", "Custom dashboards"], "services.jpg", int(110 * SY), 300)
-feature(3, "SERVICE 02 • WEBSITES", "code", "WEBSITES", ["Portfolios", "Business sites", "Landing pages", "Web apps"], "services.jpg", int(308 * SY), 300)
-feature(4, "SERVICE 03 • MINECRAFT", "cube", "MINECRAFT<br>PLUGINS", ["Custom gameplay", "Commands", "GUIs", "Server systems"], "services.jpg", int(505 * SY), 300)
-feature(5, "SERVICE 04 • MINECRAFT", "sword", "MINECRAFT<br>MODS", ["Custom items", "Blocks", "Mobs", "Mechanics"], "services.jpg", int(702 * SY), 300)
-feature(6, "SERVICE 05 • TEXTURE PACKS", "grid", "TEXTURE PACKS", ["Custom UI", "Items", "Blocks", "Full themes"], "services.jpg", int(900 * SY), 300)
-feature(7, "SERVICE 06 • CUSTOM DEV", "term", "CUSTOM<br>DEVELOPMENT", ["Python", "Node.js", "Automation", "APIs", "C++: quoted"], "services.jpg", int(1048 * SY), 300)
+feature(2, "SERVICE 01 • DISCORD BOTS", "bot", "DISCORD BOTS", ["Moderation", "Tickets", "Economy", "Music", "Custom dashboards"], "services.jpg", int(70 * SY), 300)
+feature(3, "SERVICE 02 • WEBSITES", "code", "WEBSITES", ["Portfolios", "Business sites", "Landing pages", "Web apps"], "services.jpg", int(268 * SY), 300)
+feature(4, "SERVICE 03 • MINECRAFT", "cube", "MINECRAFT<br>PLUGINS", ["Custom gameplay", "Commands", "GUIs", "Server systems"], "services.jpg", int(465 * SY), 300)
+feature(5, "SERVICE 04 • MINECRAFT", "sword", "MINECRAFT<br>MODS", ["Custom items", "Blocks", "Mobs", "Mechanics"], "services.jpg", int(662 * SY), 300)
+feature(6, "SERVICE 05 • TEXTURE PACKS", "grid", "TEXTURE PACKS", ["Custom UI", "Items", "Blocks", "Full themes"], "services.jpg", int(860 * SY), 300)
+feature(7, "SERVICE 06 • CUSTOM DEV", "term", "CUSTOM<br>DEVELOPMENT", ["Python", "Node.js", "Automation", "APIs", "C++: quoted"], "services.jpg", int(1008 * SY), 300)
 
 # 9 prices (Limited Edition Perks)
 PR = [("bot", "Discord Bot", "$5"), ("code", "Website", "$4"), ("cube", "Minecraft Plugin", "$4"), ("sword", "Minecraft Mod", "$5"), ("grid", "Texture Pack", "$4"), ("star", "Custom / C++", "quoted")]
@@ -242,10 +242,10 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
 POPS += [W[k][0] + rel(i, 0.35 + j * 0.2) for j in range(3)]
 
 # 11 premium perks
-feature(10, "PREMIUM PLAN", "crown", "PREMIUM", ["Priority queue", "Faster delivery", "Direct support", "Free minor revisions"], "pricing.jpg", int(1010 * 780 / 748), 260)
+feature(10, "PREMIUM PLAN", "crown", "PREMIUM", ["Priority queue", "Faster delivery", "Direct support", "Free minor revisions"], "pricing.jpg", 905, 260)
 
 # 12 premium lounge (recording 2, #premium-lounge)
-feature(11, "PREMIUM • PRIVATE CHANNEL", "crown", "PREMIUM<br>LOUNGE", ["Premium members only", "Early looks", "Priority talk", "Direct access to the team"], "lounge.jpg", 0, 330, title_px=90)
+feature(11, "PREMIUM • PRIVATE CHANNEL", "crown", "PREMIUM<br>LOUNGE", ["Premium members only", "Early looks", "Priority talk", "Direct access to the team"], "lounge.jpg", 0, 250, title_px=90)
 
 # 13 ordering flow (#create-ticket "HEAVEN ORDERS & SUPPORT"): 3 steps + the real orders banner
 i = 12; k = "s13"; d = d_of(i)
@@ -282,7 +282,7 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
 SPECIAL += [("sparkle", W[k][0] + rel(i, 0.1), 0.35), ("pop-high", W[k][0] + rel(i, 0.62), 0.35)]
 
 # 17 invite tracker buttons (#invite-rewards)
-feature(16, "INVITE TRACKER", "users", "TRACK YOUR<br>INVITES", ["My progress", "My invite link", "Leaderboard"], "invite.jpg", int(1340 * 780 / 748), 210, title_px=96)
+feature(16, "INVITE TRACKER", "users", "TRACK YOUR<br>INVITES", ["My progress", "My invite link", "Leaderboard"], "invite.jpg", int(1300 * 780 / 748), 230, title_px=96)
 
 # 18 how invites count: three stat tiles
 i = 17; k = "s18"; d = d_of(i)
@@ -301,10 +301,10 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
 POPS += [W[k][0] + rel(i, 0.1 + j * 0.3) for j in range(3)]
 
 # 14 quote in ticket
-feature(13, "BEFORE WORK BEGINS", "ticket", "A QUOTE IN YOUR<br>TICKET FIRST", ["Every order", "Quoted before work begins", "Final price depends on scope"], "pricing.jpg", int(1190 * 780 / 748), 250, title_px=84)
+feature(13, "BEFORE WORK BEGINS", "ticket", "A QUOTE IN YOUR<br>TICKET FIRST", ["Every order", "Quoted before work begins", "Final price depends on scope"], "pricing.jpg", 1060, 250, title_px=84)
 
 # 15 support option in the order menu
-feature(14, "ALREADY A CLIENT?", "check", "SUPPORT", ["Help with an existing project", "Pick it in the order menu"], "dropdown.jpg", 560, 360, title_px=110)
+feature(14, "ALREADY A CLIENT?", "check", "SUPPORT", ["Help with an existing project", "Pick it in the order menu"], "dropdown.jpg", 820, 360, title_px=110)
 
 # 20 safety
 feature(19, "SERVER RULES • SAFETY", "shield", "STAFF NEVER ASK<br>FOR PASSWORDS", ["No passwords", "No tokens", "Orders stay in tickets", "Honest invites only"], "rules.jpg", int(430 * 780 / 743), 300, title_px=84)
