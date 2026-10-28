@@ -104,7 +104,7 @@ def bar(bid, label, w=1100, color=GREEN):
 # ----------------------------------------------------------------------------------------------- recording clips
 def rec_clip(name, src0, src1, dur):
     """cut the client's Google search recording (cropped to the page) and time-fit it to the shot"""
-    out = f"assets/rec/{name}.mp4"
+    out = f"assets/rec/{name}_{src0}_{src1}_{dur:.2f}.mp4"
     if not os.path.exists(out):
         sp = (src1 - src0) / dur
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(src0), "-t", str(src1 - src0), "-i", "assets/rec/search.mp4", "-an",
@@ -140,7 +140,7 @@ def s_hook(k, a, b):
         f'<div class="stroke" style="font-family:Anton;font-size:150px;line-height:0.95;color:#fff;">GTA 5 FOR ANDROID</div>'
         f'<div class="stroke" style="font-family:Anton;font-size:190px;line-height:0.95;color:{ORANGE};">UNDER 10 MB?!</div></div>')
     j = [ft(f"#s{k}t", dict(scale=1), dict(scale=1.06, duration=b - a, ease="none"), 0)]
-    return h, j, [("whoosh-fast-0.3s", 0.05, 0.4)]
+    return h, j, [("sub-drop", 0.02, 0.5), ("whoosh-fast-0.3s", 0.05, 0.4)]
 
 
 def s_10mb(k, a, b):
@@ -189,7 +189,7 @@ def s_secret(k, a, b):
 def s_lekin(k, a, b):   # guide: dramatic music stops; the bed has silence here (mood_bed.py)
     h = gp(k, "same shot, freeze", dim=0.55) + '' + center(
         txt(f"s{k}a", "LEKIN BHAI...", 150) + txt(f"s{k}b", "EK CHHOTI SI PROBLEM HAI", 110, ORANGE), bottom=150, gap=20)
-    return h, [slide(f"#s{k}a", ws(70), y=40), slide(f"#s{k}b", ws(72), y=40)], [("tape-stop", ws(70), 0.5)]
+    return h, [slide(f"#s{k}a", ws(70), y=40), slide(f"#s{k}b", ws(72), y=40)], [("tape-stop", ws(70), 0.5), ("riser-2s", ws(77), 0.3)]
 
 
 def s_scam(k, a, b):
@@ -785,7 +785,7 @@ for k, (a, fn) in enumerate(SH):
 # frame 0 (thumbnail): the title is on screen from 0 s (hook shot has no fade-in)
 html[0] = html[0]
 C["shots"] = comp("shots", "\n".join(html), "\n".join(js))
-json.dump(dict(shots=shots_meta, gameplay_slots=[dict(k=k, desc=d) for k, d in GP]), open("shot_plan.json", "w"), indent=1)
+json.dump(dict(total=TOTAL, shots=shots_meta, gameplay_slots=[dict(k=k, desc=d) for k, d in GP]), open("shot_plan.json", "w"), indent=1)
 
 # glitch bumpers on the spoken headings
 html, js = [], []
@@ -860,18 +860,17 @@ def dur(p):
                                       capture_output=True, text=True).stdout), 3)
 
 
-A = [("vo", "assets/vo/vo.wav", 0, round(min(dur("assets/vo/vo.wav"), TOTAL), 2), 1.0, 10),
-     ("m1", "assets/music/bed.wav", 0, round(min(dur("assets/music/bed.wav"), TOTAL), 2), MUSIC_VOL, 11)]
 LONG = {"typing-keyboard-fast", "thruster", "riser-2s", "riser-4s", "badumtss"}
-for n, (name, t, v) in enumerate(sorted(SFX, key=lambda x: x[1])):
+PLAN = []
+for name, t, v in sorted(SFX, key=lambda x: x[1]):
     if t >= TOTAL or name not in HITS:
         continue
     hit = HITS[name]["peak"] if name.startswith("riser") else (HITS[name]["onset"] if name in LONG else HITS[name]["peak"])
-    st = round(max(0, t - hit), 2)
-    d = HITS[name]["dur"]
-    if name == "typing-keyboard-fast":
-        d = 2.6
-    A.append((f"x{n}", f"assets/sfx/{name}.mp3", st, round(min(d, TOTAL - st), 2), v, 100 + n))
+    st = round(max(0, t - hit), 3)
+    d = 2.6 if name == "typing-keyboard-fast" else HITS[name]["dur"]
+    PLAN.append(dict(name=name, hit=round(t, 3), start=st, dur=round(min(d, TOTAL - st), 3)))
+json.dump(PLAN, open("sfx_plan.json", "w"), indent=0)
+A = [("mix", "assets/mix.wav", 0, TOTAL, 1.0, 10)]   # mix.py: VO + ducked bed + level-matched SFX
 aud = "\n".join(f'      <audio id="{i}" src="{s}" data-start="{st}" data-duration="{d}" data-volume="{v}" data-track-index="{ln}"></audio>' for i, s, st, d, v, ln in A)
 hosts = "\n".join(
     f'      <div id="{c}-h" data-composition-id="{c}" data-composition-src="compositions/{c}.html" data-start="0" data-duration="{TOTAL}" data-track-index="{i}" '
@@ -896,4 +895,4 @@ open("index.html", "w").write(f"""<!doctype html>
   </body>
 </html>
 """)
-print("built", TOTAL, "shots", len(shots_meta), "sfx", len(A) - 2, "gameplay slots", len(GP))
+print("built", TOTAL, "shots", len(shots_meta), "sfx", len(PLAN), "gameplay slots", len(GP))

@@ -41,3 +41,12 @@ Every decision and its source:
 | snapshots 1 | captions unreadable on the white-ish Google page, overlay text on the recording, circle off the Ultra Lite title, "FAKE?" stamp over "100% WORKING!!", empty frame after the file shrinks | caption band, dark panels, nowrap title + smaller circle, stamp moved, "EK CHHOTI SI FILE MEIN?" text |
 | preview 1 render | blackdetect: 6 near-black spans; cause = duplicate element id `s{k}c` (shot wrapper and a text) hid whole shots for seconds; design shots showed only the background for 1-3 s before their first element | unique ids; a design shot now starts when its first element enters (previous shot holds); caption band hugs the spoken words |
 | preview 2 (2026-10-28, measured here) | 304.1 s, 30.0 fps; -17.1 LUFS, peak -1.6 dBFS, 0 clipped; no mix window > 2 dB over the VO's p95; blackdetect (d 0.2, pix_th 0.10) finds nothing | sent to the owner; GTA gameplay slots wait for the client's footage |
+
+## v3 audio (owner 2026-10-28: "voice bhot slow hai, customize karo; bolte waqt music kam; SFX/music pro editor ki tarah, hype + hook")
+| Decision | Source |
+| --- | --- |
+| VO rebuilt from the retake-free cut (vo_hype.py): both later retakes removed, every pause > 0.28 s shortened to 0.20 s (124 cuts, 64.1 s), dramatic beats kept (before "lekin bhai", after each spoken heading, after the punchline), tempo 1.2x (rubberband), high-pass 80 Hz, +2.5 dB at 3 kHz, compressor 3:1, loudnorm -16 -> 242.9 s, 202 words/min (was 304 s) | owner request; skills #188/#2348, #289, #316; measured here |
+| Music no longer sidechain-compressed: gain automation from the VO envelope (mix.py): -5 dB in pauses, -20 dB under speech, 60 ms down / 350 ms up, no pumping in gaps < ~0.4 s. Measured: music+SFX sit 15.4 dB under the voice while it speaks | owner request; skills #316/#317 |
+| Music stops on each topic bumper and drops back in right after the spoken heading; stops before "lekin bhai" and the punchline (mood_bed2.py, anchored to VO words) | guide (scam reveal: music band; punchline: short silence), client voice note (glitch + sound on topic change) |
+| SFX level-matched per type (impacts loudest, UI clicks quietest), -3 dB when they land on speech except reveal hits; added a sub-drop under the opening title and a riser into "SCAM HO RAHA HAI" | guide "Sound effects" (restraint), hook skills #99/#103 |
+| Master: two-pass loudnorm -15 LUFS linear + limiter -1.5 dBTP. Measured: -15.0 LUFS, peak -1.5 dBFS; only the opening boom and the punchline hit go 3-4 dB over the voice's p95 (intended) | measured here |
