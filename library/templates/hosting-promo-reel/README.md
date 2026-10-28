@@ -54,7 +54,7 @@ screenshot in a browser frame (full width, vertical pan only: a wider zoom cut t
 card + 2 rows with the site's own inline SVG icons -> software chips over the site's castle image -> "24h REFUND POLICY"
 + terms-page badge -> end card (mark, "Order on Discord" white button with the site's Discord icon, URL, footer payment
 badges) over the cave image blurred 8 px (hides the in-game crosshair behind the CTA). Screens from
-library/clients/hostlixo/site/tools/shots.js (scratchpad only). VO: saved voice `promo-male`, lines 3/4 re-taken with
+library/clients/hostlixo/site/tools/shots.js (scratchpad only). VO: saved voice `promo-male` (BANNED since 2026-10-28: use another field voice), lines 3/4 re-taken with
 seeds 21/33. Music CC0 "It feels good to be alive too" from its first drop (12.89 s). Measured here 2026-10-27: check
 passed; render -w 3 1m14s; listen.py -15.3 LUFS, 0 clipped; watch.py 30.0 real fps. watch.py first flagged 1.1 s of
 black at the start of the "24h" scene (the number entered 1 s late): bring a scene's main element in by ~0.1 s.
