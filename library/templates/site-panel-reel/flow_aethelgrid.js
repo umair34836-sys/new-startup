@@ -6,42 +6,50 @@ const { Recorder } = require('/home/user/new-startup/library/tools/screen_record
 const out = process.argv[2];
 const only = process.argv.slice(3);
 const OPT = { width: 1080, height: 1920, zoom: 1.4, block: [/googletagmanager|google-analytics|doubleclick|recaptcha/] };
+// smooth scroll to a Playwright selector (the recorder's scrollTo takes CSS only)
+const scroll = async (r, sel, { offset = 120, center = false, after = 1500 } = {}) => {
+  await r.page.locator(sel).first().evaluate((el, [off, c]) => {
+    const y = el.getBoundingClientRect().top + window.scrollY - off - (c ? innerHeight / 2 : 0);
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }, [offset, center]);
+  r.log('scroll', { sel }); await r.wait(after);
+};
 const hover = async (r, sel, ms = 700) => { const p = await r.target(sel); await r.moveTo(p.x, p.y, ms); await r.wait(350); };
 
 const SHOTS = {
   async home(r) {      // hero cards -> features -> locations (lines 2-5)
     await r.goto('https://aethelgrid.cloud/', { wait: 3500 });
     for (const t of ['Instant Setup', 'DDoS Protection', '99.9% Uptime', '24/7 Support']) await hover(r, `h3:has-text("${t}"), :text-is("${t}")`);
-    await r.mark('features'); await r.scrollTo('h2:has-text("Advanced")', { offset: 120, after: 1500 });
+    await r.mark('features'); await scroll(r, 'h2:has-text("Advanced")', { offset: 120, after: 1500 });
     for (const t of ['High Performance', 'Low Latency', 'Auto Recovery']) await hover(r, `:text-is("${t}")`);
-    await r.mark('locations'); await r.scrollTo('h2:has-text("Global")', { offset: 120, after: 1500 });
+    await r.mark('locations'); await scroll(r, 'h2:has-text("Global")', { offset: 120, after: 1500 });
     await hover(r, ':text-is("India")'); await hover(r, ':text-is("Germany")'); await r.wait(1200);
   },
   async minecraft(r) { // location toggle -> plans (lines 6-7)
     await r.goto('https://aethelgrid.cloud/minecraft', { wait: 2500 });
     await r.click('button:has-text("Germany")', { label: 'Germany' }); await r.wait(600);
     await r.click('button:has-text("India")', { label: 'India' });
-    await r.mark('plans'); await r.scrollTo(':text("3. Choose Your Plan")', { offset: 60, after: 1500 });
+    await r.mark('plans'); await scroll(r, ':text("3. Choose Your Plan")', { offset: 60, after: 1500 });
     await hover(r, ':text("₹80.00")'); await hover(r, ':text("DDR4 ECC Memory") >> nth=0'); await hover(r, ':text("NVMe SSD Storage") >> nth=0');
     await hover(r, ':text("Premium Game Panel") >> nth=0'); await r.wait(800);
-    await r.mark('more'); await r.scrollTo(':text("Gold Plan")', { offset: 200, after: 1800 }); await r.wait(800);
+    await r.mark('more'); await scroll(r, ':text("Gold Plan")', { offset: 200, after: 1800 }); await r.wait(800);
   },
   async vps(r) {       // processor toggle (line 8)
     await r.goto('https://aethelgrid.cloud/vps', { wait: 2500 });
     await r.click('button:has-text("AMD EPYC Premium")', { label: 'EPYC' }); await r.wait(900);
     await r.click('button:has-text("Intel Xeon Standard")', { label: 'Xeon' });
-    await r.mark('plans'); await r.scrollTo(':text("3. Choose Your Plan")', { offset: 60, after: 1500 });
+    await r.mark('plans'); await scroll(r, ':text("3. Choose Your Plan")', { offset: 60, after: 1500 });
     await hover(r, ':text("₹285.00")'); await r.wait(1200);
   },
   async discord(r) {   // bot plans (line 9)
     await r.goto('https://aethelgrid.cloud/discord', { wait: 2500 });
-    await r.scrollTo(':text("Lite Plan")', { offset: 300, after: 1500 });
+    await scroll(r, ':text("Lite Plan")', { offset: 300, after: 1500 });
     await hover(r, ':text("₹35.07")'); await r.mark('lavalink');
-    await r.scrollTo(':text("LavaLink: V4")', { block: 'center', after: 1500 }); await hover(r, ':text("LavaLink: V4")'); await r.wait(1200);
+    await scroll(r, ':text("LavaLink: V4")', { center: true, after: 1500 }); await hover(r, ':text("LavaLink: V4")'); await r.wait(1200);
   },
   async panel(r) {     // site's "Our Panel" tabs (line 10)
     await r.goto('https://aethelgrid.cloud/', { wait: 2000 });
-    await r.scrollTo('h2:has-text("Experience Our")', { offset: 120, after: 1800 });
+    await scroll(r, 'h2:has-text("Experience Our")', { offset: 120, after: 1800 });
     for (const t of ['Main Dashboard', 'Server Dashboard', 'One-Click Plugin Installer', 'Version Changer'])
       await r.click(`button:has-text("${t}")`, { label: t, after: 1100 });
     await r.wait(800);

@@ -77,7 +77,7 @@ CSS = f"""
     .badge.b {{ background: {BLUE}; border-color: {BLUE}; }}
     .badge.g {{ background: {GREEN}; border-color: {GREEN}; color: #06140b; }}
     .veil {{ position: absolute; left: 0; right: 0; top: 1020px; height: 900px;
-             background: linear-gradient(180deg, rgba(12,10,24,0) 0%, rgba(12,10,24,0.82) 30%, rgba(12,10,24,0.95) 100%); }}
+             background: linear-gradient(180deg, rgba(12,10,24,0) 0%, rgba(12,10,24,0.92) 25%, rgba(12,10,24,0.97) 100%); }}
 """
 
 
@@ -104,7 +104,7 @@ def scene(k, i, top_pill, badges, veil=True, extra_html="", extra_js=""):
     s, e = W[k]
     d = round(e - s, 2)
     html = (('<div class="veil"></div>' if veil else "") +
-            (f'<div class="c" id="{k}-p" style="top:300px;"><span class="pill">{top_pill}</span></div>' if top_pill else "") +
+            (f'<div class="c" id="{k}-p" style="top:170px;"><span class="pill">{top_pill}</span></div>' if top_pill else "") +
             extra_html +
             "".join(f'<div class="c" id="{k}-b{j}" style="top:{top}px;"><span class="badge {cls}">{h}</span></div>'
                     for j, (h, cls, fr, top) in enumerate(badges)))
@@ -131,7 +131,7 @@ C["s1"] = comp("s1", f"""    <div style="position:absolute;inset:0;background:ra
                '    tl.fromTo("#s1-b", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 0.25);\n'
                + "".join(f'    tl.fromTo("#s1-k{j}", {{ x: {(-1) ** j * 700}, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.35, ease: "power3.out" }}, {rel(0, f)});\n'
                          for j, f in enumerate((0.05, 0.25, 0.45)))
-               + f'    tl.to("#root", {{ opacity: 0, duration: 0.2 }}, {d1 - 0.2:.2f});\n')
+               )
 POPS += [round(rel(0, f), 2) for f in (0.05, 0.25, 0.45)]
 
 C["s2"] = scene("s2", 1, "AETHELGRID.CLOUD", [('<img src="assets/img/logo.png" style="width:520px;height:119px;" alt="AethelGrid">', "", 0.1, 1250)])
@@ -148,8 +148,14 @@ C["s8"] = scene("s8", 7, "VPS HOSTING", [("Intel Xeon • AMD EPYC", "b", 0.15, 
                                         ('<span style="font-size:80px;">₹285</span>/mo se', "g", 0.85, 1500)])
 C["s9"] = scene("s9", 8, "DISCORD BOT HOSTING", [('<span style="font-size:80px;">₹35.07</span>/mo se', "g", 0.2, 1250),
                                                 ("LavaLink V4", "b", 0.65, 1400)])
+# the site's own panel picture (aethelgrid.cloud/experience.png, 1024x1024 with black bands; panel UI = y 224-800)
+PANEL = ('<div id="s10-pan" style="position:absolute;left:40px;top:420px;width:1000px;height:563px;overflow:hidden;border-radius:22px;'
+         'border:3px solid rgba(96,165,250,0.7);box-shadow:0 30px 90px rgba(0,0,0,0.8);">'
+         '<img src="assets/img/panel.png" style="position:absolute;left:0;top:-219px;width:1000px;height:1000px;" alt="AethelGrid panel (site image)"></div>')
 C["s10"] = scene("s10", 9, "OUR PANEL", [("Live Console", "", 0.25, 1250), ("1-Click Plugin Installer", "b", 0.5, 1400),
-                                         ("Version Changer", "g", 0.8, 1550)])
+                                         ("Version Changer", "g", 0.8, 1550)], extra_html=PANEL,
+                 extra_js='    tl.fromTo("#s10-pan", { scale: 0.6, opacity: 0, y: 120 }, { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.6);\n'
+                          '    tl.to("#s10-pan", { scale: 1.05, duration: 2.4, ease: "none" }, 3.1);\n')
 C["s11"] = scene("s11", 10, "GP.AETHELGRID.CLOUD", [("Full Control Panel", "b", 0.4, 1350)])
 C["s12"] = scene("s12", 11, "LIMITED-TIME OFFER", [('<span style="font-size:110px;">25% OFF</span>', "g", 0.55, 1180),
                                                    ('CODE: <span style="font-family:JB;">AETHEL25</span>', "b", 0.25, 1420)])
