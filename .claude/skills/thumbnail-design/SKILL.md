@@ -29,6 +29,25 @@ No usable frame: make a design-only layout (gradient, logo, product shot) instea
 `/home/user/tools/venv/bin/python library/tools/thumb_cutout.py frame.png work/cutout.png` (use `--model isnet-general-use` for objects or logos).
 Open the cutout and check its edges. Hair and hands are where models fail; if it looks bad, use the frame without a cutout.
 
+## 3b. Professional designer pass (owner 2026-10-28: "tumbnail banana but as a professional designer")
+Do not stop at one template fill. Work like a designer, using the design skills installed from github.com/anthropics/skills (Apache-2.0):
+
+1. **Direction first.** Read skill `frontend-design` (aesthetic direction, typography, avoiding templated defaults).
+   Write 2-3 short design directions for this video, e.g. "bold comic", "clean premium tech", "dark cinematic".
+   For each, note the font pair, 2-3 colours, and what the hero element is.
+2. **Palette.** Use the client's brand colours if they exist. Otherwise pick a theme from skill `theme-factory` (10 preset colour + font themes in its themes/ folder), or derive one from the frame. One background family, one text colour, ONE accent colour.
+3. **Typography.**
+   - A display face for the 2-4 hook words: Anton, BebasNeue, LuckiestGuy, Bangers, or from canvas-design's 27 OFL families, e.g. Boldonse, BigShoulders, EricaOne, Outfit, InstrumentSerif. thumb_make.py loads both font folders.
+   - A second face only for a small support line.
+   - Never more than 2 families.
+4. **Posters and pure art** (no video frame): follow skill `canvas-design` (a written design philosophy, then the piece).
+   Generative backgrounds: skill `algorithmic-art` (p5.js, seeded). Render a still and use it as `bg.image`.
+5. **Hierarchy check.** At 168x94 the order the eye reads must be: hero (face or object) -> hook words -> everything else.
+   Remove anything that does not serve that order.
+6. **Variants.** Make at least 2 directions as real renders. Put them side by side in the check sheet and pick by the small-size read, not by the full-size look. When the owner asked for N thumbnails per video, deliver N clearly different directions, not colour swaps.
+
+Log for each thumbnail: direction, fonts, colours, frame time, and why it won. Put it in the client edit log.
+
 ## 4. Build
 Copy an example spec from `library/templates/thumbnail/` and edit it.
 - Text: 2-4 words, at least ~110 px at 1280 wide, an outline of 8-14 px (doubled in CSS) and one accent word in a contrasting colour.

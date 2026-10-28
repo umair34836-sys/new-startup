@@ -16,8 +16,9 @@
 #    "arrows": [{"from": [0.45, 0.75], "to": [0.62, 0.55], "color": "#ff2d2d", "width": 18}],
 #    "circles": [{"x": 0.7, "y": 0.5, "r": 0.12, "color": "#ff2d2d", "width": 12}],
 #    "badge": {"text": "NEW", "x": 0.04, "y": 0.8, "color": "#000", "bg": "#ffd400"}}
-# x / y / w / r are fractions of the canvas width (y of the height). Fonts = files in library/fonts (family name =
-# file stem before "-", e.g. Anton, BebasNeue, LuckiestGuy, Bangers, Montserrat, Poppins, NotoNastaliqUrdu).
+# x / y / w / r are fractions of the canvas width (y of the height). Fonts = files in library/fonts and in
+# .claude/skills/canvas-design/canvas-fonts (family name = file stem before "-", e.g. Anton, BebasNeue, LuckiestGuy,
+# Bangers, Montserrat, Poppins, NotoNastaliqUrdu, BigShoulders, Boldonse, EricaOne, Outfit, InstrumentSerif).
 # Writes out.png, out.jpg (YouTube phone upload limit 2 MB) and out.boxes.json (text boxes, used by thumb_check.py).
 # --variants also writes out_bgonly.png (texts hidden) so thumb_check.py can measure text contrast.
 # Renders with Node Playwright (require('playwright') works in this container; chromium needs no options).
@@ -25,6 +26,8 @@ import argparse, html, json, os, subprocess, sys, tempfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 FONTS = os.path.join(ROOT, "library", "fonts")
+# + the 27 OFL families shipped with the canvas-design skill (anthropics/skills, installed 2026-10-28)
+FONT_DIRS = [FONTS, os.path.join(ROOT, ".claude", "skills", "canvas-design", "canvas-fonts")]
 SIZES = {"yt": (1280, 720), "short": (1080, 1920), "square": (1080, 1080), "post45": (1080, 1350)}
 
 ap = argparse.ArgumentParser()
@@ -47,7 +50,7 @@ def url(p):
 
 def font_faces():
     css, seen = [], set()
-    for f in sorted(os.listdir(FONTS)):
+    for d, f in sorted((d, f) for d in FONT_DIRS if os.path.isdir(d) for f in os.listdir(d)):
         if not f.lower().endswith((".ttf", ".otf")):
             continue
         fam = f.split("-")[0].split(".")[0]
@@ -57,7 +60,7 @@ def font_faces():
         if "SemiBold" in f:
             weight = "600"
         style = "italic" if "Italic" in f else "normal"
-        css.append(f'@font-face{{font-family:"{fam}";src:url("file://{FONTS}/{f}");font-weight:{weight};font-style:{style}}}')
+        css.append(f'@font-face{{font-family:"{fam}";src:url("file://{d}/{f}");font-weight:{weight};font-style:{style}}}')
         seen.add(fam)
     return "\n".join(css)
 

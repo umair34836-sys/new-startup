@@ -34,6 +34,16 @@ Each licence file is saved beside its font in library/fonts.
 - thumb_check.py: under 1 s.
 - Tests passed for a 16:9 face thumbnail, a 9:16 cover with Urdu Nastaliq text, and a 1:1 poster. The thumbnails were looked at.
 
+## Design skills installed 2026-10-28 (owner: "as a professional designer")
+Copied from github.com/anthropics/skills (shallow clone 2026-10-28, HEAD dbd4588, last commit 2026-10-09). Every skill folder
+carries its own Apache-2.0 LICENSE.txt. They are in .claude/skills/:
+- `frontend-design` (71 lines): aesthetic direction and typography for HTML. thumb_make.py renders HTML, so it applies.
+- `canvas-design` (129 lines + canvas-fonts, 5.6 MB): posters and art from a written design philosophy; 27 OFL font families
+  (27 OFL .txt files counted). thumb_make.py now loads these fonts too (Boldonse tested in a render 2026-10-28).
+- `theme-factory` (59 lines + 10 theme .md files + theme-showcase.pdf): preset colour + font themes.
+- `algorithmic-art` (404 lines + templates): p5.js generative art with seeded randomness, used for poster/thumbnail backgrounds.
+Not taken: `brand-guidelines` (Anthropic's own brand) and the document/office skills (not design).
+
 ## Checked and NOT installed
 
 | Tool | Why not |

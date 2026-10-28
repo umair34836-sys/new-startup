@@ -22,6 +22,8 @@ Read this first in every session.
      THUMBNAILS / COVERS / POSTERS (owner 2026-10-28, "install tools skills for designing ... tumbnails for art"): skill
      `.claude/skills/thumbnail-design` (thumb_frames.py -> thumb_cutout.py -> thumb_make.py -> thumb_check.py; template
      library/templates/thumbnail; rules library/research/editing/skills2/16-thumbnails.md; tools research/design-tools.md).
+     PRO DESIGNER (owner 2026-10-28): its step 3b uses design skills from anthropics/skills (Apache-2.0): frontend-design,
+     canvas-design (+27 OFL fonts, loaded by thumb_make.py), theme-factory, algorithmic-art; 2+ real directions per video.
   If the repo has nothing for a step, say so to the owner, use a verified source (with reference), and save what worked
   back to the repo. In the delivery message, name the template/skills/tools used.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable
