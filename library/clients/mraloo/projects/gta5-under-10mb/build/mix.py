@@ -44,7 +44,7 @@ TGT = {"impact-boom": -10, "sub-drop": -11, "impact-punch": -11, "record-scratch
        "glitch-short": -15, "whoosh-fast-0.3s": -14, "swish-4": -15, "pop-high": -17, "bubble-pop": -17, "mouse-click": -18,
        "switch": -16, "error-buzz": -13, "ui-error-1": -13, "alarm": -16, "negative": -15, "magic-shimmer": -12, "sparkle": -15,
        "wink": -14, "game-coin": -16, "success-chime": -15, "typing-keyboard-fast": -24, "thruster": -14, "riser-2s": -14,
-       "riser-4s": -13, "boing": -13, "badumtss": -11, "fall": -15, "blip-up": -17, "trombone": -12}
+       "riser-4s": -13, "boing": -13, "badumtss": -11, "fall": -15, "blip-up": -17, "trombone": -12, "plop": -17, "punch-medium": -11, "punch-heavy": -11, "swish-1": -15, "whoosh-up-0.6s": -15}
 REVEAL = {"impact-boom", "record-scratch", "sub-drop"}
 plan = json.load(open("sfx_plan.json"))
 cache = {}

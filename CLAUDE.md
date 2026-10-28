@@ -513,3 +513,6 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - ECC (everything-claude-code) lives in .claude/ (agents, commands, quality skills; no hooks). REA (reverse engineering,
   MCP `rea` in .mcp.json + skill). See library/research/tools-landscape.md.
 - graft 0.25 (`graft build`, `graft ask "<q>"`): code context graph; telemetry disabled. Don't commit its graft/ folder unless asked.
+- Mr Aloo client feedback (2026-10-28, GTA video): same pop SFX repeated sounds cheap -> rotate 2-3 variants per SFX type; flat
+  gradient design cards look "AI" -> put design shots on dimmed real footage (client gameplay / real b-roll). Many <video>
+  backgrounds (48) made the delivery render 41 min (v1 with 16 videos: 16 min) and it stalled once at <1 GB free disk.

@@ -130,8 +130,41 @@ def gp(k, desc, dim=0.0, blur=0):
             f'style="position:absolute;left:60px;top:60px;width:1920px;height:1080px;object-fit:cover;"></video></div>')
 
 
+# client 2026-10-28: "thora sa AI jaisa lag raha hai" -> design shots sit on real footage instead of a flat purple card:
+# dimmed client GTA gameplay (rotating driving shots), or real phone b-roll (Mixkit Free License, no credit) on phone lines
+BG_GP = [44.0, 60.0, 72.0, 168.0, 208.0, 216.0, 232.0, 244.0, 284.0, 308.0, 348.0, 364.0, 376.0, 388.0]
+BROLL = {"s_apk": ("mixkit_4915", 1.0), "s_install": ("mixkit_4915", 5.0), "s_sure": ("mixkit_144", 2.0), "s_perms": ("mixkit_4915", 8.0),
+         "s_rules": ("mixkit_144", 7.0), "s_tips": ("mixkit_4915", 2.0), "s_legit": ("mixkit_4915", 10.0), "s_dimaag": ("mixkit_144", 0.0),
+         "s_atrisk": ("mixkit_4915", 4.0), "s_sub": ("mixkit_144", 9.0), "s_final": ("mixkit_4915", 0.0)}
+CURFN = [""]
+_bgn = [0]
+
+
+def bg_clip(src_file, src, dur, tag):
+    out = f"assets/bgclips/{tag}_{src:.2f}_{dur:.2f}.mp4"
+    if not os.path.exists(out):
+        os.makedirs("assets/bgclips", exist_ok=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-stream_loop", "-1", "-ss", f"{src:.3f}", "-i", src_file, "-an", "-t", f"{dur + 0.1:.3f}",
+                        "-vf", "scale=1920:1080:flags=lanczos,fps=30", "-c:v", "libx264", "-crf", "20", "-preset", "veryfast",
+                        "-pix_fmt", "yuv420p", out], check=True)
+    return out
+
+
 def dark(extra=""):
-    return (f'<div style="position:absolute;inset:0;background:linear-gradient(160deg, #2b1440 0%, {BG} 70%);"></div>'
+    a, b = CUR
+    d = round(max(0.3, b - a), 3)
+    _bgn[0] += 1
+    vid = ""
+    if not DRY[0]:
+        if CURFN[0] in BROLL:
+            f, src = BROLL[CURFN[0]]
+            p = bg_clip(f"assets/broll/{f}.mp4", src, d, f); bri = 0.62
+        else:
+            src = BG_GP[_bgn[0] % len(BG_GP)]
+            p = bg_clip(GPF, src, d, "gpbg"); bri = 0.55
+        vid = (f'<div style="position:absolute;inset:0;filter:brightness({bri}) saturate(0.85);"><video id="bgv{_bgn[0]}" src="{p}" data-start="{a}" data-duration="{d}" '
+               f'muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>')
+    return (vid + f'<div style="position:absolute;inset:0;background:linear-gradient(160deg, rgba(43,20,64,0.30) 0%, rgba(20,12,36,0.55) 80%);"></div>'
             f'<div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 5px);"></div>{extra}')
 
 
@@ -618,7 +651,7 @@ def s_filesize(k, a, b):
 
 # Scene 5 - how to stay safe (guide: clean, readable, calm; tips text from the guide)
 def s_rules(k, a, b):
-    h = dark() + center(f'<div id="s{k}e" style="display:flex;gap:30px;opacity:0;">{em("mobile_phone", 220)}{em("shield", 220)}</div>'
+    h = dark() + center(f'<div id="s{k}e" style="display:flex;gap:30px;opacity:0;">{em("shield", 220)}</div>'
                         + txt(f"s{k}a", "KUCH SIMPLE RULES", 140, GREEN), bottom=150)
     return h, [pop(f"#s{k}e", ws(576)), slam(f"#s{k}a", ws(584))], [("success-chime", ws(585), 0.25)]
 
@@ -644,20 +677,18 @@ def s_tips(k, a, b):
     return h, j, [("pop-high", ws(wi), 0.3) for wi, _ in TIPS]
 
 
-def s_thumb(k, a, b):   # guide: fictional exaggerated thumbnail "GTA 6 MOBILE - 100% WORKING!!"
-    th = (f'<div id="s{k}th" style="position:absolute;left:360px;top:120px;width:1200px;height:675px;border-radius:24px;overflow:hidden;opacity:0;'
-          f'background:linear-gradient(135deg,#ff2e88,#ffb020 60%,#ffe14d);box-shadow:0 40px 100px rgba(0,0,0,0.6);border:8px solid #fff;">'
-          f'<div style="position:absolute;left:40px;top:40px;">{em("astonished_face", 280)}</div>'
-          f'<div class="stroke" style="position:absolute;right:40px;top:60px;width:760px;text-align:right;font-family:Anton;font-size:150px;line-height:0.95;color:#fff;">GTA 6 MOBILE</div>'
-          f'<div class="stroke" style="position:absolute;right:40px;top:330px;font-family:Anton;font-size:120px;color:{GREEN};">100% WORKING!!</div>'
-          f''
-          f'<div style="position:absolute;right:20px;bottom:20px;padding:4px 14px;border-radius:8px;background:rgba(0,0,0,0.8);font-family:Jakarta;font-weight:800;font-size:34px;color:#fff;">10:00</div></div>'
-          + txt(f"s{k}n", "FICTIONAL THUMBNAIL", 30, "#ffffffaa", "position:absolute;left:360px;top:70px;", "Jakarta")
-          + f'<div id="s{k}s" data-layout-allow-overlap data-layout-allow-occlusion style="position:absolute;left:470px;top:560px;padding:10px 50px;border:12px solid {RED};border-radius:20px;transform:rotate(-12deg);opacity:0;'
-          f'font-family:Anton;font-size:130px;color:{RED};background:rgba(255,255,255,0.9);">FAKE?</div>')
+def s_thumb(k, a, b):   # "YouTube thumbnail par log GTA 6 bhi mobile mein chala dete hain": the client's own picture (sent 2026-10-28) shown as a clickbait thumbnail
+    th = (f'<div id="s{k}th" style="position:absolute;left:360px;top:70px;width:1200px;opacity:0;">'
+          f'<div style="position:relative;width:1200px;height:675px;border-radius:24px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.6);">'
+          f'<img src="assets/img/client_gta6_thumb.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" alt="">'
+          f'<div style="position:absolute;right:20px;bottom:20px;padding:4px 14px;border-radius:8px;background:rgba(0,0,0,0.85);font-family:Jakarta;font-weight:800;font-size:34px;color:#fff;">10:00</div></div>'
+          f'<div style="font-family:Jakarta;font-weight:800;font-size:44px;color:#fff;margin-top:20px;">GTA 6 ON ANDROID?! 100% WORKING!! 😱🔥</div></div>'
+          + txt(f"s{k}n", "CLICKBAIT THUMBNAIL", 30, "#ffffffaa", "position:absolute;left:360px;top:24px;", "Jakarta")
+          + f'<div id="s{k}s" data-layout-allow-overlap data-layout-allow-occlusion style="position:absolute;left:760px;top:330px;padding:10px 50px;border:12px solid {RED};border-radius:20px;transform:rotate(-12deg);opacity:0;'
+          f'font-family:Anton;font-size:150px;color:{RED};background:rgba(255,255,255,0.92);">FAKE?</div>')
     h = dark() + th
     j = [ft(f"#s{k}n", dict(opacity=0), dict(opacity=1, duration=0.2), ws(652)), pop(f"#s{k}th", ws(652)),
-         ft(f"#s{k}th", dict(scale=1), dict(scale=1.18, duration=0.2, ease="power4.out", immediateRender=False), ws(657)),
+         ft(f"#s{k}th", dict(scale=1), dict(scale=1.12, duration=0.2, ease="power4.out", immediateRender=False), ws(657)),
          slam(f"#s{k}s", ws(661), 3)]
     return h, j, [("pop-high", ws(652), 0.3), ("record-scratch", ws(657), 0.5), ("impact-punch", ws(661), 0.35)]
 
@@ -808,7 +839,7 @@ MEDIA_BG = {"s_google", "s_results", "s_compressed", "s_milega"}
 starts = [x[0] for x in SH]
 DRY[0] = True
 for k, (a, fn) in enumerate(SH):
-    CUR[:] = [a, a + 5]
+    CUR[:] = [a, a + 5]; CURFN[0] = getattr(fn, "__name__", "")
     if k == 0 or getattr(fn, "__name__", "") in MEDIA_BG or f'id="g{k}"' in fn(k, a, a + 5)[0]:
         continue
     j = fn(k, a, a + 5)[1]
@@ -825,7 +856,7 @@ for k, (a, fn) in enumerate(SH):
     b = bounds[k + 1]
     if a >= TOTAL:
         break
-    CUR[:] = [a, b]
+    CUR[:] = [a, b]; CURFN[0] = getattr(fn, "__name__", "")
     h, j, s = fn(k, a, b)
     vis = "block" if k == 0 else "none"
     html.append(f'    <div id="s{k}" style="position:absolute;inset:0;display:{vis};" data-layout-allow-overflow data-layout-allow-occlusion>'
@@ -920,7 +951,17 @@ def dur(p):
 
 LONG = {"typing-keyboard-fast", "thruster", "riser-2s", "riser-4s", "badumtss"}
 PLAN = []
-for name, t, v in sorted(SFX, key=lambda x: x[1]):
+# client 2026-10-28: "popup sounds alag alag use karo, same sound baar baar repeat lag raha hai, 2-3 type" -> rotate variants
+VARIANTS = {"pop-high": ["pop-high", "bubble-pop", "plop"], "whoosh-fast-0.3s": ["whoosh-fast-0.3s", "swish-1", "whoosh-up-0.6s"],
+            "impact-punch": ["impact-punch", "punch-medium", "punch-heavy"]}
+_rot, _sfx = {}, []
+for n, t, v in sorted(SFX, key=lambda x: x[1]):
+    if n in VARIANTS:
+        c = _rot.get(n, 0); _rot[n] = c + 1
+        n = VARIANTS[n][c % len(VARIANTS[n])]
+    _sfx.append((n, t, v))
+SFX = _sfx
+for name, t, v in SFX:
     if t >= TOTAL or name not in HITS:
         continue
     hit = HITS[name]["peak"] if name.startswith("riser") else (HITS[name]["onset"] if name in LONG else HITS[name]["peak"])

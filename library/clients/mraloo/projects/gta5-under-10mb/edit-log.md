@@ -61,3 +61,12 @@ Every decision and its source:
 | Owner: "final video bhej dena" -> delivery render directly, full quality only (no WhatsApp copy) | owner 2026-10-28; CLAUDE.md |
 | Final QA (measured here): 239.9 s, 1920x1080 30 fps h264 + aac, 145 MB; -15.8 LUFS, peak -1.4 dBFS; blackdetect (d 0.2, pix_th 0.10) and freezedetect (2 s) find nothing; thumbnail = frame at 1.2 s (title over gameplay) | delivered with SendUserFile |
 | Credit note for the client: the gameplay file name says it is a "No Copyright Gameplay" upload; such channels often ask for credit in the description, so the client should credit the source channel | told the owner |
+
+## Final v2 (2026-10-28, client feedback on v1)
+| Client said | Fix | Source |
+| --- | --- | --- |
+| "2:05 mein word repeat hua hai" | The spoken heading was said twice ("why 10MB GTA5 doesn't... doesn't", 123.02-125.02 s); kept the clean second take (cut5.py). Final checked with Whisper medium (en): "...Why 10mb gta 5 doesn't make sense? Now let's put some logic" | measured here |
+| "popup sounds alag alag, same sound baar baar repeat, 2-3 type" | Pops rotate pop-high / bubble-pop / plop (13 each), whooshes whoosh-fast / swish-1 / whoosh-up, impacts impact-punch / punch-medium / punch-heavy (library/sfx, CC0) | client; library/sfx |
+| "thora sa AI jaisa lag raha hai, photos use karo" | Every design shot now sits on real footage instead of a flat purple card: dimmed client GTA gameplay (14 rotating driving shots, brightness 0.55) or real phone b-roll on phone lines (Mixkit 4915 "Hands of a person typing on a cell phone", 144 "Hands shown texting on a smartphone"; Mixkit Stock Video Free License, no credit, fetched with find_stock.py); dropped the phone emoji on "simple rules". Openverse (504) and Wikimedia API (rate limit) were down, so no stock photos this round | client; skill stock-sfx-luts |
+| client picture (GTA VI on Android) | Used as the clickbait YouTube thumbnail on "YouTube thumbnail par toh log GTA 6 bhi..." with "CLICKBAIT THUMBNAIL" label and FAKE? stamp (replaces the drawn one). File stays in the scratchpad (client media, not committed) | client |
+| QA (measured here) | 237.9 s, 1920x1080 30 fps, 305 MB; -15.8 LUFS, peak -2.0 dBFS; blackdetect + freezedetect clean; render 41 min (stalled once at low disk; freed space) | |
