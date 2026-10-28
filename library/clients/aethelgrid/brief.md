@@ -10,7 +10,9 @@
   9:16; Hindi VO + CC0 music; watermarked PREVIEW until payment. Script (13 lines) approved 2026-10-28
   (template library/templates/site-panel-reel/: flow_aethelgrid.js records, build_aethelgrid.py builds).
 - Voice: first run used `promo-male`; stopped after 4 lines when the main session relayed the owner's ban on it
-  (2026-10-28, commit 633bf73). Samples of explainer-pro / news-anchor / tutorial-calm go to the owner to pick.
+  (2026-10-28, commit 633bf73). Owner (2026-10-28): "simple mat bejho khod as a pro editor chose kroo" -> chosen `explainer-pro`: README use
+  "explainers, corporate, product walk-throughs" (= this site+panel features video, decision-guide #10/#26); 2-line sample
+  vs news-anchor, Whisper small 50% both (spelling-level misses, same words), explainer-pro 6.00 s vs 7.24 s (fits 60 s).
 - Music: CC0 "People Are Spinning" (Loyalty Freak Music): listen.py 110 BPM, G major, bright/upbeat, drop/full sound
   from 17.4 s. Rejected "Monarch of the Street" (top find_music score, but listen.py: D minor, sad/reflective).
 - New client: ask before sending a clean file (watermark rule for unpaid clients).
