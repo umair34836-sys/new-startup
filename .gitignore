@@ -20,3 +20,4 @@ uploads/
 graft/
 .cache/
 __pycache__/
+library/clients/mraloo/brand/*.png

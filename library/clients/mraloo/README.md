@@ -14,7 +14,7 @@ List a shared folder without the Drive MCP (works for "anyone with the link" fol
 | --- | --- |
 | brief.md | verified client facts (IP, port, Discord, brand colours), Drive folders, owner rules for this client |
 | input-report-2026-10-25.md | first analysis of the client's inputs (transcripts, watch/listen facts) |
-| brand/aloo-smp-winter-emblem.png | client's logo ("Snowy ALOO SMP Winter Emblem.png", 2.6 MB PNG; use a JPG copy in HyperFrames, >2 MB is not inlined) |
+| (not in git) aloo-smp-winter-emblem.png | client logo "Snowy ALOO SMP Winter Emblem.png" (2.6 MB PNG): client images are never committed; re-download per job from Drive ID 1Lrh9ySfQthZ68dVMwWZaojNyjQm-8kyg (use a JPG copy in HyperFrames, >2 MB is not inlined) |
 | edit-log-short-v1.md | ALOO SMP YouTube Short v1/v2: every decision -> source, QA |
 | edit-log-warning-explainer.md | "Indian Gamers Ignore This Warning" explainer v1/v2: decisions, client feedback, QA |
 | projects/gta5-under-10mb/ | GTA 5 for Android under 10 MB?! — client's editing guide + script (PDF + text), inputs index, transcript, plan |
