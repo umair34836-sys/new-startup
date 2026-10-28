@@ -23,7 +23,7 @@ List a shared folder without the Drive MCP (works for "anyone with the link" fol
 ## Client Drive folders (inputs)
 | Folder | ID | Contents (listed 2026-10-28) |
 | --- | --- | --- |
-| Main input folder | 1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx | 2026-10-25 20-24-48.mkv (16nhkyo2QlKAAevAWaIz2osWhvI8kQOri, gameplay rec, 650.9 MB), 2026-10-25 20-34-02.mkv (1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA, spawn rec, 236.4 MB), smp promo.mp3 (1-Dqep2c4cjBOqR9zZZX-Sx20Zxsiq_k_), Indian Gamers Ignore This Warning… Until It’s Too Late.mp3 (17SBdZSkLsSSEUNUTo0LsgvTTCHGxCG26), Snowy ALOO SMP Winter Emblem.png (1Lrh9ySfQthZ68dVMwWZaojNyjQm-8kyg) |
+| Main input folder | 1HlOwa50KDkqBf0KIaCJnQ6JxjPTzB6gx | 2026-10-25 20-24-48.mkv (16nhkyo2QlKAAevAWaIz2osWhvI8kQOri, spawn rec, 51.0 s, 236.4 MB), 2026-10-25 20-34-02.mkv (1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA, gameplay rec, 182.6 s, 650.9 MB; sizes/durations swapped in the earlier note, re-measured with ffprobe 2026-10-28), Aloo_SMP_Viral_Editing_Guide_Hinglish.pdf (1Cjnx_kkYNrsXtzWj3LcIB_mBowd7dopL, added 2026-10-28), aloosmp promo 2.mp3 (1IYPtJ0SPgbFv5lb63zNKafOoBtpk30uB, VO 70.2 s, added 2026-10-28), smp promo.mp3 (1-Dqep2c4cjBOqR9zZZX-Sx20Zxsiq_k_), Indian Gamers Ignore This Warning… Until It’s Too Late.mp3 (17SBdZSkLsSSEUNUTo0LsgvTTCHGxCG26), Snowy ALOO SMP Winter Emblem.png (1Lrh9ySfQthZ68dVMwWZaojNyjQm-8kyg) |
 | "gta 10mb" (owner rahulbiswas1812, created 2026-10-27) | 1vFRvwVgAN-g1JMkrxTuvmM1ISWll911s | 2026-10-27 23-34-30.mp4 (12yBLfTxrN9RkarWj_5e60lc4q6aRi5cF, Google search screen rec, 26.9 s 1920x1080 60 fps), gta 10mb.mp3 (1aObjrk974YADkUBi3oaJEPB5IPRmCePk, VO 453.5 s), Mr_Aloo_GTA5_Hinglish_Editing_Guide.pdf (1gVidWNIvJr1rRtShhDRdofr3IQ2Ht5A1), Mr_Aloo_GTA5_Hinglish_Video_Script.pdf (1JhOORG4VR4CW2_80pFFUws8Nh9po63z7) |
 
 ## Owner's own folders for this client
@@ -51,3 +51,8 @@ List a shared folder without the Drive MCP (works for "anyone with the link" fol
 ## GTA 5 under 10 MB (2026-10-28)
 - Inputs: VO 1aObjrk974YADkUBi3oaJEPB5IPRmCePk; search recording 12yBLfTxrN9RkarWj_5e60lc4q6aRi5cF; GTA gameplay 1nZX4fI3_pHjqgs6-Ci4jE8YZxzBV5fSI (client allowed; credit the source channel); ALOO SMP spawn 1SmJKT0fOUn--o94gnSx_Pg3D4gq5wpwA (Minecraft cut).
 - Delivered: FINAL-v1 (3:59.9) and FINAL-v2 (3:57.9, client fixes: repeat at 2:05, varied pops, real-footage backgrounds, client GTA 6 picture) + thumbnail PNG, 2026-10-28, via SendUserFile. Log: projects/gta5-under-10mb/edit-log.md.
+
+## ALOO SMP Promo 2 (started 2026-10-28)
+- Client voice note (2026-10-28): new script/guide + VO "aloosmp promo 2" in the main folder; use the old clips, different footage where possible; the client will upload a new clip for the bigger SMP parts.
+- Docs: projects/smp-promo-2/ (guide PDF + text). Deliverable per guide: 60 s 9:16 + an alternate first-5-s hook.
+- Delivered 2026-10-28 (owner asleep, sent via SendUserFile): ALOO-SMP-Promo2-FINAL-A.mp4 + FINAL-B-alt-hook.mp4 (62.5 s 1080x1920 60 fps) + thumbnail. Client's new clip for the bigger SMP parts still pending.
