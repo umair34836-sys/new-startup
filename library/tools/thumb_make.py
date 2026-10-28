@@ -7,7 +7,7 @@
 #    "bg": {"image": "frame.png", "blur": 0, "darken": 0.25, "saturate": 1.2, "zoom": 1.0, "pos": "50% 40%"}
 #          or {"gradient": ["#0b1020", "#3b0d5c"], "angle": 135},
 #    "vignette": 0.45,
-#    "subject": {"image": "cutout.png", "side": "right", "height": 0.95, "x": null, "stroke": 10,
+#    "subject": {"image": "cutout.png", "side": "right", "height": 0.95, "x": null, "bottom": 0, "stroke": 10,
 #                "stroke_color": "#ffffff", "glow": "#ffcc00", "flip": false},
 #    "texts": [{"text": "100 PLAYERS", "x": 0.05, "y": 0.08, "w": 0.55, "size": 150, "font": "Anton",
 #               "color": "#ffffff", "stroke": 14, "stroke_color": "#000000", "rotate": -3,
@@ -113,7 +113,8 @@ if s:
     pos = f"left:{s['x'] * W}px" if s.get("x") is not None else (f"{side}:{W * 0.02 - h * padf}px" if side in ("left", "right")
                                                                  else "left:50%;transform:translateX(-50%)")
     flip = "transform:scaleX(-1)" if s.get("flip") and "translateX" not in pos else ""
-    parts.append(f'<img class="subj" src="file://{src}" style="height:{h}px;bottom:{-h * padf}px;{pos};{flip}">')
+    bottom = s.get("bottom", 0) * H - h * padf  # "bottom": lift the subject off the bottom edge (fraction of H)
+    parts.append(f'<img class="subj" src="file://{src}" style="height:{h}px;bottom:{bottom}px;{pos};{flip}">')
 
 for c in spec.get("circles", []):
     r = c["r"] * W

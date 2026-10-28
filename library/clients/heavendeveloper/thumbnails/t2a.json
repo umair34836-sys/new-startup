@@ -1,0 +1,66 @@
+{
+ "size": "short",
+ "bg": {
+  "gradient": [
+   "#020203",
+   "#120d18",
+   "#241808"
+  ],
+  "angle": 175
+ },
+ "vignette": 0.5,
+ "stickers": [
+  {
+   "image": "../a/logo_circle.png",
+   "x": 0.39,
+   "y": 0.035,
+   "w": 0.22
+  },
+  {
+   "image": "../a/card_svc_top.png",
+   "x": 0.02,
+   "y": 0.4,
+   "w": 0.53,
+   "rotate": -7
+  },
+  {
+   "image": "../a/card_inv_top.png",
+   "x": 0.45,
+   "y": 0.385,
+   "w": 0.53,
+   "rotate": 7
+  },
+  {
+   "image": "../a/card_rev_top.png",
+   "x": 0.21,
+   "y": 0.585,
+   "w": 0.58,
+   "rotate": -2
+  }
+ ],
+ "texts": [
+  {
+   "text": "EVERYTHING",
+   "x": 0.03,
+   "y": 0.165,
+   "w": 0.94,
+   "size": 205,
+   "font": "Anton",
+   "align": "center",
+   "color": "#f7dc94",
+   "stroke": 0
+  },
+  {
+   "text": "INSIDE HEAVEN DEVELOPER",
+   "x": 0.05,
+   "y": 0.295,
+   "w": 0.9,
+   "size": 66,
+   "font": "Montserrat",
+   "weight": 900,
+   "align": "center",
+   "color": "#ffffff",
+   "stroke": 0
+  }
+ ]
+}
