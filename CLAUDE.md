@@ -356,6 +356,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - OWNER RULES 2026-10-26 (relayed from the main session, checked in main-branch CLAUDE.md): "next time se whatsapp copy
   mat dena" -> deliver ONLY the full-quality file unless asked; never commit site photos/screenshots (PakWebHoster's
   site/screens + assets were removed from git on 2026-10-26; re-make them per job in the scratchpad).
+- OWNER RULE 2026-10-28 (main branch commit 633bf73, checked): field voice `promo-male` is BANNED in every session.
+  PakWebHoster reels used the `default` voice (not affected).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
