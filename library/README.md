@@ -65,6 +65,8 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 
 ## Templates (`templates/`)
 
+- `templates/thumbnail/`: YouTube 16:9 thumbnail, 9:16 Shorts cover and 1:1 poster specs for tools/thumb_make.py (README: workflow + timings).
+
 - `brand-identity-reveal/`: 16:9 ~30 s music-only brand identity / guidelines film driven by one reveal.json (logo construction
   from the real traced mark via mark_to_svg.py, lockup, browser/phone mockups, stacked page cards, typography, colour
   swatches, stat widgets, price chart, photo inserts, social post, end logo; scenes counted in beats from the music drop).
@@ -126,6 +128,7 @@ License" and every font family has an OFL .txt here). Load with `@font-face { sr
 
 - `GreatVibes-Regular.ttf`: elegant script for names and romantic titles.
 - `PlayfairDisplay-Italic.ttf`: serif italic for captions.
+- Thumbnail fonts (added 2026-10-28 from github.com/google/fonts, licence files beside them): `BebasNeue-Regular.ttf` (+ `OFL-BebasNeue.txt`), `LuckiestGuy-Regular.ttf` (+ `Apache-LuckiestGuy.txt`, Apache-2.0), `Bangers-Regular.ttf` (+ `OFL-Bangers.txt`), `Montserrat-Variable.ttf` (+ `OFL-Montserrat.txt`, wght 100-900). Used by tools/thumb_make.py.
 - `NotoSerif-Variable.ttf` (+ `OFL-NotoSerif.txt`, SIL OFL 1.1): Latin serif, wght 100-900, from github.com/google/fonts ofl/notoserif
   (downloaded 2026-10-28, 1,887,192 bytes); first used for the Bhupendra portfolio video (site --serif stack).
 - Urdu/Pashto/Hindi (specialist D, Oct 24 2026; see library/research/urdu-captions.md): `NotoNastaliqUrdu-Variable.ttf`,
@@ -199,6 +202,7 @@ Search: `python3 tools/find_stock.py "<words>" [--sfx|--lut|--all] [--vertical]`
 | `romance_synth.py` | `python3 romance_synth.py out.wav`: the numpy piano/strings track, no installs needed. |
 | `voice_over_music.py` | `python3 voice_over_music.py spec.json out.wav`: places voice lines (cut from one take by transcript word timings) at chosen film times, speeds a line up only if it overruns, polishes the voice, ducks the bed 8 dB under it and sets the voice 5.5 dB over the bed. Spec format is in the file header. |
 | `find_music.py` | `python3 find_music.py "<video type / mood>" [--length 30] [--client] [--vo] [--drop] [--platform youtube]`: ranks catalogue tracks for a video (type tag, energy, tempo band, steady grid, real ending, drop, fast intro, steady level under VO) and prints why each fits / what to watch. Licence filters: client = CC0/PD only, YT Audio Library only for YouTube, own tracks only with --own, vocals never under a VO. Skill music-for-video. |
+| `thumb_frames.py` / `thumb_cutout.py` / `thumb_make.py` / `thumb_check.py` | Thumbnails, covers, posters (2026-10-28): pick the best frames (sharpness, exposure, face size + expression via MediaPipe FaceLandmarker; perc-venv), cut the person out (rembg u2net_human_seg; venv), build from a JSON spec (bg blur/darken or gradient, outlined cutout + glow, outlined text with accent word or box, emoji/stickers, arrows, circles, badge; Node Playwright -> PNG + JPG < 2 MB), and check size/ratio, served-size previews and text contrast. Skill thumbnail-design; template templates/thumbnail; research research/design-tools.md. |
 | `fetch_free_music.py` | `python3 fetch_free_music.py "<words>" --category <catalogue category> [--n 5] [--genre Ambient] [--min-sec 60 --max-sec 240] [--any-artist] [--dry-run]`: fetches NO-CREDIT music from the Free Music Archive (public-domain filter) into `music/cc0`: re-reads every track page and keeps only CC0 1.0 / PD-mark licence links (no licenses/by), only artists who release everything CC0 unless --any-artist, re-encodes to 160 kbps, adds index.json + README rows; then `music_catalogue.py --only <file>` measures it for find_music.py. Research: research/music-fetch-tools.md. |
 | `ia` (CLI) | Internet Archive's own command-line tool (`ia search`, `ia download`; pip internetarchive, setup-all light). archive.org licence tags are set by uploaders and are often wrong: never use them as proof. |
 | `music_fit.py` | perc-venv: cuts/stitches a track to an EXACT length on downbeat->downbeat joins (40 ms equal-power, snapped to the onset), loops by 4-bar phrases, `--drop-at T` lands the measured drop on T, `--end resolve` keeps the real ending (loops/fade-outs end on a downbeat hit + ring-out), `--check` re-measures beat phase across each join. |

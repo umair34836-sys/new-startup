@@ -19,6 +19,9 @@ Read this first in every session.
      MORE MUSIC (owner 2026-10-27, "GitHub per tools dondhoo ... songs or musics la ker dingay"): fetch no-credit tracks with
      `library/tools/fetch_free_music.py "<words>" --category <cat>` (FMA CC0/PD, licence re-read per page) + `ia` CLI;
      song rippers (musicdl, spotDL) are rejected (copyrighted). Findings: library/research/music-fetch-tools.md.
+     THUMBNAILS / COVERS / POSTERS (owner 2026-10-28, "install tools skills for designing ... tumbnails for art"): skill
+     `.claude/skills/thumbnail-design` (thumb_frames.py -> thumb_cutout.py -> thumb_make.py -> thumb_check.py; template
+     library/templates/thumbnail; rules library/research/editing/skills2/16-thumbnails.md; tools research/design-tools.md).
   If the repo has nothing for a step, say so to the owner, use a verified source (with reference), and save what worked
   back to the repo. In the delivery message, name the template/skills/tools used.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable
