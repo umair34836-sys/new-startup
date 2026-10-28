@@ -5,7 +5,7 @@ So there is NO default voice any more. Running `vs_tts.py` without `--voice` lis
 
 Pick the voice by the kind of video:
 
-    python3 library/tools/vs_tts.py script.txt out.wav --voice promo-male
+    python3 library/tools/vs_tts.py script.txt out.wav --voice promo-female
 
 ## Field voices
 
@@ -16,7 +16,7 @@ These 10 are AI-designed with VoxCPM2 voice design (Apache-2.0, OK for client/pa
 
 | Voice | Use it for | Reference line | f0 | Whisper |
 |---|---|---|---|---|
-| `promo-male` | hosting / business / app promos, offers, ads (male) | अब शुरू करें, सिर्फ़ एक क्लिक में। | 240 Hz | 0.78 |
+| ~~`promo-male`~~ BANNED (owner 2026-10-28: never use in any session) | hosting / business / app promos, offers, ads (male) | अब शुरू करें, सिर्फ़ एक क्लिक में। | 240 Hz | 0.78 |
 | `promo-female` | offers, shopping, salon, brand promos (female) | आज ही ऑर्डर करें और पाएं ख़ास ऑफ़र। | 272 Hz | 0.73 |
 | `tutorial-calm` | tutorials, screen recordings, step-by-step guides | पहले इस बटन पर क्लिक कीजिए, फिर आगे बढ़िए। | 120 Hz | 0.70 |
 | `explainer-pro` | explainers, corporate, product walk-throughs (female) | यह प्लान आपके बिज़नेस के लिए बनाया गया है। | 212 Hz | 0.90 |
