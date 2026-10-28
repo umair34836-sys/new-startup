@@ -12,3 +12,11 @@ Inputs:
 - Google search screen recording 2026-10-27 23-34-30.mp4 — 12yBLfTxrN9RkarWj_5e60lc4q6aRi5cF, 26.9 s, 1920x1080, 60 fps
   (browser in dark mode with the desktop taskbar visible: crop to the page).
 - MISSING (asked the owner 2026-10-28): GTA 5 gameplay footage (city, driving, missions, Franklin / Michael / Trevor, wanted level).
+Transcript (Whisper medium, language hi, condition_on_previous_text=False, beam 5, word timestamps; measured here 2026-10-28,
+~39 min for the 453.5 s VO): vo-transcript-whisper-medium.txt + vo-segments-whisper-medium.json (956 words).
+- 331.1-361.1 s came back as a hallucinated "ॐ ॐ ॐ" run (tips 1-3): re-transcribed alone.
+- Retakes heard: "aur dekho kitne saare results" (60.5, 64.9), Minecraft resource pack line (237.1, 246.5),
+  "compression nahi hai" (257.0, 259.9, 262.5), installer/launcher line (279.8, 283.3), cloud gaming line (288.9, 295.8),
+  "to bhai, file size dekh ke" (310.4, 311.6, 314.0, 316.0), "video kholne ke baad" (391.3, 395.4).
+- The VO speaks scene headings in English: "Now the installation trap" (129.2), "Why 10MB GTA5 doesn't make sense" (206.1),
+  "How to stay safe" (321.9).
