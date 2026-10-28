@@ -362,7 +362,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 ## Sub-sessions (Oct 24 2026)
 - ARCHIVED Oct 24 2026 (owner asked; all work merged): Self-study, Specialists A-D, Audit 1 + Audit 2 sessions.
-  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo client sessions + the owner's Personal session.
+  Their branches stay on GitHub. Active: FireCraft tutorial, SkilloraClouds v3, MoradoSolution, PakWebHoster, Pizza Base PK, Mr Aloo, Korba, Hostlixo, Heaven Developer client sessions + the owner's Personal session.
 - Self-study DONE + merged (Oct 24 2026): library/research/editing/ (decision-guide.md: 29 video types -> how to edit;
   skills/01-06: 560 cited skills; from-scratch.md) + skill .claude/skills/video-edit-playbook. READ decision-guide.md
   before editing any new video.
@@ -442,6 +442,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   OWNER RULES for this job: 30 s promo from website data only; owner's copyright in the video (watermark.py; ask visible
   tiled vs corner credit); NOT the default voice: a new professional promotional AI voice (VoxCPM2 design, samples to the
   owner first, saved as "hostlixo-promo"); real elements from the site (logo, screenshots, icons) over emojis.
+
+- Client Heaven Developer home session (owner wrote "heaven devolpur", 2026-10-28): session_01JK8Ts8hnNQ61GDZt5FVxhy
+  (branch client-heavendeveloper). Nothing known yet: the session first asks the owner for name, links, video type, inputs;
+  brief will be library/clients/heavendeveloper/brief.md. New client: ask about watermarked previews.
 
 - Client PakWebHoster (pakwebhoster.com) home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster,
   Oct 25 2026). Full crawl + brief: library/clients/pakwebhoster/ (site-data.md lists contradictions to ask about).
