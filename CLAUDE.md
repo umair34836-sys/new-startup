@@ -456,8 +456,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 
 - Client AethelGrid (hosting; site https://aethelgrid.cloud/, panel https://gp.aethelgrid.cloud/) home session:
   session_01JK8Ts8oyBGZKRH6CAr36yA (branch client-aethelgrid, 2026-10-28). Client brief (verbatim): "so we want a 60 sec
-  video showing the core features of our host including site and panel". Panel likely needs a login: never create
-  accounts; ask the owner for a demo login / client recording. New client: ask about watermarked previews.
+  video showing the core features of our host including site and panel". 60 s 9:16 Hindi PREVIEW (watermarked) delivered
+  2026-10-28 from new template library/templates/site-panel-reel (voice explainer-pro, CC0 "People Are Spinning").
+  Panel = public Pterodactyl login page + the site's own panel image only (owner's choice; inside of panel never seen).
+  Learnings (measured 2026-10-28): screen_recorder.js scrollTo takes CSS selectors only (the flow has its own scroll helper);
+  CSS zoom 2.5 on a 1080 px window broke layouts (media queries still see 1080), zoom 1.4 was fine; render -17.7 LUFS ->
+  +2.4 dB + alimiter 0.79 = -15.3 LUFS / -1.6 dBTP. TTS misheard the brand ("एथेलग्रिड") and "चौबीसों": keep them on screen.
 
 - Client PakWebHoster (pakwebhoster.com) home session: session_01Kmr9yVm1eY9vB1qqC9R3R8 (branch client-pakwebhoster,
   Oct 25 2026). Full crawl + brief: library/clients/pakwebhoster/ (site-data.md lists contradictions to ask about).
