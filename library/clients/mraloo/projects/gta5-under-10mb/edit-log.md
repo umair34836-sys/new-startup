@@ -9,6 +9,9 @@ Every decision and its source:
 | Client VO 453.5 s: retakes removed (best take of each line, see README "Retakes heard"), cuts at the quietest 10 ms within +-0.15 s, 15 ms fades, 0.25 s between lines, inner pauses > 0.35 s trimmed -> 355.6 s | decision-guide (explainer), skills #4 jump cut, #289 dialogue compression; measured here |
 | Tempo 1.15x with rubberband (pitch kept) + loudnorm -16 -> 309.2 s (159 wpm) | owner chose "1.15x - 5:09" (2026-10-28); skills #188/#2348, #3864 |
 | Word times moved to the new clock through the cut map (orig -> new every 10 ms) / 1.15 | measured here |
+| Whisper medium on the final VO (2026-10-28) found two retakes still in: "haan ek baat samajhna zaroori" twice (191.7 / 193.9 s) and "bhai YouTube thumbnail" twice plus a lone "bhai" (252.4-256.6 s). Kept the later take of each, cut at the quietest 10 ms (cut2.py) -> 302.65 s; re-checked with Whisper (en + small hi passes) that both lines are whole | VERIFIED ONLY rule; measured here |
+| Caption "kisi ke paas GTA V Ultra Lite hai": Whisper heard "के बाद" / "kisi ka bha" (hi / en); the client script line is "kisi ke paas GTA 5 Ultra Lite". One word before "cloud gaming" (~264.7 s) stayed unclear in three passes ("legendary", "लेजरी", "लैजीरी") and is left out of the caption | VERIFIED ONLY (never invent words) |
+| Music section times shifted with the cuts (mood_bed.py), stops kept before "lekin bhai" and the punchline | as above |
 
 ## Music and SFX
 | Decision | Source |

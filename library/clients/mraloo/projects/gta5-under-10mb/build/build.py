@@ -785,7 +785,7 @@ for k, (a, b, name, sub, h0, h1) in enumerate(BUMP):
                 f'<div style="position:absolute;inset:0;background:{INK};"></div>'
                 f'<div id="gb{k}n" style="position:absolute;inset:-60px;background:repeating-linear-gradient(0deg, rgba(255,255,255,0.09) 0 2px, transparent 2px 4px),'
                 f'repeating-linear-gradient(90deg, rgba(255,46,136,0.07) 0 3px, transparent 3px 9px);"></div>'
-                f'<div style="position:absolute;left:0;right:0;top:320px;text-align:center;"><span style="display:inline-block;padding:10px 30px;border-radius:12px;background:{PINK};'
+                f'<div data-layout-allow-overlap style="position:absolute;left:0;right:0;top:320px;text-align:center;"><span style="display:inline-block;padding:10px 30px;border-radius:12px;background:{PINK};'
                 f'font-family:Jakarta;font-weight:800;font-size:44px;color:#fff;letter-spacing:6px;">{sub}</span></div>'
                 f'<div id="gb{k}r" style="position:absolute;inset:0;opacity:0;mix-blend-mode:screen;">{sp("#ff1744", f"gb{k}rl")}</div>'
                 f'<div id="gb{k}c" style="position:absolute;inset:0;opacity:0;mix-blend-mode:screen;">{sp("#00e5ff", f"gb{k}cl")}</div>'

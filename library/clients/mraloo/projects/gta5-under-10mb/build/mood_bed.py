@@ -5,16 +5,16 @@
 # skill #2035) and before the roast punchline; whole bed sidechain-ducked under the VO (skills #316/#317).
 import json, subprocess
 D = "../../odrive"
-TOTAL = 311.0
+TOTAL = 304.3   # VO 302.65 s after the second retake pass (cut2.py) + outro tail
 SEG = [  # (track, source in-point, timeline start, timeline end, why)
     ("euphoria", 0.0, 0.0, 27.5, "hook: energetic (upbeat folder)"),
     ("apocalyptic-echoes", 0.0, 33.3, 43.4, "after the scam reveal: low suspense under 'tension zaroor mil sakti hai'"),
     ("silly-snickerdoodle", 0.0, 43.4, 101.8, "scene 2 fake tutorial: playful (funny folder, 99 BPM)"),
     ("pouncin-bouncin", 0.0, 101.8, 160.4, "scene 3 permissions: comic suspense (funny folder, tense/driving)"),
-    ("demented-90s", 7.5, 160.4, 215.4, "scene 4 reality check: light comedy (funny folder, bright/upbeat)"),
-    ("on-the-flip", 21.4, 215.4, 276.5, "scene 5 safety tips: calm (lofi folder, calm/warm)"),
-    ("challenge-accepted", 0.0, 276.5, 293.8, "scene 6 roast: dramatic build-up (suspense folder), stops before the punchline"),
-    ("euphoria", 60.0, 296.6, TOTAL, "outro: back to the opening energy"),
+    ("demented-90s", 7.5, 160.4, 212.97, "scene 4 reality check: light comedy (funny folder, bright/upbeat)"),
+    ("on-the-flip", 21.4, 212.97, 269.96, "scene 5 safety tips: calm (lofi folder, calm/warm)"),
+    ("challenge-accepted", 0.0, 269.96, 287.26, "scene 6 roast: dramatic build-up (suspense folder), stops before the punchline"),
+    ("euphoria", 60.0, 290.06, TOTAL, "outro: back to the opening energy"),
 ]
 X = 0.8
 parts = []
