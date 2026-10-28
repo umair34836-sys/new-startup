@@ -4,9 +4,15 @@
   including site and panel"
 - Site: https://aethelgrid.cloud/ - Panel: https://gp.aethelgrid.cloud/
 - Job: ~60 s video, core features of the host, from BOTH the website and the panel.
-- Status 2026-10-28: site crawled (facts: site-data.md). Panel = public login page only (Pterodactyl + Blueprint,
-  "Powered by Nebula" theme); inside of the panel NOT seen. Waiting for the owner: format (9:16/16:9), VO or
-  music+text (language), watermarked previews?, and panel access (demo login / client recording / login page only).
+- Site crawled 2026-10-28 (facts: site-data.md). Panel = public login page only (Pterodactyl + Blueprint,
+  "Powered by Nebula" theme); inside of the panel NOT seen.
+- OWNER CHOICES 2026-10-28: panel = show only the public login page + the site's own panel image (experience.png);
+  9:16; Hindi VO + CC0 music; watermarked PREVIEW until payment. Script (13 lines) approved 2026-10-28
+  (template library/templates/site-panel-reel/: flow_aethelgrid.js records, build_aethelgrid.py builds).
+- Voice: first run used `promo-male`; stopped after 4 lines when the main session relayed the owner's ban on it
+  (2026-10-28, commit 633bf73). Samples of explainer-pro / news-anchor / tutorial-calm go to the owner to pick.
+- Music: CC0 "People Are Spinning" (Loyalty Freak Music): listen.py 110 BPM, G major, bright/upbeat, drop/full sound
+  from 17.4 s. Rejected "Monarch of the Street" (top find_music score, but listen.py: D minor, sad/reflective).
 - New client: ask before sending a clean file (watermark rule for unpaid clients).
 - Never create an account, log in with guessed data, submit a form or press "Order Now" on this site.
 
