@@ -1,4 +1,4 @@
-# Heaven Developer FULL promo: 9:16, one scene per VO line (19 lines), every promotional fact in the client's Discord
+# Heaven Developer FULL promo: 9:16, one scene per VO line (24 lines; 2 recordings), every promotional fact in the client's Discord
 # server (owner 2026-10-28: "everything cover kro, her ek chote se choti jizz"). Free VoxCPM2 English VO, field voice
 # explainer-pro. Facts + frame times: library/clients/heavendeveloper/brief.md; log: edit-log-full-v1.md.
 # Same look as build_heavendeveloper.py (black + gold logo, Discord blurple). Needs in the project (scratchpad, never git):
@@ -244,8 +244,27 @@ POPS += [W[k][0] + rel(i, 0.35 + j * 0.2) for j in range(3)]
 # 11 premium perks
 feature(10, "PREMIUM PLAN", "crown", "PREMIUM", ["Priority queue", "Faster delivery", "Direct support", "Free minor revisions"], "pricing.jpg", int(1010 * 780 / 748), 260)
 
-# 12 invite rewards
-i = 11; k = "s12"; d = d_of(i)
+# 12 premium lounge (recording 2, #premium-lounge)
+feature(11, "PREMIUM • PRIVATE CHANNEL", "crown", "PREMIUM<br>LOUNGE", ["Premium members only", "Early looks", "Priority talk", "Direct access to the team"], "lounge.jpg", 0, 330, title_px=90)
+
+# 13 ordering flow (#create-ticket "HEAVEN ORDERS & SUPPORT"): 3 steps + the real orders banner
+i = 12; k = "s13"; d = d_of(i)
+OS = [("check", "1", "Choose"), ("term", "2", "Fill the form"), ("ticket", "3", "Private ticket")]
+osteps = "".join(f'<div class="card" id="{k}-k{j}" style="position:absolute;left:90px;top:{430 + j * 190}px;width:900px;height:160px;display:flex;align-items:center;gap:30px;padding:0 36px;">'
+                 f'<div class="h gold" style="font-size:90px;width:70px;">{n}</div>{icon(ic, 52)}<div class="h" style="font-size:58px;">{t}</div></div>' for j, (ic, n, t) in enumerate(OS))
+C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
+      <div class="c" style="top:250px;"><span class="lab">HEAVEN ORDERS &amp; SUPPORT</span></div>
+      <div class="c h" style="top:320px;font-size:72px;">ORDERING IS EASY</div>
+      {osteps}
+      <div class="shot" id="{k}-shot" style="position:absolute;left:110px;top:1010px;width:860px;height:327px;"><img src="assets/img/orders.jpg" style="width:860px;height:327px;" alt="Heaven Developer orders banner"></div>
+    </div>""",
+            enter_exit(f"#{k}-w", d) +
+            "".join(f'    tl.fromTo("#{k}-k{j}", {{ x: {-900 if j % 2 == 0 else 900}, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.35, ease: "power3.out" }}, {rel(i, 0.3 + j * 0.22):.2f});\n' for j in range(3)) +
+            f'    tl.fromTo("#{k}-shot", {{ y: 240, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, 0.15);\n')
+POPS += [W[k][0] + rel(i, 0.3 + j * 0.22) for j in range(3)]
+
+# 16 invite rewards
+i = 15; k = "s16"; d = d_of(i)
 C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
       <div class="c" style="top:250px;display:flex;justify-content:center;" id="{k}-ic">{icon("gift", 90)}</div>
       <div class="c" style="top:420px;"><span class="lab">FREE ACCESS: INVITE REWARDS</span></div>
@@ -262,8 +281,11 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
             f'    tl.fromTo("#{k}-n", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {rel(i, 0.8)});\n')
 SPECIAL += [("sparkle", W[k][0] + rel(i, 0.1), 0.35), ("pop-high", W[k][0] + rel(i, 0.62), 0.35)]
 
-# 13 how invites count: three stat tiles
-i = 12; k = "s13"; d = d_of(i)
+# 17 invite tracker buttons (#invite-rewards)
+feature(16, "INVITE TRACKER", "users", "TRACK YOUR<br>INVITES", ["My progress", "My invite link", "Leaderboard"], "invite.jpg", int(1340 * 780 / 748), 210, title_px=96)
+
+# 18 how invites count: three stat tiles
+i = 17; k = "s18"; d = d_of(i)
 TL = [("clock", "7 DAYS", "invited member stays at least"), ("users", "30 DAYS", "account at least this old"), ("shield", "NO ALTS", "fake or alt accounts are disqualified")]
 tiles = "".join(f'<div class="card" id="{k}-t{j}" style="position:absolute;left:90px;top:{460 + j * 250}px;width:900px;height:220px;display:flex;align-items:center;gap:34px;padding:0 36px;">'
                 f'{icon(ic, 64)}<div><div class="h gold" style="font-size:80px;">{t}</div><div style="font-family:PS;font-size:34px;color:{GREY};">{s}</div></div></div>'
@@ -279,13 +301,34 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
 POPS += [W[k][0] + rel(i, 0.1 + j * 0.3) for j in range(3)]
 
 # 14 quote in ticket
-feature(13, "HOW ORDERING WORKS", "ticket", "A QUOTE IN YOUR<br>TICKET FIRST", ["Every order", "Quoted before work begins", "Final price depends on scope"], "pricing.jpg", int(1190 * 780 / 748), 250, title_px=84)
+feature(13, "BEFORE WORK BEGINS", "ticket", "A QUOTE IN YOUR<br>TICKET FIRST", ["Every order", "Quoted before work begins", "Final price depends on scope"], "pricing.jpg", int(1190 * 780 / 748), 250, title_px=84)
 
-# 15 safety
-feature(14, "SERVER RULES • SAFETY", "shield", "STAFF NEVER ASK<br>FOR PASSWORDS", ["No passwords", "No tokens", "Orders stay in tickets", "Honest invites only"], "rules.jpg", int(430 * 780 / 743), 300, title_px=84)
+# 15 support option in the order menu
+feature(14, "ALREADY A CLIENT?", "check", "SUPPORT", ["Help with an existing project", "Pick it in the order menu"], "dropdown.jpg", 560, 360, title_px=110)
 
-# 16 the Heaven bot
-i = 15; k = "s16"; d = d_of(i)
+# 20 safety
+feature(19, "SERVER RULES • SAFETY", "shield", "STAFF NEVER ASK<br>FOR PASSWORDS", ["No passwords", "No tokens", "Orders stay in tickets", "Honest invites only"], "rules.jpg", int(430 * 780 / 743), 300, title_px=84)
+
+# 19 security: verify to enter + honeypot channel
+i = 18; k = "s19"; d = d_of(i)
+C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
+      <div class="c" style="top:250px;"><span class="lab">SAFETY FIRST</span></div>
+      <div class="c" style="top:330px;display:flex;justify-content:center;">{icon("shield", 80)}</div>
+      <div class="c h gold" style="top:470px;font-size:80px;">VERIFY TO ENTER</div>
+      <div class="shot" id="{k}-a" style="position:absolute;left:90px;top:580px;width:430px;height:350px;background:#fff;"><img src="assets/img/verify.jpg" style="width:430px;" alt="verify post"></div>
+      <div class="shot" id="{k}-b" style="position:absolute;left:560px;top:580px;width:430px;height:350px;background:#fff;"><img src="assets/img/honeypot.jpg" style="width:430px;" alt="honeypot post"></div>
+      <div class="c h" id="{k}-t" style="top:980px;font-size:66px;">HONEYPOT vs BAD BOTS</div>
+      <div class="c" id="{k}-s" style="top:1080px;font-family:PS;font-size:38px;color:{GREY};padding:0 90px;">Post there: message deleted, recent messages bulk-removed, banned.</div>
+    </div>""",
+            enter_exit(f"#{k}-w", d) +
+            f'    tl.fromTo("#{k}-a", {{ x: -600, rotation: -6, opacity: 0 }}, {{ x: 0, rotation: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, {rel(i, 0.15)});\n'
+            f'    tl.fromTo("#{k}-b", {{ x: 600, rotation: 6, opacity: 0 }}, {{ x: 0, rotation: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, {rel(i, 0.55)});\n'
+            f'    tl.fromTo("#{k}-t", {{ scale: 0.6, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {rel(i, 0.6)});\n'
+            f'    tl.fromTo("#{k}-s", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {rel(i, 0.75)});\n')
+SPECIAL.append(("impact-boom", W[k][0] + rel(i, 0.6), 0.25))
+
+# 21 the Heaven bot
+i = 20; k = "s21"; d = d_of(i)
 C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
       <div class="c" style="top:250px;"><span class="lab">@HEAVEN • BOT PORTFOLIO</span></div>
       <div id="{k}-logo" style="position:absolute;left:390px;top:340px;width:300px;height:300px;border-radius:50%;overflow:hidden;border:4px solid {GOLD};box-shadow:0 0 70px rgba(226,184,92,0.5);"><img src="assets/img/logo.jpg" style="width:306px;height:301px;margin:-2px 0 0 -3px;" alt="Heaven bot"></div>
@@ -300,8 +343,8 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
             f'    tl.fromTo("#{k}-shot", {{ y: 240, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, 0.3);\n')
 SPECIAL.append(("sparkle", W[k][0] + 0.1, 0.35))
 
-# 17 review
-i = 16; k = "s17"; d = d_of(i)
+# 22 review
+i = 21; k = "s22"; d = d_of(i)
 C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
       <div class="c" style="top:250px;"><span class="lab">CLIENT REVIEW</span></div>
       <div class="c" id="{k}-st" style="top:330px;font-family:PX;font-size:120px;color:{GOLD2};letter-spacing:10px;">★★★★★</div>
@@ -314,14 +357,14 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
             f'    tl.fromTo("#{k}-shot", {{ y: 260, rotation: 4, opacity: 0 }}, {{ y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, 0.25);\n')
 SPECIAL.append(("impact-boom", W[k][0] + 0.08, 0.3))
 
-# 18 members + boosts (count-up, skill #425)
-i = 17; k = "s18"; d = d_of(i)
+# 23 members + boosts (count-up, skill #425)
+i = 22; k = "s23"; d = d_of(i)
 C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
       <div class="c" style="top:300px;display:flex;justify-content:center;">{icon("users", 90)}</div>
       <div class="c h gold" id="{k}-n" style="top:470px;font-size:230px;letter-spacing:-4px;">0</div>
       <div class="c h" style="top:710px;font-size:90px;letter-spacing:10px;">MEMBERS</div>
       <div class="c" id="{k}-b" style="top:860px;display:flex;justify-content:center;gap:24px;">
-        <span class="chip"><i style="background:#f47fff;"></i>17 Boosts</span><span class="chip"><i></i>Server tag HD</span></div>
+        <span class="chip"><i style="background:#f47fff;"></i>17 Boosts</span><span class="chip"><i style="background:#f47fff;"></i>Level 3</span><span class="chip"><i></i>Tag HD</span></div>
     </div>""",
             enter_exit(f"#{k}-w", d) +
             '    const cnt = { v: 0 };\n'
@@ -329,8 +372,8 @@ C[k] = comp(k, f"""    <div id="{k}-w" style="position:absolute;inset:0;">
             f'    tl.fromTo("#{k}-n", {{ scale: 0.7 }}, {{ scale: 1, duration: 1.3, ease: "power2.out" }}, 0.1);\n'
             f'    tl.fromTo("#{k}-b", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.4 }}, {rel(i, 0.6)});\n')
 
-# 19 end card
-i = 18; k = "s19"; d = d_of(i)
+# 24 end card
+i = 23; k = "s24"; d = d_of(i)
 STEPS = [("ticket", "Open a ticket"), ("idea", "Share your idea"), ("check", "We deliver")]
 steps = "".join(f'<div id="{k}-k{j}" style="display:flex;flex-direction:column;align-items:center;gap:14px;width:290px;">{icon(ic, 60)}'
                 f'<div style="font-family:PB;font-weight:700;font-size:36px;color:#fff;">{n}</div></div>' for j, (ic, n) in enumerate(STEPS))

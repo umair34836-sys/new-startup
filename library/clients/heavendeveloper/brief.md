@@ -54,3 +54,29 @@ clean file after payment. Use recording frames/screens. Only promotional data; i
 ## Privacy when using frames
 Crop out the phone status bar, the server sidebar (other servers' icons) and the owner's own account bar; don't show
 other members' messages (ApexHunter, AZTEC, Zyro chat in #showcase).
+
+## Recording 2 (owner, 2026-10-28; Drive 1i-qsUX-PAOvc38rIv-dDH3OcEaQdr55p; 948x2160, 173.7 s; 4:43-4:46 PM)
+Read from frames on 2026-10-28 (time in the recording in brackets). Same server, more channels:
+- #do-not-post [~6 s, Bhupendra 10/20/2026]: "This channel is a restricted honeypot channel. Sending any message here will
+  trigger an automatic security response": message immediately deleted, recent messages across the server bulk-removed,
+  banned; "exists to detect unauthorized bots and bad-faith accounts".
+- #introduction [12-22 s]: founder intro ("Welcome To Heaven Developer Discord Server!"), Minecraft-focused creator, editor
+  and developer, YouTube channel Chrxsz; links DISCORD [HEAVEN DEVELOPER]: https://discord.gg/heavendeveloper.
+- #verify [~30 s, Heaven bot 10/20/2026]: "VERIFY TO ENTER - Press the button below to prove you're a real person. You'll
+  get the Member role and can chat right away. Accounts that don't verify in time are removed automatically." Button "Verify me".
+- #boosters [32-36 s]: boost messages "Heaven Developer has achieved Level 1! / Level 2! / Level 3!" (10/22/2026), and
+  "WE ARE ON 17 BOOSTS NOW" (10/23/2026). Boost goal bar 17/33.
+- #welcome [40-44 s]: welcome card "You are member #2521, Joined through an invite link" (for the owner's account).
+- #goodbye [~78 s]: "FAREWELL" card (joined date, stayed, "Members now 2520", "We hope to see you again.").
+- #invite-rewards [112-132 s]: buttons My progress / My invite link / Leaderboard; "Invite log" (Joins, Left, Fake,
+  Rejoins (7d), "3 more invites for a free small project"); "TOP INVITERS" list (other members' names: not shown in video).
+- #commands [~136 s]: "Use /invites me and more such every commands here".
+- PREMIUM category [144-158 s]: #premium-lounge "private channel. Premium members only. Early looks, priority talk and
+  direct access to the team"; #priority-support. STAFF category: staff-chat, ticket-logs, join-leave-logs, review-alerts,
+  bot-commands, mod-logs, security-logs. TICKETS category.
+- #create-ticket [162-170 s, Heaven bot 10/18/2026 8:48 AM]: "HEAVEN ORDERS & SUPPORT - Pick a service below and our team
+  handles the rest. 1 Choose >> 2 Fill the form >> 3 Get your private ticket. Free • Paid • Premium (priority)" + an orders
+  banner image; menu "Choose a service to start your order...": Website (Portfolios, business sites, web apps), Discord Bot
+  (Moderation, tickets, economy, dashboards), Minecraft Plugin (Gameplay, commands, GUIs, server systems), Minecraft Mod
+  (Custom items, blocks, mobs, mechanics), Texture Pack (Custom UI, items, blocks, full themes), Custom Request (Python,
+  Node.js, C++, automation, APIs), Support (Help with an existing project).
