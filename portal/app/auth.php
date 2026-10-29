@@ -77,21 +77,26 @@ function register_user(string $name, string $email, string $phone, string $pw, s
         'phone' => $phone ?: null,
         'password_hash' => hash_password($pw),
         'role' => 'client',
-        'status' => 'active',
+        // Only paid clients use the portal (owner, 2026-10-29): new accounts wait for the owner's approval.
+        'status' => setting('signup_approval') === '1' ? 'pending' : 'active',
         'currency' => $currency,
         'created_at' => now(),
     ]);
     return ['id' => $id];
 }
 
-function attempt_login(string $email, string $pw): bool
+/** Returns 'ok', 'bad' (wrong email or password) or 'pending' (right password, not approved yet). */
+function attempt_login(string $email, string $pw): string
 {
     $u = row('SELECT * FROM users WHERE email = ?', [strtolower(trim($email))]);
-    // Verify against a dummy hash when the user is missing, so timing does not reveal accounts.
-    $hash = $u['password_hash'] ?? '$2y$10$usesomesillystringfore7hnbRJHxXVLeakoG8K30oukPsA.ztMG';
+    // Verify against a dummy hash of the same algorithm when the user is missing, so timing does not reveal accounts.
+    $hash = $u['password_hash'] ?? dummy_hash();
     $ok = password_verify($pw, $hash);
-    if (!$u || !$ok || $u['status'] !== 'active') {
-        return false;
+    if (!$u || !$ok || $u['status'] === 'blocked') {
+        return 'bad';
+    }
+    if ($u['status'] !== 'active') {
+        return 'pending';
     }
     if (password_needs_rehash($u['password_hash'], defined('PASSWORD_ARGON2ID') ? PASSWORD_ARGON2ID : PASSWORD_BCRYPT)) {
         update('users', ['password_hash' => hash_password($pw)], 'id = ?', [$u['id']]);
@@ -100,7 +105,17 @@ function attempt_login(string $email, string $pw): bool
     $_SESSION['uid'] = (int) $u['id'];
     unset($_SESSION['csrf']);
     update('users', ['last_login_at' => now()], 'id = ?', [$u['id']]);
-    return true;
+    return 'ok';
+}
+
+function dummy_hash(): string
+{
+    $h = setting('dummy_hash');
+    if ($h === '') {
+        $h = hash_password(bin2hex(random_bytes(16)));
+        set_setting('dummy_hash', $h);
+    }
+    return $h;
 }
 
 function logout(): void

@@ -49,7 +49,7 @@ function route_api(string $m, string $path): void
 
     if (preg_match('#^/files/(\d+)$#', $path, $mm) && $m === 'GET') {
         $f = row('SELECT * FROM files WHERE id = ?', [(int) $mm[1]]) ?? json_out(['error' => 'not found'], 404);
-        send_file($f, true);
+        send_file($f, true, 'bridge', 3);
     }
 
     if ($path === '/upload/init' && $m === 'POST') {

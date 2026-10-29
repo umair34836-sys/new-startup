@@ -1,4 +1,5 @@
 <?php $title = 'Orders'; ?>
+<?php if ($waiting): ?><p class="notice reveal"><a href="<?= e(base_url('admin/clients')) ?>"><?= (int) $waiting ?> new account(s) waiting for your approval</a></p><?php endif; ?>
 <div class="head-row reveal"><h1>Orders</h1>
   <span class="muted"><?= (int) $pending ?> open bridge event(s)</span></div>
 <nav class="tabs reveal">

@@ -2,6 +2,17 @@
 // Loads config, opens the database, starts the session and defines small helpers.
 declare(strict_types=1);
 
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+set_exception_handler(function (Throwable $ex): void {
+    error_log('portal: ' . $ex);
+    if (!headers_sent()) {
+        http_response_code(500);
+        header('Content-Type: text/plain; charset=utf-8');
+    }
+    echo 'Something went wrong. Please try again in a minute.';
+});
+
 define('APP_ROOT', dirname(__DIR__));
 define('APP_DIR', __DIR__);
 

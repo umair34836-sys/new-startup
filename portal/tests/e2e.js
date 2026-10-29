@@ -29,7 +29,7 @@ async function shot(page, name) {
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
   const page = await ctx.newPage();
   const consoleErrors = [];
-  page.on('console', (m) => { if (m.type() === 'error' && !/icons|favicon|404|status of 40[03]/.test(m.text())) consoleErrors.push(m.text()); });
+  page.on('console', (m) => { if (m.type() === 'error' && !/icons|favicon|404|status of 40[039]/.test(m.text())) consoleErrors.push(m.text()); });
 
   // 1. Client signs up.
   await page.goto(BASE + '/');
@@ -40,7 +40,31 @@ async function shot(page, name) {
   await page.fill('input[name=phone]', '0300 0000000');
   await page.fill('input[name=password]', 'clientpass123');
   await page.click('button:has-text("Create account")');
-  check(page.url().endsWith('/orders'), 'register -> orders page');
+  check(page.url().endsWith('/login') && (await page.textContent('.notice')).includes('approve'), 'register -> waits for approval');
+  await page.fill('input[name=email]', 'client1@example.com');
+  await page.fill('input[name=password]', 'clientpass123');
+  await page.click('button:has-text("Log in")');
+  check((await page.textContent('.notice')).includes('waiting for approval'), 'pending account cannot log in yet');
+
+  // Owner approves the new client.
+  const pa = await (await browser.newContext({ viewport: { width: 1280, height: 900 } })).newPage();
+  await pa.goto(BASE + '/login');
+  await pa.fill('input[name=email]', 'owner@example.com');
+  await pa.fill('input[name=password]', 'ownerpass123');
+  await pa.click('button:has-text("Log in")');
+  check(pa.url().endsWith('/admin'), 'admin lands on admin orders');
+  check((await pa.textContent('.notice')).includes('waiting for your approval'), 'admin sees the waiting account');
+  async function approve(email) {
+    await pa.goto(BASE + '/admin/clients');
+    const r = pa.locator('form.client-row', { hasText: email });
+    await r.locator('select[name=status]').selectOption('active');
+    await r.locator('button:has-text("Save")').click();
+  }
+  await approve('client1@example.com');
+  await page.fill('input[name=email]', 'client1@example.com');
+  await page.fill('input[name=password]', 'clientpass123');
+  await page.click('button:has-text("Log in")');
+  check(page.url().endsWith('/orders'), 'approved client logs in -> orders page');
 
   // 2. New order with uploads and questionnaire.
   await page.click('button:has-text("New video order")');
@@ -114,6 +138,10 @@ async function shot(page, name) {
   await p2.fill('input[name=email]', 'client2@example.com');
   await p2.fill('input[name=password]', 'clientpass456');
   await p2.click('button:has-text("Create account")');
+  await approve('client2@example.com');
+  await p2.fill('input[name=email]', 'client2@example.com');
+  await p2.fill('input[name=password]', 'clientpass456');
+  await p2.click('button:has-text("Log in")');
   const other = await p2.goto(BASE + '/orders/' + orderId);
   check(other.status() === 404, "another client cannot open this order (404)");
   const fileId = dl.files[0].id;
@@ -128,13 +156,23 @@ async function shot(page, name) {
   const storage = await p2.request.get(BASE + '/../storage/install-key.txt');
   check(storage.status() === 404, 'storage folder is not served (404)');
 
+  // Parallel chunks at the same offset: only one may be written (file must not grow past its size).
+  const race = await page.evaluate(async ([base]) => {
+    const csrf = document.body.dataset.csrf;
+    const h = { 'X-CSRF-Token': csrf };
+    const nr = await fetch(base + '/orders/new', { method: 'POST', body: new URLSearchParams({ _csrf: csrf }) });
+    const oid = Number(nr.url.split('/').pop());
+    const init = await (await fetch(base + '/upload/init', { method: 'POST', headers: { ...h, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_id: oid, name: 'race.txt', size: 1000 }) })).json();
+    const body = new Uint8Array(1000).fill(65);
+    const rs = await Promise.all([0, 1, 2, 3, 4].map(() => fetch(base + '/upload/chunk?token=' + init.token + '&offset=0',
+      { method: 'POST', headers: { ...h, 'Content-Type': 'application/octet-stream' }, body }).then((r) => r.json())));
+    return rs.map((r) => r.received);
+  }, [BASE]);
+  check(race.every((r) => r === 1000), 'parallel chunk race: file stays exactly 1000 bytes (' + race.join(',') + ')');
+
   // 7. Admin sets a client rate.
-  const pa = await (await browser.newContext({ viewport: { width: 1280, height: 900 } })).newPage();
-  await pa.goto(BASE + '/login');
-  await pa.fill('input[name=email]', 'owner@example.com');
-  await pa.fill('input[name=password]', 'ownerpass123');
-  await pa.click('button:has-text("Log in")');
-  check(pa.url().endsWith('/admin'), 'admin lands on admin orders');
+  await pa.goto(BASE + '/admin');
   await shot(pa, '06-admin-orders');
   await pa.goto(BASE + '/admin/clients');
   const row = pa.locator('form.client-row', { hasText: 'client1@example.com' });

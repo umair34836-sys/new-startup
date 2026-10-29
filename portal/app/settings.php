@@ -10,6 +10,8 @@ const SETTING_DEFAULTS = [
     'rate_usd' => '0.20',
     'max_file_mb' => '4096',
     'max_files_per_order' => '60',
+    'quota_gb' => '50',
+    'signup_approval' => '1',
     'bridge_token_hash' => '',
 ];
 

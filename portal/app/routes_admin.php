@@ -16,7 +16,8 @@ function route_admin(string $m, string $path): void
             $counts[$r['status']] = (int) $r['c'];
         }
         $pending = (int) row('SELECT COUNT(*) AS c FROM events WHERE done_at IS NULL')['c'];
-        view('admin/orders', compact('admin', 'orders', 'counts', 'status', 'pending'));
+        $waiting = (int) row("SELECT COUNT(*) AS c FROM users WHERE status = 'pending'")['c'];
+        view('admin/orders', compact('admin', 'orders', 'counts', 'status', 'pending', 'waiting'));
         exit;
     }
 
@@ -65,7 +66,7 @@ function route_admin(string $m, string $path): void
     }
 
     if ($path === '/admin/clients') {
-        $clients = rows("SELECT u.*, (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id AND o.status <> 'draft') AS order_count FROM users u WHERE u.role = 'client' ORDER BY u.created_at DESC");
+        $clients = rows("SELECT u.*, (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id AND o.status <> 'draft') AS order_count FROM users u WHERE u.role = 'client' ORDER BY (u.status = 'pending') DESC, u.created_at DESC");
         view('admin/clients', compact('admin', 'clients'));
         exit;
     }
@@ -77,7 +78,7 @@ function route_admin(string $m, string $path): void
             'rate_pkr' => $num('rate_pkr'),
             'rate_usd' => $num('rate_usd'),
             'currency' => in_array(post('currency'), ['PKR', 'USD'], true) ? post('currency') : $c['currency'],
-            'status' => post('status') === 'blocked' ? 'blocked' : 'active',
+            'status' => in_array(post('status'), ['active', 'pending', 'blocked'], true) ? post('status') : $c['status'],
             'claude_session' => preg_match('/^[A-Za-z0-9_-]{0,120}$/', post('claude_session')) ? (post('claude_session') ?: null) : $c['claude_session'],
             'admin_note' => mb_substr(post('admin_note'), 0, 2000),
         ], 'id = ?', [$c['id']]);
@@ -100,6 +101,8 @@ function route_admin(string $m, string $path): void
                 }
                 set_setting('max_file_mb', (string) min(20480, max(10, (int) post('max_file_mb'))));
                 set_setting('max_files_per_order', (string) min(500, max(1, (int) post('max_files_per_order'))));
+                set_setting('quota_gb', (string) min(10000, max(1, (int) post('quota_gb'))));
+                set_setting('signup_approval', post('signup_approval') === '1' ? '1' : '0');
                 flash('Settings saved.');
                 redirect('admin/settings');
             }

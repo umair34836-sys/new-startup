@@ -35,10 +35,12 @@ function route_web(string $m, string $path): void
         $error = null;
         if ($m === 'POST') {
             rate_limit_or_abort("login:$ip", 10, 900);
-            if (attempt_login(post('email'), (string) ($_POST['password'] ?? ''))) {
+            rate_limit_or_abort('loginmail:' . strtolower(post('email')), 10, 900);
+            $r = attempt_login(post('email'), (string) ($_POST['password'] ?? ''));
+            if ($r === 'ok') {
                 redirect('/');
             }
-            $error = 'Wrong email or password.';
+            $error = $r === 'pending' ? 'Your account is waiting for approval. We will activate it soon.' : 'Wrong email or password.';
         }
         view('auth/login', ['error' => $error, 'email' => post('email')]);
         exit;
@@ -50,9 +52,12 @@ function route_web(string $m, string $path): void
             rate_limit_or_abort("register:$ip", 5, 3600);
             $r = register_user(post('name'), post('email'), post('phone'), (string) ($_POST['password'] ?? ''), post('currency'));
             if (isset($r['id'])) {
-                attempt_login(post('email'), (string) $_POST['password']);
-                flash('Welcome! Start your first video order.');
-                redirect('orders');
+                if (attempt_login(post('email'), (string) $_POST['password']) === 'ok') {
+                    flash('Welcome! Start your first video order.');
+                    redirect('orders');
+                }
+                flash('Account created. You can log in as soon as we approve it.');
+                redirect('login');
             }
             $errors = $r['errors'];
         }
@@ -156,8 +161,13 @@ function route_web(string $m, string $path): void
         if (!$f) {
             abort(404);
         }
-        order_for_user((int) $f['order_id'], $user);
-        send_file($f, !empty($mm[2]));
+        $o = order_for_user((int) $f['order_id'], $user);
+        // Clients see their own inputs and only outputs that were delivered as a version.
+        if ($user['role'] !== 'admin' && $f['kind'] === 'output' && !row('SELECT id FROM versions WHERE file_id = ?', [$f['id']])) {
+            abort(404);
+        }
+        rate_limit_or_abort("dl:{$user['id']}", 600, 3600);
+        send_file($f, !empty($mm[2]), 'u' . $user['id'], $user['role'] === 'admin' ? 4 : 2);
     }
 
     if (str_starts_with($path, '/upload/') && $m === 'POST') {

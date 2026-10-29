@@ -13,6 +13,10 @@ if (!is_file($keyFile)) {
     @chmod($keyFile, 0600);
 }
 $installKey = trim((string) @file_get_contents($keyFile));
+if (strlen($installKey) < 16) {
+    http_response_code(500);
+    exit('Could not create storage/install-key.txt. Make the storage folder writable and reload.');
+}
 
 $checks = [
     'PHP 8.1 or newer' => version_compare(PHP_VERSION, '8.1', '>='),

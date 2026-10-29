@@ -51,14 +51,28 @@ function upload_init(int $orderId, string $kind, string $by, string $name, int $
     if ($size < 1 || $size > $max) {
         return ['error' => 'File is empty or bigger than ' . setting('max_file_mb') . ' MB.'];
     }
-    $count = (int) row('SELECT COUNT(*) AS c FROM files WHERE order_id = ?', [$orderId])['c'];
+    // Drop upload sessions nobody touched for 6 hours.
+    foreach (rows('SELECT token FROM uploads WHERE updated_at < ?', [gmdate('Y-m-d H:i:s', time() - 21600)]) as $old) {
+        @unlink(chunk_path($old['token']));
+        q('DELETE FROM uploads WHERE token = ?', [$old['token']]);
+    }
+    $count = (int) row('SELECT COUNT(*) AS c FROM files WHERE order_id = ?', [$orderId])['c']
+        + (int) row('SELECT COUNT(*) AS c FROM uploads WHERE order_id = ?', [$orderId])['c'];
     if ($count >= (int) setting('max_files_per_order')) {
         return ['error' => 'This order already has the maximum number of files.'];
     }
-    // Drop upload sessions nobody finished within 2 days.
-    foreach (rows('SELECT token FROM uploads WHERE updated_at < ?', [gmdate('Y-m-d H:i:s', time() - 172800)]) as $old) {
-        @unlink(chunk_path($old['token']));
-        q('DELETE FROM uploads WHERE token = ?', [$old['token']]);
+    if ($by === 'client') {
+        // Per-client storage quota, counting finished files and uploads in progress.
+        $uid = (int) row('SELECT user_id FROM orders WHERE id = ?', [$orderId])['user_id'];
+        $used = (int) row("SELECT COALESCE(SUM(f.size), 0) AS s FROM files f JOIN orders o ON o.id = f.order_id WHERE o.user_id = ? AND f.kind = 'input'", [$uid])['s']
+            + (int) row('SELECT COALESCE(SUM(u.size), 0) AS s FROM uploads u JOIN orders o ON o.id = u.order_id WHERE o.user_id = ?', [$uid])['s'];
+        if ($used + $size > (int) setting('quota_gb') * 1024 ** 3) {
+            return ['error' => 'Your storage limit is full. Contact us to get more space.'];
+        }
+    }
+    $free = @disk_free_space(storage_dir());
+    if ($free !== false && $free < $size + 2 * 1024 ** 3) {
+        return ['error' => 'The server is short of space right now. Please try again later.'];
     }
     $token = bin2hex(random_bytes(20));
     insert('uploads', [
@@ -80,40 +94,44 @@ function upload_chunk(array $up, int $offset): array
     if ($offset !== (int) $up['received']) {
         return ['error' => 'offset_mismatch', 'received' => (int) $up['received']];
     }
+    @set_time_limit(120);
     $in = fopen('php://input', 'rb');
-    $out = fopen(chunk_path($up['token']), 'ab');
+    $out = fopen(chunk_path($up['token']), 'c+b');
     if (!$in || !$out) {
         return ['error' => 'Server could not store the chunk.'];
     }
-    $limit = chunk_bytes() + 1024;
+    // Parallel requests for the same upload are serialised; the real file length is the source of truth.
+    flock($out, LOCK_EX);
+    fseek($out, 0, SEEK_END);
+    $have = ftell($out);
+    if ($have !== $offset) {
+        flock($out, LOCK_UN);
+        fclose($out);
+        return ['error' => 'offset_mismatch', 'received' => $have];
+    }
+    $max = min(chunk_bytes() + 1024, (int) $up['size'] - $have);
     $wrote = 0;
     while (!feof($in)) {
         $buf = fread($in, 65536);
-        if ($buf === false) {
+        if ($buf === false || $buf === '') {
             break;
         }
         $wrote += strlen($buf);
-        if ($wrote > $limit || (int) $up['received'] + $wrote > (int) $up['size']) {
+        if ($wrote > $max) {
+            ftruncate($out, $have);
+            flock($out, LOCK_UN);
             fclose($out);
-            ftruncate_to(chunk_path($up['token']), (int) $up['received']);
             return ['error' => 'Chunk too large.'];
         }
         fwrite($out, $buf);
     }
+    fflush($out);
+    flock($out, LOCK_UN);
     fclose($out);
     fclose($in);
-    $received = (int) $up['received'] + $wrote;
+    $received = $have + $wrote;
     update('uploads', ['received' => $received, 'updated_at' => now()], 'id = ?', [$up['id']]);
     return ['received' => $received, 'done' => $received === (int) $up['size']];
-}
-
-function ftruncate_to(string $path, int $len): void
-{
-    $h = fopen($path, 'r+b');
-    if ($h) {
-        ftruncate($h, $len);
-        fclose($h);
-    }
 }
 
 /** Checks the assembled file and moves it into private storage. Returns the files row id. */
@@ -154,9 +172,34 @@ function delete_file(array $f): void
     q('DELETE FROM files WHERE id = ?', [$f['id']]);
 }
 
-/** Streams a stored file. Supports a single "Range: bytes=a-b" so videos can be seeked. */
-function send_file(array $f, bool $download): never
+/**
+ * Takes one of $max download slots for $who (non-blocking file locks). The host allows only 20 connections,
+ * so one account must not hold them all with slow downloads. The lock is released when the request ends.
+ */
+function download_slot(string $who, int $max)
 {
+    $dir = storage_dir() . '/chunks';
+    for ($i = 0; $i < $max; $i++) {
+        $h = fopen($dir . '/dl-' . preg_replace('/[^a-z0-9]/', '', $who) . "-$i.lock", 'c');
+        if ($h && flock($h, LOCK_EX | LOCK_NB)) {
+            return $h;
+        }
+        if ($h) {
+            fclose($h);
+        }
+    }
+    return null;
+}
+
+/** Streams a stored file. Supports a single "Range: bytes=a-b" so videos can be seeked. */
+function send_file(array $f, bool $download, string $who = 'anon', int $slots = 2): never
+{
+    $GLOBALS['dl_slot'] = download_slot($who, $slots);
+    if (!$GLOBALS['dl_slot']) {
+        header('Retry-After: 10');
+        http_response_code(429);
+        exit;
+    }
     $path = storage_dir() . '/files/' . $f['stored_name'];
     if (!is_file($path)) {
         abort(404);
@@ -191,7 +234,8 @@ function send_file(array $f, bool $download): never
     if (session_status() === PHP_SESSION_ACTIVE) {
         session_write_close();
     }
-    @set_time_limit(0);
+    // Long but not endless: 6 hours covers a 4 GB file at about 200 KB/s.
+    @set_time_limit(21600);
     while (ob_get_level()) {
         ob_end_clean();
     }

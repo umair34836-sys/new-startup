@@ -16,6 +16,8 @@
   <div class="grid2">
     <label>Max size per file (MB)<input name="max_file_mb" type="number" min="10" max="20480" value="<?= e(setting('max_file_mb')) ?>"></label>
     <label>Max files per order<input name="max_files_per_order" type="number" min="1" max="500" value="<?= e(setting('max_files_per_order')) ?>"></label>
+    <label>Storage per client (GB)<input name="quota_gb" type="number" min="1" max="10000" value="<?= e(setting('quota_gb')) ?>"></label>
+    <label>New accounts<select name="signup_approval"><option value="1">Wait for my approval (paid clients only)</option><option value="0" <?= setting('signup_approval') === '0' ? 'selected' : '' ?>>Open for everyone</option></select></label>
   </div>
   <p class="muted">Upload part size on this server: <?= e(fmt_bytes($chunk)) ?>. PHP: <?php foreach ($ini as $k => $v) echo e("$k=$v") . ' '; ?></p>
   <button class="btn primary">Save settings</button>
