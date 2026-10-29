@@ -119,8 +119,9 @@ function save_order_form(array $order, array $user, array $post, bool $submit): 
     if ($submit && $len < 1) {
         $errors[] = 'Tell us how long the finished video should be (in seconds).';
     }
-    if ($submit && !row("SELECT id FROM files WHERE order_id = ? AND kind = 'input'", [$order['id']])) {
-        $errors[] = 'Upload at least one file (video, images or script).';
+    // Owner (2026-10-29): files, voice and script are optional; an order can be only details. The details are required.
+    if ($submit && mb_strlen(trim((string) ($post['ideas'] ?? ''))) < 10) {
+        $errors[] = 'Describe the video you want (at least a sentence), so we know what to make.';
     }
     $rate = rate_for($user, $order['currency']);
     $data = [

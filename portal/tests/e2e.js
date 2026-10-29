@@ -179,6 +179,34 @@ async function shot(page, name) {
   await page.click('button:has-text("New video order")');
   await page.fill('input[name=length_sec]', '10');
   check((await page.textContent('[data-estimate-value]')).trim() === 'PKR 800', 'per-client rate 80 PKR/s used: 10 s = PKR 800');
+  // Details-only order: no files at all is fine; a missing required field blocks the submit (also on the server).
+  await page.goto(BASE + '/orders');
+  await page.click('button:has-text("New video order")');
+  const detailsUrl = page.url();
+  await page.fill('input[name=title]', 'Details only');
+  await page.fill('input[name=length_sec]', '30');
+  await page.selectOption('select[name="q[video_type]"]', 'Explainer');
+  await page.selectOption('select[name="q[platform]"]', 'YouTube');
+  await page.selectOption('select[name="q[aspect]"]', '16:9 wide (YouTube)');
+  await page.click('button[data-submit]');
+  check(page.url() === detailsUrl && !(await page.isVisible('text=Order sent')), 'submit blocked while required fields are empty (style, details)');
+  const srv = await page.evaluate(async (u) => {
+    const f = new URLSearchParams({ _csrf: document.body.dataset.csrf, title: 'x', length_sec: '30', action: 'submit' });
+    const r = await fetch(u + '/save', { method: 'POST', body: f }); return await r.text();
+  }, detailsUrl);
+  check(srv.includes('Please answer: Editing style') && srv.includes('Describe the video'), 'server refuses a submit with missing required fields');
+  await page.goto(detailsUrl);
+  await page.fill('input[name=title]', 'Details only');
+  await page.fill('input[name=length_sec]', '30');
+  await page.selectOption('select[name="q[video_type]"]', 'Explainer');
+  await page.selectOption('select[name="q[platform]"]', 'YouTube');
+  await page.selectOption('select[name="q[aspect]"]', '16:9 wide (YouTube)');
+  await page.selectOption('select[name="q[style]"]', 'Clean / minimal');
+  await page.fill('textarea[name=ideas]', 'A 30 second explainer about my bakery, made from stock footage and text.');
+  check(await page.isVisible('text=(optional) >> nth=0'), 'optional fields are labelled "(optional)"');
+  await page.click('button[data-submit]');
+  check((await page.textContent('.notice')).includes('Order sent'), 'order with only details and no files is sent');
+
   // Currencies: owner adds INR and NPR with their own default rates; a client is switched to INR with a special rate.
   await pa.goto(BASE + '/admin/settings');
   const newCodes = pa.locator('input[name="cur_code[]"][placeholder^="New"]');

@@ -146,3 +146,6 @@ body.auth { justify-content: center; padding: 16px; }
 .cur-table input { min-width: 0; }
 .cur-table td { vertical-align: middle; }
 .client-row .grid4 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.req { color: var(--danger); font-weight: 800; }
+.opt { color: var(--muted); font-weight: 500; font-size: .85em; }
+.req-note { font-size: .9rem; color: var(--muted); margin: .5rem 0 0; }

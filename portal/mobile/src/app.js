@@ -347,20 +347,21 @@
         var input = q.type === 'select'
           ? '<select name="q.' + esc(q.key) + '"><option value="">Choose…</option>' + q.options.map(function (o) { return '<option' + (o === v ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>'
           : '<input name="q.' + esc(q.key) + '" type="' + (q.type === 'date' ? 'date' : 'text') + '" maxlength="' + (q.max || 200) + '" value="' + esc(v) + '">';
-        return '<label>' + esc(q.label) + (q.required ? ' *' : '') + input + '</label>';
+        return '<label>' + esc(q.label) + ' ' + (q.required ? '<span class="req">*</span>' : '<small class="opt">(optional)</small>') + input + '</label>';
       }).join('');
       view('<div class="head-row reveal"><h1>New video order</h1><span class="badge s-draft">On this phone</span></div>' +
         (d.error ? '<p class="notice err">' + esc(d.error) + '</p>' : '') +
-        '<section class="card reveal"><h2>1. Your files</h2><p class="muted">Videos, photos, logo, voice notes, script. They stay on this phone until they are uploaded.</p>' +
+        '<section class="card reveal"><h2>1. Your files <small class="opt">(optional)</small></h2><p class="muted">Videos, photos, logo, voice notes, script, if you have them. No files? Just describe the video below. Files stay on this phone until they are uploaded.</p>' +
+        '<p class="req-note">Fields marked <span class="req">*</span> are required.</p>' +
         '<div class="drop"><input type="file" id="pick" multiple accept="video/*,image/*,audio/*,.pdf,.txt,.srt,.docx,.zip"><label for="pick" class="btn">Choose files</label></div>' +
         '<ul class="file-list" id="files">' + files.map(fileRow).join('') + '</ul></section>' +
         '<form class="form" id="f"><section class="card reveal"><h2>2. About the video</h2>' +
-        '<label>Video name<input name="title" maxlength="160" value="' + esc(d.title) + '" placeholder="e.g. Shop opening reel"></label>' +
-        '<label>Length of the finished video (seconds)<input name="length_sec" type="number" min="1" max="36000" value="' + esc(d.length_sec) + '" id="len"></label>' +
+        '<label>Video name <span class="req">*</span><input name="title" maxlength="160" value="' + esc(d.title) + '" placeholder="e.g. Shop opening reel"></label>' +
+        '<label>Length of the finished video (seconds) <span class="req">*</span><input name="length_sec" type="number" min="1" max="36000" value="' + esc(d.length_sec) + '" id="len"></label>' +
         '<p class="estimate">Price estimate: <strong id="est">' + esc(money((parseInt(d.length_sec, 10) || 0) * rate, cur)) + '</strong> <small>(' + esc(money(rate, cur)) + ' per second)</small></p>' +
         '<div class="grid2">' + qs + '</div></section>' +
-        '<section class="card reveal"><h2>3. Script and your ideas</h2><label>Script / text <small>(optional)</small><textarea name="script" rows="5" maxlength="20000">' + esc(d.script) + '</textarea></label>' +
-        '<label>How should we edit it? Your opinion and ideas<textarea name="ideas" rows="5" maxlength="10000">' + esc(d.ideas) + '</textarea></label></section>' +
+        '<section class="card reveal"><h2>3. Details, script and ideas</h2><label>Script / text <small class="opt">(optional)</small><textarea name="script" rows="5" maxlength="20000">' + esc(d.script) + '</textarea></label>' +
+        '<label>Tell us about the video: what it is for, what should be in it, how it should feel <span class="req">*</span><textarea name="ideas" rows="5" maxlength="10000" placeholder="What is the video about? Parts to keep or cut, colours, feeling, text on screen…">' + esc(d.ideas) + '</textarea></label></section>' +
         '<div class="actions sticky"><button class="btn danger-btn" value="delete" type="submit">Delete</button><button class="btn" value="save">Save</button><button class="btn primary" value="submit">Submit order</button></div></form>');
       var len = main.querySelector('#len'), est = main.querySelector('#est');
       len.addEventListener('input', function () { est.textContent = money((parseInt(len.value, 10) || 0) * rate, cur); });
@@ -395,8 +396,9 @@
           var missing = (c.questions || []).filter(function (q) { return q.required && !d.q[q.key]; }).map(function (q) { return q.label; });
           if (!d.title) missing.unshift('Video name');
           if (!(parseInt(d.length_sec, 10) > 0)) missing.push('Length in seconds');
-          return idb.all('files').then(function (fs) {
-            if (!fs.some(function (f) { return f.lid === d.lid; })) missing.push('At least one file');
+          // Files, voice and script are optional; the details are required (owner, 2026-10-29).
+          if ((d.ideas || '').trim().length < 10) missing.push('Details about the video (at least a sentence)');
+          return Promise.resolve().then(function () {
             if (missing.length) throw new Error('Please fill in: ' + missing.join(', '));
             d.pending = true; d.submit = true;
             return idb.put('drafts', d).then(function () {

@@ -40,6 +40,8 @@ or the env var `PORTAL_BRIDGE_TOKEN`. Check with `portal_bridge.py ping`: 401 = 
 
 1. `portal_bridge.py download <order_id> <scratchpad>/inputs` (resumes partial downloads). Client media stays in the
    scratchpad, never in git (CLAUDE.md).
+   Orders may have NO files (owner, 2026-10-29: video, voice and script are optional): then make the video from the
+   client's details with the repo's templates, stock (library/stock), music, field voices and graphics.
 2. Edit following CLAUDE.md "SKILL-BASED ONLY" (client brief, templates, video-edit-playbook, listen.py/watch.py,
    music-for-video, ...). For `revision_requested`, read the last `revision` message and change only that.
 3. `portal_bridge.py deliver <order_id> final.mp4 --note "<short note for the client, English or Roman Urdu>"`.
