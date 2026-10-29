@@ -534,3 +534,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - The owner called v1 "boring" and asked to "upgrade your formula", so start from v2 or v3.
   - 5 CC0 HoliznaCC0 phonk tracks are in library/music/cc0 (upbeat-electronic--holiznacc0--*).
   - The client's real skin is not committed.
+
+- CLIENT PORTAL project (owner, 2026-10-29): session_01JK8TsABm93BJDGvAKhPwj8 (branch project-client-portal).
+  - A white-label web portal + Android APK + admin panel on the owner's own hosting.
+  - Clients sign up, upload raw videos, script and images, answer a questionnaire and submit; the order goes to that client's Claude session.
+  - The finished video is delivered in the client's account; revisions loop until the client approves.
+  - The admin sets the price per second of video.
+  - Tools to use: ui-ux-pro-max, agency-agents, REA, Agent-Reach, ECC.
+  - That session asks the owner his hosting type first; code goes in portal/.
