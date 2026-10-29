@@ -73,14 +73,21 @@ def title_block(i, s, top):
             + '</div>')
 
 
-ttop = 640 if WIDE else 1240
+ttop = 850 if WIDE else 1250
 for i, s in enumerate(SC):
     k = s["kind"]
     d = r3(s["t1"] - s["t0"])
     parts = []
     if k in ("shot", "art"):
         # still picture with a slow push-in (Ken Burns) so nothing sits frozen (#96)
-        parts.append(f'<div id="sc{i}ph" class="photo" style="background-image:url({s["img"]});"></div>')
+        if WIDE:
+            parts.append(f'<div id="sc{i}ph" class="photo" style="background-image:url({s["img"]});"></div>')
+        else:
+            # portrait: a 16:9 picture cropped to 9:16 loses the subject (logo cut to "RECRA" in the first test), so show
+            # the whole picture as a card over a blurred, darkened copy of itself
+            parts.append(f'<div class="photo" style="background-image:url({s["img"]});filter:blur(28px) brightness(0.55);transform:scale(1.15);"></div>'
+                         f'<div id="sc{i}ph" class="photo" style="background-image:url({s["img"]});background-size:contain;background-repeat:no-repeat;'
+                         f'background-position:center 300px;"></div>')
         z0, z1 = (1.04, 1.16) if i % 2 == 0 else (1.16, 1.04)
         T.append(f'tl.fromTo("#sc{i}ph", {{scale:{z0}}}, {{scale:{z1}, duration:{d}, ease:"none"}}, {s["t0"]});')
         parts.append('<div class="veil"></div>')
@@ -101,7 +108,7 @@ for i, s in enumerate(SC):
             nm = os.path.splitext(os.path.basename(im))[0].replace("power-", "").upper()
             cells.append(f'<div id="sc{i}p{j}" class="pw" style="left:{x}px;top:{y}px;width:{size}px;">'
                          f'<img src="{im}" alt="{nm} power" style="width:{size}px;height:{size}px;border-radius:50%;">'
-                         f'<div class="pop" style="text-align:center;color:#fff;font-size:{int(24 * TS)}px;margin-top:4px;">{nm}</div></div>')
+                         f'<div class="pop" style="text-align:center;color:#fff;font-size:{int(28 * TS)}px;margin-top:4px;">{nm}</div></div>')
             T.append(f'tl.fromTo("#sc{i}p{j}", {{scale:0, rotation:-25, opacity:0}}, {{scale:1, rotation:0, opacity:1, duration:0.3, '
                      f'ease:"back.out(2)"}}, {r3(s["t0"] + 0.1 + j * 0.09)});')
         parts.append(f'<div class="bgfire"></div>{"".join(cells)}')
@@ -166,7 +173,7 @@ html, body {{ width:{W}px; height:{H}px; overflow:hidden; background:{COL["dark"
 .mask {{ overflow:hidden; }}
 .fire-text {{ color:#fff; text-shadow:0 0 18px {COL["fire"]}, 0 6px 0 {COL["red"]}, 0 10px 24px rgba(0,0,0,0.8); }}
 .pw {{ position:absolute; }}
-.cta-btn {{ background:linear-gradient(90deg,{COL["red"]},{COL["fire"]},{COL["gold"]}); color:#fff; font-size:{int(58 * TS)}px;
+.cta-btn {{ background:linear-gradient(90deg,{COL["red"]},{COL["fire"]},{COL["gold"]}); color:#fff; font-size:{58 if WIDE else 56}px; white-space:nowrap;
            padding:12px 44px; border-radius:18px; box-shadow:0 0 30px {COL["fire"]}; }}
 .ctarow {{ display:flex; justify-content:center; gap:16px; font-size:{int(38 * TS)}px; margin:8px 0; }}
 """
