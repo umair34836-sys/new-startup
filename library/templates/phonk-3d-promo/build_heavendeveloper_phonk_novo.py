@@ -195,7 +195,7 @@ def chips_scene(k, i, title, color, items, moves, cycle, ghost_word):
     h, j, cc = character(f"c{i + 1}", d, moves, shot_plan(i, cycle), y=1720)
     gh, gj = ghost(k, ghost_word, top=1000)
     txt = (f'<div class="c slam" id="{k}-b" style="top:300px;font-size:{200 if len(title) < 9 else 150}px;color:{color};">{title}</div>'
-           + "".join(f'<div class="c" id="{k}-k{n}" style="top:{560 + n * 112}px;"><span class="chip">{t}</span></div>' for n, t in enumerate(items)))
+           + "".join(f'<div class="c" id="{k}-k{n}" style="top:{560 + n * 128}px;"><span class="chip">{t}</span></div>' for n, t in enumerate(items)))
     js = j + gj + slam(f"#{k}-b", 0.03) + shake(f"#{k}-w", 0.03)
     bt = [b for b in inside(i, BEATS)] + [round(b + 0.33, 3) for b in inside(i, BEATS)]
     bt = sorted(t for t in bt if t > 0.25)[:len(items)]

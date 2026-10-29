@@ -185,14 +185,14 @@ clouds = "".join(f'<div id="bg-cl{n}" style="position:absolute;left:{x}px;top:{y
 pulses = "".join(f'    tl.fromTo("#bg-p", {{ opacity: 0.55 }}, {{ opacity: 0, duration: 0.3, ease: "power2.out", immediateRender: false }}, {b:.3f});\n' for b in BEATS)
 C["bg"] = comp("bg", f"""    <div style="position:absolute;inset:0;background:linear-gradient(180deg, #07061a 0%, #141040 45%, #2a1550 70%, #05040d 100%);"></div>
     {stars}
-    <div id="bg-moon" style="position:absolute;left:720px;top:150px;width:190px;height:190px;background:#f3f1dc;box-shadow:0 0 0 18px rgba(243,241,220,0.12), 0 0 140px rgba(243,241,220,0.55);">
-      <i style="position:absolute;left:30px;top:40px;width:40px;height:40px;background:#d9d5b4;"></i><i style="position:absolute;left:110px;top:100px;width:50px;height:50px;background:#d9d5b4;"></i></div>
+    <div id="bg-moon" style="position:absolute;left:860px;top:40px;width:150px;height:150px;background:#f3f1dc;box-shadow:0 0 0 18px rgba(243,241,220,0.12), 0 0 140px rgba(243,241,220,0.55);">
+      <i style="position:absolute;left:30px;top:40px;width:40px;height:40px;background:#d9d5b4;"></i><i style="position:absolute;left:86px;top:80px;width:40px;height:40px;background:#d9d5b4;"></i></div>
     {clouds}
     <div id="bg-p" style="position:absolute;inset:0;background:radial-gradient(70% 50% at 50% 60%, rgba(150,160,255,0.45), rgba(0,0,0,0) 70%);opacity:0;"></div>
     <div id="bg-floor" style="position:absolute;left:-500px;right:-500px;top:1440px;height:800px;background-image:url('{TX}/grass_top.png');background-size:150px 150px;image-rendering:pixelated;filter:brightness(0.55) saturate(0.9);transform:perspective(600px) rotateX(70deg);transform-origin:50% 0;"></div>
     <div style="position:absolute;left:0;right:0;top:1380px;height:200px;background:linear-gradient(180deg, rgba(42,21,80,0.95), rgba(42,21,80,0));"></div>
     <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 2px, rgba(0,0,0,0) 2px 6px);"></div>""",
-               f'    tl.fromTo("#bg-moon", {{ y: 0 }}, {{ y: 120, duration: {TOTAL}, ease: "none" }}, 0);\n'
+               f'    tl.fromTo("#bg-moon", {{ y: 0 }}, {{ y: 60, duration: {TOTAL}, ease: "none" }}, 0);\n'
                + "".join(f'    tl.fromTo("#bg-cl{n}", {{ x: 0 }}, {{ x: {v}, duration: {TOTAL}, ease: "none" }}, 0);\n' for n, v in enumerate((520, -420, 380)))
                + f'    tl.fromTo("#bg-floor", {{ backgroundPositionY: "0px" }}, {{ backgroundPositionY: "2400px", duration: {TOTAL}, ease: "none" }}, 0);\n' + pulses)
 FLASH_T = sorted(set([round(t, 2) for t in STRONG] + [round(max(0, s - 0.03), 2) for _, s, _ in SCENES[1:]]))
@@ -246,14 +246,14 @@ C[k] = scene(k, i, back, h, txt, js, cc)
 
 # 3 PLUGINS: inventory GUI slides in, chips COMMANDS / GUIs / SERVER SYSTEMS on the beats
 i, k = 2, "s3"; d = d_of(i)
-h, j, cc = character("c3", d, [[0, "talk"], [1.2, "point"]], shot_plan(i, ["side", "face", "dutch", "low", "back"]), y=1720)
+h, j, cc = character("c3", d, [[0, "talk"], [1.2, "point"]], shot_plan(i, ["side", "face", "dutch", "low", "back"]), x=760, y=1720)
 gh, gj = ghost(k, "PLUGINS", top=1000)
 inv = ["diamond_ore", "gold_block", "tnt_side", "grass_side", "cobble", "emerald_ore", "planks", "obsidian", "log"]
-gui = ('<div id="s3-gui" style="position:absolute;left:250px;top:930px;padding:22px;background:#c6c6c6;box-shadow:inset 8px 8px 0 #fff, inset -8px -8px 0 #555, 0 30px 80px rgba(0,0,0,0.7);display:grid;grid-template-columns:repeat(3,120px);gap:12px;">'
+gui = ('<div id="s3-gui" style="position:absolute;left:40px;top:960px;padding:22px;background:#c6c6c6;box-shadow:inset 8px 8px 0 #fff, inset -8px -8px 0 #555, 0 30px 80px rgba(0,0,0,0.7);display:grid;grid-template-columns:repeat(3,120px);gap:12px;">'
        + "".join(f'<div class="slot"><span id="s3-i{n}" style="background-image:url(\'{TX}/{t}.png\');"></span></div>' for n, t in enumerate(inv)) + '</div>')
 CH = ["COMMANDS", "GUIs", "SERVER SYSTEMS"]
 txt = (f'<div class="c slam" id="s3-a" style="top:230px;font-size:120px;">CUSTOM</div><div class="c slam" id="s3-b" style="top:350px;font-size:190px;color:{GREEN};">PLUGINS</div>'
-       + "".join(f'<div class="c" id="s3-k{n}" style="top:{590 + n * 112}px;"><span class="chip">{t}</span></div>' for n, t in enumerate(CH)))
+       + "".join(f'<div class="c" id="s3-k{n}" style="top:{590 + n * 128}px;"><span class="chip">{t}</span></div>' for n, t in enumerate(CH)))
 js = j + gj + slam("#s3-a", 0.05) + slam("#s3-b", rel(i, 0.1)) + shake("#s3-w", rel(i, 0.1))
 js += '    tl.fromTo("#s3-gui", { x: 900, rotation: 8 }, { x: 0, rotation: -3, duration: 0.35, ease: "expo.out" }, 0.15);\n'
 for n in range(9):
@@ -274,7 +274,7 @@ mb = [("s4-m0", "diamond_ore", None, 170, 1000), ("s4-m1", "emerald_ore", None, 
 back = gh + "".join(cube(cid, 180, sd, tp, x, y) for cid, sd, tp, x, y in mb)
 MW = ["ITEMS", "BLOCKS", "MOBS", "MECHANICS"]
 txt = (f'<div class="c slam" id="s4-a" style="top:230px;font-size:120px;">CUSTOM</div><div class="c slam" id="s4-b" style="top:350px;font-size:220px;color:{DIA};">MODS</div>'
-       + "".join(f'<div class="c" id="s4-k{n}" style="top:{620 + (n // 2) * 112}px;"><span class="chip" style="position:relative;left:{-200 if n % 2 == 0 else 200}px;">{t}</span></div>' for n, t in enumerate(MW)))
+       + "".join(f'<div class="c" id="s4-k{n}" style="top:{620 + (n // 2) * 128}px;"><span class="chip" style="position:relative;left:{-200 if n % 2 == 0 else 200}px;">{t}</span></div>' for n, t in enumerate(MW)))
 js = j + gj + slam("#s4-a", 0.05) + slam("#s4-b", rel(i, 0.1)) + shake("#s4-w", rel(i, 0.1))
 for n, (cid, *_r) in enumerate(mb):
     a = rel(i, 0.28 + n * 0.17)
