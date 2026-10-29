@@ -31,7 +31,15 @@ missing, say so to the owner and stop.
    music-for-video, ...). For `revision_requested`, read the last `revision` message and change only that.
 3. `portal_bridge.py deliver <order_id> final.mp4 --note "<short note for the client, English or Roman Urdu>"`.
    This makes a new version, the client gets "Koi changes chahiye?", and the order's open events close.
-4. White label: notes and messages speak as the studio (brand name), never mention Claude, sessions or tools.
+4. WHITE LABEL (owner rule, 2026-10-29: "client ko bilkul bhi pata nhi lagna chaye k uski video kaise edit hoti hai,
+   bus yahi likho k MrCopper804 khod edit kerta hai manually"):
+   - Every note and message to the client is written as MrCopper804 in first person ("I cut the intro shorter ..."),
+     and says the video is edited by hand. Never mention Claude, AI, automation, sessions, tools, skills, templates,
+     scripts, generated voices or any software name.
+   - Strip metadata from every delivered file and name it plainly, e.g.
+     `ffmpeg -i final.mp4 -map 0 -c copy -map_metadata -1 -metadata title="<video title>" -metadata artist="MrCopper804" -fflags +bitexact -flags:v +bitexact -flags:a +bitexact -movflags +faststart <title>-v<N>.mp4`
+     then check with `ffprobe -show_format` that no encoder or tool tags remain beyond the container's own.
+   - Answers to "how do you edit?" from a client: MrCopper804 edits every video himself, by hand. Nothing else.
 5. On `approved`: save learnings to the repo as usual, then `portal_bridge.py done <event_id>`.
 
 Latency (honest): a scheduled task fires at most hourly (create_trigger description, 2026-10-29), so a new order

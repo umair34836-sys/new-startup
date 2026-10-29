@@ -92,8 +92,8 @@ Log in at `https://editor.firecraft.fun/login` with the admin account, open **Se
 2. **Emails:** first create a mailbox in cPanel → "Email Accounts", e.g. `no-reply@firecraft.fun` (any strong password,
    nobody needs to log in to it). Then in Settings: "Send emails from" = `no-reply@firecraft.fun`,
    "Your email for new-order alerts" = the owner's email. Save.
-3. **Android app:** "Published app version" = `2` (the APK in this zip is version 2). Save.
-   Check: `https://editor.firecraft.fun/app/download` downloads `MrCopper804-v2.apk`, and the home page shows
+3. **Android app:** "Published app version" = `3` (the APK in this zip is version 3). Save.
+   Check: `https://editor.firecraft.fun/app/download` downloads `MrCopper804-v3.apk`, and the home page shows
    "Get the Android app".
 4. Leave "New accounts" on "Open for everyone" (owner's choice) unless the owner says otherwise.
 
@@ -122,6 +122,15 @@ It cleans unfinished uploads, old rate-limit rows, expired reset links and old s
 2. The owner puts it into the Claude cloud environment settings as the secret / environment variable
    `PORTAL_BRIDGE_TOKEN`, plus `PORTAL_URL=https://editor.firecraft.fun`. Never paste it into a chat.
 3. Then tell Claude "portal ready hai": Claude sets up the hourly order check (see portal/ARCHITECTURE.md).
+
+## Step 11: Clean up (after everything works)
+
+The guides describe how the work behind the portal is organised. Clients can never open them (they are outside the
+public folder), but keep the server clean anyway: File Manager → delete `README-FIRST.md` (home folder),
+`portal/README.md`, `portal/ARCHITECTURE.md` and `portal/config.example.php`. Keep a copy of this zip on the
+owner's computer.
+
+> Roman Urdu: setup ke baad ye guide files server se hata dein; client ko sirf ye dikhta hai ke MrCopper804 khud haath se edit karta hai.
 
 ## If something goes wrong
 

@@ -93,7 +93,7 @@ function route_admin(string $m, string $path): void
                 $newToken = 'pb_' . bin2hex(random_bytes(24));
                 set_setting('bridge_token_hash', hash('sha256', $newToken));
             } else {
-                foreach (['brand_name' => 80, 'splash_subtitle' => 40, 'brand_tagline' => 160, 'support_contact' => 200,
+                foreach (['brand_name' => 80, 'splash_subtitle' => 40, 'brand_tagline' => 160, 'promise_text' => 200, 'support_contact' => 200,
                     'app_notes' => 300, 'privacy_text' => 5000] as $k => $max) {
                     set_setting($k, mb_substr(post($k), 0, $max));
                 }

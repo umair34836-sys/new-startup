@@ -6,6 +6,8 @@ const SETTING_DEFAULTS = [
     'brand_name' => 'MrCopper804',
     'splash_subtitle' => 'Editor',
     'brand_tagline' => 'Send your footage. Get a finished video.',
+    // Owner (2026-10-29): clients only ever learn that MrCopper804 edits every video himself, by hand.
+    'promise_text' => 'Every video is edited by hand by MrCopper804.',
     'support_contact' => '',
     'rate_pkr' => '50',
     'rate_usd' => '0.20',

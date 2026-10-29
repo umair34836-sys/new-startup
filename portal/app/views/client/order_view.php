@@ -39,11 +39,11 @@ $reach = ['submitted' => 0, 'in_progress' => 1, 'revision' => 1, 'delivered' => 
       </form>
     </div>
   <?php elseif ($order['status'] === 'revision'): ?>
-    <p class="notice">We got your changes and are working on the next version.</p>
+    <p class="notice">We got your changes. <?= e(setting('brand_name')) ?> is working on the next version.</p>
   <?php endif; ?>
 </section>
 <?php else: ?>
-<section class="card reveal"><h2>We are on it</h2><p>Your order was received. The finished video will appear here, and you can ask for changes until it is perfect.</p></section>
+<section class="card reveal"><h2>We are on it</h2><p>Your order was received. <?= e(setting('promise_text')) ?> The finished video will appear here, and you can ask for changes until it is perfect.</p></section>
 <?php endif; ?>
 
 <?php if (count($versions) > 1): ?>

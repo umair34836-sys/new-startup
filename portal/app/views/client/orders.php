@@ -4,7 +4,7 @@
   <form method="post" action="<?= e(base_url('orders/new')) ?>"><?= csrf_field() ?><button class="btn primary">+ New video order</button></form>
 </div>
 <?php if (!$orders): ?>
-  <section class="card empty reveal"><h2>No orders yet</h2><p>Start a new order: upload your footage and tell us how you want it edited.</p></section>
+  <section class="card empty reveal"><h2>No orders yet</h2><p>Start a new order: upload your footage and tell us how you want it edited. <?= e(setting('promise_text')) ?></p></section>
 <?php else: ?>
   <ul class="order-list stagger">
   <?php foreach ($orders as $o): ?>
