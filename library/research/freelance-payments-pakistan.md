@@ -41,3 +41,17 @@ Sources:
 - [Payoneer vs Wise for Pakistani freelancers (abroadmate)](https://abroadmate.me/guides/payoneer-vs-wise-pakistan-freelancers-2026)
 - [fiverr-mcp-server (PyPI)](https://pypi.org/project/fiverr-mcp-server/)
 - [Bright Data Fiverr MCP](https://brightdata.com/ai/mcp-server/fiverr)
+
+## Owner's Upwork profile (2026-10-29)
+- The owner connected the Upwork connector (freelancer account). Via the connector, with his approval, these were set:
+  - title "Video Editor | Promo Reels, YouTube Edits & Thumbnails"
+  - overview (video-only, facts from delivered work, no client names)
+  - 18 video/design skills (web skills removed at his choice)
+  - availability: full time
+  - English: Fluent
+  - work history: Self-employed, Freelance Video Editor, from 2026-01-01, Islamabad (city and month are placeholders he accepted)
+- Connector quirks:
+  - add_employment country needs ISO alpha-3 ("PAK"); "PK" failed with "Invalid country code".
+  - Only one language preview can be pending at a time.
+  - Non-English languages are always added as BASIC, so Urdu/Hindi go in on the website as Native.
+- Website-only (not in the connector): profile photo, hourly rate, portfolio items. The profile stays private / NOT_STARTED until those are done.
