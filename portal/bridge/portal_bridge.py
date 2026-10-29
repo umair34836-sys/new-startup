@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Bridge CLI between the client portal and Claude sessions (Python standard library only).
 
-Env: PORTAL_URL (e.g. https://portal.example.com), PORTAL_BRIDGE_TOKEN (secret, never commit it).
+Env: PORTAL_URL (default https://editor.firecraft.fun), PORTAL_BRIDGE_TOKEN (secret, never commit it).
+The token can also be a "Bearer" network secret for editor.firecraft.fun in the Claude environment settings: then
+the environment adds the Authorization header itself and PORTAL_BRIDGE_TOKEN stays unset here.
 
   portal_bridge.py ping
   portal_bridge.py events                      # open work: new orders, change requests, messages, approvals
@@ -21,13 +23,15 @@ import time
 import urllib.error
 import urllib.request
 
-BASE = os.environ.get("PORTAL_URL", "").rstrip("/")
+BASE = os.environ.get("PORTAL_URL", "https://editor.firecraft.fun").rstrip("/")
 TOKEN = os.environ.get("PORTAL_BRIDGE_TOKEN", "")
 
 
 def call(method, path, data=None, raw=None, headers=None, stream_to=None):
     url = f"{BASE}/api/bridge{path}"
-    h = {"Authorization": f"Bearer {TOKEN}", "User-Agent": "portal-bridge/1"}
+    h = {"User-Agent": "portal-bridge/1"}
+    if TOKEN:
+        h["Authorization"] = f"Bearer {TOKEN}"
     body = None
     if raw is not None:
         body, h["Content-Type"] = raw, "application/octet-stream"
@@ -113,8 +117,8 @@ def deliver(order_id, path, note):
 
 
 def main():
-    if not BASE or not TOKEN:
-        sys.exit("Set PORTAL_URL and PORTAL_BRIDGE_TOKEN.")
+    if not BASE:
+        sys.exit("Set PORTAL_URL.")
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("cmd")
     p.add_argument("args", nargs="*")

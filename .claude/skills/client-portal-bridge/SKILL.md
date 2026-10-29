@@ -5,9 +5,11 @@ description: Pick up client orders from the owner's client portal (portal/ in th
 
 # Client portal bridge
 
-Design: portal/ARCHITECTURE.md. CLI: `portal/bridge/portal_bridge.py` (Python stdlib). Needs the environment
-variables `PORTAL_URL` and `PORTAL_BRIDGE_TOKEN` (cloud environment settings; never in git or chat). If they are
-missing, say so to the owner and stop.
+Design: portal/ARCHITECTURE.md. CLI: `portal/bridge/portal_bridge.py` (Python stdlib). Live portal:
+https://editor.firecraft.fun (default `PORTAL_URL`). The bridge token is a "Bearer" network secret for
+editor.firecraft.fun in the cloud environment settings (the environment adds the header; the session never sees it),
+or the env var `PORTAL_BRIDGE_TOKEN`. Check with `portal_bridge.py ping`: 401 = no token reaches the portal yet
+(tell the owner and stop). Never put the token in git or chat.
 
 ## Hub run (scheduled task or "portal check karo")
 
