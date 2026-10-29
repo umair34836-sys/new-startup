@@ -12,7 +12,7 @@ through the bridge (see ARCHITECTURE.md). Stack: PHP 8.1+ and MySQL, no Composer
 1. **Make the database.** cPanel → *MySQL Databases*: create a database, a user with a strong password, and add the
    user to the database with *ALL PRIVILEGES*. Note the three names (cPanel adds your username in front).
    > Roman Urdu: database, user aur password bana kar likh lein.
-2. **Upload the files.** Make the upload zip here with `bash portal/make_zip.sh` (or download the release zip).
+2. **Upload the files.** Make the upload zip here with `bash portal/make_zip.sh` (it puts README-FIRST.md, the step-by-step cPanel guide, at the top of the zip, and the latest APK in storage/app).
    cPanel → *File Manager* → your home folder (NOT inside `public_html`) → *Upload* `portal-upload.zip` →
    *Extract*. You now have `/home/<you>/portal/` with `app/`, `public/`, `storage/`.
    > Roman Urdu: zip ko public_html ke bahar upload kar ke extract karein, taake client files web se seedhi na khulein.
