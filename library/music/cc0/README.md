@@ -178,3 +178,8 @@ Each row: FMA track page re-read on the date shown; its licence links were CC0 1
 |---|---|---|---|---|---|---|---|
 | `lofi-chill--holiznacc0--first-snow.mp3` | lofi-chill | 174s | First Snow.mp3 | HoliznaCC0 | CC0 1.0 | 2026-10-27 | https://freemusicarchive.org/music/holiznacc0/winter-lofi/first-snowmp3/ |
 | `lofi-chill--holiznacc0--winter-blues.mp3` | lofi-chill | 223s | Winter Blues | HoliznaCC0 | CC0 1.0 | 2026-10-27 | https://freemusicarchive.org/music/holiznacc0/winter-lofi/winter-blues/ |
+| `upbeat-electronic--holiznacc0--phonk-ish.mp3` | upbeat-electronic | 146s | Phonk ish | HoliznaCC0 | CC0 1.0 | 2026-10-29 | https://freemusicarchive.org/music/holiznacc0/phonk-aura-farming/phonk-ish/ |
+| `upbeat-electronic--holiznacc0--phonk-remix.mp3` | upbeat-electronic | 169s | Phonk Remix | HoliznaCC0 | CC0 1.0 | 2026-10-29 | https://freemusicarchive.org/music/holiznacc0/phonk-aura-farming/phonk-remix/ |
+| `upbeat-electronic--holiznacc0--re-adusjtment.mp3` | upbeat-electronic | 243s | Re Adusjtment | HoliznaCC0 | CC0 1.0 | 2026-10-29 | https://freemusicarchive.org/music/holiznacc0/phonk-aura-farming/re-adusjtment/ |
+| `upbeat-electronic--holiznacc0--pantheon.mp3` | upbeat-electronic | 192s | Pantheon | HoliznaCC0 | CC0 1.0 | 2026-10-29 | https://freemusicarchive.org/music/holiznacc0/phonk-aura-farming/pantheon/ |
+| `upbeat-electronic--holiznacc0--only-human.mp3` | upbeat-electronic | 235s | ONLY HUMAN | HoliznaCC0 | CC0 1.0 | 2026-10-29 | https://freemusicarchive.org/music/holiznacc0/phonk-aura-farming/only-human/ |

@@ -333,3 +333,11 @@ Every line ends with its source; repo sources are this repo's own tested notes. 
 - Captions: Roman Urdu captions; Pashto "Manana" (thank you) as a touch for Pashto-speaking clients. [repo: CLAUDE.md "Client phone-video edits"]
 - Common mistakes: using the Bollywood song itself; we never download copyrighted songs: use desi-eastern CC0 (tabla, sitar style, bollywood groove, damal drumming) or the owner's own MP3. [repo: CLAUDE.md "Environment facts (cloud container)"]; [repo: library/music/cc0/README.md]
 - Steps here: phone-clip-reel template, Roman Urdu replies/captions, light text on bright walls in deep #6e0c20 with glow; `vs_tts.py` (Urdu 100%/97%) for Urdu narration. [repo: library/README.md "Templates (templates/)"]; [repo: CLAUDE.md "Rules from the owner"]; [repo: CLAUDE.md "HyperFrames learnings"]; [repo: CLAUDE.md "Voice and songs with words"]
+
+## 30. Phonk / velocity edit (beat-driven promo)
+
+- Goal: attitude and impact on a dark, beat-driven track; "hit hard on the drop and breathe in between". [Vikas Editing, https://editingbyvikas.com/phonk-capcut-template/, 2026-06-13]
+- Cut rhythm: a hard cut on every beat; 808 kick -> 4-6% impact zoom with snap-back; snare -> 2-3 px RGB split; drop -> 1-frame white flash ~120 ms. [Onset Engine, https://onsetengine.com/guides/make-phonk-drift-edits/, 2026-03-15]
+- Grade: desaturate 15-20%, contrast +30-40%, shadows to blue. [Onset Engine, same page]
+- Common mistakes: shake on everything or too strong (amateur); shake belongs on the beat, rest between. [Vikas Editing, https://editingbyvikas.com/alight-motion-shake-preset-xml/, 2026-06-16]
+- Steps here: CC0 phonk via fetch_free_music.py "phonk" (HoliznaCC0 "Phonk Aura Farming"); beat_events.py for kicks/snares; template library/templates/phonk-3d-promo (v2 builder + post.sh); full notes library/research/phonk-edit-formula.md. [repo: library/research/phonk-edit-formula.md]
