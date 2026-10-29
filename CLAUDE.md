@@ -135,6 +135,10 @@ Read this first in every session.
 
 ## HyperFrames learnings
 
+- PLAYBACK (owner 2026-10-29, "Your device cant play this file format"): an ffmpeg post pass (eq/noise/vignette) on the
+  HyperFrames render kept its yuv444p -> H.264 "High 4:4:4 Predictive", which phones don't play. ALWAYS end a video
+  filter chain with `format=yuv420p` + `-profile:v high -movflags +faststart`, and ffprobe pix_fmt before delivery.
+
 (Observed in renders here, Oct 2026. Re-measured 2026-10-24: the riser/error timings and that whoosh = whoosh-short and
 click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" ease. The rest is not re-tested.)
 
