@@ -524,3 +524,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
 - Mr Aloo client feedback (2026-10-28, GTA video): same pop SFX repeated sounds cheap -> rotate 2-3 variants per SFX type; flat
   gradient design cards look "AI" -> put design shots on dimmed real footage (client gameplay / real b-roll). Many <video>
   backgrounds (48) made the delivery render 41 min (v1 with 16 videos: 16 min) and it stalled once at <1 GB free disk.
+- FireCraft SMP promo (Personal session, 2026-10-29; template library/templates/smp-server-promo):
+  - WorldLens pictures only show loaded chunks. Spawn needed `forceload add/remove`, which the owner approved.
+  - VoxCPM2 gaming-hype was weak on the brand acronym and on "स्पॉन"/"हर हफ्ते" at a line start; 2 seeds babbled for 25-30 s.
+  - The Lion track with `music_fit --end resolve` gave a near-silent ending: use `--end fade`.

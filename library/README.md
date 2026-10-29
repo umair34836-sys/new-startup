@@ -66,6 +66,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 ## Templates (`templates/`)
 
 - `templates/thumbnail/`: YouTube 16:9 thumbnail, 9:16 Shorts cover and 1:1 poster specs for tools/thumb_make.py (README: workflow + timings).
+- `templates/smp-server-promo/`: Minecraft SMP server promo, 16:9 YouTube + 9:16, ~24 s, WorldLens in-game shots + gaming-hype VO (FireCraft, 2026-10-29; README: camera angles, forceload, weak VO words, music ending).
 
 - `brand-identity-reveal/`: 16:9 ~30 s music-only brand identity / guidelines film driven by one reveal.json (logo construction
   from the real traced mark via mark_to_svg.py, lockup, browser/phone mockups, stacked page cards, typography, colour
