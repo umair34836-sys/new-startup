@@ -25,6 +25,19 @@ Client's Claude session ── downloads inputs, edits with the repo skills, upl
   Why not Capacitor: its `server.url` (load a live site) is documented as "not intended for use in production"
   (library/research/client-portal-tools.md).
 
+## Native app (portal/mobile)
+
+Capacitor 8 (MIT) app, screens in the APK (`src/` → `www/`), no framework. Data via `/api/v1` (app/routes_app.php):
+device tokens `pa_...` (sha256 stored, 90 days idle limit, deleted on logout / password change), CORS only for the
+Capacitor origins (`https://localhost`, `capacitor://localhost`), files through signed 6-hour links
+(`/api/v1/files/ID?u=&exp=&sig=` HMAC-SHA256 with `app_secret`), because a `<video>` tag cannot send headers.
+Offline: IndexedDB stores `cache` (orders, order details), `drafts` + `files` (orders made on the phone, with the
+picked files as blobs), `outbox` (changes, approvals, messages, extra uploads) and `videos` (saved versions).
+The sync engine runs on start, on "online", on app resume and every 30 s: create order → upload chunks (resumable,
+offset kept) → save/submit → send outbox. Live updates: `@capgo/capacitor-updater` (MPL-2.0) in manual mode,
+self-hosted: the app reads `bundle_version/bundle_url/bundle_sha256` from `/api/v1/config`, downloads
+`/app/bundle.zip`, applies it on the next start, `notifyAppReady()` on every start (a broken bundle rolls back).
+
 ## Order life cycle
 
 | Status (DB) | Client sees | Who moves it |
@@ -80,6 +93,9 @@ The TWA opens `/orders?src=twa&v=<versionCode>`; the server stores `v` in an `ap
 redirect. Website changes need no APK. When the owner publishes a newer APK (Settings: upload + version number),
 pages show an update bar to apps whose `appV` is lower; `/app/download` serves the APK publicly. An offline page is
 served by the service worker when there is no internet.
+
+Absolute links (reset emails, signed app links) come from `site_url` in config.php, never from the request's Host
+header (pentest 2026-10-29: a forged Host put the attacker's domain into reset emails; fixed and tested).
 
 ## Secrets
 

@@ -37,6 +37,11 @@ done
 # Version. (Maven Central answered 429 to Gradle here, 2026-10-29: gradle-mirror.gradle uses Google's mirror.)
 sed -i -E "s/versionCode [0-9]+/versionCode $CODE/; s/versionName \"[^\"]*\"/versionName \"$NAME\"/" android/app/build.gradle
 echo "sdk.dir=$SDK" > android/local.properties
+# Test builds only (CLEARTEXT=1): allow plain http to a local test server. Release builds never allow it.
+MAN=android/app/src/main/AndroidManifest.xml
+sed -i 's# android:usesCleartextTraffic="true"##' "$MAN"
+[ "${CLEARTEXT:-0}" = 1 ] && sed -i 's#<application#<application android:usesCleartextTraffic="true"#' "$MAN"
+OUTNAME="MrCopper804-v$CODE${SUFFIX:-}.apk"
 
 (cd android && ANDROID_HOME="$SDK" bash ./gradlew --no-daemon -q --init-script ../gradle-mirror.gradle assembleRelease)
 
@@ -44,7 +49,7 @@ mkdir -p build
 PASS="$(cat "$KEYDIR/portal.pass")"
 "$BT/zipalign" -f -p 4 android/app/build/outputs/apk/release/app-release-unsigned.apk build/aligned.apk
 "$BT/apksigner" sign --ks "$KEYDIR/portal.jks" --ks-key-alias portal --ks-pass "pass:$PASS" --key-pass "pass:$PASS" \
-  --out "build/MrCopper804-v$CODE.apk" build/aligned.apk
-"$BT/apksigner" verify "build/MrCopper804-v$CODE.apk"
+  --out "build/$OUTNAME" build/aligned.apk
+"$BT/apksigner" verify "build/$OUTNAME"
 rm build/aligned.apk
-echo "APK: $(pwd)/build/MrCopper804-v$CODE.apk ($(du -h "build/MrCopper804-v$CODE.apk" | cut -f1))"
+echo "APK: $(pwd)/build/$OUTNAME ($(du -h "build/$OUTNAME" | cut -f1))"
