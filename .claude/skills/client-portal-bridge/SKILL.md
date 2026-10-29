@@ -41,6 +41,10 @@ or the env var `PORTAL_BRIDGE_TOKEN`. Check with `portal_bridge.py ping`: 401 = 
    - Strip metadata from every delivered file and name it plainly, e.g.
      `ffmpeg -i final.mp4 -map 0 -c copy -map_metadata -1 -metadata title="<video title>" -metadata artist="MrCopper804" -fflags +bitexact -flags:v +bitexact -flags:a +bitexact -movflags +faststart <title>-v<N>.mp4`
      then check with `ffprobe -show_format` that no encoder or tool tags remain beyond the container's own.
+     Measured 2026-10-29 (order 1): that command still leaves the x264 settings SEI ("x264 - core ... options") and
+     "Lavc60.31.102" inside the AAC data (`strings file.mp4 | grep -ciE "lavf|x264|ffmpeg|lavc"` = 11). Fix: add
+     `-bsf:v filter_units=remove_types=6` (drops SEI NALs; file still decodes) and encode the AAC in this same command
+     with `-flags:a +bitexact` (stream copy keeps the old string) -> 0 matches.
    - Answers to "how do you edit?" from a client: MrCopper804 edits every video himself, by hand. Nothing else.
 5. On `approved`: save learnings to the repo as usual, then `portal_bridge.py done <event_id>`.
 
