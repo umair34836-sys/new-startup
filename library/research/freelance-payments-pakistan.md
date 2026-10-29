@@ -73,3 +73,17 @@ Sources:
   - start at $12/hr while the profile has 0 reviews;
   - raise to $15-20 after the first 3-5 good reviews;
   - bid per video or per project on fixed-price jobs.
+
+## Working on Upwork without paying (Upwork Help Center via connector, 2026-10-29; owner: "kia upwork per free working nhi ker sakte ?")
+- Freelancer Basic = "your default free plan" (support.upwork.com/hc/en-us/articles/40444316172051).
+- Applying to a job costs Connects. Ways to get them without paying (support.upwork.com/hc/en-us/articles/211062898):
+  - "some freelancers may receive 10 free Connects each month"; eligibility shows in Connects history.
+  - Onboarding tasks: profile setup, identity verification, how-to videos.
+  - Badges: 30 Connects each for Rising Talent / Top Rated / Top Rated Plus (90 max).
+  - An interview with an established client can refund or award Connects (not every time).
+- A client's invitation to interview needs NO Connects: "you don't have to use any of your Connects"
+  (upwork.com/resources/job-invitation-reply). A Talent Accelerator invite needs none either.
+- Buying Connects: "Each costs US $0.15", bundle of 100 or a custom amount; unused Connects roll over and
+  expire after 1 year (upwork.com/resources/is-upwork-worth-it).
+- The Freelancer Service Fee (0-15% per contract) is still taken from earnings.
+- The owner's account showed 0 Connects on 2026-10-29.
