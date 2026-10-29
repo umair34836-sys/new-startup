@@ -197,6 +197,7 @@ Search: `python3 tools/find_stock.py "<words>" [--sfx|--lut|--all] [--vertical]`
 | --- | --- |
 | `setup-all.sh` | Installs everything (`light`: ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI, specialist-D fonts tools; `heavy`: music + ACE-Step/Whisper + weights, audio-separator, VoiceStudio). Run automatically by the SessionStart hook. |
 | `setup-agent-tools.sh` | Agent-Reach + graft only (also part of setup-all.sh light). |
+| `setup-portal-dev.sh` | Client portal dev tools (on demand, `setup-all.sh portal`): Android SDK (platform 35, build-tools 35.0.0, 444 MB measured 2026-10-29) for the APK, refresh of ui-ux-pro-max + agency-agents. Portal itself: `portal/README.md`. |
 | `setup-music.sh` | One-time setup per container: apt FluidSynth + FluidR3 GM SoundFont (fluid-soundfont-gm, Installed-Size 145,172 kB per apt-cache 2026-10-24; too big for git), pip mido/numpy, npm Magenta.js. |
 | `magenta/melody.mjs` | `node melody.mjs <checkpoint-url> out.json`: 12 Improv RNN takes over the chords, scored; best first. Serve the checkpoint with `python3 -m http.server 8766 --directory library/models/magenta/chord_pitches_improv`. Edit `seed` / `chords` inside for a new song. |
 | `magenta/arrange.py` | `python3 arrange.py melody.json out.mid [temp]`: arranges a take for sitar, flute, piano, strings, bass, celesta and dholak-style percussion. |

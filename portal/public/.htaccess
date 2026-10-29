@@ -1,0 +1,21 @@
+# Point the subdomain's document root at this folder (portal/public).
+Options -Indexes
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^\.well-known/ - [L]
+  RewriteRule (^|/)\. - [F]
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} !^localhost
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
+<FilesMatch "\.(css|js|png|svg|webmanifest)$">
+  Header set Cache-Control "public, max-age=604800"
+</FilesMatch>
+<Files "sw.js">
+  Header set Cache-Control "no-cache"
+</Files>
