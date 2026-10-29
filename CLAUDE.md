@@ -528,3 +528,9 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - WorldLens pictures only show loaded chunks. Spawn needed `forceload add/remove`, which the owner approved.
   - VoxCPM2 gaming-hype was weak on the brand acronym and on "स्पॉन"/"हर हफ्ते" at a line start; 2 seeds babbled for 25-30 s.
   - The Lion track with `music_fit --end resolve` gave a near-silent ending: use `--end fade`.
+- PHONK edits (Heaven Developer, 2026-10-29; template library/templates/phonk-3d-promo, decision-guide section 30):
+  - Cited formula in library/research/phonk-edit-formula.md: cut on every beat, zoom on the kick, RGB split on the snare, flash on the drop, cold grade.
+  - library/tools/beat_events.py finds the kicks, snares and beats (perc-venv).
+  - The owner called v1 "boring" and asked to "upgrade your formula", so start from v2 or v3.
+  - 5 CC0 HoliznaCC0 phonk tracks are in library/music/cc0 (upbeat-electronic--holiznacc0--*).
+  - The client's real skin is not committed.
