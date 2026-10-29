@@ -503,6 +503,15 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   reached -14.9 LUFS but flattened LRA to 2.8 LU (lost the quiet intro). watermark.py text was sized by width
   (1.8x too big on 16:9); it is now sized by the short side.
 
+- CLIENT PORTAL project session (owner, 2026-10-29): session_01JK8TsABm93BJDGvAKhPwj8 (branch project-client-portal).
+  PHP + MySQL portal for the owner's cPanel shared host (portal/; owner: subdomain, storage unlimited, PHP forms 2 MB per
+  file / 8 MB per request, 20 connections, 1 GB RAM), PWA + TWA APK (portal/apk/build_apk.js, Bubblewrap), admin rates
+  per second (PKR/USD, per client), signups wait for owner approval (only paid clients). Orders reach sessions via the
+  bridge: skill `.claude/skills/client-portal-bridge`, design portal/ARCHITECTURE.md. Brand "MrCopper804" (owner).
+  Research: library/research/client-portal-tools.md. Maven Central answered 429 to Gradle here: the build uses Google's
+  mirror maven-central.storage-download.googleapis.com (200). Canva AI thumbnails (design.canva.ai) show a Cloudflare
+  check to headless Chromium: send the owner the canva.com/d/ links instead.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
