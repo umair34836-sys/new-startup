@@ -13,7 +13,8 @@ or the env var `PORTAL_BRIDGE_TOKEN`. Check with `portal_bridge.py ping`: 401 = 
 
 ## Hub run (scheduled task or "portal check karo")
 
-1. `python3 portal/bridge/portal_bridge.py events` → list of open events with full order JSON.
+1. `python3 portal/bridge/portal_bridge.py events` → NEW events (not yet taken) with full order JSON. Taken events stay
+   open until the client session delivers or marks them done; `events --all` shows those too.
 2. For each event:
    - `order.client.claude_session` empty → create a session for this client (`create_session`, this repo,
      branch `client-<short-name>`), then `portal_bridge.py link <client_id> <session_id>`.

@@ -6,7 +6,8 @@ The token can also be a "Bearer" network secret for editor.firecraft.fun in the 
 the environment adds the Authorization header itself and PORTAL_BRIDGE_TOKEN stays unset here.
 
   portal_bridge.py ping
-  portal_bridge.py events                      # open work: new orders, change requests, messages, approvals
+  portal_bridge.py events                      # NEW work not yet taken: new orders, change requests, messages, approvals
+  portal_bridge.py events --all                # also events already taken (forwarded) but not done yet
   portal_bridge.py take <event_id>             # mark taken (order shows "In editing" to the client)
   portal_bridge.py done <event_id>
   portal_bridge.py order <order_id>
@@ -123,12 +124,16 @@ def main():
     p.add_argument("cmd")
     p.add_argument("args", nargs="*")
     p.add_argument("--note", default="")
+    p.add_argument("--all", action="store_true")
     a = p.parse_args()
     c, x = a.cmd, a.args
     if c == "ping":
         out(call("GET", "/ping"))
     elif c == "events":
-        out(call("GET", "/events"))
+        r = call("GET", "/events")
+        if not a.all and isinstance(r.get("events"), list):
+            r["events"] = [e for e in r["events"] if not e["event"].get("taken_at")]
+        out(r)
     elif c in ("take", "done"):
         out(call("POST", f"/events/{int(x[0])}/{c}", {}))
     elif c == "order":
