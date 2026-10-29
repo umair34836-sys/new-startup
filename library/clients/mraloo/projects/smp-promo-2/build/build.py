@@ -51,16 +51,21 @@ def shake(sel, t, amp=14):
 # (Drive 16nhkyo2QlKAAevAWaIz2osWhvI8kQOri); in-points from 2 s contact sheets (look/*.jpg). Avoided: connecting screens,
 # YOU ARE AFK (rec 26-50), creative-mode chat (96-100), the white frame (162), chat lines in the crop.
 R, S = "rec182.mkv", "spawn51.mkv"
+B = "../src2/bigsmp.mp4"   # client's "2026-10-28 21-52-40.mp4" (Drive 1wLIJBx3gdu-5bHqWf3IRysKLVsYB3gTD, 335.5 s, 1080p60): other BIG servers
+# (server list, a lobby with "FACTIONS (114 playing) / SURVIVAL SMP (167 playing)", a tab list "1,511 Global", survival alone).
+# Client 2026-10-29: "bade smp ke liye ek alag video dala tha" -> the whole problem part (0 s -> "phir maine socha") uses it, so
+# ALOO SMP footage only appears from the solution on (the first cut wrongly showed ALOO's own spawn as the lonely big server).
 SH = [
-    (0.0, R, 21.8, 0.50, "hook: character alone in the desert (guide 0-3 s; 21.8-22.6 is the only stretch without tab list or plugin chat in the crop, frames checked every 0.2 s)"),
-    (0.75, R, 120.4, 0.50, "alone on the grass, looking around"),
-    (ws(5) - 0.05, R, 0.4, 0.45, "'itne saare servers': the real multiplayer server list"),
-    (ws(14), S, 20.0, 0.50, "'achha server nahi mil raha': alone at spawn"),
-    (ws(20), S, 36.0, 0.50, "'bade server pe jao, hazaaron players': busy spawn crowd (guide 3-8 s)"),
-    (ws(28), R, 124.2, 0.50, "'par bhai, kisi ko jaante hi nahi': hard cut to the lonely character"),
-    (ws(36), S, 24.0, 0.50, "'sab apna apna khel rahe hain': players walking past"),
-    (ws(42), R, 128.2, 0.50, "'aur main join kar ke sochta tha': walking alone"),
-    (ws(49), R, 132.4, 0.50, "'karun to karun kya idhar': standing in front of a house"),
+    (0.0, B, 156.4, 0.50, "hook: alone on a big server (guide 0-3 s)"),
+    (1.30, B, 282.0, 0.50, "alone, looking around"),
+    (ws(5) - 0.05, B, 0.3, 0.40, "'itne saare servers': the multiplayer server list >> top rows only (Wynncraft 1454/2000, MCPVP 1389/50000)"),
+    (ws(14), B, 165.5, 0.50, "'achha server nahi mil raha': alone"),
+    (ws(20), B, 96.5, 0.50, "'bade server pe jao': big lobby full of players and server NPCs"),
+    (ws(25), B, 109.0, 0.55, "'hazaaron players milenge': the big server's tab list (1,511 global)"),
+    (ws(28), B, 175.0, 0.50, "'par bhai, kisi ko jaante hi nahi': hard cut to the lonely character"),
+    (ws(36), B, 99.0, 0.50, "'sab apna apna khel rahe hain': lobby, everyone on their own"),
+    (ws(42), B, 199.0, 0.50, "'aur main join kar ke sochta tha': standing alone"),
+    (ws(49), B, 227.0, 0.50, "'karun to karun kya idhar': punching a log, nothing to do"),
     (ws(55), R, 84.4, 0.50, "'phir maine socha': beat shift to the server's builds (guide 15-23 s)"),
     (ws(63), R, 88.6, 0.50, "'khud ka hi ek SMP banate hain'"),
     (ws(69), S, 28.0, 0.50, "'friends ke saath khelenge': players together"),
@@ -80,17 +85,16 @@ SH = [
     (ws(162), R, 168.6, 0.50, "'aur join karo ALOO SMP': active market (guide 51-60 s: end on an active shot)"),
     (ws(167) - 0.1, S, 20.0, 0.50, "end card plate (IP / port / Discord), blurred"),
 ]
-if HOOK == "B":   # alternate hook: open on the busy crowd + the 1000 vs 0 joke, then the server list (same VO)
-    SH[0] = (0.0, S, 38.0, 0.50, "hook B: busy spawn crowd")
-    SH[1] = (0.75, S, 40.5, 0.50, "busy spawn crowd")
-    SH[2] = (ws(5) - 0.05, R, 0.4, 0.45, "server list")
-    SH[3] = (ws(14), R, 120.4, 0.50, "alone on the grass")
+if HOOK == "B":   # alternate hook: open on the big lobby crowd + the 1000 vs 0 joke (same VO)
+    SH[0] = (0.0, B, 96.5, 0.50, "hook B: big lobby crowd")
+    SH[1] = (1.30, B, 109.0, 0.55, "tab list 1,511 global")
 os.makedirs("assets/clips", exist_ok=True)
 SHOTS = []
 for k, (st, src, inp, cx, why) in enumerate(SH):
     end = SH[k + 1][0] if k + 1 < len(SH) else TOTAL
     d = round(end - st, 3)
     blur = k == len(SH) - 1
+    top = "top rows only" in why                  # server list: only the two big servers; the rows below show ALOO SMP / "Can't connect"
     fill = "Welcome join message" in why          # whole frame over a blurred copy so the chat line stays readable (template mode "fill")
     out = f"assets/clips/{HOOK}{k:02d}_{inp}_{d:.2f}.mp4"
     if not os.path.exists(out):
@@ -102,6 +106,9 @@ for k, (st, src, inp, cx, why) in enumerate(SH):
         if fill:
             args = ["-filter_complex", "[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=20:10,eq=brightness=-0.12[bg];"
                     "[b]scale=1080:-2:flags=lanczos,cas=strength=0.5[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2-120,fps=60[o]", "-map", "[o]"]
+        if top:
+            args = ["-filter_complex", "[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=20:10,eq=brightness=-0.25[bg];"
+                    "[b]crop=1440:548:240:0,scale=1080:-2:flags=lanczos,cas=strength=0.5[fg];[bg][fg]overlay=(W-w)/2:520,fps=60[o]", "-map", "[o]"]
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(inp), "-t", f"{d + 0.1:.3f}", "-i", f"{SRC}/{src}", "-an", *args,
                         "-c:v", "libx264", "-crf", "17", "-preset", "veryfast", "-g", "60", "-pix_fmt", "yuv420p", out], check=True)
     SHOTS.append(dict(k=k, start=round(st, 3), dur=d, file=out, why=why, src=src, inp=inp))
@@ -138,7 +145,7 @@ def comp(cid, html, js):
 C, SFX = {}, []
 # ---------------------------------------------------------------- footage: hard cuts (guide: "mostly hard cuts"), punch-ins on the jokes
 html, js = [], []
-PUNCH = {0: ws(0), 8: ws(53), 5: ws(34)}                # "Bhai" (guide: quick punch-in), "kya?" (tiny zoom for the punchline), "nahi ho"
+PUNCH = {0: ws(0), 9: ws(53), 6: ws(34)}                # "Bhai" (guide: quick punch-in), "kya?" (tiny zoom for the punchline), "nahi ho"
 for s in SHOTS:
     k, st, d = s["k"], s["start"], s["dur"]
     html.append(f'    <div id="w{k}" style="position:absolute;inset:0;" data-layout-allow-overflow><video id="v{k}" src="{s["file"]}" data-start="{st}" '

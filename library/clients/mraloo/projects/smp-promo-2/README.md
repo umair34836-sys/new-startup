@@ -25,3 +25,19 @@ Guide deliverable: 1 final 60 s 9:16 video + 1 alternate first-5-s hook (rest id
 | Guide export checklist: source is 60 fps -> clips cut at 60 fps and rendered with `-f 60` (a 30 fps render was stopped) | guide 6 "Source 60 FPS hai toh 60 FPS export" |
 | Final QA (measured here 2026-10-28): A and B both 62.5 s, 1080x1920, 60 fps; -15.0 LUFS, peaks -1.2 / -1.1 dBFS; blackdetect (d 0.2, pix_th 0.10) + freezedetect (2 s) clean; Whisper medium on A's mix hears every line; Discord invite valid (discord.com API: "ALOO SMP ☀", no expiry, 660 members) and play.aloosmp.fun resolves (46.232.234.65) | delivered with SendUserFile: ALOO-SMP-Promo2-FINAL-A.mp4, ...-FINAL-B-alt-hook.mp4, thumbnail PNG (frame 1 s of A) |
 | Disk: /tmp/hyperframes-extract-cache-0 held 1.7 GB from earlier renders; deleted before the 60 fps renders (A 9m56s, B 13m27s) | template minecraft-smp-short README note |
+
+## v2 (2026-10-29): client's big-SMP clip
+Client (via owner): "Bro shorts wale bade smp ke liye ek alag video dala tha". New Drive file "2026-10-28 21-52-40.mp4"
+(1wLIJBx3gdu-5bHqWf3IRysKLVsYB3gTD, 335.5 s, 1080p60, 1.12 GB): client's own recording on OTHER big servers.
+Contents (contact sheets, measured here): server list 0-6 (Wynncraft 1454/2000, MCPVP 1389/50000, then aloosmp + a "test"
+row "Can't connect to server"), loading screens, Wynncraft 33-69, mc-complex lobby 87-99 ("SURVIVAL SMP (168 Playing)"),
+tab list 108-111 ("1,511 Global • 168 Here"), lone survival in a forest 141-210 / 270-291, woodcutting 219-231, animals
+240-258, heavy chat 294-312, snow 324-330.
+
+| Decision | Source |
+| --- | --- |
+| Whole problem part (0 s -> "phir maine socha") re-cut from the new clip: lone player 156.4 / 282 / 165.5 / 175 / 199, lobby 96.5 / 99, tab list 109, forest wandering 227 for "karun to karun kya". ALOO SMP footage only from the solution on (v1 wrongly showed ALOO's own spawn as the lonely big server) | client note; edit logic "problem = other servers" |
+| "itne saare servers": only the top two rows of the server list (crop 1440x548 at 240,0 over a darkened blur), because the rows below show ALOO SMP and a "Can't connect to server" line | snapshot 2026-10-29 |
+| 220 s (dark log close-up) replaced by 227 s (forest, nothing to do) | snapshot 2026-10-29 |
+| Hook B: lobby crowd (96.5) + tab list "1,511 Global" (109) under "1000 PLAYERS / 0 FRIENDS?" | client clip |
+| Audio, captions, text and end card unchanged from v1 | — |
