@@ -47,3 +47,15 @@ Exa via agent-reach answered HTTP 429 (rate limit) after 2 searches on 2026-10-2
   panel sometimes gave 503 because of the 20-connection limit.
 - Design consequences: uploads go in 1.5 MB chunks (raw body, one chunk at a time per client), no long-polling,
   no websockets, static files cached by the PWA service worker, file downloads support HTTP Range.
+
+## Native app (owner 2026-10-29: "web apk nhi real apk ... without internet bhi run")
+- Capacitor 8.6.0 (@capacitor/core, cli, android: MIT; npm view 2026-10-29), plugins app 8.1.2, network 8.0.1,
+  splash-screen 8.0.2, status-bar 8.0.4 (MIT). Live updates: @capgo/capacitor-updater 8.54.0 (MPL-2.0), manual mode
+  (`autoUpdate: false`, `download()` + `next()`, `notifyAppReady()`), self-hosted bundle, `statsUrl: ""`.
+- Generated project needs compileSdk 36 (installed platforms;android-36). Release APK 5.1 MB (measured 2026-10-29).
+- Gradle: Maven Central (repo.maven.apache.org) answered 429 for netty jars (2026-10-29); an init script mapping it to
+  maven-central.storage-download.googleapis.com fixed the build (portal/mobile/gradle-mirror.gradle).
+- No /dev/kvm in this container (2026-10-29): the Android emulator runs only with `-accel off` (slow).
+- Pentest (agency-penetration-tester agent, 2026-10-29, local copy): forged Host header reached password-reset emails
+  (fixed: site_url from config); /register says "already exists" (account enumeration, low, rate-limited 5/h/IP, kept
+  for usability). Everything else held (IDOR, CSRF, XSS, SQLi, uploads, Range, sessions, mass assignment).

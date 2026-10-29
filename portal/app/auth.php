@@ -10,6 +10,11 @@ function current_user(): ?array
     }
     $id = $_SESSION['uid'] ?? null;
     $cache = $id ? row("SELECT * FROM users WHERE id = ? AND status = 'active'", [$id]) : null;
+    // A password change or reset logs out every other device.
+    if ($cache && (int) $cache['session_version'] !== (int) ($_SESSION['sv'] ?? -1)) {
+        $_SESSION = [];
+        $cache = null;
+    }
     return $cache;
 }
 
@@ -103,9 +108,42 @@ function attempt_login(string $email, string $pw): string
     }
     session_regenerate_id(true);
     $_SESSION['uid'] = (int) $u['id'];
+    $_SESSION['sv'] = (int) $u['session_version'];
     unset($_SESSION['csrf']);
     update('users', ['last_login_at' => now()], 'id = ?', [$u['id']]);
     return 'ok';
+}
+
+/** New password: bumps session_version so every other device is logged out; keeps this device logged in. */
+function set_password(int $userId, string $pw, bool $keepThisSession): void
+{
+    q('UPDATE users SET password_hash = ?, session_version = session_version + 1 WHERE id = ?', [hash_password($pw), $userId]);
+    if ($keepThisSession) {
+        session_regenerate_id(true);
+        $_SESSION['sv'] = (int) row('SELECT session_version FROM users WHERE id = ?', [$userId])['session_version'];
+    }
+}
+
+/** Starts a reset: stores only the token's sha256, valid 1 hour, and emails the link. Silent if the email is unknown. */
+function start_password_reset(string $email): void
+{
+    $u = row("SELECT * FROM users WHERE email = ? AND status = 'active'", [strtolower(trim($email))]);
+    if (!$u) {
+        return;
+    }
+    $token = bin2hex(random_bytes(32));
+    insert('password_resets', ['user_id' => $u['id'], 'token_hash' => hash('sha256', $token),
+        'expires_at' => gmdate('Y-m-d H:i:s', time() + 3600)]);
+    $link = site_url('reset?token=' . $token);
+    send_mail($u['email'], 'Reset your password', "Hi {$u['name']},\n\nOpen this link within 1 hour to set a new password:\n$link\n\nIf you did not ask for this, ignore this email.\n\n" . setting('brand_name'));
+}
+
+function find_reset(string $token): ?array
+{
+    if (!preg_match('/^[a-f0-9]{64}$/', $token)) {
+        return null;
+    }
+    return row('SELECT * FROM password_resets WHERE token_hash = ? AND used_at IS NULL AND expires_at > ?', [hash('sha256', $token), now()]);
 }
 
 function dummy_hash(): string

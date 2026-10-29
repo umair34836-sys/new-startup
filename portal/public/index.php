@@ -26,6 +26,12 @@ if ($base !== '' && str_starts_with($path, $base)) {
 }
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
+if (str_starts_with($path, '/api/v1/') || $path === '/api/v1') {
+    require APP_DIR . '/routes_app.php';
+    route_app($method, substr($path, strlen('/api/v1')) ?: '/');
+    exit;
+}
+
 if (str_starts_with($path, '/api/bridge')) {
     require APP_DIR . '/routes_api.php';
     route_api($method, substr($path, strlen('/api/bridge')) ?: '/');
@@ -34,6 +40,10 @@ if (str_starts_with($path, '/api/bridge')) {
 
 security_headers();
 start_session();
+// The Android app opens ...?src=twa&v=<versionCode>. Remember it in a cookie before any login redirect drops the query.
+if (($_GET['src'] ?? '') === 'twa' && preg_match('/^\d{1,6}$/', (string) ($_GET['v'] ?? ''))) {
+    setcookie('appV', (string) $_GET['v'], ['expires' => time() + 365 * 86400, 'path' => '/', 'secure' => is_https(), 'samesite' => 'Lax']);
+}
 if ($method === 'POST') {
     csrf_check();
 }

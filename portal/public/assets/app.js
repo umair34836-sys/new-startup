@@ -61,7 +61,8 @@
 
   document.querySelectorAll('[data-uploader]').forEach(function (zone) {
     var input = zone.querySelector('input[type=file]');
-    var list = zone.parentElement.querySelector('[data-file-list]');
+    var next = zone.nextElementSibling;
+    var list = next && next.matches('[data-file-list]') ? next : zone.parentElement.querySelector('[data-file-list]');
     var queue = [], busy = false, failed = false;
     var submit = document.querySelector('[data-submit]');
 
@@ -113,15 +114,18 @@
     b.addEventListener('click', function (e) { if (!confirm(b.dataset.confirm)) e.preventDefault(); });
   });
 
-  // ---- Splash: logo reveal once per browser session (app start). Timing from repo skills #426/#427:
+  // ---- Splash: logo reveal every time the app / site is opened from outside (not on inside page changes).
+  // Owner (2026-10-29): it must always show MrCopper804, "Editor" and the site address. Timing from repo skills #426/#427:
   // ring draw-on 0.9 s, mark builds 0.55 s then settles 1.04 -> 1.00 in 0.16 s, letters stagger 0.06 s,
   // whole reveal about 2.3 s incl. a 0.45 s hold. Tap skips it. Reduced motion: never shown.
   function splash(g) {
     var el = document.getElementById('splash');
     if (!el) return;
-    var seen = false;
-    try { seen = sessionStorage.getItem('splashSeen') === '1'; sessionStorage.setItem('splashSeen', '1'); } catch (e) { seen = true; }
-    if (seen) { el.remove(); return; }
+    var inside = false;
+    try { inside = document.referrer !== '' && new URL(document.referrer).origin === location.origin; } catch (e) {}
+    var skip = false;
+    try { skip = sessionStorage.getItem('splashSkip') === '1'; } catch (e) {}
+    if (inside || skip) { el.remove(); return; }
     var word = el.querySelector('.splash-word');
     word.innerHTML = word.textContent.split('').map(function (c) { return c === ' ' ? '<span>&nbsp;</span>' : '<span>' + c.replace(/[<>&]/g, '') + '</span>'; }).join('');
     var circle = el.querySelector('circle'), len = 2 * Math.PI * 75.5;
@@ -133,9 +137,11 @@
         { scale: 1.04, rotation: 0, opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power3.out' }, 0.25)
       .to('.splash-mark', { scale: 1, duration: 0.16, ease: 'power1.out' }, 0.8)
       .from('.splash-word span', { y: 14, opacity: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out' }, 0.8)
+      .from('.splash-sub', { opacity: 0, letterSpacing: '1.2em', duration: 0.5, ease: 'power2.out' }, 1.25)
+      .from('.splash-host', { opacity: 0, y: 8, duration: 0.35, ease: 'power1.out' }, 1.45)
       .fromTo('.splash-ring', { filter: 'drop-shadow(0 0 0 rgba(0,212,184,0))' },
         { filter: 'drop-shadow(0 0 14px rgba(245,166,35,.8))', duration: 0.3, yoyo: true, repeat: 1 }, 1.2)
-      .to(el, { opacity: 0, scale: 1.04, duration: 0.3, ease: 'power1.in' }, '+=0.45');
+      .to(el, { opacity: 0, scale: 1.04, duration: 0.3, ease: 'power1.in' }, '+=0.7');
     el.addEventListener('click', function () { tl.progress(1); });
   }
 
@@ -178,6 +184,34 @@
     // Progress steps fill one after another.
     g.from('.progress li.done', { scaleX: 0.6, opacity: 0, duration: 0.3, stagger: 0.08, ease: 'power1.out', clearProps: 'all' });
   });
+
+  // ---- App update ("OTA"). The app (TWA) opens /orders?src=twa&v=<versionCode>; remember the installed version.
+  // Website changes need no update. When the owner publishes a newer APK, the app shows an update bar.
+  (function () {
+    var m = document.cookie.match(/(?:^|;\s*)appV=(\d+)/), installed = m ? m[1] : null;
+    if (installed === null) return;
+    document.querySelectorAll('[data-app-link]').forEach(function (a) { a.closest('.app-get').remove(); });
+    var latest = parseInt(body.dataset.appVersion || '0', 10);
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('appUpdateLater') === String(latest); } catch (e) {}
+    if (latest <= parseInt(installed, 10) || dismissed) return;
+    var bar = document.createElement('div');
+    bar.className = 'update-bar';
+    bar.setAttribute('role', 'status');
+    bar.innerHTML = '<span><strong>New app version</strong> <small></small></span><a class="btn primary"></a><button class="link" type="button">Later</button>';
+    bar.querySelector('small').textContent = body.dataset.appNotes || '';
+    var a = bar.querySelector('a');
+    a.textContent = 'Update';
+    a.href = base + '/app/download';
+    bar.querySelector('button').addEventListener('click', function () {
+      try { sessionStorage.setItem('appUpdateLater', String(latest)); } catch (e) {}
+      bar.remove();
+    });
+    document.body.appendChild(bar);
+    if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.gsap.from(bar, { y: 80, opacity: 0, duration: 0.4, ease: 'back.out(1.6)', delay: 0.6 });
+    }
+  })();
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(base + '/sw.js').catch(function () {});

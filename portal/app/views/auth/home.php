@@ -6,6 +6,9 @@
     <a class="btn primary" href="<?= e(base_url('register')) ?>">Create account</a>
     <a class="btn" href="<?= e(base_url('login')) ?>">Log in</a>
   </div>
+  <?php if (is_file(storage_dir() . '/app/app.apk')): ?>
+    <p class="app-get"><a class="btn" href="<?= e(base_url('app/download')) ?>" data-app-link>Get the Android app</a></p>
+  <?php endif; ?>
 </section>
 <section class="steps stagger">
   <div class="step card"><span class="num">1</span><h3>Send your footage</h3><p>Upload raw videos, images and your script. Big files are fine.</p></div>

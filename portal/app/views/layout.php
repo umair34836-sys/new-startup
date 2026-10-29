@@ -17,13 +17,15 @@ $title = $title ?? $brand;
 <script src="<?= e(base_url('assets/vendor/gsap-3.14.2.min.js')) ?>" defer></script>
 <script src="<?= e(base_url('assets/app.js')) ?>?v=1" defer></script>
 </head>
-<body data-csrf="<?= e(csrf_token()) ?>" data-base="<?= e(rtrim(base_url(''), '/')) ?>">
+<body data-app-notes="<?= e((function () { try { return setting('app_notes'); } catch (Throwable) { return ''; } })()) ?>" data-app-version="<?= (int) (function () { try { return setting('app_version'); } catch (Throwable) { return 0; } })() ?>" data-csrf="<?= e(csrf_token()) ?>" data-base="<?= e(rtrim(base_url(''), '/')) ?>">
 <div class="splash" id="splash" hidden aria-hidden="true">
   <div class="splash-logo">
     <img class="splash-mark" src="<?= e(base_url('assets/icons/logo-480.png')) ?>" alt="" width="240" height="240">
     <svg class="splash-ring" viewBox="0 0 200 200" width="240" height="240"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4b8"/><stop offset="1" stop-color="#f5a623"/></linearGradient></defs><circle cx="100" cy="100" r="75.5" fill="none" stroke="url(#ringGrad)" stroke-width="9" stroke-linecap="round"/></svg>
   </div>
   <div class="splash-word"><?= e($brand) ?></div>
+  <div class="splash-sub"><?= e((function () { try { return setting('splash_subtitle'); } catch (Throwable) { return 'Editor'; } })()) ?></div>
+  <div class="splash-host"><?= e(preg_replace('/[^a-z0-9.:-]/i', '', (string) ($_SERVER['HTTP_HOST'] ?? ''))) ?></div>
 </div>
 <header class="top">
   <a class="brand" href="<?= e(base_url('')) ?>"><img src="<?= e(base_url('assets/icons/logo.png')) ?>" alt="" width="32" height="32"><span><?= e($brand) ?></span></a>
@@ -45,6 +47,6 @@ $title = $title ?? $brand;
 <?php if ($flash): ?><p class="notice <?= e($flash['type']) ?>" role="status"><?= e($flash['msg']) ?></p><?php endif; ?>
 <?= $content ?>
 </main>
-<footer class="foot">© <?= date('Y') ?> <?= e($brand) ?></footer>
+<footer class="foot">© <?= date('Y') ?> <?= e($brand) ?> · <a href="<?= e(base_url('privacy')) ?>">Privacy</a></footer>
 </body>
 </html>

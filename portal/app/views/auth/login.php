@@ -8,5 +8,6 @@
     <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
     <button class="btn primary">Log in</button>
   </form>
+  <p class="muted"><a href="<?= e(base_url('forgot')) ?>">Forgot password?</a></p>
   <p class="muted">New here? <a href="<?= e(base_url('register')) ?>">Create an account</a></p>
 </section>

@@ -25,6 +25,19 @@ Client's Claude session ── downloads inputs, edits with the repo skills, upl
   Why not Capacitor: its `server.url` (load a live site) is documented as "not intended for use in production"
   (library/research/client-portal-tools.md).
 
+## Native app (portal/mobile)
+
+Capacitor 8 (MIT) app, screens in the APK (`src/` → `www/`), no framework. Data via `/api/v1` (app/routes_app.php):
+device tokens `pa_...` (sha256 stored, 90 days idle limit, deleted on logout / password change), CORS only for the
+Capacitor origins (`https://localhost`, `capacitor://localhost`), files through signed 6-hour links
+(`/api/v1/files/ID?u=&exp=&sig=` HMAC-SHA256 with `app_secret`), because a `<video>` tag cannot send headers.
+Offline: IndexedDB stores `cache` (orders, order details), `drafts` + `files` (orders made on the phone, with the
+picked files as blobs), `outbox` (changes, approvals, messages, extra uploads) and `videos` (saved versions).
+The sync engine runs on start, on "online", on app resume and every 30 s: create order → upload chunks (resumable,
+offset kept) → save/submit → send outbox. Live updates: `@capgo/capacitor-updater` (MPL-2.0) in manual mode,
+self-hosted: the app reads `bundle_version/bundle_url/bundle_sha256` from `/api/v1/config`, downloads
+`/app/bundle.zip`, applies it on the next start, `notifyAppReady()` on every start (a broken bundle rolls back).
+
 ## Order life cycle
 
 | Status (DB) | Client sees | Who moves it |
@@ -74,6 +87,16 @@ descriptions, read 2026-10-29):
 `watch_url` (instant webhook into a session) was ruled out: its signing secret is sealed for the artifact service
 only, so PHP cannot sign a delivery.
 
+## App updates (OTA)
+
+The TWA opens `/orders?src=twa&v=<versionCode>`; the server stores `v` in an `appV` cookie before any login
+redirect. Website changes need no APK. When the owner publishes a newer APK (Settings: upload + version number),
+pages show an update bar to apps whose `appV` is lower; `/app/download` serves the APK publicly. An offline page is
+served by the service worker when there is no internet.
+
+Absolute links (reset emails, signed app links) come from `site_url` in config.php, never from the request's Host
+header (pentest 2026-10-29: a forged Host put the attacker's domain into reset emails; fixed and tested).
+
 ## Secrets
 
 - `config.php` (DB password) is written by the installer, chmod 600, git-ignored.
@@ -84,7 +107,10 @@ only, so PHP cannot sign a delivery.
 
 ## Security checklist (tested in tests/e2e.js)
 
-Signups wait for the owner's approval (only paid clients; Settings can open it). Storage quota per client
+Signup is open by default (owner, 2026-10-29: "admin approve hatha do"); Settings can switch on approval.
+Password reset by email (token sha256-stored, 1 hour, single use). A password change or reset bumps
+`session_version`, which logs out every other device. Sessions live 30 days in portal/storage/sessions (cPanel's
+own session cleaner would otherwise log app users out). Storage quota per client
 (default 50 GB, counting uploads in progress), file-count cap counts unfinished uploads, uploads refused when the
 disk has < 2 GB free. Chunk writes are locked (flock) and checked against the real file length, so parallel
 requests cannot grow a file past its size (tested). Each account may stream at most 2 downloads at once (admin 4,

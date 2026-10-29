@@ -20,6 +20,8 @@ const ALLOWED_TYPES = [
     'pdf' => ['application/pdf'], 'txt' => ['text/plain'], 'srt' => ['text/plain', 'application/x-subrip'],
     'docx' => ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip'],
     'zip' => ['application/zip'],
+    // Only for the owner's app upload (kind 'apk'), never for client files.
+    'apk' => ['application/vnd.android.package-archive', 'application/zip', 'application/java-archive'],
 ];
 
 /** Types a browser may show inline; everything else is sent as a download. */
@@ -44,7 +46,7 @@ function upload_init(int $orderId, string $kind, string $by, string $name, int $
 {
     $name = safe_name($name);
     $ext = file_ext($name);
-    if (!isset(ALLOWED_TYPES[$ext])) {
+    if (!isset(ALLOWED_TYPES[$ext]) || ($ext === 'apk') !== ($kind === 'apk') || ($kind === 'bundle' && $ext !== 'zip')) {
         return ['error' => "This file type (.$ext) is not allowed. Send videos, images, audio, PDF, TXT, DOCX or ZIP."];
     }
     $max = (int) setting('max_file_mb') * 1024 * 1024;
@@ -152,6 +154,18 @@ function upload_finish(array $up): array
         q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
         return ['error' => "The file content ($mime) does not match its .$ext name. It was rejected."];
     }
+    if (in_array($up['kind'], ['apk', 'bundle'], true)) {
+        @mkdir(storage_dir() . '/app', 0755, true);
+        $dest = storage_dir() . '/app/' . ($up['kind'] === 'apk' ? 'app.apk' : 'bundle.zip');
+        if (!rename($part, $dest)) {
+            return ['error' => 'Server could not save the app file.'];
+        }
+        if ($up['kind'] === 'bundle') {
+            set_setting('bundle_sha256', hash_file('sha256', $dest));
+        }
+        q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
+        return [$up['kind'] => true, 'size' => (int) $up['size']];
+    }
     $stored = bin2hex(random_bytes(24));
     if (!rename($part, storage_dir() . '/files/' . $stored)) {
         return ['error' => 'Server could not save the file.'];
@@ -205,7 +219,7 @@ function send_file(array $f, bool $download, string $who = 'anon', int $slots = 
         abort(404);
     }
     $size = filesize($path);
-    $mime = inline_safe($f['mime']) ? $f['mime'] : 'application/octet-stream';
+    $mime = inline_safe($f['mime']) || $f['mime'] === 'application/vnd.android.package-archive' ? $f['mime'] : 'application/octet-stream';
     $disp = ($download || !inline_safe($f['mime'])) ? 'attachment' : 'inline';
     $start = 0;
     $end = $size - 1;

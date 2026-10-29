@@ -1,0 +1,20 @@
+{
+  "appId": "com.mrcopper804.portal",
+  "appName": "MrCopper804",
+  "webDir": "www",
+  "android": { "allowMixedContent": false },
+  "server": { "androidScheme": "https" },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 400,
+      "launchAutoHide": true,
+      "backgroundColor": "#120b2b",
+      "showSpinner": false
+    },
+    "CapacitorUpdater": {
+      "autoUpdate": false,
+      "statsUrl": "",
+      "resetWhenUpdate": true
+    }
+  }
+}

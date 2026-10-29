@@ -53,7 +53,7 @@ function run(cmd, args, opts = {}) {
   const twa = await TwaManifest.fromWebManifest(manifestUrl);
   twa.host = host;
   twa.packageId = pkg;
-  twa.startUrl = '/orders';
+  twa.startUrl = '/orders?src=twa&v=' + version; // the site remembers the installed version for the update bar
   twa.appVersionCode = version;
   twa.appVersionName = String(version);
   twa.signingKey = { path: ks, alias: 'portal' };

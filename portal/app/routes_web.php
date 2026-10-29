@@ -65,6 +65,63 @@ function route_web(string $m, string $path): void
         exit;
     }
 
+    if ($path === '/forgot') {
+        $sent = false;
+        if ($m === 'POST') {
+            rate_limit_or_abort("forgot:$ip", 5, 3600);
+            rate_limit_or_abort('forgotmail:' . strtolower(post('email')), 3, 3600);
+            start_password_reset(post('email'));
+            $sent = true;
+        }
+        view('auth/forgot', ['sent' => $sent]);
+        exit;
+    }
+
+    if ($path === '/reset') {
+        $token = (string) ($_GET['token'] ?? '');
+        rate_limit_or_abort("reset:$ip", 20, 3600);
+        $reset = find_reset($token);
+        $error = null;
+        if ($reset && $m === 'POST') {
+            if ($e = validate_password((string) ($_POST['password'] ?? ''))) {
+                $error = $e;
+            } else {
+                set_password((int) $reset['user_id'], (string) $_POST['password'], false);
+                update('password_resets', ['used_at' => now()], 'id = ?', [$reset['id']]);
+                flash('Password changed. Log in with your new password.');
+                redirect('login');
+            }
+        }
+        view('auth/reset', ['valid' => (bool) $reset, 'token' => $token, 'error' => $error]);
+        exit;
+    }
+
+    if ($path === '/privacy') {
+        view('auth/privacy');
+        exit;
+    }
+
+    // The Android app (APK) for clients: public download of the latest build the owner uploaded.
+    if ($path === '/app/download') {
+        $apk = storage_dir() . '/app/app.apk';
+        if (!is_file($apk)) {
+            abort(404, 'The app is not available yet.');
+        }
+        rate_limit_or_abort("apk:$ip", 20, 3600);
+        send_file(['stored_name' => '../app/app.apk', 'mime' => 'application/vnd.android.package-archive',
+            'orig_name' => preg_replace('/[^A-Za-z0-9]/', '', setting('brand_name')) . '-v' . (int) setting('app_version') . '.apk'], true, 'apk', 4);
+    }
+
+    // Live-update bundle for the native app (web files zip, applied by the app's updater).
+    if ($path === '/app/bundle.zip') {
+        $zip = storage_dir() . '/app/bundle.zip';
+        if (!is_file($zip)) {
+            abort(404);
+        }
+        rate_limit_or_abort("bundle:$ip", 60, 3600);
+        send_file(['stored_name' => '../app/bundle.zip', 'mime' => 'application/zip', 'orig_name' => 'bundle.zip'], true, 'apk', 4);
+    }
+
     if ($path === '/logout' && $m === 'POST') {
         logout();
         redirect('login');
@@ -81,9 +138,8 @@ function route_web(string $m, string $path): void
             } elseif ($e = validate_password((string) ($_POST['new'] ?? ''))) {
                 $msg = ['err', $e];
             } else {
-                update('users', ['password_hash' => hash_password((string) $_POST['new'])], 'id = ?', [$user['id']]);
-                session_regenerate_id(true);
-                $msg = ['ok', 'Password changed.'];
+                set_password((int) $user['id'], (string) $_POST['new'], true);
+                $msg = ['ok', 'Password changed. Other devices were logged out.'];
             }
         }
         view('client/account', ['user' => $user, 'msg' => $msg]);
@@ -182,6 +238,10 @@ function upload_endpoint(string $path, array $user): never
     $isAdmin = $user['role'] === 'admin';
     if ($path === '/upload/init') {
         $in = json_decode((string) file_get_contents('php://input'), true) ?: [];
+        if ($isAdmin && in_array($in['kind'] ?? '', ['apk', 'bundle'], true)) {
+            $r = upload_init(0, (string) $in['kind'], 'admin', (string) ($in['name'] ?? ''), (int) ($in['size'] ?? 0));
+            json_out($r, isset($r['error']) ? 400 : 200);
+        }
         $order = order_for_user((int) ($in['order_id'] ?? 0), $user);
         $kind = $isAdmin && ($in['kind'] ?? '') === 'output' ? 'output' : 'input';
         if (!$isAdmin && $order['status'] === 'approved') {
@@ -195,7 +255,13 @@ function upload_endpoint(string $path, array $user): never
     if (!$up) {
         json_out(['error' => 'Upload not found. Start again.'], 404);
     }
-    order_for_user((int) $up['order_id'], $user);
+    if (in_array($up['kind'], ['apk', 'bundle'], true)) {
+        if (!$isAdmin) {
+            json_out(['error' => 'Upload not found. Start again.'], 404);
+        }
+    } else {
+        order_for_user((int) $up['order_id'], $user);
+    }
     if ($path === '/upload/chunk') {
         $r = upload_chunk($up, (int) ($_GET['offset'] ?? -1));
         json_out($r, isset($r['error']) ? 409 : 200);

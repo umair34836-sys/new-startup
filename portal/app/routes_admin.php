@@ -93,7 +93,8 @@ function route_admin(string $m, string $path): void
                 $newToken = 'pb_' . bin2hex(random_bytes(24));
                 set_setting('bridge_token_hash', hash('sha256', $newToken));
             } else {
-                foreach (['brand_name' => 80, 'brand_tagline' => 160, 'support_contact' => 200] as $k => $max) {
+                foreach (['brand_name' => 80, 'splash_subtitle' => 40, 'brand_tagline' => 160, 'support_contact' => 200,
+                    'app_notes' => 300, 'privacy_text' => 5000] as $k => $max) {
                     set_setting($k, mb_substr(post($k), 0, $max));
                 }
                 foreach (['rate_pkr', 'rate_usd'] as $k) {
@@ -103,12 +104,20 @@ function route_admin(string $m, string $path): void
                 set_setting('max_files_per_order', (string) min(500, max(1, (int) post('max_files_per_order'))));
                 set_setting('quota_gb', (string) min(10000, max(1, (int) post('quota_gb'))));
                 set_setting('signup_approval', post('signup_approval') === '1' ? '1' : '0');
+                foreach (['owner_email', 'mail_from'] as $k) {
+                    set_setting($k, filter_var(post($k), FILTER_VALIDATE_EMAIL) ? post($k) : '');
+                }
+                set_setting('app_version', (string) max(0, (int) post('app_version')));
+                set_setting('bundle_version', preg_match('/^\d+\.\d+\.\d+$/', post('bundle_version')) ? post('bundle_version') : setting('bundle_version'));
+                set_setting('bundle_min_native', (string) max(0, (int) post('bundle_min_native')));
                 flash('Settings saved.');
                 redirect('admin/settings');
             }
         }
         $events = rows('SELECT e.*, o.title FROM events e JOIN orders o ON o.id = e.order_id ORDER BY e.id DESC LIMIT 30');
         view('admin/settings', ['admin' => $admin, 'newToken' => $newToken, 'events' => $events,
+            'apkSize' => is_file(storage_dir() . '/app/app.apk') ? filesize(storage_dir() . '/app/app.apk') : 0,
+            'bundleSize' => is_file(storage_dir() . '/app/bundle.zip') ? filesize(storage_dir() . '/app/bundle.zip') : 0,
             'chunk' => chunk_bytes(), 'ini' => ['upload_max_filesize' => ini_get('upload_max_filesize'),
             'post_max_size' => ini_get('post_max_size'), 'memory_limit' => ini_get('memory_limit'),
             'max_execution_time' => ini_get('max_execution_time')]]);

@@ -27,8 +27,8 @@ async function shot(page, name) {
 (async () => {
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
-  // The splash (logo reveal) plays once per browser session; tests/splash checks it separately.
-  await ctx.addInitScript(() => { try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {} });
+  // The splash (logo reveal) plays on every entry from outside; skip it in this context to keep clicks fast.
+  await ctx.addInitScript(() => { try { sessionStorage.setItem('splashSkip', '1'); } catch (e) {} });
   const page = await ctx.newPage();
   const consoleErrors = [];
   page.on('console', (m) => { if (m.type() === 'error' && !/icons|favicon|404|status of 40[039]/.test(m.text())) consoleErrors.push(m.text()); });
@@ -42,31 +42,20 @@ async function shot(page, name) {
   await page.fill('input[name=phone]', '0300 0000000');
   await page.fill('input[name=password]', 'clientpass123');
   await page.click('button:has-text("Create account")');
-  check(page.url().endsWith('/login') && (await page.textContent('.notice')).includes('approve'), 'register -> waits for approval');
-  await page.fill('input[name=email]', 'client1@example.com');
-  await page.fill('input[name=password]', 'clientpass123');
-  await page.click('button:has-text("Log in")');
-  check((await page.textContent('.notice')).includes('waiting for approval'), 'pending account cannot log in yet');
+  check(page.url().endsWith('/orders'), 'register -> straight into the account (no approval by default)');
 
-  // Owner approves the new client.
   const pa = await (await browser.newContext({ viewport: { width: 1280, height: 900 } })).newPage();
   await pa.goto(BASE + '/login');
   await pa.fill('input[name=email]', 'owner@example.com');
   await pa.fill('input[name=password]', 'ownerpass123');
   await pa.click('button:has-text("Log in")');
   check(pa.url().endsWith('/admin'), 'admin lands on admin orders');
-  check((await pa.textContent('.notice')).includes('waiting for your approval'), 'admin sees the waiting account');
   async function approve(email) {
     await pa.goto(BASE + '/admin/clients');
     const r = pa.locator('form.client-row', { hasText: email });
     await r.locator('select[name=status]').selectOption('active');
     await r.locator('button:has-text("Save")').click();
   }
-  await approve('client1@example.com');
-  await page.fill('input[name=email]', 'client1@example.com');
-  await page.fill('input[name=password]', 'clientpass123');
-  await page.click('button:has-text("Log in")');
-  check(page.url().endsWith('/orders'), 'approved client logs in -> orders page');
 
   // 2. New order with uploads and questionnaire.
   await page.click('button:has-text("New video order")');
@@ -133,6 +122,10 @@ async function shot(page, name) {
   // 6. Security checks.
   const noCsrf = await page.evaluate(async (u) => (await fetch(u, { method: 'POST', body: new URLSearchParams({ body: 'x' }) })).status, BASE + '/orders/' + orderId + '/message');
   check(noCsrf === 403, 'POST without CSRF token -> 403');
+  // Optional approval mode: owner turns it on, a new signup must wait.
+  await pa.goto(BASE + '/admin/settings');
+  await pa.selectOption('select[name=signup_approval]', '1');
+  await pa.click('button:has-text("Save settings")');
   const ctx2 = await browser.newContext();
   const p2 = await ctx2.newPage();
   await p2.goto(BASE + '/register');
@@ -140,6 +133,7 @@ async function shot(page, name) {
   await p2.fill('input[name=email]', 'client2@example.com');
   await p2.fill('input[name=password]', 'clientpass456');
   await p2.click('button:has-text("Create account")');
+  check(p2.url().endsWith('/login'), 'approval mode on: new account waits');
   await approve('client2@example.com');
   await p2.fill('input[name=email]', 'client2@example.com');
   await p2.fill('input[name=password]', 'clientpass456');
@@ -189,6 +183,56 @@ async function shot(page, name) {
   await shot(pa, '08-admin-order');
   await pa.goto(BASE + '/admin/settings');
   await shot(pa, '09-admin-settings');
+
+  // 9. Forgot password: email link (mail log in tests), other devices logged out.
+  const mailLog = path.join(process.env.DIR || '', 'mail.log');
+  const p4 = await (await browser.newContext()).newPage();
+  await p4.goto(BASE + '/forgot');
+  await p4.fill('input[name=email]', 'client1@example.com');
+  await p4.click('button:has-text("Send link")');
+  const mails = fs.readFileSync(mailLog, 'utf8').trim().split('\n').map(JSON.parse);
+  check(mails.some((x) => x.subject.startsWith('Your video is ready') && x.to === 'client1@example.com'), 'client got a "video is ready" email');
+  const resetMail = mails.reverse().find((x) => x.subject === 'Reset your password');
+  const link = resetMail && resetMail.body.match(/https?:\/\/\S+reset\?token=[a-f0-9]{64}/)[0];
+  check(!!link, 'reset email has a link');
+  await p4.goto(link);
+  await p4.fill('input[name=password]', 'brandnewpass99');
+  await p4.click('button:has-text("Save password")');
+  check((await p4.textContent('.notice')).includes('Password changed'), 'password reset works');
+  await p4.goto(link);
+  check((await p4.textContent('.notice')).includes('wrong or expired'), 'reset link works only once');
+  await page.goto(BASE + '/orders');
+  check(page.url().endsWith('/login'), 'old session on the other device is logged out after reset');
+  await page.fill('input[name=email]', 'client1@example.com');
+  await page.fill('input[name=password]', 'brandnewpass99');
+  await page.click('button:has-text("Log in")');
+  check(page.url().endsWith('/orders'), 'login with the new password');
+
+  // 10. App update (OTA): owner uploads a newer APK; an app with an older version sees the update bar.
+  if (process.env.APK) {
+    await pa.goto(BASE + '/admin/settings');
+    await pa.setInputFiles('#pick', process.env.APK);
+    await pa.waitForSelector('[data-file-list] li.done', { timeout: 30000 }).catch(() => {});
+    await pa.waitForTimeout(1500);
+    await pa.goto(BASE + '/admin/settings');
+    await pa.fill('input[name=app_version]', '2');
+    await pa.fill('input[name=app_notes]', 'New icon');
+    await pa.click('button:has-text("Save settings")');
+    const dl = await page.request.get(BASE + '/app/download');
+    check(dl.status() === 200 && dl.headers()['content-type'] === 'application/vnd.android.package-archive', 'public APK download works (' + dl.status() + ')');
+    await page.goto(BASE + '/orders?src=twa&v=1');
+    await page.waitForTimeout(1200);
+    check(await page.isVisible('.update-bar'), 'app v1 sees "New app version" bar when v2 is published');
+    await shot(page, '10-update-bar');
+    await page.goto(BASE + '/orders?src=twa&v=2');
+    check(!(await page.isVisible('.update-bar')), 'app v2 sees no update bar');
+    const clientApk = await page.evaluate(async (base) => (await fetch(base + '/upload/init', { method: 'POST',
+      headers: { 'X-CSRF-Token': document.body.dataset.csrf, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_id: 0, kind: 'apk', name: 'evil.apk', size: 1000 }) })).status, BASE);
+    check(clientApk === 404, 'a client cannot replace the app file (' + clientApk + ')');
+  }
+  check((await page.request.get(BASE + '/privacy')).status() === 200, 'privacy page');
+  check((await page.request.get(BASE + '/offline.html')).status() === 200, 'offline page');
 
   // 8. Login rate limit.
   const p3 = await (await browser.newContext()).newPage();

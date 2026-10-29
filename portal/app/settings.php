@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 const SETTING_DEFAULTS = [
     'brand_name' => 'MrCopper804',
+    'splash_subtitle' => 'Editor',
     'brand_tagline' => 'Send your footage. Get a finished video.',
     'support_contact' => '',
     'rate_pkr' => '50',
@@ -11,7 +12,16 @@ const SETTING_DEFAULTS = [
     'max_file_mb' => '4096',
     'max_files_per_order' => '60',
     'quota_gb' => '50',
-    'signup_approval' => '1',
+    'signup_approval' => '0',
+    'owner_email' => '',
+    'mail_from' => '',
+    'app_version' => '0',
+    'bundle_version' => '',
+    'bundle_sha256' => '',
+    'bundle_min_native' => '0',
+    'app_secret' => '',
+    'app_notes' => '',
+    'privacy_text' => "We store your account details, the files you upload and the videos we deliver on our own server, only to make your videos. We do not sell or share them. Ask us any time to delete your account and files.",
     'bridge_token_hash' => '',
 ];
 

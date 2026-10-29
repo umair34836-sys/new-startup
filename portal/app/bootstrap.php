@@ -25,6 +25,7 @@ require APP_DIR . '/auth.php';
 require APP_DIR . '/settings.php';
 require APP_DIR . '/orders.php';
 require APP_DIR . '/files.php';
+require APP_DIR . '/mail.php';
 
 function config(string $key, $default = null)
 {
