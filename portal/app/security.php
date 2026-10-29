@@ -15,19 +15,30 @@ function start_session(): void
         return;
     }
     session_name('portal_sid');
+    // Own session folder: cPanel's session cleaner uses the server's php.ini lifetime (often 24 min) on the default
+    // folder, which would log app users out. Here sessions live 30 days (the Android app stays logged in).
+    $dir = storage_dir() . '/sessions';
+    if (!is_dir($dir)) {
+        @mkdir($dir, 0700, true);
+    }
+    if (is_dir($dir) && is_writable($dir)) {
+        session_save_path($dir);
+        ini_set('session.gc_probability', '1');
+        ini_set('session.gc_divisor', '200');
+    }
     session_set_cookie_params([
-        'lifetime' => 0,
+        'lifetime' => 30 * 86400,
         'path' => '/',
         'secure' => is_https(),
         'httponly' => true,
         'samesite' => 'Lax',
     ]);
     ini_set('session.use_strict_mode', '1');
-    ini_set('session.gc_maxlifetime', '86400');
+    ini_set('session.gc_maxlifetime', (string) (30 * 86400));
     session_start();
-    // Drop sessions idle for more than 7 days.
+    // Drop sessions idle for more than 30 days.
     $last = $_SESSION['seen'] ?? time();
-    if (time() - $last > 7 * 86400) {
+    if (time() - $last > 30 * 86400) {
         $_SESSION = [];
         session_regenerate_id(true);
     }

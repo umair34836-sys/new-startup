@@ -6,6 +6,9 @@
   <label>Brand name<input name="brand_name" maxlength="80" value="<?= e(setting('brand_name')) ?>"></label>
   <label>Splash line under the name (app opening screen)<input name="splash_subtitle" maxlength="40" value="<?= e(setting('splash_subtitle')) ?>"></label>
   <label>Tagline<input name="brand_tagline" maxlength="160" value="<?= e(setting('brand_tagline')) ?>"></label>
+  <label>Your email for new-order alerts<input name="owner_email" type="email" maxlength="190" value="<?= e(setting('owner_email')) ?>"></label>
+  <label>Send emails from <small>(an address of your domain made in cPanel → Email Accounts, e.g. no-reply@firecraft.fun; empty = no emails)</small><input name="mail_from" type="email" maxlength="190" value="<?= e(setting('mail_from')) ?>"></label>
+  <label>Privacy text<textarea name="privacy_text" rows="3" maxlength="5000"><?= e(setting('privacy_text')) ?></textarea></label>
   <label>Support contact shown to clients<input name="support_contact" maxlength="200" value="<?= e(setting('support_contact')) ?>"></label>
   <h2>Rates (per second of finished video)</h2>
   <div class="grid2">
@@ -21,8 +24,23 @@
     <label>New accounts<select name="signup_approval"><option value="1">Wait for my approval (paid clients only)</option><option value="0" <?= setting('signup_approval') === '0' ? 'selected' : '' ?>>Open for everyone</option></select></label>
   </div>
   <p class="muted">Upload part size on this server: <?= e(fmt_bytes($chunk)) ?>. PHP: <?php foreach ($ini as $k => $v) echo e("$k=$v") . ' '; ?></p>
+  <h2>Android app</h2>
+  <div class="grid2">
+    <label>Published app version (versionCode of the uploaded APK)<input name="app_version" type="number" min="0" value="<?= e(setting('app_version')) ?>"></label>
+    <label>What's new (shown in the update message)<input name="app_notes" maxlength="300" value="<?= e(setting('app_notes')) ?>"></label>
+  </div>
+  <p class="muted">Website changes reach the app at once (it shows the live site). Only a new icon, name or splash needs a new APK:
+    upload it below, raise the version number, save. Apps with a lower version then show "Update available".</p>
   <button class="btn primary">Save settings</button>
 </form>
+<section class="card reveal">
+  <h2>App file (APK)</h2>
+  <p class="muted"><?= $apkSize ? 'Current APK: ' . e(fmt_bytes((int) $apkSize)) . ' · public link: ' . e(base_url('app/download')) : 'No APK uploaded yet.' ?></p>
+  <div class="drop" data-uploader data-order="0" data-kind="apk" data-reload="1" tabindex="0">
+    <input type="file" id="pick" accept=".apk"><label for="pick" class="btn">Upload APK</label>
+  </div>
+  <ul class="file-list" data-file-list></ul>
+</section>
 <section class="card reveal">
   <h2>Claude bridge token</h2>
   <?php if ($newToken): ?>

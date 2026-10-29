@@ -145,6 +145,7 @@ function save_order_form(array $order, array $user, array $post, bool $submit): 
 function add_event(int $orderId, string $type): void
 {
     insert('events', ['order_id' => $orderId, 'type' => $type, 'created_at' => now()]);
+    notify_event($orderId, $type);
 }
 
 function add_message(int $orderId, string $sender, string $body, string $kind = 'note', ?int $versionId = null): int
@@ -204,6 +205,7 @@ function add_version(int $orderId, int $fileId, string $note): int
     $vid = insert('versions', ['order_id' => $orderId, 'number' => $n, 'file_id' => $fileId, 'note' => $note, 'created_at' => now()]);
     add_message($orderId, 'studio', $note !== '' ? $note : "Version $n is ready.", 'delivery', $vid);
     update('orders', ['status' => 'delivered', 'updated_at' => now()], 'id = ?', [$orderId]);
+    notify_delivery($orderId, $n);
     return $vid;
 }
 

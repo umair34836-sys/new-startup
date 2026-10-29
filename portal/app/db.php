@@ -77,6 +77,7 @@ function schema_sql(string $driver): array
             rate_pkr DECIMAL(12,4) NULL,
             rate_usd DECIMAL(12,4) NULL,
             claude_session VARCHAR(120) NULL,
+            session_version INT NOT NULL DEFAULT 0,
             admin_note TEXT NULL,
             created_at DATETIME NOT NULL,
             last_login_at DATETIME NULL
@@ -157,6 +158,14 @@ function schema_sql(string $driver): array
             taken_at DATETIME NULL,
             done_at DATETIME NULL,
             FOREIGN KEY (order_id) REFERENCES orders(id)
+        )$end",
+        "CREATE TABLE IF NOT EXISTS password_resets (
+            id $pk,
+            user_id $fk NOT NULL,
+            token_hash CHAR(64) NOT NULL UNIQUE,
+            expires_at DATETIME NOT NULL,
+            used_at DATETIME NULL,
+            FOREIGN KEY (user_id) REFERENCES users(id)
         )$end",
         "CREATE TABLE IF NOT EXISTS rate_limits (
             rkey VARCHAR(190) NOT NULL PRIMARY KEY,

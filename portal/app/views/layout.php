@@ -17,7 +17,7 @@ $title = $title ?? $brand;
 <script src="<?= e(base_url('assets/vendor/gsap-3.14.2.min.js')) ?>" defer></script>
 <script src="<?= e(base_url('assets/app.js')) ?>?v=1" defer></script>
 </head>
-<body data-csrf="<?= e(csrf_token()) ?>" data-base="<?= e(rtrim(base_url(''), '/')) ?>">
+<body data-app-notes="<?= e((function () { try { return setting('app_notes'); } catch (Throwable) { return ''; } })()) ?>" data-app-version="<?= (int) (function () { try { return setting('app_version'); } catch (Throwable) { return 0; } })() ?>" data-csrf="<?= e(csrf_token()) ?>" data-base="<?= e(rtrim(base_url(''), '/')) ?>">
 <div class="splash" id="splash" hidden aria-hidden="true">
   <div class="splash-logo">
     <img class="splash-mark" src="<?= e(base_url('assets/icons/logo-480.png')) ?>" alt="" width="240" height="240">
@@ -47,6 +47,6 @@ $title = $title ?? $brand;
 <?php if ($flash): ?><p class="notice <?= e($flash['type']) ?>" role="status"><?= e($flash['msg']) ?></p><?php endif; ?>
 <?= $content ?>
 </main>
-<footer class="foot">© <?= date('Y') ?> <?= e($brand) ?></footer>
+<footer class="foot">© <?= date('Y') ?> <?= e($brand) ?> · <a href="<?= e(base_url('privacy')) ?>">Privacy</a></footer>
 </body>
 </html>

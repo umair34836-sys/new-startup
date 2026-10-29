@@ -184,6 +184,34 @@
     g.from('.progress li.done', { scaleX: 0.6, opacity: 0, duration: 0.3, stagger: 0.08, ease: 'power1.out', clearProps: 'all' });
   });
 
+  // ---- App update ("OTA"). The app (TWA) opens /orders?src=twa&v=<versionCode>; remember the installed version.
+  // Website changes need no update. When the owner publishes a newer APK, the app shows an update bar.
+  (function () {
+    var m = document.cookie.match(/(?:^|;\s*)appV=(\d+)/), installed = m ? m[1] : null;
+    if (installed === null) return;
+    document.querySelectorAll('[data-app-link]').forEach(function (a) { a.closest('.app-get').remove(); });
+    var latest = parseInt(body.dataset.appVersion || '0', 10);
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('appUpdateLater') === String(latest); } catch (e) {}
+    if (latest <= parseInt(installed, 10) || dismissed) return;
+    var bar = document.createElement('div');
+    bar.className = 'update-bar';
+    bar.setAttribute('role', 'status');
+    bar.innerHTML = '<span><strong>New app version</strong> <small></small></span><a class="btn primary"></a><button class="link" type="button">Later</button>';
+    bar.querySelector('small').textContent = body.dataset.appNotes || '';
+    var a = bar.querySelector('a');
+    a.textContent = 'Update';
+    a.href = base + '/app/download';
+    bar.querySelector('button').addEventListener('click', function () {
+      try { sessionStorage.setItem('appUpdateLater', String(latest)); } catch (e) {}
+      bar.remove();
+    });
+    document.body.appendChild(bar);
+    if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.gsap.from(bar, { y: 80, opacity: 0, duration: 0.4, ease: 'back.out(1.6)', delay: 0.6 });
+    }
+  })();
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(base + '/sw.js').catch(function () {});
   }

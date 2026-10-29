@@ -7,7 +7,7 @@ DIR="${DIR:-$(mktemp -d)}"
 PORT="${PORT:-8088}"
 mkdir -p "$DIR/storage/files" "$DIR/storage/chunks"
 cat > "$DIR/config.php" <<PHP
-<?php return ['db_driver' => 'sqlite', 'db_path' => '$DIR/portal.sqlite', 'storage_dir' => '$DIR/storage', 'base_path' => '', 'timezone' => 'Asia/Karachi'];
+<?php return ['db_driver' => 'sqlite', 'db_path' => '$DIR/portal.sqlite', 'storage_dir' => '$DIR/storage', 'base_path' => '', 'timezone' => 'Asia/Karachi', 'mail_log' => '$DIR/mail.log'];
 PHP
 PORTAL_CONFIG="$DIR/config.php" php "$HERE/tests/seed.php" "${ADMIN_EMAIL:-owner@example.com}" "${ADMIN_PASSWORD:-ownerpass123}" "${BRIDGE_TOKEN:-pb_testtoken}"
 echo "DIR=$DIR"

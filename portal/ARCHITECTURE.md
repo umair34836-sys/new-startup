@@ -74,6 +74,13 @@ descriptions, read 2026-10-29):
 `watch_url` (instant webhook into a session) was ruled out: its signing secret is sealed for the artifact service
 only, so PHP cannot sign a delivery.
 
+## App updates (OTA)
+
+The TWA opens `/orders?src=twa&v=<versionCode>`; the server stores `v` in an `appV` cookie before any login
+redirect. Website changes need no APK. When the owner publishes a newer APK (Settings: upload + version number),
+pages show an update bar to apps whose `appV` is lower; `/app/download` serves the APK publicly. An offline page is
+served by the service worker when there is no internet.
+
 ## Secrets
 
 - `config.php` (DB password) is written by the installer, chmod 600, git-ignored.
@@ -84,7 +91,10 @@ only, so PHP cannot sign a delivery.
 
 ## Security checklist (tested in tests/e2e.js)
 
-Signups wait for the owner's approval (only paid clients; Settings can open it). Storage quota per client
+Signup is open by default (owner, 2026-10-29: "admin approve hatha do"); Settings can switch on approval.
+Password reset by email (token sha256-stored, 1 hour, single use). A password change or reset bumps
+`session_version`, which logs out every other device. Sessions live 30 days in portal/storage/sessions (cPanel's
+own session cleaner would otherwise log app users out). Storage quota per client
 (default 50 GB, counting uploads in progress), file-count cap counts unfinished uploads, uploads refused when the
 disk has < 2 GB free. Chunk writes are locked (flock) and checked against the real file length, so parallel
 requests cannot grow a file past its size (tested). Each account may stream at most 2 downloads at once (admin 4,

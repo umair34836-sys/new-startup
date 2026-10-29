@@ -11,3 +11,5 @@ apk/*.keystore
 apk/*.jks
 apk/*.apk
 apk/*.aab
+storage/sessions/*
+storage/app/*

@@ -34,6 +34,10 @@ if (str_starts_with($path, '/api/bridge')) {
 
 security_headers();
 start_session();
+// The Android app opens ...?src=twa&v=<versionCode>. Remember it in a cookie before any login redirect drops the query.
+if (($_GET['src'] ?? '') === 'twa' && preg_match('/^\d{1,6}$/', (string) ($_GET['v'] ?? ''))) {
+    setcookie('appV', (string) $_GET['v'], ['expires' => time() + 365 * 86400, 'path' => '/', 'secure' => is_https(), 'samesite' => 'Lax']);
+}
 if ($method === 'POST') {
     csrf_check();
 }
