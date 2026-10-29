@@ -1,7 +1,7 @@
 // Service worker: caches only static assets (CSS, JS, icons) to save requests on a 20-connection host.
 // Pages, files and the API always go to the network so clients never see stale order data.
-const CACHE = 'portal-static-v2';
-const ASSETS = ['assets/app.css?v=2', 'assets/app.js?v=2', 'assets/vendor/gsap-3.14.2.min.js', 'assets/icons/logo.png', 'assets/icons/icon-192.png', 'assets/icons/logo-480.png'];
+const CACHE = 'portal-static-v3';
+const ASSETS = ['assets/app.css?v=3', 'assets/app.js?v=3', 'assets/vendor/gsap-3.14.2.min.js', 'assets/icons/logo.png', 'assets/icons/icon-192.png', 'assets/icons/logo-480.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS.map((a) => new URL(a, self.registration.scope)))).then(() => self.skipWaiting()));
 });

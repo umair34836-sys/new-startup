@@ -4,6 +4,7 @@
   <?= csrf_field() ?>
   <h2>Brand</h2>
   <label>Brand name<input name="brand_name" maxlength="80" value="<?= e(setting('brand_name')) ?>"></label>
+  <label>Splash line under the name (app opening screen)<input name="splash_subtitle" maxlength="40" value="<?= e(setting('splash_subtitle')) ?>"></label>
   <label>Tagline<input name="brand_tagline" maxlength="160" value="<?= e(setting('brand_tagline')) ?>"></label>
   <label>Support contact shown to clients<input name="support_contact" maxlength="200" value="<?= e(setting('support_contact')) ?>"></label>
   <h2>Rates (per second of finished video)</h2>

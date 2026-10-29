@@ -130,3 +130,6 @@ body.auth { justify-content: center; padding: 16px; }
 .splash-word span { display: inline-block; }
 .notice.ok::before { content: ""; display: inline-block; width: .55rem; height: 1rem; margin-right: .6rem; border: solid #15803d;
   border-width: 0 3px 3px 0; transform: rotate(45deg) translateY(-2px); vertical-align: middle; }
+.splash-sub { margin-top: -.6rem; font-weight: 800; font-size: 1rem; letter-spacing: .6em; padding-left: .6em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--teal), var(--gold), var(--coral)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.splash-host { position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); left: 0; right: 0; text-align: center; color: #a8a3c7; font-size: .9rem; letter-spacing: .04em; }

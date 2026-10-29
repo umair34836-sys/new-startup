@@ -24,6 +24,8 @@ $title = $title ?? $brand;
     <svg class="splash-ring" viewBox="0 0 200 200" width="240" height="240"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4b8"/><stop offset="1" stop-color="#f5a623"/></linearGradient></defs><circle cx="100" cy="100" r="75.5" fill="none" stroke="url(#ringGrad)" stroke-width="9" stroke-linecap="round"/></svg>
   </div>
   <div class="splash-word"><?= e($brand) ?></div>
+  <div class="splash-sub"><?= e((function () { try { return setting('splash_subtitle'); } catch (Throwable) { return 'Editor'; } })()) ?></div>
+  <div class="splash-host"><?= e(preg_replace('/[^a-z0-9.:-]/i', '', (string) ($_SERVER['HTTP_HOST'] ?? ''))) ?></div>
 </div>
 <header class="top">
   <a class="brand" href="<?= e(base_url('')) ?>"><img src="<?= e(base_url('assets/icons/logo.png')) ?>" alt="" width="32" height="32"><span><?= e($brand) ?></span></a>

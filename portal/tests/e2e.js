@@ -27,8 +27,8 @@ async function shot(page, name) {
 (async () => {
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
-  // The splash (logo reveal) plays once per browser session; tests/splash checks it separately.
-  await ctx.addInitScript(() => { try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {} });
+  // The splash (logo reveal) plays on every entry from outside; skip it in this context to keep clicks fast.
+  await ctx.addInitScript(() => { try { sessionStorage.setItem('splashSkip', '1'); } catch (e) {} });
   const page = await ctx.newPage();
   const consoleErrors = [];
   page.on('console', (m) => { if (m.type() === 'error' && !/icons|favicon|404|status of 40[039]/.test(m.text())) consoleErrors.push(m.text()); });

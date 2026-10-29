@@ -113,15 +113,18 @@
     b.addEventListener('click', function (e) { if (!confirm(b.dataset.confirm)) e.preventDefault(); });
   });
 
-  // ---- Splash: logo reveal once per browser session (app start). Timing from repo skills #426/#427:
+  // ---- Splash: logo reveal every time the app / site is opened from outside (not on inside page changes).
+  // Owner (2026-10-29): it must always show MrCopper804, "Editor" and the site address. Timing from repo skills #426/#427:
   // ring draw-on 0.9 s, mark builds 0.55 s then settles 1.04 -> 1.00 in 0.16 s, letters stagger 0.06 s,
   // whole reveal about 2.3 s incl. a 0.45 s hold. Tap skips it. Reduced motion: never shown.
   function splash(g) {
     var el = document.getElementById('splash');
     if (!el) return;
-    var seen = false;
-    try { seen = sessionStorage.getItem('splashSeen') === '1'; sessionStorage.setItem('splashSeen', '1'); } catch (e) { seen = true; }
-    if (seen) { el.remove(); return; }
+    var inside = false;
+    try { inside = document.referrer !== '' && new URL(document.referrer).origin === location.origin; } catch (e) {}
+    var skip = false;
+    try { skip = sessionStorage.getItem('splashSkip') === '1'; } catch (e) {}
+    if (inside || skip) { el.remove(); return; }
     var word = el.querySelector('.splash-word');
     word.innerHTML = word.textContent.split('').map(function (c) { return c === ' ' ? '<span>&nbsp;</span>' : '<span>' + c.replace(/[<>&]/g, '') + '</span>'; }).join('');
     var circle = el.querySelector('circle'), len = 2 * Math.PI * 75.5;
@@ -133,9 +136,11 @@
         { scale: 1.04, rotation: 0, opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power3.out' }, 0.25)
       .to('.splash-mark', { scale: 1, duration: 0.16, ease: 'power1.out' }, 0.8)
       .from('.splash-word span', { y: 14, opacity: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out' }, 0.8)
+      .from('.splash-sub', { opacity: 0, letterSpacing: '1.2em', duration: 0.5, ease: 'power2.out' }, 1.25)
+      .from('.splash-host', { opacity: 0, y: 8, duration: 0.35, ease: 'power1.out' }, 1.45)
       .fromTo('.splash-ring', { filter: 'drop-shadow(0 0 0 rgba(0,212,184,0))' },
         { filter: 'drop-shadow(0 0 14px rgba(245,166,35,.8))', duration: 0.3, yoyo: true, repeat: 1 }, 1.2)
-      .to(el, { opacity: 0, scale: 1.04, duration: 0.3, ease: 'power1.in' }, '+=0.45');
+      .to(el, { opacity: 0, scale: 1.04, duration: 0.3, ease: 'power1.in' }, '+=0.7');
     el.addEventListener('click', function () { tl.progress(1); });
   }
 
