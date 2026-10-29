@@ -1,8 +1,8 @@
 // Portal front end: chunked uploads, live price estimate, confirm buttons, motion.
-// Motion presets from UI UX Pro Max data/motion.csv: #1 hover micro-interaction (subtle),
-// #4 scroll reveal (subtle), #7 stagger list (subtle), #10 page transition (subtle). Reduced motion = no motion.
+// Subtle motion only; none when the visitor asks for reduced motion.
 (function () {
   'use strict';
+  var ZERO_DEC = ['PKR', 'INR', 'NPR', 'BDT', 'LKR', 'JPY', 'KRW', 'IDR', 'VND'];
   var body = document.body;
   var csrf = body.dataset.csrf;
   var base = body.dataset.base || '';
@@ -106,7 +106,7 @@
     var rate = parseFloat(est.dataset.rate), cur = est.dataset.currency, out = est.querySelector('[data-estimate-value]');
     len.addEventListener('input', function () {
       var s = Math.max(0, parseInt(len.value, 10) || 0), v = s * rate;
-      out.textContent = cur + ' ' + v.toLocaleString('en-US', { maximumFractionDigits: cur === 'PKR' ? 0 : 2, minimumFractionDigits: cur === 'PKR' ? 0 : 2 });
+      out.textContent = cur + ' ' + v.toLocaleString('en-US', { maximumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2, minimumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2 });
     });
   }
 
@@ -114,10 +114,8 @@
     b.addEventListener('click', function (e) { if (!confirm(b.dataset.confirm)) e.preventDefault(); });
   });
 
-  // ---- Splash: logo reveal every time the app / site is opened from outside (not on inside page changes).
-  // Owner (2026-10-29): it must always show MrCopper804, "Editor" and the site address. Timing from repo skills #426/#427:
-  // ring draw-on 0.9 s, mark builds 0.55 s then settles 1.04 -> 1.00 in 0.16 s, letters stagger 0.06 s,
-  // whole reveal about 2.3 s incl. a 0.45 s hold. Tap skips it. Reduced motion: never shown.
+  // ---- Splash: logo reveal every time the site is opened from outside (not on inside page changes).
+  // Ring draws in, logo settles, letters follow; about 2.5 s. Tap skips it. Reduced motion: never shown.
   function splash(g) {
     var el = document.getElementById('splash');
     if (!el) return;
@@ -145,7 +143,7 @@
     el.addEventListener('click', function () { tl.progress(1); });
   }
 
-  // ---- Motion (GSAP 3.14.2, vendored from library/vendor) ----
+  // ---- Motion ----
   window.addEventListener('load', function () {
     var g = window.gsap;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -157,13 +155,13 @@
     }
     splash(g);
     window.portalMotion = { enter: function (el) { g.from(el, { opacity: 0, y: 8, duration: 0.3, ease: 'power1.out', clearProps: 'all' }); } };
-    // #10 page transition (subtle): fade the page in on load.
+    // Fade the page in on load.
     g.fromTo('#main', { opacity: 0 }, { opacity: 1, duration: 0.2, ease: 'power1.inOut' });
-    // #7 stagger list (subtle).
+    // Lists come in one after another.
     document.querySelectorAll('.stagger').forEach(function (list) {
       g.from(list.children, { opacity: 0, y: 8, duration: 0.3, stagger: 0.03, ease: 'power1.out', clearProps: 'all' });
     });
-    // #4 scroll reveal (subtle), with IntersectionObserver instead of ScrollTrigger (one less plugin).
+    // Cards fade up as they scroll into view.
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -172,12 +170,12 @@
       });
     }, { rootMargin: '0px 0px -10% 0px' });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-    // #1 hover micro-interaction (subtle): lift under 2 px.
+    // Buttons lift slightly under the pointer.
     document.querySelectorAll('.btn, .order-item').forEach(function (el) {
       el.addEventListener('mouseenter', function () { g.to(el, { y: -1, duration: 0.15, ease: 'power1.out' }); });
       el.addEventListener('mouseleave', function () { g.to(el, { y: 0, duration: 0.15, ease: 'power1.out' }); });
     });
-    // Success notice: slide in with a small settle (skill #426: land on the final layout from an offset).
+    // Success notice: slide in with a small settle.
     g.fromTo('.notice.ok', { x: -12, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: 'back.out(2)' });
     // New version ready: one soft glow on the player card.
     g.fromTo('video.player', { boxShadow: '0 0 0 0 rgba(255,46,147,0)' }, { boxShadow: '0 0 0 6px rgba(255,46,147,.35)', duration: 0.5, yoyo: true, repeat: 1, delay: 0.4 });

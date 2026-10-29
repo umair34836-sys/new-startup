@@ -5,17 +5,29 @@
   <h2>Brand</h2>
   <label>Brand name<input name="brand_name" maxlength="80" value="<?= e(setting('brand_name')) ?>"></label>
   <label>Splash line under the name (app opening screen)<input name="splash_subtitle" maxlength="40" value="<?= e(setting('splash_subtitle')) ?>"></label>
+  <label>Promise shown to clients<input name="promise_text" maxlength="200" value="<?= e(setting('promise_text')) ?>"></label>
   <label>Tagline<input name="brand_tagline" maxlength="160" value="<?= e(setting('brand_tagline')) ?>"></label>
   <label>Your email for new-order alerts<input name="owner_email" type="email" maxlength="190" value="<?= e(setting('owner_email')) ?>"></label>
   <label>Send emails from <small>(an address of your domain made in cPanel → Email Accounts, e.g. no-reply@firecraft.fun; empty = no emails)</small><input name="mail_from" type="email" maxlength="190" value="<?= e(setting('mail_from')) ?>"></label>
   <label>Privacy text<textarea name="privacy_text" rows="3" maxlength="5000"><?= e(setting('privacy_text')) ?></textarea></label>
   <label>Support contact shown to clients<input name="support_contact" maxlength="200" value="<?= e(setting('support_contact')) ?>"></label>
-  <h2>Rates (per second of finished video)</h2>
-  <div class="grid2">
-    <label>PKR per second<input name="rate_pkr" type="number" step="0.0001" min="0" value="<?= e(setting('rate_pkr')) ?>"></label>
-    <label>USD per second<input name="rate_usd" type="number" step="0.0001" min="0" value="<?= e(setting('rate_usd')) ?>"></label>
-  </div>
-  <p class="muted">Example: 60 s at <?= e(setting('rate_pkr')) ?> PKR = <?= e(fmt_money(60 * (float) setting('rate_pkr'), 'PKR')) ?>. Per-client rates: Clients page.</p>
+  <h2>Currencies and default rates (per second of finished video)</h2>
+  <p class="muted">Each client pays in their own currency. Set a special rate for one client on the Clients page. Add a currency
+    with its 3-letter code (e.g. INR, NPR, AED); clear a code to remove it.</p>
+  <table class="table cur-table">
+    <thead><tr><th>Currency code</th><th>Default rate per second</th><th>60 s video</th></tr></thead>
+    <tbody>
+    <?php foreach (currencies() as $code => $rate): ?>
+      <tr><td><input name="cur_code[]" maxlength="3" pattern="[A-Za-z]{3}" value="<?= e($code) ?>" aria-label="Currency code"> <small class="muted"><?= e(CURRENCY_NAMES[$code] ?? '') ?></small></td>
+        <td><input name="cur_rate[]" type="number" step="0.0001" min="0" value="<?= e((string) $rate) ?>" aria-label="Rate per second"></td>
+        <td><?= e(fmt_money(60 * $rate, $code)) ?></td></tr>
+    <?php endforeach; ?>
+    <?php for ($i = 0; $i < 2; $i++): ?>
+      <tr><td><input name="cur_code[]" maxlength="3" pattern="[A-Za-z]{3}" placeholder="New, e.g. INR" aria-label="New currency code"></td>
+        <td><input name="cur_rate[]" type="number" step="0.0001" min="0" placeholder="Rate" aria-label="Rate per second"></td><td></td></tr>
+    <?php endfor; ?>
+    </tbody>
+  </table>
   <h2>Uploads</h2>
   <div class="grid2">
     <label>Max size per file (MB)<input name="max_file_mb" type="number" min="10" max="20480" value="<?= e(setting('max_file_mb')) ?>"></label>

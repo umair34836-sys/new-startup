@@ -67,8 +67,8 @@ function register_user(string $name, string $email, string $phone, string $pw, s
     if ($e = validate_password($pw)) {
         $errors[] = $e;
     }
-    if (!in_array($currency, ['PKR', 'USD'], true)) {
-        $currency = 'PKR';
+    if (!isset(currencies()[$currency])) {
+        $currency = array_key_first(currencies());
     }
     if (!$errors && row('SELECT id FROM users WHERE email = ?', [strtolower($email)])) {
         $errors[] = 'An account with this email already exists. Log in instead.';

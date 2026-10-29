@@ -1,8 +1,9 @@
 // MrCopper804 native app (Capacitor). The whole UI ships inside the APK; the portal API is only used for data.
 // Offline: cached orders/messages, saved videos, drafts and files kept on the phone, and an outbox that syncs
-// itself when the internet comes back. Motion: repo skills #426/#427 (logo reveal) + UI UX Pro Max motion presets.
+// itself when the internet comes back.
 (function () {
   'use strict';
+  var ZERO_DEC = ['PKR', 'INR', 'NPR', 'BDT', 'LKR', 'JPY', 'KRW', 'IDR', 'VND'];
   var API = (window.PORTAL_API || '').replace(/\/$/, '');
   var CAP = window.Capacitor && window.Capacitor.Plugins ? window.Capacitor.Plugins : {};
   var isNative = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
@@ -15,7 +16,7 @@
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
   }
   function money(v, cur) {
-    return cur + ' ' + Number(v || 0).toLocaleString('en-US', { maximumFractionDigits: cur === 'PKR' ? 0 : 2, minimumFractionDigits: cur === 'PKR' ? 0 : 2 });
+    return cur + ' ' + Number(v || 0).toLocaleString('en-US', { maximumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2, minimumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2 });
   }
   function bytes(b) {
     var u = ['B', 'KB', 'MB', 'GB'], i = 0;
@@ -255,7 +256,7 @@
   }
 
   function vLogin() {
-    view('<section class="card narrow reveal"><h1>Log in</h1><form class="form" id="f">' +
+    view('<section class="card narrow reveal"><h1>Log in</h1><p class="promise">' + esc(promise()) + '</p><form class="form" id="f">' +
       '<label>Email<input name="email" type="email" required autocomplete="email"></label>' +
       '<label>Password<input name="password" type="password" required autocomplete="current-password"></label>' +
       '<button class="btn primary">Log in</button></form>' +
@@ -269,7 +270,7 @@
       '<label>Your name<input name="name" required maxlength="120" autocomplete="name"></label>' +
       '<label>Email<input name="email" type="email" required autocomplete="email"></label>' +
       '<label>WhatsApp / phone <small>(optional)</small><input name="phone" maxlength="40" autocomplete="tel"></label>' +
-      '<label>Currency<select name="currency"><option value="PKR">PKR (Pakistani Rupee)</option><option value="USD">USD (US Dollar)</option></select></label>' +
+      '<label>Currency<select name="currency">' + (((state.cfg || ls.get('cfg') || {}).currencies) || [{ code: 'PKR', label: 'PKR (Pakistani Rupee)' }, { code: 'USD', label: 'USD (US Dollar)' }]).map(function (c) { return '<option value="' + esc(c.code) + '">' + esc(c.label) + '</option>'; }).join('') + '</select></label>' +
       '<label>Password <small>(8+ characters)</small><input name="password" type="password" required minlength="8" autocomplete="new-password"></label>' +
       '<button class="btn primary">Create account</button></form><p class="muted">Have an account? <a href="#/login">Log in</a></p></section>');
     form('#f', function (fd) {
@@ -294,6 +295,9 @@
       (c.support ? '<p class="muted">Contact: ' + esc(c.support) + '</p>' : '') + '</section>');
   }
 
+  function brandName() { return ((state.cfg || ls.get('cfg') || {}).brand) || 'MrCopper804'; }
+  function promise() { return ((state.cfg || ls.get('cfg') || {}).promise) || 'Every video is edited by hand by MrCopper804.'; }
+
   function statusBadge(s) {
     var names = (state.cfg && state.cfg.statuses) || {};
     return '<span class="badge s-' + esc(s) + '">' + esc(names[s] || s) + '</span>';
@@ -315,7 +319,7 @@
       }
       if (out.length) html += '<p class="muted reveal">' + out.length + ' message(s) waiting to be sent.</p>';
       if (!orders.length && !drafts.length) {
-        html += '<section class="card empty reveal"><h2>No orders yet</h2><p>Start a new order: add your footage and tell us how you want it edited.</p></section>';
+        html += '<section class="card empty reveal"><h2>No orders yet</h2><p>Start a new order: add your footage and tell us how you want it edited. ' + esc(promise()) + '</p></section>';
       } else if (orders.length) {
         html += '<ul class="order-list stagger">' + orders.map(function (o) {
           if (o.status === 'draft') return '';
@@ -435,11 +439,11 @@
             '<form class="form" id="fc"><textarea name="body" rows="4" required minlength="3" maxlength="10000" placeholder="Example: at 0:12 make the text bigger, use a happier song…"></textarea><button class="btn">Send changes</button></form>' +
             '<form class="form" id="fa"><button class="btn primary">It\'s perfect, approve</button></form></div>';
         } else if (o.status === 'revision') {
-          html += '<p class="notice">We got your changes and are working on the next version.</p>';
+          html += '<p class="notice">We got your changes. ' + esc(brandName()) + ' is working on the next version.</p>';
         }
         html += '</section>';
       } else {
-        html += '<section class="card reveal"><h2>We are on it</h2><p>Your order was received. The finished video will appear here.</p></section>';
+        html += '<section class="card reveal"><h2>We are on it</h2><p>Your order was received. ' + esc(promise()) + ' The finished video will appear here.</p></section>';
       }
       if (waiting.length) html += '<p class="notice reveal">' + waiting.length + ' message(s) will be sent when you are online.</p>';
       html += '<section class="card reveal"><h2>Messages</h2><ul class="thread">' + o.messages.map(function (m) {
@@ -530,7 +534,7 @@
   }
 
   // ---------- updates ----------
-  // 1) Live update: new screens (web bundle) via @capgo/capacitor-updater, self-hosted on the portal.
+  // 1) Live update: new screens downloaded from our own server.
   // 2) Native update: a new APK only for native changes (icon, plugins): show an Update bar.
   function verNum(v) { return String(v || '0.0.0').split('.').map(function (x) { return parseInt(x, 10) || 0; }).reduce(function (a, b) { return a * 1000 + b; }, 0); }
   function checkUpdates(c) {
@@ -560,7 +564,7 @@
     document.body.appendChild(bar);
   }
 
-  // ---------- splash: every launch (owner: must show MrCopper804, EDITOR and the site) ----------
+  // ---------- splash: every launch ----------
   function splash() {
     var el = document.getElementById('splash');
     document.getElementById('splash-host').textContent = API.replace(/^https?:\/\//, '');

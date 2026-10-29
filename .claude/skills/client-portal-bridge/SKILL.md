@@ -5,13 +5,16 @@ description: Pick up client orders from the owner's client portal (portal/ in th
 
 # Client portal bridge
 
-Design: portal/ARCHITECTURE.md. CLI: `portal/bridge/portal_bridge.py` (Python stdlib). Needs the environment
-variables `PORTAL_URL` and `PORTAL_BRIDGE_TOKEN` (cloud environment settings; never in git or chat). If they are
-missing, say so to the owner and stop.
+Design: portal/ARCHITECTURE.md. CLI: `portal/bridge/portal_bridge.py` (Python stdlib). Live portal:
+https://editor.firecraft.fun (default `PORTAL_URL`). The bridge token is a "Bearer" network secret for
+editor.firecraft.fun in the cloud environment settings (the environment adds the header; the session never sees it),
+or the env var `PORTAL_BRIDGE_TOKEN`. Check with `portal_bridge.py ping`: 401 = no token reaches the portal yet
+(tell the owner and stop). Never put the token in git or chat.
 
 ## Hub run (scheduled task or "portal check karo")
 
-1. `python3 portal/bridge/portal_bridge.py events` → list of open events with full order JSON.
+1. `python3 portal/bridge/portal_bridge.py events` → NEW events (not yet taken) with full order JSON. Taken events stay
+   open until the client session delivers or marks them done; `events --all` shows those too.
 2. For each event:
    - `order.client.claude_session` empty → create a session for this client (`create_session`, this repo,
      branch `client-<short-name>`), then `portal_bridge.py link <client_id> <session_id>`.
@@ -31,7 +34,15 @@ missing, say so to the owner and stop.
    music-for-video, ...). For `revision_requested`, read the last `revision` message and change only that.
 3. `portal_bridge.py deliver <order_id> final.mp4 --note "<short note for the client, English or Roman Urdu>"`.
    This makes a new version, the client gets "Koi changes chahiye?", and the order's open events close.
-4. White label: notes and messages speak as the studio (brand name), never mention Claude, sessions or tools.
+4. WHITE LABEL (owner rule, 2026-10-29: "client ko bilkul bhi pata nhi lagna chaye k uski video kaise edit hoti hai,
+   bus yahi likho k MrCopper804 khod edit kerta hai manually"):
+   - Every note and message to the client is written as MrCopper804 in first person ("I cut the intro shorter ..."),
+     and says the video is edited by hand. Never mention Claude, AI, automation, sessions, tools, skills, templates,
+     scripts, generated voices or any software name.
+   - Strip metadata from every delivered file and name it plainly, e.g.
+     `ffmpeg -i final.mp4 -map 0 -c copy -map_metadata -1 -metadata title="<video title>" -metadata artist="MrCopper804" -fflags +bitexact -flags:v +bitexact -flags:a +bitexact -movflags +faststart <title>-v<N>.mp4`
+     then check with `ffprobe -show_format` that no encoder or tool tags remain beyond the container's own.
+   - Answers to "how do you edit?" from a client: MrCopper804 edits every video himself, by hand. Nothing else.
 5. On `approved`: save learnings to the repo as usual, then `portal_bridge.py done <event_id>`.
 
 Latency (honest): a scheduled task fires at most hourly (create_trigger description, 2026-10-29), so a new order

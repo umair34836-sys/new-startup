@@ -105,7 +105,7 @@ function post(string $key, string $default = ''): string
 
 function fmt_money(float $amount, string $currency): string
 {
-    $dec = $currency === 'PKR' ? 0 : 2;
+    $dec = in_array($currency, ZERO_DECIMAL, true) ? 0 : 2;
     return $currency . ' ' . number_format($amount, $dec);
 }
 

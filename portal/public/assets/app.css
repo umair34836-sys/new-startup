@@ -141,3 +141,8 @@ body.auth { justify-content: center; padding: 16px; }
 .app-get { margin-top: 1rem; }
 .foot a { color: var(--muted); }
 [hidden] { display: none !important; }
+.promise { font-weight: 600; color: var(--muted); }
+.hero .promise { font-size: 1.05rem; }
+.cur-table input { min-width: 0; }
+.cur-table td { vertical-align: middle; }
+.client-row .grid4 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }

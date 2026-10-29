@@ -13,9 +13,9 @@ $title = $title ?? $brand;
 <link rel="manifest" href="<?= e(base_url('manifest.webmanifest')) ?>">
 <link rel="icon" href="<?= e(base_url('assets/icons/icon-192.png')) ?>">
 <link rel="apple-touch-icon" href="<?= e(base_url('assets/icons/icon-192.png')) ?>">
-<link rel="stylesheet" href="<?= e(base_url('assets/app.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(base_url('assets/app.css')) ?>?v=5">
 <script src="<?= e(base_url('assets/vendor/gsap-3.14.2.min.js')) ?>" defer></script>
-<script src="<?= e(base_url('assets/app.js')) ?>?v=1" defer></script>
+<script src="<?= e(base_url('assets/app.js')) ?>?v=5" defer></script>
 </head>
 <body data-app-notes="<?= e((function () { try { return setting('app_notes'); } catch (Throwable) { return ''; } })()) ?>" data-app-version="<?= (int) (function () { try { return setting('app_version'); } catch (Throwable) { return 0; } })() ?>" data-csrf="<?= e(csrf_token()) ?>" data-base="<?= e(rtrim(base_url(''), '/')) ?>">
 <div class="splash" id="splash" hidden aria-hidden="true">

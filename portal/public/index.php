@@ -19,6 +19,8 @@ if (!$GLOBALS['config']) {
     exit;
 }
 
+upgrade_db();
+
 $path = '/' . trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
 $base = rtrim((string) config('base_path', ''), '/');
 if ($base !== '' && str_starts_with($path, $base)) {

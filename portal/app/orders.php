@@ -66,11 +66,10 @@ function clean_answers(array $in, bool $strict): array
 /** Rate per second for this client in their currency (client override, else the default). */
 function rate_for(array $user, string $currency): float
 {
-    $col = $currency === 'USD' ? 'rate_usd' : 'rate_pkr';
-    if ($user[$col] !== null && $user[$col] !== '') {
-        return (float) $user[$col];
+    if (($user['rate'] ?? null) !== null && $user['rate'] !== '' && $currency === $user['currency']) {
+        return (float) $user['rate'];
     }
-    return (float) setting($currency === 'USD' ? 'rate_usd' : 'rate_pkr');
+    return currencies()[$currency] ?? 0.0;
 }
 
 function estimate(int $seconds, float $rate): float
