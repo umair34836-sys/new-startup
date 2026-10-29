@@ -24,3 +24,10 @@ one") was set aside by the owner ("tumbnail wali bat choro").
   scale 26 -> 20 so the head no longer covers the text; hook text + character on screen at 0 s; SFX lanes widened for
   overlapping sub-drops). Render -w 3: 1m21s; -17.2 LUFS -> +2.2 dB + alimiter 0.79 = -15.2 LUFS, -1.92 dBTP, 0 clipped;
   watch.py 30.0 fps; blackdetect 0. Preview = watermark.py; clean file kept in the scratchpad.
+
+## v3 = formula v2 (owner 2026-10-29: "bhot boring ... upgrade it and upgrade your formula")
+Builder build_heavendeveloper_phonk_v2.py + post.sh; research library/research/phonk-edit-formula.md (sources + dates).
+Same VO/music/mix as v2 (verified), new picture: beat-cut camera shots, kick punches, flashes, snare RGB split, cold
+grade, grain, depth text, clones/crowd ("2,500+ MEMBERS", "17 BOOSTS • LEVEL 3": brief.md), jump on $4, letterbox.
+Snapshot fixes: face close-up lowered (head covered "BUILDS IT ALL"), crowd 2 rows x 4 (3 rows overlapped).
+QA: -15.3 LUFS, -1.91 dBTP, 0 clipped, 30.0 fps, blackdetect 0. Preview watermarked; clean kept in the scratchpad.
