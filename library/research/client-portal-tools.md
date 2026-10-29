@@ -59,3 +59,11 @@ Exa via agent-reach answered HTTP 429 (rate limit) after 2 searches on 2026-10-2
 - Pentest (agency-penetration-tester agent, 2026-10-29, local copy): forged Host header reached password-reset emails
   (fixed: site_url from config); /register says "already exists" (account enumeration, low, rate-limited 5/h/IP, kept
   for usability). Everything else held (IDOR, CSRF, XSS, SQLi, uploads, Range, sessions, mass assignment).
+
+## Live deployment check (2026-10-29)
+- https://editor.firecraft.fun on the owner's host (168.119.36.223). SSL Labs API (api.ssllabs.com/api/v3/analyze,
+  2026-10-29): grade A+; chain editor.firecraft.fun <- YR1 (Let's Encrypt) <- Root YR (ISRG) <- ISRG Root X1; trusted
+  by the Mozilla, Apple, Android, Java and Windows stores. The second, untrusted chain is the host's default
+  certificate (servercontroll.site, self-signed) for clients without SNI only.
+- Document root is portal/public: /README-FIRST.md, /portal/README.md and /portal/storage/install-key.txt returned the
+  front controller's page, not the files (curl from here, 2026-10-29).
