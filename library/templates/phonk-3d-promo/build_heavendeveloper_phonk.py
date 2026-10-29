@@ -60,7 +60,7 @@ CSS = f"""
 DISCORD = bc_discord = '<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path>'
 
 
-def character(P, d, moves, x=540, y=1560, scale=26, turn=-20, tilt=-6, enter="drop"):
+def character(P, d, moves, x=540, y=1650, scale=20, turn=-20, tilt=-6, enter="drop"):
     """html + js for one posed 3D character whose feet stand at (x, y)"""
     html = (f'<div class="{P}-stage" style="position:absolute;left:{x}px;top:{y}px;width:0;height:0;perspective:{80 * scale}px;'
             f'perspective-origin:0 {-16 * scale}px;"><div id="{P}-move" style="position:absolute;left:0;top:0;width:0;height:0;">'
@@ -112,7 +112,7 @@ def wrap(k, d, inner, inner_js, ccss, exit_=True):
 
 C, HITS = {}, []
 # global background: near-black, two neon glows, scanlines, beat pulses; a white flash layer on every beat
-pulses = "".join(f'    tl.fromTo("#bg-p", {{ opacity: 0.55 }}, {{ opacity: 0, duration: 0.3, ease: "power2.out" }}, {b:.3f});\n' for b in BEATS if b < TOTAL)
+pulses = "".join(f'    tl.fromTo("#bg-p", {{ opacity: 0.55 }}, {{ opacity: 0, duration: 0.3, ease: "power2.out", immediateRender: false }}, {b:.3f});\n' for b in BEATS if b < TOTAL)
 C["bg"] = comp("bg", f"""    <div style="position:absolute;inset:0;background:{BG};"></div>
     <div id="bg-g1" style="position:absolute;left:-300px;top:200px;width:1200px;height:1200px;border-radius:50%;background:radial-gradient(circle, rgba(88,101,242,0.35), rgba(88,101,242,0) 70%);"></div>
     <div id="bg-g2" style="position:absolute;left:300px;top:900px;width:1100px;height:1100px;border-radius:50%;background:radial-gradient(circle, rgba(88,178,52,0.25), rgba(88,178,52,0) 70%);"></div>
@@ -123,25 +123,25 @@ C["bg"] = comp("bg", f"""    <div style="position:absolute;inset:0;background:{B
                f'    tl.fromTo("#bg-g2", {{ x: 0 }}, {{ x: -600, duration: {TOTAL}, ease: "sine.inOut" }}, 0);\n'
                f'    tl.fromTo("#bg-floor", {{ backgroundPositionY: "0px" }}, {{ backgroundPositionY: "900px", duration: {TOTAL}, ease: "none" }}, 0);\n' + pulses)
 C["flash"] = comp("flash", '    <div id="fl" style="position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, rgba(255,255,255,0.95), rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.2));opacity:0;"></div>',
-                  "".join(f'    tl.fromTo("#fl", {{ opacity: 0.85 }}, {{ opacity: 0, duration: 0.35, ease: "power2.out" }}, {max(0, s - 0.04):.2f});\n' for _, s, _ in SCENES[1:]))
+                  "".join(f'    tl.fromTo("#fl", {{ opacity: 0.85 }}, {{ opacity: 0, duration: 0.35, ease: "power2.out", immediateRender: false }}, {max(0, s - 0.04):.2f});\n' for _, s, _ in SCENES[1:]))
 
 # 1 hook: character drops in, the three asks slam one after the other
 i, k = 0, "s1"; d = d_of(i)
-h, j, cc = character("c1", d, [[0, "idle"], [0.6, "shock"], [2.0, "think"]], enter="drop")
+h, j, cc = character("c1", d, [[0, "idle"], [0.6, "shock"], [2.0, "think"]], enter="none")  # visible at 0 s (thumbnail)
 asks = [("DISCORD BOT?", "#9aa3ff", 0.0), ("WEBSITE?", WHITE, 0.42), ("MINECRAFT PLUGIN?", GOLD, 0.66)]
 txt = '<div class="c slam" style="top:250px;font-size:120px;">NEED A</div>' + "".join(
     f'<div class="c slam" id="s1-a{n}" style="top:{390 + n * 150}px;font-size:{140 if n < 2 else 112}px;color:{c};">{t}</div>' for n, (t, c, _) in enumerate(asks))
-js = j + "".join(slam(f"#s1-a{n}", rel(i, f) if f else 0.15) + shake("#s1-w", rel(i, f) if f else 0.15) for n, (_, _, f) in enumerate(asks))
-HITS += [W[k][0] + (rel(i, f) if f else 0.15) for _, _, f in asks]
+js = j + "".join(slam(f"#s1-a{n}", rel(i, f)) + shake("#s1-w", rel(i, f)) for n, (_, _, f) in enumerate(asks) if f)  # first ask on screen at 0 s
+HITS += [W[k][0] + rel(i, f) for _, _, f in asks if f]
 C[k] = wrap(k, d, txt + h, js, cc)
 
 # 2 logo + name
 i, k = 1, "s2"; d = d_of(i)
-h, j, cc = character("c2", d, [[0, "idle"], [0.3, "point"]], enter="zoom", y=1640, scale=24)
-txt = ('<div id="s2-logo" style="position:absolute;left:290px;top:250px;width:500px;height:500px;border-radius:50%;overflow:hidden;box-shadow:0 0 90px rgba(247,220,148,0.6);">'
-       '<img src="assets/img/logo_circle.png" style="width:500px;height:500px;" alt="Heaven Developer logo"></div>'
-       '<div class="c slam" id="s2-n" style="top:790px;font-size:150px;color:#f7dc94;">HEAVEN DEVELOPER</div>'
-       '<div class="c sub" id="s2-s" style="top:960px;font-size:56px;">BUILDS IT ALL</div>')
+h, j, cc = character("c2", d, [[0, "idle"], [0.3, "point"]], enter="zoom")
+txt = ('<div id="s2-logo" style="position:absolute;left:340px;top:230px;width:400px;height:400px;border-radius:50%;overflow:hidden;box-shadow:0 0 90px rgba(247,220,148,0.6);">'
+       '<img src="assets/img/logo_circle.png" style="width:400px;height:400px;" alt="Heaven Developer logo"></div>'
+       '<div class="c slam" id="s2-n" style="top:670px;font-size:140px;color:#f7dc94;">HEAVEN DEVELOPER</div>'
+       '<div class="c sub" id="s2-s" style="top:820px;font-size:60px;">BUILDS IT ALL</div>')
 js = (j + '    tl.fromTo("#s2-logo", { scale: 0.2, rotation: -40, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 0.02);\n'
       + slam("#s2-n", rel(i, 0.05)) + shake("#s2-w", rel(i, 0.05)) + slam("#s2-s", rel(i, 0.6), "y: 60, opacity: 0"))
 HITS.append(W[k][0] + rel(i, 0.05))
@@ -165,7 +165,7 @@ C[k] = wrap(k, d, txt + h, js, cc)
 i, k = 3, "s4"; d = d_of(i)
 h, j, cc = character("c4", d, [[0, "idle"], [rel(i, 0.6), "shock"]], enter="drop")
 txt = ('<div class="c sub" id="s4-a" style="top:300px;font-size:70px;">STARTING FROM</div>'
-       '<div class="c slam" id="s4-p" style="top:380px;font-size:620px;color:#ffd76a;">$4</div>')
+       '<div class="c slam" id="s4-p" style="top:370px;font-size:520px;color:#ffd76a;">$4</div>')
 js = j + slam("#s4-a", 0.1, "y: -60, opacity: 0") + slam("#s4-p", rel(i, 0.62), "scale: 4, opacity: 0") + shake("#s4-w", rel(i, 0.62))
 HITS.append(W[k][0] + rel(i, 0.62))
 CASH = W[k][0] + rel(i, 0.62)
@@ -193,18 +193,29 @@ for n in range(3):
     HITS.append(W[k][0] + a)
 C[k] = wrap(k, d, txt + h, js, cc)
 
-# 7 end card
+# 7 music-only break (no VO line, a phonk bar to breathe): the character spins under the footer tagline of every bot post
 i, k = 6, "s7"; d = d_of(i)
-h, j, cc = character("c7", d, [[0, "wave"], [2.2, "spin"], [3.4, "wave"]], enter="drop", y=1700, scale=22)
-txt = ('<div id="s7-logo" style="position:absolute;left:390px;top:200px;width:300px;height:300px;border-radius:50%;overflow:hidden;box-shadow:0 0 80px rgba(247,220,148,0.55);">'
+h, j, cc = character("c7", d, [[0, "spin"], [1.4, "run"]], enter="zoom")
+txt = ('<div class="c slam" id="s7-a" style="top:330px;font-size:170px;color:#f7dc94;">PREMIUM</div>'
+       '<div class="c slam" id="s7-b" style="top:510px;font-size:120px;">DEVELOPMENT</div>'
+       '<div class="c slam" id="s7-c" style="top:650px;font-size:150px;color:#9aa3ff;">DELIVERED.</div>')
+bt = beats_in(i)[:3] or [0.1, 0.9, 1.7]
+js = j + "".join(slam(f"#s7-{c}", t) + shake("#s7-w", t) for c, t in zip("abc", bt))
+HITS += [W[k][0] + t for t in bt]
+C[k] = wrap(k, d, txt + h, js, cc)
+
+# 8 end card
+i, k = 7, "s8"; d = d_of(i)
+h, j, cc = character("c8", d, [[0, "wave"], [2.2, "spin"], [3.4, "wave"]], enter="drop", y=1720, scale=19)
+txt = ('<div id="s8-logo" style="position:absolute;left:390px;top:200px;width:300px;height:300px;border-radius:50%;overflow:hidden;box-shadow:0 0 80px rgba(247,220,148,0.55);">'
        '<img src="assets/img/logo_circle.png" style="width:300px;height:300px;" alt="Heaven Developer logo"></div>'
-       '<div class="c slam" id="s7-n" style="top:540px;font-size:120px;color:#f7dc94;">HEAVEN DEVELOPER</div>'
-       f'<div class="c" id="s7-b" style="top:720px;"><span class="btn"><svg viewBox="0 0 24 24" style="width:80px;height:80px;" fill="#fff">{DISCORD}</svg>JOIN ON DISCORD</span></div>'
-       '<div class="c sub" id="s7-u" style="top:900px;font-size:58px;color:#fff;">discord.gg/<span style="color:#f7dc94;">heavendeveloper</span></div>')
-js = (j + '    tl.fromTo("#s7-logo", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 0.05);\n'
-      + slam("#s7-n", 0.15) + slam("#s7-b", rel(i, 0.55)) + shake("#s7-w", rel(i, 0.55))
-      + f'    tl.to("#s7-b", {{ scale: 1.07, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 6 }}, {rel(i, 0.55) + 0.3:.2f});\n'
-      + slam("#s7-u", rel(i, 0.75), "y: 60, opacity: 0"))
+       '<div class="c slam" id="s8-n" style="top:540px;font-size:120px;color:#f7dc94;">HEAVEN DEVELOPER</div>'
+       f'<div class="c" id="s8-b" style="top:720px;"><span class="btn"><svg viewBox="0 0 24 24" style="width:80px;height:80px;" fill="#fff">{DISCORD}</svg>JOIN ON DISCORD</span></div>'
+       '<div class="c sub" id="s8-u" style="top:900px;font-size:58px;color:#fff;">discord.gg/<span style="color:#f7dc94;">heavendeveloper</span></div>')
+js = (j + '    tl.fromTo("#s8-logo", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 0.05);\n'
+      + slam("#s8-n", 0.15) + slam("#s8-b", rel(i, 0.55)) + shake("#s8-w", rel(i, 0.55))
+      + f'    tl.to("#s8-b", {{ scale: 1.07, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 6 }}, {rel(i, 0.55) + 0.3:.2f});\n'
+      + slam("#s8-u", rel(i, 0.75), "y: 60, opacity: 0"))
 HITS.append(W[k][0] + rel(i, 0.55))
 JOIN = W[k][0] + rel(i, 0.55)
 C[k] = wrap(k, d, txt + h, js, cc, exit_=False)
@@ -222,7 +233,7 @@ HIT_SFX = ["impact-boom", "sub-drop", "punch-heavy"]
 for n, t in enumerate(sorted(HITS)):
     f = HIT_SFX[n % len(HIT_SFX)]
     if os.path.exists(sfx(f)):
-        A.append((f"hit{n}", sfx(f), round(t, 2), dur(sfx(f)), 0.32, 11 + n % 3))
+        A.append((f"hit{n}", sfx(f), round(t, 2), dur(sfx(f)), 0.32, 20 + n % 6))
 for n, (kk, s, e) in enumerate(SCENES[1:]):
     f = ["whoosh-fast-0.3s", "swish-4"][n % 2] if os.path.exists(sfx("swish-4")) else "whoosh-fast-0.3s"
     A.append((f"wh{n}", sfx(f), round(max(0, s - 0.12), 2), dur(sfx(f)), 0.5, 14 + n % 2))
