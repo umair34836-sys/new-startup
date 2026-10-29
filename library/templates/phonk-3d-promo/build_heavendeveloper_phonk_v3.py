@@ -1,0 +1,423 @@
+# Heaven Developer PHONK 3D promo v3 = "MINECRAFT" cut (2026-10-29). Client feedback on v3 preview (Discord #edits,
+# screenshots from the owner): "Bro with phonk, with beats, with vibes - this one is not good"; "remove your watermark"
+# (clean final); "mostly talk about Minecraft related"; English only ("idk Hindi much"); "tell the plans are free, don't
+# explain invites and paid". What changed vs v2 (formula v2 kept: beat cuts, kick punches, flashes, snare split, grade):
+#  - harder music: HoliznaCC0 "Re-Adjustment" from its drop (RMS -8 dB vs -13 dB for "Phonk-ish"), so it hits from frame 1;
+#  - a Minecraft night world instead of the neon grid: square moon, stars, a grass-block floor, textured spinning blocks;
+#  - every VO line is a Minecraft service from the brief, and each one is SHOWN literally: blocks stack up on every beat
+#    ("builds it"), an inventory GUI (plugins), ore/TNT blocks pop in and the TNT blows (mods), one cube swaps texture on
+#    every beat (texture packs), gold blocks rain on "FREE";
+#  - Minecraft SFX on the hits (block place/break, pickaxe, 8-bit explosion, coin) rotated with the impacts.
+# "Free": brief.md #pricing lists a Free plan, so "start for free" is true; paid tiers/invites are not mentioned.
+# Facts: library/clients/heavendeveloper/brief.md. Skin: the client's own 64x64 skin (scratchpad, never committed).
+import importlib.util, json, os, subprocess
+
+spec = importlib.util.spec_from_file_location("bc", "/home/user/new-startup/library/tools/blocky_character.py")
+bc = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(bc)
+
+VO_START = 0.3
+BG, BLURPLE, GREEN, GOLD, WHITE, DIA = "#05040d", "#5865f2", "#6fd24a", "#ffd76a", "#ffffff", "#5cdbd5"
+L = json.load(open("assets/vo/lines.json"))
+EV = json.load(open("assets/music/events.json"))
+TOTAL = float(os.environ.get("TOTAL", 30.0))
+BEATS = [b for b in EV["beats"] if b < TOTAL]
+KICKS, last = [], -9
+for t, s in EV["kicks"]:
+    if s >= 0.38 and t - last >= 0.3:
+        KICKS.append(t); last = t
+STRONG = [t for t, s in EV["strong_kicks"] if t < TOTAL - 0.3]
+st = [round(VO_START + a - 0.1, 2) for a, _ in L]
+st[0] = 0.0
+SCENES = [(f"s{i + 1}", st[i], st[i + 1] if i + 1 < len(st) else TOTAL) for i in range(len(st))]
+W = {k: (s, e) for k, s, e in SCENES}
+SKIN = "assets/characters/bhupendra-skin.png"
+SC = 20
+TX = "assets/textures"
+
+
+def dur(p):
+    return round(float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p],
+                                      capture_output=True, text=True).stdout), 3)
+
+
+def rel(i, frac):
+    a, b = L[i]
+    return round(max(0.05, VO_START + a + frac * (b - a) - st[i]), 2)
+
+
+def d_of(i):
+    s, e = W[f"s{i + 1}"]
+    return round(e - s, 2)
+
+
+def inside(i, times, pad=0.05):
+    s, e = W[f"s{i + 1}"]
+    return [round(t - s, 3) for t in times if s + pad < t < e - 0.25]
+
+
+CSS = f"""
+    @font-face {{ font-family: "AN"; src: url("assets/fonts/Anton-Regular.ttf"); }}
+    @font-face {{ font-family: "OU"; src: url("assets/fonts/Outfit-Bold.ttf"); font-weight: 700; }}
+    #root {{ position: absolute; inset: 0; overflow: hidden; }}
+    .c {{ position: absolute; left: 0; right: 0; text-align: center; }}
+    .slam {{ font-family: AN; line-height: 0.92; color: {WHITE}; text-transform: uppercase;
+             text-shadow: -5px 0 0 rgba(255,42,85,0.8), 5px 0 0 rgba(40,220,255,0.8), 0 12px 44px rgba(0,0,0,0.85); }}
+    .ghost {{ font-family: AN; line-height: 0.85; color: rgba(150,160,255,0.16); -webkit-text-stroke: 4px rgba(255,255,255,0.22); text-transform: uppercase; white-space: nowrap; }}
+    .sub {{ font-family: OU; font-weight: 700; color: {GOLD}; letter-spacing: 3px; text-shadow: 0 6px 24px rgba(0,0,0,0.9); }}
+    .chip {{ display: inline-block; font-family: AN; font-size: 78px; color: #fff; background: rgba(20,18,40,0.82); border: 6px solid #2b2b33;
+             box-shadow: inset -6px -6px 0 #1a1a20, inset 6px 6px 0 #5a5a66, 0 14px 40px rgba(0,0,0,0.6); padding: 10px 34px; }}
+    .btn {{ display: inline-flex; align-items: center; gap: 24px; background: {BLURPLE}; color: #fff; font-family: AN;
+            border-radius: 22px; padding: 26px 56px; font-size: 76px; box-shadow: 0 18px 60px rgba(88,101,242,0.6); }}
+    .bars {{ position: absolute; left: 0; right: 0; height: 170px; background: #000; }}
+    .cube {{ position: absolute; width: 0; height: 0; transform-style: preserve-3d; }}
+    .cube i {{ position: absolute; display: block; background-size: 100% 100%; image-rendering: pixelated; backface-visibility: hidden; }}
+    .slot {{ width: 120px; height: 120px; background: #8b8b8b; box-shadow: inset 6px 6px 0 #373737, inset -6px -6px 0 #ffffff; display: flex; align-items: center; justify-content: center; }}
+    .slot span {{ width: 84px; height: 84px; background-size: 100% 100%; image-rendering: pixelated; display: block; }}
+"""
+DISCORD = '<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path>'
+
+SHOT = {
+    "wide":  dict(s=1.0, x=0, y=0, yaw=-22, pitch=-6, roll=0),
+    "face":  dict(s=2.25, x=0, y=900, yaw=-12, pitch=-2, roll=0),
+    "low":   dict(s=1.45, x=0, y=180, yaw=28, pitch=16, roll=0),
+    "dutch": dict(s=1.25, x=40, y=120, yaw=-45, pitch=-4, roll=-11),
+    "side":  dict(s=1.3, x=-60, y=120, yaw=85, pitch=-4, roll=0),
+    "back":  dict(s=1.15, x=0, y=60, yaw=165, pitch=-8, roll=0),
+    "top":   dict(s=1.1, x=0, y=-60, yaw=-30, pitch=-30, roll=5),
+    "hero":  dict(s=1.7, x=0, y=420, yaw=10, pitch=10, roll=0),
+}
+
+
+def character(P, d, moves, shots, x=540, y=1650, scale=1.0):
+    s0 = SHOT[shots[0][1]]
+    html = (f'<div style="position:absolute;left:{x}px;top:{y}px;width:0;height:0;perspective:{80 * SC}px;perspective-origin:0 {-16 * SC}px;transform:scale({scale});">'
+            f'<div id="{P}-cam" style="position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;">'
+            f'<div id="{P}-move" style="position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;">'
+            f'<div id="{P}-yaw" style="position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;">\n'
+            f'{bc.rig_html(P, SC, "      ")}\n      </div></div></div></div>')
+    js = "\n".join(bc.pose_js(P, SC, moves, d, 0)) + "\n"
+    js += (f'    gsap.set("#{P}-cam", {{ scale: {s0["s"]}, x: {s0["x"]}, y: {s0["y"]}, rotationX: {s0["pitch"]}, rotationZ: {s0["roll"]} }});\n'
+           f'    gsap.set("#{P}-yaw", {{ rotationY: {s0["yaw"]} }});\n')
+    for t, name in shots:
+        p = SHOT[name]
+        js += (f'    tl.set("#{P}-cam", {{ scale: {p["s"]}, x: {p["x"]}, y: {p["y"]}, rotationX: {p["pitch"]}, rotationZ: {p["roll"]} }}, {t:.3f});\n'
+               f'    tl.set("#{P}-yaw", {{ rotationY: {p["yaw"]} }}, {t:.3f});\n')
+        js += f'    tl.fromTo("#{P}-move", {{ scale: 1.0 }}, {{ scale: 1.05, duration: 0.7, ease: "expo.out", immediateRender: false }}, {t:.3f});\n'
+    return html, js, bc.css(P, SKIN)
+
+
+def shot_plan(i, cycle):
+    times = [0.0] + [max(0.0, b - 0.033) for b in inside(i, BEATS)]
+    return [(t, cycle[n % len(cycle)]) for n, t in enumerate(times)]
+
+
+def cube(cid, size, side, top=None, x=0, y=0, extra=""):
+    """a textured Minecraft block (CSS 3D, 6 faces) centred at (x, y) px; spin it with GSAP on #cid"""
+    top = top or side
+    h = size / 2
+    f = [("translateZ", side, 0.9), ("rotateY(180deg) translateZ", side, 0.62), ("rotateY(90deg) translateZ", side, 0.75),
+         ("rotateY(-90deg) translateZ", side, 0.75), ("rotateX(90deg) translateZ", top, 1.0), ("rotateX(-90deg) translateZ", top, 0.5)]
+    faces = "".join(f'<i class="{cid}-t" style="width:{size}px;height:{size}px;left:{-h}px;top:{-h}px;transform:{tf}({h}px);'
+                    f'background-image:url(\'{TX}/{tx}.png\');filter:brightness({sh});"></i>' for tf, tx, sh in f)
+    return (f'<div style="position:absolute;left:{x}px;top:{y}px;width:0;height:0;perspective:1400px;{extra}" id="{cid}-o">'
+            f'<div class="cube" id="{cid}">{faces}</div></div>')
+
+
+def spin(cid, d, rx=-24, ry0=0, turns=1.0):
+    return (f'    gsap.set("#{cid}", {{ rotationX: {rx}, rotationY: {ry0} }});\n'
+            f'    tl.fromTo("#{cid}", {{ rotationY: {ry0} }}, {{ rotationY: {ry0 + 360 * turns}, duration: {d}, ease: "none" }}, 0);\n')
+
+
+def slam(sel, at, frm="scale: 2.6, opacity: 0", d=0.2):
+    return f'    tl.fromTo("{sel}", {{ {frm} }}, {{ scale: 1, x: 0, y: 0, rotationX: 0, opacity: 1, duration: {d}, ease: "power4.out" }}, {at:.2f});\n'
+
+
+def shake(sel, at):
+    return f'    tl.fromTo("{sel}", {{ x: -12, y: 7 }}, {{ x: 10, y: -5, duration: 0.045, ease: "none", repeat: 4, yoyo: true, immediateRender: false }}, {at:.2f});\n'
+
+
+def punches(i, k):
+    """808 kick -> 7% impact zoom with a fast snap-back"""
+    return "".join(f'    tl.fromTo("#{k}-w", {{ scale: 1.07 }}, {{ scale: 1, duration: 0.22, ease: "expo.out", immediateRender: false }}, {t:.3f});\n'
+                   for t in inside(i, KICKS))
+
+
+def ghost(k, word, top=760, size=420):
+    return (f'<div class="c ghost" id="{k}-gh" style="top:{top}px;font-size:{size}px;">{word}</div>',
+            f'    tl.fromTo("#{k}-gh", {{ x: 160 }}, {{ x: -160, duration: {d_of(int(k[1:]) - 1)}, ease: "none" }}, 0);\n')
+
+
+def comp(cid, html, js, extra_css=""):
+    d = round(W[cid][1] - W[cid][0], 2) if cid in W else TOTAL
+    return f"""<template>
+  <style>{CSS}{extra_css}</style>
+  <div id="root" data-composition-id="{cid}" data-width="1080" data-height="1920" data-layout-allow-overflow>
+{html}
+  </div>
+  <script>
+    const tl = gsap.timeline({{ paused: true }});
+{js}
+    tl.to({{}}, {{ duration: {d} }}, 0);
+    window.__timelines["{cid}"] = tl;
+  </script>
+</template>
+"""
+
+
+def scene(k, i, back, chars, front, js, ccss, exit_=True):
+    d = d_of(i)
+    js = js + punches(i, k) + shake(f"#{k}-w", 0.0)
+    if exit_:
+        js += f'    tl.to("#{k}-w", {{ scale: 1.3, opacity: 0, filter: "blur(14px)", duration: 0.14, ease: "power3.in" }}, {d - 0.14:.2f});\n'
+    html = f'    <div id="{k}-w" style="position:absolute;inset:0;transform-origin:50% 55%;">\n{back}\n{chars}\n{front}\n    </div>'
+    return comp(k, html, js, ccss)
+
+
+C, HITS, MC = {}, [], []   # HITS: impact SFX times; MC: (time, minecraft sfx)
+# background: Minecraft night - purple/blue sky, stars, square moon, drifting pixel clouds, grass-block floor, beat pulses
+import random
+rnd = random.Random(29)
+stars = "".join(f'<i style="position:absolute;left:{rnd.randint(0, 1070)}px;top:{rnd.randint(0, 1100)}px;width:{s}px;height:{s}px;background:#fff;opacity:{rnd.uniform(0.35, 0.9):.2f};"></i>'
+                for s in [rnd.choice((6, 6, 8, 10)) for _ in range(70)])
+clouds = "".join(f'<div id="bg-cl{n}" style="position:absolute;left:{x}px;top:{y}px;width:{w}px;height:56px;background:rgba(200,205,255,0.13);box-shadow:60px -40px 0 rgba(200,205,255,0.10);"></div>'
+                 for n, (x, y, w) in enumerate([(-100, 420, 420), (600, 260, 360), (300, 700, 300)]))
+pulses = "".join(f'    tl.fromTo("#bg-p", {{ opacity: 0.55 }}, {{ opacity: 0, duration: 0.3, ease: "power2.out", immediateRender: false }}, {b:.3f});\n' for b in BEATS)
+C["bg"] = comp("bg", f"""    <div style="position:absolute;inset:0;background:linear-gradient(180deg, #07061a 0%, #141040 45%, #2a1550 70%, #05040d 100%);"></div>
+    {stars}
+    <div id="bg-moon" style="position:absolute;left:860px;top:40px;width:150px;height:150px;background:#f3f1dc;box-shadow:0 0 0 18px rgba(243,241,220,0.12), 0 0 140px rgba(243,241,220,0.55);">
+      <i style="position:absolute;left:30px;top:40px;width:40px;height:40px;background:#d9d5b4;"></i><i style="position:absolute;left:86px;top:80px;width:40px;height:40px;background:#d9d5b4;"></i></div>
+    {clouds}
+    <div id="bg-p" style="position:absolute;inset:0;background:radial-gradient(70% 50% at 50% 60%, rgba(150,160,255,0.45), rgba(0,0,0,0) 70%);opacity:0;"></div>
+    <div id="bg-floor" style="position:absolute;left:-500px;right:-500px;top:1440px;height:800px;background-image:url('{TX}/grass_top.png');background-size:150px 150px;image-rendering:pixelated;filter:brightness(0.55) saturate(0.9);transform:perspective(600px) rotateX(70deg);transform-origin:50% 0;"></div>
+    <div style="position:absolute;left:0;right:0;top:1380px;height:200px;background:linear-gradient(180deg, rgba(42,21,80,0.95), rgba(42,21,80,0));"></div>
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 2px, rgba(0,0,0,0) 2px 6px);"></div>""",
+               f'    tl.fromTo("#bg-moon", {{ y: 0 }}, {{ y: 60, duration: {TOTAL}, ease: "none" }}, 0);\n'
+               + "".join(f'    tl.fromTo("#bg-cl{n}", {{ x: 0 }}, {{ x: {v}, duration: {TOTAL}, ease: "none" }}, 0);\n' for n, v in enumerate((520, -420, 380)))
+               + f'    tl.fromTo("#bg-floor", {{ backgroundPositionY: "0px" }}, {{ backgroundPositionY: "2400px", duration: {TOTAL}, ease: "none" }}, 0);\n' + pulses)
+FLASH_T = sorted(set([round(t, 2) for t in STRONG] + [round(max(0, s - 0.03), 2) for _, s, _ in SCENES[1:]]))
+C["flash"] = comp("flash", '    <div id="fl" style="position:absolute;inset:0;background:#fff;opacity:0;"></div>',
+                  "".join(f'    tl.fromTo("#fl", {{ opacity: 0.9 }}, {{ opacity: 0, duration: 0.12, ease: "power2.out", immediateRender: false }}, {t:.2f});\n' for t in FLASH_T))
+C["bars"] = comp("bars", '    <div class="bars" id="bt" style="top:-170px;"></div><div class="bars" id="bb" style="bottom:-170px;"></div>',
+                 "".join(f'    tl.set("#bt", {{ y: {170 if n % 2 == 0 else 0} }}, {t:.3f});\n    tl.set("#bb", {{ y: {-170 if n % 2 == 0 else 0} }}, {t:.3f});\n'
+                         for n, t in enumerate([b for b in BEATS[8::4]])))
+
+# 1 hook: "YOUR MINECRAFT SERVER / NEXT LEVEL?", blocks fly in on the beats
+i, k = 0, "s1"; d = d_of(i)
+h, j, cc = character("c1", d, [[0, "idle"], [0.8, "shock"], [1.8, "point"]], shot_plan(i, ["wide", "face", "low", "dutch"]))
+gh, gj = ghost(k, "MINECRAFT")
+blocks = [("s1-b0", "grass_side", "grass_top", 170, 1180), ("s1-b1", "diamond_ore", None, 900, 1060), ("s1-b2", "tnt_side", "tnt_top", 880, 1430)]
+back = gh + "".join(cube(cid, 170, sd, tp, x, y) for cid, sd, tp, x, y in blocks)
+txt = ('<div class="c slam" id="s1-a" style="top:230px;font-size:104px;">YOUR</div>'
+       f'<div class="c slam" id="s1-b" style="top:340px;font-size:150px;color:{GREEN};">MINECRAFT</div>'
+       '<div class="c slam" id="s1-c" style="top:490px;font-size:120px;">SERVER</div>'
+       f'<div class="c slam" id="s1-d" style="top:640px;font-size:150px;color:{GOLD};">NEXT LEVEL?</div>')
+js = j + gj + slam("#s1-a", 0.0, "opacity: 1, scale: 1") + slam("#s1-b", 0.0, "opacity: 1, scale: 1") + slam("#s1-c", 0.0, "opacity: 1, scale: 1")
+js += slam("#s1-d", rel(i, 0.6), "scale: 3, opacity: 0") + shake("#s1-w", rel(i, 0.6))
+for n, (cid, *_r) in enumerate(blocks):
+    js += spin(cid, d, ry0=30 * n, turns=0.6)
+    a = inside(i, BEATS)[n] if n < len(inside(i, BEATS)) else 0.3 + n * 0.4
+    js += f'    tl.fromTo("#{cid}-o", {{ scale: 0, y: -400 }}, {{ scale: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }}, {a:.2f});\n'
+    js += f'    gsap.set("#{cid}-o", {{ scale: 0 }});\n'
+    MC.append((W[k][0] + a, "block-place"))
+HITS.append(W[k][0] + rel(i, 0.6))
+C[k] = scene(k, i, back, h, txt, js, cc)
+
+# 2 logo + name + "BUILDS IT FOR YOU": a block tower stacks up one block per beat next to the hero
+i, k = 1, "s2"; d = d_of(i)
+h, j, cc = character("c2", d, [[0, "idle"], [0.3, "point"]], shot_plan(i, ["hero", "low", "face", "wide"]))
+tower = ["cobble", "stone_brick", "planks", "log", "gold_block", "diamond_ore"]
+back = "".join(cube(f"s2-t{n}", 130, t, x=150, y=1560 - n * 130) for n, t in enumerate(tower))
+txt = ('<div id="s2-logo" style="position:absolute;left:340px;top:190px;width:400px;height:400px;border-radius:50%;overflow:hidden;box-shadow:0 0 110px rgba(247,220,148,0.7);">'
+       '<img src="assets/img/logo_circle.png" style="width:400px;height:400px;" alt="Heaven Developer logo"></div>'
+       '<div class="c slam" id="s2-n" style="top:630px;font-size:136px;color:#f7dc94;">HEAVEN DEVELOPER</div>'
+       '<div class="c sub" id="s2-s" style="top:780px;font-size:64px;">BUILDS IT FOR YOU</div>')
+js = (j + '    tl.fromTo("#s2-logo", { rotationY: -540, scale: 0.3, opacity: 0 }, { rotationY: 0, scale: 1, opacity: 1, duration: 0.7, ease: "expo.out" }, 0.02);\n'
+      + slam("#s2-n", rel(i, 0.05)) + shake("#s2-w", rel(i, 0.05)) + slam("#s2-s", rel(i, 0.6), "y: 60, opacity: 0"))
+tb = [0.08] + inside(i, BEATS) + [round(x + 0.33, 3) for x in inside(i, BEATS)]
+tb = sorted(tb)[:len(tower)]
+for n, a in enumerate(tb):
+    js += f'    gsap.set("#s2-t{n}-o", {{ scale: 0 }});\n'
+    js += f'    gsap.set("#s2-t{n}", {{ rotationX: -20, rotationY: 35 }});\n'
+    js += f'    tl.fromTo("#s2-t{n}-o", {{ scale: 0, y: -160 }}, {{ scale: 1, y: 0, duration: 0.16, ease: "power3.out", immediateRender: false }}, {a:.2f});\n'
+    MC.append((W[k][0] + a, "block-place"))
+HITS.append(W[k][0] + rel(i, 0.05))
+C[k] = scene(k, i, back, h, txt, js, cc)
+
+# 3 PLUGINS: inventory GUI slides in, chips COMMANDS / GUIs / SERVER SYSTEMS on the beats
+i, k = 2, "s3"; d = d_of(i)
+h, j, cc = character("c3", d, [[0, "talk"], [1.2, "point"]], shot_plan(i, ["side", "face", "dutch", "low", "back"]), x=760, y=1720)
+gh, gj = ghost(k, "PLUGINS", top=1000)
+inv = ["diamond_ore", "gold_block", "tnt_side", "grass_side", "cobble", "emerald_ore", "planks", "obsidian", "log"]
+gui = ('<div id="s3-gui" style="position:absolute;left:40px;top:960px;padding:22px;background:#c6c6c6;box-shadow:inset 8px 8px 0 #fff, inset -8px -8px 0 #555, 0 30px 80px rgba(0,0,0,0.7);display:grid;grid-template-columns:repeat(3,120px);gap:12px;">'
+       + "".join(f'<div class="slot"><span id="s3-i{n}" style="background-image:url(\'{TX}/{t}.png\');"></span></div>' for n, t in enumerate(inv)) + '</div>')
+CH = ["COMMANDS", "GUIs", "SERVER SYSTEMS"]
+txt = (f'<div class="c slam" id="s3-a" style="top:230px;font-size:120px;">CUSTOM</div><div class="c slam" id="s3-b" style="top:350px;font-size:190px;color:{GREEN};">PLUGINS</div>'
+       + "".join(f'<div class="c" id="s3-k{n}" style="top:{590 + n * 128}px;"><span class="chip">{t}</span></div>' for n, t in enumerate(CH)))
+js = j + gj + slam("#s3-a", 0.05) + slam("#s3-b", rel(i, 0.1)) + shake("#s3-w", rel(i, 0.1))
+js += '    tl.fromTo("#s3-gui", { x: 900, rotation: 8 }, { x: 0, rotation: -3, duration: 0.35, ease: "expo.out" }, 0.15);\n'
+for n in range(9):
+    js += f'    tl.fromTo("#s3-i{n}", {{ scale: 0 }}, {{ scale: 1, duration: 0.12, ease: "back.out(3)" }}, {0.3 + n * 0.07:.2f});\n'
+for n in range(3):
+    a = rel(i, 0.3 + n * 0.22)
+    js += slam(f"#s3-k{n}", a, "x: -700, opacity: 0", 0.16) + shake("#s3-w", a)
+    MC.append((W[k][0] + a, "pickaxe-hit"))
+HITS.append(W[k][0] + rel(i, 0.1))
+C[k] = scene(k, i, gh + gui, h, txt, js, cc)
+
+# 4 MODS: ore / gold / TNT blocks pop in on beats (items, blocks, mobs, mechanics), the TNT blows at the end
+i, k = 3, "s4"; d = d_of(i)
+h, j, cc = character("c4", d, [[0, "idle"], [0.5, "shock"], [1.6, "think"]], shot_plan(i, ["low", "wide", "hero", "dutch"]))
+gh, gj = ghost(k, "MODS", top=900, size=520)
+mb = [("s4-m0", "diamond_ore", None, 170, 1000), ("s4-m1", "emerald_ore", None, 910, 1000), ("s4-m2", "gold_block", None, 160, 1380),
+      ("s4-m3", "tnt_side", "tnt_top", 920, 1380)]
+back = gh + "".join(cube(cid, 180, sd, tp, x, y) for cid, sd, tp, x, y in mb)
+MW = ["ITEMS", "BLOCKS", "MOBS", "MECHANICS"]
+txt = (f'<div class="c slam" id="s4-a" style="top:230px;font-size:120px;">CUSTOM</div><div class="c slam" id="s4-b" style="top:350px;font-size:220px;color:{DIA};">MODS</div>'
+       + "".join(f'<div class="c" id="s4-k{n}" style="top:{620 + (n // 2) * 128}px;"><span class="chip" style="position:relative;left:{-200 if n % 2 == 0 else 200}px;">{t}</span></div>' for n, t in enumerate(MW)))
+js = j + gj + slam("#s4-a", 0.05) + slam("#s4-b", rel(i, 0.1)) + shake("#s4-w", rel(i, 0.1))
+for n, (cid, *_r) in enumerate(mb):
+    a = rel(i, 0.28 + n * 0.17)
+    js += spin(cid, d, ry0=20 + 25 * n, turns=0.5) + f'    gsap.set("#{cid}-o", {{ scale: 0 }});\n'
+    js += f'    tl.fromTo("#{cid}-o", {{ scale: 0 }}, {{ scale: 1, duration: 0.18, ease: "back.out(2.5)", immediateRender: false }}, {a:.2f});\n'
+    js += slam(f"#s4-k{n}", a, "scale: 2, opacity: 0", 0.14)
+    MC.append((W[k][0] + a, "block-place" if n % 2 else "pop-low"))
+boom = round(d - 0.42, 2)
+js += (f'    tl.to("#s4-m3-o", {{ scale: 2.4, opacity: 0, duration: 0.22, ease: "power2.out" }}, {boom:.2f});\n'
+       f'    tl.fromTo("#s4-w", {{ filter: "brightness(2.2)" }}, {{ filter: "brightness(1)", duration: 0.25, immediateRender: false }}, {boom:.2f});\n' + shake("#s4-w", boom))
+MC.append((W[k][0] + boom, "game-explosion-8bit"))
+HITS.append(W[k][0] + rel(i, 0.1))
+C[k] = scene(k, i, back, h, txt, js, cc)
+
+# 5 TEXTURE PACKS: one big cube swaps its texture on every beat
+i, k = 4, "s5"; d = d_of(i)
+h, j, cc = character("c5", d, [[0, "idle"], [0.4, "point"], [1.8, "nod"]], shot_plan(i, ["side", "low", "wide", "top"]), x=720, y=1720)
+swap = [("grass_side", "grass_top"), ("cobble", None), ("planks", None), ("stone_brick", None), ("gold_block", None),
+        ("obsidian", None), ("diamond_ore", None), ("log", None), ("tnt_side", "tnt_top")]
+back = cube("s5-cu", 300, "grass_side", "grass_top", 270, 1250)
+TW = ["CUSTOM UI", "ITEMS", "BLOCKS", "FULL THEMES"]
+txt = ('<div class="c slam" id="s5-a" style="top:230px;font-size:170px;">TEXTURE</div>'
+       f'<div class="c slam" id="s5-b" style="top:390px;font-size:190px;color:{GOLD};">PACKS</div>'
+       + "".join(f'<div class="c" id="s5-k{n}" style="top:{640 + n * 100}px;text-align:right;padding-right:70px;"><span class="chip" style="font-size:66px;">{t}</span></div>' for n, t in enumerate(TW)))
+js = j + slam("#s5-a", 0.05) + slam("#s5-b", rel(i, 0.15)) + shake("#s5-w", rel(i, 0.15)) + spin("s5-cu", d, rx=-22, ry0=35, turns=0.8)
+js += '    tl.fromTo("#s5-cu-o", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 0.05);\n    gsap.set("#s5-cu-o", { scale: 0 });\n'
+sw_t = [b for b in inside(i, BEATS)] + [round(b + 0.33, 3) for b in inside(i, BEATS)]
+sw_t = sorted(t for t in sw_t if t < d - 0.3)
+faces_js = []
+for n, a in enumerate(sw_t):
+    sd, tp = swap[(n + 1) % len(swap)]
+    tp = tp or sd
+    # faces 0-3 = sides, 4-5 = top/bottom (cube() order)
+    faces_js.append(f'    tl.call(() => {{ document.querySelectorAll(".s5-cu-t").forEach((f, n) => f.style.backgroundImage = "url(\'{TX}/" + (n < 4 ? "{sd}" : "{tp}") + ".png\')"); }}, null, {a:.3f});\n')
+    faces_js.append(f'    tl.fromTo("#s5-cu-o", {{ scale: 1.12 }}, {{ scale: 1, duration: 0.18, ease: "expo.out", immediateRender: false }}, {a:.3f});\n')
+    if n % 2 == 0:
+        MC.append((W[k][0] + a, "block-break"))
+js += "".join(faces_js)
+for n in range(4):
+    js += slam(f"#s5-k{n}", rel(i, 0.35 + n * 0.15), "x: 600, opacity: 0", 0.14)
+HITS.append(W[k][0] + rel(i, 0.15))
+C[k] = scene(k, i, back, h, txt, js, cc)
+
+# 6 FREE: speed-ramped jump, gold blocks rain
+i, k = 5, "s6"; d = d_of(i)
+h, j, cc = character("c6", d, [[0, "idle"], [rel(i, 0.55), "shock"]], shot_plan(i, ["low", "wide", "hero", "dutch"]))
+j += (f'    tl.to("#c6-move", {{ y: -360, duration: 0.28, ease: "expo.out" }}, {rel(i, 0.5):.2f});\n'
+      f'    tl.to("#c6-move", {{ y: 0, duration: 0.42, ease: "bounce.out" }}, {rel(i, 0.5) + 0.28:.2f});\n')
+rain = "".join(cube(f"s6-g{n}", 110, "gold_block", x=x, y=-150, extra="") for n, x in enumerate((120, 330, 560, 760, 960, 230, 860)))
+txt = ('<div class="c sub" id="s6-a" style="top:250px;font-size:84px;color:#fff;">START FOR</div>'
+       f'<div class="c slam" id="s6-p" style="top:350px;font-size:440px;color:{GOLD};">FREE</div>')
+js = j + slam("#s6-a", 0.06, "y: -60, opacity: 0") + slam("#s6-p", rel(i, 0.55), "scale: 4.5, opacity: 0") + shake("#s6-w", rel(i, 0.55))
+for n in range(7):
+    a = rel(i, 0.55) + 0.05 * n
+    js += spin(f"s6-g{n}", d, rx=-30, ry0=17 * n, turns=1.2)
+    js += f'    tl.fromTo("#s6-g{n}-o", {{ y: 0 }}, {{ y: {1500 + 120 * (n % 3)}, duration: {1.1 + 0.15 * (n % 3):.2f}, ease: "power2.in", immediateRender: false }}, {a:.2f});\n'
+HITS.append(W[k][0] + rel(i, 0.55))
+MC.append((W[k][0] + rel(i, 0.55), "retro-coin"))
+FREE = W[k][0] + rel(i, 0.55)
+C[k] = scene(k, i, rain, h, txt, js, cc)
+
+# 7 music-only bar: the crowd (members), cut on every beat
+i, k = 6, "s7"; d = d_of(i)
+crowd, cj, cc = "", "", ""
+grid = [(x, y) for y in (1180, 1720) for x in (150, 410, 670, 930)]
+for n, (cx, cy) in enumerate(grid):
+    hh, jj, c2 = character(f"c7m{n}", d, [[0, ["idle", "wave", "nod"][n % 3]]], [(0.0, ["wide", "dutch", "low"][n % 3])], x=cx, y=cy)
+    crowd += f'<div id="s7-m{n}" style="position:absolute;inset:0;transform:scale(0.5);transform-origin:{cx}px {cy}px;opacity:0;">{hh}</div>'
+    cj += jj + f'    tl.fromTo("#s7-m{n}", {{ opacity: 0, y: 120 }}, {{ opacity: 1, y: 0, duration: 0.2, ease: "power3.out" }}, {0.05 + n * 0.08:.2f});\n'
+    cc += c2
+bt = inside(i, BEATS)[:3] or [0.1, 0.9, 1.7]
+txt = ('<div class="c slam" id="s7-a" style="top:250px;font-size:200px;color:#f7dc94;">2,500+</div>'
+       '<div class="c slam" id="s7-b" style="top:460px;font-size:120px;">MEMBERS</div>'
+       '<div class="c slam" id="s7-c" style="top:590px;font-size:96px;color:#9aa3ff;">17 BOOSTS • LEVEL 3</div>')
+js = cj + "".join(slam(f"#s7-{c}", t) + shake("#s7-w", t) for c, t in zip("abc", bt))
+HITS += [W[k][0] + t for t in bt]
+C[k] = scene(k, i, "", crowd, txt, js, cc)
+
+# 8 end card
+i, k = 7, "s8"; d = d_of(i)
+h, j, cc = character("c8", d, [[0, "wave"], [2.4, "spin"], [3.6, "wave"]], shot_plan(i, ["wide", "low", "wide", "hero", "wide", "dutch", "wide", "low", "wide", "wide"]), y=1720)
+back = cube("s8-c0", 150, "grass_side", "grass_top", 150, 1250) + cube("s8-c1", 150, "diamond_ore", None, 930, 1250)
+txt = ('<div id="s8-logo" style="position:absolute;left:390px;top:180px;width:300px;height:300px;border-radius:50%;overflow:hidden;box-shadow:0 0 90px rgba(247,220,148,0.6);">'
+       '<img src="assets/img/logo_circle.png" style="width:300px;height:300px;" alt="Heaven Developer logo"></div>'
+       '<div class="c slam" id="s8-n" style="top:520px;font-size:120px;color:#f7dc94;">HEAVEN DEVELOPER</div>'
+       f'<div class="c" id="s8-b" style="top:700px;"><span class="btn"><svg viewBox="0 0 24 24" style="width:80px;height:80px;" fill="#fff">{DISCORD}</svg>JOIN ON DISCORD</span></div>'
+       '<div class="c sub" id="s8-u" style="top:880px;font-size:58px;color:#fff;">discord.gg/<span style="color:#f7dc94;">heavendeveloper</span></div>')
+js = (j + spin("s8-c0", d, ry0=20) + spin("s8-c1", d, ry0=60, turns=-1)
+      + '    tl.fromTo("#s8-logo", { rotationY: -540, scale: 0.2, opacity: 0 }, { rotationY: 0, scale: 1, opacity: 1, duration: 0.7, ease: "expo.out" }, 0.05);\n'
+      + slam("#s8-n", 0.15) + slam("#s8-b", rel(i, 0.55)) + shake("#s8-w", rel(i, 0.55))
+      + f'    tl.to("#s8-b", {{ scale: 1.07, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 8 }}, {rel(i, 0.55) + 0.3:.2f});\n'
+      + slam("#s8-u", rel(i, 0.75), "y: 60, opacity: 0"))
+HITS.append(W[k][0] + rel(i, 0.55))
+JOIN = W[k][0] + rel(i, 0.55)
+C[k] = scene(k, i, back, h, txt, js, cc, exit_=False)
+
+os.makedirs("compositions", exist_ok=True)
+for f in os.listdir("compositions"):
+    os.remove(os.path.join("compositions", f))
+for kk, v in C.items():
+    open(f"compositions/{kk}.html", "w").write(v)
+div = lambda kk, s, d_, lane, z: (f'      <div id="{kk}" data-composition-id="{kk}" data-composition-src="compositions/{kk}.html" data-start="{s}" data-duration="{d_}" '
+                                  f'data-track-index="{lane}" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: {z}"></div>')
+divs = [div("bg", 0, TOTAL, 0, 0)] + [div(kk, s, round(e - s, 3), 1, 1) for kk, s, e in SCENES] + [div("bars", 0, TOTAL, 2, 2), div("flash", 0, TOTAL, 3, 3)]
+sfx = lambda n: f"assets/sfx/{n}.mp3"
+A = [("mix", "assets/audio/mix.wav", 0, min(dur("assets/audio/mix.wav"), TOTAL), 1.0, 10)]
+HIT_SFX = ["impact-boom", "punch-heavy", "sub-drop"]
+for n, t in enumerate(sorted(HITS)):
+    f = HIT_SFX[n % len(HIT_SFX)]
+    A.append((f"hit{n}", sfx(f), round(t, 2), dur(sfx(f)), 0.3, 20 + n % 6))
+MC_VOL = {"block-place": 0.55, "block-break": 0.5, "pickaxe-hit": 0.45, "pop-low": 0.5, "game-explosion-8bit": 0.45, "retro-coin": 0.4}
+for n, (t, f) in enumerate(sorted(MC)):
+    A.append((f"mc{n}", sfx(f), round(t, 2), dur(sfx(f)), MC_VOL[f], 30 + n % 6))
+for n, (kk, s, e) in enumerate(SCENES[1:]):
+    f = ["whoosh-fast-0.3s", "swish-4"][n % 2]
+    A.append((f"wh{n}", sfx(f), round(max(0, s - 0.12), 2), dur(sfx(f)), 0.5, 14 + n % 2))
+A += [("ok", sfx("confirm-1"), round(JOIN, 2), dur(sfx("confirm-1")), 0.4, 17)]
+aud = "\n".join(f'      <audio id="{a}" src="{s}" data-start="{b}" data-duration="{dd}" data-volume="{v}" data-track-index="{ln}"></audio>'
+                for a, s, b, dd, v, ln in A)
+open("index.html", "w").write(f"""<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap-3.14.2.min.js"></script>
+    <style>* {{ margin: 0; padding: 0; box-sizing: border-box; }} html, body {{ margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: {BG}; }}</style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="1080" data-height="1920">
+{chr(10).join(divs)}
+{aud}
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({{ paused: true }});
+    </script>
+  </body>
+</html>
+""")
+SN = [round(t, 2) for t, s in EV["snares"] if s >= 0.6 and t < TOTAL]
+en = "+".join(f"between(t,{t:.2f},{t + 0.09:.2f})" for t in SN) or "0"
+open("post.sh", "w").write(
+    "#!/bin/bash\n# post-process the HyperFrames render: snare RGB split, grade, grain; then loudness\n"
+    f'ffmpeg -v error -y -i "$1" -vf "rgbashift=rh=-6:bh=6:enable=\'{en}\',eq=contrast=1.2:saturation=0.95:gamma=0.97,'
+    'colorbalance=bs=0.08:bm=0.03:rh=-0.02,noise=alls=8:allf=t+u,vignette=PI/5" -c:v libx264 -crf 16 -preset medium '
+    '-af "volume=${GAIN:-2.2}dB,alimiter=limit=0.79:level=false" -c:a aac -b:a 192k "$2"\n')
+print("built", TOTAL, len(SCENES), "scenes,", len(BEATS), "beat cuts,", len(KICKS), "kick punches,", len(FLASH_T), "flashes,", len(SN), "snare splits,", len(MC), "minecraft sfx")

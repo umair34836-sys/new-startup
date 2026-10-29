@@ -31,3 +31,26 @@ Same VO/music/mix as v2 (verified), new picture: beat-cut camera shots, kick pun
 grade, grain, depth text, clones/crowd ("2,500+ MEMBERS", "17 BOOSTS • LEVEL 3": brief.md), jump on $4, letterbox.
 Snapshot fixes: face close-up lowered (head covered "BUILDS IT ALL"), crowd 2 rows x 4 (3 rows overlapped).
 QA: -15.3 LUFS, -1.91 dBTP, 0 clipped, 30.0 fps, blackdetect 0. Preview watermarked; clean kept in the scratchpad.
+
+## v4 = client feedback round (2026-10-29, Discord #edits screenshots from the owner)
+Client: "with phonk, with beats, with vibes - this one is not good"; remove the watermark; "mostly talk about Minecraft";
+English only; "tell the plans are free, don't explain invites and paid". Owner then also asked for a NO-VOICE, NOT
+Minecraft-focused cut. Both delivered as clean finals (no watermark).
+- Music: HoliznaCC0 "Re-Adjustment" (CC0, catalogued) from its drop (music_fit --src-drop 13.978 -> 14.65 on the bar
+  grid): listen.py RMS -8 dB in 14-60 s vs -13 dB for "Phonk-ish"; voice activity only 0-12 s (not used).
+  Rejected: archive.org "Fox72z" phonk items (subject "Suno Ai", PD Mark set by uploader: licence doubt);
+  "Alec Penn Radio" phonk (CC0 on archive.org, own site says "free to use, AI co-created with Suno", but listen.py voice
+  activity 37-86 % = vocals that would fight the VO); other PD-marked items are re-uploads of other artists' songs.
+  fetch_free_music.py "drift phonk"/"phonk cowbell"/"brazilian phonk" found 0 tracks; "phonk" returned HTTP 404.
+- "Free": VO "And you can start for free." + "START FOR FREE" on screen = brief.md #pricing "PLANS Free"; paid/invites not
+  mentioned (client's ask). No claim that everything is free.
+- Minecraft cut (build_heavendeveloper_phonk_v3.py): VO gaming-hype --lang en, 7 lines, Whisper small heard all 7
+  word-for-word; lines on downbeats 0.3/2.694/5.364/9.368/13.351/17.357/24.021, crowd bar 18.6-23.9 music-only.
+  Minecraft night world (square moon, grass floor), textured CSS cubes (new voxel_textures: diamond/emerald ore, gold,
+  TNT, obsidian), block tower per beat, inventory GUI, TNT blast, texture swap per beat; Minecraft SFX rotated.
+  Snapshot fixes: moon behind titles -> top corner; GUI hidden by character -> left, character right; chips overlapped -> 128 px.
+  QA: -15.5 LUFS, -1.9 dB peak, 30 fps, blackdetect 0. Render -w 3: 1m37s capture.
+- No-voice cut (build_heavendeveloper_phonk_novo.py): neon studio bg, text-only: NEED A DISCORD BOT/WEBSITE/MINECRAFT
+  PLUGIN, logo + "PREMIUM DEVELOPMENT, DELIVERED" (bot footer line), WE BUILD x5 services, DISCORD BOTS + WEBSITES chips
+  (#services), START FOR FREE, members/boosts, CTA. Scene grid on downbeats. Render -13.5 LUFS -> post GAIN=0.2 -> -15.3
+  LUFS, -1.9 dB peak, 30 fps, blackdetect 0.
