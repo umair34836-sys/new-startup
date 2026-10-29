@@ -9,7 +9,7 @@ $title = $title ?? $brand;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title><?= e($title) ?> · <?= e($brand) ?></title>
-<meta name="theme-color" content="#0f172a">
+<meta name="theme-color" content="#120b2b">
 <link rel="manifest" href="<?= e(base_url('manifest.webmanifest')) ?>">
 <link rel="icon" href="<?= e(base_url('assets/icons/icon-192.png')) ?>">
 <link rel="apple-touch-icon" href="<?= e(base_url('assets/icons/icon-192.png')) ?>">
@@ -18,6 +18,13 @@ $title = $title ?? $brand;
 <script src="<?= e(base_url('assets/app.js')) ?>?v=1" defer></script>
 </head>
 <body data-csrf="<?= e(csrf_token()) ?>" data-base="<?= e(rtrim(base_url(''), '/')) ?>">
+<div class="splash" id="splash" hidden aria-hidden="true">
+  <div class="splash-logo">
+    <img class="splash-mark" src="<?= e(base_url('assets/icons/logo-480.png')) ?>" alt="" width="240" height="240">
+    <svg class="splash-ring" viewBox="0 0 200 200" width="240" height="240"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4b8"/><stop offset="1" stop-color="#f5a623"/></linearGradient></defs><circle cx="100" cy="100" r="75.5" fill="none" stroke="url(#ringGrad)" stroke-width="9" stroke-linecap="round"/></svg>
+  </div>
+  <div class="splash-word"><?= e($brand) ?></div>
+</div>
 <header class="top">
   <a class="brand" href="<?= e(base_url('')) ?>"><img src="<?= e(base_url('assets/icons/logo.png')) ?>" alt="" width="32" height="32"><span><?= e($brand) ?></span></a>
   <?php if ($u): ?>

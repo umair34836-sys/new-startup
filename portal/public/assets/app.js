@@ -113,11 +113,43 @@
     b.addEventListener('click', function (e) { if (!confirm(b.dataset.confirm)) e.preventDefault(); });
   });
 
+  // ---- Splash: logo reveal once per browser session (app start). Timing from repo skills #426/#427:
+  // ring draw-on 0.9 s, mark builds 0.55 s then settles 1.04 -> 1.00 in 0.16 s, letters stagger 0.06 s,
+  // whole reveal about 2.3 s incl. a 0.45 s hold. Tap skips it. Reduced motion: never shown.
+  function splash(g) {
+    var el = document.getElementById('splash');
+    if (!el) return;
+    var seen = false;
+    try { seen = sessionStorage.getItem('splashSeen') === '1'; sessionStorage.setItem('splashSeen', '1'); } catch (e) { seen = true; }
+    if (seen) { el.remove(); return; }
+    var word = el.querySelector('.splash-word');
+    word.innerHTML = word.textContent.split('').map(function (c) { return c === ' ' ? '<span>&nbsp;</span>' : '<span>' + c.replace(/[<>&]/g, '') + '</span>'; }).join('');
+    var circle = el.querySelector('circle'), len = 2 * Math.PI * 75.5;
+    el.hidden = false;
+    g.set(circle, { strokeDasharray: len, strokeDashoffset: len });
+    var tl = g.timeline({ onComplete: function () { el.remove(); } });
+    tl.to(circle, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut' }, 0)
+      .fromTo('.splash-mark', { scale: 0.6, rotation: -14, opacity: 0, filter: 'blur(8px)' },
+        { scale: 1.04, rotation: 0, opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power3.out' }, 0.25)
+      .to('.splash-mark', { scale: 1, duration: 0.16, ease: 'power1.out' }, 0.8)
+      .from('.splash-word span', { y: 14, opacity: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out' }, 0.8)
+      .fromTo('.splash-ring', { filter: 'drop-shadow(0 0 0 rgba(0,212,184,0))' },
+        { filter: 'drop-shadow(0 0 14px rgba(245,166,35,.8))', duration: 0.3, yoyo: true, repeat: 1 }, 1.2)
+      .to(el, { opacity: 0, scale: 1.04, duration: 0.3, ease: 'power1.in' }, '+=0.45');
+    el.addEventListener('click', function () { tl.progress(1); });
+  }
+
   // ---- Motion (GSAP 3.14.2, vendored from library/vendor) ----
   window.addEventListener('load', function () {
     var g = window.gsap;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!g || reduce) { window.portalMotion = { enter: function () {} }; return; }
+    if (!g || reduce) {
+      var sp = document.getElementById('splash');
+      if (sp) sp.remove();
+      window.portalMotion = { enter: function () {} };
+      return;
+    }
+    splash(g);
     window.portalMotion = { enter: function (el) { g.from(el, { opacity: 0, y: 8, duration: 0.3, ease: 'power1.out', clearProps: 'all' }); } };
     // #10 page transition (subtle): fade the page in on load.
     g.fromTo('#main', { opacity: 0 }, { opacity: 1, duration: 0.2, ease: 'power1.inOut' });
@@ -139,6 +171,10 @@
       el.addEventListener('mouseenter', function () { g.to(el, { y: -1, duration: 0.15, ease: 'power1.out' }); });
       el.addEventListener('mouseleave', function () { g.to(el, { y: 0, duration: 0.15, ease: 'power1.out' }); });
     });
+    // Success notice: slide in with a small settle (skill #426: land on the final layout from an offset).
+    g.fromTo('.notice.ok', { x: -12, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: 'back.out(2)' });
+    // New version ready: one soft glow on the player card.
+    g.fromTo('video.player', { boxShadow: '0 0 0 0 rgba(255,46,147,0)' }, { boxShadow: '0 0 0 6px rgba(255,46,147,.35)', duration: 0.5, yoyo: true, repeat: 1, delay: 0.4 });
     // Progress steps fill one after another.
     g.from('.progress li.done', { scaleX: 0.6, opacity: 0, duration: 0.3, stagger: 0.08, ease: 'power1.out', clearProps: 'all' });
   });

@@ -21,7 +21,7 @@ function route_web(string $m, string $path): void
         $brand = setting('brand_name');
         echo json_encode([
             'name' => $brand, 'short_name' => mb_substr($brand, 0, 12), 'start_url' => base_url('orders'),
-            'scope' => base_url(''), 'display' => 'standalone', 'background_color' => '#0f172a', 'theme_color' => '#0f172a',
+            'scope' => base_url(''), 'display' => 'standalone', 'background_color' => '#120b2b', 'theme_color' => '#120b2b',
             'icons' => [
                 ['src' => base_url('assets/icons/icon-192.png'), 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
                 ['src' => base_url('assets/icons/icon-512.png'), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],

@@ -10,5 +10,5 @@ if (!row('SELECT id FROM users WHERE email = ?', [$email])) {
         'status' => 'active', 'currency' => 'PKR', 'created_at' => now()]);
 }
 set_setting('bridge_token_hash', hash('sha256', $token));
-set_setting('brand_name', 'Demo Studio');
+set_setting('brand_name', 'MrCopper804');
 echo "seeded\n";

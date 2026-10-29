@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mrcopper804.portal",
+      "sha256_cert_fingerprints": [
+        "89:6F:77:5C:49:EF:08:F1:87:30:64:AE:54:D4:80:84:02:D4:EF:AC:E4:20:20:89:5D:7F:02:CF:76:C4:F1:90"
+      ]
+    }
+  }
+]
