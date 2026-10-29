@@ -76,6 +76,7 @@ function schema_sql(string $driver): array
             currency VARCHAR(3) NOT NULL DEFAULT 'PKR',
             rate_pkr DECIMAL(12,4) NULL,
             rate_usd DECIMAL(12,4) NULL,
+            rate DECIMAL(12,4) NULL,
             claude_session VARCHAR(120) NULL,
             session_version INT NOT NULL DEFAULT 0,
             admin_note TEXT NULL,
@@ -188,6 +189,8 @@ function schema_sql(string $driver): array
     ];
 }
 
+const SCHEMA_VERSION = 1;
+
 function migrate(): void
 {
     $driver = config('db_driver', 'mysql');
@@ -201,4 +204,28 @@ function migrate(): void
             }
         }
     }
+}
+
+/** Upgrades an existing database to SCHEMA_VERSION. Runs once per new version, on the first request after an update. */
+function upgrade_db(): void
+{
+    $have = (int) setting('schema_version');
+    if ($have >= SCHEMA_VERSION) {
+        return;
+    }
+    migrate();
+    if ($have < 1) {
+        // v1 (2026-10-29): one per-client rate in the client's own currency + a list of currencies with default rates.
+        try {
+            db()->exec('ALTER TABLE users ADD COLUMN rate DECIMAL(12,4) NULL');
+        } catch (PDOException) {
+            // Column already there (fresh install).
+        }
+        q("UPDATE users SET rate = rate_pkr WHERE rate IS NULL AND currency = 'PKR' AND rate_pkr IS NOT NULL");
+        q("UPDATE users SET rate = rate_usd WHERE rate IS NULL AND currency = 'USD' AND rate_usd IS NOT NULL");
+        if (row("SELECT name FROM settings WHERE name = 'currencies'") === null) {
+            set_setting('currencies', json_encode(['PKR' => setting('rate_pkr'), 'USD' => setting('rate_usd')]));
+        }
+    }
+    set_setting('schema_version', (string) SCHEMA_VERSION);
 }

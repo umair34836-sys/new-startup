@@ -2,6 +2,7 @@
 // Subtle motion only; none when the visitor asks for reduced motion.
 (function () {
   'use strict';
+  var ZERO_DEC = ['PKR', 'INR', 'NPR', 'BDT', 'LKR', 'JPY', 'KRW', 'IDR', 'VND'];
   var body = document.body;
   var csrf = body.dataset.csrf;
   var base = body.dataset.base || '';
@@ -105,7 +106,7 @@
     var rate = parseFloat(est.dataset.rate), cur = est.dataset.currency, out = est.querySelector('[data-estimate-value]');
     len.addEventListener('input', function () {
       var s = Math.max(0, parseInt(len.value, 10) || 0), v = s * rate;
-      out.textContent = cur + ' ' + v.toLocaleString('en-US', { maximumFractionDigits: cur === 'PKR' ? 0 : 2, minimumFractionDigits: cur === 'PKR' ? 0 : 2 });
+      out.textContent = cur + ' ' + v.toLocaleString('en-US', { maximumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2, minimumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2 });
     });
   }
 

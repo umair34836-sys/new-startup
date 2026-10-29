@@ -242,6 +242,7 @@ function app_config(): array
     return [
         'brand' => setting('brand_name'), 'splash' => setting('splash_subtitle'), 'tagline' => setting('brand_tagline'),
         'promise' => setting('promise_text'),
+        'currencies' => array_map(fn($c) => ['code' => $c, 'label' => currency_label($c)], array_keys(currencies())),
         'support' => setting('support_contact'), 'privacy' => setting('privacy_text'),
         'questions' => $qs, 'statuses' => ORDER_STATUSES, 'max_file_mb' => (int) setting('max_file_mb'),
         'app' => ['native_version' => (int) setting('app_version'), 'apk_url' => is_file(storage_dir() . '/app/app.apk') ? site_url('app/download') : null,

@@ -9,6 +9,8 @@ const SETTING_DEFAULTS = [
     // Owner (2026-10-29): clients only ever learn that MrCopper804 edits every video himself, by hand.
     'promise_text' => 'Every video is edited by hand by MrCopper804.',
     'support_contact' => '',
+    // Default rate per second of finished video, per currency (owner adds currencies in Settings).
+    'currencies' => '{"PKR":"50","USD":"0.20"}',
     'rate_pkr' => '50',
     'rate_usd' => '0.20',
     'max_file_mb' => '4096',
@@ -67,4 +69,33 @@ function chunk_bytes(): int
     };
     $post = $toBytes((string) ini_get('post_max_size')) ?: 8 * 1024 ** 2;
     return (int) max(256 * 1024, min(1536 * 1024, (int) ($post * 0.75)));
+}
+
+/** Known currency names, shown in the lists. Any 3-letter code can be added in Settings. */
+const CURRENCY_NAMES = [
+    'PKR' => 'Pakistani Rupee', 'INR' => 'Indian Rupee', 'NPR' => 'Nepalese Rupee', 'BDT' => 'Bangladeshi Taka',
+    'LKR' => 'Sri Lankan Rupee', 'USD' => 'US Dollar', 'EUR' => 'Euro', 'GBP' => 'British Pound', 'AED' => 'UAE Dirham',
+    'SAR' => 'Saudi Riyal', 'QAR' => 'Qatari Riyal', 'KWD' => 'Kuwaiti Dinar', 'OMR' => 'Omani Rial', 'CAD' => 'Canadian Dollar',
+    'AUD' => 'Australian Dollar', 'MYR' => 'Malaysian Ringgit', 'SGD' => 'Singapore Dollar', 'TRY' => 'Turkish Lira',
+];
+
+/** Currencies shown without decimals. */
+const ZERO_DECIMAL = ['PKR', 'INR', 'NPR', 'BDT', 'LKR', 'JPY', 'KRW', 'IDR', 'VND'];
+
+/** code => default rate per second, from Settings. */
+function currencies(): array
+{
+    $c = json_decode(setting('currencies'), true);
+    $out = [];
+    foreach (is_array($c) ? $c : [] as $code => $rate) {
+        if (preg_match('/^[A-Z]{3}$/', (string) $code)) {
+            $out[$code] = (float) $rate;
+        }
+    }
+    return $out ?: ['PKR' => 50.0];
+}
+
+function currency_label(string $code): string
+{
+    return $code . (isset(CURRENCY_NAMES[$code]) ? ' (' . CURRENCY_NAMES[$code] . ')' : '');
 }

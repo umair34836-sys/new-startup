@@ -3,6 +3,7 @@
 // itself when the internet comes back.
 (function () {
   'use strict';
+  var ZERO_DEC = ['PKR', 'INR', 'NPR', 'BDT', 'LKR', 'JPY', 'KRW', 'IDR', 'VND'];
   var API = (window.PORTAL_API || '').replace(/\/$/, '');
   var CAP = window.Capacitor && window.Capacitor.Plugins ? window.Capacitor.Plugins : {};
   var isNative = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
@@ -15,7 +16,7 @@
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
   }
   function money(v, cur) {
-    return cur + ' ' + Number(v || 0).toLocaleString('en-US', { maximumFractionDigits: cur === 'PKR' ? 0 : 2, minimumFractionDigits: cur === 'PKR' ? 0 : 2 });
+    return cur + ' ' + Number(v || 0).toLocaleString('en-US', { maximumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2, minimumFractionDigits: ZERO_DEC.indexOf(cur) >= 0 ? 0 : 2 });
   }
   function bytes(b) {
     var u = ['B', 'KB', 'MB', 'GB'], i = 0;
@@ -269,7 +270,7 @@
       '<label>Your name<input name="name" required maxlength="120" autocomplete="name"></label>' +
       '<label>Email<input name="email" type="email" required autocomplete="email"></label>' +
       '<label>WhatsApp / phone <small>(optional)</small><input name="phone" maxlength="40" autocomplete="tel"></label>' +
-      '<label>Currency<select name="currency"><option value="PKR">PKR (Pakistani Rupee)</option><option value="USD">USD (US Dollar)</option></select></label>' +
+      '<label>Currency<select name="currency">' + (((state.cfg || ls.get('cfg') || {}).currencies) || [{ code: 'PKR', label: 'PKR (Pakistani Rupee)' }, { code: 'USD', label: 'USD (US Dollar)' }]).map(function (c) { return '<option value="' + esc(c.code) + '">' + esc(c.label) + '</option>'; }).join('') + '</select></label>' +
       '<label>Password <small>(8+ characters)</small><input name="password" type="password" required minlength="8" autocomplete="new-password"></label>' +
       '<button class="btn primary">Create account</button></form><p class="muted">Have an account? <a href="#/login">Log in</a></p></section>');
     form('#f', function (fd) {

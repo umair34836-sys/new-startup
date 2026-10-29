@@ -75,9 +75,8 @@ function route_admin(string $m, string $path): void
         $c = row("SELECT * FROM users WHERE id = ? AND role = 'client'", [(int) $mm[1]]) ?? abort(404);
         $num = fn(string $k) => post($k) === '' ? null : max(0, (float) post($k));
         update('users', [
-            'rate_pkr' => $num('rate_pkr'),
-            'rate_usd' => $num('rate_usd'),
-            'currency' => in_array(post('currency'), ['PKR', 'USD'], true) ? post('currency') : $c['currency'],
+            'rate' => $num('rate'),
+            'currency' => isset(currencies()[post('currency')]) ? post('currency') : $c['currency'],
             'status' => in_array(post('status'), ['active', 'pending', 'blocked'], true) ? post('status') : $c['status'],
             'claude_session' => preg_match('/^[A-Za-z0-9_-]{0,120}$/', post('claude_session')) ? (post('claude_session') ?: null) : $c['claude_session'],
             'admin_note' => mb_substr(post('admin_note'), 0, 2000),
@@ -97,8 +96,17 @@ function route_admin(string $m, string $path): void
                     'app_notes' => 300, 'privacy_text' => 5000] as $k => $max) {
                     set_setting($k, mb_substr(post($k), 0, $max));
                 }
-                foreach (['rate_pkr', 'rate_usd'] as $k) {
-                    set_setting($k, (string) max(0, (float) post($k)));
+                // Currency table: rows of code + default rate; an empty or invalid code drops the row.
+                $cur = [];
+                foreach ((array) ($_POST['cur_code'] ?? []) as $i => $code) {
+                    $code = strtoupper(trim((string) $code));
+                    $rate = (string) (($_POST['cur_rate'] ?? [])[$i] ?? '');
+                    if (preg_match('/^[A-Z]{3}$/', $code) && $rate !== '' && is_numeric($rate)) {
+                        $cur[$code] = (string) max(0, (float) $rate);
+                    }
+                }
+                if ($cur) {
+                    set_setting('currencies', json_encode($cur));
                 }
                 set_setting('max_file_mb', (string) min(20480, max(10, (int) post('max_file_mb'))));
                 set_setting('max_files_per_order', (string) min(500, max(1, (int) post('max_files_per_order'))));
