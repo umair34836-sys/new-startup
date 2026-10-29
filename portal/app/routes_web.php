@@ -112,6 +112,16 @@ function route_web(string $m, string $path): void
             'orig_name' => preg_replace('/[^A-Za-z0-9]/', '', setting('brand_name')) . '-v' . (int) setting('app_version') . '.apk'], true, 'apk', 4);
     }
 
+    // Live-update bundle for the native app (web files zip, applied by the app's updater).
+    if ($path === '/app/bundle.zip') {
+        $zip = storage_dir() . '/app/bundle.zip';
+        if (!is_file($zip)) {
+            abort(404);
+        }
+        rate_limit_or_abort("bundle:$ip", 60, 3600);
+        send_file(['stored_name' => '../app/bundle.zip', 'mime' => 'application/zip', 'orig_name' => 'bundle.zip'], true, 'apk', 4);
+    }
+
     if ($path === '/logout' && $m === 'POST') {
         logout();
         redirect('login');
@@ -228,8 +238,8 @@ function upload_endpoint(string $path, array $user): never
     $isAdmin = $user['role'] === 'admin';
     if ($path === '/upload/init') {
         $in = json_decode((string) file_get_contents('php://input'), true) ?: [];
-        if ($isAdmin && ($in['kind'] ?? '') === 'apk') {
-            $r = upload_init(0, 'apk', 'admin', (string) ($in['name'] ?? ''), (int) ($in['size'] ?? 0));
+        if ($isAdmin && in_array($in['kind'] ?? '', ['apk', 'bundle'], true)) {
+            $r = upload_init(0, (string) $in['kind'], 'admin', (string) ($in['name'] ?? ''), (int) ($in['size'] ?? 0));
             json_out($r, isset($r['error']) ? 400 : 200);
         }
         $order = order_for_user((int) ($in['order_id'] ?? 0), $user);
@@ -245,7 +255,7 @@ function upload_endpoint(string $path, array $user): never
     if (!$up) {
         json_out(['error' => 'Upload not found. Start again.'], 404);
     }
-    if ($up['kind'] === 'apk') {
+    if (in_array($up['kind'], ['apk', 'bundle'], true)) {
         if (!$isAdmin) {
             json_out(['error' => 'Upload not found. Start again.'], 404);
         }

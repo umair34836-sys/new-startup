@@ -65,6 +65,16 @@ async function api(page, url, opts) {
   check((await resetBad.text()).includes('wrong or expired'), 'bad reset token refused');
   const forgot = await anon.post(BASE + '/forgot', { form: { _csrf: tok, email: 'nobody@example.com' } });
   check((await forgot.text()).includes('If an account with that email exists'), 'forgot password does not reveal accounts');
+  if (process.env.DIR) {
+    // Host header poisoning: a forged Host must not end up in the reset link.
+    const ev = await request.newContext({ extraHTTPHeaders: { Host: 'evil-attacker.example' } });
+    const pg = await ev.get(BASE + '/forgot');
+    const t2 = (await pg.text()).match(/name="_csrf" value="([a-f0-9]+)"/)[1];
+    await ev.post(BASE + '/forgot', { form: { _csrf: t2, email: 'owner@example.com' } });
+    const mails = fs.readFileSync(path.join(process.env.DIR, 'mail.log'), 'utf8').trim().split('\n').map(JSON.parse);
+    const last = mails.reverse().find((x) => x.subject === 'Reset your password');
+    check(last && last.body.includes(BASE + '/reset?token=') && !last.body.includes('evil-attacker'), 'forged Host header does not reach the reset email');
+  }
   for (const p of ['/api/bridge/events', '/api/bridge/events?token=pb_testtoken', '/api/bridge/files/1']) {
     check((await anon.get(BASE + p)).status() === 401, 'bridge API refuses without Bearer token: ' + p);
   }

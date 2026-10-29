@@ -29,8 +29,13 @@
     <label>Published app version (versionCode of the uploaded APK)<input name="app_version" type="number" min="0" value="<?= e(setting('app_version')) ?>"></label>
     <label>What's new (shown in the update message)<input name="app_notes" maxlength="300" value="<?= e(setting('app_notes')) ?>"></label>
   </div>
-  <p class="muted">Website changes reach the app at once (it shows the live site). Only a new icon, name or splash needs a new APK:
-    upload it below, raise the version number, save. Apps with a lower version then show "Update available".</p>
+  <div class="grid2">
+    <label>Live update version (x.y.z of the uploaded bundle.zip)<input name="bundle_version" pattern="\d+\.\d+\.\d+" value="<?= e(setting('bundle_version')) ?>"></label>
+    <label>Bundle needs app version at least<input name="bundle_min_native" type="number" min="0" value="<?= e(setting('bundle_min_native')) ?>"></label>
+  </div>
+  <p class="muted">Two kinds of update: (1) <strong>Live update</strong> = new app screens/features: upload bundle.zip (made by
+    portal/mobile/build_bundle.sh), set its version, save: every app downloads it by itself, no reinstall.
+    (2) <strong>New APK</strong> = only for native changes (icon, name, plugins): upload it, raise the app version: phones show "Update".</p>
   <button class="btn primary">Save settings</button>
 </form>
 <section class="card reveal">
@@ -38,6 +43,12 @@
   <p class="muted"><?= $apkSize ? 'Current APK: ' . e(fmt_bytes((int) $apkSize)) . ' · public link: ' . e(base_url('app/download')) : 'No APK uploaded yet.' ?></p>
   <div class="drop" data-uploader data-order="0" data-kind="apk" data-reload="1" tabindex="0">
     <input type="file" id="pick" accept=".apk"><label for="pick" class="btn">Upload APK</label>
+  </div>
+  <ul class="file-list" data-file-list></ul>
+  <h2>Live update bundle</h2>
+  <p class="muted"><?= $bundleSize ? 'Current bundle: ' . e(fmt_bytes((int) $bundleSize)) . ' · version ' . e(setting('bundle_version')) : 'No bundle uploaded yet.' ?></p>
+  <div class="drop" data-uploader data-order="0" data-kind="bundle" data-reload="1" tabindex="0">
+    <input type="file" id="pickb" accept=".zip"><label for="pickb" class="btn">Upload bundle.zip</label>
   </div>
   <ul class="file-list" data-file-list></ul>
 </section>

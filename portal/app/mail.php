@@ -3,10 +3,15 @@
 // Tests set config 'mail_log' to write emails to a file instead.
 declare(strict_types=1);
 
+/** Absolute links (emails, signed app links) use the fixed site address from config.php, never the request's
+ *  Host header (a forged Host would otherwise put an attacker's domain into password-reset emails). */
 function site_url(string $path = ''): string
 {
-    $host = preg_replace('/[^a-z0-9.:-]/i', '', (string) ($_SERVER['HTTP_HOST'] ?? 'localhost'));
-    return (is_https() ? 'https://' : 'http://') . $host . base_url($path);
+    $base = rtrim((string) config('site_url', ''), '/');
+    if ($base === '') {
+        $base = 'https://' . preg_replace('/[^a-z0-9.:-]/i', '', (string) ($_SERVER['SERVER_NAME'] ?? 'localhost'));
+    }
+    return $base . base_url($path);
 }
 
 function send_mail(string $to, string $subject, string $body): bool

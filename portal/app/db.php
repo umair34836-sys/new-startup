@@ -159,6 +159,15 @@ function schema_sql(string $driver): array
             done_at DATETIME NULL,
             FOREIGN KEY (order_id) REFERENCES orders(id)
         )$end",
+        "CREATE TABLE IF NOT EXISTS app_tokens (
+            id $pk,
+            user_id $fk NOT NULL,
+            token_hash CHAR(64) NOT NULL UNIQUE,
+            device VARCHAR(80) NULL,
+            created_at DATETIME NOT NULL,
+            last_used_at DATETIME NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )$end",
         "CREATE TABLE IF NOT EXISTS password_resets (
             id $pk,
             user_id $fk NOT NULL,

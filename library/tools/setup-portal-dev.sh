@@ -26,7 +26,7 @@ android() {
   fi
   export ANDROID_HOME="$SDK"
   yes | "$SDK/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1
-  "$SDK/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0" "platform-tools" >/dev/null
+  "$SDK/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "platforms;android-36" "build-tools;35.0.0" "platform-tools" >/dev/null
   echo "Android SDK ready in $SDK"
 }
 

@@ -53,6 +53,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
             'db_user' => $f('db_user'),
             'db_pass' => (string) ($_POST['db_pass'] ?? ''),
             'base_path' => '',
+            'site_url' => preg_match('#^https?://[a-z0-9.-]+(:\d+)?$#i', $f('site_url')) ? strtolower($f('site_url')) : 'https://' . preg_replace('/[^a-z0-9.-]/i', '', (string) ($_SERVER['SERVER_NAME'] ?? '')),
             'timezone' => 'Asia/Karachi',
         ];
         $GLOBALS['config'] = $cfg;
@@ -109,6 +110,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
       <label>Email<input name="admin_email" type="email" required></label>
       <label>Password (8+ characters)<input name="admin_password" type="password" required minlength="8"></label>
       <label>Brand name shown to clients<input name="brand_name" placeholder="Your studio name"></label>
+      <label>Site address (used in emails)<input name="site_url" value="https://<?= e(preg_replace('/[^a-z0-9.-]/i', '', (string) ($_SERVER['HTTP_HOST'] ?? ''))) ?>" placeholder="https://editor.firecraft.fun"></label>
     </fieldset>
     <button class="btn primary">Install</button>
   </form>

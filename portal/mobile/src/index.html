@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: __API__; media-src 'self' blob: __API__; connect-src 'self' __API__; base-uri 'self'; form-action 'none'">
+<meta name="theme-color" content="#120b2b">
+<title>MrCopper804</title>
+<link rel="stylesheet" href="app.css">
+<script src="config.js"></script>
+<script src="vendor/gsap-3.14.2.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="splash-logo">
+    <img class="splash-mark" src="icons/logo-480.png" alt="" width="240" height="240">
+    <svg class="splash-ring" viewBox="0 0 200 200" width="240" height="240"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4b8"/><stop offset="1" stop-color="#f5a623"/></linearGradient></defs><circle cx="100" cy="100" r="75.5" fill="none" stroke="url(#ringGrad)" stroke-width="9" stroke-linecap="round"/></svg>
+  </div>
+  <div class="splash-word">MrCopper804</div>
+  <div class="splash-sub">Editor</div>
+  <div class="splash-host" id="splash-host"></div>
+</div>
+<header class="top">
+  <a class="brand" href="#/orders"><img src="icons/logo.png" alt="" width="32" height="32"><span id="brand-name">MrCopper804</span></a>
+  <nav id="nav" hidden>
+    <a href="#/orders">My videos</a>
+    <a href="#/account">Account</a>
+  </nav>
+</header>
+<div class="netbar" id="netbar" hidden></div>
+<main class="page" id="main"></main>
+<footer class="foot"><span id="foot-brand">MrCopper804</span> · <a href="#/privacy">Privacy</a> · <span id="app-ver"></span></footer>
+</body>
+</html>

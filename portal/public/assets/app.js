@@ -61,7 +61,8 @@
 
   document.querySelectorAll('[data-uploader]').forEach(function (zone) {
     var input = zone.querySelector('input[type=file]');
-    var list = zone.parentElement.querySelector('[data-file-list]');
+    var next = zone.nextElementSibling;
+    var list = next && next.matches('[data-file-list]') ? next : zone.parentElement.querySelector('[data-file-list]');
     var queue = [], busy = false, failed = false;
     var submit = document.querySelector('[data-submit]');
 

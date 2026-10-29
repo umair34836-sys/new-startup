@@ -26,6 +26,12 @@ if ($base !== '' && str_starts_with($path, $base)) {
 }
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
+if (str_starts_with($path, '/api/v1/') || $path === '/api/v1') {
+    require APP_DIR . '/routes_app.php';
+    route_app($method, substr($path, strlen('/api/v1')) ?: '/');
+    exit;
+}
+
 if (str_starts_with($path, '/api/bridge')) {
     require APP_DIR . '/routes_api.php';
     route_api($method, substr($path, strlen('/api/bridge')) ?: '/');

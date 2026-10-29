@@ -46,7 +46,7 @@ function upload_init(int $orderId, string $kind, string $by, string $name, int $
 {
     $name = safe_name($name);
     $ext = file_ext($name);
-    if (!isset(ALLOWED_TYPES[$ext]) || ($ext === 'apk') !== ($kind === 'apk')) {
+    if (!isset(ALLOWED_TYPES[$ext]) || ($ext === 'apk') !== ($kind === 'apk') || ($kind === 'bundle' && $ext !== 'zip')) {
         return ['error' => "This file type (.$ext) is not allowed. Send videos, images, audio, PDF, TXT, DOCX or ZIP."];
     }
     $max = (int) setting('max_file_mb') * 1024 * 1024;
@@ -154,13 +154,17 @@ function upload_finish(array $up): array
         q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
         return ['error' => "The file content ($mime) does not match its .$ext name. It was rejected."];
     }
-    if ($up['kind'] === 'apk') {
+    if (in_array($up['kind'], ['apk', 'bundle'], true)) {
         @mkdir(storage_dir() . '/app', 0755, true);
-        if (!rename($part, storage_dir() . '/app/app.apk')) {
+        $dest = storage_dir() . '/app/' . ($up['kind'] === 'apk' ? 'app.apk' : 'bundle.zip');
+        if (!rename($part, $dest)) {
             return ['error' => 'Server could not save the app file.'];
         }
+        if ($up['kind'] === 'bundle') {
+            set_setting('bundle_sha256', hash_file('sha256', $dest));
+        }
         q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
-        return ['apk' => true, 'size' => (int) $up['size']];
+        return [$up['kind'] => true, 'size' => (int) $up['size']];
     }
     $stored = bin2hex(random_bytes(24));
     if (!rename($part, storage_dir() . '/files/' . $stored)) {

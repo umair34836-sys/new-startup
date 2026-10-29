@@ -108,6 +108,8 @@ function route_admin(string $m, string $path): void
                     set_setting($k, filter_var(post($k), FILTER_VALIDATE_EMAIL) ? post($k) : '');
                 }
                 set_setting('app_version', (string) max(0, (int) post('app_version')));
+                set_setting('bundle_version', preg_match('/^\d+\.\d+\.\d+$/', post('bundle_version')) ? post('bundle_version') : setting('bundle_version'));
+                set_setting('bundle_min_native', (string) max(0, (int) post('bundle_min_native')));
                 flash('Settings saved.');
                 redirect('admin/settings');
             }
@@ -115,6 +117,7 @@ function route_admin(string $m, string $path): void
         $events = rows('SELECT e.*, o.title FROM events e JOIN orders o ON o.id = e.order_id ORDER BY e.id DESC LIMIT 30');
         view('admin/settings', ['admin' => $admin, 'newToken' => $newToken, 'events' => $events,
             'apkSize' => is_file(storage_dir() . '/app/app.apk') ? filesize(storage_dir() . '/app/app.apk') : 0,
+            'bundleSize' => is_file(storage_dir() . '/app/bundle.zip') ? filesize(storage_dir() . '/app/bundle.zip') : 0,
             'chunk' => chunk_bytes(), 'ini' => ['upload_max_filesize' => ini_get('upload_max_filesize'),
             'post_max_size' => ini_get('post_max_size'), 'memory_limit' => ini_get('memory_limit'),
             'max_execution_time' => ini_get('max_execution_time')]]);
