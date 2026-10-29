@@ -37,6 +37,10 @@ done
 # Version. (Maven Central answered 429 to Gradle here, 2026-10-29: gradle-mirror.gradle uses Google's mirror.)
 sed -i -E "s/versionCode [0-9]+/versionCode $CODE/; s/versionName \"[^\"]*\"/versionName \"$NAME\"/" android/app/build.gradle
 echo "sdk.dir=$SDK" > android/local.properties
+# Test builds only (WEBDEBUG=1): let a test script drive the app's WebView over Chrome DevTools.
+if [ "${WEBDEBUG:-0}" = 1 ]; then
+  python3 -c "import json,sys;p=sys.argv[1];c=json.load(open(p));c.setdefault('android',{})['webContentsDebuggingEnabled']=True;json.dump(c,open(p,'w'))" android/app/src/main/assets/capacitor.config.json
+fi
 # Test builds only (CLEARTEXT=1): allow plain http to a local test server. Release builds never allow it.
 MAN=android/app/src/main/AndroidManifest.xml
 sed -i 's# android:usesCleartextTraffic="true"##' "$MAN"
