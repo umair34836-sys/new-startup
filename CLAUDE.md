@@ -551,3 +551,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - The admin sets the price per second of video.
   - Tools to use: ui-ux-pro-max, agency-agents, REA, Agent-Reach, ECC.
   - That session asks the owner his hosting type first; code goes in portal/.
+  - LIVE since 2026-10-29: https://editor.firecraft.fun (cPanel, MySQL).
+  - The bridge token is a "Bearer" network secret for editor.firecraft.fun in the environment settings, never in git.
+  - An hourly scheduled task (trig_01K3PxtPGzrgU6Dt72izjE98, at :37) fires into the portal session and forwards orders to client sessions.
+  - The owner's test order went to session_01JK8Ts95bH91xquzsz6f5Ch (branch client-portal-demo).
+  - Portal code updates reach the live site only when the owner uploads the update zip (portal/README-UPDATE.md).
