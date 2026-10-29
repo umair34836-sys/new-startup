@@ -55,3 +55,21 @@ Sources:
   - Only one language preview can be pending at a time.
   - Non-English languages are always added as BASIC, so Urdu/Hindi go in on the website as Native.
 - Website-only (not in the connector): profile photo, hourly rate, portfolio items. The profile stays private / NOT_STARTED until those are done.
+
+## Hourly rate research (2026-10-29, owner asked "hourly rate kitna rakhna chaye ?")
+- Upwork find_freelancers search "video editor short form reels", location Pakistan (connector, 2026-10-29). The first 10
+  results were not all in Pakistan. Their profile rates:
+  - Pakistan: $5 (3 profiles, 0-1 jobs, $80+ to $5K+ earned), $19.99 (Top Rated Plus, 15 jobs)
+  - Vietnam: $10, $15, $15, $19
+  - Brazil: $8
+  - Bangladesh: $30 (Top Rated Plus, $80K+ earned)
+- Upwork Help Center via the connector (2026-10-29):
+  - The Freelancer Service Fee "ranges from 0% to 15% per contract" and is deducted from the rate.
+  - The rate form shows the fee and your net amount.
+  - Source: support.upwork.com/hc/en-us/articles/211062538.
+- WebSearch summary (2026-10-29; the page itself was not opened, because curl returned no text):
+  - upwork.com/hire/video-editors/cost/ is quoted as "$6 - $25 per hour", median about $10.
+- Advice given to the owner (judgment, not a measured fact):
+  - start at $12/hr while the profile has 0 reviews;
+  - raise to $15-20 after the first 3-5 good reviews;
+  - bid per video or per project on fixed-price jobs.
