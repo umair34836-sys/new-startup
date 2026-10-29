@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 const SETTING_DEFAULTS = [
-    'brand_name' => 'Video Studio',
+    'brand_name' => 'MrCopper804',
     'brand_tagline' => 'Send your footage. Get a finished video.',
     'support_contact' => '',
     'rate_pkr' => '50',
