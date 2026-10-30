@@ -20,10 +20,10 @@ THEME = os.environ.get("THEME", "dark")
 T = {
     "dark": dict(bg="#090a12", ink="#ffffff", sub="#c9cdf5", acc="#7c87ff", gold="#f7d27a", glow1="rgba(88,101,242,0.42)",
                  glow2="rgba(247,210,122,0.16)", card="#111320", cardsh="0 30px 90px rgba(0,0,0,0.65), 0 0 0 2px rgba(124,135,255,0.35)",
-                 chip="rgba(20,22,40,0.9)", chipb="rgba(124,135,255,0.6)", grid="rgba(124,135,255,0.18)", cap="rgba(0,0,0,0.62)", capink="#ffffff", hl="#f7d27a"),
+                 chip="rgba(20,22,40,0.9)", chipb="rgba(124,135,255,0.6)", grid="rgba(124,135,255,0.18)", cap="rgba(0,0,0,0.62)", capink="#ffffff", hl="#f7d27a", shadow="rgba(0,0,0,0.55)"),
     "light": dict(bg="#f5f6fb", ink="#14151c", sub="#4b4f6b", acc="#4752e0", gold="#a8740a", glow1="rgba(88,101,242,0.20)",
                   glow2="rgba(247,180,60,0.18)", card="#ffffff", cardsh="0 30px 80px rgba(40,44,90,0.22), 0 0 0 2px rgba(71,82,224,0.18)",
-                  chip="#ffffff", chipb="rgba(71,82,224,0.45)", grid="rgba(71,82,224,0.10)", cap="rgba(255,255,255,0.92)", capink="#14151c", hl="#4752e0"),
+                  chip="#ffffff", chipb="rgba(71,82,224,0.45)", grid="rgba(71,82,224,0.10)", cap="rgba(255,255,255,0.92)", capink="#14151c", hl="#4752e0", shadow="rgba(30,34,90,0.28)"),
 }[THEME]
 L = json.load(open("assets/vo/lines.json"))          # [[start, end], ...] of each VO line in the final timeline
 WORDS = json.load(open("assets/vo/words.json"))     # [[word, start, end], ...] (Whisper word timestamps, final timeline)
@@ -127,7 +127,7 @@ def out(sel, t, d=0.25):
 def card(cid, src, x, y, w, h, img_w=None, img_y=0):
     iw = img_w or w
     return (f'<div class="card" id="{cid}" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;">'
-            f'<img id="{cid}-i" src="{src}" style="width:{iw}px;transform:translateY({-img_y}px);" alt=""></div>')
+            f'<img id="{cid}-i" src="{src}" style="width:{iw}px;" alt=""></div>')
 
 
 def cube(cid, size, side, top=None, x=0, y=0):
@@ -164,6 +164,7 @@ C["bg"] = comp("bg", f"""    <div style="position:absolute;inset:0;background:{T
     <div id="bg-g1" style="position:absolute;left:-360px;top:120px;width:1200px;height:1200px;border-radius:50%;background:radial-gradient(circle, {T['glow1']}, rgba(0,0,0,0) 70%);"></div>
     <div id="bg-g2" style="position:absolute;left:320px;top:980px;width:1100px;height:1100px;border-radius:50%;background:radial-gradient(circle, {T['glow2']}, rgba(0,0,0,0) 70%);"></div>
     <div style="position:absolute;inset:0;background-image:linear-gradient({T['grid']} 2px, transparent 2px),linear-gradient(90deg, {T['grid']} 2px, transparent 2px);background-size:120px 120px;"></div>
+    <div style="position:absolute;left:300px;top:1830px;width:480px;height:90px;border-radius:50%;background:radial-gradient(closest-side, {T['shadow']}, rgba(0,0,0,0));"></div>
     <div id="bg-p" style="position:absolute;inset:0;background:radial-gradient(60% 40% at 50% 45%, {T['glow1']}, rgba(0,0,0,0) 70%);opacity:0;"></div>""",
                f'    tl.fromTo("#bg-g1", {{ x: 0, y: 0 }}, {{ x: 420, y: 160, duration: {TOTAL / 2:.3f}, ease: "sine.inOut", yoyo: true, repeat: 1 }}, 0);\n'
                f'    tl.fromTo("#bg-g2", {{ x: 0, y: 0 }}, {{ x: -460, y: -200, duration: {TOTAL / 2:.3f}, ease: "sine.inOut", yoyo: true, repeat: 1 }}, 0);\n'
@@ -211,7 +212,7 @@ def service_scene(i, k, title, cls, items, words, crop_y, pose_moves, shots, ext
             + f'    <div class="c" style="top:930px;">' + "".join(f'<span class="chip" id="{k}-k{n}" style="margin:10px 8px;opacity:0;">{t}</span>' for n, t in enumerate(items)) + '</div>\n'
             + extra_html + h)
     js = j + pop(f"#{k}-t", 0.05, "x: -200, opacity: 0", 0.4, "expo.out") + pop(f"#{k}-sv", 0.15, "y: 160, opacity: 0", 0.5, "expo.out")
-    js += f'    tl.fromTo("#{k}-sv-i", {{ y: 0 }}, {{ y: -60, duration: {d:.2f}, ease: "none" }}, 0);\n'
+    js += f'    tl.fromTo("#{k}-sv-i", {{ y: {-crop_y} }}, {{ y: {-crop_y - 60}, duration: {d:.2f}, ease: "none" }}, 0);\n'
     for n, w in enumerate(words):
         t = word_at(i, w, 0.4 + n * 0.45)
         js += pop(f"#{k}-k{n}", t)
@@ -237,9 +238,9 @@ service_scene(4, "s5", "Minecraft", "gold", ["Plugins", "Mods", "Texture packs"]
 i, k = 5, "s6"; d = d_of(i)
 h, j, cc = character("c6", d, [[0, "idle"], [0.3, "point"]], [(0, "right"), (1.5, "wide")])
 steps = [("1", "Choose", "pick"), ("2", "Fill the form", "form"), ("3", "Private ticket", "ticket")]
-html = ("    " + card("s6-m", "assets/img/dropdown.jpg", 90, 160, 560, 850, 560) + "\n"
-        + "".join(f'    <div id="s6-p{n}" style="position:absolute;left:640px;top:{260 + n * 230}px;width:400px;opacity:0;">'
-                  f'<div class="h acc" style="font-size:96px;line-height:1;">{a}</div><div class="h" style="font-size:52px;">{b}</div></div>\n'
+html = ("    " + card("s6-m", "assets/img/dropdown.jpg", 60, 170, 520, 820, 520) + "\n"
+        + "".join(f'    <div id="s6-p{n}" style="position:absolute;left:620px;top:{240 + n * 240}px;width:420px;opacity:0;">'
+                  f'<div class="h acc" style="font-size:96px;line-height:1;">{a}</div><div class="h" style="font-size:50px;line-height:1.05;">{b}</div></div>\n'
                   for n, (a, b, _) in enumerate(steps)) + h)
 js = j + pop("#s6-m", 0.05, "x: -400, rotation: -4, opacity: 0", 0.5, "expo.out") + f'    tl.fromTo("#s6-m-i", {{ y: 0 }}, {{ y: -260, duration: {d:.2f}, ease: "sine.inOut" }}, 0);\n'
 for n, (_, _, w) in enumerate(steps):
@@ -295,8 +296,8 @@ html = (f'    <div id="s9-logo" style="position:absolute;left:415px;top:200px;wi
         f'    <div class="c h" id="s9-n" style="top:250px;font-size:96px;opacity:0;">Need a</div>\n' + h)
 js = (j + f'    tl.fromTo("#s9-logo", {{ rotationY: -360, scale: 0.4, opacity: 0 }}, {{ rotationY: 0, scale: 1, opacity: 1, duration: 0.6, ease: "expo.out" }}, 0.05);\n'
       + pop("#s9-b", word_at(i, "join", 0.3)) + pop("#s9-u", word_at(i, "discord", 0.8), "y: 40, opacity: 0")
-      + "".join(out(s, tb_ - 0.05) for s in ("#s9-logo", "#s9-b", "#s9-u"))
-      + f'    tl.fromTo("#s9-n", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }}, {min(d - 0.4, tb_ + 0.35):.2f});\n')
+      + "".join(out(s, d - 0.75) for s in ("#s9-logo", "#s9-b", "#s9-u"))
+      + f'    tl.fromTo("#s9-n", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }}, {d - 0.5:.2f});\n')
 POP.append(W[k][0] + word_at(i, "join", 0.3))
 C[k] = comp(k, f"<style>{cc}</style>\n" + html, js)
 
