@@ -1,0 +1,98 @@
+URL: https://moradosolution.in/abuse
+HTTP: 200
+TITLE: Abuse Policy — MoradoSolution
+FETCHED: 2026-10-24T12:21:44.987Z (Playwright Chromium, rendered innerText)
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+ABUSE POLICY
+
+Last Updated: 28 August 2026
+
+MoradoSolution's zero-tolerance policy for abuse and abuse reporting procedures.
+
+1. Zero-Tolerance Policy
+
+MoradoSolution maintains a zero-tolerance policy for abuse. We take all abuse reports seriously and investigate promptly.
+
+2. Types of Abuse
+
+Abuse includes but is not limited to:
+
+Network abuse: port scanning, brute-force attacks, exploit attempts, DDoS participation
+Content abuse: illegal content, child exploitation material, extreme violence, hate speech
+Resource abuse: sustained 100% CPU, disk I/O saturation, network saturation affecting other customers
+Email abuse: spam, phishing, bulk unsolicited messages
+Credential abuse: credential stuffing, account takeover attempts
+3. Reporting Abuse
+
+Abuse reports can be submitted via:
+
+Email: abuse@moradosolution.com
+Abuse reporting form (available in client area)
+Support ticket with "Abuse Report" as subject
+
+Please include relevant logs, timestamps, IP addresses, and any other evidence.
+
+4. Investigation & Response
+
+Abuse reports are investigated within 24 hours. Confirmed abuse may result in:
+
+Immediate service suspension pending investigation
+Notification to the customer
+Permanent account termination for repeated or severe abuse (without refund)
+Reporting to relevant authorities where legally required
+5. False Reports
+
+Knowingly submitting false abuse reports may result in account restrictions.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
+↑ Top

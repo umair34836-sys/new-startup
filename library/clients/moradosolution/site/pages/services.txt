@@ -1,0 +1,155 @@
+URL: https://moradosolution.in/services
+HTTP: 200
+TITLE: All Services — Minecraft, Hytale, VPS, VDS, Dedicated | MoradoSolution
+FETCHED: 2026-10-24T12:22:59.169Z (Playwright Chromium, rendered innerText)
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+01
+ALL SERVICES
+
+Everything We Offer
+
+From Minecraft and Hytale servers to bare metal dedicated — every service runs on AMD EPYC 7C13 hardware in Delhi, India.
+
+LIVE
+Minecraft Hosting
+
+Java + Bedrock, modpacks, Pterodactyl panel, instant deploy. DDoS protection on all plans.
+
+AMD EPYC 7C13
+NVMe SSD
+DDoS Protected
+Forge / Fabric
+
+From ₹199/mo
+
+View Plans
+LIVE
+Hytale Hosting
+
+Dedicated Hytale servers with instant deploy, NVMe storage and full DDoS protection.
+
+AMD EPYC 7C13
+NVMe SSD
+DDoS Protected
+Pterodactyl
+
+From ₹199/mo
+
+View Plans
+LIVE
+VPS Hosting
+
+Full root, KVM virtualization, AMD EPYC, NVMe. Web apps, APIs, databases.
+
+KVM
+Full Root
+1 Gbps
+Ubuntu / Debian
+
+From ₹676/mo
+
+View Plans
+LIVE
+VDS: Virtual Dedicated
+
+Dedicated CPU cores, Cloudflare Magic Transit DDoS. Power of bare metal, flexibility of VPS.
+
+Dedicated Cores
+Cloudflare MT
+ECC DDR4
+
+From ₹550/mo
+
+View Plans
+LIVE
+Bare Metal Dedicated
+
+Full physical server. No virtualization, no shared resources. Up to 256GB RAM.
+
+AMD EPYC 7C13
+256GB RAM
+NVMe SSD
+1Gbps
+
+From ₹4,999/mo
+
+View Plans
+LIVE
+Sales & Offers
+
+Check out our current deals and discount offers on all services.
+
+Up to 30% Off
+Code at checkout
+View Offers
+LIVE
+Auctions
+
+Bid on servers and get the best deals through our auction system.
+
+Live Bidding
+Best Deals
+View Auctions
+
+02
+GET STARTED
+
+Ready to Get Started?
+
+Deploy your server in under 60 seconds.
+
+Create Account
+Contact Sales
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+Hytale Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

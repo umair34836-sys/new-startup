@@ -1,0 +1,188 @@
+URL: https://user.pakwebhoster.com/index.php?rp=/store/reseller-hosting
+FINAL_URL: https://user.pakwebhoster.com/index.php?rp=/store/reseller-hosting
+HTTP: 200
+TITLE: Shopping Cart - PAK WEB HOSTER
+FETCHED: 2026-10-25T05:06:25.542Z (Playwright Chromium, rendered innerText)
+
+ Hosting Flash Sale: Starting at Rs 200/mo for a limited time
+ Account
+ English
+Login
+ Home
+ Domain
+ Services
+ Support
+ Billing
+Shopping Cart
+Shopping Cart
+  Categories
+Shared Hosting
+WordPress Hosting
+Business Hosting
+Reseller Hosting
+VPS Hosting
+  Actions
+  Register a New Domain
+  Transfer in a Domain
+  View Cart
+Reseller Hosting
+Reseller Lite
+Rs800
+Monthly
+
+25 Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+70 GB NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+
+Order Now
+Reseller Basic
+Rs2,000
+Monthly
+
+60 Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+150 GB NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+Purchase Plan
+
+Order Now
+Reseller Medium
+Rs3,500
+Monthly
+
+100 Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+500 GB NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+
+Order Now
+Reseller Enterprise
+Rs5,000
+Monthly
+
+Unlimited Cpanel accounts
+Free WHMCS
+Free .com Domain (Yearly Plan)
+Unlimited NVMe Storage
+Unmetered Bandwidth
+Unlimited Subdomains
+Unlimited Emails
+Unlimited Databases
+Private Nameservers
+1 GB RAM/cp
+Free SSL Certificate
+Litespeed Webserver
+Python & Node JS Supported
+Realtime Malware Scanner
+24/7 Live Support
+
+Order Now
+24 x 7 Customer Support
+99% Uptime Guarantee
+100+ Running Promos
+30-day Money-back guarantee
+
+At PAK WEB HOSTER , we aim at fulfilling all the business needs with perfectly crafted hosting plans and endless customer service day in, day out! We promise to deliver above and beyond the expectations of our clients!
+
+House 168/170, Jaipur, Rajasthan India
+info@pakwebhoster.com
+Domains
+My Domains
+Renew Domains
+Register a Domain
+Transfer Your Domain
+Domain Promos
+Useful Links
+Linux Hosting
+WordPress Hosting
+Linux Reseller Hosting
+VPS Server
+Dedicated Servers
+My Services
+View Available Addons
+Support
+Open Ticket
+Tickets
+Announcements
+Knowledgebase
+Network Status
+Contact Us
+Legal Agreement
+Privacy Policy
+Contact Us
+Hotline 24/7 :
++92 324 345 8649
+Email Address :
+info@pakwebhoster.com
+Security By :
+Copyright © 2026 PAK WEB HOSTER. All Rights Reserved.
+
+--- hidden text (accordions/tabs/dropdowns opened) ---
+Register
+Fotgot Password
+العربية
+Azerbaijani
+Català
+中文
+Hrvatski
+Čeština
+Dansk
+Nederlands
+Estonian
+Persian
+Français
+Deutsch
+עברית
+Magyar
+Italiano
+Macedonian
+Norwegian
+Português
+Português
+Română
+Русский
+Español
+Svenska
+Türkçe
+Українська
+Register A Domain
+Transfer Domain To Us
+Order New Services
+My Invoices
+My Quotes
+Mass Payment
+Affiliates

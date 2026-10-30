@@ -1,0 +1,5 @@
+{"size": "short", "bg": {"gradient": ["#120326", "#5b0b6e", "#ff3d6e"], "angle": 160}, "vignette": 0.35,
+ "subject": {"image": "cutout.png", "side": "center", "height": 0.62, "stroke": 12, "glow": "#ff3d6e", "glow_size": 50},
+ "texts": [{"text": "TWO WORDS", "x": 0.06, "y": 0.06, "w": 0.88, "size": 170, "font": "LuckiestGuy", "align": "center",
+            "color": "#ffffff", "stroke": 12, "accent": {"word": "WORDS", "color": "#ffd400"}}],
+ "badge": {"text": "PART 1", "x": 0.06, "y": 0.9, "size": 70}}

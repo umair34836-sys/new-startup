@@ -1,0 +1,363 @@
+URL: https://moradosolution.in/vps
+HTTP: 200
+TITLE: VPS Hosting India — AMD EPYC 7C13 | MoradoSolution
+FETCHED: 2026-10-24T12:23:25.872Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+Home
+/
+VPS Hosting
+
+VPS & DEDICATED HOSTING
+
+From zero to SSH
+in under a minute.
+
+Pick a plan, choose your config, and deploy. Full root access, DDoS protection included.
+
+View plans
+Features
+
+ANSWER UPDATED 4 OCTOBER 2026
+
+What is MoradoSolution VPS hosting?
+
+MoradoSolution VPS hosting provides KVM virtual private servers on AMD EPYC 7C13 processors with full root access and unmetered bandwidth, hosted in the company's own Delhi data centre. Instances are provisioned automatically and are reachable over SSH in under a minute, and every plan includes a dedicated IPv4 address, NVMe Gen4 storage and in-house DDoS filtering with Cloudflare Magic Transit at the network edge. Root access means any operating system image from Ubuntu, Debian, AlmaLinux or CentOS can be installed, along with Docker, Kubernetes, control panels or custom builds. Because CPU and disk capacity is dedicated rather than shared, sustained performance stays consistent under load instead of throttling on a noisy neighbour. Billing is monthly in INR through UPI, net banking, cards and wallets, with no forex charge on international cards.
+
+How much does a VPS cost in India?
+
+Eight plans run from ₹676 to ₹8,112 per month. Bandwidth is unmetered and DDoS protection is included on every plan, so the monthly price covers the full cost of the server. Every specification is listed in the plan table below.
+
+Which VPS plan do I need?
+
+Choose by workload rather than by price alone. Two vCPU and 8 GB RAM covers a small site, a proxy or a build runner. Six to ten vCPU with 16 GB to 24 GB RAM fits Docker stacks, databases and small production services. Thirty two vCPU with 96 GB RAM is sized for heavier compilation, video processing or multi service production workloads.
+
+Every VPS plan includes unmetered bandwidth, one dedicated IPv4 address, full root access and DDoS protection.
+
+PLANS
+
+Compute built for production.
+
+No hidden fees, no surprise renewals, no meter on bandwidth. Every plan includes DDoS protection and full root access.
+
+01
+VPS 1
+
+Entry workloads
+
+₹676/mo
+
+vCPU
+2 EPYC 7C13
+RAM
+8 GB
+Storage
+80 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 1
+02
+VPS 2
+
+Web apps & databases
+
+₹1,352/mo
+
+vCPU
+6 EPYC 7C13
+RAM
+16 GB
+Storage
+120 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 2
+03
+VPS 3
+
+Production apps
+
+₹1,690/mo
+
+vCPU
+8 EPYC 7C13
+RAM
+20 GB
+Storage
+180 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 3
+04
+VPS 4
+BEST VALUE
+
+Dev stacks & heavier apps
+
+₹2,028/mo
+
+vCPU
+10 EPYC 7C13
+RAM
+24 GB
+Storage
+240 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 4
+05
+VPS 5
+
+Large datasets
+
+₹2,704/mo
+
+vCPU
+16 EPYC 7C13
+RAM
+32 GB
+Storage
+300 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 5
+06
+VPS 6
+
+Big databases
+
+₹4,056/mo
+
+vCPU
+18 EPYC 7C13
+RAM
+48 GB
+Storage
+450 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 6
+07
+VPS 7
+
+Enterprise deployments
+
+₹5,408/mo
+
+vCPU
+24 EPYC 7C13
+RAM
+64 GB
+Storage
+550 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 7
+08
+VPS 8
+
+Maximum resources
+
+₹8,112/mo
+
+vCPU
+32 EPYC 7C13
+RAM
+96 GB
+Storage
+800 GB Gen 4
+Bandwidth
+Unmetered
+IPv4
+1 address
+Choose VPS 8
+
+Prices in INR, billed monthly. Need something bigger? Ask about custom configurations
+
+INFRASTRUCTURE
+
+Built for developers who run production.
+KVM Virtualization
+
+Full hardware virtualization with dedicated resources. No container limits, no noisy neighbors.
+
+NVMe Storage
+
+Gen4 NVMe across the fleet. No spinning disks, no shared SAN bottlenecks.
+
+Full Root Access
+
+Your kernel, your modules, your firewall rules. We do not restrict the OS.
+
+API & Terraform
+
+Provision, manage, and destroy servers programmatically. Infrastructure as code ready.
+
+Cloud-init Support
+
+Pass user-data at provision. Bootstrap SSH keys, packages, and config automatically.
+
+Private Networking
+
+Free private VLAN per account. Connect VPS instances without exposing traffic publicly.
+
+OPERATING SYSTEMS
+
+Your server, your OS.
+
+Select during provisioning or reinstall anytime from the panel.
+
+Ubuntu
+
+24.04 / 22.04 / 20.04
+
+Debian
+
+12 / 11
+
+AlmaLinux
+
+9 / 8
+
+Rocky Linux
+
+9 / 8
+
+Fedora
+
+41 / 40
+
++
+Custom ISO
+
+Upload your own
+
+LOCATIONS
+
+Deploy close to your users.
+
+Low latency is a feature. Our servers are in India, close to your audience.
+
+Delhi
+AVAILABLE
+North India
+Tier-1 upstream, India peering
+Mumbai
+OUT OF STOCK
+West India
+Tier-1 upstream, India peering
+Bangalore
+OUT OF STOCK
+South India
+Tier-1 upstream, India peering
+
+New locations open as demand requires. Not seeing your region? Tell us where your users are.
+
+Common questions.
+What is the difference between VPS and VDS?
+
+VPS (Virtual Private Server) shares physical hardware with other instances. VDS (Virtual Dedicated Server) guarantees dedicated CPU cores and resources. Both run on KVM with full root access.
+
+Can I upgrade my VPS later?
+
+Yes. You can scale up or down anytime from your dashboard. Changes take effect immediately with prorated billing.
+
+Do you support custom ISOs?
+
+Yes. You can upload your own ISO through the panel and install any operating system you need.
+
+What payment methods do you accept?
+
+We accept UPI, Google Pay, PhonePe, Paytm, net banking, and all major credit/debit cards. All prices in INR.
+
+Where are your servers located?
+
+Our primary datacenter is in Delhi, India. Additional locations in Mumbai and Bangalore coming soon.
+
+READY TO DEPLOY?
+
+Your VPS is minutes away.
+
+Choose a plan, pick your OS, and deploy. Full root access, DDoS protection, and unmetered bandwidth included.
+
+View plans
+Contact support
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

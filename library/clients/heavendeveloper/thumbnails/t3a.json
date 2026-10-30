@@ -1,0 +1,46 @@
+{
+ "size": "yt",
+ "bg": {
+  "gradient": [
+   "#07090d",
+   "#0d1620",
+   "#10283a"
+  ],
+  "angle": 120
+ },
+ "vignette": 0.4,
+ "stickers": [
+  {
+   "image": "../a/card_avatar.png",
+   "x": 0.03,
+   "y": 0.08,
+   "w": 0.44,
+   "rotate": -3
+  }
+ ],
+ "texts": [
+  {
+   "text": "Bhupendra",
+   "x": 0.47,
+   "y": 0.24,
+   "w": 0.52,
+   "size": 160,
+   "font": "InstrumentSerif",
+   "align": "left",
+   "color": "#eef4f8",
+   "stroke": 0
+  },
+  {
+   "text": "Independent developer from Nepal",
+   "x": 0.48,
+   "y": 0.56,
+   "w": 0.5,
+   "size": 64,
+   "font": "Outfit",
+   "weight": 700,
+   "align": "left",
+   "color": "#6fd3ff",
+   "stroke": 0
+  }
+ ]
+}

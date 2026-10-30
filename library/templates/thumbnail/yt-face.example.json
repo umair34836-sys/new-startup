@@ -1,0 +1,10 @@
+{"size": "yt",
+ "bg": {"image": "frame.png", "blur": 14, "darken": 0.35, "saturate": 1.3},
+ "vignette": 0.5,
+ "subject": {"image": "cutout.png", "side": "right", "height": 1.0, "stroke": 9, "stroke_color": "#ffffff", "glow": "#00e5ff"},
+ "texts": [{"text": "BIG\nWORDS", "x": 0.04, "y": 0.1, "w": 0.6, "size": 150, "font": "Anton", "color": "#ffffff",
+            "stroke": 10, "stroke_color": "#000000", "rotate": -3, "accent": {"word": "WORDS", "color": "#ffd400"}},
+           {"text": "small hook line", "x": 0.05, "y": 0.68, "w": 0.5, "size": 64, "font": "Montserrat", "weight": 900,
+            "color": "#000000", "stroke": 0, "box": "#ffd400", "rotate": -3}],
+ "stickers": [{"image": "/home/user/new-startup/library/emoji/noto/emoji_u1f914.png", "x": 0.48, "y": 0.06, "w": 0.1, "rotate": 12}],
+ "arrows": [{"from": [0.44, 0.62], "to": [0.6, 0.42], "color": "#ff2d2d", "width": 16}]}

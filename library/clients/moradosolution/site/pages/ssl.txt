@@ -1,0 +1,120 @@
+URL: https://moradosolution.in/ssl
+HTTP: 200
+TITLE: SSL / Security Policy — MoradoSolution
+FETCHED: 2026-10-24T12:23:04.228Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+LEGAL
+
+SSL / Security Policy
+
+How we protect traffic, domains, and your data.
+
+Last updated: 28 August 2026
+
+SSL Certificates
+Domain Security
+Infrastructure
+Your Responsibilities
+Security Incidents
+00The Provider
+
+MoradoSolution
+Operated as a branch/service of MoradoSolution
+Proprietor: Vandana Shankarmal Kumardey
+
+01SSL Certificates
+
+MoradoSolution provides SSL certificates (including Let's Encrypt integration) as a convenience for customers. Certificates may be automatically renewed where technically feasible.
+
+MoradoSolution is not liable for certificate issuance failures or validation delays caused by upstream Certificate Authorities.
+Customers may install custom SSL certificates where supported by the service plan.
+SSL configuration must comply with current security best practices.
+02Domain Security
+Domain registration and management services are provided through third-party registrars.
+MoradoSolution acts as a reseller and is not responsible for registrar policies, pricing changes, or disputes.
+Customers are responsible for ensuring domain contact information is accurate.
+Customers must renew domains before expiration to avoid service interruption.
+Domain transfers follow registrar-specific procedures and timelines.
+03Infrastructure Security
+Traffic is encrypted in transit using TLS 1.2+ where applicable.
+Passwords are stored using industry-standard hashing algorithms (bcrypt/argon2).
+Staff access to customer data is limited to what support genuinely requires and is logged.
+MoradoSolution implements network-level DDoS mitigation, intrusion detection, and regular vulnerability scanning.
+04Customer Security Responsibilities
+Customers must maintain the security of their own applications, containers, and operating systems.
+MoradoSolution is not liable for security breaches resulting from customer misconfiguration, unpatched software, or weak credentials.
+Customers should enable two-factor authentication where available.
+Regular security updates and patching are the customer's responsibility for self-managed services.
+05Security Incidents
+
+In the event of a security incident affecting customer data, MoradoSolution will notify affected customers without undue delay and take appropriate remedial action.
+
+Questions about this document? Reach us on Discord — open a ticket and the team will help you out.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

@@ -7,6 +7,11 @@ Owner rule: only music that needs NO credit/attribution (CC0, public domain, Pix
 CC BY (YouTube "Creative Commons" filter, Kevin MacLeod/incompetech, most Jamendo/FMA) is NOT acceptable: it needs credit.
 
 - YouTube Audio Library: only inside YouTube Studio with a login; not reachable from here.
+  Licence, from secondary sources via WebSearch on 2026-10-26; YouTube's own terms page was not found:
+  - Standard-license tracks are for YouTube videos only. Using them on other platforms or websites breaks the terms (licenseorg.com/guide/music-audio/youtube-audio-library). For use outside YouTube, contact the artist (lickd.co/youtube-audio-library).
+  - CC-BY 4.0 tracks can be used elsewhere with credit, which is NOT acceptable under the owner's no-credit rule.
+  - Older quoted YouTube terms say the files are "solely for use by you in videos and other content that you create", with no standalone distribution. So the files must not go into this repo.
+  Plan if the owner shares tracks: a Google Drive folder ("Anyone with the link"). Fetch per job and never commit. Use only for YouTube uploads.
 - YouTube CC filter (search URL + &sp=EgIwAQ%253D%253D, yt-dlp --flat-playlist): CC BY = credit required -> rejected.
   Also many "CC" uploads are re-uploads/AI covers of famous songs: never trust the label alone.
 - Openverse API (api.openverse.org, license=cc0,pdm): anonymous page_size max 20, needs a curl-like User-Agent, rate

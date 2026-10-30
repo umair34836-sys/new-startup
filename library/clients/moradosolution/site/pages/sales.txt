@@ -1,0 +1,86 @@
+URL: https://moradosolution.in/sales
+HTTP: 200
+TITLE: Sales — MoradoSolution
+FETCHED: 2026-10-24T12:22:53.126Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+SALES
+Current Sales
+
+Every live offer in one place — copy a code or grab the deal; the discount applies at checkout.
+
+PLAN DEAL
+30% OFF
+
+WELCOME30
+
+Starter · Basic · Stone · Iron · Gold · Diamond · Emerald · Netherite · Titan · Pro · Ultra · Extreme · Ultimate · Spark · Blaze · Inferno · Apex · Eclipse · Nova · Eternal · Hytale Starter · Hytale Standard · Hytale Pro · Hytale Ultra plans
+No expiry
+WELCOME30
+COPY
+Grab deal →
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

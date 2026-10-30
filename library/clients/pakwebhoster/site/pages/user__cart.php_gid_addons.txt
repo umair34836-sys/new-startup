@@ -1,0 +1,15 @@
+URL: https://user.pakwebhoster.com/cart.php?gid=addons
+FINAL_URL: https://user.pakwebhoster.com/index.php?rp=/login
+HTTP: 200
+TITLE: Login - PAK WEB HOSTER
+FETCHED: 2026-10-25T05:04:52.464Z (Playwright Chromium, rendered innerText)
+
+Login Your Account
+Email Address
+Password
+Remember Me
+Forgot Password?
+Login
+Not registered? Create account
+
+

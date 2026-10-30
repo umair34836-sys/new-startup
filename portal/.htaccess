@@ -1,0 +1,4 @@
+# Safety net if the document root is ever set to portal/ instead of portal/public.
+<Files "config.php">
+  Require all denied
+</Files>

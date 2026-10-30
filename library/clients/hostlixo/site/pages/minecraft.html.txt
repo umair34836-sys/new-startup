@@ -1,0 +1,376 @@
+URL: https://hostlixo.in/minecraft.html
+FINAL_URL: https://www.hostlixo.in/minecraft.html
+HTTP: 200
+TITLE: Minecraft Server Hosting India from ₹90/mo | HostLixo
+FETCHED: 2026-10-27T02:22:30.376Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+HARDWARE ARCHITECTURE
+Minecraft Server Hosting Plans
+
+Compare nine AMD EPYC Minecraft server plans in India from ₹90 per month, priced at ₹45 per GB of RAM. Review CPU allocation, NVMe storage, backups, ports, databases, and DDoS protection before choosing.
+
+Select Architecture:
+AMD EPYC
+LIVE
+CPU allocation shown per plan • DDoS filtering listed
+INTEL
+COMING SOON
+Plan details coming soon
+RYZEN
+COMING SOON
+Plan details coming soon
+Monthly
+Annual 12x MONTHLY
+AMD EPYC™ • 100% CPU
+AMD EPYC 2 GB
+
+2 GB RAM • 100% CPU Allocation • L3/L4 DDoS Protected
+
+₹
+90
+/mo
+2 GB
+DDR5 ECC Registered RAM
+100%
+CPU Allocation (AMD EPYC™)
+8 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 150% CPU
+AMD EPYC 4 GB
+
+4 GB RAM • 150% CPU Allocation • L3/L4 DDoS Protected
+
+₹
+180
+/mo
+4 GB
+DDR5 ECC Registered RAM
+150%
+CPU Allocation (AMD EPYC™)
+16 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 200% CPU
+AMD EPYC 6 GB
+
+6 GB RAM • 200% CPU Allocation • L3/L4 DDoS Protected
+
+₹
+270
+/mo
+6 GB
+DDR5 ECC Registered RAM
+200%
+CPU Allocation (AMD EPYC™)
+24 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+RECOMMENDED
+AMD EPYC™ • 250% CPU • POPULAR
+AMD EPYC 8 GB
+
+8 GB RAM • 250% CPU Allocation • Community Favorite
+
+₹
+360
+/mo
+8 GB
+DDR5 ECC Registered RAM
+250%
+CPU Allocation (AMD EPYC™)
+32 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 300% CPU
+AMD EPYC 12 GB
+
+12 GB RAM • 300% CPU Allocation • Modpack Scale
+
+₹
+540
+/mo
+12 GB
+DDR5 ECC Registered RAM
+300%
+CPU Allocation (AMD EPYC™)
+48 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 350% CPU • NETWORK GRADE
+AMD EPYC 16 GB
+
+16 GB RAM • 350% CPU Allocation • Heavy SMP & Bungee
+
+₹
+720
+/mo
+16 GB
+DDR5 ECC Registered RAM
+350%
+CPU Allocation (AMD EPYC™)
+64 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 400% CPU
+AMD EPYC 20 GB
+
+20 GB RAM • 400% CPU Allocation • High Entity Performance
+
+₹
+900
+/mo
+20 GB
+DDR5 ECC Registered RAM
+400%
+CPU Allocation (AMD EPYC™)
+80 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 500% CPU
+AMD EPYC 24 GB
+
+24 GB RAM • 500% CPU Allocation • Multi-Hub Cluster
+
+₹
+1,080
+/mo
+24 GB
+DDR5 ECC Registered RAM
+500%
+CPU Allocation (AMD EPYC™)
+96 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+AMD EPYC™ • 600% CPU • TITAN CLUSTER
+AMD EPYC 32 GB
+
+32 GB RAM • 600% CPU Allocation • Maximum Raw Scale
+
+₹
+1,440
+/mo
+32 GB
+DDR5 ECC Registered RAM
+600%
+CPU Allocation (AMD EPYC™)
+128 GB
+High-Speed NVMe Disk
+2
+Automated Backup Allocation
+2
+Extra Port Allocation
+1
+MySQL Database Allocation
+Enterprise L3/L4
+DDoS Protection
+Order on Discord
+HOSTLIXO ADVANTAGES
+Why Choose HostLixo for Minecraft Hosting?
+
+Compare clear plan details, included resources, and community support when choosing Minecraft server hosting in India.
+
+Included L3/L4 DDoS Filtering
+
+Every listed AMD EPYC Minecraft plan includes Enterprise L3/L4 DDoS protection to help filter malicious traffic targeting game servers.
+
+Clear AMD EPYC Plan Tiers
+
+Compare nine plans from 2 GB to 32 GB DDR5 ECC RAM, with CPU allocations and monthly pricing shown for each tier.
+
+Plan Resources Listed Up Front
+
+See RAM, CPU allocation, NVMe disk space, automated backup slots, extra ports, and MySQL database allocation before ordering.
+
+NVMe Storage for Game Worlds
+
+Each plan shows its NVMe storage allocation, helping you compare space for Minecraft worlds, plugins, and server data.
+
+Popular Minecraft Software
+
+Choose from familiar server software options such as Paper, Purpur, Spigot, Fabric, Forge, NeoForge, and Vanilla.
+
+Help from the HostLixo Community
+
+Find service announcements and community assistance through HostLixo support resources and the official Discord community.
+
+ARCHITECTURE BREAKDOWN
+Which Processor Fits Your Server?
+
+AMD EPYC plans are available now. Intel and Ryzen options are marked as coming soon until their plan specifications are confirmed.
+
+AMD EPYC
+
+Available plans: 2 GB to 32 GB RAM | Price: ₹45 per GB/month
+
+Compare the published CPU allocation, DDR5 ECC memory, NVMe storage, backup, port, database, and DDoS protection details on each available plan.
+
+INTEL
+
+Plan sizes, pricing, and technical specifications have not been published yet.
+
+Check back for confirmed Intel hosting details before choosing this option.
+
+RYZEN
+
+Plan sizes, pricing, and technical specifications have not been published yet.
+
+Check back for confirmed Ryzen hosting details before choosing this option.
+
+PLAYER EXPERIENCE
+Minecraft Worlds and Community Builds
+
+Explore Minecraft gameplay visuals. These images showcase worlds and builds, not server performance benchmarks.
+
+Realistic Shaders & High Render Distance
+World Showcase
+Multiplayer SMP Castle Communities
+Community Build
+Deepslate Diamond Cave Exploration
+Gameplay Scene
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+--- after clicking [Monthly
+Annual 12x MONTHLY] ---
+/year
+(₹90 / month × 12 months)
+2,160
+/year
+(₹180 / month × 12 months)
+3,240
+/year
+(₹270 / month × 12 months)
+4,320
+/year
+(₹360 / month × 12 months)
+6,480
+/year
+(₹540 / month × 12 months)
+8,640
+/year
+(₹720 / month × 12 months)
+10,800
+/year
+(₹900 / month × 12 months)
+12,960
+/year
+(₹1,080 / month × 12 months)
+17,280
+/year
+(₹1,440 / month × 12 months)

@@ -1,0 +1,198 @@
+URL: https://hostlixo.in/
+FINAL_URL: https://www.hostlixo.in/
+HTTP: 200
+TITLE: HostLixo Minecraft Server Hosting in India from ₹90/mo
+FETCHED: 2026-10-27T02:22:23.456Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+MINECRAFT HOSTING • PLANS FOR SERVER COMMUNITIES
+Minecraft Server Hosting in India from ₹90/mo
+
+Compare nine AMD EPYC plans with clear RAM, CPU, NVMe storage, backups, and L3/L4 DDoS protection—then order through the HostLixo community.
+
+View Plans
+Join Discord
+DDoS-Filtered Plans
+Clear Plan Details
+NVMe Storage
+₹45 per GB / month
+₹90
+
+Starting price per month
+
+9 Plans
+
+AMD EPYC tiers available
+
+2–32 GB
+
+DDR5 ECC RAM per plan range
+
+2 Backups
+
+Allocation included per plan
+
+ARCHITECTURE SELECTION
+Minecraft Server Plans
+
+Compare available AMD EPYC plans by memory, CPU allocation, storage, backups, and monthly pricing.
+
+AVAILABLE PLANS
+AMD EPYC™ • ACTIVE SILICON
+AMD EPYC
+
+AMD EPYC Minecraft plans with published memory, CPU allocation, NVMe storage, and network protection details.
+
+Starting at ₹
+90
+/mo
+2 GB up to 32 GB DDR5 ECC RAM
+100% to 600% Dedicated CPU Allocation
+8 GB to 128 GB High-Speed NVMe Disk
+Enterprise L3/L4 DDoS Protection
+View AMD EPYC Plans
+COMING SOON
+INTEL • COMING SOON
+INTEL
+
+Intel hosting is coming soon. Availability, pricing, and plan specifications will be published here when confirmed.
+
+PRICING TBA • LAUNCHING SOON
+Planned Minecraft server hosting
+Specifications to be announced
+Pricing to be announced
+Check back for launch details
+INTEL Coming Soon • Explore
+COMING SOON
+AMD RYZEN™ 9 • COMING SOON
+RYZEN
+
+Ryzen hosting is coming soon. Availability, pricing, and plan specifications will be published here when confirmed.
+
+PRICING TBA • LAUNCHING SOON
+Planned Minecraft server hosting
+Specifications to be announced
+Pricing to be announced
+Check back for launch details
+RYZEN Coming Soon • Explore
+GET STARTED
+How to Order a Minecraft Server
+
+A simple path from comparing plans to getting help with your setup.
+
+01
+Compare the plans
+
+Review RAM, CPU allocation, NVMe space, and monthly price on the Minecraft plans page.
+
+02
+Choose your tier
+
+Pick the AMD EPYC plan that fits your world, plugins, and expected player community.
+
+03
+Contact HostLixo on Discord
+
+Use the plan’s Order on Discord link to confirm your requirements and next steps.
+
+THE HOSTLIXO STANDARD
+Engineered Without Compromise
+
+Review the available hosting features and plan specifications before choosing the setup that fits your community.
+
+Plan Details in One Place
+
+Compare memory, CPU allocation, storage, backups, and included features on the Minecraft hosting page.
+
+More Processor Options
+
+AMD EPYC plans are available. Ryzen and Intel options are marked as coming soon while their plan details are prepared.
+
+DDoS-Filtered Connectivity
+
+HostLixo plan listings describe DDoS-filtered connectivity. Check the current plan and service terms for coverage details.
+
+NVMe Storage
+
+Each Minecraft plan lists its included storage allocation so you can compare options for your server files and worlds.
+
+Minecraft Software Options
+
+Review supported server software, including Paper, Purpur, Fabric, Forge, NeoForge, and Spigot, on the Minecraft hosting page.
+
+Support and Community
+
+Browse the support FAQs or join the HostLixo Discord community for announcements and community assistance.
+
+COMING SOON
+NVMe Cloud VPS & Bare-Metal Dedicated
+
+Cloud VPS and dedicated servers are planned. Visit the VPS page for updates on specifications and availability.
+
+Preview Cloud VPS
+Preview Latency Estimates
+IMMERSIVE GAMEPLAY
+Minecraft Worlds and Communities
+
+Explore Minecraft world examples and community builds. Server performance depends on plan resources, software, configuration, and player activity.
+
+Realistic Shaders & High Render Distance
+World Showcase
+Multiplayer SMP Castle Communities
+Community Build
+Deepslate Diamond Cave Exploration
+In-Game View
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+

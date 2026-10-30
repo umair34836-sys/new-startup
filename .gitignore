@@ -14,9 +14,11 @@ video/.hyperframes/
 *.3gp
 *.jpg
 *.jpeg
+*.webp
 *.heic
 *.heif
 uploads/
 graft/
 .cache/
 __pycache__/
+library/clients/mraloo/brand/*.png

@@ -1,0 +1,80 @@
+{
+ "size": "short",
+ "bg": {
+  "gradient": [
+   "#7c86ff",
+   "#5865f2",
+   "#1c1f6b"
+  ],
+  "angle": 160
+ },
+ "vignette": 0.3,
+ "stickers": [
+  {
+   "image": "../a/logo_circle.png",
+   "x": 0.39,
+   "y": 0.06,
+   "w": 0.22,
+   "rotate": 0
+  },
+  {
+   "image": "../a/card_pricetop.png",
+   "x": 0.13,
+   "y": 0.615,
+   "w": 0.74,
+   "rotate": -4
+  }
+ ],
+ "texts": [
+  {
+   "text": "STARTING FROM",
+   "x": 0.05,
+   "y": 0.185,
+   "w": 0.9,
+   "size": 96,
+   "font": "BigShoulders",
+   "weight": 900,
+   "align": "center",
+   "color": "#ffffff",
+   "stroke": 0
+  },
+  {
+   "text": "$4",
+   "x": 0.05,
+   "y": 0.262,
+   "w": 0.9,
+   "size": 600,
+   "font": "BigShoulders",
+   "weight": 900,
+   "align": "center",
+   "color": "#ffd76a",
+   "stroke": 14,
+   "stroke_color": "#14163f"
+  },
+  {
+   "text": "bots, sites, plugins, mods",
+   "x": 0.06,
+   "y": 0.545,
+   "w": 0.88,
+   "size": 64,
+   "font": "Outfit",
+   "weight": 700,
+   "align": "center",
+   "color": "#14163f",
+   "stroke": 0,
+   "box": "#ffffff"
+  },
+  {
+   "text": "Limited Edition Perks",
+   "x": 0.1,
+   "y": 0.885,
+   "w": 0.8,
+   "size": 58,
+   "font": "Outfit",
+   "weight": 700,
+   "align": "center",
+   "color": "#ffd76a",
+   "stroke": 0
+  }
+ ]
+}

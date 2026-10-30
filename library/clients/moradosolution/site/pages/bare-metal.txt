@@ -1,0 +1,250 @@
+URL: https://moradosolution.in/bare-metal
+HTTP: 200
+TITLE: Bare Metal Servers India — AMD EPYC | MoradoSolution
+FETCHED: 2026-10-24T12:22:04.729Z (Playwright Chromium, rendered innerText)
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+Home
+/
+Bare Metal
+
+BARE METAL SERVERS
+
+Full machine. Zero overhead.
+
+The entire physical server is yours. No virtualization layer, no shared resources, no noisy neighbors. AMD EPYC 7C13 with DDR4 ECC and NVMe Gen4 storage in our Delhi datacenter.
+
+View Plans
+Why Bare Metal
+CPU
+AMD EPYC 7C13
+CORES
+Up to 64
+MEMORY
+DDR4 ECC
+STORAGE
+NVMe Gen4
+NETWORK
+10 Gbps
+VIRTUALIZATION
+None - Raw
+
+ANSWER UPDATED 4 OCTOBER 2026
+
+What is bare metal, and when do you need it?
+
+Bare metal gives you an entire physical server with no hypervisor on top of it: no neighbour taking your CPU, no virtualization overhead, and disk I/O straight to the NVMe controller. Every machine is provisioned automatically and arrives with full root access.
+
+Configurations, pricing and the workloads that justify the jump are covered in our bare metal guide, alongside the VDS, VPS and bare metal comparison.
+
+PLANS
+
+Full machine, zero overhead.
+
+Entire physical server to yourself. No virtualization, no shared resources. Maximum I/O and compute performance.
+
+01
+VDS-6
+
+Workstation grade
+
+₹6,500
+₹4,999/mo
+
+RAM
+32 GB
+Cores
+12
+Storage
+500 GB NVMe
+IPv4
+3 addresses
+Choose VDS-6
+02
+64 GB
+POPULAR
+
+Production workloads
+
+₹9,500
+₹7,499/mo
+
+RAM
+64 GB
+Cores
+18
+Storage
+1000 GB NVMe
+IPv4
+3 addresses
+Choose 64 GB
+03
+128 GB
+
+High-memory applications
+
+₹12,500
+₹9,999/mo
+
+RAM
+128 GB
+Cores
+28
+Storage
+2000 GB NVMe
+IPv4
+3 addresses
+Choose 128 GB
+04
+256 GB
+
+Maximum compute
+
+₹18,500
+₹15,999/mo
+
+RAM
+256 GB
+Cores
+64
+Storage
+3000 GB NVMe
+IPv4
+3 addresses
+Choose 256 GB
+
+Prices in INR, billed monthly. Need something bigger? Ask about custom configurations
+
+WHY BARE METAL
+
+Everything included.
+No Virtualization Overhead
+
+Direct hardware access with no hypervisor layer. Every CPU cycle and I/O operation goes straight to the metal.
+
+AMD EPYC 7C13
+
+64 cores / 128 threads on Zen 3 architecture. Server-class compute for any workload.
+
+NVMe Gen4 Storage
+
+Up to 7 GB/s read speeds. Fast database queries, quick deployments, zero bottleneck.
+
+DDR4 ECC Memory
+
+Error-correcting memory for data integrity. Critical for production and mission-critical workloads.
+
+Unmetered Bandwidth
+
+10 Gbps uplinks with Tier-1 Indian upstream providers. No traffic caps, no surprises on your bill.
+
+Full Root Access
+
+Complete control. Install any OS, any software, any configuration. Your server, your rules.
+
+USE CASES
+
+Built for demanding workloads.
+01
+Database Hosting
+
+MySQL, PostgreSQL, MongoDB. NVMe I/O and ECC memory for data integrity and blazing fast queries.
+
+02
+Game Servers
+
+Minecraft, Rust, FiveM, Palworld. Dedicated cores for smooth tick rates and low latency.
+
+03
+Model Training
+
+Training, inference, data processing. Full EPYC compute for parallel tasks and large datasets.
+
+04
+Web Applications
+
+Node.js, Django, Laravel. Dedicated resources for consistent performance at any scale.
+
+Common questions.
+What is a bare metal server?
+
+A bare metal server is a physical server dedicated entirely to a single tenant. There is no virtualization layer or hypervisor — you have direct access to the full CPU, memory, storage, and network hardware.
+
+Do you offer managed services?
+
+Currently we offer unmanaged servers with full root access. Managed services and custom configurations are available on request — contact support for details.
+
+What operating systems are supported?
+
+Ubuntu, Debian, AlmaLinux, Rocky Linux, Fedora, CentOS, and custom ISOs. Select your OS during provisioning or reinstall anytime from the control panel.
+
+What is the network speed?
+
+All bare metal servers include unmetered bandwidth on 10 Gbps uplinks with Tier-1 Indian upstream providers. No traffic caps.
+
+Where are the servers located?
+
+Our primary datacenter is in Delhi, India. Low latency to Mumbai, Bangalore, Hyderabad and all major Indian cities.
+
+Can I upgrade from a VPS to bare metal?
+
+Yes. You can migrate from any VPS or VDS plan to bare metal. Contact support to migrate with minimal downtime.
+
+READY TO DEPLOY?
+
+Your bare metal server is minutes away.
+
+Choose the plan that fits your workload. Full physical server with DDoS protection and unmetered bandwidth.
+
+View Plans
+Contact Sales
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

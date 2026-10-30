@@ -1,8 +1,9 @@
 # Voiceover with VoiceStudio (local ElevenLabs replacement): one line of the script per request, joined with short
 # pauses and loudness-normalised. Start the backend first: bash library/tools/voicestudio.sh start
 #
-#   python3 vs_tts.py SCRIPT.txt OUT.mp3                       # owner's DEFAULT voice (voices.json "default", Hindi)
-#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice senpaispider  # a saved voice by name
+#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice promo-female  # a saved voice by name (10 field voices: library/voices/README.md)
+#   python3 vs_tts.py SCRIPT.txt OUT.mp3 --voice senpaispider  # a client's cloned voice
+#   (no default voice since 2026-10-27: the owner removed it; running without --voice lists the saved voices)
 #   python3 vs_tts.py SCRIPT.txt OUT.mp3 --lang ur --instruct "male, young adult" [--seed 7] [--gap 0.45]
 #          [--model omnivoice|voxcpm2] [--ref voice.wav --ref-text "words in voice.wav"]   (cloning)
 #
@@ -13,7 +14,7 @@ import argparse, json, os, subprocess, tempfile, urllib.error, urllib.request
 ap = argparse.ArgumentParser()
 ap.add_argument("script")
 ap.add_argument("out")
-ap.add_argument("--lang", default="ur")
+ap.add_argument("--lang", help="language code (default ur; with --voice the voice's own language unless given, e.g. --lang en for an English script)")
 ap.add_argument("--instruct", help="voice design text (default when not cloning: \"male, young adult\")")
 ap.add_argument("--seed", type=int, default=7)
 ap.add_argument("--gap", type=float, default=0.45)
@@ -30,7 +31,10 @@ ap.add_argument("--target-f0", type=float, help="shift the whole voiceover so it
 ap.add_argument("--parts", help="keep each line's wav here (001.wav ...) and write lines.json = [start, end] of each line in OUT")
 a = ap.parse_args()
 if not (a.voice or a.ref or a.instruct):
-    a.voice = "default"  # owner rule (2026-10-24): the saved "default" voice unless another voice is asked for
+    # owner (2026-10-27): no default voice any more; pick the field voice that fits the video (library/voices/README.md)
+    _reg = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "voices", "voices.json")))
+    raise SystemExit("choose a voice with --voice NAME (no default since 2026-10-27):\n" +
+                     "\n".join(f"  {k:16s} {v.get('use', v.get('label', ''))}" for k, v in _reg.items() if not v.get("banned")))
 
 def post_json(url, body, tries=40):
     """POST JSON; wait and retry while the backend is busy or still loading (it answered 429/503 then)."""
@@ -51,6 +55,8 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
     if a.voice not in reg:
         raise SystemExit(f"unknown voice {a.voice}; known: {', '.join(reg)}")
     v = reg[a.voice]
+    if v.get("banned"):  # the owner forbade this voice in every session
+        raise SystemExit(f"voice {a.voice} is banned: {v['banned']}")
     vd = f"/home/user/tools/voices/{a.voice}"
     ref = os.path.join(vd, "ref.wav")
     if v.get("ref_file"):  # the voice's fixed reference lives in the repo (AI voice, not a person)
@@ -74,13 +80,14 @@ if a.voice:  # saved voice: reference clip is rebuilt from its source (voice rec
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(vd, "clean", "voice.wav"), "-ss", str(v["ref_start"]),
                         "-t", str(v["ref_seconds"]), "-af", f"afade=t=in:d=0.05,afade=t=out:st={v['ref_seconds'] - 0.1}:d=0.1",
                         "-ac", "1", "-ar", "44100", ref], check=True)
-    a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], v["lang"]
+    a.ref, a.ref_text, a.model, a.lang = ref, v.get("ref_text") or "", v["model"], a.lang or v["lang"]
     a.instruct = a.instruct or ""
     if a.target_f0 is None and v.get("target_f0"):
         a.target_f0 = v["target_f0"]
     if a.seed == 7 and v.get("seed"):
         a.seed = v["seed"]
 
+a.lang = a.lang or "ur"
 lines = [l.strip() for l in open(a.script, encoding="utf-8") if l.strip()]
 tmp = a.parts or tempfile.mkdtemp(prefix="vs_tts_")
 os.makedirs(tmp, exist_ok=True)
