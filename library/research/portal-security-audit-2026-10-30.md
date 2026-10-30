@@ -111,3 +111,16 @@ voice-over content (covered by the CLAUDE.md rule, not code), and the standard r
   session_01, /home/user, 127.0.0.1 -> 0 hits; API https://editor.firecraft.fun.
 - Test data: only on throw-away local SQLite portals (deleted with their temp folders); nothing was created on the live
   portal.
+
+## 9. First live deliveries after the update (2026-10-30, 10:05 PKT check)
+- Hub run used only `events` (ids), `route` (both events linked to the Demo session) and `envelope`; events 2 and 3
+  forwarded and taken.
+- The Demo session delivered order 1 v2 (Testing-demo-v2.mp4, 10 s) and order 2 v1 (Who-is-Herobrine-v1.mp4, 21.5 s).
+  The live server's guard.php accepted both, so it found no tool markers and no blocked words.
+- Re-checked here: both notes and file names pass `find_blocked`. Both downloaded files pass `check_clean`: only
+  title + artist MrCopper804 tags, yuv420p.
+- Gap: that session's permission check blocked `git checkout origin/project-client-portal -- portal/bridge ...`, so it
+  delivered with the OLD bridge CLI and stripped metadata by hand. The server-side guard is what stops a leak in that
+  case. If a session asks the owner to allow that checkout, the owner should allow it.
+- The old v1 note of order 1 (2026-10-29, before the rule) still says "by hand". There is no API to edit an old note,
+  and it was written for the owner's own Demo account.
