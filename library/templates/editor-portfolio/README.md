@@ -89,3 +89,19 @@ Avatar (`assets/img/avatar.png`): the owner's skin waving, made with blocky_char
   the loud section. `music_fit.py lion.mp3 fit.wav --length 42.97 --drop-at 6.85 --src-drop 23.452 --end resolve --check`:
   segments [16.602-56.61] + the composer's ending [179.56-182.52], join at 40.008 s 35 ms from a beat, phase error median
   4 ms. Config bpm 123.0, drop 6.85. The 9:16 TikTok cut keeps Mixkit "Uplifting Bass" (YT-ALib is YouTube only).
+
+## v4: voice-over + "editor only, not a promoter" + rates (owner 2026-10-30)
+- Owner brief: make clear he only EDITS videos, does not post client promotions on his YouTube channel (that costs
+  extra), rate = 1 unit of the client's currency per second of video (INR 1, USD 1, NPR 1, ...), PKR 2 for Pakistan;
+  show frames before rendering; male voice; end card adds the portal editor.firecraft.fun.
+- Config keys (VO mode): `vo` {parts, hello, want, policy, contact, music_src, src_drop}, `policy` (one scene per line:
+  kicker / mark check|cross|play / big lines / price + unit / chips / stamp / note), `want_words`. The builder sets the
+  drop from the voice lines, places policy scenes on beats after the wall, fits the music with music_fit.py
+  (`--end fade`) and mixes it under the voice with mix_vo_music.py (-10 dB duck, 15 LU gap, -16 LUFS).
+- Measured here 2026-10-30: VoxCPM2 first request after backend start took ~14 min (both runs), then ~1-2 min per line.
+  explainer-pro garbled "हर सेकंड का सिर्फ एक" (Whisper: "अपकी करन्सी में अपकी खरन्सी...") and heard "दो" as "तो";
+  rephrased "एडिटिंग रेट है, एक प्रति सेकंड, आपकी करेंसी में।" + seeds 21/33 fixed both. Male run used news-anchor
+  (promo-male banned): all 8 lines heard; take medians 104-137 Hz were pitch-matched to 115 Hz with rubberband
+  (formant preserved) + loudnorm -18 per line.
+- Renders (-w 3): 63 s 16:9 and 62 s 9:16 took ~8 min each; HyperFrames output measured -18.1 LUFS, +3 dB + alimiter
+  0.85 gave -15.2 / -15.1 LUFS; yuv420p, 0 black spans.
