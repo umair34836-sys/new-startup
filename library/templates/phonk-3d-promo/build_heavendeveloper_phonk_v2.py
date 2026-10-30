@@ -336,6 +336,6 @@ en = "+".join(f"between(t,{t:.2f},{t + 0.09:.2f})" for t in SN) or "0"
 open("post.sh", "w").write(
     "#!/bin/bash\n# post-process the HyperFrames render: snare RGB split, grade, grain; then loudness\n"
     f'ffmpeg -v error -y -i "$1" -vf "rgbashift=rh=-6:bh=6:enable=\'{en}\',eq=contrast=1.22:saturation=0.85:gamma=0.97,'
-    'colorbalance=bs=0.10:bm=0.03:rh=-0.03,noise=alls=9:allf=t+u,vignette=PI/5" -c:v libx264 -crf 16 -preset medium '
+    'colorbalance=bs=0.10:bm=0.03:rh=-0.03,noise=alls=9:allf=t+u,vignette=PI/5,format=yuv420p" -c:v libx264 -profile:v high -crf 16 -preset medium -movflags +faststart '
     '-af "volume=2.2dB,alimiter=limit=0.79:level=false" -c:a aac -b:a 192k "$2"\n')
 print("built", TOTAL, len(SCENES), "scenes,", len(BEATS), "beat cuts,", len(KICKS), "kick punches,", len(FLASH_T), "flashes,", len(SN), "snare splits")

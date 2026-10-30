@@ -54,3 +54,13 @@ Minecraft-focused cut. Both delivered as clean finals (no watermark).
   PLUGIN, logo + "PREMIUM DEVELOPMENT, DELIVERED" (bot footer line), WE BUILD x5 services, DISCORD BOTS + WEBSITES chips
   (#services), START FOR FREE, members/boosts, CTA. Scene grid on downbeats. Render -13.5 LUFS -> post GAIN=0.2 -> -15.3
   LUFS, -1.9 dB peak, 30 fps, blackdetect 0.
+
+## v5 = COMBO (2026-10-30; client: "make a video by combining both but not exact combining, just include both of the
+## things in one half a minute video")
+- Builder build_heavendeveloper_phonk_combo.py = scene blocks from the no-voice cut (hook, chips_scene) + the Minecraft
+  cut (logo/tower, plugins, mods, texture packs, FREE, end card), ids renumbered; neon background until the plugins scene
+  (10.69 s), Minecraft night after it. Same music bed (Re-Adjustment from its drop).
+- VO: no new TTS. Reused lines already heard word-for-word by Whisper small: vo4 line 1 "Need a Discord bot, a website,
+  or a Minecraft plugin?" (phonk v1 run) + vo5 lines 2-7. Median f0 measured here (pyworld harvest): vo4 #1 140.7 Hz,
+  vo5 149-161 Hz (vo5 alone spans 149-161), so no pitch shift. Bots + websites scenes are music-only bars (chips on beats).
+- QA: H.264 High yuv420p 1080x1920 30 fps, -15.3 LUFS, -1.9 dB peak, blackdetect 0. Delivered clean final.
