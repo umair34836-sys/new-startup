@@ -484,6 +484,16 @@ sfx("sparkle", t_last, 0.3)
 T.append(f'tl.to("#e-cta", {{scale:1.06, duration:{r3(BEAT)}, yoyo:true, repeat:5, ease:"sine.inOut"}}, {t_last});')
 win("#s5", r3(T_C - 0.1), TOTAL + 1)
 
+# captions of the voice lines (config "captions": one string per voice part); with "vo_silent" they replace the voice
+if VO and C.get("captions"):
+    cy = H - (150 if WIDE else 300)
+    for n, (li, t0) in enumerate(VOAT):
+        cid = f"cap{n}"
+        HTML.append(f'<div id="{cid}" style="position:absolute;left:0;right:0;top:{cy}px;text-align:center;">'
+                    f'<span class="sb capt">{C["captions"][li]}</span></div>')
+        T.append(f'tl.fromTo("#{cid}", {{opacity:0, y:14}}, {{opacity:1, y:0, duration:0.18}}, {r3(t0)});')
+        win(f"#{cid}", r3(t0), r3(min(TOTAL, t0 + VLEN[li] + 0.6)))
+
 # grain over everything (soft-light, own overlay from library/stock, looped by repeated clips)
 grain = []
 k, t = 0, 0.0
@@ -517,6 +527,8 @@ html, body {{ width:{W}px; height:{H}px; overflow:hidden; background:#e3e3e3; }}
 .tapebit {{ position:absolute; width:160px; height:42px; background:rgba(240,25,63,0.85); transform-origin:50% 50%; }}
 .tape {{ position:absolute; width:0; height:0; }}
 .crow {{ display:flex; align-items:center; gap:18px; font-size:{40 if WIDE else 44}px; margin:12px 0; white-space:nowrap; }}
+.capt {{ display:inline-block; max-width:{W - 120}px; background:rgba(15,15,15,0.82); color:#fff; font-size:{44 if WIDE else 50}px;
+        padding:10px 28px; border-radius:14px; line-height:1.3; }}
 .cdot {{ width:22px; height:22px; border-radius:50%; flex:none; }}
 .chip {{ display:inline-block; margin:8px 10px; padding:10px 28px; border-radius:14px; background:#fff; color:{INK}; font-size:{int(46 * K)}px;
         box-shadow:0 8px 22px rgba(0,0,0,0.18); border:3px solid {INK}; }}
@@ -537,7 +549,7 @@ if VO:
     import numpy as np
     SR = 48000
     vo = np.zeros((int((TOTAL + 1) * SR), 2), np.float32)
-    for li, t0 in VOAT:
+    for li, t0 in ([] if C.get("vo_silent") else VOAT):
         raw = subprocess.run(["ffmpeg", "-v", "error", "-i", VO["parts"][li], "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"],
                              capture_output=True, check=True).stdout
         x = np.frombuffer(raw, np.float32).reshape(-1, 2)
@@ -546,8 +558,12 @@ if VO:
     os.makedirs("assets/vo", exist_ok=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-", "assets/vo/vo_placed.wav"],
                    input=vo.tobytes(), check=True)
-    subprocess.run([PV, f"{T_}/mix_vo_music.py", "assets/vo/vo_placed.wav", "assets/music/music_gap.wav", "assets/music/mix.wav",
-                    "--lufs", "-16"], check=True)
+    if C.get("vo_silent"):            # music + captions only: no voice, no ducking, music normalised to -16 LUFS
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/music_gap.wav", "-af", "loudnorm=I=-16:TP=-1.5",
+                        "-ar", "48000", "assets/music/mix.wav"], check=True)
+    else:
+        subprocess.run([PV, f"{T_}/mix_vo_music.py", "assets/vo/vo_placed.wav", "assets/music/music_gap.wav", "assets/music/mix.wav",
+                        "--lufs", "-16"], check=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/mix.wav", "-t", str(TOTAL), "-c:a", "libmp3lame", "-q:a", "2",
                     "assets/music/music_hook.mp3"], check=True)
 else:
