@@ -64,3 +64,15 @@ Minecraft-focused cut. Both delivered as clean finals (no watermark).
   or a Minecraft plugin?" (phonk v1 run) + vo5 lines 2-7. Median f0 measured here (pyworld harvest): vo4 #1 140.7 Hz,
   vo5 149-161 Hz (vo5 alone spans 149-161), so no pitch shift. Bots + websites scenes are music-only bars (chips on beats).
 - QA: H.264 High yuv420p 1080x1920 30 fps, -15.3 LUFS, -1.9 dB peak, blackdetect 0. Delivered clean final.
+
+## v6 = COMBO SCARY (2026-10-30; client: "Can you change the voice? To scary kind. And a bit of modification by yourself
+## ... very premium ... make it entertaining")
+- No new TTS (owner: generation is slow). Scary voice = the combo VO (verified lines) processed in ffmpeg: main layer
+  asetrate x0.80 + atempo 1.25 (about 3.9 semitones down, formants down, same length) + a second layer x0.84 at 0.45
+  lowpassed 1.8 kHz, compressor 4:1, aecho 60/180 ms, highpass 60 Hz. Whisper small (measured here 2026-10-30): x0.80
+  heard every line word-for-word; x0.75 heard "Discord board" -> rejected. Final mix re-checked with Whisper: all lines.
+- Extras (build_heavendeveloper_phonk_combo_scary.py): red horror vignette flicker on each hook ask + heartbeat SFX at
+  0 s; riser-2s cresting (hit 1.698 s, sfx index) on the world switch + glitch bars + glitch-short; tape-stop on the last
+  1 s + CRT switch-off (bars close, white line shrinks). Lint: CSS transform + GSAP scaleY conflict -> gsap.set instead.
+- QA: yuv420p H.264 High 1080x1920 30 fps; render -14.1 LUFS -> post GAIN=1.0 -> -15.2 LUFS, -1.9 dB peak; blackdetect 0
+  before the intended CRT-off.
