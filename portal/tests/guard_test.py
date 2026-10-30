@@ -67,6 +67,11 @@ class SafeNames(unittest.TestCase):
             folder = tempfile.mkdtemp()
             self.assertEqual(os.path.dirname(os.path.abspath(os.path.join(folder, "1_" + n))), os.path.abspath(folder))
 
+    def test_runnable_files_blocked(self):
+        self.assertEqual(pb.download_name(3, "../../config.php"), "3_config.php.blocked")
+        self.assertEqual(pb.download_name(4, "x.SVG"), "4_x.SVG.blocked")
+        self.assertEqual(pb.download_name(5, "clip.mp4"), "5_clip.mp4")
+
     def test_plain_name(self):
         self.assertEqual(pb.plain_name("Shop opening reel!", 2, ".mp4"), "Shop-opening-reel-v2.mp4")
         self.assertEqual(pb.plain_name("Claude test", 1, ".mp4"), "video-v1.mp4")

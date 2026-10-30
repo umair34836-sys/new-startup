@@ -90,7 +90,7 @@ def download(order_id, folder):
     for f in o["order"]["files"]:
         if f["kind"] != "input":
             continue
-        dest = os.path.join(folder, f"{f['id']}_{safe_local_name(f['name'])}")
+        dest = os.path.join(folder, download_name(f["id"], f["name"]))
         have = os.path.getsize(dest) if os.path.exists(dest) else 0
         if have < f["size"]:
             with open(dest, "ab") as fh:
@@ -106,6 +106,18 @@ def safe_local_name(name):
     base = re.split(r"[\\/]", str(name))[-1]
     base = re.sub(r"[^\w.() -]+", "_", base).strip(" .")
     return base[:150] or "file"
+
+
+# Client files that a browser, renderer or interpreter could run; saved with ".blocked" so nothing opens them by accident.
+RUNNABLE_EXT = {".php", ".phtml", ".html", ".htm", ".xhtml", ".svg", ".js", ".mjs", ".py", ".sh", ".bash", ".bat", ".cmd",
+                ".ps1", ".exe", ".msi", ".apk", ".jar", ".dll", ".so", ".pl", ".rb", ".hta", ".vbs", ".lnk", ".desktop"}
+
+
+def download_name(file_id, name):
+    base = safe_local_name(name)
+    if os.path.splitext(base)[1].lower() in RUNNABLE_EXT:
+        base += ".blocked"
+    return f"{file_id}_{base}"
 
 
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".mkv", ".webm"}
@@ -231,7 +243,7 @@ def envelope(order, event):
     """Order JSON wrapped so client text cannot close the block or pose as a system message."""
     body = json.dumps(order, indent=1, ensure_ascii=False)
     body = re.sub(r"CLIENT_DATA_(BEGIN|END)", "[removed]", body)
-    body = re.sub(r"</?\s*(system|assistant|user|instructions?|untrusted[-_ ]?data|cross-session-message)\b[^>]*>",
+    body = re.sub(r"</?\s*(system|assistant|user|instructions?|untrusted\w*|cross-session-message)\b[^>]*>",
                   "[removed tag]", body, flags=re.I)
     return ENVELOPE_HEAD.format(id=order.get("id"), event=event) + "<<<CLIENT_DATA_BEGIN\n" + body + "\nCLIENT_DATA_END>>>"
 
@@ -270,8 +282,8 @@ def main():
         out(call("POST", f"/orders/{int(x[0])}/message", {"body": text}))
     elif c == "envelope":
         o = call("GET", f"/orders/{int(x[0])}")
-        if o.get("error"):
-            out(o)
+        if o.get("error") or not o.get("order"):
+            out({"error": o.get("error") or "order not found"})
         print(envelope(o["order"], x[1] if len(x) > 1 else "order"))
     elif c == "link":
         out(call("POST", f"/clients/{int(x[0])}/session", {"session": x[1]}))
