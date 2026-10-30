@@ -76,7 +76,7 @@ def title_block(i, s, top):
             + '</div>')
 
 
-ttop = C.get("title_top", 850) if WIDE else 1250
+ttop = C.get("title_top", 850) if WIDE else C.get("title_top_portrait", 1250)
 for i, s in enumerate(SC):
     k = s["kind"]
     d = r3(s["t1"] - s["t0"])
