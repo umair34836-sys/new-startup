@@ -8,11 +8,11 @@ $rate = rate_for($user, $order['currency']);
 
 <section class="card reveal">
   <h2>1. Your files <small class="opt">(optional)</small></h2>
-  <p class="muted">Raw videos, photos, logo, voice notes, script (PDF/DOCX/TXT), if you have them. No files? No problem: just
+  <p class="muted">Any file type, as many as you like (videos, photos, logo, music, voice notes, documents, ZIP...), if you have them. No files? No problem: just
     describe the video below. Big files upload in small parts, so keep this page open until each one shows "Uploaded".</p>
   <p class="req-note">Fields marked <span class="req">*</span> are required.</p>
   <div class="drop" data-uploader data-order="<?= (int) $order['id'] ?>" data-kind="input" tabindex="0">
-    <input type="file" id="pick" multiple accept="video/*,image/*,audio/*,.pdf,.txt,.srt,.docx,.zip">
+    <input type="file" id="pick" multiple>
     <label for="pick" class="btn">Choose files</label>
     <span>or drop them here</span>
   </div>
@@ -56,6 +56,7 @@ $rate = rate_for($user, $order['currency']);
     <label>Script / text for the video <small class="opt">(optional)</small><textarea name="script" rows="6" maxlength="20000"><?= e($order['script']) ?></textarea></label>
     <label>Tell us about the video: what it is for, what should be in it, how it should feel <span class="req">*</span><textarea name="ideas" rows="6" minlength="10" maxlength="10000" required placeholder="What is the video about? Which parts to keep or cut, colours, feeling, text on screen, anything else…"><?= e($order['ideas']) ?></textarea></label>
   </section>
+  <?php if (check_times_text() !== ''): ?><p class="check-note"><?= e(check_times_text()) ?></p><?php endif; ?>
   <div class="actions sticky">
     <button class="btn" name="action" value="save" formnovalidate>Save draft</button>
     <button class="btn primary" name="action" value="submit" data-submit>Submit order</button>

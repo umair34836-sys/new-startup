@@ -24,6 +24,7 @@ async function fillOrder(page, title) {
   await page.selectOption('select[name="q.platform"]', 'TikTok');
   await page.selectOption('select[name="q.aspect"]', '9:16 vertical (phone)');
   await page.selectOption('select[name="q.style"]', 'Cinematic');
+  await page.selectOption('select[name="q.sound"]', 'Voice + music');
   await page.fill('textarea[name=ideas]', 'Made in the app.');
 }
 async function waitOrderListed(page, title, ms) {
@@ -78,7 +79,7 @@ async function waitOrderListed(page, title, ms) {
   await page.click('button:has-text("Submit order")');
   await page.waitForSelector('.form-err');
   check(/Editing style|Details about the video/.test(await page.textContent('.form-err')), 'app blocks submit with missing required fields');
-  for (const [k, v] of [['video_type', 'Explainer'], ['platform', 'YouTube'], ['aspect', '16:9 wide (YouTube)'], ['style', 'Cinematic']]) {
+  for (const [k, v] of [['video_type', 'Explainer'], ['platform', 'YouTube'], ['aspect', '16:9 wide (YouTube)'], ['style', 'Cinematic'], ['sound', 'Only music / beats (no voice)']]) {
     await page.selectOption(`select[name="q.${k}"]`, v);
   }
   await page.fill('textarea[name=ideas]', 'No footage, please make it from stock clips and text.');

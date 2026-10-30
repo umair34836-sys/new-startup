@@ -3,7 +3,7 @@
 // type checks, private storage and downloads with HTTP Range.
 declare(strict_types=1);
 
-/** extension => allowed MIME types reported by finfo for that extension. */
+/** extension => MIME types finfo may report; checked only for the owner's app uploads (apk, bundle). */
 const ALLOWED_TYPES = [
     'mp4' => ['video/mp4', 'video/quicktime', 'video/x-m4v', 'application/octet-stream'],
     'm4v' => ['video/mp4', 'video/x-m4v'],
@@ -46,8 +46,10 @@ function upload_init(int $orderId, string $kind, string $by, string $name, int $
 {
     $name = safe_name($name);
     $ext = file_ext($name);
-    if (!isset(ALLOWED_TYPES[$ext]) || ($ext === 'apk') !== ($kind === 'apk') || ($kind === 'bundle' && $ext !== 'zip')) {
-        return ['error' => "This file type (.$ext) is not allowed. Send videos, images, audio, PDF, TXT, DOCX or ZIP."];
+    // Owner (2026-10-29): clients may send any file type. Files are stored outside the web root under random names and
+    // anything a browser should not show is sent as a plain download, so no type can run on the server or the site.
+    if (($kind === 'apk' && $ext !== 'apk') || ($kind === 'bundle' && $ext !== 'zip')) {
+        return ['error' => "This file type (.$ext) is not allowed here."];
     }
     $max = (int) setting('max_file_mb') * 1024 * 1024;
     if ($size < 1 || $size > $max) {
@@ -149,7 +151,7 @@ function upload_finish(array $up): array
     }
     $ext = file_ext($up['orig_name']);
     $mime = (new finfo(FILEINFO_MIME_TYPE))->file($part) ?: 'application/octet-stream';
-    if (!in_array($mime, ALLOWED_TYPES[$ext] ?? [], true)) {
+    if (in_array($up['kind'], ['apk', 'bundle'], true) && !in_array($mime, ALLOWED_TYPES[$ext] ?? [], true)) {
         @unlink($part);
         q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
         return ['error' => "The file content ($mime) does not match its .$ext name. It was rejected."];

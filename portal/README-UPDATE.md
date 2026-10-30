@@ -21,5 +21,11 @@ Live site: `https://editor.firecraft.fun` · server folder: `/home/talkembe/edit
 6. **Clients** page: each client has "Currency" and "Special rate per second" (empty = the currency's default). Ask the owner for
    the values, then press **Save** on each client row.
 7. App screens update (live update), only if `bundle-*.zip` is included in this delivery:
-   Settings → "Live update bundle" → upload the `bundle-x.y.z.zip (now bundle-1.0.2.zip, version 1.0.2)` → set "Live update version" to the same `x.y.z` and
+   Settings → "Live update bundle" → upload the `bundle-x.y.z.zip (now bundle-1.0.3.zip, version 1.0.3)` → set "Live update version" to the same `x.y.z` and
    "Bundle needs app version at least" = `3` → **Save settings**. Phones download it by themselves and use it on the next start.
+
+## New in this update (2026-10-29)
+- Clients can upload ANY file type, several at once (files stay private and are only ever sent as downloads).
+- New required question "Voice or only music?" (voice + music / only music & beats / only voice / no sound / you decide).
+- Fixed order-check times shown on the website and in the app. Default: 10:00, 14:00, 17:00, 22:00 Pakistan time.
+  Change them in Admin → Settings → "Order check times" (tell the owner's Claude session too, so its schedule matches).

@@ -511,6 +511,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Research: library/research/client-portal-tools.md. Maven Central answered 429 to Gradle here: the build uses Google's
   mirror maven-central.storage-download.googleapis.com (200). Canva AI thumbnails (design.canva.ai) show a Cloudflare
   check to headless Chromium: send the owner the canva.com/d/ links instead.
+  Live 2026-10-29 at https://editor.firecraft.fun (cPanel, DB talkembe_portal); native Capacitor app (signing key outside git);
+  bridge token = "Bearer" network secret for that host. Per-client rates in any currency. Owner 2026-10-29: clients may
+  upload ANY file type; required "Voice or only music?" question; orders are checked at FIXED times shown to clients
+  (default 10:00/14:00/17:00/22:00 PKT, scheduled task trig_01K3PxtPGzrgU6Dt72izjE98 runs 5 min after each).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

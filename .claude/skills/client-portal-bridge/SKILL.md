@@ -57,5 +57,7 @@ or the env var `PORTAL_BRIDGE_TOKEN`. Check with `portal_bridge.py ping`: 401 = 
    - Answers to "how do you edit?" from a client: MrCopper804 edits every video himself, by hand. Nothing else.
 5. On `approved`: save learnings to the repo as usual, then `portal_bridge.py done <event_id>`.
 
-Latency (honest): a scheduled task fires at most hourly (create_trigger description, 2026-10-29), so a new order
-waits up to about an hour unless the owner asks for a check.
+Check times (owner, 2026-10-29): orders are checked at FIXED times, not hourly. Clients see them on the web and in the
+app (setting `check_times`, default 10:00, 14:00, 17:00, 22:00 Pakistan time; Admin -> Settings). The hub's scheduled
+task runs 5 minutes after each time (cron `CRON_TZ=Asia/Karachi 5 10,14,17,22 * * *`). If the owner changes the times
+in Settings, change the scheduled task to match. Between those times a new order waits unless the owner asks for a check.

@@ -3,6 +3,7 @@
   <h1>My videos</h1>
   <form method="post" action="<?= e(base_url('orders/new')) ?>"><?= csrf_field() ?><button class="btn primary">+ New video order</button></form>
 </div>
+<?php if (check_times_text() !== ''): ?><p class="check-note reveal"><?= e(check_times_text()) ?> Next check: <?= e(next_check_label()) ?>.</p><?php endif; ?>
 <?php if (!$orders): ?>
   <section class="card empty reveal"><h2>No orders yet</h2><p>Start a new order: upload your footage and tell us how you want it edited. <?= e(setting('promise_text')) ?></p></section>
 <?php else: ?>

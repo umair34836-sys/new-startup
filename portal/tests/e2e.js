@@ -65,9 +65,8 @@ async function shot(page, name) {
   await page.waitForSelector('[data-file-list] li.done >> nth=1', { timeout: 60000 });
   check(true, 'two files uploaded in chunks (test.mp4 is bigger than one 1.5 MB chunk)');
   await page.setInputFiles('#pick', [path.join(MEDIA, 'fake.mp4')]);
-  await page.waitForSelector('[data-file-list] li.failed', { timeout: 20000 });
-  const failText = await page.textContent('[data-file-list] li.failed');
-  check(/does not match/.test(failText), 'text file renamed .mp4 is rejected: ' + failText.trim().slice(0, 80));
+  await page.waitForSelector('[data-file-list] li.done >> nth=2', { timeout: 20000 });
+  check(true, 'any file type is accepted (owner 2026-10-29): a text file named .mp4 uploads too');
   await page.fill('input[name=title]', 'Shop opening reel');
   await page.fill('input[name=length_sec]', '45');
   const est = await page.textContent('[data-estimate-value]');
@@ -76,6 +75,7 @@ async function shot(page, name) {
   await page.selectOption('select[name="q[platform]"]', 'Instagram / Facebook');
   await page.selectOption('select[name="q[aspect]"]', '9:16 vertical (phone)');
   await page.selectOption('select[name="q[style]"]', 'Energetic / fast cuts');
+  await page.selectOption('select[name="q[sound]"]', 'Only music / beats (no voice)');
   await page.selectOption('select[name="q[music]"]', 'Upbeat');
   await page.fill('textarea[name=ideas]', 'Start with the shop sign, end with our phone number.');
   await shot(page, '02-order-form');
@@ -202,6 +202,7 @@ async function shot(page, name) {
   await page.selectOption('select[name="q[platform]"]', 'YouTube');
   await page.selectOption('select[name="q[aspect]"]', '16:9 wide (YouTube)');
   await page.selectOption('select[name="q[style]"]', 'Clean / minimal');
+  await page.selectOption('select[name="q[sound]"]', 'Voice + music');
   await page.fill('textarea[name=ideas]', 'A 30 second explainer about my bakery, made from stock footage and text.');
   check(await page.isVisible('text=(optional) >> nth=0'), 'optional fields are labelled "(optional)"');
   await page.click('button[data-submit]');

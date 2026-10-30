@@ -53,7 +53,7 @@ const file = (n, t) => ({ name: n, mimeType: t, buffer: fs.readFileSync(path.joi
   await page.waitForSelector('#files li >> nth=1');
   await page.fill('input[name=title]', 'Emulator order');
   await page.fill('#len', '20');
-  for (const [k, v] of [['video_type', 'Promo / Ad'], ['platform', 'TikTok'], ['aspect', '9:16 vertical (phone)'], ['style', 'Cinematic']]) {
+  for (const [k, v] of [['video_type', 'Promo / Ad'], ['platform', 'TikTok'], ['aspect', '9:16 vertical (phone)'], ['style', 'Cinematic'], ['sound', 'You decide']]) {
     await page.selectOption(`select[name="q.${k}"]`, v);
   }
   screencap('03-new-order');

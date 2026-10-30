@@ -3,6 +3,7 @@
   <h1><?= e(setting('brand_name')) ?></h1>
   <p class="lead"><?= e(setting('brand_tagline')) ?></p>
   <p class="promise"><?= e(setting('promise_text')) ?></p>
+  <?php if (check_times_text() !== ''): ?><p class="check-note"><?= e(check_times_text()) ?></p><?php endif; ?>
   <div class="row">
     <a class="btn primary" href="<?= e(base_url('register')) ?>">Create account</a>
     <a class="btn" href="<?= e(base_url('login')) ?>">Log in</a>
