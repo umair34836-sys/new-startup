@@ -1,0 +1,16 @@
+// Sends every Maven Central request to Google's mirror. Maven Central answered 429 (Too Many Requests) to Gradle
+// in this container (2026-10-29); the mirror answered 200. Used with: ./gradlew --init-script ../gradle-mirror.gradle
+def MIRROR = 'https://maven-central.storage-download.googleapis.com/maven2/'
+def fix = { repos ->
+    repos.configureEach { r ->
+        if (r instanceof MavenArtifactRepository && r.url.toString().contains('repo.maven.apache.org')) { r.url = MIRROR }
+    }
+}
+beforeSettings { s ->
+    fix(s.pluginManagement.repositories)
+    fix(s.dependencyResolutionManagement.repositories)
+}
+allprojects {
+    fix(buildscript.repositories)
+    fix(repositories)
+}

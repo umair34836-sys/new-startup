@@ -2,7 +2,8 @@
 # Install every tool this repo uses into a fresh cloud container, skipping what is already there.
 #   bash library/tools/setup-all.sh light   # quick (~1 min, Oct 2026 estimate): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI
 #   bash library/tools/setup-all.sh heavy   # music + AI song stack code, Whisper, separators, VoiceStudio (no ACE-Step weights)
-#   bash library/tools/setup-all.sh acestep|artemis|opendesign|ondemand   # big, rarely used tools: only when a job needs them
+#   bash library/tools/setup-all.sh acestep|artemis|opendesign|portal|ondemand   # big, rarely used tools: only when a job needs them
+#     portal = client portal dev tools (Android SDK for the APK, ui-ux-pro-max, agency-agents): library/tools/setup-portal-dev.sh
 # The SessionStart hook runs "all" in the background, logging to /home/user/tools/setup.log; it touches
 # /home/user/tools/.light-ready and then /home/user/tools/.heavy-ready as each part finishes.
 set -uo pipefail
@@ -108,5 +109,6 @@ case "${1:-all}" in
   acestep) acestep ;;
   artemis) artemis ;;
   opendesign) opendesign ;;
-  ondemand) acestep; artemis; opendesign ;;
+  portal) bash "$HERE/setup-portal-dev.sh" all ;;
+  ondemand) acestep; artemis; opendesign; bash "$HERE/setup-portal-dev.sh" all ;;
 esac

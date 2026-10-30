@@ -32,6 +32,8 @@ get rvm_mobilenetv3_fp32.onnx https://github.com/PeterL1n/RobustVideoMatting/rel
 get selfie_segmenter.tflite https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite
 get blaze_face_short_range.tflite https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/latest/blaze_face_short_range.tflite
 get efficientdet_lite0.tflite https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/int8/latest/efficientdet_lite0.tflite
+# face landmarks + blendshapes (smile, mouth open, eyes) for thumb_frames.py (Apache-2.0, 3.76 MB, 2026-10-28)
+get face_landmarker.task https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
 if [ "${1:-}" = "--bench" ]; then
   get selfie_multiclass_256x256.tflite https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite
   get modnet.onnx https://huggingface.co/Xenova/modnet/resolve/main/onnx/model.onnx

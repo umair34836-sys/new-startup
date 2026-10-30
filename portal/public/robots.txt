@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /orders
+Disallow: /admin
+Disallow: /files
+Disallow: /api
+Disallow: /reset

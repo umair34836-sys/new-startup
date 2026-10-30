@@ -52,3 +52,4 @@ Privacy: crops avoid the status bar, server sidebar, the owner's account bar and
 - render -w 3: 1m28s. listen.py: -15.7 LUFS, TP -1.45 dBTP, 0 clipped, voice 0.45-28.42 s, music decays to silence at
   28.77 s (its own ending). watch.py: 30.0 real fps, 900 frames, no black frames; "frozen" = static text holds.
 - Preview: watermark.py (tiled "Made by MrCopper804" + PREVIEW tag); clean render kept in the scratchpad for after payment.
+- 2026-10-28: owner asked "Give me a final video" -> clean FINAL (no watermark, same render as the preview, 1080x1920, 30.0 s) delivered.
