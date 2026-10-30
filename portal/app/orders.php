@@ -25,10 +25,13 @@ function questions(): array
         'style' => ['label' => 'Editing style', 'type' => 'select', 'required' => true, 'options' => [
             'Energetic / fast cuts', 'Cinematic', 'Clean / minimal', 'Funny / memes', 'Emotional',
             'Corporate / professional', 'Not sure, you decide']],
+        // Owner (2026-10-29): always ask whether the client wants a voice or only music and beats.
+        'sound' => ['label' => 'Voice or only music?', 'type' => 'select', 'required' => true, 'options' => [
+            'Voice + music', 'Only music / beats (no voice)', 'Only voice (no music)', 'No sound', 'You decide']],
         'music' => ['label' => 'Music mood', 'type' => 'select', 'required' => false, 'options' => [
             'Upbeat', 'Calm', 'Epic', 'Romantic', 'Hip-hop / phonk', 'No music', 'You decide']],
-        'voice' => ['label' => 'Voice', 'type' => 'select', 'required' => false, 'options' => [
-            'Keep the voice in my footage', 'Add a voiceover from my script', 'No voice', 'You decide']],
+        'voice' => ['label' => 'If there is a voice, which one?', 'type' => 'select', 'required' => false, 'options' => [
+            'Keep the voice in my footage', 'Add a voiceover from my script', 'My own voice recording (in my files)', 'No voice', 'You decide']],
         'captions' => ['label' => 'Captions / subtitles', 'type' => 'select', 'required' => false, 'options' => [
             'No captions', 'English', 'Urdu', 'Roman Urdu', 'Hindi', 'Other (write in ideas)']],
         'language' => ['label' => 'Language spoken in the video', 'type' => 'text', 'required' => false, 'max' => 60],
@@ -119,8 +122,9 @@ function save_order_form(array $order, array $user, array $post, bool $submit): 
     if ($submit && $len < 1) {
         $errors[] = 'Tell us how long the finished video should be (in seconds).';
     }
-    if ($submit && !row("SELECT id FROM files WHERE order_id = ? AND kind = 'input'", [$order['id']])) {
-        $errors[] = 'Upload at least one file (video, images or script).';
+    // Owner (2026-10-29): files, voice and script are optional; an order can be only details. The details are required.
+    if ($submit && mb_strlen(trim((string) ($post['ideas'] ?? ''))) < 10) {
+        $errors[] = 'Describe the video you want (at least a sentence), so we know what to make.';
     }
     $rate = rate_for($user, $order['currency']);
     $data = [

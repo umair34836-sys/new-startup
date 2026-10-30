@@ -118,6 +118,7 @@ function attempt_login(string $email, string $pw): string
 function set_password(int $userId, string $pw, bool $keepThisSession): void
 {
     q('UPDATE users SET password_hash = ?, session_version = session_version + 1 WHERE id = ?', [hash_password($pw), $userId]);
+    q('DELETE FROM app_tokens WHERE user_id = ?', [$userId]); // a new password also logs out every phone
     if ($keepThisSession) {
         session_regenerate_id(true);
         $_SESSION['sv'] = (int) row('SELECT session_version FROM users WHERE id = ?', [$userId])['session_version'];

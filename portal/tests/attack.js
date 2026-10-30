@@ -33,7 +33,7 @@ async function csrf(page) {
 async function api(page, url, opts) {
   return page.evaluate(async ([u, o]) => {
     const r = await fetch(u, o);
-    return { status: r.status, text: await r.text(), ct: r.headers.get('content-type') };
+    return { status: r.status, text: await r.text(), ct: r.headers.get('content-type'), cd: r.headers.get('content-disposition'), nosniff: r.headers.get('x-content-type-options') };
   }, [BASE + url, opts]);
 }
 
@@ -146,10 +146,21 @@ async function api(page, url, opts) {
     mk('double.php.png', Buffer.concat([Buffer.from('<?php echo 1; ?>'), png])),
     mk('app.apk', Buffer.concat([Buffer.from('PK\x03\x04'), Buffer.alloc(100)])),
   ];
+  // Owner (2026-10-29): any file type is accepted, so dangerous files are stored but must never run or render.
   await A.page.setInputFiles('#pick', bad);
-  await A.page.waitForTimeout(6000);
-  const states = await A.page.$$eval('[data-file-list] li', (ls) => ls.map((l) => l.querySelector('.fname').textContent + ':' + (l.classList.contains('failed') ? 'blocked' : l.classList.contains('done') ? 'STORED' : 'pending')));
-  check(states.length === 6 && states.every((s) => s.endsWith('blocked')), 'HTML, PHP, fake JPG, SVG, PHP+PNG double extension and APK uploads are all refused (' + states.join(' ') + ')');
+  await A.page.waitForFunction((n) => document.querySelectorAll('[data-file-list] li.done').length >= n, bad.length, { timeout: 30000 });
+  await A.page.reload();
+  const badIds = await A.page.evaluate(() => [...document.querySelectorAll('form[id^=del-]')].map((f) => f.id.slice(4)));
+  let safe = badIds.length === bad.length;
+  for (const id of badIds) {
+    const r = await api(A.page, '/files/' + id, {});
+    if (!(r.ct === 'application/octet-stream' && /^attachment/.test(r.cd || '') && r.nosniff === 'nosniff')) safe = false;
+  }
+  check(safe, 'HTML, PHP, fake JPG, SVG, PHP+PNG and APK uploads are stored only as plain downloads (octet-stream, attachment, nosniff)');
+  for (const id of badIds) {
+    await api(A.page, '/orders/' + aOrder + '/files/' + id + '/delete', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ _csrf: aCsrf }).toString() });
+  }
   // A polyglot that really is a PNG is stored, but is only ever served as image/png with nosniff.
   await A.page.reload();
   await A.page.setInputFiles('#pick', [mk('poly.png', Buffer.concat([png, Buffer.from('<script>alert(1)</script>')]))]);

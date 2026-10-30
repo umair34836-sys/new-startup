@@ -24,6 +24,7 @@ async function fillOrder(page, title) {
   await page.selectOption('select[name="q.platform"]', 'TikTok');
   await page.selectOption('select[name="q.aspect"]', '9:16 vertical (phone)');
   await page.selectOption('select[name="q.style"]', 'Cinematic');
+  await page.selectOption('select[name="q.sound"]', 'Voice + music');
   await page.fill('textarea[name=ideas]', 'Made in the app.');
 }
 async function waitOrderListed(page, title, ms) {
@@ -70,6 +71,21 @@ async function waitOrderListed(page, title, ms) {
   await page.click('button:has-text("Submit order")');
   check(await waitOrderListed(page, 'Online app order', 40000), 'online order uploaded and sent (shows Received)');
 
+  // Details-only order in the app (no files).
+  await page.evaluate(() => { location.hash = '#/new'; });
+  await page.waitForSelector('#pick', { state: 'attached' });
+  await page.fill('input[name=title]', 'App details only');
+  await page.fill('#len', '15');
+  await page.click('button:has-text("Submit order")');
+  await page.waitForSelector('.form-err');
+  check(/Editing style|Details about the video/.test(await page.textContent('.form-err')), 'app blocks submit with missing required fields');
+  for (const [k, v] of [['video_type', 'Explainer'], ['platform', 'YouTube'], ['aspect', '16:9 wide (YouTube)'], ['style', 'Cinematic'], ['sound', 'Only music / beats (no voice)']]) {
+    await page.selectOption(`select[name="q.${k}"]`, v);
+  }
+  await page.fill('textarea[name=ideas]', 'No footage, please make it from stock clips and text.');
+  await page.click('button:has-text("Submit order")');
+  check(await waitOrderListed(page, 'App details only', 30000), 'app order with only details (no files) is sent');
+
   // Offline order: made with no internet, sent automatically later.
   await ctx.setOffline(true);
   await page.evaluate(() => window.dispatchEvent(new Event('offline')));
@@ -84,10 +100,10 @@ async function waitOrderListed(page, title, ms) {
   await ctx.setOffline(false);
   await page.evaluate(() => window.dispatchEvent(new Event('online')));
   check(await waitOrderListed(page, 'Offline app order', 60000), 'offline order sent by itself when the internet came back');
-  const evs = bridge('events').events.filter((e) => e.event.type === 'order_submitted' && e.order.client.email === 'app1@example.com');
-  check(evs.length === 2, 'bridge sees both app orders (' + evs.length + ')');
+  const evs = bridge('events', '--full').events.filter((e) => e.event.type === 'order_submitted' && e.order.client.email === 'app1@example.com');
+  check(evs.length === 3, 'bridge sees all three app orders (' + evs.length + ')');
   const onlineId = evs.find((e) => e.order.title === 'Online app order').order.id;
-  check(evs.every((e) => e.order.files.length === 2 && e.order.files.some((f) => f.size === 4487461)), 'all files arrived byte-exact (video 4487461 bytes)');
+  check(evs.filter((e) => e.order.files.length).every((e) => e.order.files.length === 2 && e.order.files.some((f) => f.size === 4487461)), 'all files arrived byte-exact (video 4487461 bytes)');
 
   // Studio delivers; client watches, saves offline, works offline.
   bridge('deliver', String(onlineId), path.join(MEDIA, 'test.mp4'), '--note', 'Version 1 from the studio.');
@@ -118,7 +134,7 @@ async function waitOrderListed(page, title, ms) {
   let ok = false;
   for (let i = 0; i < 20 && !ok; i++) {
     await page.waitForTimeout(1000);
-    ok = bridge('events').events.some((e) => e.order.id === onlineId && e.event.type === 'revision_requested' && e.order.messages.some((m) => m.body.includes('Offline change')));
+    ok = bridge('events', '--full').events.some((e) => e.order.id === onlineId && e.event.type === 'revision_requested' && e.order.messages.some((m) => m.body.includes('Offline change')));
   }
   check(ok, 'change request sent by itself when online again');
 

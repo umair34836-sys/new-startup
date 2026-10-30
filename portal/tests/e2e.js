@@ -65,9 +65,8 @@ async function shot(page, name) {
   await page.waitForSelector('[data-file-list] li.done >> nth=1', { timeout: 60000 });
   check(true, 'two files uploaded in chunks (test.mp4 is bigger than one 1.5 MB chunk)');
   await page.setInputFiles('#pick', [path.join(MEDIA, 'fake.mp4')]);
-  await page.waitForSelector('[data-file-list] li.failed', { timeout: 20000 });
-  const failText = await page.textContent('[data-file-list] li.failed');
-  check(/does not match/.test(failText), 'text file renamed .mp4 is rejected: ' + failText.trim().slice(0, 80));
+  await page.waitForSelector('[data-file-list] li.done >> nth=2', { timeout: 20000 });
+  check(true, 'any file type is accepted (owner 2026-10-29): a text file named .mp4 uploads too');
   await page.fill('input[name=title]', 'Shop opening reel');
   await page.fill('input[name=length_sec]', '45');
   const est = await page.textContent('[data-estimate-value]');
@@ -76,6 +75,7 @@ async function shot(page, name) {
   await page.selectOption('select[name="q[platform]"]', 'Instagram / Facebook');
   await page.selectOption('select[name="q[aspect]"]', '9:16 vertical (phone)');
   await page.selectOption('select[name="q[style]"]', 'Energetic / fast cuts');
+  await page.selectOption('select[name="q[sound]"]', 'Only music / beats (no voice)');
   await page.selectOption('select[name="q[music]"]', 'Upbeat');
   await page.fill('textarea[name=ideas]', 'Start with the shop sign, end with our phone number.');
   await shot(page, '02-order-form');
@@ -84,7 +84,7 @@ async function shot(page, name) {
   await shot(page, '03-order-received');
 
   // 3. Bridge picks it up, downloads, delivers version 1.
-  let ev = bridge('events').events.filter((e) => String(e.order.id) === orderId);
+  let ev = bridge('events', '--full').events.filter((e) => String(e.order.id) === orderId);
   check(ev.length === 1 && ev[0].event.type === 'order_submitted', 'bridge sees order_submitted');
   check(ev[0].order.answers['Editing style'] === 'Energetic / fast cuts', 'bridge gets questionnaire answers with labels');
   bridge('take', String(ev[0].event.id));
@@ -105,7 +105,7 @@ async function shot(page, name) {
   await page.click('button:has-text("Send changes")');
   check((await page.textContent('.badge')).includes('Changes requested'), 'status = Changes requested');
 
-  ev = bridge('events').events.filter((e) => String(e.order.id) === orderId);
+  ev = bridge('events', '--full').events.filter((e) => String(e.order.id) === orderId);
   check(ev.some((e) => e.event.type === 'revision_requested'), 'bridge sees revision_requested');
   check(ev[0].order.messages.some((m) => m.kind === 'revision' && m.body.includes('music louder')), 'revision text reaches the bridge');
   bridge('deliver', orderId, path.join(MEDIA, 'test.mp4'), '--note', 'Version 2: music louder, logo added.');
@@ -117,7 +117,7 @@ async function shot(page, name) {
   await page.click('button:has-text("approve")');
   check((await page.textContent('.badge')).includes('Approved'), 'order approved');
   await shot(page, '05-approved');
-  check(bridge('events').events.some((e) => String(e.order.id) === orderId && e.event.type === 'approved'), 'bridge sees approved');
+  check(bridge('events', '--full').events.some((e) => String(e.order.id) === orderId && e.event.type === 'approved'), 'bridge sees approved');
 
   // 6. Security checks.
   const noCsrf = await page.evaluate(async (u) => (await fetch(u, { method: 'POST', body: new URLSearchParams({ body: 'x' }) })).status, BASE + '/orders/' + orderId + '/message');
@@ -179,6 +179,35 @@ async function shot(page, name) {
   await page.click('button:has-text("New video order")');
   await page.fill('input[name=length_sec]', '10');
   check((await page.textContent('[data-estimate-value]')).trim() === 'PKR 800', 'per-client rate 80 PKR/s used: 10 s = PKR 800');
+  // Details-only order: no files at all is fine; a missing required field blocks the submit (also on the server).
+  await page.goto(BASE + '/orders');
+  await page.click('button:has-text("New video order")');
+  const detailsUrl = page.url();
+  await page.fill('input[name=title]', 'Details only');
+  await page.fill('input[name=length_sec]', '30');
+  await page.selectOption('select[name="q[video_type]"]', 'Explainer');
+  await page.selectOption('select[name="q[platform]"]', 'YouTube');
+  await page.selectOption('select[name="q[aspect]"]', '16:9 wide (YouTube)');
+  await page.click('button[data-submit]');
+  check(page.url() === detailsUrl && !(await page.isVisible('text=Order sent')), 'submit blocked while required fields are empty (style, details)');
+  const srv = await page.evaluate(async (u) => {
+    const f = new URLSearchParams({ _csrf: document.body.dataset.csrf, title: 'x', length_sec: '30', action: 'submit' });
+    const r = await fetch(u + '/save', { method: 'POST', body: f }); return await r.text();
+  }, detailsUrl);
+  check(srv.includes('Please answer: Editing style') && srv.includes('Describe the video'), 'server refuses a submit with missing required fields');
+  await page.goto(detailsUrl);
+  await page.fill('input[name=title]', 'Details only');
+  await page.fill('input[name=length_sec]', '30');
+  await page.selectOption('select[name="q[video_type]"]', 'Explainer');
+  await page.selectOption('select[name="q[platform]"]', 'YouTube');
+  await page.selectOption('select[name="q[aspect]"]', '16:9 wide (YouTube)');
+  await page.selectOption('select[name="q[style]"]', 'Clean / minimal');
+  await page.selectOption('select[name="q[sound]"]', 'Voice + music');
+  await page.fill('textarea[name=ideas]', 'A 30 second explainer about my bakery, made from stock footage and text.');
+  check(await page.isVisible('text=(optional) >> nth=0'), 'optional fields are labelled "(optional)"');
+  await page.click('button[data-submit]');
+  check((await page.textContent('.notice')).includes('Order sent'), 'order with only details and no files is sent');
+
   // Currencies: owner adds INR and NPR with their own default rates; a client is switched to INR with a special rate.
   await pa.goto(BASE + '/admin/settings');
   const newCodes = pa.locator('input[name="cur_code[]"][placeholder^="New"]');

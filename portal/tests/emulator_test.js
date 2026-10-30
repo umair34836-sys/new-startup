@@ -53,7 +53,7 @@ const file = (n, t) => ({ name: n, mimeType: t, buffer: fs.readFileSync(path.joi
   await page.waitForSelector('#files li >> nth=1');
   await page.fill('input[name=title]', 'Emulator order');
   await page.fill('#len', '20');
-  for (const [k, v] of [['video_type', 'Promo / Ad'], ['platform', 'TikTok'], ['aspect', '9:16 vertical (phone)'], ['style', 'Cinematic']]) {
+  for (const [k, v] of [['video_type', 'Promo / Ad'], ['platform', 'TikTok'], ['aspect', '9:16 vertical (phone)'], ['style', 'Cinematic'], ['sound', 'You decide']]) {
     await page.selectOption(`select[name="q.${k}"]`, v);
   }
   screencap('03-new-order');
@@ -61,7 +61,7 @@ const file = (n, t) => ({ name: n, mimeType: t, buffer: fs.readFileSync(path.joi
   let ev = null;
   for (let i = 0; i < 60 && !ev; i++) {
     await sleep(3000);
-    ev = bridge('events').events.find((e) => e.order.title === 'Emulator order');
+    ev = bridge('events', '--full').events.find((e) => e.order.title === 'Emulator order');
   }
   check(!!ev, 'order with photo + video uploaded from the phone and submitted');
   check(ev && ev.order.files.some((f) => f.size === fs.statSync(path.join(MEDIA, 'test.mp4')).size), 'video arrived byte-exact');

@@ -6,11 +6,14 @@ const SETTING_DEFAULTS = [
     'brand_name' => 'MrCopper804',
     'splash_subtitle' => 'Editor',
     'brand_tagline' => 'Send your footage. Get a finished video.',
-    // Owner (2026-10-29): clients only ever learn that MrCopper804 edits every video himself, by hand.
-    'promise_text' => 'Every video is edited by hand by MrCopper804.',
+    // Owner (2026-10-30): the only credit clients see is "Edited by MrCopper804" (no claim about how it is made).
+    'promise_text' => 'Edited by MrCopper804.',
     'support_contact' => '',
+    // Owner (2026-10-29): fixed times (24 h, the portal's time zone) when new orders are checked and work starts.
+    'check_times' => '00:00, 05:00, 10:00, 14:00, 17:00, 22:00',
     // Default rate per second of finished video, per currency (owner adds currencies in Settings).
-    'currencies' => '{"PKR":"50","USD":"0.20"}',
+    // Owner (2026-10-30): PKR 2 per second, every other currency 1 per second.
+    'currencies' => '{"PKR":"2","INR":"1","NPR":"1","USD":"1","AED":"1","SAR":"1","GBP":"1","EUR":"1","CAD":"1","AUD":"1","BDT":"1"}',
     'rate_pkr' => '50',
     'rate_usd' => '0.20',
     'max_file_mb' => '4096',
@@ -98,4 +101,66 @@ function currencies(): array
 function currency_label(string $code): string
 {
     return $code . (isset(CURRENCY_NAMES[$code]) ? ' (' . CURRENCY_NAMES[$code] . ')' : '');
+}
+
+/** Fixed order-check times as sorted "HH:MM" strings (portal time zone). */
+function check_times(): array
+{
+    $out = [];
+    foreach (preg_split('/[\s,;]+/', setting('check_times')) ?: [] as $t) {
+        if (preg_match('/^([01]?\d|2[0-3]):([0-5]\d)$/', $t, $m)) {
+            $out[] = sprintf('%02d:%02d', $m[1], $m[2]);
+        }
+    }
+    $out = array_values(array_unique($out));
+    sort($out);
+    return $out;
+}
+
+function fmt_clock(string $hm): string
+{
+    return DateTime::createFromFormat('H:i', $hm)->format('g:i A');
+}
+
+function portal_tz(): DateTimeZone
+{
+    return new DateTimeZone((string) config('timezone', 'Asia/Karachi'));
+}
+
+/** "10:00 AM, 2:00 PM and 10:00 PM (Pakistan time)" */
+function check_times_list(): string
+{
+    $t = array_map('fmt_clock', check_times());
+    if (!$t) {
+        return '';
+    }
+    $last = array_pop($t);
+    $zone = portal_tz()->getName() === 'Asia/Karachi' ? 'Pakistan time' : portal_tz()->getName();
+    return ($t ? implode(', ', $t) . ' and ' : '') . $last . ' (' . $zone . ')';
+}
+
+function check_times_text(): string
+{
+    $list = check_times_list();
+    return $list === '' ? '' : setting('brand_name') . ' checks new orders every day at ' . $list . ' and starts work right after.';
+}
+
+/** "today at 2:00 PM" / "tomorrow at 10:00 AM" for the next fixed check, or '' when none are set. */
+function next_check_label(?int $now = null): string
+{
+    $times = check_times();
+    if (!$times) {
+        return '';
+    }
+    $tz = portal_tz();
+    $now = (new DateTime('@' . ($now ?? time())))->setTimezone($tz);
+    foreach ([0, 1] as $day) {
+        foreach ($times as $hm) {
+            $at = (clone $now)->modify("+$day day")->setTime((int) substr($hm, 0, 2), (int) substr($hm, 3, 2));
+            if ($at > $now) {
+                return ($day ? 'tomorrow' : 'today') . ' at ' . $at->format('g:i A');
+            }
+        }
+    }
+    return '';
 }

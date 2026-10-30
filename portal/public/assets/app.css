@@ -143,6 +143,11 @@ body.auth { justify-content: center; padding: 16px; }
 [hidden] { display: none !important; }
 .promise { font-weight: 600; color: var(--muted); }
 .hero .promise { font-size: 1.05rem; }
+.check-note { display: flex; gap: .5rem; align-items: flex-start; padding: .6rem .8rem; border-radius: 10px; background: color-mix(in srgb, var(--primary) 12%, transparent); border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent); font-size: .95rem; }
+.check-note::before { content: "\23F0"; }
 .cur-table input { min-width: 0; }
 .cur-table td { vertical-align: middle; }
 .client-row .grid4 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.req { color: var(--danger); font-weight: 800; }
+.opt { color: var(--muted); font-weight: 500; font-size: .85em; }
+.req-note { font-size: .9rem; color: var(--muted); margin: .5rem 0 0; }
