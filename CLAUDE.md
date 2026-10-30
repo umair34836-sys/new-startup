@@ -63,7 +63,8 @@ Read this first in every session.
 - Do NOT use ElevenLabs (voice, music, transcription, anything) unless the owner explicitly asks for it
   in that request. OWNER (Oct 24 2026, Skillora v3 session): "ab agay se elaven labs use nhi kroge": from now on the
   voice is a free VoxCPM2 field voice (library/voices/README.md; no default since 2026-10-27). Default to free/local tools (library/tools, Magenta, FluidSynth, numpy) instead.
-- Reply in Roman Urdu (the owner writes Roman Urdu/Hindi). Keep answers short when they ask for short.
+- Reply in HINGLISH only (owner, 2026-10-30: "Use only hinglish with me"): Roman Hindi/Urdu mixed with English words, Latin
+  script, no Devanagari/Urdu script in chat. Keep answers short when they ask for short.
 - DEFAULT HOST: when a video needs a host/presenter/character (or the owner says "character use karo"),
   use the owner's own skin `library/characters/host-skin.png` built with `library/tools/blocky_character.py`
   unless they name another character.
