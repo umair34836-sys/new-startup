@@ -3,7 +3,8 @@
 
   match_client.py "<name>" "<email>" [--extra "<brand / channel / business name from the order>"]
 Prints JSON: {"session": ..., "key": ..., "by": "domain"|"alias", "confidence": "high"|"check"} or {"session": null}.
-Domain match = high (auto-link). Alias match only = "check": link it, and tell the owner which client it matched.
+Any match is only a SUGGESTION: anyone can register with any email or name, so the owner confirms before an order goes
+to an existing client's session (security review 2026-10-30; portal_bridge.py route prints the question).
 """
 import argparse
 import json
@@ -19,8 +20,13 @@ def norm(s):
     return re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
 
 
+def load_clients():
+    with open(DATA) as fh:
+        return json.load(fh)["clients"]
+
+
 def match(name, email, extra=""):
-    clients = json.load(open(DATA))["clients"]
+    clients = load_clients()
     domain = email.lower().rsplit("@", 1)[-1] if "@" in email else ""
     if domain and domain not in FREE_MAIL:
         for c in clients:

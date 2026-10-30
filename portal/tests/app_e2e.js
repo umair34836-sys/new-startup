@@ -100,7 +100,7 @@ async function waitOrderListed(page, title, ms) {
   await ctx.setOffline(false);
   await page.evaluate(() => window.dispatchEvent(new Event('online')));
   check(await waitOrderListed(page, 'Offline app order', 60000), 'offline order sent by itself when the internet came back');
-  const evs = bridge('events').events.filter((e) => e.event.type === 'order_submitted' && e.order.client.email === 'app1@example.com');
+  const evs = bridge('events', '--full').events.filter((e) => e.event.type === 'order_submitted' && e.order.client.email === 'app1@example.com');
   check(evs.length === 3, 'bridge sees all three app orders (' + evs.length + ')');
   const onlineId = evs.find((e) => e.order.title === 'Online app order').order.id;
   check(evs.filter((e) => e.order.files.length).every((e) => e.order.files.length === 2 && e.order.files.some((f) => f.size === 4487461)), 'all files arrived byte-exact (video 4487461 bytes)');
@@ -134,7 +134,7 @@ async function waitOrderListed(page, title, ms) {
   let ok = false;
   for (let i = 0; i < 20 && !ok; i++) {
     await page.waitForTimeout(1000);
-    ok = bridge('events').events.some((e) => e.order.id === onlineId && e.event.type === 'revision_requested' && e.order.messages.some((m) => m.body.includes('Offline change')));
+    ok = bridge('events', '--full').events.some((e) => e.order.id === onlineId && e.event.type === 'revision_requested' && e.order.messages.some((m) => m.body.includes('Offline change')));
   }
   check(ok, 'change request sent by itself when online again');
 

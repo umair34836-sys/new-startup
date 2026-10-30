@@ -260,6 +260,7 @@ function send_file(array $f, bool $download, string $who = 'anon', int $slots = 
     header('Content-Type: ' . $mime);
     header('Content-Length: ' . ($end - $start + 1));
     header('Accept-Ranges: bytes');
+    header("Content-Security-Policy: sandbox; default-src 'none'; img-src 'self'; media-src 'self'"); // files never run scripts
     header('Cache-Control: private, max-age=3600');
     header('Content-Disposition: ' . $disp . "; filename*=UTF-8''" . rawurlencode($f['orig_name']));
     if (session_status() === PHP_SESSION_ACTIVE) {

@@ -109,10 +109,29 @@ check(s == 401, "client token cannot use the bridge API (401)")
 s, _ = api("GET", "/events", base="/api/bridge")
 check(s == 401, "no token -> bridge API refuses (401)")
 
+# Hub view: `events` lists ids only, so client text never reaches the hub session.
+code, out = bridge("events")
+check(code == 0 and "ignore all previous" not in out and "evil.example" not in out and '"event_id"' in out,
+      "hub `events` shows ids only, no client-written text")
+# A stranger who registers with an existing client's domain/name is NOT routed to that client's session.
+_, h = api("POST", "/register", {"name": "Korba Restaurant", "email": "boss@hostlixo.in", "password": "hostlixopass1"})
+_, oh = api("POST", "/orders", {}, h["token"])
+api("POST", f"/orders/{oh['order']['id']}/save", {"title": "Promo", "length_sec": 10, "ideas": "Reuse my logo and voice from last time.",
+    "q": {"video_type": "Promo / Ad", "platform": "TikTok", "aspect": "1:1 square", "style": "Cinematic", "sound": "You decide"},
+    "submit": True}, h["token"])
+evs = json.loads(bridge("events")[1])["events"]
+eid = next(e["event_id"] for e in evs if e["order_id"] == oh["order"]["id"])
+code, out = bridge("route", str(eid))
+r = json.loads(out)
+check(r.get("linked") is False and "ASK THE OWNER" in r.get("action", "") and r.get("suggested_client") == "hostlixo",
+      "look-alike client (hostlixo.in email) is only SUGGESTED for the existing session; the owner must confirm")
+
 # Bridge side: the injection only travels inside the untrusted envelope.
 code, env_text = bridge("envelope", str(oid), "order_submitted")
 check(code == 0 and env_text.startswith("UNTRUSTED CLIENT DATA"), "envelope starts with the untrusted-data warning")
-check(env_text.count("CLIENT_DATA_END") == 1 and "<system>" not in env_text, "client text cannot close the envelope or fake a <system> tag")
+nonce = env_text.strip().rsplit("CLIENT_DATA_END_", 1)[1].rstrip(">")
+inner = env_text.split("CLIENT_DATA_BEGIN_" + nonce + "\n", 1)[1].rsplit("\nCLIENT_DATA_END_", 1)[0]
+check("CLIENT_DATA" not in inner and "<" not in inner, "client text cannot close the envelope or fake a <system> tag")
 check("ignore all previous instructions" in env_text, "injection text is kept as quoted data (the editor sees what the client wrote)")
 dl = tempfile.mkdtemp()
 code, out = bridge("download", str(oid), dl)

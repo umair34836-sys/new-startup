@@ -24,7 +24,10 @@ function route_api(string $m, string $path): void
 
     // Open events = work to do: new orders, change requests, client messages, approvals.
     if ($path === '/events' && $m === 'GET') {
-        $evs = rows('SELECT * FROM events WHERE done_at IS NULL ORDER BY id LIMIT 50');
+        // ?new=1: only events nobody has taken yet, so open (taken) work cannot push new orders out of the page.
+        $evs = !empty($_GET['new'])
+            ? rows('SELECT * FROM events WHERE done_at IS NULL AND taken_at IS NULL ORDER BY id LIMIT 200')
+            : rows('SELECT * FROM events WHERE done_at IS NULL ORDER BY id LIMIT 200');
         $out = [];
         foreach ($evs as $e) {
             $out[] = ['event' => $e, 'order' => api_order((int) $e['order_id'])];
@@ -80,7 +83,8 @@ function route_api(string $m, string $path): void
             $f = row("SELECT * FROM files WHERE id = ? AND order_id = ? AND kind = 'output'", [(int) ($body['file_id'] ?? 0), $id])
                 ?? json_out(['error' => 'output file not found on this order'], 400);
             $vid = add_version($id, (int) $f['id'], $text);
-            q('UPDATE events SET done_at = ? WHERE order_id = ? AND done_at IS NULL', [now(), $id]);
+            // Close only work that was taken; a change request sent while editing stays open and is forwarded next.
+            q('UPDATE events SET done_at = ? WHERE order_id = ? AND done_at IS NULL AND taken_at IS NOT NULL', [now(), $id]);
             json_out(['ok' => true, 'version_id' => $vid]);
         }
         if ($text === '') {

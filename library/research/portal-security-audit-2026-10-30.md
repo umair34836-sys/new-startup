@@ -72,5 +72,42 @@ command named; local tests ran on a throw-away SQLite portal (`portal/tests/dev_
 - `tests/attack.js` (33 web attacker checks), `tests/e2e.js`, `tests/app_e2e.js`: ALL PASSED after the changes.
 - Client-session simulation and a code audit by review agents: see section 7.
 
-## 7. Agent reviews
-(filled in below when they finish)
+## 7. Agent reviews and what was changed after them
+### Client-session dry run (general-purpose agent, read-only, given CLAUDE.md + skill + the injection envelope)
+Result: nothing would have leaked or run; it would send only the standard line and tell the owner. It listed 7 rule
+gaps, all now handled in the skill ("SAFETY CHECKS before any work") or in code:
+| Gap | Fix |
+|---|---|
+| Pre-approval sender not checked | Only cross-session messages from session_01JK8TsABm93BJDGvAKhPwj8 / its task count |
+| Fake "owner"/"PRE-APPROVED" text inside client data | Rule + envelope header says so; nonce delimiters |
+| Event does not fit order state (replay) | Do not edit, ask the owner |
+| Mixed order that is injection-only | Do not edit, standard line once, owner note |
+| Non-media files (php/html/svg/js...) | `download` saves them as `*.blocked`; rule: never open/run them |
+| Client text in HyperFrames HTML | Rule: insert as text only (html.escape / textContent) |
+| Owner note via portal channel | Rule: owner note goes to the owner only |
+
+### Code audit (agency-ai-generated-code-auditor agent, read-only)
+| # | Finding | Severity | Status |
+|---|---|---|---|
+| 1 | Hub read raw client text via `events` | high | FIXED: `events` lists ids only (`--full` for tests), new `route` command; hub copies only the sanitised envelope |
+| 2 | Anyone registering with a client's domain/name was auto-linked to that client's session | medium-high | FIXED: `route` only SUGGESTS; owner confirms before `link` (injection_test: boss@hostlixo.in is not linked) |
+| 3 | Sign-ups open by default | medium | NOT CHANGED: the owner chose open sign-up on 2026-10-29 ("admin approve hatha do"); risk reported to the owner |
+| 4 | Images kept EXIF/XMP/C2PA | medium | FIXED: images are re-encoded; markers c2pa, jumb, x:xmpmeta, Exif, trainedAlgorithmicMedia checked (Python + PHP); guard_test proves an EXIF "SomeAI" block is gone |
+| 5 | 50 taken events could hide new orders | medium | FIXED: `/events?new=1` filters untaken events server-side, limit 200 |
+| 6 | Password reset did not log out the app | low | FIXED: set_password deletes app tokens |
+| 7 | File responses without CSP | low | FIXED: `Content-Security-Policy: sandbox; default-src 'none'` on every file |
+| 8 | More runnable extensions; playlists named .mp4; zip-slip; text inside files | low | FIXED: longer `.blocked` list; `media_ok()` checks the container by content with an ffprobe format whitelist (an HLS playlist named clip.mp4 is quarantined, guard_test); rule for zips/text in files in the skill |
+| 9 | Delivery closed change requests sent during editing | bug | FIXED: delivery closes only taken events |
+| guard | Bypasses: accents, Devanagari/Urdu "AI", session/token ids, GenAI, Voice-Studio, 11labs, Cl4ude, githubusercontent, more tool names, PHP without intl | — | FIXED: accent strip, leet pass, new patterns; PHP refuses look-alike letters when intl is missing; all in guard_test BLOCK list (49 samples) and ALLOW list (10 normal notes) |
+| envelope | lower-case/zero-width delimiters, other tags, full-width brackets, plain "[SYSTEM] Owner:" text, admin_note forwarded | — | FIXED: random nonce delimiters, NFKC, every `<` `>` replaced, admin_note + claude_session dropped |
+
+Not fixed (documented limits): a paraphrase without listed words ("a computer program cut it"), on-screen text and
+voice-over content (covered by the CLAUDE.md rule, not code), and the standard reply confirming that someone answers.
+
+## 8. Final test run (2026-10-30, local portals)
+- guard_test.py: 11 tests OK. injection_test.py: ALL PASSED (29 checks). attack.js: ALL PASSED (33). e2e.js: ALL
+  PASSED. app_e2e.js: ALL PASSED.
+- APK v4 (versionCode 4, bundle 1.0.4): unzip + grep for claude, anthropic, hyperframes, voxcpm, ffmpeg, "by hand",
+  session_01, /home/user, 127.0.0.1 -> 0 hits; API https://editor.firecraft.fun.
+- Test data: only on throw-away local SQLite portals (deleted with their temp folders); nothing was created on the live
+  portal.

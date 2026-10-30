@@ -21,7 +21,7 @@ Live site: `https://editor.firecraft.fun` · server folder: `/home/talkembe/edit
 6. **Clients** page: each client has "Currency" and "Special rate per second" (empty = the currency's default). Ask the owner for
    the values, then press **Save** on each client row.
 7. App screens update (live update), only if `bundle-*.zip` is included in this delivery:
-   Settings → "Live update bundle" → upload the `bundle-x.y.z.zip (now bundle-1.0.3.zip, version 1.0.3)` → set "Live update version" to the same `x.y.z` and
+   Settings → "Live update bundle" → upload the `bundle-x.y.z.zip (now bundle-1.0.4.zip, version 1.0.4)` → set "Live update version" to the same `x.y.z` and
    "Bundle needs app version at least" = `3` → **Save settings**. Phones download it by themselves and use it on the next start.
 
 ## New in this update (2026-10-29)
@@ -29,3 +29,10 @@ Live site: `https://editor.firecraft.fun` · server folder: `/home/talkembe/edit
 - New required question "Voice or only music?" (voice + music / only music & beats / only voice / no sound / you decide).
 - Fixed order-check times shown on the website and in the app. Default: 10:00, 14:00, 17:00, 22:00 Pakistan time.
   Change them in Admin → Settings → "Order check times" (tell the owner's Claude session too, so its schedule matches).
+
+## New in this update (2026-10-30)
+- Credit everywhere is now "Edited by MrCopper804" (the old "edited by hand" line is replaced automatically).
+- Server refuses studio messages / version notes that name tools or AI, and delivered files that still carry tool tags.
+- Phones are logged out when a password is reset; downloaded files can never run scripts in the browser.
+- New app: MrCopper804-v4.apk. Admin → Settings → "Upload APK" (MrCopper804-v4.apk), set "Published app version" to 4, Save. Then upload
+  bundle-1.0.4.zip as the live update, version 1.0.4, minimum app version 3.

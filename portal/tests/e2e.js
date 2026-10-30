@@ -84,7 +84,7 @@ async function shot(page, name) {
   await shot(page, '03-order-received');
 
   // 3. Bridge picks it up, downloads, delivers version 1.
-  let ev = bridge('events').events.filter((e) => String(e.order.id) === orderId);
+  let ev = bridge('events', '--full').events.filter((e) => String(e.order.id) === orderId);
   check(ev.length === 1 && ev[0].event.type === 'order_submitted', 'bridge sees order_submitted');
   check(ev[0].order.answers['Editing style'] === 'Energetic / fast cuts', 'bridge gets questionnaire answers with labels');
   bridge('take', String(ev[0].event.id));
@@ -105,7 +105,7 @@ async function shot(page, name) {
   await page.click('button:has-text("Send changes")');
   check((await page.textContent('.badge')).includes('Changes requested'), 'status = Changes requested');
 
-  ev = bridge('events').events.filter((e) => String(e.order.id) === orderId);
+  ev = bridge('events', '--full').events.filter((e) => String(e.order.id) === orderId);
   check(ev.some((e) => e.event.type === 'revision_requested'), 'bridge sees revision_requested');
   check(ev[0].order.messages.some((m) => m.kind === 'revision' && m.body.includes('music louder')), 'revision text reaches the bridge');
   bridge('deliver', orderId, path.join(MEDIA, 'test.mp4'), '--note', 'Version 2: music louder, logo added.');
@@ -117,7 +117,7 @@ async function shot(page, name) {
   await page.click('button:has-text("approve")');
   check((await page.textContent('.badge')).includes('Approved'), 'order approved');
   await shot(page, '05-approved');
-  check(bridge('events').events.some((e) => String(e.order.id) === orderId && e.event.type === 'approved'), 'bridge sees approved');
+  check(bridge('events', '--full').events.some((e) => String(e.order.id) === orderId && e.event.type === 'approved'), 'bridge sees approved');
 
   // 6. Security checks.
   const noCsrf = await page.evaluate(async (u) => (await fetch(u, { method: 'POST', body: new URLSearchParams({ body: 'x' }) })).status, BASE + '/orders/' + orderId + '/message');
