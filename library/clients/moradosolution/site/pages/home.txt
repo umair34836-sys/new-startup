@@ -1,0 +1,350 @@
+URL: https://moradosolution.in/
+HTTP: 200
+TITLE: Minecraft Hosting India — AMD EPYC 7C13 | MoradoSolution
+FETCHED: 2026-10-24T12:21:37.202Z (Playwright Chromium, rendered innerText)
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+Minecraft Server Hosting in India
+
+Zero swap, maximum performance. Game hosting, VPS and infrastructure built for reliability, low latency and demanding workloads.
+
+Read the 2026 buying guide
+Explore Hosting
+View Infrastructure
+Minecraft plans.
+
+Budget-friendly Minecraft servers on AMD EPYC hardware — deploy in minutes, billed monthly in INR, no setup fees.
+
+Starter
+
+Small survival servers, testing, friends-only.
+
+₹199
+/ month
+
+RAM
+2 GB DDR4
+CPU
+50% EPYC
+Storage
+6 GB NVMe
+Learn More
+Stone
+
+Plugins & small modpacks.
+
+₹449
+/ month
+
+RAM
+6 GB DDR4
+CPU
+150% EPYC
+Storage
+18 GB NVMe
+Learn More
+Gold
+
+Large SMPs, multiple plugins POPULAR
+
+₹699
+/ month
+
+RAM
+10 GB DDR4
+CPU
+250% EPYC
+Storage
+30 GB NVMe
+Learn More
+Titan
+
+Large communities, heavily modded.
+
+₹1,599
+/ month
+
+RAM
+24 GB DDR4
+CPU
+500% EPYC
+Storage
+72 GB NVMe
+Learn More
+
+View all Minecraft plans
+
+Hytale plans.
+
+Dedicated Hytale servers on AMD EPYC 7C13 hardware with NVMe storage, instant deploy and DDoS protection on every plan.
+
+Starter
+
+Small Hytale adventures, testing, friends-only.
+
+₹199
+/ month
+
+RAM
+2 GB DDR4
+CPU
+50% EPYC
+Storage
+6 GB NVMe
+Learn More
+Standard
+
+Modded servers and growing communities.
+
+₹449
+/ month
+
+RAM
+6 GB DDR4
+CPU
+150% EPYC
+Storage
+18 GB NVMe
+Learn More
+Pro
+
+Large worlds, minigames and high player counts POPULAR
+
+₹799
+/ month
+
+RAM
+12 GB DDR4
+CPU
+300% EPYC
+Storage
+36 GB NVMe
+Learn More
+Ultra
+
+Big networks and demanding custom servers.
+
+₹1,299
+/ month
+
+RAM
+20 GB DDR4
+CPU
+400% EPYC
+Storage
+60 GB NVMe
+Learn More
+
+View all Hytale plans
+
+Root-access VPS.
+
+Dedicated vCPU, ECC DDR4 and NVMe storage on AMD EPYC — full root access with a choice of Linux OS, unmetered bandwidth and DDoS protection included.
+
+VPS 1
+
+Entry VPS for lightweight workloads.
+
+₹676
+/ month
+
+vCPU
+2 (EPYC 7C13)
+RAM
+8 GB
+Storage
+80 GB Gen 4
+IPv4
+1 · DDoS included
+Learn More
+VPS 2
+
+Great for web apps and databases.
+
+₹1,352
+/ month
+
+vCPU
+6 (EPYC 7C13)
+RAM
+16 GB
+Storage
+120 GB Gen 4
+IPv4
+1 · DDoS included
+Learn More
+VPS 3
+
+Solid performance for production apps.
+
+₹1,690
+/ month
+
+vCPU
+8 (EPYC 7C13)
+RAM
+20 GB
+Storage
+180 GB Gen 4
+IPv4
+1 · DDoS included
+Learn More
+VPS 4
+
+Heavier apps, databases, and dev stacks.
+
+₹2,028
+/ month
+
+vCPU
+10 (EPYC 7C13)
+RAM
+24 GB
+Storage
+240 GB Gen 4
+IPv4
+1 · DDoS included
+Learn More
+
+View all VPS plans
+
+SERVICES
+
+Infrastructure for every workload.
+
+From game servers to full root-access VPS, we run one standard everywhere: modern hardware, clean networking and predictable performance.
+
+01
+Game Hosting
+
+High-performance game servers optimized for low latency and consistent performance.
+
+Learn More
+02
+VPS & Dedicated
+
+Dedicated resources with modern AMD EPYC processors and NVMe storage.
+
+Learn More
+03
+Dedicated Infrastructure
+
+Reliable compute infrastructure for demanding workloads and long-running services.
+
+Learn More
+04
+DDoS Protection
+
+Network-level protection designed to keep services online during attacks.
+
+Learn More
+
+GAME HOSTING
+
+Built for players.
+
+AMD EPYC hardware, DDoS protection, deploy in minutes. Starting ₹199/mo.
+
+Minecraft
+From ₹199/mo
+Learn More
+Hytale
+From ₹199/mo
+Learn More
+Rust
+Coming Soon
+See all games
+ARK
+Coming Soon
+See all games
+Valheim
+Coming Soon
+See all games
+Palworld
+Coming Soon
+See all games
+
+View all games →
+
+WHY MORADOSOLUTION
+
+Serious by design.
+
+No overselling, no shared-resource lottery, no ticket queues to nowhere. Just infrastructure that behaves predictably and people who answer.
+
+01
+Modern Hardware
+
+AMD EPYC hardware we run ourselves.
+
+02
+Low Latency
+
+Optimized routing and high-speed networking.
+
+03
+Reliable Infrastructure
+
+Built for workloads that require consistent uptime.
+
+04
+Protection
+
+DDoS protection and proactive network monitoring.
+
+Ready to deploy?
+
+Launch your next workload on infrastructure built for performance.
+
+Explore Hosting
+Get Started
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

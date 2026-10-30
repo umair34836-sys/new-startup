@@ -1,0 +1,184 @@
+                                              ALOO SMP
+                       60-Second YouTube Promo
+                        Editor’s Guide — Hinglish
+ Goal: first 3–5 seconds mein attention pakadna, story ko fast rakhna, aur viewer ko server join
+                                  karne ka clear reason dena.
+
+
+
+             STYLE
+             Indian Minecraft YouTuber • Casual • Funny • Fast-paced
+
+
+             FORMAT
+             9:16 vertical • 1080 × 1920 • 30/60 FPS source ke hisaab se
+
+
+             IMPORTANT
+             Viral hona guarantee nahi hota. Yeh edit retention, clarity aur shareability improve karne ke liye
+             hai.
+
+
+
+
+   Editor ke liye: voiceover ki natural energy ko priority do. Har second mein effect mat daalna — effects
+   joke ya important moment ko support karein, voice ko overpower nahi.
+
+
+
+
+ALOO SMP • Editor's Guide                                                                                         Page 1
+ 1. Overall Editing Rules
+ • Dead air cut: Pauses, repeated words aur slow walking ke boring parts trim karo. Voice natural lage, robotic nahi.
+
+ • Visual har 1–2 sec mein change: Gameplay angle, crop/zoom, subtitle emphasis, meme insert ya action shot. Har
+ cut random nahi — narration se match hona chahiye.
+
+ • Captions: Hinglish captions large, bold aur mobile-readable. Ek line mein ideally 3–6 words; important words ko alag
+ colour/highlight karo. Captions face/UI ya IP ko cover na karein.
+
+ • Sound balance: Voice sabse clear. Music low rakho; SFX short aur punchy. Dialogue ke important words par loud
+ meme sound mat chalao.
+
+ • Gameplay proof: Aloo SMP ke actual clips use karo. Features sirf tab dikhana jab server mein woh feature available
+ ho.
+
+ • No fake promises: 'Best server ever' ya 'thousands of players' tabhi bolna jab true ho. Real community moments
+ zyada believable hain.
+
+
+ 2. Timeline — Second-by-Second Edit Plan
+         TIME     VOICEOVER / MOMENT                 VISUAL + EDIT                                        SOUND / TEXT
+
+         0–3s     “Bhai, Minecraft mein itne         Start directly with character alone / looking        SFX: short record-stop or pop.
+                  servers hain… phir bhi ek achha    around. First frame mein action; 0.2 sec ke          Text: “SERVER MILA HI
+                  server nahi mil raha tha!”         andar caption. Quick punch-in on “Bhai”.             NAHI? ■”
+
+         3–8s     “Bade servers pe players           Show busy spawn for 1 sec, then hard cut to          Soft crowd ambience then
+                  bahut… par kisi ko jaante hi       your lonely character. Split-second contrast; no     quick comedic silence. Text:
+                  nahi!”                             long intro/logo.                                     “Players: 1000 / Friends: 0”
+
+         8–15s    “Sab apna-apna khel rahe hain.     Show character wandering, opening inventory,         Optional tiny vine-boom-style
+                  Main sochta tha—karun toh          or standing idle. Use 2–3 quick cuts, one tiny       impact on “kya?”; use
+                  karun kya?”                        zoom for punchline.                                  licensed/available SFX. Avoid
+                                                                                                          overdoing meme sounds.
+
+         15–23    “Phir socha, khud ka SMP           Beat shifts from problem to solution. Show           Music lifts gently. Text: “TOH
+         s        banate hain—friends bhi            server lobby/building, then friend joining / group   KHUD KA SMP BANAYA…”
+                  khelenge, naye log bhi join kar    shot. Slightly smoother cuts.
+                  sakenge.”
+
+         23–32    “Aur bhai, wahin se shuru hua…     Reveal with best clean server shot. Quick            Beat hit on “ALOO SMP”.
+         s        ALOO SMP!”                         zoom-out or whip-pan into logo/server name;          Text/logo on screen for ~1.5
+                                                     show real gameplay immediately after.                sec, not a long intro.
+
+         32–42    “Survival, economy, custom         Match each feature word to its own clip:             Use whoosh only on 1–2
+         s        enchants, PvP, crates… karne       survival/base → shop/economy → enchant →             transitions. Feature labels
+                  ko kaafi kuch hai!”                PvP → crate opening. 1–1.5 sec each.                 appear briefly. Show only
+                                                                                                          features that are actually live.
+
+         42–51    “Friends ke saath khelo, apni      Show funny group moment, teamwork, base              Music warm/energetic. Text:
+         s        team banao, base banao aur         reveal or friendly PvP. Prefer genuine player        “APNI STORY START
+                  apni story start karo.”            clips over generic stock footage.                    KARO”.
+
+         51–60    “Toh bhai, Aloo SMP join karo!     End on active group shot, then clear IP/port         Music resolves. SFX subtle.
+         s        IP aur port screen pe hai. Milte   card. Keep server address visible for 5–7 sec;       CTA: “JOIN ALOO SMP” + IP
+                  hain game mein!”                   no distracting effects over it.                      + PORT + Java/Bedrock info.
+
+
+
+
+ALOO SMP • Editor's Guide                                                                                                                    Page 2
+ 3. Music, Meme & Sound Effects
+ Specific copyrighted song ya movie dialogue blindly use mat karna. YouTube Audio Library ya editor ke licensed sound
+ pack se similar sound dhoondo; upload se pehle rights check karo.
+
+          MOMENT               SEARCH / SOUND IDEA                              USE KAISE KARNA HAI
+
+          Opening hook         “record scratch short”, “pop impact”, “comedy    Sirf ek quick effect; voice ko cover na kare.
+                               sting”
+
+          Lonely-player joke   “awkward silence”, “sad trombone short”,         Ek hi choose karo, 0.5–1 sec max. Joke ke baad
+                               “cricket ambience”                               lagao.
+
+          Server reveal        “cinematic beat drop”, “energetic gaming intro   ALOO SMP reveal par beat hit sync karo.
+                               instrumental”
+
+          Fast gameplay        “upbeat electronic gaming background”,           Lyrics-free track safer/easier; cuts beat ke saath
+          montage              “phonk instrumental clean”                       sync karo.
+
+          Transitions          “short whoosh”, “UI click”, “soft hit”           Har cut par nahi; sirf reveal ya feature change
+                                                                                par.
+
+          CTA / end            Same background track ka clean ending / short    IP aur port ke waqt music aur effects low rakho.
+                               riser
+
+
+
+ Meme rule: meme insert 0.3–0.8 sec ka rakho. Overused meme clip ko full-screen lagane ke bajaye quick reaction
+ zoom, subtitle ya sound cue use kar sakte ho. Copyrighted meme video/audio claim de sakta hai; licensed/original
+ alternatives prefer karo.
+
+
+ 4. Captions & Visual Style
+ • Font: bold, clean sans-serif (jaise Montserrat ExtraBold / Anton, agar available ho). White text + dark outline/shadow
+ for readability.
+
+ • Keyword highlight: “1000 PLAYERS”, “0 FRIENDS”, “ALOO SMP”, “JOIN NOW”. Har word ko rainbow colours mat do.
+
+ • Safe area: subtitles centre-lower area mein, lekin bottom UI/buttons se upar. IP card ko centre mein high contrast ke
+ saath rakho.
+
+ • Pacing: 0–15 sec mein sabse zyada visual changes; server reveal ke baad gameplay ko itna time do ki viewers
+ features samajh saken.
+
+ • Transitions: mostly hard cuts. Random spin/glitch transitions har second mat use karo.
+
+
+ 5. Voiceover Direction — Natural Indian Creator Vibe
+ • Voiceover ko ad jaisa mat padhna. Jaise friend ko Discord call par story bata rahe ho waise bolo.
+
+ • “Bhai”, “yaar” natural jagah par; har line mein slang force mat karo.
+
+ • Hook energetic ho, lekin shouting nahi. “ALOO SMP” reveal par excitement badhao.
+
+ • Har sentence ke beech tiny natural pauses rakho; breaths ko completely remove mat karo.
+
+ • Agar line boring lage, voice ko fast karne ke bajaye us line ke liye better gameplay shot choose karo.
+
+
+ 6. Export & Upload Checklist
+ ■ Vertical 9:16, 1080 × 1920; export H.264 MP4. Source 60 FPS hai toh 60 FPS export; otherwise 30 FPS is fine.
+
+ ■ Voice clear aur distortion-free. Headphones par check karo; phone speaker par bhi captions aur IP readable hone
+ chahiye.
+
+ ■ First 1 sec mein logo intro nahi. First frame se story/action start honi chahiye.
+
+
+
+
+ALOO SMP • Editor's Guide                                                                                                            Page 3
+ ■ End screen par correct IP, port, supported edition (Java/Bedrock) aur Discord link agar relevant ho.
+
+ ■ Video ko post karne se pehle ek baar bina sound dekho (captions clear?), aur ek baar screen dekhe bina suno (story
+ samajh aati hai?).
+
+ ■ Upload ke baad audience retention, average view duration, rewatches, shares aur comments check karo. Next edit
+ mein data ke basis par hook improve karo.
+
+
+ Final note
+   Koi editor viral hone ki guarantee nahi de sakta. Is guide ka target hai: strong first 3–5 sec, relatable
+   story, quick visual proof, clean audio, aur simple CTA. Clickbait ya fake player counts use na karein
+   — actual server experience hi promote karein.
+
+
+ EDITOR DELIVERABLE: 1 final 60-sec vertical video + 1 alternate first-5-sec hook for testing. Keep the rest of the edit identical so
+ performance can be compared fairly.
+
+
+
+
+ALOO SMP • Editor's Guide                                                                                                               Page 4
+

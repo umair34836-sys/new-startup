@@ -41,10 +41,26 @@ removal per line.
 
 ## Song (ai_song.py)
 
+First, if the ACE-Step weights are missing (`/home/user/tools/ACE-Step-1.5/checkpoints`), run `bash library/tools/setup-all.sh acestep` (~6 GB, on demand since 2026-10-27).
+
+
 Use the loved recipe from CLAUDE.md (seed 7, 80 BPM, the romantic Hindi ballad caption) unless the owner asks for
 another style. It keeps the music and pulls the beat back under the sung words.
 
 ## VoiceStudio voice (vs_tts.py), the local ElevenLabs replacement (Oct 2026)
+
+**Pick a field voice first (owner, 2026-10-27; there is no default voice).** `--voice <name>` with one of:
+- promo-female (promos, offers); promo-male is BANNED (owner 2026-10-28), never use it
+- tutorial-calm (tutorials)
+- explainer-pro (explainers)
+- gaming-hype (gaming / Minecraft)
+- food-warm (food)
+- story-emotional (stories / shayari)
+- kids-cheerful (kids / funny)
+- luxury-deep (luxury / premium)
+- news-anchor (announcements)
+
+The table with what each one fits and its measurements is in library/voices/README.md. Hindi, VoxCPM2, Apache-2.0.
 
 Clean spoken speech, no music at all, in 600+ languages incl. Urdu, Hindi and Pashto; voice design by text
 (`--instruct "male, middle-aged, low pitch"`) and zero-shot cloning (`--ref clip.wav --ref-text "..."`, only voices

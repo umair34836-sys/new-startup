@@ -1,0 +1,182 @@
+URL: https://hostlixo.in/terms.html
+FINAL_URL: https://www.hostlixo.in/terms.html
+HTTP: 200
+TITLE: HostLixo Terms of Service & Refund Policy
+FETCHED: 2026-10-27T02:22:47.379Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+TRANSPARENCY FIRST
+Terms of Service & Refund Policy
+
+Effective Date: October 2026 • Clear, fair, and pro-customer hosting terms with our signature 24-hour full refund guarantee.
+
+24-HOUR MONEY-BACK GUARANTEE
+100% No-Risk Trial on All HostLixo Minecraft Plans
+
+We are committed to delivering the lowest latency in India and highest single-core clock speeds in the industry. If you are dissatisfied with your server performance, latency, or support for any reason within 24 hours of your initial purchase, you are entitled to a complete, no-questions-asked 100% refund.
+
+01
+Order & Test
+
+Deploy your Minecraft server in our Mumbai datacenter and test TPS, ping, and mods freely.
+
+02
+Request in 24h
+
+If not completely satisfied, open a support ticket or ping us in our Discord within 24 hours.
+
+03
+Instant Refund
+
+Receive your full payment back via original payment method (UPI / Card / NetBanking) without hassle.
+
+TABLE OF CONTENTS
+1. Agreement to Terms
+2. Account & Eligibility
+3. 99.99% Network SLA
+4. 24-Hour Refund Policy
+5. Acceptable Use Policy (AUP)
+6. Billing, Auto-Renewal & Upgrades
+7. Backup & Data Responsibility
+8. Discord & Community Code
+9. Governing Law & Jurisdiction
+Need help with a refund?
+
+Contact our support team or reach us instantly on Discord:
+
+Open Discord Support
+SECTION 01
+Agreement to Terms
+
+By accessing, ordering, or using any services provided by HostLixo ("HostLixo", "we", "us", or "our"), including Minecraft hosting services, NVMe storage, and network transit nodes, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, you must not use our services.
+
+HostLixo operates enterprise infrastructure physically stationed at Tier-IV facilities in Mumbai, Maharashtra, India, with expansion routing planned for Singapore and Dubai.
+
+SECTION 02
+Account Registration & Security
+
+Users must provide accurate, current, and verifiable contact details upon registration. You are solely responsible for maintaining the confidentiality of your credentials, SFTP passwords, and control panel access.
+
+You may not share or resell root access credentials without written authorization.
+You must immediately notify HostLixo security of any unauthorized breach or compromised server token.
+SECTION 03
+Service Level Agreement (SLA) & Uptime Guarantee
+
+HostLixo guarantees an enterprise network availability of 99.99% per billing cycle for all active Minecraft hosting instances deployed in our Mumbai datacenter.
+
+In the rare event of unscheduled downtime exceeding the SLA allowance (excluding scheduled hardware maintenance announced 48 hours in advance), customers are eligible for pro-rated account credits upon ticket review.
+
+SECTION 04
+CORE GUARANTEE
+24-Hour Full Refund Policy
+24-Hour Satisfaction Window
+
+We stand 100% behind the quality of our AMD Ryzen™ 9 9950X and Intel hardware. Therefore, HostLixo provides an unconditional 24-hour money-back refund policy for all first-time purchases of Minecraft server hosting plans.
+
+4.1 Refund Eligibility
+
+To claim your 24-hour full refund:
+
+Timeframe: The refund request must be formally submitted within exactly twenty-four (24) hours of the initial order activation timestamp.
+Eligible Services: All newly provisioned HostLixo Minecraft hosting plans (Ryzen Starter/Champion/Titan, Intel Elite/Pro, AMD Performance).
+Submission Channels: Customers can submit a refund request through our Support Portal or directly via our verified Discord server (Server ID: 1526551750448910336) in the #billing-tickets channel.
+Processing Time: Approved refunds are issued within 12–24 business hours back to the original funding source (UPI, Debit/Credit Card, NetBanking, or Digital Wallet).
+4.2 Non-Refundable Scenarios
+
+Refunds will not be honored in cases of:
+
+Requests submitted after the 24-hour window has lapsed.
+Servers terminated due to explicit violations of Section 5 (Acceptable Use Policy), including outgoing DoS/DDoS attacks, botnet operations, cryptocurrency mining, or malicious payload distribution.
+Custom third-party software licenses or non-recoverable dedicated IP allocation fees.
+Subsequent renewal invoices (cancellations must be filed before the billing anniversary).
+SECTION 05
+Acceptable Use Policy (AUP)
+
+HostLixo strictly maintains zero tolerance for activities that compromise the integrity, security, or stability of our infrastructure or peering partners:
+
+Strictly Prohibited
+Launching outgoing DDoS attacks, network stress tests, or port scanning.
+Cryptocurrency mining (e.g., Monero, Bitcoin) on game server CPU cycles.
+Hosting phishing portals, warez, malware, or illegal torrent seedboxes.
+Circumventing server resource limits or kernel hypervisor protections.
+Allowed & Supported
+Custom Minecraft JARs (Paper, Purpur, Fabric, Forge, NeoForge, Spigot, Mohist).
+Large public server networks, BungeeCord, Velocity, and Waterfall proxies.
+Heavy modpacks (All The Mods 9, Better MC, Pixelmon, RLCraft).
+Custom resource packs, plugins, MySQL databases, and Discord bots.
+SECTION 06
+Billing, Upgrades & Cancellations
+
+All service payments are billed in advance on a recurring monthly or annual basis. You may upgrade your RAM, CPU allocations, or NVMe storage capacity at any time through the client portal with automatic pro-rated billing.
+
+If you wish to cancel an ongoing subscription outside the 24-hour refund window, you may set your service to cancel at the end of the current billing cycle without any penalty fees.
+
+SECTION 07
+Data Backups & Customer Responsibility
+
+While HostLixo performs automated snapshot backups across our Mumbai cluster, customers are strongly encouraged to maintain their own external world backups via SFTP or our 1-click cloud backup utility prior to major modpack or game version updates.
+
+SECTION 08
+Discord Community Guidelines & Official Server
+
+HostLixo hosts an active community for server owners and administrators. Members of our Discord server (Guild ID: 1526551750448910336, link: discord.gg/bcEghUwdyD) must abide by common community decorum, respectful communication with staff, and no unsolicited direct messaging of members.
+
+SECTION 09
+Governing Law & Jurisdiction
+
+These Terms of Service and any contractual disputes arising out of the provision of hosting services shall be governed by and construed in accordance with the laws of Mumbai, Maharashtra, India. Both parties submit to the exclusive jurisdiction of the courts located in Mumbai, India.
+
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+

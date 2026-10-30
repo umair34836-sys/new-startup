@@ -1,0 +1,178 @@
+URL: https://moradosolution.in/about
+HTTP: 200
+TITLE: About Us — Shivnath Dey & Team | MoradoSolution
+FETCHED: 2026-10-24T12:21:40.599Z (Playwright Chromium, rendered innerText)
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+00
+COMPANY
+
+About MoradoSolution
+
+Independent game hosting, VPS and infrastructure — built and operated by the same small team behind it. Owned and operated in Delhi, India.
+
+Proprietor: Vandana Shankarmal Kumardey  ·  Founded by: Shivnath Dey (Director)
+
+The Company
+Our Team
+What We Run
+Why Us
+Get in Touch
+
+01
+THE COMPANY
+
+MoradoSolution exists to host. We run game servers, VPS and dedicated infrastructure on hardware we operate ourselves — no resellers in the middle, no third-party cloud bolted on top.
+
+As an independent provider we keep the team small, the answers direct, and the infrastructure honest. When something breaks, the people who reply are the people who run the network.
+
+AMD EPYC
+Hardware platform
+Delhi
+Primary data center
+24/7
+Support response
+
+02
+OUR TEAM
+
+The people behind MoradoSolution
+
+A small, hands-on team that builds, operates and supports everything we offer.
+
+Shivnath Dey
+
+Director & Founder
+
+AM
+Amolik Mehta
+
+CEO, Director & Co-Founder
+
+Heman Rathore
+
+Regional Manager & Technical Head
+
+JN
+Jayant Naulakha
+
+Head Manager
+
+03
+WHAT WE RUN
+
+Game hosting and VPS run on the same AMD EPYC platform — dedicated vCPU, ECC memory and NVMe storage, deployed in minutes with automated setup.
+
+AMD EPYC 7C13
+
+Dedicated vCPU with sustained boost clocks across all plans.
+
+ECC Memory + NVMe Gen4
+
+Error-correcting memory and high-speed disk for reliability.
+
+10 Gbps Uplinks
+
+High-capacity network per node with tier-1 transit.
+
+DDoS Protection
+
+Always-on mitigation and proactive network monitoring.
+
+Delhi & Mumbai
+
+Data centers in India, close to your audience.
+
+Full Root Access
+
+Your server, your rules. No restrictions on the OS layer.
+
+04
+WHY US
+
+No overselling
+
+The resources you buy are the resources you get — no resource lottery, no hidden contention.
+
+Predictable performance
+
+Dedicated vCPU on EPYC-class hardware, not shared burstable cores.
+
+People who answer
+
+No ticket queues to nowhere. The team that runs the platform answers the tickets.
+
+Free migrations
+
+Moving in is handled for you, on a schedule that works.
+
+05
+GET IN TOUCH
+
+Questions, sales, or help — reach us on Discord, email support@moradosolution.com, or through the contact page.
+
+Discord
+Email
+Contact Form
+abuse@moradosolution.com
+Abuse reports
+founder@moradosolution.com
+Founder
+regionalmanager@moradosolution.com
+Regional Manager
+support@moradosolution.com
+General support
+
+Ready to move in? See Game Hosting or VPS plans.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

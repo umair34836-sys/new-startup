@@ -1,0 +1,254 @@
+URL: https://moradosolution.in/game-hosting
+HTTP: 200
+TITLE: Game Server Hosting India — Minecraft & Hytale | MoradoSolution
+FETCHED: 2026-10-24T12:22:35.758Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+LIMITED OFFER
+WELCOME30
+30% OFF on selected plans
+COPY CODE
+Home
+/
+Game Hosting
+
+GAME SERVER HOSTING
+
+Game servers, engineered for players.
+
+AMD EPYC hardware in Delhi, DDoS protection included, and a support team that actually responds. Pick a game and deploy in minutes.
+
+View available games
+Our infrastructure
+CPU
+AMD EPYC
+MEMORY
+ECC DDR4
+DISK
+NVMe Gen4
+NETWORK
+10 Gbps
+PROTECTION
+DDoS Protected
+
+CHOOSE YOUR GAME
+
+Every game gets its own tuning.
+
+Each title runs a purpose-built image — preconfigured, versioned, and tested by us before it reaches you.
+
+Available Now
+Coming Soon
+AVAILABLE NOW
+Minecraft
+
+Java and Bedrock editions, full modpack support, one-click install for Paper, Spigot, Forge, Fabric and more.
+
+RAM
+2–64 GB
+CPU
+50%–1200%
+STORAGE
+6–180 GB
+PRICE
+₹199/mo
+View plans →
+AVAILABLE NOW
+Hytale
+
+Blocky fantasy adventure servers with modding support, instant deploy and full DDoS protection.
+
+RAM
+2–20 GB
+CPU
+50%–400%
+STORAGE
+6–60 GB
+PRICE
+₹199/mo
+View plans →
+
+FEATURES
+
+What every plan includes.
+Java + Bedrock
+
+Support for both editions with cross-play capability.
+
+Modpack Support
+
+Forge, Fabric, CurseForge, Technic and more.
+
+One-Click Install
+
+Deploy Paper, Spigot, Forge or Fabric in seconds.
+
+DDoS Protection
+
+In-house filtering at network edge, not third-party.
+
+NVMe Storage
+
+Gen4 NVMe SSDs for maximum read/write performance.
+
+AMD EPYC Hardware
+
+Server-class processors, not consumer chips.
+
+10 Gbps Network
+
+High-capacity uplink per server with low latency.
+
+Pterodactyl Panel
+
+Web-based management with full file and console access.
+
+Automated Backups
+
+Daily backups with one-click restore on all plans.
+
+INFRASTRUCTURE
+
+What powers your server.
+01
+AMD EPYC 7C13
+
+64 cores, 128 threads. Zen 3 architecture for consistent game server performance.
+
+02
+ECC DDR4 Memory
+
+Error-correcting memory for data integrity and stability under load.
+
+03
+NVMe Gen4 SSD
+
+High-speed storage for fast world loads and chunk generation.
+
+04
+10 Gbps Uplink
+
+Dedicated network capacity per server with low-latency routing.
+
+05
+In-House DDoS
+
+Network-edge filtering with our own router and switch infrastructure.
+
+06
+Delhi Datacenter
+
+Low latency to Mumbai, Bangalore, Hyderabad and all major Indian cities.
+
+WHY MORADOSOLUTION
+
+Built for reliability.
+Own Hardware
+
+We own and operate all servers, routers and switches. No resellers, no rented infrastructure.
+
+In-House DDoS
+
+Malicious traffic filtered at the network edge before it reaches your server. Not third-party.
+
+Indian Support
+
+Local team available 24/7 via Discord and tickets. Responses from people who run the network.
+
+Indian Payments
+
+UPI, GPay, PhonePe, Paytm, net banking. All prices in INR with no forex charges.
+
+HOW IT WORKS
+
+Deploy in minutes.
+01
+Choose your game
+
+Pick from available titles or join a waitlist for upcoming games.
+
+→
+02
+Choose your plan
+
+Select RAM, CPU and storage. Scale up or down anytime.
+
+→
+03
+Deploy & play
+
+Server provisioned in under 60 seconds. Connect and start playing.
+
+CUSTOM DEPLOYMENTS
+
+Need something custom?
+
+Running a tournament, event, or large community? We can build custom configurations for your needs.
+
+Contact sales
+Open a ticket
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

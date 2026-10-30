@@ -1,0 +1,256 @@
+URL: https://moradosolution.in/guides
+HTTP: 200
+TITLE: Guides & Tutorials — Game Server Hosting | MoradoSolution
+FETCHED: 2026-10-24T12:22:38.552Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+Documentation
+and guides.
+
+Practical guides for getting started, configuring your server, and troubleshooting common issues.
+
+Getting started
+Contact support
+
+MoradoSolution
+
+01
+GETTING STARTED
+
+From purchase to playable.
+
+Walk through the first steps after your server provisions.
+
+First login
+
+Access the panel, find your server credentials, and connect via console or SSH.
+
+Read guide
+Minecraft: Java setup
+
+Install Paper, configure server.properties, and connect with your client.
+
+Read guide
+Minecraft: Bedrock setup
+
+Configure the dedicated Bedrock server and enable cross-play.
+
+Read guide
+VPS: Initial SSH
+
+Connect as root, create a user, harden SSH, and set up a firewall.
+
+Read guide
+Panel tour
+
+Console, file manager, schedules, backups, sub-users, and settings overview.
+
+Read guide
+Adding SSH keys
+
+Secure your VPS with key-based authentication and disable password login.
+
+Read guide
+
+02
+CONFIGURATION
+
+Tune your server for your workload.
+
+Performance tuning, software selection, and advanced setup.
+
+Switching server software
+
+Change between Vanilla, Paper, Purpur, Fabric, Forge, Spigot, or custom JAR.
+
+Read guide
+Installing modpacks
+
+One-click modpack library (FTB, ATM, RLCraft, etc.) and manual mod installation.
+
+Read guide
+Java tuning & flags
+
+Optimize JVM flags for your RAM allocation — G1GC, ZGC, heap sizing, and more.
+
+Read guide
+Scheduled tasks
+
+Automate backups, restarts, commands, scripts, and world saves on cron schedules.
+
+Read guide
+Sub-users & permissions
+
+Grant teammates console access, file manager, schedules, or full admin — scoped per user.
+
+Read guide
+VPS: Docker & containers
+
+Run Docker, Podman, or Kubernetes on your VPS with full kernel access.
+
+Read guide
+
+03
+MIGRATION
+
+Moving to MoradoSolution.
+
+Free migration assistance for game servers and VPS. We handle the transfer.
+
+Game server migration
+
+World files, configs, plugins, mods, and databases transferred free of charge.
+
+Request migration
+VPS migration
+
+Disk images, databases, and configurations moved with minimal downtime.
+
+Request migration
+Self-service migration
+
+Download backups, use rsync/scp, or clone via the panel — your choice.
+
+Read guide
+
+04
+TROUBLESHOOTING
+
+Common issues and fixes.
+
+Quick answers to the questions we hear most often.
+
+Server won't start
+
+Check console for errors, verify Java version, inspect server.properties, and review recent changes.
+
+Read guide
+Connection timeout / can't join
+
+Verify IP and port, check firewall rules, confirm server is online in panel, test with local client.
+
+Read guide
+Lag / TPS drops
+
+Check CPU/RAM usage, review plugins/mods, optimize Java flags, consider plan upgrade.
+
+Read guide
+Out of memory errors
+
+Increase heap (-Xmx), reduce view distance, limit entities, or upgrade RAM.
+
+Read guide
+VPS: SSH connection refused
+
+Check if server is running, verify SSH service, check firewall, use panel console as fallback.
+
+Read guide
+Panel not loading
+
+Clear browser cache, try incognito, check for ad blockers, or use direct panel URL.
+
+Read guide
+
+05
+API REFERENCE
+
+Automate everything.
+
+Full REST API for provisioning, managing, and monitoring your infrastructure.
+
+Authentication
+
+API tokens with scoped permissions. Generate, rotate, and revoke from the panel.
+
+View docs
+Servers
+
+List, create, start, stop, restart, reinstall, resize, and delete servers programmatically.
+
+View docs
+Backups
+
+Trigger snapshots, list restore points, download backups, and configure schedules.
+
+View docs
+Webhooks
+
+Real-time events for server state changes, backup completion, billing, and alerts.
+
+View docs
+Terraform provider
+
+Community-maintained Terraform provider for infrastructure-as-code workflows.
+
+View on GitHub
+Can't find what you need?
+
+Our support team writes the docs and runs the infrastructure. They know the answers.
+
+Open a ticket
+Join Discord
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

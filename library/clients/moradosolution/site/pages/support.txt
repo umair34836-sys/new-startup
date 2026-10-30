@@ -1,0 +1,170 @@
+URL: https://moradosolution.in/support
+HTTP: 200
+TITLE: Support — Help Center & Ticket System | MoradoSolution
+FETCHED: 2026-10-24T12:23:09.173Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+You will reach
+a person.
+
+Every ticket is read by someone who can actually fix things — the same team that maintains the network and builds the tooling. No phone trees, no chatbot loops, no closing tickets to look busy.
+
+Open a ticket
+Browse FAQ
+
+MoradoSolution
+
+01
+CONTACT
+
+Choose how you want to reach us.
+Ticket system
+
+The fastest route for account and server issues. Tracked, prioritized, and answered by the team that runs the infrastructure.
+
+Open a ticket
+Discord
+
+Quick questions, community discussion, live status updates, and direct access to the team.
+
+Join Discord
+Email
+
+For billing, sales, abuse reports, and everything else — support@moradosolution.com
+
+Most issues are resolved the same day. Complicated ones get a plan and updates until they are not complicated anymore.
+
+02
+SUBMIT A TICKET
+
+Tell us what you need.
+
+Include your server ID, steps to reproduce, and any relevant logs. The more context, the faster we can help.
+
+ISSUE TYPE
+Technical issue / server problem
+Billing / payment question
+Migration assistance
+Abuse / policy report
+Pre-sales question
+Other
+SUBJECT
+SERVER ID (IF APPLICABLE)
+DETAILS
+Submit ticket
+
+03
+FAQ
+
+Answers, without the runaround.
+How fast is my server set up?
+
+Payment to playable usually takes minutes. Provisioning is automatic, and your panel login arrives by email as soon as installation finishes.
+
+Is DDoS protection really included?
+
+Yes — every plan, every location, no extra charge and nothing to configure. Filtering happens at the network level, ahead of your server.
+
+Where are your servers located?
+
+Across North America, Europe, and Asia-Pacific. You pick the region at checkout, and we can move your server later if your community shifts.
+
+Are backups included?
+
+Backups are not automatic. You can create and manage your own server backups using Google Drive — you choose when to create a backup and keep control of your backup files.
+
+Can you migrate my server from another host?
+
+Yes. Send us your current host details and we move your files, configs, and databases free of charge — usually within a few hours, at a time that suits your players.
+
+How does billing work?
+
+Month-to-month through the panel, with no contracts or setup fees. Cancel whenever you like; service continues until the end of the paid period.
+
+Can I upgrade my plan later?
+
+Upgrades apply in place without a reinstall — resources adjust after a short restart. Downgrades take effect at your next renewal.
+
+How do I access the control panel?
+
+Every plan ships with a browser-based panel including console, file manager, and task scheduler. Logins are emailed right after purchase, and you can add sub-users whenever.
+
+What happens if I cancel?
+
+Your server stays online until the end of the billing cycle, then gets archived for seven days in case you change your mind. After that, data is permanently deleted.
+
+Which payment methods do you accept?
+
+Major credit and debit cards, PayPal, and select local payment methods shown at checkout. Annual billing is available on request.
+
+Still have questions?
+
+Open a ticket, join Discord, or email us. We are here to help.
+
+Open a ticket
+Join Discord
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

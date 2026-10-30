@@ -1,0 +1,113 @@
+URL: https://moradosolution.in/backup-policy
+HTTP: 200
+TITLE: Data & Backup Policy — MoradoSolution
+FETCHED: 2026-10-24T12:21:54.743Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+DATA & BACKUP POLICY
+
+Last Updated: 28 August 2026
+
+Backup responsibilities, data retention, and disaster recovery information.
+
+1. Customer Responsibility
+
+Customers are solely responsible for maintaining backups of their data. MoradoSolution does not guarantee backups unless explicitly included in the customer's specific service plan.
+
+2. MoradoSolution Backup Services
+
+Where backup services are provided (as part of specific plans or add-ons):
+
+Backups are performed on a scheduled basis (typically daily)
+Retention period varies by plan (typically 7-30 days)
+Backups are stored in geographically separate locations where possible
+Backup services are offered as a convenience and not a guarantee of data recovery
+MoradoSolution is not responsible for backup failures, corruption, or incomplete backups
+3. Data Loss Disclaimer
+
+MoradoSolution is not responsible for data loss resulting from:
+
+Customer actions, software failures, or accidental deletion
+Hardware failures, maintenance, or service termination
+Circumstances outside our reasonable control
+Malware, ransomware, or security breaches on customer-managed systems
+4. Best Practices
+
+Customers should:
+
+Maintain independent backups of important files and configurations
+Test backup restoration procedures regularly
+Store backups in multiple locations (including off-site)
+Ensure data can be restored when required
+Use version control for code and configuration files
+5. Data Retention After Termination
+Customer data may be permanently deleted 30 days after service cancellation or termination
+Customers are responsible for downloading data prior to cancellation
+No data recovery is possible after permanent deletion
+Legal holds or regulatory requirements may extend retention periods
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
+↑ Top

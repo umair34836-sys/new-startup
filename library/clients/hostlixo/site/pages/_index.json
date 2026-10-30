@@ -1,0 +1,90 @@
+{
+ "pages": [
+  {
+   "url": "https://hostlixo.in/",
+   "finalUrl": "https://www.hostlixo.in/",
+   "slug": "home",
+   "status": 200,
+   "title": "HostLixo Minecraft Server Hosting in India from ₹90/mo",
+   "chars": 4537,
+   "extraLines": 1,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/minecraft.html",
+   "finalUrl": "https://www.hostlixo.in/minecraft.html",
+   "slug": "minecraft.html",
+   "status": 200,
+   "title": "Minecraft Server Hosting India from ₹90/mo | HostLixo",
+   "chars": 6450,
+   "extraLines": 28,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/network.html",
+   "finalUrl": "https://www.hostlixo.in/network.html",
+   "slug": "network.html",
+   "status": 200,
+   "title": "HostLixo Network & DDoS Protection | India",
+   "chars": 2793,
+   "extraLines": 1,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/about.html",
+   "finalUrl": "https://www.hostlixo.in/about.html",
+   "slug": "about.html",
+   "status": 200,
+   "title": "About HostLixo | Minecraft Hosting Team in India",
+   "chars": 3524,
+   "extraLines": 1,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/support.html",
+   "finalUrl": "https://www.hostlixo.in/support.html",
+   "slug": "support.html",
+   "status": 200,
+   "title": "HostLixo Support | Minecraft Hosting FAQs",
+   "chars": 2958,
+   "extraLines": 1,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/terms.html",
+   "finalUrl": "https://www.hostlixo.in/terms.html",
+   "slug": "terms.html",
+   "status": 200,
+   "title": "HostLixo Terms of Service & Refund Policy",
+   "chars": 7308,
+   "extraLines": 1,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/vps.html",
+   "finalUrl": "https://www.hostlixo.in/vps.html",
+   "slug": "vps.html",
+   "status": 200,
+   "title": "HostLixo VPS & Dedicated Servers | Coming Soon",
+   "chars": 2943,
+   "extraLines": 1,
+   "err": null
+  },
+  {
+   "url": "https://hostlixo.in/index.html",
+   "finalUrl": "https://www.hostlixo.in/index.html",
+   "slug": "index.html",
+   "status": 200,
+   "title": "HostLixo Minecraft Server Hosting in India from ₹90/mo",
+   "chars": 4537,
+   "extraLines": 1,
+   "err": null
+  }
+ ],
+ "external": [
+  "https://control.hostlixo.in/",
+  "https://discord.gg/9ysfdEUzgN",
+  "https://discord.gg/bcEghUwdyD",
+  "mailto:support@hostlixo.in"
+ ]
+}

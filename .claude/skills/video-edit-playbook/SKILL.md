@@ -44,7 +44,8 @@ Every rule below points to where it was learned or researched. The knowledge bas
 
 - Urdu/Hindi text on video: build ASS and burn with ffmpeg `ass=` (ffmpeg 6.1.1 `subtitles=`/`drawtext` break Nastaliq and Hindi
   conjuncts; tested here 2026-10-24, skills2 #2836, #5121); fonts in `library/fonts` (Noto Nastaliq Urdu, Noto Sans Devanagari).
-- Music: CC0 / public domain made by others (`library/music/cc0`), no-credit only; not our own ACE-Step tracks unless
+- Music: never by habit or folder name: follow the skill `music-for-video` (find_music.py -> listen.py -> music_fit.py -> mix_vo_music.py -> QA -> log reasons) [repo: library/research/music-for-video.md, owner 2026-10-27].
+- Music licence: CC0 / public domain made by others (`library/music/cc0`), no-credit only; not our own ACE-Step tracks unless
   asked [repo: CLAUDE.md "Environment facts" OWNER RULE Oct 24 2026].
 - No ElevenLabs unless the owner names it; voice-over = `ai_voice.py` or `vs_tts.py` [repo: CLAUDE.md "Rules from the owner", "Voice and songs with words"].
 - A host/presenter = the owner's skin `library/characters/host-skin.png` via `blocky_character.py` [repo: CLAUDE.md "DEFAULT HOST"].

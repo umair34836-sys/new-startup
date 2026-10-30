@@ -1,0 +1,1 @@
+{"url": "https://console.indolj.io/mobileapp/WebApiV2/GetAreasCityWise?merchant_id=221465&city_id=64&status=1&api_version=0.0.30&area_version=0&json=1", "when": "2026-10-25T11:59:16.621Z", "body": "{\"code\":1,\"msg\":\"Areas fetched at all cost\",\"details\":{\"area_version\":\"0.0.13\",\"areas\":{\"64\":false},\"zone_branches\":[]},\"additionalDetails\":null}"}

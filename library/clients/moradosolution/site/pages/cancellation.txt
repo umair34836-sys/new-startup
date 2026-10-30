@@ -1,0 +1,108 @@
+URL: https://moradosolution.in/cancellation
+HTTP: 200
+TITLE: Cancellation Policy — MoradoSolution
+FETCHED: 2026-10-24T12:22:13.755Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+LEGAL
+
+Cancellation Policy
+
+How and when you can cancel, and what happens to your service and data.
+
+Last updated: 28 August 2026
+
+How to Cancel
+Refunds
+Your Data
+Termination by MoradoSolution
+00The Provider
+
+MoradoSolution
+Operated as a branch/service of MoradoSolution
+Proprietor: Vandana Shankarmal Kumardey
+
+01How to Cancel
+
+Customers may cancel any service at any time through the client area or by contacting support. Cancellation is effective at the end of the current billing period, and the service remains available until then unless terminated earlier for a policy violation.
+
+02Refunds
+
+Cancelling a service does not automatically qualify for a refund. Refund eligibility is covered by our Refund Policy. In general, fees already paid for the current billing period are non-refundable unless an exception applies under that policy.
+
+03Your Data
+
+After a service ends, data may be permanently deleted. Customers are responsible for downloading any files, databases, and configurations before cancellation. Retention details are described in our Data & Backup Policy.
+
+04Termination by MoradoSolution
+
+MoradoSolution reserves the right to suspend or terminate services for violations of our Terms of Service or Acceptable Use Policy. Accounts terminated for cause are not eligible for refunds. See our Suspension Policy for details.
+
+Questions about this document? Reach us on Discord — open a ticket and the team will help you out.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

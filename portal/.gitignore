@@ -1,0 +1,15 @@
+# Secrets and client data never go to git.
+config.php
+.env
+storage/files/*
+storage/chunks/*
+storage/install-key.txt
+!storage/files/.keep
+!storage/chunks/.keep
+apk/build/
+apk/*.keystore
+apk/*.jks
+apk/*.apk
+apk/*.aab
+storage/sessions/*
+storage/app/*

@@ -1,0 +1,111 @@
+{
+ "date": "2026-10-25T11:59:19.921Z",
+ "runs": [
+  {
+   "type": "Delivery",
+   "cityOptions": [
+    "Attock",
+    "Haripur",
+    "Wah Cantt",
+    "Hazro",
+    "Swabi",
+    "Nowshera"
+   ]
+  },
+  {
+   "type": "Delivery",
+   "city": "Attock",
+   "secondDropdowns": []
+  },
+  {
+   "type": "Delivery",
+   "city": "Haripur",
+   "secondDropdowns": []
+  },
+  {
+   "type": "Delivery",
+   "city": "Wah Cantt",
+   "secondDropdowns": []
+  },
+  {
+   "type": "Delivery",
+   "city": "Hazro",
+   "secondDropdowns": []
+  },
+  {
+   "type": "Delivery",
+   "city": "Swabi",
+   "secondDropdowns": []
+  },
+  {
+   "type": "Delivery",
+   "city": "Nowshera",
+   "secondDropdowns": []
+  },
+  {
+   "type": "Pick-Up",
+   "cityOptions": [
+    "Attock",
+    "Haripur",
+    "Wah Cantt",
+    "Hazro",
+    "Swabi",
+    "Nowshera"
+   ]
+  },
+  {
+   "type": "Pick-Up",
+   "city": "Attock",
+   "secondDropdowns": [
+    [
+     "Pizza Base Kamra Road Attock"
+    ]
+   ]
+  },
+  {
+   "type": "Pick-Up",
+   "city": "Haripur",
+   "secondDropdowns": [
+    [
+     "Pizza Base - Haripur"
+    ]
+   ]
+  },
+  {
+   "type": "Pick-Up",
+   "city": "Wah Cantt",
+   "secondDropdowns": [
+    [
+     "Pizza Base - Wah Cantt"
+    ]
+   ]
+  },
+  {
+   "type": "Pick-Up",
+   "city": "Hazro",
+   "secondDropdowns": [
+    [
+     "Pizza Base - Hazro"
+    ]
+   ]
+  },
+  {
+   "type": "Pick-Up",
+   "city": "Swabi",
+   "secondDropdowns": [
+    [
+     "Pizza Base - Swabi"
+    ]
+   ]
+  },
+  {
+   "type": "Pick-Up",
+   "city": "Nowshera",
+   "secondDropdowns": [
+    [
+     "Pizza Base - Nowshera"
+    ]
+   ]
+  }
+ ]
+}

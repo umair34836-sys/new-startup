@@ -1,0 +1,504 @@
+URL: https://moradosolution.in/privacy
+HTTP: 200
+TITLE: Terms of Service — MoradoSolution
+FETCHED: 2026-10-24T12:23:28.900Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+MORADOSOLUTION
+TERMS OF SERVICE & LEGAL POLICIES
+
+Official Legal Document — MoradoSolution Network Services
+
+Last Updated: 28 August 2026
+
+These Terms govern the purchase, access, and use of services provided by MoradoSolution. By using our services, you agree to these Terms and all referenced policies.
+
+AGREEMENT NOTICE
+By purchasing, accessing, or using any service provided by MoradoSolution, you agree to comply with these Terms of Service and all applicable policies. Failure to follow these terms may result in suspension or termination of your services without refund.
+On This Page
+1. Ownership & Operation
+2. Payments & Billing
+3. Refund Policy
+4. Cancellation & Termination Policy
+5. Acceptable Use Policy
+6. Abuse Policy
+7. Server Suspension & Termination
+8. Account Responsibility
+9. Resource Usage / Fair Use
+10. Backups & Data Loss
+11. Server Availability & Uptime
+12. Maintenance & Downtime
+13. SSL / Domains / Add-on Services
+14. Third-Party Services
+15. Intellectual Property
+16. Security
+17. Privacy
+18. Limitation of Liability
+19. Service Changes
+20. Policy Changes
+21. Governing Terms
+22. Contact / Legal Notice
+23. Overview
+24. What We Collect
+25. How We Use It
+26. Cookies & Local Storage
+27. Who We Share With
+28. Retention
+29. Security
+30. Your Rights
+31. Children
+32. Changes to This Policy
+33. Contact
+1. Ownership & Operation
+OWNER & OPERATOR
+MoradoSolution
+
+MoradoSolution is a hosting service operated by the MoradoSolution team. MoradoSolution is the owner and operator of MoradoSolution and is responsible for the overall management and operation of the service.
+
+Throughout these Terms, "MoradoSolution," "we," "us," and "our" refer to MoradoSolution and its operation under MoradoSolution.
+
+2. Payments & Billing
+All services are billed in advance unless otherwise stated.
+Invoices must be paid before the specified due date.
+Overdue invoices may result in temporary suspension or termination of services.
+Customers are solely responsible for ensuring that payments are made on time.
+Prices may change at any time; existing services will generally only be affected upon their next renewal unless otherwise communicated.
+Customers are responsible for reviewing their invoices and ensuring the selected service and billing period are correct.
+Payment processing may be handled through third-party payment gateways.
+3. Refund Policy
+
+MoradoSolution provides hosting services using its own infrastructure as well as infrastructure, networks, data centers, and upstream service providers operated by third parties. Because of this, certain service interruptions or issues may be outside the direct control of MoradoSolution.
+
+Important: All refund requests must be submitted within 24 hours from the exact time of the original purchase or payment.
+3.1 Refund Request Period
+
+All refund requests must be submitted within 24 hours from the exact time of the original purchase or payment.
+
+Once the 24-hour period has expired, the service will generally be considered non-refundable. Refund requests submitted after 24 hours may be rejected regardless of the reason, except where MoradoSolution, at its sole discretion, determines that an exceptional refund is appropriate.
+
+Customers should therefore test and verify their service as soon as possible after purchase and report any issues within the 24-hour refund period.
+
+3.2 Refunds Are Not Automatic
+
+Submitting a refund request within 24 hours does not guarantee that a refund will be approved.
+
+A refund will only be considered where the customer can provide sufficient evidence that the problem was directly caused by a bug, technical fault, billing error, or other mistake attributable to MoradoSolution.
+
+MoradoSolution may investigate the issue before making a final decision. This may include reviewing server logs, network information, service status, account activity, configurations, and other relevant technical information.
+
+3.3 Upstream Providers and Third-Party Infrastructure
+
+Some MoradoSolution services may depend on upstream hosting providers, data centers, network operators, IP transit providers, hardware providers, cloud infrastructure providers, or other third-party service providers.
+
+If an outage, suspension, network problem, hardware failure, routing issue, IP-related issue, data-center issue, or other service disruption is caused by an upstream or third-party provider, MoradoSolution will make reasonable efforts to communicate with the relevant provider and resolve or mitigate the issue.
+
+However, MoradoSolution cannot guarantee the actions, decisions, uptime, response time, refunds, compensation, or conduct of any upstream or third-party provider.
+
+If an upstream provider fails to provide a refund, compensation, replacement service, credit, or other remedy to MoradoSolution, MoradoSolution is not obligated to provide an equivalent refund or compensation to the customer for the provider's failure.
+
+MoradoSolution will not be responsible for losses caused solely by the actions, failures, negligence, fraud, scams, insolvency, suspension, termination, or other misconduct of an upstream or third-party provider, to the extent permitted by applicable law.
+
+If an upstream provider becomes unavailable, terminates an infrastructure arrangement, withdraws a service, or otherwise prevents MoradoSolution from continuing to provide a particular service, MoradoSolution may attempt to migrate or replace the affected infrastructure where reasonably possible. Such circumstances do not automatically create a right to a refund.
+
+3.4 No Refund for Customer Configuration or Third-Party Software
+
+Refunds will generally not be issued for issues caused by:
+
+Incorrect customer configuration or setup.
+Customer errors or misconfiguration.
+Plugins, mods, scripts, applications, or other third-party software.
+Customer-installed operating systems or software.
+Performance problems caused by customer-installed software.
+Lack of technical knowledge or experience.
+Failure to follow MoradoSolution's documentation or instructions.
+Customer misuse, abuse, or improper operation of the service.
+Compatibility issues involving third-party software.
+Resource usage caused by the customer's applications, plugins, scripts, or workloads.
+3.5 Used or Substantially Consumed Services
+
+Refunds will generally not be provided for services that have already been substantially used or consumed.
+
+This may include situations where significant server resources, bandwidth, storage, IP resources, compute resources, or other paid services have already been provisioned or consumed.
+
+Where a service has already been substantially used, MoradoSolution may reject a refund request even if the request is submitted within the applicable refund period.
+
+3.6 Suspension, Termination, and Policy Violations
+
+No refund will be issued where a service or account has been suspended, restricted, or terminated because of:
+
+Violation of the Terms of Service.
+Violation of the Acceptable Use Policy.
+Abuse of the infrastructure.
+Fraudulent activity.
+Illegal activity.
+Payment abuse or chargeback abuse.
+Misuse of the service.
+Other customer misconduct.
+
+Customers are responsible for ensuring that their use of MoradoSolution services complies with all applicable policies and laws.
+
+3.7 Refund Investigation
+
+MoradoSolution may request screenshots, error messages, logs, configuration information, service identifiers, or other evidence when reviewing a refund request.
+
+The customer must provide accurate information and cooperate reasonably with the investigation.
+
+Providing false, misleading, manipulated, or incomplete information may result in the refund request being rejected.
+
+MoradoSolution's determination regarding whether the reported issue was caused by MoradoSolution, the customer, or a third party will be considered when making the final refund decision.
+
+3.8 Refund Processing
+
+If a refund is approved, it will normally be processed through the original payment method, where technically possible.
+
+If the original payment method cannot reasonably be used, MoradoSolution may use another appropriate payment method.
+
+Once MoradoSolution initiates an approved refund, the actual time required for the funds to appear in the customer's account may depend on the payment gateway, bank, card issuer, or other financial institution.
+
+MoradoSolution is not responsible for processing delays caused by third-party payment providers after the refund has been initiated.
+
+3.9 Exceptional Refunds
+
+In exceptional circumstances, MoradoSolution may choose to provide a partial or full refund even when the request does not strictly qualify under this policy.
+
+Any such refund is provided at MoradoSolution's discretion and does not establish a precedent, guarantee, or entitlement to refunds in similar future circumstances.
+
+3.10 Final Refund Decision
+
+All refund requests are subject to review and approval by MoradoSolution.
+
+The 24-hour period is the maximum standard period for submitting a refund request, not a guarantee that every request submitted within 24 hours will be approved.
+
+By purchasing or using a MoradoSolution service, the customer confirms that they have read, understood, and agreed to this Refund Policy.
+
+Important: Nothing in this Refund Policy is intended to exclude or restrict any consumer rights or legal remedies that cannot lawfully be excluded or restricted under applicable law.
+
+3.11 Staff Abuse, Harassment, or Misconduct
+
+Refunds may be denied where a customer engages in abusive, threatening, harassing, discriminatory, insulting, or otherwise inappropriate behavior toward MoradoSolution staff, representatives, support personnel, or other users.
+
+This includes, but is not limited to:
+
+Verbal abuse, personal insults, or harassment directed at staff.
+Threats, intimidation, or aggressive behavior.
+Repeated abusive or disrespectful communication.
+Discriminatory or hateful remarks.
+Attempts to pressure, manipulate, or threaten staff into providing a refund or other service.
+Abusive behavior toward other customers or community members through MoradoSolution-operated platforms.
+
+Where such conduct occurs, MoradoSolution may take appropriate action, including denying a refund request, restricting support access, suspending the affected service, or terminating the customer's account, subject to the applicable Terms of Service and applicable law.
+
+A disagreement with MoradoSolution, a complaint about a service, or a request for support will not by itself result in a refund being denied. Customers are free to raise legitimate complaints or concerns as long as they do so in a reasonable and respectful manner.
+
+4. Cancellation & Termination Policy
+Customers may cancel their services at any time through the client area or by contacting support.
+Cancellation does not automatically qualify the customer for a refund.
+Services will remain active until the end of the current billing period unless terminated earlier for policy violations, abuse, or other legitimate reasons.
+Data may be permanently deleted after cancellation or termination.
+Customers are responsible for downloading any data they wish to retain before cancellation or termination.
+MoradoSolution reserves the right to terminate services immediately for violations of these Terms, the Acceptable Use Policy, or applicable law.
+Upon termination, all access to the service is revoked and no refund is provided for the remainder of the billing period.
+5. Acceptable Use Policy
+
+The following activities are strictly prohibited on MoradoSolution infrastructure:
+
+Launching or participating in DDoS attacks.
+Hosting malware, phishing websites, viruses, or malicious software.
+Sending spam or unsolicited bulk messages.
+Engaging in illegal activities or distributing illegal content.
+Running cryptocurrency miners unless explicitly permitted in writing.
+Excessive resource usage that negatively affects other customers.
+Attempting unauthorized access to any system, account, server, or service.
+Scanning, attacking, or exploiting networks or systems without authorization.
+Hosting content intended to facilitate fraud, abuse, or other unlawful activity.
+Deliberately attempting to bypass platform security or resource restrictions.
+Hosting copyrighted material without proper licensing (DMCA violations).
+Running exit nodes, open proxies, or Tor relays without explicit written consent.
+Interfering with the operation of any MoradoSolution service or other customers' services.
+
+Violations may result in immediate suspension or permanent termination without refund.
+
+6. Abuse Policy
+
+MoradoSolution maintains a zero-tolerance policy for abuse. Abuse includes but is not limited to:
+
+Network abuse: port scanning, brute-force attacks, exploit attempts, DDoS participation.
+Content abuse: illegal content, child exploitation material, extreme violence, hate speech.
+Resource abuse: sustained 100% CPU, disk I/O saturation, network saturation affecting other customers.
+Email abuse: spam, phishing, bulk unsolicited messages.
+Credential abuse: credential stuffing, account takeover attempts.
+
+Abuse reports received via abuse@moradosolution.com or our abuse reporting form are investigated within 24 hours. Confirmed abuse may result in immediate service suspension pending investigation, with notification to the customer. Repeated or severe abuse may result in permanent account termination without refund.
+
+7. Server Suspension & Termination
+
+MoradoSolution reserves the right to suspend or terminate a service where reasonably necessary, including in cases involving:
+
+Non-payment or overdue invoices.
+Violation of these Terms.
+Violation of the Acceptable Use Policy or Abuse Policy.
+Fraudulent or suspicious activity.
+Abuse of infrastructure or network resources.
+Security threats or unauthorized activity.
+Illegal activity.
+Actions that negatively affect other customers or the MoradoSolution infrastructure.
+
+Depending on the circumstances, suspension or termination may occur immediately and without refund. Customers will be notified via email and/or the client area. Suspended services may be reinstated upon resolution of the underlying issue and payment of any applicable reinstatement fees.
+
+8. Account Responsibility
+Customers are responsible for keeping their account credentials secure.
+Customers must not share account credentials with unauthorized individuals.
+Customers are responsible for all activity performed through their account or services.
+Any suspected unauthorized access should be reported to MoradoSolution immediately.
+Customers must not attempt to compromise, bypass, or interfere with MoradoSolution security systems.
+We may temporarily restrict access to an account or service where necessary to investigate suspected abuse, fraud, compromise, or security threats.
+Customers must maintain accurate and current contact information in their account profile.
+9. Resource Usage / Fair Use
+Customers must use allocated resources responsibly.
+Excessive CPU, RAM, storage, bandwidth, or network usage may result in temporary suspension while the issue is investigated.
+Unlimited or unmetered features remain subject to fair-use requirements.
+Deliberate abuse of system resources is strictly prohibited.
+Customers must not intentionally interfere with the performance or availability of services used by other customers.
+Resource limits specified for a particular plan must not be bypassed.
+Sustained usage beyond reasonable fair-use thresholds may require upgrade to a higher plan or dedicated resources.
+MoradoSolution may implement throttling or quotas to ensure fair resource distribution across all customers.
+10. Backups & Data Loss
+Customers are solely responsible for maintaining backups of their data.
+MoradoSolution does not guarantee backups unless explicitly included in the customer's specific service plan.
+MoradoSolution is not responsible for data loss resulting from customer actions, software failures, accidental deletion, hardware failures, maintenance, service termination, or circumstances outside our reasonable control.
+Customers should maintain independent backups of important files and configurations.
+Customers are responsible for ensuring that their data can be restored when required.
+Where backup services are provided, they are offered as a convenience and not a guarantee of data recovery.
+11. Server Availability & Uptime
+MoradoSolution strives to maintain reliable and high-availability services.
+Scheduled maintenance may occur and, where reasonably possible, advance notice will be provided.
+Temporary interruptions caused by maintenance, upstream providers, infrastructure failures, DDoS attacks, network incidents, or circumstances beyond our reasonable control do not automatically qualify for refunds.
+MoradoSolution is not liable for downtime caused by factors outside our direct control.
+Emergency maintenance may be performed without advance notice where necessary to protect infrastructure, customers, or the wider network.
+No specific uptime percentage is guaranteed unless explicitly stated in the applicable service agreement or plan.
+12. Maintenance & Downtime
+
+MoradoSolution performs two types of maintenance:
+
+Scheduled Maintenance
+Announced at least 48 hours in advance via email and/or client area notifications.
+Typically performed during low-usage windows (02:00-06:00 UTC).
+May include hardware upgrades, network improvements, security patches, or platform updates.
+Emergency Maintenance
+Performed without advance notice to address critical security vulnerabilities, hardware failures, or imminent service degradation.
+Customers will be notified as soon as practicable via available channels.
+Duration is kept to the minimum necessary to resolve the issue.
+
+Downtime resulting from maintenance does not qualify for refunds or credits unless otherwise specified in a dedicated Service Level Agreement.
+
+13. SSL / Domains / Add-on Services
+SSL certificates provided by MoradoSolution (e.g., Let's Encrypt integration) are offered as a convenience and may be automatically renewed. MoradoSolution is not liable for certificate issuance failures or validation delays caused by upstream CAs.
+Domain registration and management services are provided through third-party registrars. MoradoSolution acts as a reseller and is not responsible for registrar policies, pricing changes, or disputes.
+Add-on services (additional IPs, backup slots, load balancers, etc.) are governed by these Terms and any add-on-specific terms presented at purchase.
+Customers are responsible for ensuring domain contact information is accurate and for renewing domains before expiration.
+14. Third-Party Services
+
+MoradoSolution may rely on third-party providers for infrastructure, networking, payment processing, software, security, communication, or other operational services.
+
+We are not responsible for outages, failures, policy changes, or limitations caused directly by third-party providers where such circumstances are outside our reasonable control.
+
+Customers using third-party software, plugins, applications, or services are responsible for complying with the applicable third-party terms and licenses.
+
+MoradoSolution does not endorse or guarantee any third-party service integrated with or used alongside our services.
+
+15. Intellectual Property
+Customers are responsible for all files, websites, applications, databases, configurations, and other content uploaded, stored, or operated through their services.
+Customers must have the necessary rights and permissions to use and distribute their content.
+MoradoSolution does not claim ownership of customer content merely because it is hosted on our infrastructure.
+However, we may remove, restrict, or suspend access to content where required by law, these Terms, security requirements, or our Acceptable Use Policy.
+MoradoSolution's trademarks, logos, branding, and proprietary technology are the exclusive property of MoradoSolution. No license is granted except as expressly stated.
+Customers may not remove, alter, or obscure any proprietary notices from MoradoSolution-provided software or interfaces.
+16. Security
+Traffic is encrypted in transit using TLS 1.2+ where applicable.
+Passwords are stored using industry-standard hashing algorithms (bcrypt/argon2).
+Staff access to customer data is limited to what support genuinely requires and is logged.
+MoradoSolution implements network-level DDoS mitigation, intrusion detection, and regular vulnerability scanning.
+Customers must maintain the security of their own applications, containers, and operating systems.
+MoradoSolution is not liable for security breaches resulting from customer misconfiguration, unpatched software, or weak credentials.
+In the event of a security incident affecting customer data, MoradoSolution will notify affected customers without undue delay.
+17. Privacy
+
+Customer information is handled in accordance with the MoradoSolution Privacy Policy.
+
+MoradoSolution may collect and process information necessary to provide services, manage accounts, process payments, provide support, prevent abuse, maintain security, and comply with legal obligations.
+
+We do not sell customer personal data.
+
+For details on data collection, processing, retention, and your rights, please refer to the Privacy Policy.
+
+18. Limitation of Liability
+
+MoradoSolution provides its services on an "as available" basis.
+
+To the maximum extent permitted by applicable law, MoradoSolution and MoradoSolution shall not be responsible for indirect, incidental, consequential, or unforeseeable losses arising from the use or inability to use the service.
+
+Customers remain responsible for their own data, configurations, applications, software, and content.
+
+Nothing in these Terms is intended to exclude or limit liability where such exclusion or limitation is prohibited by applicable law.
+
+MoradoSolution's total aggregate liability for any claim arising out of or related to these Terms shall not exceed the total fees paid by the customer for the affected service in the twelve (12) months preceding the claim.
+
+19. Service Changes
+MoradoSolution may modify, add, or discontinue services, features, or plans at any time.
+Existing customers will be given reasonable notice of material changes affecting their services.
+Price changes for existing services will take effect at the next renewal unless otherwise required by law.
+MoradoSolution may update underlying hardware, software, or network infrastructure without notice where such changes do not materially degrade service quality.
+20. Policy Changes
+MoradoSolution reserves the right to modify these Terms and related policies when necessary.
+Updated policies become effective when published on the website unless a different effective date is stated.
+Where appropriate, significant changes may also be communicated through official service channels.
+Continued use of MoradoSolution services after an updated version becomes effective constitutes acceptance of the updated Terms, to the extent permitted by applicable law.
+21. Governing Terms
+
+These Terms shall be interpreted and applied in accordance with applicable laws and regulations.
+
+Where a dispute cannot be resolved through reasonable communication with the MoradoSolution support team, the matter may be subject to the jurisdiction of the appropriate courts or authorities applicable to the service operator.
+
+The failure of MoradoSolution to enforce any right or provision of these Terms shall not be deemed a waiver of such right or provision.
+
+If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.
+
+22. Contact / Legal Notice
+MORADOSOLUTION
+Owner & Operator: MoradoSolution
+
+For questions regarding these Terms, billing, services, privacy, or legal matters, customers should contact the MoradoSolution support team through the official support channels:
+
+Support Portal: Help Center
+Email: support@moradosolution.com
+Abuse Reports: abuse@moradosolution.com
+Discord: discord.gg/moradosolution
+
+By purchasing or using MoradoSolution services, you acknowledge that you have read, understood, and agreed to these Terms of Service and applicable MoradoSolution policies.
+
+23. Overview (Privacy Policy)
+
+This policy explains what personal data MoradoSolution collects when you browse the site, order a server or contact support, and what we do with it.
+
+MoradoSolution is a hosting service operated by the MoradoSolution team. MoradoSolution is the owner and operator of MoradoSolution and is responsible for the overall management and operation of the service.
+
+We keep it deliberately short: we collect the minimum needed to run your servers and support you, we never sell your data, and we delete what we no longer need.
+
+24. What We Collect (Privacy Policy)
+
+Account data: your name, email address and hashed password, created when you register.
+
+Order data: the plans you buy, invoices and billing status. Payments are processed by third-party gateways — we see transaction references and amounts, never your full card details.
+
+Service data: server configurations, resource metrics and logs needed to operate and secure the platform.
+
+Support data: messages you send us on Discord when opening tickets.
+
+25. How We Use It (Privacy Policy)
+
+To create and manage your account, provision servers, process payments and prevent fraud.
+
+To provide support, communicate service updates, and understand aggregate usage so we can improve performance. We do not profile you for advertising.
+
+26. Cookies & Local Storage (Privacy Policy)
+
+Our website is mostly static. We use only essential browser storage for keeping you signed in and remembering interface preferences. No advertising or cross-site tracking cookies are set by us.
+
+27. Who We Share With (Privacy Policy)
+
+Only with processors required to run the service: payment gateways, infrastructure and network providers, and anti-fraud tools — each bound to process data only on our instructions.
+
+We disclose data to authorities solely where legally compelled. We have never sold customer data, and we will not.
+
+28. Retention (Privacy Policy)
+
+Account and invoice records are kept while your account is active and as long as tax rules require. Server data is deleted shortly after a service ends or is terminated. Support conversations are pruned on a rolling basis.
+
+29. Security (Privacy Policy)
+
+Traffic is encrypted in transit, passwords are stored hashed, and staff access to customer data is limited to what support genuinely requires. No system is perfect — if a breach ever affects you, we will inform you directly.
+
+30. Your Rights (Privacy Policy)
+
+You can request a copy of your data, correct it, or ask us to delete your account and associated records. Raise a ticket on Discord and we will verify and act on reasonable requests promptly.
+
+31. Children (Privacy Policy)
+
+Our services are not directed at children under 13. If you believe a younger child gave us personal data, contact us and we will remove it.
+
+32. Changes to This Policy (Privacy Policy)
+
+Updates will be posted on this page with a new "last updated" date. Significant changes are also announced on Discord.
+
+33. Contact (Privacy Policy)
+
+MoradoSolution
+Owner & Operator: MoradoSolution
+
+Privacy questions or requests? Open a ticket on Discord.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

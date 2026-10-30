@@ -1,7 +1,9 @@
 #!/bin/bash
 # Install every tool this repo uses into a fresh cloud container, skipping what is already there.
 #   bash library/tools/setup-all.sh light   # quick (~1 min, Oct 2026 estimate): ffmpeg, PIL/numpy/mido/pyworld, Agent-Reach, graft, REA, Crawl4AI
-#   bash library/tools/setup-all.sh heavy   # music + AI song stack, VoiceStudio, model weights (~20 min, ~15 GB)
+#   bash library/tools/setup-all.sh heavy   # music + AI song stack code, Whisper, separators, VoiceStudio (no ACE-Step weights)
+#   bash library/tools/setup-all.sh acestep|artemis|opendesign|portal|ondemand   # big, rarely used tools: only when a job needs them
+#     portal = client portal dev tools (Android SDK for the APK, ui-ux-pro-max, agency-agents): library/tools/setup-portal-dev.sh
 # The SessionStart hook runs "all" in the background, logging to /home/user/tools/setup.log; it touches
 # /home/user/tools/.light-ready and then /home/user/tools/.heavy-ready as each part finishes.
 set -uo pipefail
@@ -16,6 +18,9 @@ light() {
   python3 -c "import PIL, numpy, mido, pyworld" 2>/dev/null || pip install -q pillow numpy mido pyworld
   # Editing skills catalogue (library/research/editing/skills2): font axis/coverage checks and ASS/SRT subtitle editing.
   python3 -c "import fontTools, pysubs2" 2>/dev/null || pip install -q fonttools pysubs2
+  # Internet Archive CLI `ia` (jjjake/internetarchive, AGPL-3.0): search/download archive.org items (PD 78s etc.;
+  # archive.org licence tags are uploader-set, check each item: library/research/music-fetch-tools.md).
+  command -v ia >/dev/null || pip install -q internetarchive
   command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
   command -v agent-reach >/dev/null || {
     uv tool install -q https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip &&
@@ -38,9 +43,7 @@ light() {
 heavy() {
   bash "$HERE/setup-music.sh"
   bash "$HERE/setup-ai-song.sh"
-  # Weights: ACE-Step turbo + VAE + text encoder + LM (huggingface, non-Xet path) and Whisper small.
-  cd "$T/ACE-Step-1.5" && HF_HUB_DISABLE_XET=1 "$T/venv/bin/python" -c \
-    "from acestep.model_downloader import ensure_main_model as e; print(e(prefer_source='huggingface'))"
+  # Whisper small (ACE-Step song weights are on demand: setup-all.sh acestep).
   "$T/venv/bin/python" -c "import whisper; whisper.load_model('small'); print('whisper small ready')"
   # Vocal separation (music -> zero under a voice): audio-separator + BS-RoFormer weights (GitHub release download).
   VIRTUAL_ENV="$T/venv" uv pip install -q "audio-separator[cpu]" audioread pydub onnxruntime librosa samplerate \
@@ -56,6 +59,10 @@ heavy() {
   ln -sf "$T/venv/bin/yt-dlp" "$HOME/.local/bin/yt-dlp"   # YouTube downloads (CC/royalty-free only)
   # TikTok / TikTok Lite links: yt-dlp's TikTok extractor needs curl_cffi for browser impersonation (research/tiktok-access.md)
   "$T/venv/bin/python" -c "import curl_cffi" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q curl_cffi
+  # Google Drive folder downloads (owner's music Drive folder, library/music/owner-drive/README.md)
+  "$T/venv/bin/python" -c "import gdown" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q gdown
+  # vs_tts.py --target-f0 pitch step runs in this venv too (Korba session 2026-10-26: "No module named pyworld")
+  "$T/venv/bin/python" -c "import pyworld" 2>/dev/null || VIRTUAL_ENV="$T/venv" uv pip install -q pyworld "setuptools<81"  # pyworld imports pkg_resources
   # VoiceStudio (debpalash/VoiceStudio, local ElevenLabs alternative): own uv venv with CPU torch; backend on :3900
   # via library/tools/voicestudio.sh start. Models download through its API (see library/research/voicestudio.md).
   [ -d "$T/VoiceStudio" ] || git clone -q --depth 1 https://github.com/debpalash/VoiceStudio.git "$T/VoiceStudio"
@@ -67,8 +74,41 @@ heavy() {
   touch "$T/.heavy-ready"
 }
 
+# ---- ON DEMAND (owner, 2026-10-27): rarely used, big tools are NOT installed at session start.
+# Install one only when a job needs it:  bash library/tools/setup-all.sh acestep | artemis | opendesign | ondemand (all three)
+acestep() {
+  # ACE-Step turbo + VAE + text encoder + LM weights, ~6.0 GB (huggingface, non-Xet path); needs heavy (venv + code) first.
+  cd "$T/ACE-Step-1.5" && HF_HUB_DISABLE_XET=1 "$T/venv/bin/python" -c \
+    "from acestep.model_downloader import ensure_main_model as e; print(e(prefer_source='huggingface'))"
+}
+
+artemis() {
+  # Artemis (google/artemis, Apache-2.0): AI agent that drives an Android phone over ADB. Own uv venv (1.1 GB, 2026-10-25).
+  # Needs a connected phone/emulator + a multimodal API key to run tasks (library/research/artemis.md).
+  command -v adb >/dev/null || apt-get install -y -qq adb >/dev/null 2>&1 || true
+  [ -d "$T/artemis" ] || git clone -q --depth 1 https://github.com/google/artemis.git "$T/artemis"
+  [ -x "$T/artemis/.venv/bin/python" ] || (cd "$T/artemis" && uv sync -q --frozen --no-dev)
+}
+
+opendesign() {
+  # OpenDesign (nexu-io/open-design, Apache-2.0): AI design agent workspace. Needs Node ~24 + pnpm 10.33 (corepack).
+  # node_modules 2.7 GB + clone 0.47 GB + Node 24 0.2 GB (2026-10-27, library/research/open-design.md).
+  if [ ! -x "$T/node24/bin/node" ]; then
+    V=$(curl -s https://nodejs.org/dist/index.json | python3 -c "import json,sys; print(next(r['version'] for r in json.load(sys.stdin) if r['version'].startswith('v24.')))")
+    mkdir -p "$T/node24" && curl -sL "https://nodejs.org/dist/$V/node-$V-linux-x64.tar.xz" | tar -xJ -C "$T/node24" --strip-components=1
+  fi
+  [ -d "$T/open-design" ] || git clone -q --depth 1 https://github.com/nexu-io/open-design.git "$T/open-design"
+  [ -d "$T/open-design/node_modules" ] || (cd "$T/open-design" && PATH="$T/node24/bin:$PATH" corepack enable &&
+    PATH="$T/node24/bin:$PATH" pnpm install --frozen-lockfile)
+}
+
 case "${1:-all}" in
   light) light && touch "$T/.light-ready" ;;
   heavy) heavy ;;
   all) light && touch "$T/.light-ready"; heavy ;;
+  acestep) acestep ;;
+  artemis) artemis ;;
+  opendesign) opendesign ;;
+  portal) bash "$HERE/setup-portal-dev.sh" all ;;
+  ondemand) acestep; artemis; opendesign; bash "$HERE/setup-portal-dev.sh" all ;;
 esac

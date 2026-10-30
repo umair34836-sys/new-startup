@@ -1,0 +1,159 @@
+{
+ "_source": "every value from hostlixo.in read in Playwright on 2026-10-27 (library/clients/hostlixo/site-data.md, brief.md)",
+ "name": "HostLixo",
+ "tagline": "Minecraft Server Hosting in India",
+ "url": "hostlixo.in",
+ "size": [
+  1920,
+  1080
+ ],
+ "total": 30.0,
+ "mark": "hero-logo.png",
+ "mark_json": "mark.json",
+ "wordmark": "logo.png",
+ "colors": {
+  "bg": "#050505",
+  "card": "#0c0c0c",
+  "surface": "#111111",
+  "text": "#ffffff",
+  "muted": "#999999"
+ },
+ "fonts": [
+  {
+   "role": "display",
+   "family": "Space Grotesk",
+   "file": "SpaceGrotesk-Variable.ttf",
+   "weight": 700,
+   "note": "headings"
+  },
+  {
+   "role": "body",
+   "family": "Plus Jakarta Sans",
+   "file": "PlusJakartaSans-Variable.ttf",
+   "weight": 600,
+   "note": "body text"
+  },
+  {
+   "role": "mono",
+   "family": "JetBrains Mono",
+   "file": "JetBrainsMono-Variable.ttf",
+   "weight": 700,
+   "note": "labels"
+  }
+ ],
+ "swatches": [
+  {
+   "hex": "#050505",
+   "name": "bg-main"
+  },
+  {
+   "hex": "#0c0c0c",
+   "name": "bg-card"
+  },
+  {
+   "hex": "#111111",
+   "name": "bg-surface-elevated"
+  },
+  {
+   "hex": "#ffffff",
+   "name": "text-white",
+   "light": true
+  },
+  {
+   "hex": "#999999",
+   "name": "text-secondary",
+   "light": true
+  },
+  {
+   "hex": "#5e5e5e",
+   "name": "text-muted"
+  }
+ ],
+ "browser": {
+  "image": "home-hero.jpg",
+  "url": "hostlixo.in"
+ },
+ "phone": {
+  "image": "plan-8gb.jpg",
+  "label": "RECOMMENDED · AMD EPYC 8 GB"
+ },
+ "stack": [
+  "features.jpg",
+  "mc-top.jpg",
+  "plans-top.jpg",
+  "home-hero.jpg"
+ ],
+ "stack_label": "hostlixo.in pages",
+ "stats": [
+  {
+   "value": "₹90",
+   "label": "Starting price per month"
+  },
+  {
+   "value": "9 Plans",
+   "label": "AMD EPYC tiers available"
+  },
+  {
+   "value": "2–32 GB",
+   "label": "DDR5 ECC RAM per plan range"
+  },
+  {
+   "value": "2 Backups",
+   "label": "Allocation included per plan"
+  }
+ ],
+ "chart": {
+  "title": "AMD EPYC plans · ₹ per month",
+  "labels": [
+   "2 GB",
+   "4 GB",
+   "6 GB",
+   "8 GB",
+   "12 GB",
+   "16 GB",
+   "20 GB",
+   "24 GB",
+   "32 GB"
+  ],
+  "values": [
+   90,
+   180,
+   270,
+   360,
+   540,
+   720,
+   900,
+   1080,
+   1440
+  ],
+  "prefix": "₹",
+  "highlight": 3
+ },
+ "photos": [
+  {
+   "image": "mc_world.jpg",
+   "label": "World Showcase"
+  },
+  {
+   "image": "mc_1.jpg",
+   "label": "Community Build"
+  },
+  {
+   "image": "mc_2.jpg",
+   "label": "In-Game View"
+  }
+ ],
+ "social": {
+  "image": "mc_world.jpg",
+  "text": "Minecraft Server Hosting in India from ₹90/mo",
+  "button": "Order on Discord"
+ },
+ "music": {
+  "file": "music.mp3",
+  "from": 5.48,
+  "drop_at": 7.4,
+  "bpm": 140.0,
+  "volume": 0.9,
+  "_note": "CC0 'It feels good to be alive too' (Loyalty Freak Music); listen.py 2026-10-27: 140 BPM, drop hit at 12.887 s -> from 5.48 puts it at 7.4 s"
+ }
+}

@@ -1,7 +1,7 @@
 # Paint 16x16 Minecraft-style block textures (procedural, seeded) for CSS voxel worlds.
 #   python3 voxel_textures.py OUT_DIR
 # Writes: grass_top, grass_side, dirt, cobble, stone_brick, planks, dark_planks, log, leaves,
-#         window_lit, door, awning, wool_red, lantern, iron.
+#         window_lit, door, awning, wool_red, lantern, iron, diamond_ore, emerald_ore, gold_block, tnt_side, tnt_top, obsidian.
 import os, random, sys
 from PIL import Image
 
@@ -57,4 +57,17 @@ tex("awning", lambda x, y, r: jit((196, 40, 44) if (x // 4) % 2 == 0 else (236, 
 tex("wool_red", lambda x, y, r: jit((176, 32, 40), r, 8), 15)
 tex("lantern", lambda x, y, r: jit((52, 52, 58), r, 6) if (x < 3 or x > 12 or y < 2 or y > 13) else jit((255, 200, 96) if 5 <= x <= 10 and 4 <= y <= 11 else (255, 160, 60), r, 10), 16)
 tex("iron", lambda x, y, r: jit((44, 44, 50), r, 6), 17)
+# added 2026-10-29 (Heaven Developer Minecraft phonk promo): ore / gold / TNT / obsidian for floating "item" blocks
+def ore(colour, seed):
+    spots = [(random.Random(seed + i).randint(1, 14), random.Random(seed + 50 + i).randint(1, 14)) for i in range(6)]
+    def f(x, y, r):
+        near = min(abs(x - sx) + abs(y - sy) for sx, sy in spots)
+        return jit(colour if near <= 1 else (122, 122, 124), r, 10)
+    return f
+tex("diamond_ore", ore((92, 219, 213), 40), 18)
+tex("emerald_ore", ore((23, 221, 98), 60), 19)
+tex("gold_block", lambda x, y, r: jit((250, 210, 60) if 0 < x < 15 and 0 < y < 15 else (204, 150, 30), r, 10), 20)
+tex("tnt_side", lambda x, y, r: jit((230, 230, 220), r, 6) if 6 <= y <= 9 else jit((200, 46, 34) if x % 4 else (150, 30, 24), r, 8), 21)
+tex("tnt_top", lambda x, y, r: jit((40, 40, 40), r, 4) if abs(x - 7.5) + abs(y - 7.5) < 3 else jit((200, 46, 34), r, 8), 22)
+tex("obsidian", lambda x, y, r: jit((40, 26, 60) if r.random() > 0.2 else (80, 56, 110), r, 8), 23)
 print("textures written to", out)

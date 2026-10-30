@@ -1,0 +1,118 @@
+URL: https://moradosolution.in/suspension-policy
+HTTP: 200
+TITLE: Account Suspension & Termination Policy — MoradoSolution
+FETCHED: 2026-10-24T12:23:11.991Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+ACCOUNT SUSPENSION & TERMINATION POLICY
+
+Last Updated: 28 August 2026
+
+Conditions under which MoradoSolution may suspend or terminate customer accounts and services.
+
+1. Grounds for Suspension
+
+MoradoSolution may suspend services immediately for:
+
+Non-payment or overdue invoices (after grace period)
+Violation of the Acceptable Use Policy or Abuse Policy
+Confirmed abuse reports (DDoS, malware, spam, etc.)
+Security threats or unauthorized activity
+Fraudulent or suspicious activity
+Actions negatively affecting other customers or infrastructure
+Legal orders or regulatory requirements
+2. Suspension Process
+Customers will be notified via email and/or client area
+Suspension reason will be provided where legally permissible
+Suspended services are inaccessible but data is preserved
+Customers may appeal suspensions via support ticket
+3. Reinstatement
+Services may be reinstated upon resolution of the underlying issue
+Payment of any applicable reinstatement fees may be required
+Repeated suspensions may require additional verification or deposits
+MoradoSolution reserves the right to deny reinstatement for severe violations
+4. Grounds for Termination
+
+MoradoSolution may terminate services immediately for:
+
+Repeated or severe AUP/Abuse Policy violations
+Fraud, identity theft, or payment fraud
+Illegal activities hosted on or conducted through our services
+Failure to resolve suspension issues within 30 days
+Court orders or legal requirements
+5. Termination Effects
+All access to the service is permanently revoked
+No refund is provided for the remainder of the billing period
+Data may be permanently deleted after 30 days
+Customers are responsible for downloading data prior to termination
+Outstanding balances remain due and payable
+6. Data After Termination
+
+Customer data may be permanently deleted 30 days after termination. No data recovery is possible after permanent deletion. Legal holds may extend retention.
+
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA
+↑ Top

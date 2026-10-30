@@ -1,0 +1,166 @@
+URL: https://hostlixo.in/about.html
+FINAL_URL: https://www.hostlixo.in/about.html
+HTTP: 200
+TITLE: About HostLixo | Minecraft Hosting Team in India
+FETCHED: 2026-10-27T02:22:39.026Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+ABOUT HOSTLIXO
+ABOUT HOSTLIXO
+
+Straightforward Minecraft hosting and infrastructure for growing game communities in India.
+
+HL
+Who We Are
+
+HostLixo provides Minecraft server hosting for players, friend groups, and growing communities. We make it easier to compare server plans, understand what resources are included, and find support and community links in one place.
+
+01
+Why We Started
+
+Choosing a game server should not mean guessing what a plan includes. HostLixo focuses on clear plan information, familiar Minecraft software options, and a straightforward path from selecting a server to managing it.
+
+Our Mission
+
+Make Minecraft server hosting easier to understand with clear resources, practical tools, and helpful information for communities in India.
+
+Our Vision
+
+Help gaming communities choose a suitable setup, start their server, and find the information they need as their plans evolve.
+
+02
+Our Infrastructure
+AMD EPYC Minecraft Plans
+
+Compare available memory, CPU allocation, NVMe storage, backups, and monthly pricing on the Minecraft plans page.
+
+DDoS-Filtered Connectivity
+
+HostLixo plan listings describe DDoS-filtered connectivity. Visit the Network page for current protection and latency information.
+
+Minecraft Software Options
+
+Review supported software including Paper, Purpur, Fabric, Forge, NeoForge, and Spigot before choosing a plan.
+
+Support and Community
+
+Browse the support guide or join the HostLixo Discord community for community assistance and service announcements.
+
+03
+Our Journey
+AVAILABLE
+Minecraft Server Hosting
+
+AMD EPYC plans are available with published resources and monthly pricing for communities comparing Minecraft server hosting in India.
+
+IN PREPARATION
+More Processor Options
+
+AMD Ryzen and Intel plans are marked as coming soon while their availability details are prepared.
+
+PLANNED
+Cloud VPS and Dedicated Services
+
+Cloud VPS and dedicated services are planned. Check the VPS page for the latest availability information.
+
+04
+Our Commitment
+
+We aim to keep hosting details easy to compare and support information easy to find. Before ordering, review the current specifications, availability, and service terms on their respective pages.
+
+PEOPLE BEHIND HOSTLIXO
+HostLixo Team
+
+Meet the people listed in our team directory and learn about their roles.
+
+HL
+Our Team
+R
+Rifat Ahmed
+Founder
+S
+Shubham Mishra
+Founder
+S
+Sʜᴏᴜʀʏᴀ !=
+Founder
+M
+MrHex
+Technical Operations & Node Deployment
+N
+Nishank
+Support Engineering & Client Success
+S
+Suraj
+Community Moderator & Network Defense
+R
+Rifat Ahmed
+
+HostLixo Team Member
+
+ROLE
+
+Founder
+
+ABOUT
+
+Founder of HostLixo.
+
+COMMUNITY
+
+Join the HostLixo Discord
+↗
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+

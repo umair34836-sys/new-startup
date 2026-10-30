@@ -1,0 +1,9 @@
+/* App-only styles (added after the website's app.css). */
+body { padding-bottom: env(safe-area-inset-bottom); }
+.top { padding-top: max(.75rem, env(safe-area-inset-top)); }
+.netbar { background: #78350f; color: #fff; text-align: center; padding: .45rem 1rem; font-size: .88rem; }
+.toast { position: fixed; left: 12px; right: 12px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 60; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.danger { color: var(--danger); }
+.btn.danger-btn { color: var(--danger); border-color: #fecaca; }
+.row-left { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+.splash { display: grid; }
