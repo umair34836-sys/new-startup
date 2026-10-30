@@ -189,7 +189,7 @@ function schema_sql(string $driver): array
     ];
 }
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 function migrate(): void
 {
@@ -225,6 +225,12 @@ function upgrade_db(): void
         q("UPDATE users SET rate = rate_usd WHERE rate IS NULL AND currency = 'USD' AND rate_usd IS NOT NULL");
         if (row("SELECT name FROM settings WHERE name = 'currencies'") === null) {
             set_setting('currencies', json_encode(['PKR' => setting('rate_pkr'), 'USD' => setting('rate_usd')]));
+        }
+    }
+    if ($have < 2) {
+        // v2 (2026-10-30): owner dropped the "edited by hand" claim; replace the old default promise if it is still set.
+        if (in_array(setting('promise_text'), ['Every video is edited by hand by MrCopper804.', ''], true)) {
+            set_setting('promise_text', 'Edited by MrCopper804.');
         }
     }
     set_setting('schema_version', (string) SCHEMA_VERSION);

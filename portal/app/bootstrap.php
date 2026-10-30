@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 ini_set('display_errors', '0');
+header_remove('X-Powered-By'); // do not tell visitors which PHP version runs the site
 ini_set('log_errors', '1');
 set_exception_handler(function (Throwable $ex): void {
     error_log('portal: ' . $ex);
@@ -26,6 +27,7 @@ require APP_DIR . '/settings.php';
 require APP_DIR . '/orders.php';
 require APP_DIR . '/files.php';
 require APP_DIR . '/mail.php';
+require APP_DIR . '/guard.php';
 
 function config(string $key, $default = null)
 {

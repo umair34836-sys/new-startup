@@ -168,6 +168,21 @@ function upload_finish(array $up): array
         q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
         return [$up['kind'] => true, 'size' => (int) $up['size']];
     }
+    if ($up['kind'] === 'output' && $up['uploaded_by'] === 'bridge') {
+        // Owner rule 2026-10-30: delivered files carry no tool names (file name, container tags, encoder strings).
+        $why = guard_find((string) $up['orig_name']) ? 'its file name names a tool' : null;
+        if (!$why && !preg_match('/^[A-Za-z0-9][A-Za-z0-9 ._()-]{0,150}$/', (string) $up['orig_name'])) {
+            $why = 'its file name is not plain (letters, digits, space . _ - ( ) only)';
+        }
+        if (!$why && ($mk = guard_file_marker($part))) {
+            $why = "it still contains the tool marker \"$mk\" (strip metadata: portal_bridge.py deliver does it)";
+        }
+        if ($why) {
+            @unlink($part);
+            q('DELETE FROM uploads WHERE id = ?', [$up['id']]);
+            return ['error' => "Delivery refused: $why."];
+        }
+    }
     $stored = bin2hex(random_bytes(24));
     if (!rename($part, storage_dir() . '/files/' . $stored)) {
         return ['error' => 'Server could not save the file.'];

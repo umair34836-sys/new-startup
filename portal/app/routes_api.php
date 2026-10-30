@@ -71,6 +71,11 @@ function route_api(string $m, string $path): void
         $id = (int) $mm[1];
         row('SELECT id FROM orders WHERE id = ?', [$id]) ?? json_out(['error' => 'order not found'], 404);
         $text = mb_substr(trim((string) ($body['note'] ?? $body['body'] ?? '')), 0, 10000);
+        // Owner rule 2026-10-30: nothing a client reads may name the tools or process (app/guard.php).
+        if ($hits = guard_find($text)) {
+            json_out(['error' => 'blocked_terms', 'terms' => $hits,
+                'hint' => 'Clients only see "Edited by MrCopper804". Rewrite the text without tool/process words.'], 422);
+        }
         if ($mm[2] === 'deliver') {
             $f = row("SELECT * FROM files WHERE id = ? AND order_id = ? AND kind = 'output'", [(int) ($body['file_id'] ?? 0), $id])
                 ?? json_out(['error' => 'output file not found on this order'], 400);

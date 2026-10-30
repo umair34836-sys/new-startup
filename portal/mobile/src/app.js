@@ -317,7 +317,7 @@
     var t = checkText();
     return t ? '<p class="check-note reveal">' + esc(t) + (withNext ? ' Next check: ' + esc(nextCheck()) + '.' : '') + '</p>' : '';
   }
-  function promise() { return ((state.cfg || ls.get('cfg') || {}).promise) || 'Every video is edited by hand by MrCopper804.'; }
+  function promise() { return ((state.cfg || ls.get('cfg') || {}).promise) || 'Edited by MrCopper804.'; }
 
   function statusBadge(s) {
     var names = (state.cfg && state.cfg.statuses) || {};
@@ -336,7 +336,7 @@
         html += '<h2 class="reveal">On this phone</h2><ul class="order-list stagger">' + drafts.map(function (d) {
           return '<li class="card order-item"><a href="#/new/' + esc(d.lid) + '"><span class="title">' + esc(d.title || 'New video') + '</span>' +
             '<span class="badge s-draft">' + (d.pending ? (d.submit ? 'Waiting to send' : 'Waiting to save') : 'Draft') + '</span>' +
-            '<span class="meta">' + (d.error ? '<span class="danger">' + esc(d.error) + '</span>' : (d.pending ? 'Sends automatically when online' : 'Not sent yet')) + '</span></a></li>';
+            '<span class="meta">' + (d.error ? '<span class="danger">' + esc(d.error) + '</span>' : (d.pending ? 'Sends by itself when online' : 'Not sent yet')) + '</span></a></li>';
         }).join('') + '</ul>';
       }
       if (out.length) html += '<p class="muted reveal">' + out.length + ' message(s) waiting to be sent.</p>';

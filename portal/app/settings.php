@@ -6,8 +6,8 @@ const SETTING_DEFAULTS = [
     'brand_name' => 'MrCopper804',
     'splash_subtitle' => 'Editor',
     'brand_tagline' => 'Send your footage. Get a finished video.',
-    // Owner (2026-10-29): clients only ever learn that MrCopper804 edits every video himself, by hand.
-    'promise_text' => 'Every video is edited by hand by MrCopper804.',
+    // Owner (2026-10-30): the only credit clients see is "Edited by MrCopper804" (no claim about how it is made).
+    'promise_text' => 'Edited by MrCopper804.',
     'support_contact' => '',
     // Owner (2026-10-29): fixed times (24 h, the portal's time zone) when new orders are checked and work starts.
     'check_times' => '00:00, 05:00, 10:00, 14:00, 17:00, 22:00',
