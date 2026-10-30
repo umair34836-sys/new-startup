@@ -74,7 +74,8 @@ def dur(p):
 VO = C.get("vo")
 if VO:
     VLEN = [dur(p) for p in VO["parts"]]
-    t_want = r3(0.3 + VLEN[VO["hello"]] + 0.35)
+    # at least 3.4 s so the role line and the "View My Work" button (beat-timed) are seen before the scene leaves
+    t_want = r3(max(0.3 + VLEN[VO["hello"]] + 0.35, 3.4))
     # line "want" starts 0.1 s into the 6-beat "want" scene and must end 0.3 s before the drop
     DROP = r3(t_want + max(6 * BEAT, VLEN[VO["want"]] + 0.4))
 
@@ -131,6 +132,8 @@ if VO:
         cur = r3(s0 + 0.2 + VLEN[li] + 0.5)
         POL.append([s0, cur, li, pc])
     T_C = next_beat(cur)
+    for k in range(len(POL)):        # each scene stays up until the next one starts (no empty paper between them)
+        POL[k][1] = POL[k + 1][0] if k + 1 < len(POL) else T_C
     VOAT.append((VO["contact"], r3(T_C + 0.3)))
     TOTAL = r3(T_C + max(3 * BAR + 1.0, 0.3 + VLEN[VO["contact"]] + 3.2))
 for gi, g in enumerate(GROUPS):
