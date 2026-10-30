@@ -514,7 +514,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Live 2026-10-29 at https://editor.firecraft.fun (cPanel, DB talkembe_portal); native Capacitor app (signing key outside git);
   bridge token = "Bearer" network secret for that host. Per-client rates in any currency. Owner 2026-10-29: clients may
   upload ANY file type; required "Voice or only music?" question; orders are checked at FIXED times shown to clients
-  (default 10:00/14:00/17:00/22:00 PKT, scheduled task trig_01K3PxtPGzrgU6Dt72izjE98 runs 5 min after each).
+  (00:00/05:00/10:00/14:00/17:00/22:00 PKT; rates PKR 2/s, other currencies 1/s, 2026-10-30, scheduled task trig_01K3PxtPGzrgU6Dt72izjE98 runs 5 min after each).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

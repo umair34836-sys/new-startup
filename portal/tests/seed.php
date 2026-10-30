@@ -11,4 +11,6 @@ if (!row('SELECT id FROM users WHERE email = ?', [$email])) {
 }
 set_setting('bridge_token_hash', hash('sha256', $token));
 set_setting('brand_name', 'MrCopper804');
+// Tests were written for these rates; the live defaults differ (owner: PKR 2, others 1 per second).
+set_setting('currencies', '{"PKR":"50","USD":"0.20"}');
 echo "seeded\n";

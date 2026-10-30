@@ -10,9 +10,10 @@ const SETTING_DEFAULTS = [
     'promise_text' => 'Every video is edited by hand by MrCopper804.',
     'support_contact' => '',
     // Owner (2026-10-29): fixed times (24 h, the portal's time zone) when new orders are checked and work starts.
-    'check_times' => '10:00, 14:00, 17:00, 22:00',
+    'check_times' => '00:00, 05:00, 10:00, 14:00, 17:00, 22:00',
     // Default rate per second of finished video, per currency (owner adds currencies in Settings).
-    'currencies' => '{"PKR":"50","USD":"0.20"}',
+    // Owner (2026-10-30): PKR 2 per second, every other currency 1 per second.
+    'currencies' => '{"PKR":"2","INR":"1","NPR":"1","USD":"1","AED":"1","SAR":"1","GBP":"1","EUR":"1","CAD":"1","AUD":"1","BDT":"1"}',
     'rate_pkr' => '50',
     'rate_usd' => '0.20',
     'max_file_mb' => '4096',
