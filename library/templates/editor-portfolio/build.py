@@ -66,6 +66,19 @@ def dur(p):
                                       capture_output=True, text=True).stdout), 3)
 
 
+# ---------------------------------------------------------------- optional voice-over (v4, owner 2026-10-30)
+# "vo": {"parts": [8 wavs from vs_tts.py --parts], "hello": 0, "want": 1, "policy": [2..6], "contact": 7,
+#        "music_src": track, "src_drop": s}: the hello / "want" scenes stretch to their lines, policy scenes (text +
+#        rates) follow the wall one per line, the end card waits for its line; the music is fitted with music_fit.py
+#        so its drop sits on the montage drop, then mixed under the voice with mix_vo_music.py (ducking).
+VO = C.get("vo")
+if VO:
+    VLEN = [dur(p) for p in VO["parts"]]
+    t_want = r3(0.3 + VLEN[VO["hello"]] + 0.35)
+    # line "want" starts 0.1 s into the 6-beat "want" scene and must end 0.3 s before the drop
+    DROP = r3(t_want + max(6 * BEAT, VLEN[VO["want"]] + 0.4))
+
+
 # ---------------------------------------------------------------- clips + groups (one group = one bar)
 MAXV = 3 if WIDE else 2
 if WIDE:
@@ -104,7 +117,22 @@ N = len(FLAT)
 T_WANT = bt(-6)
 T_GRID = r3(DROP + NG * BAR)
 T_END = r3(T_GRID + 2 * BAR)
+T_C = T_END                          # end card start
 TOTAL = r3(T_END + 3 * BAR + 1.0)
+VOAT = []                            # (part index, start) placements of the voice lines
+POL = []                             # policy scenes: [start, end, line index, scene config]
+if VO:
+    VOAT.append((VO["hello"], 0.3))
+    VOAT.append((VO["want"], r3(T_WANT + 0.1)))
+    cur = T_END
+    for li, pc in zip(VO["policy"], C["policy"]):
+        s0 = next_beat(cur)          # every policy scene starts on a beat of the (ducked) music
+        VOAT.append((li, r3(s0 + 0.2)))
+        cur = r3(s0 + 0.2 + VLEN[li] + 0.5)
+        POL.append([s0, cur, li, pc])
+    T_C = next_beat(cur)
+    VOAT.append((VO["contact"], r3(T_C + 0.3)))
+    TOTAL = r3(T_C + max(3 * BAR + 1.0, 0.3 + VLEN[VO["contact"]] + 3.2))
 for gi, g in enumerate(GROUPS):
     g["s0"] = r3(DROP + gi * BAR)
     g["first"] = gi == 0 or GROUPS[gi - 1]["brand"] != g["brand"]
@@ -213,12 +241,13 @@ win("#s1", 0, T_WANT)
 
 # ---------------------------------------------------------------- S2 "Want a video EDITOR?" (T_WANT - DROP)
 ws = 120 if WIDE else 116
+WW = C.get("want_words", ["Want", "a", "video", "EDITOR?"])
 HTML.append(f'''<div id="s2" style="position:absolute;inset:0;">
   <div style="position:absolute;left:0;right:0;top:{H / 2 - (ws if WIDE else ws * 1.6):.0f}px;text-align:center;">
-    <span id="w1" class="pop wd" style="font-size:{ws}px;color:{INK};">Want</span>
-    <span id="w2" class="pop wd" style="font-size:{ws}px;color:{INK};">a</span>
-    <span id="w3" class="pop wd" style="font-size:{ws}px;color:{INK};">video</span>{"" if WIDE else "<br>"}
-    <span id="w4" class="pop wd" style="font-size:{int(ws * 1.05)}px;color:#fff;background:{RED};padding:0 26px;border-radius:18px;">EDITOR?</span>
+    <span id="w1" class="pop wd" style="font-size:{ws}px;color:{INK};">{WW[0]}</span>
+    <span id="w2" class="pop wd" style="font-size:{ws}px;color:{INK};">{WW[1]}</span>
+    <span id="w3" class="pop wd" style="font-size:{ws}px;color:{INK};">{WW[2]}</span>{"" if WIDE else "<br>"}
+    <span id="w4" class="pop wd" style="font-size:{int(ws * 1.05)}px;color:#fff;background:{RED};padding:0 26px;border-radius:18px;">{WW[3]}</span>
   </div>
 </div>''')
 for k, n in ((1, -6), (2, -5), (3, -4), (4, -2)):
@@ -332,6 +361,84 @@ T.append(f'tl.to("#s4", {{scale:0.6, opacity:0, duration:0.25, ease:"power3.in"}
 sfx("whoosh-fast-0.3s", T_END - 0.05, 0.5)
 win("#s4", r3(T_GRID - 0.15), T_END)
 
+# ---------------------------------------------------------------- S4b policy scenes (one per voice line)
+# scene config: {"kicker": small grey line, "big": [lines], "stamp": red stamp text, "mark": "check"|"cross"|"play"|"",
+#                "chips": [..] (pop one per beat), "price": "1", "unit": "/ second", "note": small line}
+K = 1.0 if WIDE else 1.08
+
+
+def mark(kind, size):
+    if kind == "check":
+        inner = (f'<span style="position:absolute;left:{size * .30:.0f}px;top:{size * .18:.0f}px;width:{size * .26:.0f}px;height:{size * .48:.0f}px;'
+                 f'border-right:{size * .11:.0f}px solid #fff;border-bottom:{size * .11:.0f}px solid #fff;transform:rotate(45deg);"></span>')
+        bg = "#1fa45a"
+    elif kind == "cross":
+        bar = lambda r: (f'<span style="position:absolute;left:{size * .18:.0f}px;top:{size * .445:.0f}px;width:{size * .64:.0f}px;height:{size * .11:.0f}px;'
+                         f'background:#fff;border-radius:4px;transform:rotate({r}deg);"></span>')
+        inner, bg = bar(45) + bar(-45), RED
+    else:                            # a plain play button (the owner's channel), not a logo
+        inner = (f'<span style="position:absolute;left:{size * .40:.0f}px;top:{size * .27:.0f}px;width:0;height:0;border-top:{size * .23:.0f}px solid transparent;'
+                 f'border-bottom:{size * .23:.0f}px solid transparent;border-left:{size * .36:.0f}px solid #fff;"></span>')
+        bg = RED
+    rad = "22%" if kind == "play" else "50%"
+    return (f'<span class="mk" style="display:inline-block;position:relative;vertical-align:middle;width:{size}px;height:{size}px;'
+            f'border-radius:{rad};background:{bg};box-shadow:0 10px 26px rgba(0,0,0,0.25);">{inner}</span>')
+
+
+for pi, (s0, s1, li, pc) in enumerate(POL):
+    pid = f"p{pi}"
+    parts = []
+    if pc.get("kicker"):
+        parts.append(f'<div id="{pid}k" class="sb" style="font-size:{int(38 * K)}px;color:{GREY};letter-spacing:4px;">{pc["kicker"]}</div>')
+    if pc.get("mark"):
+        parts.append(f'<div id="{pid}m" style="margin:14px 0;">{mark(pc["mark"], int(150 * K))}</div>')
+    for bi_, line in enumerate(pc.get("big", [])):
+        parts.append(f'<div class="mask1" data-layout-allow-overflow><div id="{pid}b{bi_}" class="anton" style="font-size:{int(pc.get("big_size", 120) * K)}px;'
+                     f'color:{INK};line-height:1.08;white-space:nowrap;">{line}</div></div>')
+    if pc.get("price"):
+        parts.append(f'<div id="{pid}pr" style="white-space:nowrap;"><span class="anton" style="font-size:{int(300 * K)}px;color:{RED};line-height:1;">{pc["price"]}</span>'
+                     f'<span class="pop" style="font-size:{int(70 * K)}px;color:{INK};margin-left:18px;">{pc.get("unit", "")}</span></div>')
+    if pc.get("chips"):
+        chips = "".join(f'<span id="{pid}c{k}" class="pill chip">{c}</span>' for k, c in enumerate(pc["chips"]))
+        parts.append(f'<div style="margin-top:22px;">{chips}</div>')
+    if pc.get("stamp"):
+        parts.append(f'<div style="margin-top:28px;"><span id="{pid}s" class="pop stamp" style="font-size:{int(76 * K)}px;">{pc["stamp"]}</span></div>')
+    if pc.get("note"):
+        parts.append(f'<div id="{pid}n" class="sb" style="font-size:{int(40 * K)}px;color:{INK};margin-top:26px;">{pc["note"]}</div>')
+    HTML.append(f'<div id="{pid}" style="position:absolute;left:0;right:0;top:0;height:{H}px;display:flex;flex-direction:column;'
+                f'align-items:center;justify-content:center;text-align:center;">{"".join(parts)}</div>')
+    # build-up: kicker on the scene's first beat, then each element on the next beat (pop SFX on its beat)
+    t = s0
+    sfx("whoosh-up-0.6s", s0, 0.4)
+    if pc.get("kicker"):
+        T.append(f'tl.fromTo("#{pid}k", {{opacity:0, y:-20}}, {{opacity:1, y:0, duration:0.25}}, {r3(t - 0.08)});')
+    if pc.get("mark"):
+        T.append(f'tl.fromTo("#{pid}m", {{scale:0, rotation:-25}}, {{scale:1, rotation:0, duration:0.35, ease:"back.out(2.4)"}}, {r3(t - 0.06)});')
+        sfx("pop-high", t, 0.45)
+    for bi_ in range(len(pc.get("big", []))):
+        t = r3(t + BEAT)
+        T.append(f'tl.fromTo("#{pid}b{bi_}", {{yPercent:110}}, {{yPercent:0, duration:0.22, ease:"power4.out"}}, {r3(t - 0.15)});')
+        sfx("swish-1", t, 0.35)
+    if pc.get("price"):
+        t = r3(t + BEAT)
+        T.append(f'tl.fromTo("#{pid}pr", {{scale:2.2, opacity:0}}, {{scale:1, opacity:1, duration:0.25, ease:"power4.out"}}, {r3(t - 0.15)});')
+        sfx("impact-punch", t, 0.45)
+    for k in range(len(pc.get("chips", []))):
+        t = r3(t + BEAT)
+        T.append(f'tl.fromTo("#{pid}c{k}", {{scale:0, opacity:0}}, {{scale:1, opacity:1, duration:0.3, ease:"back.out(2.4)"}}, {r3(t - 0.06)});')
+        sfx("pluck", t, 0.4)
+    if pc.get("stamp"):
+        # the stamp slams in about where the voice says it (scene start + 55 % of the line), on a beat
+        t = max(r3(t + BEAT), next_beat(s0 + 0.2 + 0.55 * VLEN[li]))
+        T.append(f'tl.fromTo("#{pid}s", {{scale:2.6, opacity:0, rotation:-14}}, {{scale:1, opacity:1, rotation:-5, duration:0.2, ease:"power4.in"}}, {r3(t - 0.2)});')
+        T.append(f'tl.fromTo("#{pid}", {{x:0}}, {{x:-10, duration:0.05, yoyo:true, repeat:4, ease:"none"}}, {t});')
+        sfx("impact-boom", t, 0.4)
+    if pc.get("note"):
+        t = r3(t + BEAT)
+        T.append(f'tl.fromTo("#{pid}n", {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.3}}, {r3(t - 0.1)});')
+    T.append(f'tl.to("#{pid}", {{scale:1.15, opacity:0, filter:"blur(10px)", duration:0.22, ease:"power3.in"}}, {r3(s1 - 0.22)});')
+    win(f"#{pid}", r3(s0 - 0.1), s1)
+
 # ---------------------------------------------------------------- S5 contact end card
 rows_html = []
 for k, (lab, val, col) in enumerate(C["contacts"]):
@@ -356,23 +463,23 @@ HTML.append(f'''<div id="s5" style="position:absolute;inset:0;">
     {"".join(rows_html)}
   </div>
 </div>''')
-T.append(f'tl.fromTo("#hostb", {{scale:0.6, rotation:-10}}, {{scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}}, {r3(T_END - 0.1)});')
-T.append(f'tl.to("#hostb", {{rotation:3, y:-6, duration:{r3(BEAT * 2)}, yoyo:true, repeat:7, ease:"sine.inOut"}}, {r3(T_END + 0.4)});')
-T.append(f'tl.fromTo("#e-cta", {{scale:0, opacity:0}}, {{scale:1, opacity:1, duration:0.35, ease:"back.out(2.2)"}}, {r3(T_END - 0.06)});')
-T.append(f'tl.fromTo("#e-name", {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.25}}, {r3(T_END + BEAT - 0.1)});')
-T.append(f'tl.fromTo("#e-sub", {{opacity:0, x:-30}}, {{opacity:1, x:0, duration:0.25}}, {r3(T_END + BEAT - 0.1)});')
-T.append(f'tl.fromTo("#e-role", {{opacity:0}}, {{opacity:1, duration:0.25}}, {r3(T_END + 2 * BEAT - 0.1)});')
-sfx("impact-punch", T_END, 0.42)
-sfx("pop-high", r3(T_END + BEAT), 0.4)
+T.append(f'tl.fromTo("#hostb", {{scale:0.6, rotation:-10}}, {{scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}}, {r3(T_C - 0.1)});')
+T.append(f'tl.to("#hostb", {{rotation:3, y:-6, duration:{r3(BEAT * 2)}, yoyo:true, repeat:7, ease:"sine.inOut"}}, {r3(T_C + 0.4)});')
+T.append(f'tl.fromTo("#e-cta", {{scale:0, opacity:0}}, {{scale:1, opacity:1, duration:0.35, ease:"back.out(2.2)"}}, {r3(T_C - 0.06)});')
+T.append(f'tl.fromTo("#e-name", {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.25}}, {r3(T_C + BEAT - 0.1)});')
+T.append(f'tl.fromTo("#e-sub", {{opacity:0, x:-30}}, {{opacity:1, x:0, duration:0.25}}, {r3(T_C + BEAT - 0.1)});')
+T.append(f'tl.fromTo("#e-role", {{opacity:0}}, {{opacity:1, duration:0.25}}, {r3(T_C + 2 * BEAT - 0.1)});')
+sfx("impact-punch", T_C, 0.42)
+sfx("pop-high", r3(T_C + BEAT), 0.4)
 nc = len(C["contacts"])
 for k in range(nc):
-    t = r3(T_END + (2 + k) * BEAT)
+    t = r3(T_C + (2 + k) * BEAT)
     T.append(f'tl.fromTo("#c{k}", {{opacity:0, x:{-60 if WIDE else 0}, y:{0 if WIDE else 30}}}, {{opacity:1, x:0, y:0, duration:0.2, ease:"power3.out"}}, {r3(t - 0.08)});')
     sfx("pluck", t, 0.4)
-t_last = r3(T_END + (2 + nc) * BEAT)
+t_last = r3(T_C + (2 + nc) * BEAT)
 sfx("sparkle", t_last, 0.3)
 T.append(f'tl.to("#e-cta", {{scale:1.06, duration:{r3(BEAT)}, yoyo:true, repeat:5, ease:"sine.inOut"}}, {t_last});')
-win("#s5", r3(T_END - 0.1), TOTAL + 1)
+win("#s5", r3(T_C - 0.1), TOTAL + 1)
 
 # grain over everything (soft-light, own overlay from library/stock, looped by repeated clips)
 grain = []
@@ -408,16 +515,44 @@ html, body {{ width:{W}px; height:{H}px; overflow:hidden; background:#e3e3e3; }}
 .tape {{ position:absolute; width:0; height:0; }}
 .crow {{ display:flex; align-items:center; gap:18px; font-size:{40 if WIDE else 44}px; margin:12px 0; white-space:nowrap; }}
 .cdot {{ width:22px; height:22px; border-radius:50%; flex:none; }}
+.chip {{ display:inline-block; margin:8px 10px; padding:10px 28px; border-radius:14px; background:#fff; color:{INK}; font-size:{int(46 * K)}px;
+        box-shadow:0 8px 22px rgba(0,0,0,0.18); border:3px solid {INK}; }}
+.stamp {{ display:inline-block; color:{RED}; border:8px solid {RED}; border-radius:16px; padding:4px 30px; letter-spacing:2px;
+         background:rgba(255,255,255,0.6); transform:rotate(-5deg); }}
 """
 # hook gaps (owner, 2026-10-27: "music me jan dallo ... hook bana rahay"): the music drops out for the beat before the
 # montage drop and the half beat before the wall, so the riser + impact land in silence (20 ms ramps, no clicks)
 GAPS = [(r3(DROP - BEAT), DROP), (r3(T_GRID - BEAT / 2), T_GRID)] if C.get("hook_gaps", True) else []
 vol = "*".join(f"(1-between(t,{g0},{g1})*min(1,min(t-{g0},{g1}-t)/0.02))" for g0, g1 in GAPS) or "1"
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/music.mp3", "-af", f"volume='{vol}':eval=frame",
-                "-c:a", "libmp3lame", "-q:a", "2", "assets/music/music_hook.mp3"], check=True)
+if VO:
+    # fit the track so its drop lands on DROP and it ends (fade) at TOTAL, then place the lines and mix with ducking
+    T_ = f"{REPO}/library/tools"
+    PV = "/home/user/tools/perc-venv/bin/python"
+    subprocess.run([PV, f"{T_}/music_fit.py", VO["music_src"], "assets/music/music.wav", "--length", str(TOTAL), "--drop-at", str(DROP),
+                    "--src-drop", str(VO["src_drop"]), "--end", "fade", "--fade", "2.5"], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/music.wav", "-af", f"volume='{vol}':eval=frame", "assets/music/music_gap.wav"], check=True)
+    import numpy as np
+    SR = 48000
+    vo = np.zeros((int((TOTAL + 1) * SR), 2), np.float32)
+    for li, t0 in VOAT:
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", VO["parts"][li], "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"],
+                             capture_output=True, check=True).stdout
+        x = np.frombuffer(raw, np.float32).reshape(-1, 2)
+        i0 = int(t0 * SR)
+        vo[i0:i0 + len(x)] += x[:len(vo) - i0]
+    os.makedirs("assets/vo", exist_ok=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-", "assets/vo/vo_placed.wav"],
+                   input=vo.tobytes(), check=True)
+    subprocess.run([PV, f"{T_}/mix_vo_music.py", "assets/vo/vo_placed.wav", "assets/music/music_gap.wav", "assets/music/mix.wav",
+                    "--lufs", "-16"], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/mix.wav", "-t", str(TOTAL), "-c:a", "libmp3lame", "-q:a", "2",
+                    "assets/music/music_hook.mp3"], check=True)
+else:
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/music/music.mp3", "-af", f"volume='{vol}':eval=frame",
+                    "-c:a", "libmp3lame", "-q:a", "2", "assets/music/music_hook.mp3"], check=True)
 music_d = dur("assets/music/music_hook.mp3")
-audio = [f'<audio id="music" src="assets/music/music_hook.mp3" data-start="0" data-duration="{min(TOTAL, music_d)}" data-volume="{C.get("music_volume", 0.8)}" '
-         f'data-track-index="1" data-fade-out="1.5"></audio>']
+audio = [f'<audio id="music" src="assets/music/music_hook.mp3" data-start="0" data-duration="{min(TOTAL, music_d)}" '
+         f'data-volume="{1.0 if VO else C.get("music_volume", 0.8)}" data-track-index="1" data-fade-out="{0.5 if VO else 1.5}"></audio>']
 lanes = []                            # greedy lane per sfx so overlapping clips never share a track (lint)
 for n, (f, s, v, d) in enumerate(sorted(A, key=lambda x: x[1])):
     p = f"assets/sfx/{f}.mp3"
@@ -456,6 +591,6 @@ html = f"""<!doctype html>
 """
 open("index.html", "w").write(html)
 json.dump({"total": TOTAL, "drop": DROP, "bar": BAR, "want": T_WANT, "groups": [[g["s0"], C["brands"][g["brand"]]["client"],
-          [c["type"] for c in g["clips"]]] for g in GROUPS], "wall": [T_GRID, T_END], "end": T_END,
+          [c["type"] for c in g["clips"]]] for g in GROUPS], "wall": [T_GRID, T_END], "end": T_C, "policy": [p[:3] for p in POL], "vo_at": VOAT,
            "sfx": sorted([(round(s + PEAK[f], 3), f) for f, s, v, d in A])}, open("timing.json", "w"), indent=1)
 print(f"built {a.format}: {TOTAL} s, {N} clips in {NG} bars, {NB} brands, {len(T)} tweens, {len(A)} sfx")
