@@ -1,0 +1,4 @@
+# Noto Emoji 2D PNGs (512 px)
+
+Source: https://github.com/googlefonts/noto-emoji (2D/png/512/emoji_u<code>.png since the Sep 2026 restructure).
+Licence: OFL 1.1 for fonts, Apache 2.0 for images; no credit needed in videos.

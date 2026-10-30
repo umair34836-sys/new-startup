@@ -1,0 +1,974 @@
+[
+ {
+  "url": "https://assets.indolj.io/upload/1768815514-chicken-supereme (1).webp",
+  "file": "1768815514-chicken-supereme_1_.webp",
+  "http": "000 0",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Arabian Base [811087]"
+  ],
+  "repo_path": "assets/food/1768815514-chicken-supereme_1_.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768815514-chicken-supereme%20(1).webp",
+  "file": "1768815514-chicken-supereme_1_.webp",
+  "http": "200 659241",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "repo_path": "assets/food/1768815514-chicken-supereme_1_.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768816450-fajita-pizza-32.webp",
+  "file": "1768816450-fajita-pizza-32.webp",
+  "http": "200 706342",
+  "role": [
+   "item",
+   "Pizza",
+   "Fajita Sicilian [811115]"
+  ],
+  "repo_path": "assets/food/1768816450-fajita-pizza-32.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768816556-fajita-pizza.webp",
+  "file": "1768816556-fajita-pizza.webp",
+  "http": "200 763432",
+  "role": [
+   "item",
+   "Pizza",
+   "Fajita Chicken [811116]"
+  ],
+  "repo_path": "assets/food/1768816556-fajita-pizza.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768919151-pizza.jpg",
+  "file": "1768919151-pizza.jpg",
+  "http": "200 107178",
+  "role": [
+   "category",
+   "Pizza",
+   ""
+  ],
+  "repo_path": "assets/banners/1768919151-pizza.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768919181-Starters.jpg",
+  "file": "1768919181-Starters.jpg",
+  "http": "200 103917",
+  "role": [
+   "category",
+   "Starters",
+   ""
+  ],
+  "repo_path": "assets/banners/1768919181-Starters.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768919190-Sandwiches.jpg",
+  "file": "1768919190-Sandwiches.jpg",
+  "http": "200 90272",
+  "role": [
+   "category",
+   "Sandwiches",
+   ""
+  ],
+  "repo_path": "assets/banners/1768919190-Sandwiches.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768919201-Pasta.jpg",
+  "file": "1768919201-Pasta.jpg",
+  "http": "200 92560",
+  "role": [
+   "category",
+   "Pasta",
+   ""
+  ],
+  "repo_path": "assets/banners/1768919201-Pasta.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768922738-Chicken-Kabab.png",
+  "file": "1768922738-Chicken-Kabab.png",
+  "http": "200 967064",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Kabab [811132]"
+  ],
+  "repo_path": "assets/food/1768922738-Chicken-Kabab.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768922780-Chicken-Tikka.png",
+  "file": "1768922780-Chicken-Tikka.png",
+  "http": "200 1022563",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Tikka [811117]"
+  ],
+  "repo_path": "assets/food/1768922780-Chicken-Tikka.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768922813-Chese-lover.png",
+  "file": "1768922813-Chese-lover.png",
+  "http": "200 1035553",
+  "role": [
+   "item",
+   "Pizza",
+   "Cheese Lover [811153]"
+  ],
+  "repo_path": "assets/food/1768922813-Chese-lover.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768922910-Euro-Base.png",
+  "file": "1768922910-Euro-Base.png",
+  "http": "200 1024069",
+  "role": [
+   "item",
+   "Pizza",
+   "Euro Base [811143]"
+  ],
+  "repo_path": "assets/food/1768922910-Euro-Base.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768922970-kabab.png",
+  "file": "1768922970-kabab.png",
+  "http": "200 1071986",
+  "role": [
+   "item",
+   "Pizza",
+   "Seekh Kabab [811137]"
+  ],
+  "repo_path": "assets/food/1768922970-kabab.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768923008-Mughlai.png",
+  "file": "1768923008-Mughlai.png",
+  "http": "200 1056437",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Mughlai Base [811085]"
+  ],
+  "repo_path": "assets/food/1768923008-Mughlai.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768923037-Rich-Creamy.png",
+  "file": "1768923037-Rich-Creamy.png",
+  "http": "200 954384",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Rich Creamy [811121]"
+  ],
+  "repo_path": "assets/food/1768923037-Rich-Creamy.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768923073-Supreme-base.png",
+  "file": "1768923073-Supreme-base.png",
+  "http": "200 1022574",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Supreme Base [811086]"
+  ],
+  "repo_path": "assets/food/1768923073-Supreme-base.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768923117-Tandoori.png",
+  "file": "1768923117-Tandoori.png",
+  "http": "200 947755",
+  "role": [
+   "item",
+   "Pizza",
+   "Tandoori Hot [811089]"
+  ],
+  "repo_path": "assets/food/1768923117-Tandoori.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768923151-Turkish-base.png",
+  "file": "1768923151-Turkish-base.png",
+  "http": "200 1014207",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Turkish Base [811118]"
+  ],
+  "repo_path": "assets/food/1768923151-Turkish-base.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768923176-Vegy.png",
+  "file": "1768923176-Vegy.png",
+  "http": "200 1065437",
+  "role": [
+   "item",
+   "Pizza",
+   "Veggie Lover [811154]"
+  ],
+  "repo_path": "assets/food/1768923176-Vegy.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1768998138-logo--60-.png",
+  "file": "1768998138-logo--60-.png",
+  "http": "200 77491",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "repo_path": "assets/brand/1768998138-logo--60-.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769000560-Bazuka.png",
+  "file": "1769000560-Bazuka.png",
+  "http": "200 876358",
+  "role": [
+   "item",
+   "Platters",
+   "Bazuka Platter [811423]"
+  ],
+  "repo_path": "assets/food/1769000560-Bazuka.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769000572-Chicken-Achari.png",
+  "file": "1769000572-Chicken-Achari.png",
+  "http": "200 1102256",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Achari [811124]"
+  ],
+  "repo_path": "assets/food/1769000572-Chicken-Achari.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769000591-Hot-and-Spicy.png",
+  "file": "1769000591-Hot-and-Spicy.png",
+  "http": "200 1062257",
+  "role": [
+   "item",
+   "Pizza",
+   "Hot & Spicy [811130]"
+  ],
+  "repo_path": "assets/food/1769000591-Hot-and-Spicy.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769000608-Hot-amrecain.png",
+  "file": "1769000608-Hot-amrecain.png",
+  "http": "200 970782",
+  "role": [
+   "item",
+   "Pizza",
+   "American Hot [811146]"
+  ],
+  "repo_path": "assets/food/1769000608-Hot-amrecain.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064037-Chicekn-pasta.png",
+  "file": "1769064037-Chicekn-pasta.png",
+  "http": "200 565838",
+  "role": [
+   "item",
+   "Pasta",
+   "Chicken Pasta [811197]"
+  ],
+  "repo_path": "assets/food/1769064037-Chicekn-pasta.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064065-Chicken-drums-itcik.png",
+  "file": "1769064065-Chicken-drums-itcik.png",
+  "http": "200 494202",
+  "role": [
+   "item",
+   "Starters",
+   "Chicken Drum Stick [811185]"
+  ],
+  "repo_path": "assets/food/1769064065-Chicken-drums-itcik.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064093-Chicken-Nugge5ts.png",
+  "file": "1769064093-Chicken-Nugge5ts.png",
+  "http": "200 462567",
+  "role": [
+   "item",
+   "Starters",
+   "Chicken Nuggets [811188]"
+  ],
+  "repo_path": "assets/food/1769064093-Chicken-Nugge5ts.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064124-Chicken-Sandhwich.png",
+  "file": "1769064124-Chicken-Sandhwich.png",
+  "http": "200 548824",
+  "role": [
+   "item",
+   "Sandwiches",
+   "Chicken Sandwich [811194]"
+  ],
+  "repo_path": "assets/food/1769064124-Chicken-Sandhwich.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064169-Fingetr-kabab.png",
+  "file": "1769064169-Fingetr-kabab.png",
+  "http": "200 495992",
+  "role": [
+   "item",
+   "Starters",
+   "Finger Kabab [811187]"
+  ],
+  "repo_path": "assets/food/1769064169-Fingetr-kabab.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064188-French-Fries.png",
+  "file": "1769064188-French-Fries.png",
+  "http": "200 493013",
+  "role": [
+   "item",
+   "Starters",
+   "French Fries [811186]"
+  ],
+  "repo_path": "assets/food/1769064188-French-Fries.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064210-Garlic bread.png",
+  "file": "1769064210-Garlic_bread.png",
+  "http": "000 0",
+  "role": [
+   "item",
+   "Starters",
+   "Garlic Bread [811191]"
+  ],
+  "repo_path": "assets/food/1769064210-Garlic_bread.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064210-Garlic%20bread.png",
+  "file": "1769064210-Garlic_bread.png",
+  "http": "200 685762",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "repo_path": "assets/food/1769064210-Garlic_bread.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064234-kabab-Crust.png",
+  "file": "1769064234-kabab-Crust.png",
+  "http": "200 923296",
+  "role": [
+   "item",
+   "Pizza",
+   "Kabab Crust [811429]"
+  ],
+  "repo_path": "assets/food/1769064234-kabab-Crust.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064283-Lagsania.png",
+  "file": "1769064283-Lagsania.png",
+  "http": "200 432640",
+  "role": [
+   "item",
+   "Pasta",
+   "Creamy Lasagne [811198]"
+  ],
+  "repo_path": "assets/food/1769064283-Lagsania.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064308-mughlai-roll.png",
+  "file": "1769064308-mughlai-roll.png",
+  "http": "200 510051",
+  "role": [
+   "item",
+   "Starters",
+   "Chicken Mughali Roll [811177]"
+  ],
+  "repo_path": "assets/food/1769064308-mughlai-roll.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064400-Tikka-roll.png",
+  "file": "1769064400-Tikka-roll.png",
+  "http": "200 486269",
+  "role": [
+   "item",
+   "Starters",
+   "Chicken Tikka Roll [811180]"
+  ],
+  "repo_path": "assets/food/1769064400-Tikka-roll.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769064633-Chese-fries.png",
+  "file": "1769064633-Chese-fries.png",
+  "http": "200 433669",
+  "role": [
+   "item",
+   "Pasta",
+   "Chicken Cheese Fries [811200]"
+  ],
+  "repo_path": "assets/food/1769064633-Chese-fries.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769241074-Beverages.jpg",
+  "file": "1769241074-Beverages.jpg",
+  "http": "200 71467",
+  "role": [
+   "category",
+   "Beverages",
+   ""
+  ],
+  "repo_path": "assets/banners/1769241074-Beverages.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769241098-Super.jpg",
+  "file": "1769241098-Super.jpg",
+  "http": "200 119242",
+  "role": [
+   "category",
+   "Super Base Deals",
+   ""
+  ],
+  "repo_path": "assets/banners/1769241098-Super.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769241128-Teen-ka-scene.jpg",
+  "file": "1769241128-Teen-ka-scene.jpg",
+  "http": "200 128513",
+  "role": [
+   "category",
+   "Teen Ka Scene Deals",
+   ""
+  ],
+  "repo_path": "assets/banners/1769241128-Teen-ka-scene.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769241179-Time-offer.jpg",
+  "file": "1769241179-Time-offer.jpg",
+  "http": "200 87080",
+  "role": [
+   "category",
+   "Time Offer Deals",
+   ""
+  ],
+  "repo_path": "assets/banners/1769241179-Time-offer.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264090-Soft-Drink.webp",
+  "file": "1769264090-Soft-Drink.webp",
+  "http": "200 160786",
+  "role": [
+   "item",
+   "Beverages",
+   "Soft Drinks [811211]"
+  ],
+  "repo_path": "assets/food/1769264090-Soft-Drink.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264325-Base-platter.webp",
+  "file": "1769264325-Base-platter.webp",
+  "http": "200 508044",
+  "role": [
+   "item",
+   "Platters",
+   "Base Platter [811182]"
+  ],
+  "repo_path": "assets/food/1769264325-Base-platter.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264343-chicken-lasagne.webp",
+  "file": "1769264343-chicken-lasagne.webp",
+  "http": "200 328877",
+  "role": [
+   "item",
+   "Pasta",
+   "Chicken  Lasagne [811199]"
+  ],
+  "repo_path": "assets/food/1769264343-chicken-lasagne.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264363-Supreme-Primavera.webp",
+  "file": "1769264363-Supreme-Primavera.webp",
+  "http": "200 415659",
+  "role": [
+   "item",
+   "Pasta",
+   "Supreme Primavera [811196]"
+  ],
+  "repo_path": "assets/food/1769264363-Supreme-Primavera.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264407-Base-amde-sandwich.webp",
+  "file": "1769264407-Base-amde-sandwich.webp",
+  "http": "200 474392",
+  "role": [
+   "item",
+   "Sandwiches",
+   "Base Made Sandwich [811195]"
+  ],
+  "repo_path": "assets/food/1769264407-Base-amde-sandwich.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264467-Daily-Base.webp",
+  "file": "1769264467-Daily-Base.webp",
+  "http": "200 19482",
+  "role": [
+   "category",
+   "Daily Base Deals",
+   ""
+  ],
+  "repo_path": "assets/banners/1769264467-Daily-Base.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264528-Watar.webp",
+  "file": "1769264528-Watar.webp",
+  "http": "200 162111",
+  "role": [
+   "item",
+   "Beverages",
+   "Mineral Water [811217]"
+  ],
+  "repo_path": "assets/food/1769264528-Watar.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264726-Supreme bread.jpg",
+  "file": "1769264726-Supreme_bread.jpg",
+  "http": "000 0",
+  "role": [
+   "item",
+   "Starters",
+   "Supreme Bread [811190]"
+  ],
+  "repo_path": "assets/food/1769264726-Supreme_bread.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264726-Supreme%20bread.jpg",
+  "file": "1769264726-Supreme_bread.jpg",
+  "http": "200 443186",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "repo_path": "assets/food/1769264726-Supreme_bread.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1769264883-Glass.webp",
+  "file": "1769264883-Glass.webp",
+  "http": "200 220566",
+  "role": [
+   "item",
+   "Beverages",
+   "Glass [811214]"
+  ],
+  "repo_path": "assets/food/1769264883-Glass.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771065257-SPICY-ITALIAN.jpg",
+  "file": "1771065257-SPICY-ITALIAN.jpg",
+  "http": "200 56177",
+  "role": [
+   "item",
+   "Pizza",
+   "Spicy Italian [811131]"
+  ],
+  "repo_path": "assets/food/1771065257-SPICY-ITALIAN.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771065263-chese-stick.jpg",
+  "file": "1771065263-chese-stick.jpg",
+  "http": "200 27515",
+  "role": [
+   "item",
+   "Starters",
+   "Cheese Sticks [811189]"
+  ],
+  "repo_path": "assets/food/1771065263-chese-stick.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771065830-Bihari-Roll.jpg",
+  "file": "1771065830-Bihari-Roll.jpg",
+  "http": "200 351140",
+  "role": [
+   "item",
+   "Starters",
+   "Bihari Roll [815513]"
+  ],
+  "repo_path": "assets/food/1771065830-Bihari-Roll.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771066087-GRILL-BLACK-PEPER-TIKKA.jpg",
+  "file": "1771066087-GRILL-BLACK-PEPER-TIKKA.jpg",
+  "http": "200 718421",
+  "role": [
+   "item",
+   "Pizza",
+   "Grilled Black Pepper Tikka [815516]"
+  ],
+  "repo_path": "assets/food/1771066087-GRILL-BLACK-PEPER-TIKKA.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771417628-1771065330-1768919084-kabab-crust-benner.jpg",
+  "file": "1771417628-1771065330-1768919084-kabab-crust-benner.jpg",
+  "http": "200 147801",
+  "role": [
+   "hero_slide",
+   "",
+   ""
+  ],
+  "repo_path": "assets/banners/1771417628-1771065330-1768919084-kabab-crust-benner.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771417636-1771065320-1768919079-Crown--Curst-benner.jpg",
+  "file": "1771417636-1771065320-1768919079-Crown--Curst-benner.jpg",
+  "http": "200 166482",
+  "role": [
+   "hero_slide",
+   "",
+   ""
+  ],
+  "repo_path": "assets/banners/1771417636-1771065320-1768919079-Crown--Curst-benner.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771417644-1771065310-1768919073-Bazuka-banner.jpg",
+  "file": "1771417644-1771065310-1768919073-Bazuka-banner.jpg",
+  "http": "200 146107",
+  "role": [
+   "hero_slide",
+   "",
+   ""
+  ],
+  "repo_path": "assets/banners/1771417644-1771065310-1768919073-Bazuka-banner.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1771417649-1771065304-Benners.jpg",
+  "file": "1771417649-1771065304-Benners.jpg",
+  "http": "200 160183",
+  "role": [
+   "hero_slide",
+   "",
+   ""
+  ],
+  "repo_path": "assets/banners/1771417649-1771065304-Benners.jpg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1773298546-Superbase1.webp",
+  "file": "1773298546-Superbase1.webp",
+  "http": "200 94418",
+  "role": [
+   "item",
+   "Super Base Deals",
+   "Deal 1 [811062]"
+  ],
+  "repo_path": "assets/food/1773298546-Superbase1.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1773298561-Superbase2.webp",
+  "file": "1773298561-Superbase2.webp",
+  "http": "200 101518",
+  "role": [
+   "item",
+   "Super Base Deals",
+   "Deal 2 [811082]"
+  ],
+  "repo_path": "assets/food/1773298561-Superbase2.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1773298576-Superbase3.webp",
+  "file": "1773298576-Superbase3.webp",
+  "http": "200 102798",
+  "role": [
+   "item",
+   "Super Base Deals",
+   "Deal 3 [811083]"
+  ],
+  "repo_path": "assets/food/1773298576-Superbase3.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1773298709-Superbase4.webp",
+  "file": "1773298709-Superbase4.webp",
+  "http": "200 103834",
+  "role": [
+   "item",
+   "Super Base Deals",
+   "Deal 4 [811084]"
+  ],
+  "repo_path": "assets/food/1773298709-Superbase4.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1774535203-crownpizza.jpeg",
+  "file": "1774535203-crownpizza.jpeg",
+  "http": "200 1001615",
+  "role": [
+   "item",
+   "Pizza",
+   "Crown Crust [811428]"
+  ],
+  "repo_path": "assets/food/1774535203-crownpizza.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1779260810-ChickenAlfredoPasta.jpeg",
+  "file": "1779260810-ChickenAlfredoPasta.jpeg",
+  "http": "200 825301",
+  "role": [
+   "item",
+   "Pasta",
+   "Alfredo Pasta [820767]"
+  ],
+  "repo_path": "assets/food/1779260810-ChickenAlfredoPasta.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1779456242-ChickenPotatoSkin.jpeg",
+  "file": "1779456242-ChickenPotatoSkin.jpeg",
+  "http": "200 1133483",
+  "role": [
+   "item",
+   "Starters",
+   "Chicken Potato Skin [811192]"
+  ],
+  "repo_path": "assets/food/1779456242-ChickenPotatoSkin.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1783432408-WhatsAppImage2026-07-07at6.49.41PM.jpeg",
+  "file": "1783432408-WhatsAppImage2026-07-07at6.49.41PM.jpeg",
+  "http": "200 1104189",
+  "role": [
+   "item",
+   "Pizza",
+   "Chicken Creamy Base [811088]"
+  ],
+  "repo_path": "assets/food/1783432408-WhatsAppImage2026-07-07at6.49.41PM.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1783432542-WhatsApp-Image-2026-07-07-at-6-30-17-PM--1-.jpeg",
+  "file": "1783432542-WhatsApp-Image-2026-07-07-at-6-30-17-PM--1-.jpeg",
+  "http": "200 486680",
+  "role": [
+   "item",
+   "Teen Ka Scene Deals",
+   "Deal 1 [811056]"
+  ],
+  "repo_path": "assets/food/1783432542-WhatsApp-Image-2026-07-07-at-6-30-17-PM--1-.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1783432571-WhatsApp-Image-2026-07-07-at-6-30-16-PM.jpeg",
+  "file": "1783432571-WhatsApp-Image-2026-07-07-at-6-30-16-PM.jpeg",
+  "http": "200 487949",
+  "role": [
+   "item",
+   "Teen Ka Scene Deals",
+   "Deal 2 [811057]"
+  ],
+  "repo_path": "assets/food/1783432571-WhatsApp-Image-2026-07-07-at-6-30-16-PM.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1783432596-WhatsApp-Image-2026-07-07-at-6-30-16-PM--1-.jpeg",
+  "file": "1783432596-WhatsApp-Image-2026-07-07-at-6-30-16-PM--1-.jpeg",
+  "http": "200 489529",
+  "role": [
+   "item",
+   "Teen Ka Scene Deals",
+   "Deal 3 [811058]"
+  ],
+  "repo_path": "assets/food/1783432596-WhatsApp-Image-2026-07-07-at-6-30-16-PM--1-.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1783432610-WhatsApp-Image-2026-07-07-at-6-30-17-PM.jpeg",
+  "file": "1783432610-WhatsApp-Image-2026-07-07-at-6-30-17-PM.jpeg",
+  "http": "200 489458",
+  "role": [
+   "item",
+   "Teen Ka Scene Deals",
+   "Deal 4 [811059]"
+  ],
+  "repo_path": "assets/food/1783432610-WhatsApp-Image-2026-07-07-at-6-30-17-PM.jpeg",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1786801330-WhatsAppImage2026-08-15at6.22.06PM.webp",
+  "file": "1786801330-WhatsAppImage2026-08-15at6.22.06PM.webp",
+  "http": "200 95636",
+  "role": [
+   "item",
+   "Time Offer Deals",
+   "Deal 1 [811060]"
+  ],
+  "repo_path": "assets/food/1786801330-WhatsAppImage2026-08-15at6.22.06PM.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1786801339-WhatsAppImage2026-08-15at6.22.05PM.webp",
+  "file": "1786801339-WhatsAppImage2026-08-15at6.22.05PM.webp",
+  "http": "200 94202",
+  "role": [
+   "item",
+   "Time Offer Deals",
+   "Deal 2 [811061]"
+  ],
+  "repo_path": "assets/food/1786801339-WhatsAppImage2026-08-15at6.22.05PM.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1786801448-WhatsAppImage2026-08-15at6.22.06PM1.webp",
+  "file": "1786801448-WhatsAppImage2026-08-15at6.22.06PM1.webp",
+  "http": "200 77686",
+  "role": [
+   "item",
+   "Daily Base Deals",
+   "Deal 1 [811052]"
+  ],
+  "repo_path": "assets/food/1786801448-WhatsAppImage2026-08-15at6.22.06PM1.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1786801463-WhatsAppImage2026-08-15at6.22.07PM.webp",
+  "file": "1786801463-WhatsAppImage2026-08-15at6.22.07PM.webp",
+  "http": "200 79528",
+  "role": [
+   "item",
+   "Daily Base Deals",
+   "Deal 2 [811053]"
+  ],
+  "repo_path": "assets/food/1786801463-WhatsAppImage2026-08-15at6.22.07PM.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1786801476-WhatsAppImage2026-08-15at6.22.07PM1.webp",
+  "file": "1786801476-WhatsAppImage2026-08-15at6.22.07PM1.webp",
+  "http": "200 77118",
+  "role": [
+   "item",
+   "Daily Base Deals",
+   "Deal 3 [811054]"
+  ],
+  "repo_path": "assets/food/1786801476-WhatsAppImage2026-08-15at6.22.07PM1.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1786802194-WhatsAppImage2026-08-15at6.22.08PM.webp",
+  "file": "1786802194-WhatsAppImage2026-08-15at6.22.08PM.webp",
+  "http": "200 79836",
+  "role": [
+   "item",
+   "Daily Base Deals",
+   "Deal 4 [811055]"
+  ],
+  "repo_path": "assets/food/1786802194-WhatsAppImage2026-08-15at6.22.08PM.webp",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/1787813340_3d6fbde9e56ed667.jpeg",
+  "file": "1787813340_3d6fbde9e56ed667.jpeg",
+  "http": "200 417142",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "committed": false,
+  "note": "not committed: banner photo shows people (owner rule)"
+ },
+ {
+  "url": "https://assets.indolj.io/upload/favicons/_faviconMgOSNlLv17fKDG1q.png",
+  "file": "_faviconMgOSNlLv17fKDG1q.png",
+  "http": "200 976",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "repo_path": "assets/brand/_faviconMgOSNlLv17fKDG1q.png",
+  "committed": true
+ },
+ {
+  "url": "https://assets.indolj.io/upload/popup_banner-221465-9e8d800df6dbde20e748614391152090.jpeg",
+  "file": "popup_banner-221465-9e8d800df6dbde20e748614391152090.jpeg",
+  "http": "200 599661",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "committed": false,
+  "note": "not committed: banner photo shows people (owner rule)"
+ },
+ {
+  "url": "https://pizzabasepk.com/assets/images/indolj-new-red.png",
+  "file": "indolj-new-red.png",
+  "http": "200 13240",
+  "role": [
+   "other",
+   "",
+   ""
+  ],
+  "repo_path": "assets/brand/indolj-new-red.png",
+  "committed": true
+ }
+]

@@ -1,0 +1,50 @@
+{
+ "size": "yt",
+ "bg": {
+  "image": "../a/site_hero.png",
+  "blur": 14,
+  "darken": 0.55,
+  "saturate": 1.2
+ },
+ "vignette": 0.5,
+ "stickers": [
+  {
+   "image": "../a/card_site.png",
+   "x": 0.46,
+   "y": 0.16,
+   "w": 0.58,
+   "rotate": 4
+  }
+ ],
+ "texts": [
+  {
+   "text": "BOTS.\nSITES.\nMINECRAFT.",
+   "x": 0.04,
+   "y": 0.1,
+   "w": 0.46,
+   "size": 116,
+   "font": "BigShoulders",
+   "weight": 900,
+   "align": "left",
+   "color": "#ffffff",
+   "stroke": 0,
+   "accent": {
+    "word": "MINECRAFT.",
+    "color": "#6fd3ff"
+   }
+  },
+  {
+   "text": "Portfolio walkthrough",
+   "x": 0.045,
+   "y": 0.77,
+   "w": 0.6,
+   "size": 62,
+   "font": "Outfit",
+   "weight": 800,
+   "align": "left",
+   "color": "#07090d",
+   "stroke": 0,
+   "box": "#6fd3ff"
+  }
+ ]
+}

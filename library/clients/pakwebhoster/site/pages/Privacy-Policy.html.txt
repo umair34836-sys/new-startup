@@ -1,0 +1,203 @@
+URL: https://pakwebhoster.com/Privacy-Policy.html
+FINAL_URL: https://pakwebhoster.com/Privacy-Policy
+HTTP: 200
+TITLE: Web Hosting in Pakistan from Rs. 200/mo | PAK WEB HOSTER
+FETCHED: 2026-10-25T05:04:28.692Z (Playwright Chromium, rendered innerText)
+
+Login
+ Home
+ Domain
+ Hosting
+ Email & Security
+ Tools
+ More
+Privacy Policy for PAK WEB HOSTER
+
+Last updated: Augest 31, 2025
+
+Privacy Policy
+
+This Privacy Policy describes Our policies and procedures on the collection, use, and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+
+We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Privacy Policy Generator.
+
+Interpretation and Definitions
+Interpretation
+
+The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or plural.
+
+Definitions
+
+For the purposes of this Privacy Policy:
+
+Account means a unique account created for You to access our Service or parts of our Service.
+Affiliate means an entity that controls, is controlled by, or is under common control with a party, where "control" means ownership of 50% or more of the shared, equity interest, or other securities entitled to vote for election of directors or other managing authority.
+Company refers to Jet Host Hub.
+Cookies are small files placed on Your computer, mobile device, or any other device by a website, containing details of Your browsing history on that website.
+Country refers to: Pakistan.
+Device means any device that can access the Service, such as a computer, cellphone, or digital tablet.
+Personal Data refers to any information that relates to an identified or identifiable individual.
+Service refers to the Website.
+Service Provider means any natural or legal person who processes data on behalf of the Company.
+Third-party Social Media Service refers to any website or social network website through which a User can log in or create an account to use the Service.
+Usage Data refers to data collected automatically when using the Service.
+Website refers to PAK WEB HOSTER, accessible from https://pakwebhoster.com/
+You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+Collecting and Using Your Personal Data
+Types of Data Collected
+Personal Data
+
+While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+
+Email address
+First name and last name
+Phone number
+Address, State, Province, ZIP/Postal code, City
+Usage Data
+
+Usage Data is collected automatically when using the Service. Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.
+
+Information from Third-Party Social Media Services
+
+The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:
+
+Google
+Facebook
+Instagram
+Twitter
+LinkedIn
+
+If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal Data that is already associated with Your Third-Party Social Media Service's account, such as Your name, email address, activities, or your contact list associated with that account.
+
+Tracking Technologies and Cookies
+
+We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. The technologies We use may include Cookies, Web Beacons, and similar technologies.
+
+You can manage cookies through your browser settings or refer to our detailed Cookies Policy for more information.
+
+Use of Your Personal Data
+
+The Company may use Your Personal Data for the following purposes:
+
+To provide and maintain our Service, including to monitor the usage of our Service.
+To manage Your Account.
+For the performance of a contract.
+To contact You regarding updates or services.
+For business transfers.
+To improve our Service and marketing efforts.
+Disclosure of Your Personal Data
+
+The Company may disclose Your Personal Data in the following situations:
+
+With Service Providers.
+For business transfers.
+With Affiliates and business partners.
+With Your consent.
+Retention of Your Personal Data
+
+The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy.
+
+Security of Your Personal Data
+
+While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
+
+Children's Privacy
+
+Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13.
+
+Links to Other Websites
+
+Our Service may contain links to other websites that are not operated by Us. We strongly advise You to review the Privacy Policy of every site You visit.
+
+Changes to this Privacy Policy
+
+We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+
+Privacy Policy for Quick CPanel Login Chrome Extension
+
+The Quick CPanel Login Chrome extension allows users to save and manage their cPanel account credentials locally on their device for faster login.
+
+Data Collected
+
+The extension does not transmit any personal information to our servers. All stored data—including account name, URL, username, and password—is encrypted locally using AES-GCM encryption.
+
+Use of Data
+
+The information stored by the extension is used solely to autofill login credentials on cPanel accounts. No data is shared with third parties.
+
+Security Measures
+
+All passwords are encrypted locally before storage. The extension never sends passwords or other sensitive information over the internet.
+
+User Rights
+
+Users can delete all stored accounts at any time using the "Clear All" button in the extension.
+
+Permissions Used
+
+The extension requires the following permissions to function properly:
+
+storage – To save and retrieve encrypted credentials locally.
+tabs – To detect active tabs where the autofill should occur.
+activeTab – To allow the extension to inject autofill scripts into the active cPanel page.
+scripting – To execute scripts for autofilling credentials securely.
+host_permissions () – To interact with all cPanel URLs entered by the user.
+Contact
+
+For questions regarding the extension’s privacy practices, please contact us at ameezfarmood477@gmail.com.
+
+Compliance with Google Chrome Web Store Policies
+
+This extension complies with Google Chrome Web Store policies and EU/EEA consumer protection laws. It only processes data locally on the user’s device and does not collect or transmit any personal information.
+
+Contact Us
+
+If you have any questions about this Privacy Policy, You can contact us:
+
+By email: ameezfarmood477@gmail.com
+By visiting this page: Contact Us
+By phone: +923243458649
+24 x 7 Customer Support
+99% Uptime Guarantee
+10+ Running Promos
+14-day Money-back guarantee
+
+At PAK WEB HOSTER , we aim at fulfilling all the business needs with perfectly crafted hosting plans and endless customer service day in, day out! We promise to deliver above and beyond the expectations of our clients!
+
+Pakistan,punajab,city bahawalnagar,area farooqbad st 18
+info@pakwebhoster.com
+Domains
+Register Domain Name
+View Domain Pricing
+Whois Lookup
+Name Suggestion Tool
+Hosting
+Shared Hosting
+WordPress Hosting
+Business Hosting
+Reseller Hosting
+Useful Links
+Terms & Conditions
+Privacy Policy
+Refund Policy
+Affilate Program
+View Knowledge Base
+Contact Support
+Career
+Contact Us
+Hotline 24/7:
++923243458649
+Email Address:
+info@pakwebhoster.com
+Security By :
+Copyright © 2026 PAK WEB HOSTER. All Rights Reserved.
+
+--- hidden text (accordions/tabs/dropdowns opened) ---
+Register A Domain
+Email (Coming Soon)
+Security
+Sitelock
+Codeguard Backup
+Useful Extension
+Whatsapp Marketing
+Term & Condition

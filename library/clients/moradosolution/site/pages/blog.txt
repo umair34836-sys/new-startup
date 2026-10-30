@@ -1,0 +1,118 @@
+URL: https://moradosolution.in/blog
+HTTP: 200
+TITLE: Blog — MoradoSolution
+FETCHED: 2026-10-24T12:22:11.221Z (Playwright Chromium, rendered innerText)
+
+M
+O
+R
+A
+D
+O
+S
+O
+L
+U
+T
+I
+O
+N
+
+Skip to content
+MoradoSolution
+Home
+Game Hosting
+VPS, VDS & Bare Metal
+Infrastructure
+DDoS Protection
+About
+Login
+Register
+
+BLOG
+
+Notes from the team.
+
+Launches, engineering deep-dives and guides from MoradoSolution.
+
+Guide
+2026-10-04
+VDS vs VPS vs bare metal: which one do you actually need?
+The three product lines differ in one dimension, how much of the machine is yours. CPU, memory range and real prices from ₹550/month.
+Read more
+Guide
+2026-10-04
+Bare metal hosting in India: when you actually need it
+A whole physical server on AMD EPYC in Delhi. Four configurations from ₹4,999/month, and the workloads that justify the jump.
+Read more
+Engineering
+2026-10-04
+DDoS protection explained: what it stops and how
+What an attack actually does to your server, which layers we filter at the edge, and why mitigation cannot live on the machine itself.
+Read more
+Guide
+2026-10-03
+Best Minecraft hosting in India: the zero swap buying guide.
+What to look for in an Indian Minecraft host, why zero swap memory keeps your TPS stable, and how MoradoSolution plans compare from ₹199/month.
+Read more
+Launch
+2026-08-20
+Minecraft budget servers are live in Delhi.
+AMD EPYC 7C13 cores, Gen 4 and always-on DDoS protection starting at just ₹100/month. Deployed in under a minute.
+Read more
+Policy
+2026-08-12
+A 48-hour money-back guarantee on every new server.
+Try any plan risk-free. If it does not work as described and we cannot fix it, you get a full refund — no interrogation.
+Read more
+Guide
+2026-08-05
+Getting started with your first Minecraft server.
+From choosing RAM to installing your first modpack — a step-by-step walkthrough for brand-new server owners.
+Read more
+Engineering
+2026-07-28
+How we stop attacks before they reach your server.
+A look at our always-on filtering layers, scrubbing capacity and why game traffic never touches a dirty pipe.
+Read more
+Minecraft, VPS and bare metal on hardware we run ourselves.
+
+Hosted in Delhi on AMD EPYC 7C13. Every plan includes DDoS filtering and support from a person in this timezone.
+
+See plans
+Talk to us
+99.9%
+uptime target
+0
+swap on NVMe
+7C13
+AMD EPYC
+MoradoSolution
+
+Game server hosting, VPS and infrastructure on AMD EPYC hardware we run ourselves. DDoS protection included, support answered by humans.
+
+System status
+PRODUCTS
+Minecraft Hosting
+VPS
+VDS
+Bare Metal
+Game Panel
+VPS Panel
+COMPANY
+About Us
+Infrastructure
+DDoS Protection
+System Status
+Status Page
+SUPPORT
+Help Center
+Setup Guides
+Contact Us
+Discord
+LEGAL
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use
+SLA

@@ -1,0 +1,57 @@
+{
+ "size": "short",
+ "bg": {
+  "gradient": [
+   "#020203",
+   "#140f1c",
+   "#2a1d0c"
+  ],
+  "angle": 170
+ },
+ "vignette": 0.55,
+ "subject": {
+  "image": "../a/logo_circle.png",
+  "side": "center",
+  "height": 0.4,
+  "stroke": 0,
+  "glow": "#e2b85c",
+  "glow_size": 110,
+  "bottom": 0.5
+ },
+ "texts": [
+  {
+   "text": "PREMIUM",
+   "x": 0.06,
+   "y": 0.545,
+   "w": 0.88,
+   "size": 210,
+   "font": "Gloock",
+   "align": "center",
+   "color": "#f7dc94",
+   "stroke": 0
+  },
+  {
+   "text": "development, delivered.",
+   "x": 0.06,
+   "y": 0.675,
+   "w": 0.88,
+   "size": 84,
+   "font": "InstrumentSerif",
+   "align": "center",
+   "color": "#ffffff",
+   "stroke": 0
+  },
+  {
+   "text": "Discord bots  /  Websites  /  Minecraft",
+   "x": 0.08,
+   "y": 0.79,
+   "w": 0.84,
+   "size": 50,
+   "font": "Outfit",
+   "weight": 600,
+   "align": "center",
+   "color": "#b9b4c4",
+   "stroke": 0
+  }
+ ]
+}

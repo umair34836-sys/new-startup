@@ -1,0 +1,313 @@
+{
+ "pages": [
+  {
+   "url": "https://moradosolution.in/",
+   "slug": "home",
+   "status": 200,
+   "title": "Minecraft Hosting India — AMD EPYC 7C13 | MoradoSolution",
+   "chars": 4611,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/about",
+   "slug": "about",
+   "status": 200,
+   "title": "About Us — Shivnath Dey & Team | MoradoSolution",
+   "chars": 3235,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/abuse",
+   "slug": "abuse",
+   "status": 200,
+   "title": "Abuse Policy — MoradoSolution",
+   "chars": 2222,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/auctions",
+   "slug": "auctions",
+   "status": 200,
+   "title": "Auctions — MoradoSolution",
+   "chars": 968,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/aup",
+   "slug": "aup",
+   "status": 200,
+   "title": "Acceptable Use Policy — MoradoSolution",
+   "chars": 2749,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/backup-policy",
+   "slug": "backup-policy",
+   "status": 200,
+   "title": "Data & Backup Policy — MoradoSolution",
+   "chars": 2582,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/bare-metal-guide",
+   "slug": "bare-metal-guide",
+   "status": 200,
+   "title": "Bare Metal Hosting India: When You Actually Need It | MoradoSolution",
+   "chars": 3704,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/bare-metal",
+   "slug": "bare-metal",
+   "status": 200,
+   "title": "Bare Metal Servers India — AMD EPYC | MoradoSolution",
+   "chars": 4923,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/best-minecraft-hosting-india",
+   "slug": "best-minecraft-hosting-india",
+   "status": 200,
+   "title": "Best Minecraft Hosting in India, Zero Swap | MoradoSolution",
+   "chars": 15747,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/blog",
+   "slug": "blog",
+   "status": 200,
+   "title": "Blog — MoradoSolution",
+   "chars": 2566,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/cancellation",
+   "slug": "cancellation",
+   "status": 200,
+   "title": "Cancellation Policy — MoradoSolution",
+   "chars": 2273,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/contact",
+   "slug": "contact",
+   "status": 200,
+   "title": "Contact Us — MoradoSolution",
+   "chars": 1175,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/cookies",
+   "slug": "cookies",
+   "status": 200,
+   "title": "Cookie Policy — MoradoSolution",
+   "chars": 2354,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/ddos-protection-explained",
+   "slug": "ddos-protection-explained",
+   "status": 200,
+   "title": "DDoS Protection Explained: What It Stops and How | MoradoSolution",
+   "chars": 3811,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/ddos-protection",
+   "slug": "ddos-protection",
+   "status": 200,
+   "title": "DDoS Protection India — In-House Network Filtering | MoradoSolution",
+   "chars": 9273,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/dmca",
+   "slug": "dmca",
+   "status": 200,
+   "title": "DMCA / Copyright Policy — MoradoSolution",
+   "chars": 2580,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/fair-use",
+   "slug": "fair-use",
+   "status": 200,
+   "title": "Fair Usage Policy — MoradoSolution",
+   "chars": 2286,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/game-hosting",
+   "slug": "game-hosting",
+   "status": 200,
+   "title": "Game Server Hosting India — Minecraft & Hytale | MoradoSolution",
+   "chars": 3979,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/guides",
+   "slug": "guides",
+   "status": 200,
+   "title": "Guides & Tutorials — Game Server Hosting | MoradoSolution",
+   "chars": 4640,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/hytale",
+   "slug": "hytale",
+   "status": 200,
+   "title": "Hytale Server Hosting India — Plans from ₹199/month | MoradoSolution",
+   "chars": 4128,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/infrastructure",
+   "slug": "infrastructure",
+   "status": 200,
+   "title": "Server Infrastructure — AMD EPYC 7C13 Hardware | MoradoSolution",
+   "chars": 5182,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/minecraft-budget",
+   "slug": "minecraft-budget",
+   "status": 200,
+   "title": "Minecraft Server Hosting India — From ₹199/month | MoradoSolution",
+   "chars": 10253,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/refund",
+   "slug": "refund",
+   "status": 200,
+   "title": "Refund Policy — MoradoSolution",
+   "chars": 15355,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/sales",
+   "slug": "sales",
+   "status": 200,
+   "title": "Sales — MoradoSolution",
+   "chars": 1255,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/security",
+   "slug": "security",
+   "status": 200,
+   "title": "Security Policy — MoradoSolution",
+   "chars": 2662,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/services",
+   "slug": "services",
+   "status": 200,
+   "title": "All Services — Minecraft, Hytale, VPS, VDS, Dedicated | MoradoSolution",
+   "chars": 2232,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/sla",
+   "slug": "sla",
+   "status": 200,
+   "title": "Service Level Agreement — MoradoSolution",
+   "chars": 3029,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/ssl",
+   "slug": "ssl",
+   "status": 200,
+   "title": "SSL / Security Policy — MoradoSolution",
+   "chars": 3172,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/status",
+   "slug": "status",
+   "status": 200,
+   "title": "System Status — MoradoSolution",
+   "chars": 1357,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/support",
+   "slug": "support",
+   "status": 200,
+   "title": "Support — Help Center & Ticket System | MoradoSolution",
+   "chars": 3962,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/suspension-policy",
+   "slug": "suspension-policy",
+   "status": 200,
+   "title": "Account Suspension & Termination Policy — MoradoSolution",
+   "chars": 2760,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/terms",
+   "slug": "terms",
+   "status": 200,
+   "title": "Terms of Service — MoradoSolution",
+   "chars": 28173,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/third-party",
+   "slug": "third-party",
+   "status": 200,
+   "title": "Third-Party Services Policy — MoradoSolution",
+   "chars": 2883,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/vds-bare-metal",
+   "slug": "vds-bare-metal",
+   "status": 200,
+   "title": "VDS & Bare Metal Servers India — AMD EPYC | MoradoSolution",
+   "chars": 5704,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/vds-vs-bare-metal",
+   "slug": "vds-vs-bare-metal",
+   "status": 200,
+   "title": "VDS vs VPS vs Bare Metal: Which One Do You Need? | MoradoSolution",
+   "chars": 3342,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/vps",
+   "slug": "vps",
+   "status": 200,
+   "title": "VPS Hosting India — AMD EPYC 7C13 | MoradoSolution",
+   "chars": 6352,
+   "err": null
+  },
+  {
+   "url": "https://moradosolution.in/privacy",
+   "slug": "privacy",
+   "status": 200,
+   "title": "Terms of Service — MoradoSolution",
+   "chars": 28173,
+   "err": null
+  }
+ ],
+ "external": [
+  "https://discord.gg/moradosolution",
+  "https://panel.moradosolution.com/",
+  "https://status.moradosolution.com/",
+  "https://tools.google.com/dlpage/gaoptout",
+  "https://vm.moradosolution.com/",
+  "mailto:abuse@moradosolution.com",
+  "mailto:dmca@moradosolution.com",
+  "mailto:founder@moradosolution.com",
+  "mailto:regionalmanager@moradosolution.com",
+  "mailto:security@moradosolution.com",
+  "mailto:support@moradosolution.com"
+ ]
+}

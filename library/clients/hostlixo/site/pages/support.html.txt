@@ -1,0 +1,127 @@
+URL: https://hostlixo.in/support.html
+FINAL_URL: https://www.hostlixo.in/support.html
+HTTP: 200
+TITLE: HostLixo Support | Minecraft Hosting FAQs
+FETCHED: 2026-10-27T02:22:42.514Z (Playwright Chromium, rendered innerText)
+
+Home
+Minecraft
+Cloud VPS
+SOON
+Network & DDoS
+About Us
+Support & FAQ
+Discord
+Control Panel
+HELP & COMMUNITY
+Minecraft Hosting Support & FAQs
+
+Answers about HostLixo Minecraft plans, included resources, software options, protection, and ordering.
+
+KNOWLEDGE BASE
+Common Questions
+Which HostLixo Minecraft plan should I choose?
++
+
+Compare nine AMD EPYC plans from 2 GB to 32 GB DDR5 ECC RAM. Check each plan's CPU allocation, NVMe storage, and included resources against your software, plugins, and expected player community.
+
+What is included with each AMD EPYC plan?
++
+
+Every listed plan includes its stated DDR5 ECC RAM, AMD EPYC CPU allocation and NVMe disk, two automated backup allocations, two extra ports, one MySQL database, and Enterprise L3/L4 DDoS protection.
+
+How do I order a Minecraft server?
++
+
+Open the Minecraft Plans page, choose a plan, and select Order on Discord. The HostLixo team can confirm the next steps there.
+
+What Minecraft server software options are listed?
++
+
+HostLixo lists Vanilla, Paper, Purpur, Spigot, Fabric, Forge, and NeoForge. Check the current panel options or ask the team if you need a specific version.
+
+How many automated backups are included?
++
+
+Every listed plan shows two automated backup allocations. For schedule and retention details, contact the team before ordering.
+
+Does HostLixo include DDoS protection?
++
+
+Every listed AMD EPYC plan includes Enterprise L3/L4 DDoS protection. See the Network & DDoS page for service details.
+
+How can I contact HostLixo support?
++
+
+Join the official Discord for community assistance and service announcements, or email support@hostlixo.in.
+
+GET IN TOUCH
+Direct Channels
+HostLixo Discord Community
+
+Join the official HostLixo Discord for community assistance and service announcements.
+
+Join Discord Community →
+Email Support
+
+Email support@hostlixo.in with your plan or service questions.
+
+support@hostlixo.in →
+Migration Questions
+
+Contact the team before ordering to ask about transferring your current world, plugins, and configuration.
+
+Email HostLixo Support
+
+Prepare a message in your email app. It will only be sent if you press Send.
+
+Your Email
+Subject
+Message
+Prepare Email
+OFFICIAL HOSTLIXO COMMUNITY
+Join Our Discord
+
+Get community support, service announcements, and updates from HostLixo.
+
+Join Community
+↗
+Unavailable
+ACTIVE MEMBERS
+Unavailable
+TOTAL MEMBERS
+HL
+
+HostLixo offers Minecraft server hosting in India with clearly listed plans, NVMe storage, and DDoS-filtered network protection.
+
+Minecraft Plans Available
+NAVIGATION
+Home
+Minecraft Hosting
+Cloud VPS (Coming Soon)
+Network & Latency Estimates
+About Us
+Support & FAQ
+PROCESSOR OPTIONS
+AMD Ryzen 9 9950X
+Intel
+AMD EPYC Genoa
+DDoS Protection
+24-Hour Refund Policy
+COMMUNITY & LEGAL
+Join Official Discord
+Terms & Conditions
+Refund Policy (24h)
+Contact Support
+
+© 2026 HostLixo Cloud Solutions Inc. All rights reserved.
+
+This Website is Developed By ThunderStudio
+
+VISA
+MASTERCARD
+UPI
+PAYTM
+CRYPTO
+
+

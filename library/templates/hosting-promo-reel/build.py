@@ -1,12 +1,18 @@
 # SkilloraClouds 9:16 promo reel (Viraj Hindi VO). Every on-screen claim comes from skilloraclouds.com (2026-10-24).
 # Scene times follow the VO alignment (take 2) shifted by VO_START.
+# v3 (2026-10-24): line 3 now says "AMD EPYC 9" (client's wording via the owner; the site itself says "AMD EPYC"),
+# new line + scene s6b after the price: Budget & Standard plans are limited, order on Discord or the website.
+# v3 VO = take2[0:6.32] + epyc[0:7.40] + 0.15 s + take2[12.0:15.22] + germany[0:5.16] (0.1 s fade) + take2[18.86:22.15]
+#        + 0.1 s + limited[0:7.95] + 0.15 s + take2[22.15:], then loudnorm I=-16:TP=-1.5 (40.79 s).
 import os, subprocess
 
 VO_START = 0.4
-TOTAL = 34.02
+TOTAL = 44.09
 GREEN, GREEN2, DARK = "#22c55e", "#16a34a", "#070b12"   # site CSS: #22c55e x17, #16a34a x5
-SCENES = [("s1", 0.0, 4.5), ("s2", 4.5, 6.8), ("s3", 6.8, 12.6), ("s4", 12.6, 15.7),
-          ("s5", 15.7, 21.12), ("s6", 21.12, 24.12), ("s7", 24.12, 28.42), ("s8", 28.42, TOTAL)]
+SCENES = [("s1", 0.0, 4.5), ("s2", 4.5, 6.7), ("s3", 6.7, 14.47), ("s4", 14.47, 17.57), ("s5", 17.57, 22.99),
+          ("s6", 22.99, 25.94), ("s6b", 25.94, 34.19), ("s7", 34.19, 38.49), ("s8", 38.49, TOTAL)]
+SD = {k: round(e - s, 2) for k, s, e in SCENES}
+ST = {k: s for k, s, e in SCENES}
 
 
 def dur(p):
@@ -77,7 +83,7 @@ C["s1"] = comp("s1", f"""    <div id="s1-w" style="position:absolute;inset:0;">
                f'    tl.to("#s1-w", {{ scale: 1.35, filter: "blur(16px)", opacity: 0, duration: 0.22, ease: "power3.in" }}, {d - 0.22:.2f});\n')
 
 # S2 logo reveal
-d = 2.3
+d = SD["s2"]
 C["s2"] = comp("s2", f"""    <div id="s2-w" style="position:absolute;inset:0;">
       <div id="s2-ring" style="position:absolute;left:290px;top:430px;width:500px;height:500px;border-radius:50%;border:6px solid {GREEN};box-shadow:0 0 80px {GREEN};"></div>
       <img id="s2-logo" src="assets/img/logo.png" style="position:absolute;left:340px;top:480px;width:400px;height:400px;" alt="SkilloraClouds logo">
@@ -91,8 +97,8 @@ C["s2"] = comp("s2", f"""    <div id="s2-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s2-tag", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.55);\n')
 
 # S3 specs over the real control-panel screenshot
-d = 5.8
-chips = [("AMD Ryzen", 0.08), ("NVMe SSD", 1.2), ("DDoS Protection", 2.64), ("24/7 Support", 4.16)]
+d = SD["s3"]
+chips = [("AMD EPYC 9", 0.05), ("NVMe SSD", 2.22), ("DDoS Protection", 3.82), ("24/7 Support", 5.62)]
 chip_html = "".join(
     f'<div class="card jk s3-chip" id="s3-c{i}" style="position:absolute;left:{80 if i % 2 == 0 else 560}px;top:{1180 + (i // 2) * 210}px;width:440px;height:170px;display:flex;align-items:center;justify-content:center;gap:18px;font-weight:800;font-size:{48 if len(t) < 12 else 42}px;color:#fff;">'
     f'<svg viewBox="0 0 40 40" style="width:46px;height:46px;flex:none;"><circle cx="20" cy="20" r="19" fill="{GREEN}"/><path d="M11 21 L18 27 L29 14" stroke="#04140a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>{t}</div>'
@@ -111,7 +117,7 @@ C["s3"] = comp("s3", f"""    <div id="s3-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s3-panel", { rotationX: 18, y: 60 }, { rotationX: 0, y: 0, duration: 0.8, ease: "power3.out" }, 0);\n' + chip_js)
 
 # S4 under 60 seconds (site: "Launch your game server in under 60 seconds")
-d = 3.1
+d = SD["s4"]
 C["s4"] = comp("s4", f"""    <div id="s4-w" style="position:absolute;inset:0;">
       <div class="c jk" style="top:330px;font-weight:800;font-size:64px;color:#fff;letter-spacing:4px;">GAME SERVER READY</div>
       <svg id="s4-svg" viewBox="0 0 600 600" style="position:absolute;left:240px;top:520px;width:600px;height:600px;">
@@ -129,7 +135,7 @@ C["s4"] = comp("s4", f"""    <div id="s4-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s4-ok", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 2.55);\n')
 
 # S5 locations (site: India, Singapore, Dubai, "Frankfurt(Germany)" / "Europe (Germany)")
-d = 5.42
+d = SD["s5"]
 locs = [("India", "india-flag.png", 0.05), ("Singapore", "singapore-flag.png", 0.46), ("Dubai", "dubai-flag.png", 1.36),
         ("Germany", "germany-flag.png", 2.12)]
 loc_html = "".join(
@@ -147,7 +153,7 @@ C["s5"] = comp("s5", f"""    <div id="s5-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s5-ping", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 3.86);\n')
 
 # S6 price (games page: "Java & Bedrock servers from ₹20/mo")
-d = 3.0
+d = SD["s6"]
 C["s6"] = comp("s6", f"""    <div id="s6-w" style="position:absolute;inset:0;">
       <div style="position:absolute;inset:0;background:url(assets/img/hero-minecraft.jpg) center/cover;filter:blur(18px) brightness(0.35);" data-layout-allow-overflow></div>
       <div class="c jk" id="s6-a" style="top:430px;font-weight:800;font-size:72px;color:#fff;letter-spacing:4px;">MINECRAFT HOSTING</div>
@@ -160,8 +166,35 @@ C["s6"] = comp("s6", f"""    <div id="s6-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s6-p", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.4)" }, 1.1);\n'
                '    tl.fromTo("#s6-m", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 1.45);\n')
 
+# S6b limited plans (owner/client request 2026-10-24; Discord link from the site: discord.gg/skilloraclouds)
+d = SD["s6b"]
+icon = lambda path: f'<svg viewBox="0 0 24 24" style="width:64px;height:64px;flex:none;"><circle cx="12" cy="12" r="12" fill="{GREEN}"/><path d="{path}" stroke="#04140a" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+CHAT, GLOBE = "M6 8h12v7H11l-3 3v-3H6z", "M12 5a7 7 0 1 0 0 14a7 7 0 1 0 0-14M5 12h14M12 5c-3 3.5-3 10.5 0 14M12 5c3 3.5 3 10.5 0 14"
+C["s6b"] = comp("s6b", f"""    <div id="s6b-w" style="position:absolute;inset:0;">
+      <div class="c jk" id="s6b-a" style="top:250px;font-weight:800;font-size:58px;color:#fbbf24;letter-spacing:8px;">DHYAN DEIN!</div>
+      <div class="c" id="s6b-tiers" style="top:380px;display:flex;justify-content:center;gap:30px;">
+        <div class="card jk" id="s6b-t0" style="padding:22px 46px;font-weight:800;font-size:64px;color:#fff;">BUDGET</div>
+        <div class="card jk" id="s6b-t1" style="padding:22px 46px;font-weight:800;font-size:64px;color:#fff;">STANDARD</div>
+      </div>
+      <div class="c jk" style="top:540px;font-weight:600;font-size:44px;color:#9ca3af;">plans</div>
+      <div class="c anton" id="s6b-lim" style="top:640px;font-size:250px;color:#fff;text-shadow:0 0 60px rgba(34,197,94,0.7), 0 8px 30px rgba(0,0,0,0.8);">LIMITED!</div>
+      <div class="c jk" id="s6b-buy" style="top:960px;font-weight:800;font-size:60px;color:#e5e7eb;">Chahiye to abhi order karein</div>
+      <div class="card jk" id="s6b-dc" style="position:absolute;left:110px;top:1110px;width:860px;height:170px;display:flex;align-items:center;gap:30px;padding-left:50px;font-weight:800;font-size:54px;color:#fff;">{icon(CHAT)}discord.gg/skilloraclouds</div>
+      <div class="card jk" id="s6b-web" style="position:absolute;left:110px;top:1320px;width:860px;height:170px;display:flex;align-items:center;gap:30px;padding-left:50px;font-weight:800;font-size:54px;color:#fff;">{icon(GLOBE)}skilloraclouds.com</div>
+    </div>""",
+               enter_exit("s6b", d, "#s6b-w") +
+               '    tl.fromTo("#s6b-a", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 0.1);\n'
+               '    tl.fromTo("#s6b-t0", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.44);\n'
+               '    tl.fromTo("#s6b-t1", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.9);\n'
+               '    tl.fromTo("#s6b-lim", { scale: 2.6, rotation: -8, opacity: 0 }, { scale: 1, rotation: -4, opacity: 1, duration: 0.3, ease: "power4.in" }, 2.7);\n'
+               '    tl.fromTo("#s6b-lim", { x: -12 }, { x: 12, duration: 0.05, repeat: 5, yoyo: true, ease: "none" }, 3.0);\n'
+               '    tl.to("#s6b-lim", { x: 0, duration: 0.05 }, 3.3);\n'
+               '    tl.fromTo("#s6b-buy", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 4.0);\n'
+               '    tl.fromTo("#s6b-dc", { x: -900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 5.95);\n'
+               '    tl.fromTo("#s6b-web", { x: 900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 6.77);\n')
+
 # S7 coupon (site banner: "Get 10% OFF on Premium Plans with code SKILL26")
-d = 4.3
+d = SD["s7"]
 C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
       <div class="c jk" style="top:380px;font-weight:800;font-size:60px;color:#fff;letter-spacing:4px;">PREMIUM PLANS PAR</div>
       <div id="s7-card" style="position:absolute;left:140px;top:560px;width:800px;height:420px;border-radius:40px;border:8px dashed {GREEN};background:rgba(17,24,39,0.85);box-shadow:0 0 70px rgba(34,197,94,0.3);">
@@ -175,7 +208,7 @@ C["s7"] = comp("s7", f"""    <div id="s7-w" style="position:absolute;inset:0;">
                '    tl.fromTo("#s7-off", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.4)" }, 3.05);\n')
 
 # S8 end card
-d = round(TOTAL - 28.42, 2)
+d = SD["s8"]
 C["s8"] = comp("s8", f"""    <div id="s8-w" style="position:absolute;inset:0;">
       <img id="s8-logo" src="assets/img/logo.png" style="position:absolute;left:390px;top:380px;width:300px;height:300px;" alt="SkilloraClouds logo">
       <div class="c jk" id="s8-name" style="top:720px;font-weight:800;font-size:100px;color:#fff;">Skillora<span class="g">Clouds</span></div>
@@ -201,15 +234,17 @@ for k, s, e in SCENES:
 
 sfx = lambda n: f"assets/sfx/{n}.mp3"
 A = [("vo", "assets/vo/vo.wav", VO_START, dur("assets/vo/vo.wav"), 1.0, 10, 0),
-     ("m1", "assets/music/music.mp3", 0, 31.52, 0.16, 11, 0),
-     ("m2", "assets/music/music.mp3", 31.52, 2.5, 0.5, 12, 31.52),
-     ("hit", sfx("impact-bass-1"), 3.0, dur(sfx("impact-bass-1")), 0.3, 13, 0)]
-for i, t in enumerate([4.38, 6.68, 12.48, 15.58, 21.0, 24.0, 28.3]):
-    A.append((f"wh{i}", sfx("whoosh-short"), t, dur(sfx("whoosh-short")), 0.45, 14 + i % 2, 0))
-for i, t in enumerate([6.88, 8.0, 9.44, 10.96, 15.75, 16.16, 17.06, 17.82]):
-    A.append((f"pop{i}", sfx("pop"), t, dur(sfx("pop")), 0.5, 16 + i % 2, 0))
-A += [("spk", sfx("sparkle"), 27.17, dur(sfx("sparkle")), 0.35, 18, 0),
-      ("spk2", sfx("sparkle"), 30.37, dur(sfx("sparkle")), 0.35, 19, 0)]
+     ("m1", "assets/music/music.mp3", 0, round(TOTAL - 2.5, 2), 0.16, 11, 0),
+     ("m2", "assets/music/music.mp3", round(TOTAL - 2.5, 2), 2.5, 0.5, 12, round(TOTAL - 2.5, 2)),
+     ("hit", sfx("impact-bass-1"), 3.0, dur(sfx("impact-bass-1")), 0.3, 13, 0),
+     ("hit2", sfx("impact-bass-1"), round(ST["s6b"] + 3.0, 2), dur(sfx("impact-bass-1")), 0.35, 20, 0)]
+for i, k in enumerate(["s2", "s3", "s4", "s5", "s6", "s6b", "s7", "s8"]):
+    A.append((f"wh{i}", sfx("whoosh-short"), round(ST[k] - 0.12, 2), dur(sfx("whoosh-short")), 0.45, 14 + i % 2, 0))
+pops = [ST["s3"] + t for _, t in chips] + [ST["s5"] + t for _, _, t in locs] + [ST["s6b"] + t for t in (1.44, 1.9, 5.95, 6.77)]
+for i, t in enumerate(pops):
+    A.append((f"pop{i}", sfx("pop"), round(t, 2), dur(sfx("pop")), 0.5, 16 + i % 2, 0))
+A += [("spk", sfx("sparkle"), round(ST["s7"] + 3.05, 2), dur(sfx("sparkle")), 0.35, 18, 0),
+      ("spk2", sfx("sparkle"), round(ST["s8"] + 1.95, 2), dur(sfx("sparkle")), 0.35, 19, 0)]
 aud = "\n".join(f'      <audio id="{i}" src="{s}" data-start="{st}" data-duration="{d}" data-volume="{v}" data-track-index="{ln}"'
                 + (f' data-media-start="{ms}"' if ms else "") + (' data-fade-out="1.5"' if i == "m2" else "") + "></audio>"
                 for i, s, st, d, v, ln, ms in A)

@@ -77,6 +77,13 @@ medium-fast pacing.
   sources disagree on mornings; both agree on the evening.
 - OUR LIMIT: trending in-app songs are copyrighted. Our music rule (CC0/PD/own only) means we deliver with no-credit
   music; whether Instagram's in-app music library can be added by the client after upload is **unverified** here.
+- YouTube Shorts (verified 2026-10-26, https://support.google.com/youtube/answer/10343433, read with agent-reach): "To
+  avoid copyright claims, you can use the music available in the Shorts Audio Library. Depending on the song, you may
+  be able to add up to 90 seconds of music in your Shorts up to 3 minutes when using YouTube tools"; after recording,
+  the app lets you "Add sounds". So for a trending song on a client Short: deliver a NO-MUSIC version (VO + SFX,
+  loudnorm -16) and the client adds the trending track in the YouTube app (done for ALOO SMP, 2026-10-26).
+  Monetization note (https://support.google.com/youtube/answer/12504220, same date): a Short with one music track splits
+  its Creator Pool contribution with music partners; the creator's own allocation is not affected.
 
 ### Wedding / event reels (Pakistan)
 - barakaevents.com (Lahore planner, May 2026, https://www.barakaevents.com/blog/viral-pakistani-wedding-trends-2026):

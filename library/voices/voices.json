@@ -1,0 +1,166 @@
+{
+ "promo-male": {
+  "use": "hosting / business / app promo reels, offers, ads (male)",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: hosting / business / app promo reels, offers, ads (male)",
+  "design": {
+   "instruct": "a young Indian man with a bright, energetic, confident voice, speaking Hindi like a professional TV commercial voice-over artist",
+   "seed": 33,
+   "text": "अब शुरू करें, सिर्फ़ एक क्लिक में।"
+  },
+  "ref_text": "अब शुरू करें, सिर्फ़ एक क्लिक में।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/promo-male-ref.wav",
+  "measured": "2026-10-27: reference 2.58 s, median f0 240 Hz (pyworld harvest); Whisper small heard 'अप शुरूगरे सर्फ एक लिक में' (similarity 0.78). Picked from seeds [7, 21, 33, 42].",
+  "banned": "OWNER 2026-10-28 (Heaven Developer session): \"next time ye wali voice kisi bhi session me use mat kernaa\" -> never use promo-male in any session"
+ },
+ "promo-female": {
+  "use": "offers, shopping, salon, brand promos (female)",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: offers, shopping, salon, brand promos (female)",
+  "design": {
+   "instruct": "a young Indian woman with a bright, cheerful, confident voice, speaking Hindi like a professional TV commercial voice-over artist",
+   "seed": 21,
+   "text": "आज ही ऑर्डर करें और पाएं ख़ास ऑफ़र।"
+  },
+  "ref_text": "आज ही ऑर्डर करें और पाएं ख़ास ऑफ़र।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/promo-female-ref.wav",
+  "measured": "2026-10-27: reference 2.75 s, median f0 272 Hz (pyworld harvest); Whisper small heard 'आज यी अडर करे और पाए खास अफर' (similarity 0.73). Picked from seeds [7, 21]."
+ },
+ "tutorial-calm": {
+  "use": "tutorials, screen recordings, step-by-step guides",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: tutorials, screen recordings, step-by-step guides",
+  "design": {
+   "instruct": "a calm, clear, friendly Indian man in his thirties explaining step by step in Hindi, like a patient teacher",
+   "seed": 42,
+   "text": "पहले इस बटन पर क्लिक कीजिए, फिर आगे बढ़िए।"
+  },
+  "ref_text": "पहले इस बटन पर क्लिक कीजिए, फिर आगे बढ़िए।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/tutorial-calm-ref.wav",
+  "measured": "2026-10-27: reference 4.25 s, median f0 120 Hz (pyworld harvest); Whisper small heard 'अड़ ले इस बट्टन पर ख्लिक जीए फिर आगे बडीए' (similarity 0.7). Picked from seeds [7, 21, 33, 42]."
+ },
+ "explainer-pro": {
+  "use": "explainers, corporate, product walk-throughs (female)",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: explainers, corporate, product walk-throughs (female)",
+  "design": {
+   "instruct": "a professional, polished Indian woman in her thirties speaking Hindi clearly and confidently, like a corporate presenter",
+   "seed": 7,
+   "text": "यह प्लान आपके बिज़नेस के लिए बनाया गया है।"
+  },
+  "ref_text": "यह प्लान आपके बिज़नेस के लिए बनाया गया है।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/explainer-pro-ref.wav",
+  "measured": "2026-10-27: reference 2.45 s, median f0 212 Hz (pyworld harvest); Whisper small heard 'यह प्लान आपके बिस्निस के लिए बनाया गया है' (similarity 0.9). Picked from seeds [7, 21]."
+ },
+ "gaming-hype": {
+  "use": "Minecraft / gaming shorts, server promos, hype moments",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: Minecraft / gaming shorts, server promos, hype moments",
+  "design": {
+   "instruct": "an excited young Indian male gamer in his early twenties, fast and hyped, speaking Hindi like a YouTube gaming streamer",
+   "seed": 21,
+   "text": "भाई, ये सर्वर तो एकदम ज़बरदस्त है!"
+  },
+  "ref_text": "भाई, ये सर्वर तो एकदम ज़बरदस्त है!",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/gaming-hype-ref.wav",
+  "measured": "2026-10-27: reference 1.69 s, median f0 148 Hz (pyworld harvest); Whisper small heard 'बाई ये सरवर तो एक दं जबर्दसत है' (similarity 0.81). Picked from seeds [7, 21]."
+ },
+ "food-warm": {
+  "use": "restaurant / food / cafe promos",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: restaurant / food / cafe promos",
+  "design": {
+   "instruct": "a warm, friendly Indian woman with a smiling, inviting voice, speaking Hindi like a food advertisement",
+   "seed": 21,
+   "text": "गरमा गरम पिज़्ज़ा, सीधे आपके घर तक।"
+  },
+  "ref_text": "गरमा गरम पिज़्ज़ा, सीधे आपके घर तक।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/food-warm-ref.wav",
+  "measured": "2026-10-27: reference 2.19 s, median f0 320 Hz (pyworld harvest); Whisper small heard 'अगर्म अगर्म पीस्जा सीधे आपके गर तक' (similarity 0.74). Picked from seeds [7, 21]."
+ },
+ "story-emotional": {
+  "use": "emotional stories, shayari, memories, slow romantic edits",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: emotional stories, shayari, memories, slow romantic edits",
+  "design": {
+   "instruct": "a deep, soft, slow Indian man with an emotional storytelling voice, speaking Hindi gently",
+   "seed": 7,
+   "text": "कुछ यादें कभी पुरानी नहीं होतीं।"
+  },
+  "ref_text": "कुछ यादें कभी पुरानी नहीं होतीं।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/story-emotional-ref.wav",
+  "measured": "2026-10-27: reference 2.14 s, median f0 117 Hz (pyworld harvest); Whisper small heard 'कुछ यादे कभी पुरानी नहीं होती' (similarity 0.94). Picked from seeds [7, 21]."
+ },
+ "kids-cheerful": {
+  "use": "kids content, funny / cartoon style, light memes",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: kids content, funny / cartoon style, light memes",
+  "design": {
+   "instruct": "a playful, cheerful young Indian woman with a high, bubbly voice, speaking Hindi like a cartoon show host",
+   "seed": 21,
+   "text": "चलो बच्चों, आज कुछ मज़ेदार सीखते हैं!"
+  },
+  "ref_text": "चलो बच्चों, आज कुछ मज़ेदार सीखते हैं!",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/kids-cheerful-ref.wav",
+  "measured": "2026-10-27: reference 3.3 s, median f0 336 Hz (pyworld harvest); Whisper small heard 'चलो बच्छो, आज खुछ मजदार सीकते है' (similarity 0.81). Picked from seeds [7, 21]."
+ },
+ "luxury-deep": {
+  "use": "luxury, real estate, premium brand, trailers",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: luxury, real estate, premium brand, trailers",
+  "design": {
+   "instruct": "a mature Indian man with a deep, rich, slow baritone voice, speaking Hindi like a luxury brand commercial",
+   "seed": 21,
+   "text": "जहाँ हर पल ख़ास है।"
+  },
+  "ref_text": "जहाँ हर पल ख़ास है।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/luxury-deep-ref.wav",
+  "measured": "2026-10-27: reference 2.4 s, median f0 139 Hz (pyworld harvest); Whisper small heard 'जहाँ हर पल खाँस है' (similarity 0.9). Picked from seeds [7, 21]."
+ },
+ "news-anchor": {
+  "use": "announcements, news-style updates, launch / season news",
+  "label": "AI-designed voice (VoxCPM2 voice design, not a real person) for: announcements, news-style updates, launch / season news",
+  "design": {
+   "instruct": "a formal, authoritative Indian male news anchor speaking Hindi clearly at a steady pace",
+   "seed": 7,
+   "text": "आज की बड़ी ख़बर, सीधे आप तक।"
+  },
+  "ref_text": "आज की बड़ी ख़बर, सीधे आप तक।",
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "ref_file": "library/voices/news-anchor-ref.wav",
+  "measured": "2026-10-27: reference 3.47 s, median f0 122 Hz (pyworld harvest); Whisper small heard 'आज की बडी खवर सीदे आप तक' (similarity 0.8). Picked from seeds [7, 21]."
+ },
+ "senpaispider": {
+  "label": "Senpai Spider (client's own voice)",
+  "source_url": "https://drive.google.com/uc?export=download&id=1V1NvmUKnLPmw4VEdT_pUoZh7OlvAAEqA",
+  "source_note": "19.2 s 948x2160 mp4 the owner shared on 2026-10-24 (Google Drive, link-shared); the owner said it is his client's voice",
+  "clean": "clean_voice.py (BS-RoFormer vocals + denoise), measured here 2026-10-24: speech 0-18.1 s",
+  "ref_start": 0.1,
+  "ref_seconds": 12.0,
+  "ref_text": null,
+  "model": "voxcpm2",
+  "lang": "hi",
+  "seed": 7,
+  "measured": "2026-10-24: reference median f0 148 Hz (p10 115, p90 218); 5-line test: Whisper heard lines 2-4 well, line 1 partly, line 5 garbled; clone lines f0 109-161 Hz"
+ }
+}
