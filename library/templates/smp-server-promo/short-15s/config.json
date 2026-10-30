@@ -1,0 +1,60 @@
+{
+ "brand": {
+  "name": "FireCraft SMP",
+  "sub": "",
+  "colours": {
+   "fire": "#ff4d1a",
+   "gold": "#ffc21a",
+   "red": "#e0141e",
+   "dark": "#0b0b0f"
+  }
+ },
+ "vo_lines": "assets/vo_lines.json",
+ "audio": "assets/audio/mix.wav",
+ "vo_start": 0.0,
+ "end_hold": 1.143,
+ "plate": "assets/img/plate.mp4",
+ "scenes": [
+  {
+   "line": 0,
+   "kind": "clip",
+   "title": "FIRECRAFT SMP",
+   "sub": "SEASON 2 IS LIVE",
+   "source": "site 2026-10-30"
+  },
+  {
+   "line": 1,
+   "kind": "clip",
+   "title": "KILL A PLAYER",
+   "sub": "+1 MAX HEART",
+   "source": "site: Kill player -> +1 max heart"
+  },
+  {
+   "line": 2,
+   "kind": "cta",
+   "img": "assets/img/logo.png",
+   "title": "APPLY FREE \u2022 JOIN NOW",
+   "rows": [
+    [
+     "JAVA",
+     "play.firecraft.fun:20011"
+    ],
+    [
+     "BEDROCK",
+     "play.firecraft.fun \u2022 20011"
+    ],
+    [
+     "APPLY",
+     "firecraft.fun"
+    ]
+   ],
+   "source": "site"
+  }
+ ],
+ "captions": [
+  "",
+  "Defeat a player and steal their heart.",
+  "Apply now and join the server."
+ ],
+ "title_top_portrait": 700
+}

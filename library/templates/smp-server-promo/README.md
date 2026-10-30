@@ -37,3 +37,17 @@ video bana lo ... in game and in dc server images and info ... firecraft.fun"). 
 - 9:16 from 16:9 stills: cover-crop cut the logo to "RECRA"; portrait now shows the whole picture as a card over a
   blurred copy (build.py). 16:9 titles sit at y 850 so they don't cover the subject.
 - Monitor filters: "0 error(s)" contains "rror": grep for "rendered in", not "rror".
+
+## Footage version (portal order 4, 2026-10-30: 60 s 16:9 cinematic from the client's own gameplay recordings)
+- `plate.py CONFIG OUT.mp4`: one graded 1080p plate, one shot per scene (`scenes[i].src = [file, in_s]`), 60 fps source
+  at 0.5x (real frames, smooth), lanczos + cas, grade + vignette, 0.4 s xfade starting on each cut. build.py kind "clip"
+  adds only veil + title over `"plate"`; `"captions"` = English line per VO line (empty = none); `"title_top"` 70 in 16:9.
+- Voice luxury-deep (Hindi script, Hinglish words), measured 2026-10-30 with wcheck_lines.py: "फायरक्राफ्ट" at a line
+  start came out garbled in 2 seeds (57%, and a rude-sounding word): keep the brand on screen only. "सीज़न टू" lost in
+  seed 33 (44%); "नया सीज़न, अब शुरू हो चुका है" seed 21 was clear. "फायर, आइस, विंड, डार्क" 50% -> Hindi "आग, बर्फ, हवा,
+  अंधेरा" 75%. Events line ("बिल्ड कॉन्टेस्ट, नेदर..." 15%, "वीकेंड्स पर बड़े इवेंट्स" 33%, "बड़े इवेंट्स, और पीवीपी
+  टूर्नामेंट" 50%): left without VO (3.6 s music gap, text on screen). Takes joined with vo_join.py --target-f0 138.
+- Music: la-citadelle (Komiku, CC0) music_fit --start 4.4 --end resolve (hit + 2 s ring-out at 58.7 s); mix gap 15.0 LU.
+- Render 60.7 s 1080p, 12 scenes, -w 3: 5m25s, 149 MB. Delivery re-encode crf 18 slow = 97 MB, -16.0 LUFS.
+- White label: re-encoding with libx264 writes "Lavc libx264" as the mp4 compressor name even with -flags:v +bitexact;
+  a final `-c copy` remux with the bitexact flags removes it (strings check 1 -> 0).
