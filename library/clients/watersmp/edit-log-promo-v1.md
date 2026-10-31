@@ -28,3 +28,8 @@ Brief: library/clients/watersmp/brief.md. Order had no files; visuals made from 
   sub-drop, 0.3), whoosh/swish per scene, splash on the WATERSMP reveal, sword-draw on PvP, game-coin on rewards,
   game-levelup on JOIN NOW.
 - HyperFrames check: bubbles first used radial-gradient (25 heavy-overlay elements, warning); changed to flat rgba.
+
+## Render + QA + delivery (2026-10-31)
+- Render 30.0 s 1080x1920 30 fps in 1m59s (-w 3). post.sh (snare RGB split, cool grade, grain) + 1.5 dB gain + alimiter:
+  -15.6 LUFS, true peak -1.8 dBFS. blackdetect: none. watch.py "dark" flags = the deep-ocean background (by design).
+- Delivered as portal version 5 (WaterSMP-Promo-v1.mp4, yuv420p, metadata title + artist MrCopper804 only).
