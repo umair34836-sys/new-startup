@@ -171,7 +171,7 @@ for n in range(22):
     t0 = (n * 1.37) % 6.0
     rise = 9 + (n % 5) * 1.6
     bub_html += (f'<div id="bub{n}" style="position:absolute;left:{x}px;top:1960px;width:{sz}px;height:{sz}px;border-radius:50%;'
-                 f'border:3px solid rgba(143,240,255,0.55);background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(23,200,245,0.08) 60%);"></div>')
+                 f'border:3px solid rgba(143,240,255,0.55);background:rgba(143,240,255,0.12);"></div>')
     k_ = 0
     t = t0
     while t < TOTAL:
@@ -320,7 +320,7 @@ CAPS = [
     [(0.0, "Looking for the best <b>Java + Bedrock</b>"), (0.5, "<b>cracked SMP</b> server?")],
     [(0.0, "No tension!"), (0.4, "I've brought you <b>WaterSMP!</b>")],
     [(0.0, "Here you get <b>amazing ping</b>,"), (0.45, "<b>active players</b> and an exciting <b>survival</b> experience!")],
-    [(0.0, "And the best part:"), (0.3, "on <b>3rd November</b>, an <b>EPIC PvP Tournament!</b>")],
+    [(0.0, "And the best part:"), (0.38, "on <b>3rd November</b>, an <b>EPIC PvP Tournament!</b>")],
     [(0.0, "Show your <b>PvP skills</b>"), (0.55, "and win <b>amazing rewards!</b>")],
     [(0.0, "So why wait? <b>Join WaterSMP</b> today"), (0.55, "and be part of our <b>community!</b>")],
     [(0.0, "See you on <b>WaterSMP!</b>")],
