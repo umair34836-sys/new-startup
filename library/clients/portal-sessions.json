@@ -1,15 +1,117 @@
 {
-  "_about": "Existing clients and their Claude home sessions (from CLAUDE.md 'Sub-sessions', 2026-10-29). The portal hub matches a new portal account to one of these (email domain first, then name alias) and sends its orders to that session instead of creating a new one. Free-mail domains never match by domain.",
-  "clients": [
-    {"key": "moradosolution", "session": "session_01CQ1ajF7SNBueqvBiNGWsLX", "domains": ["moradosolution.in"], "aliases": ["moradosolution", "morado solution"]},
-    {"key": "pizzabasepk", "session": "session_01G1P3KGwamyc7yXaT4s4W1y", "domains": ["pizzabasepk.com"], "aliases": ["pizza base", "pizzabase"]},
-    {"key": "mraloo", "session": "session_01MXn9cJzR1SB9sUWZnsT4n4", "domains": [], "aliases": ["mr aloo", "mraloo", "aloo smp"]},
-    {"key": "korba", "session": "session_01FDH7RUAdSgv8cUNXbZzyHs", "domains": [], "aliases": ["korba restaurant", "korba"]},
-    {"key": "hostlixo", "session": "session_01JK8TsABjeKqpfnaMdmraR5", "domains": ["hostlixo.in"], "aliases": ["hostlixo"]},
-    {"key": "heavendeveloper", "session": "session_01JK8Ts8hnNQ61GDZt5FVxhy", "domains": [], "aliases": ["heaven developer", "heavendeveloper", "heaven devolpur"]},
-    {"key": "aethelgrid", "session": "session_01JK8Ts8oyBGZKRH6CAr36yA", "domains": ["aethelgrid.cloud"], "aliases": ["aethelgrid", "aethel grid"]},
-    {"key": "pakwebhoster", "session": "session_01Kmr9yVm1eY9vB1qqC9R3R8", "domains": ["pakwebhoster.com"], "aliases": ["pakwebhoster", "pak web hoster"]},
-    {"key": "skilloraclouds", "session": "session_01Se2FPfh8Ga51Fqqm2KT6cL", "domains": [], "aliases": ["skilloraclouds", "skillora"]},
-    {"key": "senpaispider", "session": null, "domains": [], "aliases": ["senpai spider", "senpaispider"]}
-  ]
+ "_about": "Existing clients and their Claude home sessions (from CLAUDE.md 'Sub-sessions', 2026-10-29). The portal hub matches a new portal account to one of these (email domain first, then name alias) and sends its orders to that session instead of creating a new one. Free-mail domains never match by domain.",
+ "clients": [
+  {
+   "key": "moradosolution",
+   "session": "session_01CQ1ajF7SNBueqvBiNGWsLX",
+   "domains": [
+    "moradosolution.in"
+   ],
+   "aliases": [
+    "moradosolution",
+    "morado solution"
+   ]
+  },
+  {
+   "key": "pizzabasepk",
+   "session": "session_01G1P3KGwamyc7yXaT4s4W1y",
+   "domains": [
+    "pizzabasepk.com"
+   ],
+   "aliases": [
+    "pizza base",
+    "pizzabase"
+   ]
+  },
+  {
+   "key": "mraloo",
+   "session": "session_01MXn9cJzR1SB9sUWZnsT4n4",
+   "domains": [],
+   "aliases": [
+    "mr aloo",
+    "mraloo",
+    "aloo smp"
+   ]
+  },
+  {
+   "key": "korba",
+   "session": "session_01FDH7RUAdSgv8cUNXbZzyHs",
+   "domains": [],
+   "aliases": [
+    "korba restaurant",
+    "korba"
+   ]
+  },
+  {
+   "key": "hostlixo",
+   "session": "session_01JK8TsABjeKqpfnaMdmraR5",
+   "domains": [
+    "hostlixo.in"
+   ],
+   "aliases": [
+    "hostlixo"
+   ]
+  },
+  {
+   "key": "heavendeveloper",
+   "session": "session_01JK8Ts8hnNQ61GDZt5FVxhy",
+   "domains": [],
+   "aliases": [
+    "heaven developer",
+    "heavendeveloper",
+    "heaven devolpur"
+   ]
+  },
+  {
+   "key": "aethelgrid",
+   "session": "session_01JK8Ts8oyBGZKRH6CAr36yA",
+   "domains": [
+    "aethelgrid.cloud"
+   ],
+   "aliases": [
+    "aethelgrid",
+    "aethel grid"
+   ]
+  },
+  {
+   "key": "pakwebhoster",
+   "session": "session_01Kmr9yVm1eY9vB1qqC9R3R8",
+   "domains": [
+    "pakwebhoster.com"
+   ],
+   "aliases": [
+    "pakwebhoster",
+    "pak web hoster"
+   ]
+  },
+  {
+   "key": "skilloraclouds",
+   "session": "session_01Se2FPfh8Ga51Fqqm2KT6cL",
+   "domains": [],
+   "aliases": [
+    "skilloraclouds",
+    "skillora"
+   ]
+  },
+  {
+   "key": "senpaispider",
+   "session": null,
+   "domains": [],
+   "aliases": [
+    "senpai spider",
+    "senpaispider"
+   ]
+  },
+  {
+   "key": "watersmp",
+   "session": "session_01JK8TsAGU9tJbbaY1jBwALg",
+   "domains": [
+    "watersmp.in"
+   ],
+   "aliases": [
+    "watersmp",
+    "water smp"
+   ]
+  }
+ ]
 }
