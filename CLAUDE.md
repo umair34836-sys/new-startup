@@ -634,3 +634,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - An hourly scheduled task (trig_01K3PxtPGzrgU6Dt72izjE98, at :37) fires into the portal session and forwards orders to client sessions.
   - The owner's test order went to session_01JK8Ts95bH91xquzsz6f5Ch (branch client-portal-demo).
   - Portal code updates reach the live site only when the owner uploads the update zip (portal/README-UPDATE.md).
+
+- Client GOOD's (owner, 2026-11-02: "ye sub se special client hai ... her ek skill is client per luta do"): MOST SPECIAL client.
+  - Home session: session_01JK8Ts9dCZBYqUQJXUSaJFh (branch client-goods). Brief: library/clients/goods/.
+  - Crypto Discord community: invite card on 2026-11-02 read "601 Online, 3,532 Members, Est. May 2024".
+    Links: https://www.goodss.store/ and discord.gg/goods.
+  - Job: an English promo + a Hinglish promo covering everything. Brand look: gold hexagon "G" on black.
+  - Client slogan "GOOD's | Where trust is build." (ask before changing "build").
+  - Never make profit or return claims.
