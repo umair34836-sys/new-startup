@@ -51,3 +51,16 @@ The owner asked on 2026-11-02: "Now Install skaomei stikman-video-director tool 
 - **Aiwings** get_credits 2026-11-02:
   - 7 credits left (free plan); default GPT Image 2.5 Sunburst @ medium = 6 credits/image, so about 1 image.
   - Top up: https://aiwings.io/dashboard
+
+## Canva test (2026-11-02, owner: "Ok soo canva use ker sakte ho check kro ?")
+- `generate-image` prompt "minimal hand-drawn stickman character with thin black pen outline, waving hello, plain white
+  background", LANDSCAPE_16_9.
+  - Result: SUCCESS. Media id MAHZuor1AxA, 1680x944 (get-assets metadata). A clean B/W stick figure that fits the B1 look.
+  - One generation used the owner's Canva AI allowance.
+- Getting the file out at full size: NOT solved.
+  - The tool returns a 199x112 preview.
+  - The asset's thumbnail URL is signed: changing width/height to 1680x944 gave HTTP 403.
+  - Next to test: place the image in a design and use `export-design` (png). Or the owner downloads it via the
+    "Open generated image" link.
+- Limits: Canva's Help Center (via the `help` tool) gives no numbers. Generations count toward a monthly AI allowance
+  by plan, shown in Settings > Billing > AI usage.
