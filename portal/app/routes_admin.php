@@ -96,6 +96,9 @@ function route_admin(string $m, string $path): void
                     'app_notes' => 300, 'privacy_text' => 5000] as $k => $max) {
                     set_setting($k, mb_substr(post($k), 0, $max));
                 }
+                // Keep only valid HH:MM times; an empty field hides the check-times notice.
+                set_setting('check_times', implode(', ', array_filter(preg_split('/[\s,;]+/', post('check_times')) ?: [],
+                    fn($t) => (bool) preg_match('/^([01]?\d|2[0-3]):[0-5]\d$/', $t))));
                 // Currency table: rows of code + default rate; an empty or invalid code drops the row.
                 $cur = [];
                 foreach ((array) ($_POST['cur_code'] ?? []) as $i => $code) {

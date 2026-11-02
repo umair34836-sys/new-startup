@@ -13,6 +13,9 @@
 #   [{line, kind: shot|art|powers|cta, img|imgs, title, sub, source}] in VO order; end_hold seconds after the last line.
 # PROJECT_DIR holds assets/vendor/gsap-3.14.2.min.js, assets/fonts (Anton, Poppins), assets/img/*, assets/sfx/*,
 # assets/audio/mix.wav.
+# 2026-10-30 (portal order 4, FireCraft 60 s 16:9 from the client's own gameplay recordings): kind "clip" = the scene's
+# picture comes from one graded footage plate (assets/img/plate.mp4, made by plate.py: 60 fps source at 0.5x, xfades),
+# so the scene only adds a veil + title; "caption" per scene = English line shown under the VO line (CONFIG captions).
 import argparse, json, os, subprocess
 
 ap = argparse.ArgumentParser()
@@ -73,12 +76,15 @@ def title_block(i, s, top):
             + '</div>')
 
 
-ttop = 850 if WIDE else 1250
+ttop = C.get("title_top", 850) if WIDE else C.get("title_top_portrait", 1250)
 for i, s in enumerate(SC):
     k = s["kind"]
     d = r3(s["t1"] - s["t0"])
     parts = []
-    if k in ("shot", "art"):
+    if k == "clip":
+        parts.append('<div class="veil"></div>')
+        parts.append(title_block(i, s, ttop))
+    elif k in ("shot", "art"):
         # still picture with a slow push-in (Ken Burns) so nothing sits frozen (#96)
         if WIDE:
             parts.append(f'<div id="sc{i}ph" class="photo" style="background-image:url({s["img"]});"></div>')
@@ -148,6 +154,20 @@ for i, s in enumerate(SC):
             sfx("impact-punch", s["t0"] + 0.15, 0.3)
     win(f"#sc{i}", s["t0"], s["t1"])
 
+PLATE = []
+if C.get("plate"):
+    PLATE.append(f'<video id="plate" src="{C["plate"]}" data-start="0" data-duration="{min(TOTAL, dur(C["plate"]))}" muted playsinline '
+                 f'style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>')
+CAP = []
+for j, (txt, (a0, a1)) in enumerate(zip(C.get("captions", []), LINES)):
+    if not txt:
+        continue
+    c0, c1 = r3(VO0 + a0), r3(VO0 + a1 + 0.25)
+    CAP.append(f'<div id="cap{j}" class="cap"><span>{txt}</span></div>')
+    PRE.append(f'gsap.set("#cap{j}", {{opacity:0}});')
+    T.append(f'tl.fromTo("#cap{j}", {{opacity:0, y:16}}, {{opacity:1, y:0, duration:0.2, ease:"power2.out"}}, {c0});')
+    T.append(f'tl.to("#cap{j}", {{opacity:0, duration:0.15}}, {r3(c1 - 0.15)});')
+
 # fire embers overlay + vignette (own CC0 overlay from library/stock)
 emb = []
 k_, t_ = 0, 0.0
@@ -175,6 +195,9 @@ html, body {{ width:{W}px; height:{H}px; overflow:hidden; background:{COL["dark"
 .pw {{ position:absolute; }}
 .cta-btn {{ background:linear-gradient(90deg,{COL["red"]},{COL["fire"]},{COL["gold"]}); color:#fff; font-size:{58 if WIDE else 56}px; white-space:nowrap;
            padding:12px 44px; border-radius:18px; box-shadow:0 0 30px {COL["fire"]}; }}
+.cap {{ position:absolute; left:0; right:0; bottom:{70 if WIDE else 330}px; text-align:center; }}
+.cap span {{ display:inline-block; font-family:Poppins; font-weight:800; font-size:{46 if WIDE else 54}px; color:#fff;
+             background:rgba(0,0,0,0.6); padding:10px 30px; border-radius:14px; }}
 .ctarow {{ display:flex; justify-content:center; gap:16px; font-size:{int(38 * TS)}px; margin:8px 0; }}
 """
 mix_d = dur(C["audio"])
@@ -200,8 +223,10 @@ html = f"""<!doctype html>
 </head>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="{W}" data-height="{H}">
+  {chr(10).join(PLATE)}
   {chr(10).join(HTML)}
   {chr(10).join(emb)}
+  {chr(10).join(CAP)}
   {chr(10).join(audio)}
 </div>
 <script>

@@ -242,6 +242,8 @@ function app_config(): array
     return [
         'brand' => setting('brand_name'), 'splash' => setting('splash_subtitle'), 'tagline' => setting('brand_tagline'),
         'promise' => setting('promise_text'),
+        'check_times' => check_times(), 'check_text' => check_times_text(),
+        'check_utc_offset' => (new DateTime('now', portal_tz()))->getOffset() / 60,
         'currencies' => array_map(fn($c) => ['code' => $c, 'label' => currency_label($c)], array_keys(currencies())),
         'support' => setting('support_contact'), 'privacy' => setting('privacy_text'),
         'questions' => $qs, 'statuses' => ORDER_STATUSES, 'max_file_mb' => (int) setting('max_file_mb'),

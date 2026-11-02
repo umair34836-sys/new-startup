@@ -85,7 +85,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 }
 ?><!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Install portal</title><link rel="stylesheet" href="assets/app.css?v=5"></head>
+<title>Install portal</title><link rel="stylesheet" href="assets/app.css?v=7"></head>
 <body class="auth"><main class="card narrow">
 <h1>Install the portal</h1>
 <?php if ($done): ?>
