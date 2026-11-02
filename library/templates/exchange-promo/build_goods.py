@@ -197,8 +197,8 @@ C["s10"] = comp("s10", f"""    <div style="position:absolute;inset:0;background:
       <div id="s10-m" style="margin-top:30px;"><span style="font-weight:800;font-size:{150 if PORT else 120}px;color:{GOLD};">{MEMBERS}</span>
         <span style="font-weight:600;font-size:{52 if PORT else 44}px;"> {T['members']}</span></div>
       <div class="sub" id="s10-s">{T['since']}</div>
-      <div style="margin-top:34px;"><span class="chip" id="s10-c">discord.gg/goods</span></div></div>
-    <div class="note" id="s10-n" style="position:absolute;{'left:70px;top:1560px;' if PORT else 'right:70px;bottom:44px;'}">Members on 2 Nov 2026</div>""",
+      <div style="margin-top:34px;"><span class="chip" id="s10-c">discord.gg/goods</span></div>
+      <div class="note" id="s10-n">Members on 2 Nov 2026</div></div>""",
                 f'    tl.fromTo("#s10-v", {{ scale: 0.92, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.6, {IN} }}, 0.05);\n'
                 f'    tl.fromTo("#s10-bar", {{ scaleX: 0, transformOrigin: "left center" }}, {{ scaleX: 1, duration: 0.5, {IN} }}, 0.2);\n'
                 f'    tl.fromTo("#s10-h", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, 0.3);\n'
