@@ -6,6 +6,7 @@
   <label>Brand name<input name="brand_name" maxlength="80" value="<?= e(setting('brand_name')) ?>"></label>
   <label>Splash line under the name (app opening screen)<input name="splash_subtitle" maxlength="40" value="<?= e(setting('splash_subtitle')) ?>"></label>
   <label>Promise shown to clients<input name="promise_text" maxlength="200" value="<?= e(setting('promise_text')) ?>"></label>
+  <label>Order check times <small>(24 h, Pakistan time, comma separated, e.g. 10:00, 14:00, 17:00, 22:00; shown to clients on the web and in the app)</small><input name="check_times" maxlength="100" value="<?= e(setting('check_times')) ?>"></label>
   <label>Tagline<input name="brand_tagline" maxlength="160" value="<?= e(setting('brand_tagline')) ?>"></label>
   <label>Your email for new-order alerts<input name="owner_email" type="email" maxlength="190" value="<?= e(setting('owner_email')) ?>"></label>
   <label>Send emails from <small>(an address of your domain made in cPanel → Email Accounts, e.g. no-reply@firecraft.fun; empty = no emails)</small><input name="mail_from" type="email" maxlength="190" value="<?= e(setting('mail_from')) ?>"></label>
