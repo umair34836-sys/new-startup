@@ -25,15 +25,17 @@ SCENES = [(f"s{i + 1}", st[i], st[i + 1] if i + 1 < len(st) else TOTAL) for i in
 W = {k: (s, e) for k, s, e in SCENES}
 
 # scene -> [recording, from s, to s, (zoom, x-focus 0..1, y-focus 0..1)] ; None = designed card on the client's GIF
+# spans start after each page's smooth scroll settles (~4 s); 2.0-2.4 s showed the page top and a near-black
+# mid-scroll frame (blackdetect 25.63 s, 2026-11-02)
 if PORT:
-    SEG = {"s2": ["hero", 0.4, 6.8], "s3": ["rates", 2.0, 5.6], "s4": ["rates", 8.6, 13.4], "s5": ["rates", 5.0, 8.4],
-           "s6": ["calc", 8.8, 18.2], "s7": ["how", 2.4, 9.8], "s8": ["how", 6.0, 10.0], "s9": ["contact", 2.4, 8.0],
-           "s11": ["contact", 7.0, 14.6]}
+    SEG = {"s2": ["hero", 0.4, 6.8], "s3": ["rates", 4.1, 6.1], "s4": ["rates", 8.6, 13.4], "s5": ["rates", 6.0, 8.6],
+           "s6": ["calc", 8.8, 18.2], "s7": ["how", 4.0, 9.8], "s8": ["how", 6.5, 10.0], "s9": ["contact", 4.0, 8.5],
+           "s11": ["contact", 8.5, 14.6]}
 else:
-    SEG = {"s2": ["hero", 0.4, 6.4], "s3": ["rates", 2.2, 5.2, (1.25, 0.5, 0.25)], "s4": ["rates", 8.0, 12.8, (1.3, 0.35, 0.3)],
-           "s5": ["rates", 4.6, 7.8, (1.3, 0.4, 0.3)], "s6": ["calc", 10.0, 22.8, (1.25, 0.4, 0.55)],
-           "s7": ["how", 2.4, 9.6, (1.15, 0.5, 0.55)], "s8": ["how", 6.0, 9.8, (1.15, 0.5, 0.55)],
-           "s9": ["contact", 2.4, 8.0], "s11": ["contact", 8.0, 17.2, (1.2, 0.2, 0.6)]}
+    SEG = {"s2": ["hero", 0.4, 6.4], "s3": ["rates", 4.0, 5.6, (1.25, 0.5, 0.25)], "s4": ["rates", 8.0, 12.8, (1.3, 0.35, 0.3)],
+           "s5": ["rates", 5.6, 8.0, (1.3, 0.4, 0.3)], "s6": ["calc", 10.0, 22.8, (1.25, 0.4, 0.55)],
+           "s7": ["how", 4.0, 9.6, (1.15, 0.5, 0.55)], "s8": ["how", 6.5, 9.8, (1.15, 0.5, 0.55)],
+           "s9": ["contact", 4.0, 8.6], "s11": ["contact", 8.6, 17.2, (1.2, 0.2, 0.6)]}
 
 T = {  # on-screen copy per language (Roman Hinglish for the Hinglish cut; brand words stay English)
     "en": dict(h2="Currency and crypto exchange,<br>in one place", h3="7 currencies", h4="Send crypto,<br>or swap a Binance gift card",
