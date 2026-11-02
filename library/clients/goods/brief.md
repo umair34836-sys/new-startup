@@ -30,3 +30,10 @@
 - Watermarked PREVIEW first ("Edited by MrCopper804"), clean final after payment.
 - Slogan on screen and in VO: "Where trust is built." (owner chose the grammatical form).
 - Risky claims (site-data.md list): not used by default (this session's safe choice, told to the owner).
+
+## OWNER RULE for this client (2026-11-02, verbatim): "Kuch instructions note kerlo ai jaise flow nhi rakhna
+## Repeated sfx mat rakhna or apne andaze se sub kuch mat kerna learning skills and research base hi work kerna"
+- No AI-looking flow: no transition/whoosh on every cut (skill #147 "overuse is the beginner tell"; #2032 whoosh only on a
+  real fast move, under music and voice), no identical animation on every scene, cards always over real material.
+- No repeated SFX: every SFX file is used once per video (Mr Aloo 2026-10-28: a repeated pop sounds cheap).
+- Every decision from repo skills/research, with the skill number or source in the edit log.

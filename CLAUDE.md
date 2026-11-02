@@ -590,6 +590,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   upload ANY file type; required "Voice or only music?" question; orders are checked at FIXED times shown to clients
   (00:00/05:00/10:00/14:00/17:00/22:00 PKT; rates PKR 2/s, other currencies 1/s, 2026-10-30, scheduled task trig_01K3PxtPGzrgU6Dt72izjE98 runs 5 min after each).
 
+- Client GOOD's (crypto + currency exchange, goodss.store) home session: branch client-goods (2026-11-02), brief + verified
+  site-data in library/clients/goods/, template library/templates/exchange-promo. OWNER RULE (2026-11-02, "ai jaise flow nhi
+  rakhna, repeated sfx mat rakhna, apne andaze se kuch mat kerna"): no whoosh/transition on every cut (skills #147, #2032),
+  no identical animation on every scene, each SFX file once per video, every decision cited in the edit log.
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.
