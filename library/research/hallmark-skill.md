@@ -26,6 +26,11 @@ The owner asked on 2026-11-02 to install "hallmark skill ... GitHub se 300k plus
   (/usr/bin/chromium, ...). This container has /opt/pw-browsers/chromium and no /usr/bin/chromium.
 
 ## Status
-- NOT installed yet (2026-11-02).
+- INSTALLED 2026-11-02 after the owner's go-ahead ("Instructions and rules me bhi add kro k her ek kaam me isko use kia jay").
+  - In .claude/skills/hallmark (pinned 4f6a46c6dc325d40ab268c93e25c7b96676ebccd).
+  - library/tools/setup-hallmark.sh: re-fetching the 50 theme JPGs from the pinned commit was tested (cmp identical);
+    puppeteer-core 25.16.0; /usr/bin/chromium -> /opt/pw-browsers/chromium.
+- Running `node scripts/sloplint.mjs` was refused by the permission check ("Code from External"); not run yet.
+- Earlier the same day, before the go-ahead:
 - Copying it into .claude/skills (loaded by every session) was stopped by the session's permission check as untrusted
   third-party code. It needs the owner's explicit go-ahead.

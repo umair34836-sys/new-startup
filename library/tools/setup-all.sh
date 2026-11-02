@@ -33,6 +33,8 @@ light() {
   bash "$HERE/setup-specialist-d.sh" >/dev/null
   # listen.py / watch.py / fast_matte.py (specialist A): perc-venv (~1.3 GB) + models; flag .specialist-a-ready
   bash "$HERE/setup-specialist-a.sh" >/dev/null
+  # Hallmark design skill (Nutlope/hallmark, MIT): theme JPGs + puppeteer-core + /usr/bin/chromium for its browser lint.
+  bash "$HERE/setup-hallmark.sh" >/dev/null
   # Crawl4AI (free local Firecrawl replacement, web_capture.py): own venv; playwright 1.56.0 = /opt/pw-browsers chromium-1194
   # (container-dependent: the 2026-10-24 image had chromium-1243 / system playwright 1.63.0, and web_capture.py failed).
   [ -x "$T/crawl-venv/bin/python" ] || uv venv -q -p /usr/bin/python3.12 "$T/crawl-venv"
