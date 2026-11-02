@@ -45,8 +45,8 @@ T = {  # on-screen copy per language (Roman Hinglish for the Hinglish cut; brand
                h8="Zyada tar exchange<br>5 se 30 minute mein", h8s="payment confirm hone ke baad", h9="Har transaction GOOD's team<br>verify karti hai",
                h10="Community join karein", members="members", since="Discord par, May 2024 se", h11="Aaj hi exchange shuru karein"),
 }[LANG]
-RATE_NOTE = "Rates on goodss.store, 2 Nov 2026. Subject to change."
-CALC_NOTE = "Example from the site's calculator, 2 Nov 2026"
+RATE_NOTE = "Rates as of 2 Nov 2026"
+CALC_NOTE = "Site calculator, 2 Nov 2026"
 MEMBERS = "3,500+"   # Discord invite API 2026-11-02: approximate_member_count 3532
 
 
@@ -91,12 +91,12 @@ HEAD = 104 if PORT else 92
 CSS = f"""
     @font-face {{ font-family: "Outfit"; src: url("assets/fonts/Outfit-Variable.ttf"); font-weight: 100 900; }}
     #root {{ position: absolute; inset: 0; overflow: hidden; font-family: Outfit; color: {INK}; }}
-    .veil {{ position: absolute; left: 0; right: 0; bottom: 0; height: {1000 if PORT else 640}px;
-             background: linear-gradient(180deg, rgba(6,11,23,0) 0%, rgba(6,11,23,0.86) 38%, rgba(6,11,23,0.96) 100%); }}
+    .veil {{ position: absolute; left: 0; right: 0; bottom: 0; height: {1060 if PORT else 700}px;
+             background: linear-gradient(180deg, rgba(6,11,23,0) 0%, rgba(6,11,23,0.975) 22%, rgba(6,11,23,0.985) 100%); }}
     .blk {{ position: absolute; {'left: 70px; right: 70px; top: 1130px; text-align: left;' if PORT else 'left: 110px; width: 1200px; top: 640px;'} }}
     .h {{ font-weight: 800; font-size: {HEAD}px; line-height: 1.04; letter-spacing: -0.02em; text-shadow: 0 4px 18px rgba(0,0,0,0.55); }}
     .sub {{ font-weight: 500; font-size: {40 if PORT else 36}px; line-height: 1.3; color: {MUTED}; margin-top: 22px; }}
-    .note {{ position: absolute; {'left: 70px; top: 1560px;' if PORT else 'right: 70px; bottom: 44px;'} font-weight: 500; font-size: 26px; color: {MUTED}; }}
+    .note {{ margin-top: 22px; font-weight: 500; font-size: 30px; color: {MUTED}; }}
     .bar {{ width: 120px; height: 10px; background: {GOLD}; border-radius: 5px; margin-bottom: 34px; }}
     .chip {{ display: inline-flex; align-items: center; gap: 14px; font-weight: 700; font-size: {44 if PORT else 40}px; color: {INK};
              padding: 14px 26px; margin: 0 14px 16px 0; border-radius: 16px; background: rgba(13,21,38,0.94); border: 2px solid rgba(232,192,47,0.55); }}
@@ -134,11 +134,11 @@ def scene(k, i, head, sub="", items=None, note="", frac=0.08, look="rise"):
     if look == "top":
         pos = f'style="top:{230 if PORT else 110}px;"'
     html = ((f'<div class="veil"></div>' if look != "top" else
-             f'<div class="veil" style="top:0;bottom:auto;height:{900 if PORT else 560}px;transform:scaleY(-1);"></div>') +
+             f'<div class="veil" style="top:0;bottom:auto;height:{820 if PORT else 520}px;transform:scaleY(-1);"></div>') +
             f'<div class="blk" {pos}>' + (f'<div class="bar" id="{k}-bar"></div>' if look == "rise" else "") +
             (f'<div class="h" id="{k}-h">{head}</div>' if head else "") + (f'<div class="sub" id="{k}-s">{sub}</div>' if sub else "") +
-            (f'<div style="margin-top:34px;">{chips}</div>' if chips else "") + "</div>" +
-            (f'<div class="note" id="{k}-n">{note}</div>' if note else ""))
+            (f'<div style="margin-top:34px;">{chips}</div>' if chips else "") +
+            (f'<div class="note" id="{k}-n">{note}</div>' if note else "") + "</div>")
     t0 = rel(i, frac)
     js = ""
     if look == "rise":
@@ -165,12 +165,12 @@ LOGO = 760 if PORT else 640
 # s1 hook / thumbnail at 0 s: the client's own animated logo (GIF -> mp4) in its round badge + slogan
 s1d = round(W["s1"][1], 2)
 C["s1"] = comp("s1", f"""    <div style="position:absolute;inset:0;background:{BG};"></div>
-    <video id="s1-v" src="assets/img/logo.mp4" muted playsinline data-start="0" data-duration="{s1d}" data-track-index="0"
+    <video id="s1-v" src="assets/img/logo_s1.mp4" muted playsinline data-start="0" data-duration="{s1d}" data-track-index="0"
       style="position:absolute;left:{(WD - LOGO) // 2}px;top:{300 if PORT else 90}px;width:{LOGO}px;height:{LOGO}px;border-radius:50%;object-fit:cover;"></video>
     <div id="s1-t" style="position:absolute;left:0;right:0;top:{1150 if PORT else 760}px;text-align:center;">
       <div class="h" style="font-size:{150 if PORT else 120}px;">GOOD's</div>
       <div class="sub" style="font-size:{62 if PORT else 52}px;color:{GOLD};font-weight:700;margin-top:10px;">Where trust is built.</div></div>""",
-               f'    tl.fromTo("#s1-t", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.7, {IN} }}, 0.1);\n'
+               f'    tl.fromTo("#s1-t", {{ y: 18 }}, {{ y: 0, duration: 0.9, {IN} }}, 0);\n'
                )
 
 FL = [("bd", "BDT"), ("pk", "PKR"), ("in", "INR"), ("np", "NPR"), ("eg", "EGP"), ("ph", "PHP"), ("sa", "SAR")]
@@ -178,7 +178,7 @@ C["s2"] = scene("s2", 1, T["h2"], look="top")
 C["s3"] = scene("s3", 2, T["h3"], items=[(f'<img src="assets/img/flags/{f}.png" alt="">{c}', 0.1 + 0.11 * j, "") for j, (f, c) in enumerate(FL)], look="rise")
 C["s4"] = scene("s4", 3, T["h4"], items=[("USDT", 0.1, ""), ("LTC", 0.2, ""), ("ETH", 0.3, ""), ("SOL", 0.4, ""), ("Binance gift card", 0.75, " gold")], look="slide")
 C["s5"] = scene("s5", 4, T["h5"], note=RATE_NOTE, look="top")
-C["s6"] = scene("s6", 5, T["h6"], items=[("32,500 PKR = $100", 0.55, " gold")], note=CALC_NOTE + ". " + RATE_NOTE.split(". ")[1], look="wipe")
+C["s6"] = scene("s6", 5, T["h6"], items=[("32,500 PKR = $100", 0.55, " gold")], note=CALC_NOTE, look="wipe")
 C["s7"] = scene("s7", 6, "", items=[(f"{n + 1}. {x}", 0.05 + 0.3 * n, " gold" if n == 2 else "") for n, x in enumerate(T["steps"])], look="slide")
 C["s8"] = scene("s8", 7, T["h8"], sub=T["h8s"], look="rise")
 C["s9"] = scene("s9", 8, T["h9"], look="wipe")
@@ -197,7 +197,7 @@ C["s10"] = comp("s10", f"""    <div style="position:absolute;inset:0;background:
         <span style="font-weight:600;font-size:{52 if PORT else 44}px;"> {T['members']}</span></div>
       <div class="sub" id="s10-s">{T['since']}</div>
       <div style="margin-top:34px;"><span class="chip" id="s10-c">discord.gg/goods</span></div></div>
-    <div class="note" id="s10-n">Discord member count, 2 Nov 2026</div>""",
+    <div class="note" id="s10-n" style="position:absolute;{'left:70px;top:1560px;' if PORT else 'right:70px;bottom:44px;'}">Members on 2 Nov 2026</div>""",
                 f'    tl.fromTo("#s10-v", {{ scale: 0.92, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.6, {IN} }}, 0.05);\n'
                 f'    tl.fromTo("#s10-bar", {{ scaleX: 0, transformOrigin: "left center" }}, {{ scaleX: 1, duration: 0.5, {IN} }}, 0.2);\n'
                 f'    tl.fromTo("#s10-h", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, 0.3);\n'
@@ -205,8 +205,7 @@ C["s10"] = comp("s10", f"""    <div style="position:absolute;inset:0;background:
                 f'    tl.fromTo(["#s10-s", "#s10-n"], {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {rel(9, 0.35) + 0.4:.2f});\n'
                 f'    tl.fromTo("#s10-c", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, {IN} }}, {rel(9, 0.7)});\n')
 
-C["s11"] = scene("s11", 10, T["h11"], items=[("goodss.store", 0.2, " gold"), ("discord.gg/goods", 0.4, ""), ("Telegram @goodss05", 0.6, ""),
-                                             ("WhatsApp group", 0.75, ""), ("goodsstorebd@gmail.com", 0.85, "")], look="rise")
+C["s11"] = scene("s11", 10, T["h11"], items=[("Telegram", 0.0, ""), ("WhatsApp", 0.0, ""), ("Email", 0.0, "")], frac=0.0, look="rise")
 
 # s12 end card: logo GIF again + slogan + where to go + credit
 s12s, s12e = W["s12"]
@@ -219,7 +218,7 @@ C["s12"] = comp("s12", f"""    <div style="position:absolute;inset:0;background:
       <div class="h" style="font-size:{130 if PORT else 100}px;">GOOD's</div>
       <div class="sub" style="font-size:{58 if PORT else 46}px;color:{GOLD};font-weight:700;margin-top:6px;">Where trust is built.</div>
       <div style="margin-top:46px;"><span class="chip gold">goodss.store</span><span class="chip">discord.gg/goods</span></div></div>
-    <div id="e-cr" style="position:absolute;left:0;right:0;bottom:{70 if PORT else 34}px;text-align:center;font-weight:500;font-size:26px;color:{MUTED};">Edited by MrCopper804</div>""",
+    <div id="e-cr" style="position:absolute;left:0;right:0;bottom:{70 if PORT else 34}px;text-align:center;font-weight:500;font-size:30px;color:{MUTED};">Edited by MrCopper804</div>""",
                 f'    tl.fromTo("#e-t", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.7, {IN} }}, 0.15);\n'
                 f'    tl.fromTo("#e-cr", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.5 }}, 1.0);\n')
 
