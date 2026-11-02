@@ -23,3 +23,10 @@
   Only quote the client's own pages, with the date; risky claims listed in site-data.md need the owner's OK.
 - Rates change manually: if shown, label "Rates on 2 Nov 2026 · subject to change" (site's own wording).
 - Open questions for the owner: see edit logs (format, length, voices, preview vs final, slogan spelling, brand name).
+
+## Owner's answers (AskUserQuestion, 2026-11-02)
+- Format: 9:16 + 16:9, ~45 s each, for English AND Hinglish (4 videos).
+- Voice: `explainer-pro` in both languages.
+- Watermarked PREVIEW first ("Edited by MrCopper804"), clean final after payment.
+- Slogan on screen and in VO: "Where trust is built." (owner chose the grammatical form).
+- Risky claims (site-data.md list): not used by default (this session's safe choice, told to the owner).
