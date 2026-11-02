@@ -21,7 +21,7 @@ Every line below was read on 2026-11-02 (UTC 14:28-14:30) by this session.
   financial advice from experts. We have 'top-tier' security measurements to ensure maximum encryption of funds in
   accordance to discord's policies."
 - "Est. May 2024" was seen on the invite card in the owner's screen recording (main session, 2026-11-02). Guild id
-  snowflake 1236946348373442580 -> timestamp (id >> 22) + 1420070400000 = 2024-05-05 UTC (computed here), which agrees.
+  snowflake 1236946348373442580 -> timestamp (id >> 22) + 1420070400000 = 2024-05-06 07:43 UTC (computed here with python), which agrees.
 
 ## Website: what it is
 - Meta description: "GOOD's EXCHANGE — Fast, Secure & Reliable Currency & Crypto Exchange. Get the best rates for BDT,
