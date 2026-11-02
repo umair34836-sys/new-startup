@@ -86,6 +86,16 @@ Read this first in every session.
     Photos come from Hallmark's Wikimedia list and must be credited, or from the client.
   - Running Hallmark's own scripts (sloplint, capture) was refused by this session's permission check on 2026-11-02.
     The owner has to allow it once (permission prompt) before `sloplint --render` can run here.
+- STICKMAN VIDEOS (owner, 2026-11-02: "Install skaomei stikman-video-director tool from github"):
+  - Installed: skill `.claude/skills/directing-stickman-videos` (kaomei/stickman-video-director, MIT, pinned d19705d).
+    `library/tools/setup-stickman.sh` (run by setup-all.sh light) adds the git-ignored media and `npm ci`.
+    The `autopilot.mjs doctor` check passed here (2026-11-02). Notes: library/research/stickman-video-director.md.
+  - Use it for faceless explainer, storytelling and lore stickman videos:
+    - Director mode = storyboard and prompts.
+    - Autopilot mode = finished narrated, captioned video with the local renderer.
+  - Voice: our free field voices (vs_tts.py), NOT its Gemini default.
+  - Scene images: Gemini, Aiwings or Canva generation all cost money or credits. Ask the owner before any billable
+    call, and never ask for a pasted key.
 - Store on GitHub ONLY: skills, learnings and things worth remembering (this file), and reusable
   assets/tools in `library/` (music, sound effects, fonts, overlay blocks, models, scripts).
 - NEVER commit videos, photos, voice recordings, or personal data (family names, captions written about
