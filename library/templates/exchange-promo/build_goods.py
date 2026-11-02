@@ -120,31 +120,43 @@ def comp(cid, html, js):
 """
 
 
-POPS = []
+MARK = {}   # element id -> absolute time it appears (for the few SFX that have a story job)
 IN = 'ease: "expo.out"'
 
 
-def scene(k, i, head, sub="", items=None, note="", frac=0.08):
-    """headline block on a bottom veil; items = [(html, frac of the VO line)] appear as chips on their words"""
+def scene(k, i, head, sub="", items=None, note="", frac=0.08, look="rise"):
+    """headline block over the real recording. look varies per scene so no two neighbours animate alike (owner
+    2026-11-02 "ai jaise flow nhi"; skill #147): rise = gold bar + lift, slide = from the left, top = block at the top
+    of the frame dropping in, wipe = clip-path reveal. No exit animation: scenes end on a plain cut."""
     s, e = W[k]
-    d = round(e - s, 2)
     chips = "".join(f'<span class="chip{c}" id="{k}-c{j}">{h}</span>' for j, (h, fr, c) in enumerate(items or []))
-    html = (f'<div class="veil"></div><div class="blk"><div class="bar" id="{k}-bar"></div>'
-            f'<div class="h" id="{k}-h">{head}</div>' + (f'<div class="sub" id="{k}-s">{sub}</div>' if sub else "") +
+    pos = ""
+    if look == "top":
+        pos = f'style="top:{230 if PORT else 110}px;"'
+    html = ((f'<div class="veil"></div>' if look != "top" else
+             f'<div class="veil" style="top:0;bottom:auto;height:{900 if PORT else 560}px;transform:scaleY(-1);"></div>') +
+            f'<div class="blk" {pos}>' + (f'<div class="bar" id="{k}-bar"></div>' if look == "rise" else "") +
+            (f'<div class="h" id="{k}-h">{head}</div>' if head else "") + (f'<div class="sub" id="{k}-s">{sub}</div>' if sub else "") +
             (f'<div style="margin-top:34px;">{chips}</div>' if chips else "") + "</div>" +
             (f'<div class="note" id="{k}-n">{note}</div>' if note else ""))
     t0 = rel(i, frac)
-    js = (f'    tl.fromTo("#{k}-bar", {{ scaleX: 0, transformOrigin: "left center" }}, {{ scaleX: 1, duration: 0.5, {IN} }}, {max(0.05, t0 - 0.1)});\n'
-          f'    tl.fromTo("#{k}-h", {{ y: 60, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, {t0});\n')
+    js = ""
+    if look == "rise":
+        js += f'    tl.fromTo("#{k}-bar", {{ scaleX: 0, transformOrigin: "left center" }}, {{ scaleX: 1, duration: 0.5, {IN} }}, {max(0.05, t0 - 0.1)});\n'
+    if head:
+        fr_to = {"rise": ("{ y: 60, opacity: 0 }", "{ y: 0, opacity: 1"), "slide": ("{ x: -140, opacity: 0 }", "{ x: 0, opacity: 1"),
+                 "top": ("{ y: -70, opacity: 0 }", "{ y: 0, opacity: 1"),
+                 "wipe": ('{ clipPath: "inset(0 100% 0 0)" }', '{ clipPath: "inset(0 0% 0 0)"')}[look]
+        js += f'    tl.fromTo("#{k}-h", {fr_to[0]}, {fr_to[1]}, duration: {0.8 if look == "wipe" else 0.6}, {IN} }}, {t0});\n'
     if sub:
-        js += f'    tl.fromTo("#{k}-s", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.5, {IN} }}, {t0 + 0.35:.2f});\n'
+        js += f'    tl.fromTo("#{k}-s", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.5 }}, {t0 + 0.4:.2f});\n'
     if note:
         js += f'    tl.fromTo("#{k}-n", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {t0 + 0.5:.2f});\n'
     for j, (h, fr, c) in enumerate(items or []):
         t = max(rel(i, fr), t0 + 0.25 + 0.12 * j)
-        js += f'    tl.fromTo("#{k}-c{j}", {{ y: 40, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, {IN} }}, {t:.2f});\n'
-        POPS.append(round(s + t, 2))
-    js += f'    tl.to("#root", {{ opacity: 0, duration: 0.15 }}, {d - 0.15:.2f});\n'
+        frm = "{ x: -40, opacity: 0 }" if look == "slide" else "{ y: 30, opacity: 0 }"
+        js += f'    tl.fromTo("#{k}-c{j}", {frm}, {{ x: 0, y: 0, opacity: 1, duration: 0.4, {IN} }}, {t:.2f});\n'
+        MARK[f"{k}-c{j}"] = round(s + t, 2)
     return comp(k, html, js)
 
 
@@ -159,17 +171,17 @@ C["s1"] = comp("s1", f"""    <div style="position:absolute;inset:0;background:{B
       <div class="h" style="font-size:{150 if PORT else 120}px;">GOOD's</div>
       <div class="sub" style="font-size:{62 if PORT else 52}px;color:{GOLD};font-weight:700;margin-top:10px;">Where trust is built.</div></div>""",
                f'    tl.fromTo("#s1-t", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.7, {IN} }}, 0.1);\n'
-               f'    tl.to("#root", {{ opacity: 0, duration: 0.15 }}, {s1d - 0.15:.2f});\n')
+               )
 
 FL = [("bd", "BDT"), ("pk", "PKR"), ("in", "INR"), ("np", "NPR"), ("eg", "EGP"), ("ph", "PHP"), ("sa", "SAR")]
-C["s2"] = scene("s2", 1, T["h2"])
-C["s3"] = scene("s3", 2, T["h3"], items=[(f'<img src="assets/img/flags/{f}.png" alt="">{c}', 0.1 + 0.11 * j, "") for j, (f, c) in enumerate(FL)])
-C["s4"] = scene("s4", 3, T["h4"], items=[("USDT", 0.1, ""), ("LTC", 0.2, ""), ("ETH", 0.3, ""), ("SOL", 0.4, ""), ("Binance gift card", 0.75, " gold")])
-C["s5"] = scene("s5", 4, T["h5"], note=RATE_NOTE)
-C["s6"] = scene("s6", 5, T["h6"], items=[("32,500 PKR = $100", 0.55, " gold")], note=CALC_NOTE + ". " + RATE_NOTE.split(". ")[1])
-C["s7"] = scene("s7", 6, "", items=[(f"{n + 1}. {x}", 0.05 + 0.3 * n, " gold" if n == 2 else "") for n, x in enumerate(T["steps"])])
-C["s8"] = scene("s8", 7, T["h8"], sub=T["h8s"])
-C["s9"] = scene("s9", 8, T["h9"])
+C["s2"] = scene("s2", 1, T["h2"], look="top")
+C["s3"] = scene("s3", 2, T["h3"], items=[(f'<img src="assets/img/flags/{f}.png" alt="">{c}', 0.1 + 0.11 * j, "") for j, (f, c) in enumerate(FL)], look="rise")
+C["s4"] = scene("s4", 3, T["h4"], items=[("USDT", 0.1, ""), ("LTC", 0.2, ""), ("ETH", 0.3, ""), ("SOL", 0.4, ""), ("Binance gift card", 0.75, " gold")], look="slide")
+C["s5"] = scene("s5", 4, T["h5"], note=RATE_NOTE, look="top")
+C["s6"] = scene("s6", 5, T["h6"], items=[("32,500 PKR = $100", 0.55, " gold")], note=CALC_NOTE + ". " + RATE_NOTE.split(". ")[1], look="wipe")
+C["s7"] = scene("s7", 6, "", items=[(f"{n + 1}. {x}", 0.05 + 0.3 * n, " gold" if n == 2 else "") for n, x in enumerate(T["steps"])], look="slide")
+C["s8"] = scene("s8", 7, T["h8"], sub=T["h8s"], look="rise")
+C["s9"] = scene("s9", 8, T["h9"], look="wipe")
 
 # s10 Discord: the client's animated banner GIF + verified member count
 s10s, s10e = W["s10"]
@@ -191,12 +203,10 @@ C["s10"] = comp("s10", f"""    <div style="position:absolute;inset:0;background:
                 f'    tl.fromTo("#s10-h", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, 0.3);\n'
                 f'    tl.fromTo("#s10-m", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, {rel(9, 0.35)});\n'
                 f'    tl.fromTo(["#s10-s", "#s10-n"], {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {rel(9, 0.35) + 0.4:.2f});\n'
-                f'    tl.fromTo("#s10-c", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, {IN} }}, {rel(9, 0.7)});\n'
-                f'    tl.to("#root", {{ opacity: 0, duration: 0.15 }}, {s10d - 0.15:.2f});\n')
-POPS += [round(s10s + rel(9, 0.35), 2), round(s10s + rel(9, 0.7), 2)]
+                f'    tl.fromTo("#s10-c", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, {IN} }}, {rel(9, 0.7)});\n')
 
 C["s11"] = scene("s11", 10, T["h11"], items=[("goodss.store", 0.2, " gold"), ("discord.gg/goods", 0.4, ""), ("Telegram @goodss05", 0.6, ""),
-                                             ("WhatsApp group", 0.75, ""), ("goodsstorebd@gmail.com", 0.85, "")])
+                                             ("WhatsApp group", 0.75, ""), ("goodsstorebd@gmail.com", 0.85, "")], look="rise")
 
 # s12 end card: logo GIF again + slogan + where to go + credit
 s12s, s12e = W["s12"]
@@ -228,23 +238,22 @@ def dur(p):
                                       capture_output=True, text=True).stdout), 3)
 
 
-# SFX: rotate 2-3 variants per type (Mr Aloo feedback 2026-10-28: one repeated pop sounds cheap)
-WH = ["swish-1", "whoosh-fast-0.3s", "swish-4"]
-PO = ["pop-high", "pluck", "glass-tap"]
-CK = ["mouse-click", "click-1", "click-2"]
+# SFX (owner 2026-11-02: no repeated SFX, no AI-like flow): every file used once per video.
+# Whoosh only on the 3 cuts with a real big change of picture (skill #2032; #147), real clicks get one distinct
+# click each, one money sound on the calculator result (the line's point), one soft hit under the first logo frame.
 sfx = lambda n: f"assets/sfx/{n}.mp3"
 A = [("mix", "assets/audio/mix.wav", 0, min(dur("assets/audio/mix.wav"), TOTAL), 1.0, 10)]
-A.append(("thud0", sfx("soft-thud"), 0.05, dur(sfx("soft-thud")), 0.35, 11))
-for i, (k, s, e) in enumerate(SCENES[1:]):
-    n = WH[i % 3]
-    A.append((f"wh{i}", sfx(n), round(max(0, s - 0.12), 2), dur(sfx(n)), 0.4, 12 + i % 2))
-for i, t in enumerate(sorted(set(POPS))):
-    n = PO[i % 3]
-    A.append((f"pop{i}", sfx(n), t, dur(sfx(n)), 0.22, 14 + i % 2))
-for i, t in enumerate(CLICKS):
-    n = CK[i % 3]
-    A.append((f"clk{i}", sfx(n), t, dur(sfx(n)), 0.5, 16 + i % 2))
-A.append(("thud1", sfx("soft-thud"), round(W["s12"][0] + 0.05, 2), dur(sfx("soft-thud")), 0.35, 18))
+ONE = [("thud", "soft-thud", 0.05, 0.35),
+       ("wh1", "whoosh-fast-0.3s", round(W["s2"][0] - 0.12, 2), 0.4),
+       ("wh2", "swish-1", round(W["s10"][0] - 0.12, 2), 0.35),
+       ("wh3", "whoosh-down-0.6s", round(W["s12"][0] - 0.3, 2), 0.35),
+       ("coin", "coins-handle", MARK["s6-c0"], 0.3)]
+CK = ["mouse-click", "click-1", "click-2", "select-1", "toggle", "switch", "tick"]
+for j, t in enumerate(CLICKS[:len(CK)]):
+    ONE.append((f"clk{j}", CK[j], t, 0.5))
+for ln, (i, n, t, v) in enumerate(ONE):
+    A.append((i, sfx(n), t, dur(sfx(n)), v, 11 + ln))
+assert len({n for _, n, _, _ in ONE}) == len(ONE), "an SFX file repeats"
 aud = "\n".join(f'      <audio id="{i}" src="{s}" data-start="{a}" data-duration="{dd}" data-volume="{v}" data-track-index="{ln}"></audio>'
                 for i, s, a, dd, v, ln in A)
 open("index.html", "w").write(f"""<!doctype html>
