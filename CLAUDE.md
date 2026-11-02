@@ -652,5 +652,5 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - Crypto Discord community: invite card on 2026-11-02 read "601 Online, 3,532 Members, Est. May 2024".
     Links: https://www.goodss.store/ and discord.gg/goods.
   - Job: an English promo + a Hinglish promo covering everything. Brand look: gold hexagon "G" on black.
-  - Client slogan "GOOD's | Where trust is build." (ask before changing "build").
+  - Slogan shown in videos: "GOOD's | Where trust is built." (owner chose "built" on 2026-11-02; client wrote "build").
   - Never make profit or return claims.
