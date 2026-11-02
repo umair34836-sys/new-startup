@@ -1,0 +1,57 @@
+{
+ "size": "short",
+ "bg": {
+  "gradient": [
+   "#0d1526",
+   "#060b17"
+  ],
+  "angle": 160
+ },
+ "vignette": 0.25,
+ "subject": {
+  "image": "gmark.png",
+  "side": "center",
+  "height": 0.36,
+  "stroke": 0,
+  "bottom": 0.5
+ },
+ "texts": [
+  {
+   "text": "GOOD's",
+   "x": 0.05,
+   "y": 0.56,
+   "w": 0.9,
+   "size": 190,
+   "font": "Outfit",
+   "weight": 800,
+   "color": "#f0f6ff",
+   "stroke": 0,
+   "align": "center",
+   "tracking": -0.01
+  },
+  {
+   "text": "Currency aur crypto exchange",
+   "x": 0.05,
+   "y": 0.68,
+   "w": 0.9,
+   "size": 92,
+   "font": "Outfit",
+   "weight": 700,
+   "color": "#f0f6ff",
+   "stroke": 0,
+   "align": "center"
+  },
+  {
+   "text": "Where trust is built.",
+   "x": 0.05,
+   "y": 0.86,
+   "w": 0.9,
+   "size": 66,
+   "font": "Outfit",
+   "weight": 600,
+   "color": "#e8c02f",
+   "stroke": 0,
+   "align": "center"
+  }
+ ]
+}

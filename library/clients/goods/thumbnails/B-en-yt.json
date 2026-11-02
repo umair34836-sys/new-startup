@@ -1,0 +1,58 @@
+{
+ "size": "yt",
+ "bg": {
+  "image": "calc169.png",
+  "blur": 3,
+  "darken": 0.72,
+  "zoom": 1.9,
+  "pos": "28% 32%"
+ },
+ "vignette": 0.3,
+ "texts": [
+  {
+   "text": "See it before you send",
+   "x": 0.05,
+   "y": 0.07,
+   "w": 0.9,
+   "size": 100,
+   "font": "Outfit",
+   "weight": 800,
+   "color": "#f0f6ff",
+   "stroke": 0,
+   "align": "left"
+  },
+  {
+   "text": "32,500 PKR = $100",
+   "x": 0.05,
+   "y": 0.48,
+   "w": 0.9,
+   "size": 92,
+   "font": "Outfit",
+   "weight": 800,
+   "color": "#14110a",
+   "box": "#e8c02f",
+   "stroke": 0,
+   "align": "left"
+  },
+  {
+   "text": "Rates as of 2 Nov 2026",
+   "x": 0.05,
+   "y": 0.68,
+   "w": 0.9,
+   "size": 58,
+   "font": "Outfit",
+   "weight": 500,
+   "color": "#c9d2e0",
+   "stroke": 0,
+   "align": "left"
+  }
+ ],
+ "stickers": [
+  {
+   "image": "gmark.png",
+   "x": 0.78,
+   "y": 0.62,
+   "w": 0.17
+  }
+ ]
+}
