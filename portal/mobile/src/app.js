@@ -256,7 +256,7 @@
   }
 
   function vLogin() {
-    view('<section class="card narrow reveal"><h1>Log in</h1><p class="promise">' + esc(promise()) + '</p><form class="form" id="f">' +
+    view('<section class="card narrow reveal"><h1>Log in</h1><p class="promise">' + esc(promise()) + '</p>' + checkNote(false) + '<form class="form" id="f">' +
       '<label>Email<input name="email" type="email" required autocomplete="email"></label>' +
       '<label>Password<input name="password" type="password" required autocomplete="current-password"></label>' +
       '<button class="btn primary">Log in</button></form>' +
@@ -296,7 +296,28 @@
   }
 
   function brandName() { return ((state.cfg || ls.get('cfg') || {}).brand) || 'MrCopper804'; }
-  function promise() { return ((state.cfg || ls.get('cfg') || {}).promise) || 'Every video is edited by hand by MrCopper804.'; }
+  // Owner (2026-10-29): fixed daily times when new orders are checked; shown on every order screen.
+  function checkText() { return ((state.cfg || ls.get('cfg') || {}).check_text) || ''; }
+  function nextCheck() {
+    var c = state.cfg || ls.get('cfg') || {}, times = c.check_times || [];
+    if (!times.length) return '';
+    var off = (c.check_utc_offset || 0) * 60000, now = new Date(Date.now() + off);
+    var mins = now.getUTCHours() * 60 + now.getUTCMinutes();
+    for (var i = 0; i < times.length; i++) {
+      var m = parseInt(times[i].slice(0, 2), 10) * 60 + parseInt(times[i].slice(3), 10);
+      if (m > mins) return 'today at ' + clock(times[i]);
+    }
+    return 'tomorrow at ' + clock(times[0]);
+  }
+  function clock(hm) {
+    var h = parseInt(hm.slice(0, 2), 10);
+    return ((h % 12) || 12) + ':' + hm.slice(3) + (h < 12 ? ' AM' : ' PM');
+  }
+  function checkNote(withNext) {
+    var t = checkText();
+    return t ? '<p class="check-note reveal">' + esc(t) + (withNext ? ' Next check: ' + esc(nextCheck()) + '.' : '') + '</p>' : '';
+  }
+  function promise() { return ((state.cfg || ls.get('cfg') || {}).promise) || 'Edited by MrCopper804.'; }
 
   function statusBadge(s) {
     var names = (state.cfg && state.cfg.statuses) || {};
@@ -310,11 +331,12 @@
       if (state.user && state.user.role === 'admin') {
         html += '<p class="notice reveal">You are the owner. The admin panel is on the website: <a href="' + esc(API) + '/admin">open admin panel</a>.</p>';
       }
+      html += checkNote(true);
       if (drafts.length) {
         html += '<h2 class="reveal">On this phone</h2><ul class="order-list stagger">' + drafts.map(function (d) {
           return '<li class="card order-item"><a href="#/new/' + esc(d.lid) + '"><span class="title">' + esc(d.title || 'New video') + '</span>' +
             '<span class="badge s-draft">' + (d.pending ? (d.submit ? 'Waiting to send' : 'Waiting to save') : 'Draft') + '</span>' +
-            '<span class="meta">' + (d.error ? '<span class="danger">' + esc(d.error) + '</span>' : (d.pending ? 'Sends automatically when online' : 'Not sent yet')) + '</span></a></li>';
+            '<span class="meta">' + (d.error ? '<span class="danger">' + esc(d.error) + '</span>' : (d.pending ? 'Sends by itself when online' : 'Not sent yet')) + '</span></a></li>';
         }).join('') + '</ul>';
       }
       if (out.length) html += '<p class="muted reveal">' + out.length + ' message(s) waiting to be sent.</p>';
@@ -347,21 +369,22 @@
         var input = q.type === 'select'
           ? '<select name="q.' + esc(q.key) + '"><option value="">Choose…</option>' + q.options.map(function (o) { return '<option' + (o === v ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>'
           : '<input name="q.' + esc(q.key) + '" type="' + (q.type === 'date' ? 'date' : 'text') + '" maxlength="' + (q.max || 200) + '" value="' + esc(v) + '">';
-        return '<label>' + esc(q.label) + (q.required ? ' *' : '') + input + '</label>';
+        return '<label>' + esc(q.label) + ' ' + (q.required ? '<span class="req">*</span>' : '<small class="opt">(optional)</small>') + input + '</label>';
       }).join('');
       view('<div class="head-row reveal"><h1>New video order</h1><span class="badge s-draft">On this phone</span></div>' +
         (d.error ? '<p class="notice err">' + esc(d.error) + '</p>' : '') +
-        '<section class="card reveal"><h2>1. Your files</h2><p class="muted">Videos, photos, logo, voice notes, script. They stay on this phone until they are uploaded.</p>' +
-        '<div class="drop"><input type="file" id="pick" multiple accept="video/*,image/*,audio/*,.pdf,.txt,.srt,.docx,.zip"><label for="pick" class="btn">Choose files</label></div>' +
+        '<section class="card reveal"><h2>1. Your files <small class="opt">(optional)</small></h2><p class="muted">Any file type, as many as you like (videos, photos, logo, music, voice notes, documents, ZIP...), if you have them. No files? Just describe the video below. Files stay on this phone until they are uploaded.</p>' +
+        '<p class="req-note">Fields marked <span class="req">*</span> are required.</p>' +
+        '<div class="drop"><input type="file" id="pick" multiple><label for="pick" class="btn">Choose files</label></div>' +
         '<ul class="file-list" id="files">' + files.map(fileRow).join('') + '</ul></section>' +
         '<form class="form" id="f"><section class="card reveal"><h2>2. About the video</h2>' +
-        '<label>Video name<input name="title" maxlength="160" value="' + esc(d.title) + '" placeholder="e.g. Shop opening reel"></label>' +
-        '<label>Length of the finished video (seconds)<input name="length_sec" type="number" min="1" max="36000" value="' + esc(d.length_sec) + '" id="len"></label>' +
+        '<label>Video name <span class="req">*</span><input name="title" maxlength="160" value="' + esc(d.title) + '" placeholder="e.g. Shop opening reel"></label>' +
+        '<label>Length of the finished video (seconds) <span class="req">*</span><input name="length_sec" type="number" min="1" max="36000" value="' + esc(d.length_sec) + '" id="len"></label>' +
         '<p class="estimate">Price estimate: <strong id="est">' + esc(money((parseInt(d.length_sec, 10) || 0) * rate, cur)) + '</strong> <small>(' + esc(money(rate, cur)) + ' per second)</small></p>' +
         '<div class="grid2">' + qs + '</div></section>' +
-        '<section class="card reveal"><h2>3. Script and your ideas</h2><label>Script / text <small>(optional)</small><textarea name="script" rows="5" maxlength="20000">' + esc(d.script) + '</textarea></label>' +
-        '<label>How should we edit it? Your opinion and ideas<textarea name="ideas" rows="5" maxlength="10000">' + esc(d.ideas) + '</textarea></label></section>' +
-        '<div class="actions sticky"><button class="btn danger-btn" value="delete" type="submit">Delete</button><button class="btn" value="save">Save</button><button class="btn primary" value="submit">Submit order</button></div></form>');
+        '<section class="card reveal"><h2>3. Details, script and ideas</h2><label>Script / text <small class="opt">(optional)</small><textarea name="script" rows="5" maxlength="20000">' + esc(d.script) + '</textarea></label>' +
+        '<label>Tell us about the video: what it is for, what should be in it, how it should feel <span class="req">*</span><textarea name="ideas" rows="5" maxlength="10000" placeholder="What is the video about? Parts to keep or cut, colours, feeling, text on screen…">' + esc(d.ideas) + '</textarea></label></section>' +
+        checkNote(false) + '<div class="actions sticky"><button class="btn danger-btn" value="delete" type="submit">Delete</button><button class="btn" value="save">Save</button><button class="btn primary" value="submit">Submit order</button></div></form>');
       var len = main.querySelector('#len'), est = main.querySelector('#est');
       len.addEventListener('input', function () { est.textContent = money((parseInt(len.value, 10) || 0) * rate, cur); });
       main.querySelector('#pick').addEventListener('change', function (e) {
@@ -395,8 +418,9 @@
           var missing = (c.questions || []).filter(function (q) { return q.required && !d.q[q.key]; }).map(function (q) { return q.label; });
           if (!d.title) missing.unshift('Video name');
           if (!(parseInt(d.length_sec, 10) > 0)) missing.push('Length in seconds');
-          return idb.all('files').then(function (fs) {
-            if (!fs.some(function (f) { return f.lid === d.lid; })) missing.push('At least one file');
+          // Files, voice and script are optional; the details are required (owner, 2026-10-29).
+          if ((d.ideas || '').trim().length < 10) missing.push('Details about the video (at least a sentence)');
+          return Promise.resolve().then(function () {
             if (missing.length) throw new Error('Please fill in: ' + missing.join(', '));
             d.pending = true; d.submit = true;
             return idb.put('drafts', d).then(function () {
@@ -439,11 +463,11 @@
             '<form class="form" id="fc"><textarea name="body" rows="4" required minlength="3" maxlength="10000" placeholder="Example: at 0:12 make the text bigger, use a happier song…"></textarea><button class="btn">Send changes</button></form>' +
             '<form class="form" id="fa"><button class="btn primary">It\'s perfect, approve</button></form></div>';
         } else if (o.status === 'revision') {
-          html += '<p class="notice">We got your changes. ' + esc(brandName()) + ' is working on the next version.</p>';
+          html += '<p class="notice">We got your changes. ' + esc(brandName()) + ' is working on the next version.' + (checkText() ? ' Next check: ' + esc(nextCheck()) + '.' : '') + '</p>';
         }
         html += '</section>';
       } else {
-        html += '<section class="card reveal"><h2>We are on it</h2><p>Your order was received. ' + esc(promise()) + ' The finished video will appear here.</p></section>';
+        html += '<section class="card reveal"><h2>We are on it</h2><p>Your order was received. ' + esc(promise()) + ' The finished video will appear here.</p>' + (o.status === 'submitted' ? checkNote(true) : '') + '</section>';
       }
       if (waiting.length) html += '<p class="notice reveal">' + waiting.length + ' message(s) will be sent when you are online.</p>';
       html += '<section class="card reveal"><h2>Messages</h2><ul class="thread">' + o.messages.map(function (m) {
@@ -455,7 +479,7 @@
         }).join('') + '</ul></section>';
       }
       if (o.status !== 'approved') {
-        html += '<section class="card reveal"><h2>Add more files</h2><div class="drop"><input type="file" id="pick2" multiple accept="video/*,image/*,audio/*,.pdf,.txt,.srt,.docx,.zip"><label for="pick2" class="btn">Choose files</label></div><ul class="file-list" id="files2"></ul></section>';
+        html += '<section class="card reveal"><h2>Add more files</h2><div class="drop"><input type="file" id="pick2" multiple><label for="pick2" class="btn">Choose files</label></div><ul class="file-list" id="files2"></ul></section>';
       }
       html += '<details class="card reveal"><summary>Your order details</summary><dl class="details"><dt>Length</dt><dd>' + o.length_sec + ' seconds</dd>' +
         '<dt>Price</dt><dd>' + esc(money(o.price, o.currency)) + (o.price_is_final ? '' : ' (estimate)') + '</dd>' +
