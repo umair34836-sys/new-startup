@@ -1,0 +1,58 @@
+{
+ "size": "short",
+ "bg": {
+  "image": "calc916.png",
+  "blur": 3,
+  "darken": 0.72,
+  "zoom": 2.2,
+  "pos": "30% 30%"
+ },
+ "vignette": 0.3,
+ "texts": [
+  {
+   "text": "Bhejne se pehle dekhein",
+   "x": 0.05,
+   "y": 0.12,
+   "w": 0.9,
+   "size": 112,
+   "font": "Outfit",
+   "weight": 800,
+   "color": "#f0f6ff",
+   "stroke": 0,
+   "align": "center"
+  },
+  {
+   "text": "32,500 PKR = $100",
+   "x": 0.05,
+   "y": 0.44,
+   "w": 0.9,
+   "size": 82,
+   "font": "Outfit",
+   "weight": 800,
+   "color": "#14110a",
+   "box": "#e8c02f",
+   "stroke": 0,
+   "align": "center"
+  },
+  {
+   "text": "Rates as of 2 Nov 2026",
+   "x": 0.05,
+   "y": 0.53,
+   "w": 0.9,
+   "size": 62,
+   "font": "Outfit",
+   "weight": 500,
+   "color": "#c9d2e0",
+   "stroke": 0,
+   "align": "center"
+  }
+ ],
+ "stickers": [
+  {
+   "image": "gmark.png",
+   "x": 0.38,
+   "y": 0.68,
+   "w": 0.24
+  }
+ ]
+}

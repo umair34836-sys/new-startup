@@ -594,6 +594,13 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   site-data in library/clients/goods/, template library/templates/exchange-promo. OWNER RULE (2026-11-02, "ai jaise flow nhi
   rakhna, repeated sfx mat rakhna, apne andaze se kuch mat kerna"): no whoosh/transition on every cut (skills #147, #2032),
   no identical animation on every scene, each SFX file once per video, every decision cited in the edit log.
+  Learnings (GOOD's, measured 2026-11-02): (1) the client-secrecy rule also covers the FILE: x264 writes its name and
+  options into an SEI NAL and ffmpeg adds encoder=Lavf; remux every client file with `-map_metadata -1 -bsf:v
+  filter_units=remove_types=6 -fflags +bitexact -flags:v +bitexact -flags:a +bitexact` (strings x264/Lavf -> 0, still
+  decodes). (2) Screen-recording spans must start after the page's smooth scroll settles, and a card fading in from
+  opacity 0 at a cut makes a 2-frame near-black flash: blackdetect d=0.05 caught both. (3) The Google Drive connector's
+  create_file needs the bytes inline (base64 in the call): videos/thumbnails cannot go through it; send with SendUserFile.
+  (4) Owner wants minute-by-minute updates on long jobs: use a Monitor that prints one line per minute.
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs

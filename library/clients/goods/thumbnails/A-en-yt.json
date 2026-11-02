@@ -1,0 +1,56 @@
+{
+ "size": "yt",
+ "bg": {
+  "gradient": [
+   "#0d1526",
+   "#060b17"
+  ],
+  "angle": 160
+ },
+ "vignette": 0.25,
+ "subject": {
+  "image": "gmark.png",
+  "side": "right",
+  "height": 0.78,
+  "stroke": 0
+ },
+ "texts": [
+  {
+   "text": "GOOD's",
+   "x": 0.05,
+   "y": 0.12,
+   "w": 0.55,
+   "size": 150,
+   "font": "Outfit",
+   "weight": 800,
+   "color": "#f0f6ff",
+   "stroke": 0,
+   "align": "left",
+   "tracking": -0.01
+  },
+  {
+   "text": "Currency & crypto exchange",
+   "x": 0.05,
+   "y": 0.42,
+   "w": 0.52,
+   "size": 84,
+   "font": "Outfit",
+   "weight": 700,
+   "color": "#f0f6ff",
+   "stroke": 0,
+   "align": "left"
+  },
+  {
+   "text": "Where trust is built.",
+   "x": 0.05,
+   "y": 0.78,
+   "w": 0.55,
+   "size": 60,
+   "font": "Outfit",
+   "weight": 600,
+   "color": "#e8c02f",
+   "stroke": 0,
+   "align": "left"
+  }
+ ]
+}

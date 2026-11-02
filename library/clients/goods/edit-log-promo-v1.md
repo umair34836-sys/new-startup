@@ -21,3 +21,25 @@ Template: library/templates/exchange-promo (new, built from site-panel-reel). Ev
 | hyperframes check fixes: note text 26 -> 30 px (type floor 28), notes shortened to be readable in their time, contact chips cut to 3, Hinglish s10 overlap fixed | hyperframes check 2026-11-02 |
 | Veil strengthened after snapshots showed site text ghosting behind headlines; 16:9 veil 500 px so the recording stays visible | snapshots 2026-11-02 |
 | Preview: watermark.py (owner chose watermarked preview), credit "Edited by MrCopper804" on the end card | brief; CLAUDE.md secrecy rule |
+| Recording spans start after the smooth scroll settles (~4 s): starting at 2.0-2.4 s showed the page top + a near-black mid-scroll frame | blackdetect 25.63 s (first render) |
+| Slow eased push-in (3.5-6%, smoothstep) on scenes whose screen holds still | watch.py frozen spans 2-3 s; skill #154 |
+| Discord card banner visible from frame 1 (a fade from opacity 0 made a 2-frame near-black cut); 16:9 s7 from 4.4 s | blackdetect 37.67 s / 25.2 s |
+| Delivery: final = -map_metadata -1, yuv420p High, faststart; then remux with `-bsf:v filter_units=remove_types=6 -fflags +bitexact` so no encoder/software string stays in the file (strings: x264/Lavf 0) | CLAUDE.md client secrecy; measured here |
+
+## QA (measured here 2026-11-02, delivered files)
+| File | Size | LUFS | True peak | Black spans | Tags |
+|---|---|---|---|---|---|
+| English 9:16 | 1080x1920 48.7 s | -16.0 | -1.5 | 0 | 0 |
+| Hinglish 9:16 | 1080x1920 48.7 s | -16.0 | -2.2 | 0 | 0 |
+| English 16:9 | 1920x1080 48.7 s | -16.0 | -1.5 | 0 | 0 |
+| Hinglish 16:9 | 1920x1080 48.7 s | -16.0 | -1.1 (listen.py: 0 clipped, LRA 3.9) | 0 | 0 |
+watch.py (EN 9:16 earlier pass): real 30.0 fps, 0 gaps; "dark" = the site's navy design (expected).
+Renders: ~2-3 min each with --workers 3.
+
+## Thumbnails (skill thumbnail-design + Hallmark floor; thumb_make.py / thumb_check.py; scratchpad only)
+- A "brand mark": navy single-hue gradient, client's G mark (Goood-store.png), "GOOD's" + "Currency & crypto exchange" /
+  "Currency aur crypto exchange" in Outfit 800, slogan in gold. One colour per line (no accent word: Hallmark 38iii).
+- B "product proof": real calculator frame zoomed 1.9-2.2x, darken 0.72 + blur 3 (first try showed the site's "100% track
+  record" card behind the text: hidden), "See it before you send" / "Bhejne se pehle dekhein", gold box "32,500 PKR = $100",
+  "Rates as of 2 Nov 2026" (thumb_check first flagged it 8-10 px at 320 wide: raised to 58-62 px).
+- 16:9 1280x720 + 9:16 1080x1920 for each language = 8; all thumb_check "ok": true.
