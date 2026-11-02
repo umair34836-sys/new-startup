@@ -37,3 +37,9 @@
   real fast move, under music and voice), no identical animation on every scene, cards always over real material.
 - No repeated SFX: every SFX file is used once per video (Mr Aloo 2026-10-28: a repeated pop sounds cheap).
 - Every decision from repo skills/research, with the skill number or source in the edit log.
+
+## Owner's Drive folder for this client (owner 2026-11-02: "mere drive per ek client k name se folder bana ker usme upload ker dena")
+- "GOOD's (client)": https://drive.google.com/drive/folders/1Wyzx61sh_rE4W6_FsW4VRUTDlbznMRej (created 2026-11-02 via the
+  Google Drive connector, owner mrcopper804).
+- The connector's create_file takes the file bytes inline (base64 in the tool call), so 30-60 MB videos cannot be sent
+  through it from this session (checked 2026-11-02). Deliver with SendUserFile; the owner moves them into the folder.
