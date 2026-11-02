@@ -70,6 +70,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 - `templates/phonk-3d-promo/`: 30 s phonk promo with 3D blocky characters, cut on every beat (Heaven Developer, 2026-10-29; v1 + v2 builders + post.sh; formula research/phonk-edit-formula.md).
 - `templates/loop-short/`: 9:16 Short that loops seamlessly (last line runs into the first; first/last frame differ by under 1 grey level), word-timed captions, music cut to whole bars with no fade (Heaven Developer, 2026-10-30).
 - `templates/minecraft-lore-short/`: 9:16 ~20 s cinematic Minecraft lore explainer (English VO, dark CC0 music, CSS-3D blocky figure, own shadow skin; portal order 2 "Who is Herobrine", 2026-10-30).
+- `templates/exchange-promo/`: currency/crypto exchange promo, ~46 s, English or Hinglish, 9:16 + 16:9 from one builder: real site recordings with cursor clicks (flow_goods.js) speed-fitted to VO lines, client's logo/banner GIFs as stings, Hallmark-floor type overlays in the site's own font (GOOD's, 2026-11-02).
 - `templates/smp-server-promo/short-15s/`: 15 s 9:16 cut-down of a 16:9 SMP promo from gameplay footage (plate9.py crop + cas, beat cuts, title from frame 0; FireCraft, 2026-10-30).
 
 - `brand-identity-reveal/`: 16:9 ~30 s music-only brand identity / guidelines film driven by one reveal.json (logo construction
@@ -256,6 +257,7 @@ Apply with `npx hyperframes media-treatment --project . --file <scene.html> --se
 
 ## fonts (added)
 
+`fonts/Outfit-Variable.ttf` (OFL, weights 100-900, github.com/google/fonts ofl/outfit, fetched 2026-11-02; licence fonts/OFL-Outfit.txt): GOOD's EXCHANGE site font (goodss.store CSS).
 `fonts/PlusJakartaSans-Variable.ttf` (OFL, weights 200-800): TalkEmber Studio's brand font.
 `fonts/Manrope-Variable.ttf` (+ `OFL-Manrope.txt`, weights 200-800) and `fonts/Ubuntu-Regular.ttf` / `Ubuntu-Bold.ttf`
 (+ `Ubuntu-UFL.txt`, Ubuntu Font Licence 1.0, free to use and embed): PakWebHoster's site fonts (Manrope body/headings,
