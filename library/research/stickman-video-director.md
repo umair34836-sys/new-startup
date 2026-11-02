@@ -38,3 +38,16 @@ The owner asked on 2026-11-02: "Now Install skaomei stikman-video-director tool 
   - Gemini images only with the owner's key and go-ahead.
 - Music: CC0/PD only (music-for-video skill).
 - Output: yuv420p + faststart and the white-label rules, as for every video.
+
+## Image sources checked 2026-11-02 (owner: "Kia hum gallery connector ka pro editor use ker sakte hai for this ?")
+- **Gallery `design_image` ("Pro editor")**, per its tool description:
+  - It lays out a NEW picture from layers: photos already in the owner's backup, text and shapes on a colour,
+    gradient or photo background.
+  - It does NOT draw from a text prompt, so it cannot make new stickman illustrations.
+  - It fits title cards, thumbnails and end cards.
+  - get_account 2026-11-02: plan premium (ends 2026-11-14), 100 edits/day, 0 used.
+- **B1 style**: `references/b1-minimal-handdrawn.md` says each story needs newly generated character poses and props
+  ("generate the expressions, poses and prop interactions needed by that story"). So a real image generator is needed.
+- **Aiwings** get_credits 2026-11-02:
+  - 7 credits left (free plan); default GPT Image 2.5 Sunburst @ medium = 6 credits/image, so about 1 image.
+  - Top up: https://aiwings.io/dashboard
