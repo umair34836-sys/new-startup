@@ -62,6 +62,9 @@ def rel(i, frac):
 
 
 # ---------- picture track ----------
+# watch.py on the first render (2026-11-02) found 2-3 s frozen spans in these scenes: give them a slow eased push-in,
+# different amounts so neighbours do not move alike
+PUSH = {"s3": 0.035, "s5": 0.05, "s7": 0.04, "s8": 0.06, "s9": 0.045, "s11": 0.05}
 os.makedirs("assets/clips", exist_ok=True)
 CLICKS, parts = [], []
 for k, s, e in SCENES:
@@ -78,8 +81,13 @@ for k, s, e in SCENES:
         if len(seg) > 3:
             z, fx, fy = seg[3]
             vf += f",scale={int(WD * z)}:{int(HT * z)}:flags=lanczos,crop={WD}:{HT}:{int(WD * (z - 1) * fx)}:{int(HT * (z - 1) * fy)}"
+        vf += f",tpad=stop_mode=clone:stop_duration={d}"
+        if k in PUSH:   # slow eased push-in on scenes whose screen holds still (watch.py frozen spans; skill #154)
+            amt = PUSH[k]
+            vf += (f",scale=w='trunc({WD}*(1+{amt}*min(t/{d},1)*min(t/{d},1)*(3-2*min(t/{d},1)))/2)*2':h=-2:eval=frame:flags=bicubic,"
+                   f"crop={WD}:{HT}")
         run("ffmpeg", "-y", "-ss", str(a), "-t", str(b - a + 0.5), "-i", f"rec/{shot}/recording.mp4", "-an", "-vf",
-            vf + f",tpad=stop_mode=clone:stop_duration={d}", "-t", str(d), "-c:v", "libx264", "-crf", "16",
+            vf, "-t", str(d), "-c:v", "libx264", "-crf", "16",
             "-pix_fmt", "yuv420p", "-r", "30", out)
         for x in json.load(open(f"rec/{shot}/events.json"))["events"]:
             if x["type"] in ("click", "fakeclick") and a <= x["t"] <= b:
