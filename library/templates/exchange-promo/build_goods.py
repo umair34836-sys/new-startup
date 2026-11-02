@@ -91,9 +91,9 @@ HEAD = 104 if PORT else 92
 CSS = f"""
     @font-face {{ font-family: "Outfit"; src: url("assets/fonts/Outfit-Variable.ttf"); font-weight: 100 900; }}
     #root {{ position: absolute; inset: 0; overflow: hidden; font-family: Outfit; color: {INK}; }}
-    .veil {{ position: absolute; left: 0; right: 0; bottom: 0; height: {1060 if PORT else 700}px;
+    .veil {{ position: absolute; left: 0; right: 0; bottom: 0; height: {1060 if PORT else 500}px;
              background: linear-gradient(180deg, rgba(6,11,23,0) 0%, rgba(6,11,23,0.975) 22%, rgba(6,11,23,0.985) 100%); }}
-    .blk {{ position: absolute; {'left: 70px; right: 70px; top: 1130px; text-align: left;' if PORT else 'left: 110px; width: 1200px; top: 640px;'} }}
+    .blk {{ position: absolute; {'left: 70px; right: 70px; top: 1130px; text-align: left;' if PORT else 'left: 110px; width: 1200px; top: 700px;'} }}
     .h {{ font-weight: 800; font-size: {HEAD}px; line-height: 1.04; letter-spacing: -0.02em; text-shadow: 0 4px 18px rgba(0,0,0,0.55); }}
     .sub {{ font-weight: 500; font-size: {40 if PORT else 36}px; line-height: 1.3; color: {MUTED}; margin-top: 22px; }}
     .note {{ margin-top: 22px; font-weight: 500; font-size: 30px; color: {MUTED}; }}
@@ -174,7 +174,8 @@ C["s1"] = comp("s1", f"""    <div style="position:absolute;inset:0;background:{B
                )
 
 FL = [("bd", "BDT"), ("pk", "PKR"), ("in", "INR"), ("np", "NPR"), ("eg", "EGP"), ("ph", "PHP"), ("sa", "SAR")]
-C["s2"] = scene("s2", 1, T["h2"], look="top")
+# 16:9: no overlay on s2, the site's own hero line says the same as the VO (two headlines on one frame looked busy)
+C["s2"] = scene("s2", 1, T["h2"], look="top") if PORT else comp("s2", "", "")
 C["s3"] = scene("s3", 2, T["h3"], items=[(f'<img src="assets/img/flags/{f}.png" alt="">{c}', 0.1 + 0.11 * j, "") for j, (f, c) in enumerate(FL)], look="rise")
 C["s4"] = scene("s4", 3, T["h4"], items=[("USDT", 0.1, ""), ("LTC", 0.2, ""), ("ETH", 0.3, ""), ("SOL", 0.4, ""), ("Binance gift card", 0.75, " gold")], look="slide")
 C["s5"] = scene("s5", 4, T["h5"], note=RATE_NOTE, look="top")
