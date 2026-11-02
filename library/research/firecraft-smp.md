@@ -54,3 +54,14 @@ get_settings (read-only).
 - The whitelist form now has 12 fields (see firecraft-whitelist-flow.md), so the old "8 short questions" note above is out of date.
 - "Season 2 applications are open" (seen on /leaderboard/ in a browser on 2026-10-24) is rendered by JavaScript: plain curl does
   not contain it.
+## Re-checked 2026-10-30 (web_capture.py of https://www.firecraft.fun/ and /join/, portal order 4)
+- Home: "PRIVATE LIFESTEAL SMP — APPLY FREE", "FireCraft is 100% free", "11 Custom Elemental Powers • 63 Tameable Mobs •
+  5 Armor Sets", status "Online — 3/20 players" at capture time, address `play.firecraft.fun:20011`.
+- Announcement "SEASON 2 IS LIVE: join now" (Java: play.firecraft.fun:20011; Bedrock: play.firecraft.fun port 20011;
+  first hour PvP off, spawn safe zone).
+- "Spin the wheel on first join for 1 of 7 powers ... Warden, Wither, Dragon and Gravity are craft-only" (this contradicts
+  the guide's Warden note above: ask the owner before naming which powers are spin vs craft).
+- Companions: "Level them up to 100 and bring up to 3 into battle". Lifesteal: start 10 hearts, kill = +1 max heart,
+  0 hearts = eliminated for the season, Heart Crystal revives.
+- Season 2 roadmap: events on weekends 5 PM PKT; Build Contest Sat 31 Oct, Nether opens Sun 1 Nov, End Fight Sat 7 Nov,
+  PvP Kit Tournament Sat 14 Nov, Revive Night 21 Nov, Build/Scavenger Hunt 28 Nov, Finale 5 Dec, Season 2 ends 6 Dec.

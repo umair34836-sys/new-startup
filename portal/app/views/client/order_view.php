@@ -39,11 +39,12 @@ $reach = ['submitted' => 0, 'in_progress' => 1, 'revision' => 1, 'delivered' => 
       </form>
     </div>
   <?php elseif ($order['status'] === 'revision'): ?>
-    <p class="notice">We got your changes. <?= e(setting('brand_name')) ?> is working on the next version.</p>
+    <p class="notice">We got your changes. <?= e(setting('brand_name')) ?> is working on the next version.<?php if (check_times_text() !== ''): ?> Next check: <?= e(next_check_label()) ?>.<?php endif; ?></p>
   <?php endif; ?>
 </section>
 <?php else: ?>
-<section class="card reveal"><h2>We are on it</h2><p>Your order was received. <?= e(setting('promise_text')) ?> The finished video will appear here, and you can ask for changes until it is perfect.</p></section>
+<section class="card reveal"><h2>We are on it</h2><p>Your order was received. <?= e(setting('promise_text')) ?> The finished video will appear here, and you can ask for changes until it is perfect.</p>
+  <?php if ($order['status'] === 'submitted' && check_times_text() !== ''): ?><p class="check-note"><?= e(check_times_text()) ?> Next check: <?= e(next_check_label()) ?>.</p><?php endif; ?></section>
 <?php endif; ?>
 
 <?php if (count($versions) > 1): ?>
@@ -78,7 +79,7 @@ $reach = ['submitted' => 0, 'in_progress' => 1, 'revision' => 1, 'delivered' => 
 <section class="card reveal">
   <h2>Add more files</h2>
   <div class="drop" data-uploader data-order="<?= (int) $order['id'] ?>" data-kind="input" data-reload="1" tabindex="0">
-    <input type="file" id="pick" multiple accept="video/*,image/*,audio/*,.pdf,.txt,.srt,.docx,.zip">
+    <input type="file" id="pick" multiple>
     <label for="pick" class="btn">Choose files</label><span>or drop them here</span>
   </div>
   <ul class="file-list" data-file-list></ul>
