@@ -43,3 +43,5 @@
   Google Drive connector, owner mrcopper804).
 - The connector's create_file takes the file bytes inline (base64 in the tool call), so 30-60 MB videos cannot be sent
   through it from this session (checked 2026-11-02). Deliver with SendUserFile; the owner moves them into the folder.
+- OWNER RULE (2026-11-02): "folder me serf videos and thumbnail hi hone chaye baqi kuch nhi": only videos and thumbnails
+  go in this folder, no docs/scripts/notes (two text docs put there were moved to trash the same day).
