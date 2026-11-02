@@ -34,7 +34,7 @@ if PORT:
 else:
     SEG = {"s2": ["hero", 0.4, 6.4], "s3": ["rates", 4.0, 5.6, (1.25, 0.5, 0.25)], "s4": ["rates", 8.0, 12.8, (1.3, 0.35, 0.3)],
            "s5": ["rates", 5.6, 8.0, (1.3, 0.4, 0.3)], "s6": ["calc", 10.0, 22.8, (1.25, 0.4, 0.55)],
-           "s7": ["how", 4.0, 9.6, (1.15, 0.5, 0.55)], "s8": ["how", 6.5, 9.8, (1.15, 0.5, 0.55)],
+           "s7": ["how", 4.4, 9.6, (1.15, 0.5, 0.55)], "s8": ["how", 6.5, 9.8, (1.15, 0.5, 0.55)],
            "s9": ["contact", 4.0, 8.6], "s11": ["contact", 8.6, 17.2, (1.2, 0.2, 0.6)]}
 
 T = {  # on-screen copy per language (Roman Hinglish for the Hinglish cut; brand words stay English)
@@ -209,7 +209,8 @@ C["s10"] = comp("s10", f"""    <div style="position:absolute;inset:0;background:
       <div class="sub" id="s10-s">{T['since']}</div>
       <div style="margin-top:34px;"><span class="chip" id="s10-c">discord.gg/goods</span></div>
       <div class="note" id="s10-n">Members on 2 Nov 2026</div></div>""",
-                f'    tl.fromTo("#s10-v", {{ scale: 0.92, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.6, {IN} }}, 0.05);\n'
+                f'    tl.fromTo("#s10-v", {{ scale: 0.94 }}, {{ scale: 1, duration: 0.7, {IN} }}, 0);\n'   # visible on frame 1: a fade from 0 gave a 2-frame near-black cut (blackdetect 37.67 s)
+
                 f'    tl.fromTo("#s10-bar", {{ scaleX: 0, transformOrigin: "left center" }}, {{ scaleX: 1, duration: 0.5, {IN} }}, 0.2);\n'
                 f'    tl.fromTo("#s10-h", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, 0.3);\n'
                 f'    tl.fromTo("#s10-m", {{ y: 50, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, {IN} }}, {rel(9, 0.35)});\n'
