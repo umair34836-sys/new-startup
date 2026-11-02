@@ -2,6 +2,7 @@
 <section class="card narrow reveal">
   <h1>Create your account</h1>
   <p class="promise"><?= e(setting('promise_text')) ?></p>
+  <?php if (check_times_text() !== ''): ?><p class="check-note"><?= e(check_times_text()) ?></p><?php endif; ?>
   <?php foreach ($errors as $er): ?><p class="notice err" role="alert"><?= e($er) ?></p><?php endforeach; ?>
   <form method="post" class="form">
     <?= csrf_field() ?>

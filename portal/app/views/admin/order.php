@@ -37,7 +37,7 @@
   </ul>
   <h3>Deliver a version yourself</h3>
   <div class="drop" data-uploader data-order="<?= (int) $order['id'] ?>" data-kind="output" data-reload="1" tabindex="0">
-    <input type="file" id="pick" accept="video/*,image/*,.zip,.pdf"><label for="pick" class="btn">Upload finished file</label>
+    <input type="file" id="pick"><label for="pick" class="btn">Upload finished file</label>
   </div>
   <ul class="file-list" data-file-list></ul>
   <?php $outs = array_filter($files, fn($f) => $f['kind'] === 'output'); if ($outs): ?>
