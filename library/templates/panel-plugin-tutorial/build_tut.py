@@ -107,8 +107,8 @@ html, body { width: 1920px; height: 1080px; overflow: hidden; background: #070b1
 .brand b { color: #22c55e; font-weight: 800; }
 .step { position: absolute; right: 40px; top: 22px; display: flex; align-items: center; gap: 14px; padding: 8px 22px 8px 8px; border-radius: 999px;
   background: #0f172a; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 28px; color: #e5e7eb; }
-.step i { display: inline-flex; width: 44px; height: 44px; border-radius: 50%; background: #22c55e; color: #04140a; font-style: normal; font-weight: 800;
-  font-size: 26px; align-items: center; justify-content: center; }
+.step i { display: inline-flex; width: 46px; height: 46px; border-radius: 50%; background: #22c55e; color: #04140a; font-style: normal; font-weight: 800;
+  font-size: 28px; align-items: center; justify-content: center; }
 .frame { position: absolute; left: 140px; top: 80px; width: 1640px; border-radius: 14px; overflow: hidden; background: #0b1220;
   border: 2px solid rgba(255,255,255,0.09); box-shadow: 0 24px 70px rgba(0,0,0,0.55); }
 .frame video, .frame .kb img { display: block; width: 100%; height: 100%; }
@@ -128,7 +128,7 @@ html, body { width: 1920px; height: 1080px; overflow: hidden; background: #070b1
 .code .k { color: #93c5fd; } .code .v { color: #22c55e; font-weight: 700; } .code .row { white-space: pre; }
 .code.big { right: auto; left: 160px; top: 300px; font-size: 46px; min-width: 760px; padding: 28px 40px; }
 .savebtn.big { right: auto; left: 160px; top: 640px; }
-.code .hd { font-family: Jakarta; font-weight: 700; font-size: 26px; color: #9ca3af; margin-bottom: 8px; }
+.code .hd { font-family: Jakarta; font-weight: 700; font-size: 30px; color: #9ca3af; margin-bottom: 8px; }
 .cardwrap { position: absolute; left: 160px; top: 150px; width: 1600px; }
 .cardwrap h2 { font-family: Anton; font-size: 92px; letter-spacing: 1px; color: #fff; line-height: 1; margin-bottom: 44px; }
 .rows { display: flex; flex-direction: column; gap: 22px; }
@@ -152,7 +152,7 @@ html, body { width: 1920px; height: 1080px; overflow: hidden; background: #070b1
 .outro .h2 { left: 0; right: 0; top: 570px; text-align: center; }
 .outro .url { position: absolute; left: 0; right: 0; top: 680px; text-align: center; font-weight: 800; font-size: 70px; color: #fff; }
 .outro .next { position: absolute; left: 50%; transform: translateX(-50%); top: 790px; padding: 18px 40px; border-radius: 999px; background: #22c55e; color: #04140a; font-weight: 800; font-size: 40px; white-space: nowrap; }
-.outro .credit { position: absolute; right: 60px; bottom: 36px; text-align: right; font-weight: 600; font-size: 28px; color: #9ca3af; }
+.outro .credit { position: absolute; right: 60px; bottom: 36px; text-align: right; font-weight: 600; font-size: 30px; color: #9ca3af; }
 .savebtn { position: absolute; right: 180px; top: 560px; padding: 18px 34px; border-radius: 10px; background: #1f2937; border: 3px solid #22c55e; font-weight: 800; font-size: 32px; color: #fff; }
 """
 from shots import CHEV, path
@@ -262,7 +262,8 @@ for k, s in enumerate(PLAN["shots"]):
     js.append(f'tl.from("#{sid}-cap", {{ y: 24, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(t0 + 0.25)});')
     cls = "shot " + kind + (" outro" if kind == "outro" else "")
     body.append(f'<div id="{sid}" class="clip {cls}" data-hold data-start="{R(t0)}" data-duration="{R(dur)}" data-track-index="1" data-track-kind="graphics">{"".join(inner)}</div>')
-    js.append(f'tl.from("#{sid}", {{ opacity: 0, duration: 0.35, ease: "power1.out" }}, {R(t0)});')
+    if k > 0:   # the first frame is the thumbnail: no fade at 0 s
+        js.append(f'tl.from("#{sid}", {{ opacity: 0, duration: 0.35, ease: "power1.out" }}, {R(t0)});')
 
 page = f"""<!doctype html>
 <html lang="en">
