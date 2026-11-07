@@ -78,6 +78,10 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
   swatches, stat widgets, price chart, photo inserts, social post, end logo; scenes counted in beats from the music drop).
   HostLixo, 2026-10-27; README has QA numbers and the gain+limiter mastering step.
 
+- `panel-plugin-tutorial/`: 16:9 YouTube tutorial from a client's panel recordings + screenshots + VO script
+  (shots.py plan: title/card/rec/shot/outro; speed-fit recordings, Ken Burns + highlight rings on screenshots, IP blur,
+  code cards, English caption bar; numpy mix of VO + ducked CC0 bed + clicks). SkilloraClouds GeyserMC + Voice Chat, 2026-11-07.
+
 - `screen-tutorial/`: real-site tutorial (cursor + click ripple + click sound on every click, VO-timed speed-fit of the
   recording, step chips, highlight rings). Recorder: tools/screen_recorder.js; VO check: tools/wcheck_lines.py. FireCraft whitelist, 2026-10-24.
 
