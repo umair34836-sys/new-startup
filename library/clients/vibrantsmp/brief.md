@@ -23,3 +23,16 @@ Inputs (Drive folder 1wQLbPhNheUrYbYRyZccsB962tfIxtyic, never committed):
 - #links: Store https://store.vibrantsmp.fun/ "(Available in few Hours)", YouTube "Coming Soon" (not used in the promo).
 - Bot footer: "Vibrant SMP • Premium Experience". Brand look: purple glowing "V" logo on black.
 - Privacy: do not show other members' names/avatars (welcome cards, chat, invites list).
+
+## Store (https://store.vibrantsmp.fun, web_capture.py + curl, read 2026-11-07)
+- Title "VIBRANT SMP Store". "VIBRANT SMP is a free-to-play public Minecraft server for Java and Bedrock."
+- How to join: Java play.vibrantsmp.fun; Bedrock play.vibrantsmp.fun, port 62222. CONFLICT: Discord #announcements says
+  Bedrock amd.titannode.fun port 19133 -> ask the owner which is current; v2 shows only play.vibrantsmp.fun (+ port 62222).
+- Categories: Ranks, Crate Keys, Player Tags, Coins, Vote, Server Rules. Featured: Deadly Rank, Egirl Tag, Epic Key,
+  Legend Rank, 5000 Coins, all "Priced in ticket". How to buy: 1 Pick your item, 2 Open a ticket (Discord), 3 Get it in-game.
+  Online card payment unavailable; gift cards unavailable; all purchases final.
+- Vote sites: MinecraftServers.org, Minecraft-MP, Minecraft.Buzz, Planet Minecraft.
+- Discord invite on the store: https://discord.gg/W7zqUp2kbM (Discord API 2026-11-07: guild "Vibrant SMP", 33 members).
+- Rules: 27 rules (chat, gameplay: no hacked clients/x-ray, no dupes, no griefing, store rules ...).
+- Images are inline base64 in the HTML: the 3D purple V logo (420x420 RGBA webp, twice) and a 64x64 skin (store mascot).
+  "We are not affiliated with Mojang AB or Microsoft."
