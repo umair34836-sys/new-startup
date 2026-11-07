@@ -28,8 +28,11 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{P}/vo_raw.wav", "-af", "
 vo = load(f"{P}/vo.wav")[:N]; vo = np.pad(vo, (0, N - len(vo)))
 
 # 2. music bed: music_fit (skill music-for-video) to the exact length, start after the slow intro, soft fade under the end card
-bed = f"{P}/bed.wav"
-subprocess.run([PY, f"{LIB}/tools/music_fit.py", f"{LIB}/music/cc0/{T['music']}", bed, "--length", f"{TOTAL:.2f}", "--start", str(T["music_start"]),
+bed = f"{P}/bed.wav"; src = f"{LIB}/music/cc0/{T['music']}"
+if T.get("music_cut"):   # drop the track's fade-out tail so music_fit never loops through it (chills: fade from 167.5 s)
+    src = f"{P}/music_src.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{LIB}/music/cc0/{T['music']}", "-t", str(T["music_cut"]), "-ar", str(SR), src], check=True)
+subprocess.run([PY, f"{LIB}/tools/music_fit.py", src, bed, "--length", f"{TOTAL:.2f}", "--start", str(T["music_start"]),
                 "--end", "fade", "--fade", "4", "--lufs", "-20"], check=True)
 mus = load(bed)[:N]; mus = np.pad(mus, (0, N - len(mus)))
 # envelope ducking (#1890 partial ducking): -11 dB under speech, full between, 0.35 s smoothing

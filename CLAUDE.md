@@ -580,6 +580,17 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   upload ANY file type; required "Voice or only music?" question; orders are checked at FIXED times shown to clients
   (00:00/05:00/10:00/14:00/17:00/22:00 PKT; rates PKR 2/s, other currencies 1/s, 2026-10-30, scheduled task trig_01K3PxtPGzrgU6Dt72izjE98 runs 5 min after each).
 
+- SkilloraClouds PANEL TUTORIALS (2026-11-07, skillora-reel-v3 session; template library/templates/panel-plugin-tutorial):
+  Video 1 "GeyserMC + Floodgate (Java + Bedrock, NetherNet 2026)" 3:04 and Video 2 "Simple Voice Chat" 1:49, 16:9, Hindi/Urdu VO
+  (VoxCPM2 clone of the Skillora reel ref), English captions, delivered FINAL directly. Built WITHOUT the owner's in-game/phone shots
+  (step cards instead; v2 when he records them). Measured here: VoxCPM2 ~1 min/line once warm (52 lines + 7 retakes), first line
+  after a backend start ~6 min; render 184 s 1080p = 6 min, 109 s = 3 min (-q high -w 3). Whisper small on Hindi VO reads 50-80% for
+  fine lines: read the HYP text; real defects were skipped words, a doubled word and a stutter on "सर्वर स्टार्टेड" in 3 seeds
+  (fixed by rewording to "सर्वर चालू हो गया"). music_fit looped through the chills track's fade-out (bed -60 dB for 2 s at the join):
+  trim the source before its fade (music_cut) first. CONTAINER CRASH: `hyperframes check` twice while VoxCPM2 was generating
+  killed the container (exit 137) and the TTS job: never run check/snapshot/render while TTS runs (now also in the template README).
+  ACE-Step checkpoints (6 GB) were deleted here for disk (re-download: setup-all.sh acestep).
+
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
   the owner credits). Fallback when an Agent-Reach channel fails: WebSearch. Use Firecrawl only if the owner asks.

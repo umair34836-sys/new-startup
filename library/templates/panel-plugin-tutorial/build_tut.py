@@ -170,9 +170,10 @@ for k, s in enumerate(PLAN["shots"]):
         inner.append(f'<div class="h1" id="{sid}-h1">{esc(s["h1"])}</div><div class="h2" id="{sid}-h2">{esc(s["h2"])}</div>')
         if kind == "title":
             inner.append(f'<div class="tags" id="{sid}-tags">' + "".join(f"<span>{esc(x)}</span>" for x in s["tags"]) + "</div>")
-            js.append(f'tl.from("#{sid}-h1", {{ y: 60, opacity: 0, duration: 0.7, ease: "power3.out" }}, {R(t0 + 0.1)});')
-            js.append(f'tl.from("#{sid}-h2", {{ y: 40, opacity: 0, duration: 0.6, ease: "power3.out" }}, {R(t0 + 0.45)});')
-            js.append(f'tl.from("#{sid}-tags span", {{ y: 30, opacity: 0, duration: 0.5, stagger: 0.12, ease: "power3.out" }}, {R(t0 + 0.8)});')
+            # first frame = thumbnail: text is visible at 0 s, it only settles (no opacity fade)
+            js.append(f'tl.from("#{sid}-h1", {{ y: 40, duration: 0.7, ease: "power3.out" }}, {R(t0)});')
+            js.append(f'tl.from("#{sid}-h2", {{ y: 30, duration: 0.6, ease: "power3.out" }}, {R(t0 + 0.1)});')
+            js.append(f'tl.from("#{sid}-tags span", {{ y: 20, duration: 0.5, stagger: 0.1, ease: "power3.out" }}, {R(t0 + 0.2)});')
         else:
             inner.append(f'<div class="url" id="{sid}-url">skilloraclouds.com</div><div class="next" id="{sid}-next">{esc(s["next"])}</div>')
             inner.append('<div class="credit">Edited by MrCopper804</div>')
@@ -262,7 +263,7 @@ for k, s in enumerate(PLAN["shots"]):
     js.append(f'tl.from("#{sid}-cap", {{ y: 24, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(t0 + 0.25)});')
     cls = "shot " + kind + (" outro" if kind == "outro" else "")
     body.append(f'<div id="{sid}" class="clip {cls}" data-hold data-start="{R(t0)}" data-duration="{R(dur)}" data-track-index="1" data-track-kind="graphics">{"".join(inner)}</div>')
-    if k > 0:   # the first frame is the thumbnail: no fade at 0 s
+    if k > 0 and kind != "outro":   # no fade at 0 s (thumbnail); the outro cuts in and animates its own elements
         js.append(f'tl.from("#{sid}", {{ opacity: 0, duration: 0.35, ease: "power1.out" }}, {R(t0)});')
 
 page = f"""<!doctype html>
@@ -284,7 +285,7 @@ window.__timelines["main"] = tl;
 </body></html>"""
 open(f"{P}/index.html", "w", encoding="utf-8").write(page)
 
-timing = dict(total=TOTAL, lines={str(i): LT[i] for i in sorted(LT)}, stub=STUB, music=PLAN["music"], music_start=PLAN["music_start"],
+timing = dict(total=TOTAL, lines={str(i): LT[i] for i in sorted(LT)}, stub=STUB, music=PLAN["music"], music_start=PLAN["music_start"], music_cut=PLAN.get("music_cut"),
               shots=[dict(k=k, kind=s["kind"], t0=s["_t0"], t1=s["_t1"], lines=s["lines"], speed=s.get("_speed"), clicks=s.get("_clicks", [])) for k, s in enumerate(PLAN["shots"])],
               chimes=[ref(r) + 0.15 for s in PLAN["shots"] if s["kind"] == "shot" and "Console" in (s.get("step") or ("", ""))[1] for (r, *_) in s["rings"][:1]])
 json.dump(timing, open(f"{P}/timing.json", "w"), indent=1)

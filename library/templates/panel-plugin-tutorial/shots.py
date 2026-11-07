@@ -8,7 +8,7 @@ def path(*parts):
 
 V1 = dict(
     title="Java + Bedrock, ek hi server", sub="GeyserMC + Floodgate on the SkilloraClouds panel",
-    music="lofi-chill--holiznacc0--chills.mp3", music_start=10.0,
+    music="lofi-chill--holiznacc0--chills.mp3", music_start=10.0, music_cut=166,
     shots=[
         dict(kind="title", lines=[1, 2], cap="Java + Bedrock on ONE server (2026 NetherNet fix)",
              h1="JAVA + BEDROCK", h2="ek hi server", tags=["GeyserMC", "Floodgate", "NetherNet 2026"]),
