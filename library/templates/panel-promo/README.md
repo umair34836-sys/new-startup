@@ -25,3 +25,7 @@ Both takes read "copper_work" as "copper underscore work" (Whisper hi and en): t
 "कॉपर वर्क" (83 credits per take, 5.76 s) and spliced at the 6.0 s silence. Whisper medium on 2 x 69 s took ~10 min.
 Spans ran at 0.64-2.28x. Music: CC0 "Monarch of the Street" (Loyalty Freak Music, find_music rank 1 for a tech promo
 with VO), real ending used; mix: VO -16 LUFS, music -31 LUFS under speech, final -16.0 LUFS.
+Renders (-w 3, measured 2026-11-07): 71.3 s 16:9 ~3 min, 9:16 ~2 min; render -16.1 LUFS -> +1 dB + alimiter 0.85 ->
+-15.2 LUFS; yuv420p, 0 black spans; metadata stripped (`-bsf:v filter_units=remove_types=6`, bitexact AAC: 0 tool
+strings). Delivered to the owner and, at his request, as versions 7 + 8 of the portal demo account's order 4
+("firecraft smp promotional video": the demo account had no copper_work order; the bridge cannot create orders).
