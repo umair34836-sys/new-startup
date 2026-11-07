@@ -30,6 +30,8 @@ Steps:
    Refs: `19` = start of VO line 19, `19.6` = 60% into it, `"19:शब्द"` = when that word is spoken (Whisper word timestamps
    from `words.py`, matched by text similarity AND position; fallback = proportional position of the word in the line).
    Coordinates: make 100 px grid overlays of recording frames and screenshots (PIL) and read them off, never guess.
+   LEADV = 0.5 s: every visual reaction (arrow, reveal, code row, click) lands 0.4-0.5 s BEFORE its word; at 0 s lead the
+   owner saw "voice pehle, video baad mein" (2026-11-07). Recordings never play below 1x (freeze instead of slow-mo).
 3. `build_tut.py vX [--stub]` -> proj_vX/index.html (+ clips). `--stub` estimates 0.07 s per Devanagari character so the
    layout can be checked while the VO is still generating. Then `npx -y hyperframes@0.8.210 check` and
    `snapshot --at a,b,c --no-end -o snaps`; look at every frame.

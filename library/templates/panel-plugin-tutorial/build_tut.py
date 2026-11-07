@@ -73,6 +73,9 @@ def ref(r):
     return round(a + f * (b - a), 3)
 
 R = lambda v: f"{v:.3f}"
+LEADV = 0.5                                   # visuals react this much BEFORE the word (owner 2026-11-07: "voice pehle, video baad mein")
+def vref(r, floor=0.0):
+    return round(max(ref(r) - LEADV, floor), 3)
 
 # ---------- recordings: clips of exactly their window, held / speed-fit / frozen ----------
 def rec_info(src):
@@ -98,7 +101,7 @@ for k, s in enumerate(PLAN["shots"]):
         cs, ce = starts[j], ends[j]; win = ce - cs
         if c.get("play_at"):
             pa = c["play_at"]; word, off = (pa if isinstance(pa, tuple) else (pa, 0.6))   # (word, action time within the range)
-            hold = max(0.0, ref(word) - off - cs)                 # the click/action lands when the word is said
+            hold = max(0.0, ref(word) - 0.4 - off - cs)           # the click/action lands just before the word is said
             speed = max(1.0, min(1.6, L / max(win - hold, 0.1)))
             if hold + L / speed > win:                           # still too long: extend the shot (last clip only)
                 if j == len(clips) - 1:
@@ -106,7 +109,7 @@ for k, s in enumerate(PLAN["shots"]):
                 else:
                     speed = 1.6
         else:
-            hold = 0.0; speed = min(max(L / win, 0.85), 1.6)
+            hold = 0.0; speed = min(max(L / win, 1.0), 1.6)
             if L / speed > win and j == len(clips) - 1:
                 ce = cs + L / speed; s["_t1"] = round(ce, 3); win = ce - cs
         c.update(_cs=round(cs, 3), _ce=round(ce, 3), _hold=round(hold, 3), _speed=round(speed, 4), _a=a, _info=info)
@@ -195,7 +198,7 @@ for k, s in enumerate(PLAN["shots"]):
             for cl in s.get("calls", []):
                 r, label, (x, y) = cl[0], cl[1], cl[2]; j = cl[3] if len(cl) > 3 else 0; colour = cl[4] if len(cl) > 4 else "g"
                 sx = s["clips"][j]["_sx"]
-                calls_px.append((ref(r), label, FX + x * sx, FY + y * sx, colour, s["clips"][j]["_ce"]))
+                calls_px.append((vref(r, s["clips"][j]["_cs"] + 0.1), label, FX + x * sx, FY + y * sx, colour, s["clips"][j]["_ce"]))
         if kind == "shot":
             iw, ih = map(int, probe(f"{P}/assets/img/{s['src']}", "width,height", "v").split(","))
             sx = FW / iw; fh = int(round(ih * sx)); fx, fy, sc = s["kb"]
@@ -205,7 +208,7 @@ for k, s in enumerate(PLAN["shots"]):
             for cl in s.get("calls", []):
                 r, label, (x, y) = cl[0], cl[1], cl[2]; colour = cl[4] if len(cl) > 4 else "g"
                 # the Ken Burns zoom moves the target: follow it (origin fx,fy of the frame, scale sc at the end)
-                tt = ref(r); prog = min(max((tt - (t0 + 0.3)) / max(dur - 0.6, 1), 0), 1); scl = 1 + (sc - 1) * prog
+                tt = vref(r, t0 + 0.2); prog = min(max((tt - (t0 + 0.3)) / max(dur - 0.6, 1), 0), 1); scl = 1 + (sc - 1) * prog
                 ox, oy = FX + fx * FW, FY + fy * fh
                 px = ox + (FX + x * sx - ox) * scl; py = oy + (FY + y * sx - oy) * scl
                 calls_px.append((tt, label, px, py, colour, t1))
@@ -214,32 +217,32 @@ for k, s in enumerate(PLAN["shots"]):
             if s.get("pathline"):
                 r, *parts = s["pathline"]
                 inner.append(f'<div class="chips" id="{sid}-path" style="position:static;margin-bottom:30px">{path(*map(esc, parts))}</div>')
-                js.append(f'tl.from("#{sid}-path > *", {{ y: 20, opacity: 0, duration: 0.4, stagger: 0.12, ease: "power3.out" }}, {R(ref(r))});')
+                js.append(f'tl.from("#{sid}-path > *", {{ y: 20, opacity: 0, duration: 0.4, stagger: 0.12, ease: "power3.out" }}, {R(vref(r, t0 + 0.2))});')
             rev = s.get("reveal")
             for j, (badge, lbl, sub) in enumerate(s.get("items", [])):
                 cls = "d" if badge == "!" else ("e" if badge == "" else "")
                 b = badge if badge else "&#10003;"
                 rid = f"{sid}-i{j}"
                 inner.append(f'<div class="row2" id="{rid}"><i class="{cls}">{b}</i><div><div class="l">{esc(lbl)}</div>' + (f'<div class="s">{esc(sub)}</div>' if sub else "") + "</div></div>")
-                at = ref(rev[j]) if rev else t0 + 0.35 + 0.18 * j
+                at = vref(rev[j], t0 + 0.2) if rev else t0 + 0.35 + 0.18 * j
                 js.append(f'tl.from("#{rid}", {{ x: -50, opacity: 0, duration: 0.5, ease: "power3.out" }}, {R(at)});')
             inner.append("</div></div>")
             if s.get("diagram"):
                 name, r = s["diagram"]
                 inner.append(f'<div class="dgwrap" id="{sid}-dg">{DIAGRAMS[name]}</div>')
-                js.append(f'tl.from("#{sid}-dg .dg > *", {{ y: 24, opacity: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }}, {R(ref(r))});')
+                js.append(f'tl.from("#{sid}-dg .dg > *", {{ y: 24, opacity: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }}, {R(vref(r, t0 + 0.2))});')
             if s.get("pulse"):
                 r, j = s["pulse"]
-                js.append(f'tl.to("#{sid}-i{j}", {{ className: "row2 pulse", duration: 0.3 }}, {R(ref(r))});')
-                js.append(f'tl.fromTo("#{sid}-i{j}", {{ scale: 1 }}, {{ scale: 1.03, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 3 }}, {R(ref(r))});')
+                js.append(f'tl.to("#{sid}-i{j}", {{ className: "row2 pulse", duration: 0.3 }}, {R(vref(r, t0 + 0.2))});')
+                js.append(f'tl.fromTo("#{sid}-i{j}", {{ scale: 1 }}, {{ scale: 1.03, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 3 }}, {R(vref(r, t0 + 0.2))});')
             if s.get("danger") is not None:
                 j = len(s["items"]) - 1
-                js.append(f'tl.to("#{sid}-i{j}", {{ className: "row2 danger", duration: 0.3 }}, {R(ref(s["danger"]))});')
-                js.append(f'tl.fromTo("#{sid}-i{j}", {{ x: -12 }}, {{ x: 0, duration: 0.08, repeat: 4, yoyo: true }}, {R(ref(s["danger"]) + 0.3)});')
+                js.append(f'tl.to("#{sid}-i{j}", {{ className: "row2 danger", duration: 0.3 }}, {R(vref(s["danger"], t0 + 0.2))});')
+                js.append(f'tl.fromTo("#{sid}-i{j}", {{ x: -12 }}, {{ x: 0, duration: 0.08, repeat: 4, yoyo: true }}, {R(vref(s["danger"], t0 + 0.2) + 0.3)});')
             if s.get("save"):
                 r, txt = s["save"]
                 inner.append(f'<div class="savebtn big" id="{sid}-save">{esc(txt)}</div>')
-                js.append(f'tl.fromTo("#{sid}-save", {{ scale: 0.8, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {R(ref(r))});')
+                js.append(f'tl.fromTo("#{sid}-save", {{ scale: 0.8, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {R(vref(r, t0 + 0.2))});')
         # callouts: each shows at its word and leaves when the next one comes (or its clip / the shot ends)
         calls_px.sort(key=lambda c: c[0])
         for j, (tt, label, px, py, colour, cend) in enumerate(calls_px):
@@ -261,20 +264,20 @@ for k, s in enumerate(PLAN["shots"]):
             rows = []
             for j, (r, key, val) in enumerate(s["code"]):
                 rows.append(f'<div class="row" id="{sid}-k{j}"><span class="k">{esc(key)}</span> <span class="v">{esc(val)}</span></div>')
-                js.append(f'tl.from("#{sid}-k{j}", {{ x: 30, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(ref(r) + 0.05 * j)});')
+                js.append(f'tl.from("#{sid}-k{j}", {{ x: 30, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(vref(r, t0 + 0.2) + 0.05 * j)});')
             hd = "config.yml" if V == "v1" else "voicechat-server.properties"
             inner.append(f'<div class="code{" big" if kind == "card" else ""}" id="{sid}-code"><div class="hd">{hd}</div>{"".join(rows)}</div>')
-            js.append(f'tl.from("#{sid}-code", {{ y: 30, opacity: 0, duration: 0.45, ease: "power3.out" }}, {R(ref(s["code"][0][0]) - 0.1)});')
+            js.append(f'tl.from("#{sid}-code", {{ y: 30, opacity: 0, duration: 0.45, ease: "power3.out" }}, {R(vref(s["code"][0][0], t0 + 0.2) - 0.1)});')
     # per-line captions
     for j, i in enumerate(s["lines"]):
         cap = PLAN["caps"].get(i) or s.get("cap", "")
         a = LT[i][0]; b = LT[s["lines"][j + 1]][0] if j + 1 < len(s["lines"]) else t1
         inner.append(f'<div class="cap" id="{sid}-cap{j}">{esc(cap)}</div>')
-        show = max(t0, a - 0.35)
+        show = max(t0, a - 0.6)
         js.append(f'tl.set("#{sid}-cap{j}", {{ autoAlpha: 0 }}, {R(t0)});')
         js.append(f'tl.fromTo("#{sid}-cap{j}", {{ autoAlpha: 0, y: 16 }}, {{ autoAlpha: 1, y: 0, duration: 0.3, ease: "power3.out" }}, {R(show)});')
         if j + 1 < len(s["lines"]):
-            js.append(f'tl.to("#{sid}-cap{j}", {{ autoAlpha: 0, duration: 0.2 }}, {R(b - 0.4)});')
+            js.append(f'tl.to("#{sid}-cap{j}", {{ autoAlpha: 0, duration: 0.2 }}, {R(b - 0.65)});')
     cls = "clip shot " + kind + (" outro" if kind == "outro" else "")
     body.append(f'<div id="{sid}" class="{cls}" data-hold data-start="{R(t0)}" data-duration="{R(dur)}" data-track-index="1" data-track-kind="graphics">{"".join(inner)}</div>')
     if k > 0 and kind != "outro":
@@ -300,7 +303,7 @@ window.__timelines["main"] = tl;
 open(f"{P}/index.html", "w", encoding="utf-8").write(page)
 
 clicks = [c for s in PLAN["shots"] for cl in s.get("clips", []) for c in cl["_clicks"]]
-chimes = [ref(s["calls"][-1][0]) + 0.1 for s in PLAN["shots"] if s["kind"] == "shot" and "Console" in (s.get("step") or ("", ""))[1]]
+chimes = [ref(s["calls"][-1][0]) - 0.3 for s in PLAN["shots"] if s["kind"] == "shot" and "Console" in (s.get("step") or ("", ""))[1]]
 timing = dict(total=TOTAL, lines={str(i): LT[i] for i in sorted(LT)}, stub=STUB, music=PLAN["music"], music_start=PLAN["music_start"], music_cut=PLAN.get("music_cut"),
               shots=[dict(k=k, kind=s["kind"], t0=s["_t0"], t1=s["_t1"], lines=s["lines"],
                           clips=[dict(src=c["src"], cs=c["_cs"], ce=c["_ce"], hold=c["_hold"], speed=c["_speed"]) for c in s.get("clips", [])],
