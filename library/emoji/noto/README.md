@@ -1,4 +1,4 @@
-# Noto Emoji PNGs (512 px, 21 files)
+# Noto Emoji PNGs (512 px, 27 files)
 
 These came from the owner's Drive folder on 2026-10-26; the source is googlefonts/noto-emoji `2D/png/512/`.
 - **Match:** checked here on 2026-10-26. emoji_u1f680.png has the same md5 as raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/png/512/emoji_u1f680.png.
@@ -8,3 +8,4 @@ These came from the owner's Drive folder on 2026-10-26; the source is googlefont
   - Apache-2.0 asks for no on-screen credit in videos; keep this licence file next to the PNGs.
 
 File name = `emoji_u<codepoint>.png`, e.g. u1f680 = 🚀. For other emoji, fetch the same path from upstream.
+- 2026-11-07: added u1f4f1 (phone), u1f5a5 (desktop), u1f399 (studio mic), u1f50a (speaker), u2705 (check), u1f3ae (gamepad) from the same upstream path (SkilloraClouds tutorial thumbnails).
