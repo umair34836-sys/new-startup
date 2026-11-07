@@ -596,6 +596,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   line, 4 concept diagrams (ports, floodgate, voice, proximity). Coordinates read from 100 px grid overlays, never guessed.
   Delivered FINAL-v2 directly. Still pending: the owner's in-game/phone shots (he may send an old in-game video; use its
   text-free clips in place of the step cards).
+  OFF-BY-ONE BUG (owner caught it 2026-11-07: "teen cheezein 8 s par, cards 14 s par"): vs_tts --parts writes 000.wav for
+  line 1, but the builder/mixer loaded {i:03d}.wav for line i, so v1-v3 played the NEXT line's take in every slot (line 1
+  silent, voice one line ahead of the picture). My "sync" measurements (VO track vs final audio = 0.000 s, scene cut vs line
+  start) could not see it because they compared the mix with itself. RULE: before delivering, Whisper-transcribe the first
+  20 s of the FINAL file and check it is line 1 of the script. Fixed in v4 (FINAL-v4 delivered).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
