@@ -1,0 +1,70 @@
+@font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf"); }
+@font-face { font-family: "Jakarta"; src: url("assets/fonts/PlusJakartaSans-Variable.ttf"); font-weight: 200 800; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #070b12; }
+#root { position: absolute; inset: 0; overflow: hidden; font-family: Jakarta, sans-serif; color: #e5e7eb; }
+.bg { position: absolute; inset: 0; background: #070b12; }
+.bg .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(34,197,94,0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(34,197,94,0.05) 1px, transparent 1px); background-size: 80px 80px; }
+.shot { position: absolute; inset: 0; }
+.brand { position: absolute; left: 40px; top: 26px; display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 28px; color: #cbd5e1; }
+.brand img { width: 44px; height: 44px; border-radius: 10px; }
+.brand b { color: #22c55e; font-weight: 800; }
+.step { position: absolute; right: 40px; top: 22px; display: flex; align-items: center; gap: 14px; padding: 8px 22px 8px 8px; border-radius: 999px;
+  background: #0f172a; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 28px; color: #e5e7eb; }
+.step i { display: inline-flex; width: 46px; height: 46px; border-radius: 50%; background: #22c55e; color: #04140a; font-style: normal; font-weight: 800;
+  font-size: 28px; align-items: center; justify-content: center; }
+.frame { position: absolute; left: 140px; top: 80px; width: 1640px; border-radius: 14px; overflow: hidden; background: #0b1220;
+  border: 2px solid rgba(255,255,255,0.09); box-shadow: 0 24px 70px rgba(0,0,0,0.55); }
+.frame video, .frame .kb img { display: block; width: 100%; height: 100%; }
+.kb { position: absolute; inset: 0; }
+.callout { position: absolute; inset: 0; pointer-events: none; }
+.callout .arr { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.callout .dot { position: absolute; width: 28px; height: 28px; border-radius: 50%; border: 5px solid #22c55e; background: rgba(7,11,18,0.35); }
+.callout .lab { position: absolute; height: 62px; display: flex; align-items: center; justify-content: center; padding: 0 20px; border-radius: 12px;
+  background: rgba(7,11,18,0.96); border: 3px solid #22c55e; font-weight: 700; font-size: 30px; color: #f8fafc; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+.cap { position: absolute; left: 50%; transform: translateX(-50%); top: 962px; max-width: 1500px; padding: 16px 34px 18px 30px; border-radius: 12px;
+  background: rgba(7,11,18,0.93); border-left: 6px solid #22c55e; font-weight: 600; font-size: 34px; line-height: 1.25; color: #f1f5f9; white-space: nowrap; }
+.chips { position: absolute; left: 140px; top: 884px; display: flex; align-items: center; gap: 10px; }
+.chips span { padding: 10px 20px; border-radius: 10px; background: #111827; border: 1px solid rgba(255,255,255,0.12); font-weight: 700; font-size: 28px; color: #e5e7eb; white-space: nowrap; }
+.chips .chev { width: 26px; height: 26px; color: #22c55e; }
+.code { position: absolute; right: 180px; top: 150px; min-width: 560px; padding: 22px 30px; border-radius: 14px; background: rgba(8,12,20,0.96);
+  border: 1px solid rgba(255,255,255,0.12); font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 34px; line-height: 1.6; color: #cbd5e1;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+.code .k { color: #93c5fd; } .code .v { color: #22c55e; font-weight: 700; } .code .row { white-space: pre; }
+.code.big { right: auto; left: 160px; top: 300px; font-size: 46px; min-width: 760px; padding: 28px 40px; }
+.savebtn.big { right: auto; left: 160px; top: 640px; }
+.code .hd { font-family: Jakarta; font-weight: 700; font-size: 30px; color: #9ca3af; margin-bottom: 8px; }
+.cardwrap { position: absolute; left: 160px; top: 150px; width: 1600px; }
+.cardwrap h2 { font-family: Anton; font-size: 92px; letter-spacing: 1px; color: #fff; line-height: 1; margin-bottom: 44px; }
+.rows { display: flex; flex-direction: column; gap: 22px; }
+.row2 { display: flex; align-items: center; gap: 28px; padding: 22px 30px; border-radius: 16px; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); width: 1240px; }
+.row2 i { flex: none; display: inline-flex; width: 64px; height: 64px; border-radius: 50%; background: #22c55e; color: #04140a; font-style: normal; font-weight: 800; font-size: 34px; align-items: center; justify-content: center; }
+.row2 i.d { background: #ef4444; color: #fff; } .row2 i.e { background: #1f2937; color: #22c55e; }
+.row2 .l { font-weight: 700; font-size: 44px; color: #f8fafc; } .row2 .s { font-weight: 500; font-size: 30px; color: #9ca3af; margin-top: 4px; }
+.row2.danger { border-color: #ef4444; background: #1f0a0a; }
+.row2.pulse { border-color: #22c55e; background: #0b2a18; }
+.dgwrap { position: absolute; left: 160px; right: 160px; top: 740px; display: flex; justify-content: center; }
+.dg { display: flex; align-items: center; gap: 18px; padding: 22px 30px; border-radius: 18px; background: #0b1220; border: 1px solid rgba(255,255,255,0.1); }
+.dg .box { padding: 14px 26px; border-radius: 12px; background: #111827; border: 1px solid rgba(255,255,255,0.14); font-weight: 700; font-size: 30px; color: #f8fafc; text-align: center; }
+.dg .box small { display: block; font-weight: 500; font-size: 28px; color: #9ca3af; margin-top: 2px; }
+.dg .box.dim { opacity: 0.55; }
+.dg .srv { padding: 18px 30px; border-radius: 12px; background: #14532d; border: 2px solid #22c55e; font-weight: 800; font-size: 32px; color: #fff; }
+.dg .port { position: relative; padding: 0 44px; font-family: "DejaVu Sans Mono", monospace; font-weight: 700; font-size: 28px; color: #22c55e; white-space: nowrap; }
+.dg .port::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 3px solid #22c55e; }
+.dg .port span { position: relative; background: #0b1220; padding: 0 10px; }
+.dg .port.fade { color: #9ca3af; } .dg .port.fade::before { border-top: 3px dashed #9ca3af; }
+.bgimg { position: absolute; inset: 0; } .bgimg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.2) blur(3px); transform: scale(1.03); }
+.titlebg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.16) saturate(0.6) blur(2px); transform: scale(1.02); }
+.h1 { position: absolute; left: 140px; top: 330px; font-family: Anton; font-size: 170px; line-height: 0.95; color: #fff; letter-spacing: 2px; }
+.h2 { position: absolute; left: 146px; top: 540px; font-weight: 600; font-size: 64px; color: #22c55e; }
+.tags { position: absolute; left: 146px; top: 660px; display: flex; gap: 16px; }
+.tags span { padding: 12px 26px; border-radius: 999px; border: 2px solid rgba(255,255,255,0.28); font-weight: 600; font-size: 32px; color: #e5e7eb; }
+.biglogo { position: absolute; left: 140px; top: 120px; width: 150px; height: 150px; border-radius: 30px; }
+.outro .biglogo { left: 860px; top: 150px; width: 200px; height: 200px; border-radius: 40px; }
+.outro .h1 { left: 0; right: 0; top: 400px; text-align: center; font-size: 150px; }
+.outro .h2 { left: 0; right: 0; top: 570px; text-align: center; }
+.outro .url { position: absolute; left: 0; right: 0; top: 680px; text-align: center; font-weight: 800; font-size: 70px; color: #fff; }
+.outro .next { position: absolute; left: 50%; transform: translateX(-50%); top: 790px; padding: 18px 40px; border-radius: 999px; background: #22c55e; color: #04140a; font-weight: 800; font-size: 40px; white-space: nowrap; }
+.outro .credit { position: absolute; right: 60px; bottom: 36px; text-align: right; font-weight: 600; font-size: 30px; color: #9ca3af; }
+.savebtn { position: absolute; right: 180px; top: 560px; padding: 18px 34px; border-radius: 10px; background: #1f2937; border: 3px solid #22c55e; font-weight: 800; font-size: 32px; color: #fff; }

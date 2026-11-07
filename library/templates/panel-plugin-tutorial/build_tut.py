@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Build a 16:9 panel tutorial (HyperFrames) from VO lines + recordings + screenshots.
-usage: build_tut.py v1|v2 [--stub]   -> proj_vX/index.html, proj_vX/assets/..., proj_vX/timing.json
+"""Build a 16:9 panel tutorial (HyperFrames) from VO lines + recordings + screenshots, synced to the words.
+usage: build_tut.py v1|v2 [--stub]   -> proj_vX/index.html, proj_vX/assets/vid/*.mp4, proj_vX/timing.json
 """
-import json, os, subprocess, sys, shutil, html
+import json, os, re, subprocess, sys, shutil, html, difflib
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from shots import V1, V2
+from shots import V1, V2, CHEV, path
 
 D = os.path.dirname(os.path.abspath(__file__))
 V = sys.argv[1]
@@ -23,6 +23,7 @@ GAP, TAIL = 0.45, 0.7
 MIN = {"title": 5.5, "outro": 7.0}
 
 lines = [l.strip() for l in open(f"{D}/vo/{V}_lines.txt", encoding="utf-8") if l.strip()]
+WORDS = json.load(open(f"{D}/vo/words_{V}.json")) if os.path.exists(f"{D}/vo/words_{V}.json") else {}
 
 def probe(p, key="duration", stream=None):
     args = ["ffprobe", "-v", "error"]
@@ -36,128 +37,127 @@ def vo_len(i):
         return round(0.07 * len(lines[i - 1]) + 0.3, 2)
     return float(probe(p))
 
-# ---------- timeline ----------
+# ---------- timeline: lines first ----------
 t = 0.0
-LT = {}                 # line -> (start, end)
-shots = []
-for k, s in enumerate(PLAN["shots"]):
-    kind = s["kind"]; t0 = t
-    tt = t0 + LEAD[kind]
+LT = {}
+for s in PLAN["shots"]:
+    kind = s["kind"]; t0 = t; tt = t0 + LEAD[kind]
     for i in s["lines"]:
         d = vo_len(i); LT[i] = (round(tt, 3), round(tt + d, 3)); tt += d + GAP
-    end = tt - GAP + TAIL
-    if kind == "rec":
-        src = f"{D}/in/{s['src']}"
-        L = float(probe(src)); w, h = map(int, probe(src, "width,height", "v").split(","))
-        need = end - t0
-        speed = min(max(L / need, 0.85), 1.6)
-        clip = L / speed
-        if clip > need: end = t0 + clip
-        s["_speed"], s["_L"], s["_wh"] = speed, L, (w, h)
-    end = max(end, t0 + MIN.get(kind, 0))
+    end = max(tt - GAP + TAIL, t0 + MIN.get(kind, 0))
     s["_t0"], s["_t1"] = round(t0, 3), round(end, 3)
     t = end
 TOTAL = round(t, 3)
 
+norm = lambda w: re.sub(r"[^\w]", "", w).replace("़", "").replace("ॉ", "ो")
+def word_time(line, word):
+    """absolute time when `word` is spoken in `line`: Whisper word match, else proportional to its text position"""
+    a, b = LT[line]; text = lines[line - 1]
+    ws = WORDS.get(str(line), [])
+    target = norm(word)
+    pos = text.find(word)
+    frac = (pos / len(text)) if pos >= 0 else 0.0
+    est = frac * (b - a) * 0.95                       # proportional estimate (relative)
+    best, score = None, 0.0
+    for w, st, en in ws:                                # best Whisper word: similar text AND near the estimate
+        r = difflib.SequenceMatcher(None, norm(w), target).ratio() - 0.25 * abs(st - est) / max(b - a, 1)
+        if r > score: best, score = st, r
+    if best is not None and score >= 0.55:
+        return round(a + best, 3)
+    return round(a + est, 3)
+
 def ref(r):
-    """line ref: 19 -> line start; 19.6 -> start + 0.6 * its length"""
-    n = int(r); f = r - n
-    a, b = LT[n]
+    if isinstance(r, str):
+        n, w = r.split(":", 1); return word_time(int(n), w)
+    n = int(r); f = r - n; a, b = LT[n]
     return round(a + f * (b - a), 3)
 
 R = lambda v: f"{v:.3f}"
 
-# ---------- recordings: speed-fit clips of exactly the shot length ----------
-for k, s in enumerate(PLAN["shots"]):
-    if s["kind"] != "rec": continue
-    out = f"{P}/assets/vid/s{k}.mp4"
-    dur = s["_t1"] - s["_t0"]
-    w, h = s["_wh"]
+# ---------- recordings: clips of exactly their window, held / speed-fit / frozen ----------
+def rec_info(src):
+    p = f"{D}/in/{src}"
+    L = float(probe(p)); w, h = map(int, probe(p, "width,height", "v").split(","))
     cut = h
     for ss in ("1", "4", "7", "10"):   # a GIF-derived page can get a white band at the bottom once the page gets shorter
-        raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", ss, "-i", f"{D}/in/{s['src']}", "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "gray", "-"], capture_output=True).stdout
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", ss, "-i", p, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "gray", "-"], capture_output=True).stdout
         if len(raw) < h * w: continue
         rows = np.frombuffer(raw, np.uint8)[: h * w].reshape(h, w).mean(axis=1)
         white = np.where(rows > 240)[0]
         if len(white) > 10 and white.max() == h - 1: cut = min(cut, int(white.min() // 2 * 2))
-    if cut < h: s["_crop"] = cut; h = cut
-    fh = int(round(FW * h / w / 2)) * 2
-    s["_fh"] = fh
-    if not os.path.exists(out) or abs(float(probe(out)) - dur) > 0.1:
-        crop = f"crop={w}:{s['_crop']}:0:0," if s.get("_crop") else ""
-        vf = (f"{crop}setpts=PTS/{s['_speed']:.4f},scale={FW}:{fh}:flags=lanczos,tpad=stop_mode=clone:stop_duration={dur + 1:.3f},"
-              f"trim=duration={dur:.3f},fps=30,format=yuv420p")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{D}/in/{s['src']}", "-vf", vf, "-an", "-c:v", "libx264", "-crf", "16",
-                        "-preset", "medium", out], check=True)
-    s["_clicks"] = [round(s["_t0"] + c / s["_speed"], 3) for c in s.get("clicks", []) if c < s["_L"]]
+    return dict(L=L, w=w, h=h, crop=cut if cut < h else None, cw=min(w, 1900))
+
+for k, s in enumerate(PLAN["shots"]):
+    if s["kind"] != "rec": continue
+    t0, t1 = s["_t0"], s["_t1"]
+    clips = s["clips"]
+    starts = [t0] + [ref(c["until"]) for c in clips[:-1]]
+    ends = starts[1:] + [t1]
+    for j, c in enumerate(clips):
+        info = rec_info(c["src"]); a, b = c.get("range", (0, info["L"])); b = min(b, info["L"]); L = b - a
+        cs, ce = starts[j], ends[j]; win = ce - cs
+        if c.get("play_at"):
+            pa = c["play_at"]; word, off = (pa if isinstance(pa, tuple) else (pa, 0.6))   # (word, action time within the range)
+            hold = max(0.0, ref(word) - off - cs)                 # the click/action lands when the word is said
+            speed = max(1.0, min(1.6, L / max(win - hold, 0.1)))
+            if hold + L / speed > win:                           # still too long: extend the shot (last clip only)
+                if j == len(clips) - 1:
+                    ce = cs + hold + L / speed; s["_t1"] = round(ce, 3); win = ce - cs
+                else:
+                    speed = 1.6
+        else:
+            hold = 0.0; speed = min(max(L / win, 0.85), 1.6)
+            if L / speed > win and j == len(clips) - 1:
+                ce = cs + L / speed; s["_t1"] = round(ce, 3); win = ce - cs
+        c.update(_cs=round(cs, 3), _ce=round(ce, 3), _hold=round(hold, 3), _speed=round(speed, 4), _a=a, _info=info)
+        h = info["crop"] or info["h"]; fh = int(round(FW * h / info["cw"] / 2)) * 2; c["_fh"] = fh; c["_sx"] = FW / info["cw"]
+        out = f"{P}/assets/vid/s{k}c{j}.mp4"
+        sig = f"{c['src']}|{a}|{b}|{hold:.3f}|{speed:.4f}|{win:.3f}|{info['crop']}|{info['cw']}"
+        if not (os.path.exists(out) and os.path.exists(out + ".sig") and open(out + ".sig").read() == sig):
+            crop = f"crop={info['cw']}:{info['crop'] or info['h']}:0:0,"
+            vf = (f"trim={a}:{b},setpts=(PTS-STARTPTS)/{speed:.4f},{crop}scale={FW}:{fh}:flags=lanczos,"
+                  f"tpad=start_mode=clone:start_duration={hold:.3f}:stop_mode=clone:stop_duration={win + 1:.3f},trim=duration={win:.3f},fps=30,format=yuv420p")
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{D}/in/{c['src']}", "-vf", vf, "-an", "-c:v", "libx264", "-crf", "16", "-preset", "medium", out], check=True)
+            open(out + ".sig", "w").write(sig)
+        c["_clicks"] = [round(cs + hold + (rc - a) / speed, 3) for rc in c.get("clicks", []) if a <= rc < b and cs + hold + (rc - a) / speed < ce]
+    # shots after this one shift if the shot grew
+for k in range(1, len(PLAN["shots"])):
+    prev, s = PLAN["shots"][k - 1], PLAN["shots"][k]
+    if s["_t0"] < prev["_t1"]:
+        shift = round(prev["_t1"] - s["_t0"], 3)
+        s["_t0"] = round(s["_t0"] + shift, 3); s["_t1"] = round(s["_t1"] + shift, 3)
+        for i in s["lines"]: LT[i] = (round(LT[i][0] + shift, 3), round(LT[i][1] + shift, 3))
+        for c in s.get("clips", []):
+            for key in ("_cs", "_ce"): c[key] = round(c[key] + shift, 3)
+            c["_clicks"] = [round(x + shift, 3) for x in c["_clicks"]]
+TOTAL = round(PLAN["shots"][-1]["_t1"], 3)
 
 # ---------- HTML ----------
-CSS = """
-@font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf"); }
-@font-face { font-family: "Jakarta"; src: url("assets/fonts/PlusJakartaSans-Variable.ttf"); font-weight: 200 800; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { width: 1920px; height: 1080px; overflow: hidden; background: #070b12; }
-#root { position: absolute; inset: 0; overflow: hidden; font-family: Jakarta, sans-serif; color: #e5e7eb; }
-.bg { position: absolute; inset: 0; background: #070b12; }
-.bg .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(34,197,94,0.05) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(34,197,94,0.05) 1px, transparent 1px); background-size: 80px 80px; }
-.shot { position: absolute; inset: 0; }
-.brand { position: absolute; left: 40px; top: 26px; display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 28px; color: #cbd5e1; }
-.brand img { width: 44px; height: 44px; border-radius: 10px; }
-.brand b { color: #22c55e; font-weight: 800; }
-.step { position: absolute; right: 40px; top: 22px; display: flex; align-items: center; gap: 14px; padding: 8px 22px 8px 8px; border-radius: 999px;
-  background: #0f172a; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; font-size: 28px; color: #e5e7eb; }
-.step i { display: inline-flex; width: 46px; height: 46px; border-radius: 50%; background: #22c55e; color: #04140a; font-style: normal; font-weight: 800;
-  font-size: 28px; align-items: center; justify-content: center; }
-.frame { position: absolute; left: 140px; top: 80px; width: 1640px; border-radius: 14px; overflow: hidden; background: #0b1220;
-  border: 2px solid rgba(255,255,255,0.09); box-shadow: 0 24px 70px rgba(0,0,0,0.55); }
-.frame video, .frame .kb img { display: block; width: 100%; height: 100%; }
-.kb { position: absolute; inset: 0; }
-.ring { position: absolute; border: 4px solid #22c55e; border-radius: 8px; box-shadow: 0 0 0 9999px rgba(0,0,0,0.38), 0 0 22px rgba(34,197,94,0.6); }
-.cap { position: absolute; left: 50%; transform: translateX(-50%); top: 962px; max-width: 1360px; padding: 16px 34px 18px 30px; border-radius: 12px;
-  background: rgba(7,11,18,0.93); border-left: 6px solid #22c55e; font-weight: 600; font-size: 36px; line-height: 1.25; color: #f1f5f9; white-space: nowrap; }
-.chips { position: absolute; left: 140px; top: 884px; display: flex; align-items: center; gap: 10px; }
-.chips span { padding: 10px 20px; border-radius: 10px; background: #111827; border: 1px solid rgba(255,255,255,0.12); font-weight: 700; font-size: 28px; color: #e5e7eb; white-space: nowrap; }
-.chips .chev { width: 26px; height: 26px; color: #22c55e; }
-.chips span.hi { background: #14532d; border-color: #22c55e; color: #fff; }
-.warn { position: absolute; right: 180px; top: 120px; padding: 16px 28px; border-radius: 12px; background: #7f1d1d; border: 2px solid #ef4444;
-  font-weight: 800; font-size: 34px; color: #fff; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
-.code { position: absolute; right: 180px; top: 150px; min-width: 560px; padding: 22px 30px; border-radius: 14px; background: rgba(8,12,20,0.96);
-  border: 1px solid rgba(255,255,255,0.12); font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 34px; line-height: 1.6; color: #cbd5e1;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
-.code .k { color: #93c5fd; } .code .v { color: #22c55e; font-weight: 700; } .code .row { white-space: pre; }
-.code.big { right: auto; left: 160px; top: 300px; font-size: 46px; min-width: 760px; padding: 28px 40px; }
-.savebtn.big { right: auto; left: 160px; top: 640px; }
-.code .hd { font-family: Jakarta; font-weight: 700; font-size: 30px; color: #9ca3af; margin-bottom: 8px; }
-.cardwrap { position: absolute; left: 160px; top: 150px; width: 1600px; }
-.cardwrap h2 { font-family: Anton; font-size: 92px; letter-spacing: 1px; color: #fff; line-height: 1; margin-bottom: 44px; }
-.rows { display: flex; flex-direction: column; gap: 22px; }
-.row2 { display: flex; align-items: center; gap: 28px; padding: 22px 30px; border-radius: 16px; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); width: 1240px; }
-.row2 i { flex: none; display: inline-flex; width: 64px; height: 64px; border-radius: 50%; background: #22c55e; color: #04140a; font-style: normal; font-weight: 800; font-size: 34px; align-items: center; justify-content: center; }
-.row2 i.d { background: #ef4444; color: #fff; } .row2 i.e { background: #1f2937; color: #22c55e; }
-.row2 .l { font-weight: 700; font-size: 44px; color: #f8fafc; } .row2 .s { font-weight: 500; font-size: 30px; color: #9ca3af; margin-top: 4px; }
-.row2.danger { border-color: #ef4444; background: #1f0a0a; }
-.row2.pulse { border-color: #22c55e; background: #0b2a18; }
-.note { position: absolute; left: 160px; top: 760px; font-weight: 600; font-size: 36px; color: #22c55e; }
-.bgimg { position: absolute; inset: 0; } .bgimg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.2) blur(3px); transform: scale(1.03); }
-.bgimg.sharp img { filter: brightness(0.22) blur(3px); }
-.titlebg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.16) saturate(0.6) blur(2px); transform: scale(1.02); }
-.h1 { position: absolute; left: 140px; top: 330px; font-family: Anton; font-size: 170px; line-height: 0.95; color: #fff; letter-spacing: 2px; }
-.h2 { position: absolute; left: 146px; top: 540px; font-weight: 600; font-size: 64px; color: #22c55e; }
-.tags { position: absolute; left: 146px; top: 660px; display: flex; gap: 16px; }
-.tags span { padding: 12px 26px; border-radius: 999px; border: 2px solid rgba(255,255,255,0.28); font-weight: 600; font-size: 32px; color: #e5e7eb; }
-.biglogo { position: absolute; left: 140px; top: 120px; width: 150px; height: 150px; border-radius: 30px; }
-.outro .biglogo { left: 860px; top: 150px; width: 200px; height: 200px; border-radius: 40px; }
-.outro .h1 { left: 0; right: 0; top: 400px; text-align: center; font-size: 150px; }
-.outro .h2 { left: 0; right: 0; top: 570px; text-align: center; }
-.outro .url { position: absolute; left: 0; right: 0; top: 680px; text-align: center; font-weight: 800; font-size: 70px; color: #fff; }
-.outro .next { position: absolute; left: 50%; transform: translateX(-50%); top: 790px; padding: 18px 40px; border-radius: 999px; background: #22c55e; color: #04140a; font-weight: 800; font-size: 40px; white-space: nowrap; }
-.outro .credit { position: absolute; right: 60px; bottom: 36px; text-align: right; font-weight: 600; font-size: 30px; color: #9ca3af; }
-.savebtn { position: absolute; right: 180px; top: 560px; padding: 18px 34px; border-radius: 10px; background: #1f2937; border: 3px solid #22c55e; font-weight: 800; font-size: 32px; color: #fff; }
-"""
-from shots import CHEV, path
+CSS = open(f"{D}/tut.css").read()
 
 def esc(x): return html.escape(str(x), quote=False)
+
+def callout(cid, label, x, y, colour):
+    """label box + arrow pointing at (x, y) frame px"""
+    col = "#ef4444" if colour == "r" else "#22c55e"
+    above = y > 300
+    lw = min(max(26 * len(label) * 0.62 + 44, 160), 980)
+    lx = min(max(x - lw / 2, 150), W - 150 - lw)
+    ly = (y - 150) if above else (y + 70)
+    ax, ay = lx + lw / 2, (ly + 62) if above else ly
+    svg = (f'<svg class="arr" viewBox="0 0 {W} {H}"><defs><marker id="{cid}-m" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">'
+           f'<path d="M0,0 L8,4 L0,8 z" fill="{col}"/></marker></defs>'
+           f'<line x1="{ax:.0f}" y1="{ay:.0f}" x2="{x:.0f}" y2="{y:.0f}" stroke="{col}" stroke-width="5" stroke-linecap="round" marker-end="url(#{cid}-m)"/></svg>')
+    dot = f'<div class="dot" style="left:{x - 14:.0f}px;top:{y - 14:.0f}px;border-color:{col}"></div>'
+    lab = f'<div class="lab" style="left:{lx:.0f}px;top:{ly:.0f}px;width:{lw:.0f}px;border-color:{col}">{esc(label)}</div>'
+    return f'<div class="callout" id="{cid}" data-layout-allow-overlap>{svg}{dot}{lab}</div>'
+
+DIAGRAMS = {
+ "ports": '<div class="dg"><div class="box">Java players<small>PC</small></div><div class="port"><span>:20004</span></div><div class="srv">Your server</div><div class="port"><span>:20025</span></div><div class="box">Bedrock players<small>phone, console</small></div></div>',
+ "floodgate": '<div class="dg"><div class="box">Bedrock player<small>no Java account</small></div><div class="port"><span>Geyser + Floodgate</span></div><div class="srv">Java server</div></div>',
+ "voice": '<div class="dg"><div class="box">Server<small>Simple Voice Chat plugin</small></div><div class="port"><span>UDP port</span></div><div class="box">Every player&#39;s PC<small>Simple Voice Chat mod</small></div></div>',
+ "proximity": '<div class="dg"><div class="box">You<small>talking</small></div><div class="port"><span>near = loud</span></div><div class="box">Friend<small>5 blocks</small></div><div class="port fade"><span>far = quiet</span></div><div class="box dim">Friend<small>40 blocks</small></div></div>',
+}
 
 body, js, videos = [], [], []
 for k, s in enumerate(PLAN["shots"]):
@@ -170,7 +170,6 @@ for k, s in enumerate(PLAN["shots"]):
         inner.append(f'<div class="h1" id="{sid}-h1">{esc(s["h1"])}</div><div class="h2" id="{sid}-h2">{esc(s["h2"])}</div>')
         if kind == "title":
             inner.append(f'<div class="tags" id="{sid}-tags">' + "".join(f"<span>{esc(x)}</span>" for x in s["tags"]) + "</div>")
-            # first frame = thumbnail: text is visible at 0 s, it only settles (no opacity fade)
             js.append(f'tl.from("#{sid}-h1", {{ y: 40, duration: 0.7, ease: "power3.out" }}, {R(t0)});')
             js.append(f'tl.from("#{sid}-h2", {{ y: 30, duration: 0.6, ease: "power3.out" }}, {R(t0 + 0.1)});')
             js.append(f'tl.from("#{sid}-tags span", {{ y: 20, duration: 0.5, stagger: 0.1, ease: "power3.out" }}, {R(t0 + 0.2)});')
@@ -188,27 +187,28 @@ for k, s in enumerate(PLAN["shots"]):
             n, lbl = s["step"]
             inner.append(f'<div class="step" id="{sid}-step"><i>{n}</i>{esc(lbl)}</div>')
             js.append(f'tl.from("#{sid}-step", {{ x: 40, opacity: 0, duration: 0.45, ease: "power3.out" }}, {R(t0 + 0.1)});')
+        calls_px = []     # (ref time, label, fx, fy, colour)
         if kind == "rec":
-            fh = s["_fh"]
-            videos.append(f'<video id="{sid}-v" class="clip frame" src="assets/vid/{sid}.mp4" muted playsinline data-start="{R(t0)}" data-duration="{R(dur)}" '
-                          f'data-track-index="0" style="height:{fh}px"></video>')
-            if s.get("warn"):
-                ln, rc, txt = s["warn"]; at = t0 + rc / s["_speed"]
-                inner.append(f'<div class="warn" id="{sid}-warn">{esc(txt)}</div>')
-                js.append(f'tl.fromTo("#{sid}-warn", {{ scale: 0.7, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {R(at)});')
-                js.append(f'tl.fromTo("#{sid}-warn", {{ x: -14 }}, {{ x: 0, duration: 0.08, repeat: 4, yoyo: true }}, {R(at + 0.35)});')
+            for j, c in enumerate(s["clips"]):
+                videos.append(f'<video id="{sid}-v{j}" class="clip frame" src="assets/vid/{sid}c{j}.mp4" muted playsinline data-start="{R(c["_cs"])}" '
+                              f'data-duration="{R(c["_ce"] - c["_cs"])}" data-track-index="0" style="height:{c["_fh"]}px"></video>')
+            for cl in s.get("calls", []):
+                r, label, (x, y) = cl[0], cl[1], cl[2]; j = cl[3] if len(cl) > 3 else 0; colour = cl[4] if len(cl) > 4 else "g"
+                sx = s["clips"][j]["_sx"]
+                calls_px.append((ref(r), label, FX + x * sx, FY + y * sx, colour, s["clips"][j]["_ce"]))
         if kind == "shot":
             iw, ih = map(int, probe(f"{P}/assets/img/{s['src']}", "width,height", "v").split(","))
-            sx = FW / iw; fh = int(round(ih * sx))
-            fx, fy, sc = s["kb"]
-            rings = []
-            for j, (r, x, y, w, h) in enumerate(s.get("rings", [])):
-                rid = f"{sid}-r{j}"
-                rings.append(f'<div class="ring" id="{rid}" style="left:{x*sx-6:.0f}px;top:{y*sx-5:.0f}px;width:{w*sx+12:.0f}px;height:{h*sx+10:.0f}px"></div>')
-                js.append(f'tl.fromTo("#{rid}", {{ scale: 1.3, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }}, {R(ref(r) + 0.15)});')
+            sx = FW / iw; fh = int(round(ih * sx)); fx, fy, sc = s["kb"]
             inner.append(f'<div class="frame" style="height:{fh}px"><div class="kb" id="{sid}-kb" style="transform-origin:{fx*100:.0f}% {fy*100:.0f}%">'
-                         f'<img src="assets/img/{s["src"]}" alt="">{"".join(rings)}</div></div>')
+                         f'<img src="assets/img/{s["src"]}" alt=""></div></div>')
             js.append(f'tl.fromTo("#{sid}-kb", {{ scale: 1 }}, {{ scale: {sc}, duration: {R(max(dur - 0.6, 1))}, ease: "power1.inOut" }}, {R(t0 + 0.3)});')
+            for cl in s.get("calls", []):
+                r, label, (x, y) = cl[0], cl[1], cl[2]; colour = cl[4] if len(cl) > 4 else "g"
+                # the Ken Burns zoom moves the target: follow it (origin fx,fy of the frame, scale sc at the end)
+                tt = ref(r); prog = min(max((tt - (t0 + 0.3)) / max(dur - 0.6, 1), 0), 1); scl = 1 + (sc - 1) * prog
+                ox, oy = FX + fx * FW, FY + fy * fh
+                px = ox + (FX + x * sx - ox) * scl; py = oy + (FY + y * sx - oy) * scl
+                calls_px.append((tt, label, px, py, colour, t1))
         if kind == "card":
             inner.append(f'<div class="cardwrap"><h2 id="{sid}-h">{esc(s.get("title", ""))}</h2><div class="rows">')
             if s.get("pathline"):
@@ -224,6 +224,10 @@ for k, s in enumerate(PLAN["shots"]):
                 at = ref(rev[j]) if rev else t0 + 0.35 + 0.18 * j
                 js.append(f'tl.from("#{rid}", {{ x: -50, opacity: 0, duration: 0.5, ease: "power3.out" }}, {R(at)});')
             inner.append("</div></div>")
+            if s.get("diagram"):
+                name, r = s["diagram"]
+                inner.append(f'<div class="dgwrap" id="{sid}-dg">{DIAGRAMS[name]}</div>')
+                js.append(f'tl.from("#{sid}-dg .dg > *", {{ y: 24, opacity: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }}, {R(ref(r))});')
             if s.get("pulse"):
                 r, j = s["pulse"]
                 js.append(f'tl.to("#{sid}-i{j}", {{ className: "row2 pulse", duration: 0.3 }}, {R(ref(r))});')
@@ -232,38 +236,48 @@ for k, s in enumerate(PLAN["shots"]):
                 j = len(s["items"]) - 1
                 js.append(f'tl.to("#{sid}-i{j}", {{ className: "row2 danger", duration: 0.3 }}, {R(ref(s["danger"]))});')
                 js.append(f'tl.fromTo("#{sid}-i{j}", {{ x: -12 }}, {{ x: 0, duration: 0.08, repeat: 4, yoyo: true }}, {R(ref(s["danger"]) + 0.3)});')
-            if s.get("note"):
-                r, txt = s["note"]
-                inner.append(f'<div class="note" id="{sid}-note">{esc(txt)}</div>')
-                js.append(f'tl.from("#{sid}-note", {{ y: 20, opacity: 0, duration: 0.5, ease: "power3.out" }}, {R(ref(r))});')
             if s.get("save"):
                 r, txt = s["save"]
                 inner.append(f'<div class="savebtn big" id="{sid}-save">{esc(txt)}</div>')
                 js.append(f'tl.fromTo("#{sid}-save", {{ scale: 0.8, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }}, {R(ref(r))});')
-        # chips (path rows under the frame), one row at a time
-        for j, c in enumerate(s.get("chips", [])):
-            r, *parts = c
-            cid = f"{sid}-c{j}"
-            inner.append(f'<div class="chips" id="{cid}">{path(*map(esc, parts))}</div>')
-            at = ref(r) + 0.1
-            js.append(f'tl.from("#{cid} > *", {{ y: 24, opacity: 0, duration: 0.4, stagger: 0.08, ease: "power3.out" }}, {R(at)});')
-            if j + 1 < len(s["chips"]):
-                nxt = ref(s["chips"][j + 1][0])
-                js.append(f'tl.to("#{cid}", {{ opacity: 0, y: -16, duration: 0.3 }}, {R(nxt - 0.25)});')
+        # callouts: each shows at its word and leaves when the next one comes (or its clip / the shot ends)
+        calls_px.sort(key=lambda c: c[0])
+        for j, (tt, label, px, py, colour, cend) in enumerate(calls_px):
+            cid = f"{sid}-a{j}"
+            inner.append(callout(cid, label, px, py, colour))
+            nxt = calls_px[j + 1][0] if j + 1 < len(calls_px) else cend
+            hide = min(nxt - 0.15, cend - 0.1)
+            js.append(f'tl.set("#{cid}", {{ autoAlpha: 0 }}, {R(t0)});')
+            js.append(f'tl.to("#{cid}", {{ autoAlpha: 1, duration: 0.05 }}, {R(tt)});')
+            js.append(f'tl.from("#{cid} .lab", {{ scale: 0.8, opacity: 0, duration: 0.3, ease: "back.out(2)" }}, {R(tt)});')
+            js.append(f'tl.from("#{cid} .arr line", {{ opacity: 0, duration: 0.2 }}, {R(tt + 0.1)});')
+            js.append(f'tl.from("#{cid} .dot", {{ scale: 1.8, opacity: 0, duration: 0.35, ease: "power2.out" }}, {R(tt + 0.15)});')
+            js.append(f'tl.to("#{cid} .dot", {{ scale: 1.25, duration: 0.45, ease: "sine.inOut", yoyo: true, repeat: 3 }}, {R(tt + 0.55)});')
+            if hide > tt + 0.5:
+                js.append(f'tl.to("#{cid}", {{ autoAlpha: 0, duration: 0.25 }}, {R(hide)});')
+            s.setdefault("_calltimes", []).append((round(tt, 2), label))
         # code card rows
         if s.get("code"):
             rows = []
             for j, (r, key, val) in enumerate(s["code"]):
                 rows.append(f'<div class="row" id="{sid}-k{j}"><span class="k">{esc(key)}</span> <span class="v">{esc(val)}</span></div>')
-                js.append(f'tl.from("#{sid}-k{j}", {{ x: 30, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(ref(r) + 0.2 + 0.12 * j)});')
+                js.append(f'tl.from("#{sid}-k{j}", {{ x: 30, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(ref(r) + 0.05 * j)});')
             hd = "config.yml" if V == "v1" else "voicechat-server.properties"
             inner.append(f'<div class="code{" big" if kind == "card" else ""}" id="{sid}-code"><div class="hd">{hd}</div>{"".join(rows)}</div>')
-            js.append(f'tl.from("#{sid}-code", {{ y: 30, opacity: 0, duration: 0.45, ease: "power3.out" }}, {R(ref(s["code"][0][0]) + 0.05)});')
-    inner.append(f'<div class="cap" id="{sid}-cap">{esc(s["cap"])}</div>')
-    js.append(f'tl.from("#{sid}-cap", {{ y: 24, opacity: 0, duration: 0.4, ease: "power3.out" }}, {R(t0 + 0.25)});')
-    cls = "shot " + kind + (" outro" if kind == "outro" else "")
-    body.append(f'<div id="{sid}" class="clip {cls}" data-hold data-start="{R(t0)}" data-duration="{R(dur)}" data-track-index="1" data-track-kind="graphics">{"".join(inner)}</div>')
-    if k > 0 and kind != "outro":   # no fade at 0 s (thumbnail); the outro cuts in and animates its own elements
+            js.append(f'tl.from("#{sid}-code", {{ y: 30, opacity: 0, duration: 0.45, ease: "power3.out" }}, {R(ref(s["code"][0][0]) - 0.1)});')
+    # per-line captions
+    for j, i in enumerate(s["lines"]):
+        cap = PLAN["caps"].get(i) or s.get("cap", "")
+        a = LT[i][0]; b = LT[s["lines"][j + 1]][0] if j + 1 < len(s["lines"]) else t1
+        inner.append(f'<div class="cap" id="{sid}-cap{j}">{esc(cap)}</div>')
+        show = max(t0, a - 0.35)
+        js.append(f'tl.set("#{sid}-cap{j}", {{ autoAlpha: 0 }}, {R(t0)});')
+        js.append(f'tl.fromTo("#{sid}-cap{j}", {{ autoAlpha: 0, y: 16 }}, {{ autoAlpha: 1, y: 0, duration: 0.3, ease: "power3.out" }}, {R(show)});')
+        if j + 1 < len(s["lines"]):
+            js.append(f'tl.to("#{sid}-cap{j}", {{ autoAlpha: 0, duration: 0.2 }}, {R(b - 0.4)});')
+    cls = "clip shot " + kind + (" outro" if kind == "outro" else "")
+    body.append(f'<div id="{sid}" class="{cls}" data-hold data-start="{R(t0)}" data-duration="{R(dur)}" data-track-index="1" data-track-kind="graphics">{"".join(inner)}</div>')
+    if k > 0 and kind != "outro":
         js.append(f'tl.from("#{sid}", {{ opacity: 0, duration: 0.35, ease: "power1.out" }}, {R(t0)});')
 
 page = f"""<!doctype html>
@@ -285,10 +299,14 @@ window.__timelines["main"] = tl;
 </body></html>"""
 open(f"{P}/index.html", "w", encoding="utf-8").write(page)
 
+clicks = [c for s in PLAN["shots"] for cl in s.get("clips", []) for c in cl["_clicks"]]
+chimes = [ref(s["calls"][-1][0]) + 0.1 for s in PLAN["shots"] if s["kind"] == "shot" and "Console" in (s.get("step") or ("", ""))[1]]
 timing = dict(total=TOTAL, lines={str(i): LT[i] for i in sorted(LT)}, stub=STUB, music=PLAN["music"], music_start=PLAN["music_start"], music_cut=PLAN.get("music_cut"),
-              shots=[dict(k=k, kind=s["kind"], t0=s["_t0"], t1=s["_t1"], lines=s["lines"], speed=s.get("_speed"), clicks=s.get("_clicks", [])) for k, s in enumerate(PLAN["shots"])],
-              chimes=[ref(r) + 0.15 for s in PLAN["shots"] if s["kind"] == "shot" and "Console" in (s.get("step") or ("", ""))[1] for (r, *_) in s["rings"][:1]])
+              shots=[dict(k=k, kind=s["kind"], t0=s["_t0"], t1=s["_t1"], lines=s["lines"],
+                          clips=[dict(src=c["src"], cs=c["_cs"], ce=c["_ce"], hold=c["_hold"], speed=c["_speed"]) for c in s.get("clips", [])],
+                          clicks=[c for cl in s.get("clips", []) for c in cl["_clicks"]], calls=s.get("_calltimes", [])) for k, s in enumerate(PLAN["shots"])],
+              chimes=chimes, words_used=bool(WORDS))
 json.dump(timing, open(f"{P}/timing.json", "w"), indent=1)
-print(f"{V}: total {TOTAL:.1f}s, {len(PLAN['shots'])} shots, stub={STUB}")
+print(f"{V}: total {TOTAL:.1f}s, {len(PLAN['shots'])} shots, stub={STUB}, words={bool(WORDS)}, clicks={len(clicks)}")
 for s in timing["shots"]:
-    print(f"  s{s['k']:<2} {s['kind']:<5} {s['t0']:7.2f}-{s['t1']:7.2f} lines {s['lines']} speed {s['speed'] and round(s['speed'],2)} clicks {s['clicks']}")
+    print(f"  s{s['k']:<2} {s['kind']:<5} {s['t0']:7.2f}-{s['t1']:7.2f} lines {s['lines']} " + " ".join(f"[{c['src'][:4]} hold {c['hold']} x{c['speed']}]" for c in s["clips"]))
