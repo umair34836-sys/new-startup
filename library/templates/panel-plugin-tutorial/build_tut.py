@@ -32,7 +32,7 @@ def probe(p, key="duration", stream=None):
     return subprocess.run(args + ["-of", "csv=p=0", p], capture_output=True, text=True).stdout.strip()
 
 def vo_len(i):
-    p = f"{D}/vo/parts_{V}/{i:03d}.wav"
+    p = f"{D}/vo/parts_{V}/{i - 1:03d}.wav"      # parts are 0-indexed: 000.wav = line 1
     if STUB or not os.path.exists(p):
         return round(0.07 * len(lines[i - 1]) + 0.3, 2)
     return float(probe(p))

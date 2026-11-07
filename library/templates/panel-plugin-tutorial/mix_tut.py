@@ -21,7 +21,7 @@ def put(buf, x, at, gain=1.0):
 # 1. VO
 vo = np.zeros(N, np.float32)
 for i, (a, b) in T["lines"].items():
-    put(vo, load(f"{D}/vo/parts_{V}/{int(i):03d}.wav"), a)
+    put(vo, load(f"{D}/vo/parts_{V}/{int(i) - 1:03d}.wav"), a)   # parts are 0-indexed: 000.wav = line 1
 # loudnorm the VO bed to -16 once (two-pass by ffmpeg)
 sf.write(f"{P}/vo_raw.wav", vo, SR)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{P}/vo_raw.wav", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", str(SR), f"{P}/vo.wav"], check=True)

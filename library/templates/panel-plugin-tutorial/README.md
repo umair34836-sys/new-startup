@@ -55,3 +55,9 @@ word-synced arrow callouts (27 + 13), per-line captions, held-until-the-word rec
 Measured: Whisper small word timestamps for 52 Hindi lines ~12 min; both renders 6 + 3 min; HyperFrames lint error
 `content_overlap` when a hidden callout was faded with opacity only -> hide with autoAlpha (visibility) and mark the
 callout `data-layout-allow-overlap`.
+
+BUG FOUND BY THE OWNER (2026-11-07, "teen cheezein 8 s par bolta hai, cards 14 s par"): vs_tts.py --parts writes 000.wav for
+line 1, but build_tut.py (vo_len) and mix_tut.py loaded `{i:03d}.wav` for line i, so every slot played the NEXT line's take
+(line 1 never heard, voice ~1 line ahead of the picture through both videos). Fixed to `{i-1:03d}`. Lesson: after every mix,
+Whisper-transcribe the first 20 s of the FINAL file and compare with line 1 of the script before delivering; a cross-correlation
+of the final audio against vo.wav only proves the mix was muxed as built, not that the right takes were in it.
