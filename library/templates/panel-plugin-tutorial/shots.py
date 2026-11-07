@@ -41,7 +41,7 @@ V1 = dict(
              calls=[("5:सर्च", "Search: Geyser", (620, 212), 0), ("6:सीधा", "NOT this Install", (655, 585), 0, "r"), ("6:वर्ज़न्स", "Versions", (530, 585), 0),
                     ("6:लिस्ट", "Geyser-Spigot (Paper)", (660, 620), 1), ("6:सामने", "Install", (1275, 672), 1)]),
         dict(kind="rec", lines=[7, 8], step=(1, "Geyser install"),
-             clips=[dict(src=G05X, range=(5.6, 8.95), play_at=("7:सीधा", 3.0), clicks=[8.6])],
+             clips=[dict(src=G05X, range=(2.3, 8.8), play_at=("7:सीधा", 1.7), clicks=[4.0])],
              calls=[("7:सीधा", "Direct Install", (655, 585), 0, "r"), ("7:वेलोसिटी", "Wrong file: Geyser-Velocity.jar", (900, 288), 0, "r"),
                     ("8:वर्ज़न्स", "Use Versions instead", (530, 585), 0)]),
         dict(kind="card", lines=[9, 10], step=(2, "Floodgate"), bg="g02_bg.jpg", title="Floodgate",
