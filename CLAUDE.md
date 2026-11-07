@@ -590,6 +590,12 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   trim the source before its fade (music_cut) first. CONTAINER CRASH: `hyperframes check` twice while VoxCPM2 was generating
   killed the container (exit 137) and the TTS job: never run check/snapshot/render while TTS runs (now also in the template README).
   ACE-Step checkpoints (6 GB) were deleted here for disk (re-download: setup-all.sh acestep).
+  SYNC v2 (owner 2026-11-07, "voice ke saath perfect sync, arrows, captions, extra things ... sub kuch samjhao"): both videos
+  rebuilt with word-synced arrow callouts (Whisper small word timestamps -> words_vX.json; ref "19:शब्द"), recording clips
+  held on their first frame until the word is spoken so the recorded click lands on the word, one English caption per VO
+  line, 4 concept diagrams (ports, floodgate, voice, proximity). Coordinates read from 100 px grid overlays, never guessed.
+  Delivered FINAL-v2 directly. Still pending: the owner's in-game/phone shots (he may send an old in-game video; use its
+  text-free clips in place of the step cards).
 
 ## Agent tools (library/tools/setup-agent-tools.sh)
 - OWNER RULE (Oct 2026): use Agent-Reach INSTEAD of Firecrawl for searching/reading the web (Firecrawl costs
