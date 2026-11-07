@@ -61,3 +61,8 @@ line 1, but build_tut.py (vo_len) and mix_tut.py loaded `{i:03d}.wav` for line i
 (line 1 never heard, voice ~1 line ahead of the picture through both videos). Fixed to `{i-1:03d}`. Lesson: after every mix,
 Whisper-transcribe the first 20 s of the FINAL file and compare with line 1 of the script before delivering; a cross-correlation
 of the final audio against vo.wav only proves the mix was muxed as built, not that the right takes were in it.
+
+## Thumbnails (2026-11-07)
+Four directions per video were made: bold + clean with `thumb_make.py` (skill thumbnail-design), a Canva-generated "cyber"
+layout with the real console screenshot filled in through the Canva MCP, and a photo-card version from the gallery Pro
+editor. Tool steps and gotchas: `library/research/thumbnails-canva-gallery-2026-11-07.md`. Run `thumb_check.py` on each.
