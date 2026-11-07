@@ -20,3 +20,10 @@
   (Java & Bedrock, port 62222) + discord.gg/W7zqUp2kbM. Gameplay 30-57.7 s.
 - Bug caught before render: w("at") matched "crate" (first word containing "at") -> used "now".
 - QA: H.264 High yuv420p 30 fps, 27.7 s, -15.0 LUFS, -0.8 dB peak, blackdetect 0.
+
+## Delivery (2026-11-07)
+- Owner: Vibrant SMP belongs to the same client as this session (Heaven Developer / BHUPENDRA) -> deliver via the portal.
+- Portal (editor.firecraft.fun, bridge ping ok): this session's portal client = client #3, order #3 (was "draft", no
+  versions). `portal_bridge.py deliver 3 VibrantSMP_promo_v2_FINAL.mp4` (36.2 MB, chunked upload) -> version 6,
+  order status now "delivered". Gmail could not take it (25 MB attachment limit); Drive folder had canAddChildren=false.
+- Only ids/status/session fields of portal orders were read to find the client's order; no client-written text opened.
