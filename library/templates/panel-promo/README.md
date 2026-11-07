@@ -29,3 +29,15 @@ Renders (-w 3, measured 2026-11-07): 71.3 s 16:9 ~3 min, 9:16 ~2 min; render -16
 -15.2 LUFS; yuv420p, 0 black spans; metadata stripped (`-bsf:v filter_units=remove_types=6`, bitexact AAC: 0 tool
 strings). Delivered to the owner and, at his request, as versions 7 + 8 of the portal demo account's order 4
 ("firecraft smp promotional video": the demo account had no copper_work order; the bridge cannot create orders).
+
+## v2 "jan dallo" edit (owner 2026-11-07: "editing bilkul bhi nhi dekh rahi ... 3d editing, special transitions")
+`build_v2.py CONFIG --format ... --out PROJECT` after build.py (it reuses assets/clips + timing.json, rewrites
+index.html). CSS-3D stage: moving copper grid floor, particles, each recording on a tilted floating screen with a
+rotating enter/exit preset (depth fly, flip, swing, rise) + glare pass, copper light sweep + whoosh on every cut,
+headline words rising in 3D, and per-scene `fx` kinds (hook cube, flow diagram, push, tiles, toasts, shutter, orbit
+counter, glitch + Confirm, stack, steps, connected shockwave, end card with typed URL). Config `words` = Whisper word
+times on the video timeline (Hindi words aliased to English keys for lookups).
+Lessons (hyperframes check here): a relative `rotationY:"+=6"` drift while the entry tween still wrote rotationY was a
+`gsap_relative_value_second_writer` ERROR: drift with absolute y/z only. Two fromTo on one element -> second as tl.to.
+9:16: one-line hook text needs ~84 px (112 px wrapped and overlapped the next line); keep pop-out tiles over the screen,
+not over the headline; 4 chips in one row at 250 px spacing.
