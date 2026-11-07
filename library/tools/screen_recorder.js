@@ -6,6 +6,7 @@
 //
 //   const { Recorder } = require('/home/user/new-startup/library/tools/screen_recorder.js');
 //   const rec = await Recorder.launch({ out: '/path/run1', width: 1920, height: 1080, zoom: 1.4, block: [/doubleclick/] });
+//   (storageState: a logged-in Playwright state file; initScripts: JS strings run in every page, e.g. a privacy mask)
 //   (zoom 1.4 = CSS zoom on <html>: the page lays out like a ~1370 px wide window but renders natively at 1920x1080,
 //    so UI text is big AND sharp. deviceScaleFactor does not help: the CDP screencast sends DIP-sized frames.)
 //   await rec.goto('https://example.com');
@@ -62,12 +63,13 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 class Recorder {
-  static async launch({ out, width = 1920, height = 1080, zoom = 1, block = [], quality = 92 }) {
+  static async launch({ out, width = 1920, height = 1080, zoom = 1, block = [], quality = 92, storageState, initScripts = [] }) {
     const r = new Recorder();
     r.out = out; r.w = width; r.h = height; r.quality = quality;
     fs.mkdirSync(path.join(out, 'frames'), { recursive: true });
     r.browser = await chromium.launch();
-    r.ctx = await r.browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1 });
+    r.ctx = await r.browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, ...(storageState ? { storageState } : {}) });
+    for (const js of initScripts) await r.ctx.addInitScript(js);   // e.g. a mask for IPs / emails / keys
     if (block.length) await r.ctx.route('**/*', route => (block.some(b => b.test(route.request().url())) ? route.abort() : route.continue()));
     if (zoom !== 1) await r.ctx.addInitScript(`document.addEventListener('DOMContentLoaded', () => { document.documentElement.style.zoom = '${zoom}'; });`);
     await r.ctx.addInitScript(CURSOR_JS);
