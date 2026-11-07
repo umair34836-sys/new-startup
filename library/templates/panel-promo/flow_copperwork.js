@@ -11,7 +11,7 @@ const OPT = { width: WIDE ? 1920 : 1080, height: WIDE ? 1080 : 1920, zoom: 1.4, 
 const MASK = `(() => {
   const RE = [[/\\b\\d{1,3}(\\.\\d{1,3}){3}(:\\d+)?\\b/g, '•••.•••.•••.•••'], [/[\\w.+-]+@[\\w-]+\\.[\\w.]+/g, 'you@email.com'],
               [/cwk_[A-Za-z0-9]+/g, 'cwk_••••••'], [/\\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\b/gi, '••••-••••'],
-              [/(of player )[A-Za-z0-9_]{3,16}/g, '$1Player'], [/\\b[A-Za-z0-9_]{3,16}(?= \\(\\/)/g, 'Player']];
+              [/(of player |client |player )[A-Za-z0-9_]{3,16}/g, '$1Player'], [/\\b[A-Za-z0-9_]{3,16}(?= \\(\\/| joined the game| left the game|\\[\\/| logged in| lost connection)/g, 'Player']];
   const fix = n => { if (n.nodeType === 3) { let t = n.nodeValue, o = t; for (const [r, s] of RE) t = t.replace(r, s); if (t !== o) n.nodeValue = t; }
                      else if (n.childNodes) n.childNodes.forEach(fix);
                      if (n.tagName === 'INPUT' && n.value) for (const [r, s] of RE) n.value = n.value.replace(r, s); };
