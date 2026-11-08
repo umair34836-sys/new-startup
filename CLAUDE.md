@@ -1,7 +1,7 @@
 # Memory for this repo
 
 This repo is Claude's long-term memory and reusable media library for the owner's video work.
-Read this first in every session.
+Read this first in every session. For a full list of skills, tools, connectors, models and templates, see AI-GUIDE.md (2026-11-08).
 
 ## Rules from the owner
 
