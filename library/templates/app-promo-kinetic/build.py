@@ -64,6 +64,8 @@ HT.append(f'''<div id="bg" style="position:absolute;inset:0;background:linear-gr
   box-shadow:0 30px 80px rgba(49,31,120,0.35);overflow:hidden;">
   <div id="wash" style="position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg, rgba(255,255,255,0), rgba(196,181,253,0.55) 70%, rgba(167,139,250,0.65));"></div>
   <div id="stage" style="position:absolute;inset:0;perspective:1600px;"></div>
+  <div id="brand" style="position:absolute;right:{40 if WIDE else 36}px;top:{34 if WIDE else 40}px;display:flex;align-items:center;gap:14px;font-weight:800;font-size:{30 if WIDE else 32}px;color:{L['text']};">
+    <img src="assets/img/logo.svg" alt="AI Video Automator logo" style="width:{52 if WIDE else 56}px;height:{52 if WIDE else 56}px;">AI Video Automator</div>
 </div>''')
 T.append(f'tl.fromTo("#b1", {{x:0, y:0}}, {{x:{W * 0.25:.0f}, y:-{H * 0.25:.0f}, duration:{TOTAL}, ease:"sine.inOut"}}, 0);')
 T.append(f'tl.fromTo("#b2", {{x:0, y:0}}, {{x:-{W * 0.2:.0f}, y:{H * 0.2:.0f}, duration:{TOTAL}, ease:"sine.inOut"}}, 0);')
@@ -79,7 +81,7 @@ for s in SC:
 for j, c in enumerate(CH):
     if c in first:
         t = first[c]
-        T.append(f'tl.to("#pill", {{left:{SX + j * (tabw + 20):.0f}, duration:0.45, ease:"power3.inOut"}}, {r3(max(0, t - 0.2))});')
+        T.append(f'tl.to("#pill", {{x:{j * (tabw + 20):.0f}, duration:0.45, ease:"power3.inOut"}}, {r3(max(0, t - 0.2))});')   # transform, not left (check: no layout motion)
         T.append(f'tl.to(".tab", {{color:"#3b3355", duration:0.2}}, {r3(max(0, t - 0.2))});')
         T.append(f'tl.to("#tab{j}", {{color:"#ffffff", duration:0.2}}, {r3(max(0, t - 0.05))});')
         if t > 0:
@@ -88,7 +90,7 @@ PRE.append('gsap.set(".tab", {color:"#3b3355"}); gsap.set("#tab0", {color:"#ffff
 
 # ---------------------------------------------------------------- scene pieces (positions inside the stage card)
 if WIDE:
-    TXT_X, TXT_Y, TXT_W, FS = 90, 170, 980, 92
+    TXT_X, TXT_Y, TXT_W, FS = 90, 150, 1000, 82
     PH_W = 330
 else:
     TXT_X, TXT_Y, TXT_W, FS = 60, 120, SW - 120, 92
@@ -127,7 +129,7 @@ def phone(pid, img, x, y, rot, t_in, s1, scale=1.0, z=0):
                  f'width:{w - 28 * scale:.0f}px;height:{h - 28 * scale:.0f}px;border-radius:{30 * scale:.0f}px;object-fit:cover;object-position:top;"></div>')
     tw(f"#{pid}", f"{{y:{H * 0.7:.0f}, rotationX:45, rotationY:{rot * 2}, z:-400, opacity:0}}",
        f"{{y:0, rotationX:8, rotationY:{rot}, z:{z}, opacity:1, duration:0.75, ease:'power3.out'}}", t_in)
-    T.append(f'tl.to("#{pid}", {{rotationY:{-rot * 0.6:.1f}, y:-24, duration:{max(0.6, s1 - t_in - 1.1):.2f}, ease:"sine.inOut"}}, {r3(t_in + 0.75)});')
+    T.append(f'tl.to("#{pid}", {{rotationY:{-rot * 0.6:.1f}, y:-24, duration:{max(0.6, s1 - t_in - 1.2):.2f}, ease:"sine.inOut"}}, {r3(t_in + 0.75)});')
     T.append(f'tl.to("#{pid}", {{y:-{H * 0.8:.0f}, rotationX:-30, opacity:0, duration:0.4, ease:"power2.in"}}, {r3(s1 - 0.4)});')
     sfx("whoosh-up-0.6s", t_in + 0.25, 0.3)
     win(f"#{pid}", t_in, s1)
@@ -144,7 +146,7 @@ def chip(cid, text, x, y, t, s1, icon=""):
 def outline(oid, word, s0, s1, y=None):
     fs = 300 if WIDE else 220
     STAGE.append(f'<div class="outl" id="{oid}" style="top:{(y if y is not None else SH * 0.32):.0f}px;font-size:{fs}px;">{E(word)}</div>')
-    tw(f"#{oid}", "{x:300, opacity:0}", f"{{x:-120, opacity:1, duration:{max(1, s1 - s0):.2f}, ease:'none'}}", s0)
+    tw(f"#{oid}", "{x:300, opacity:0.7}", f"{{x:-120, opacity:1, duration:{max(1, s1 - s0):.2f}, ease:'none'}}", s0)
     win(f"#{oid}", s0, s1)
 
 
@@ -180,13 +182,13 @@ for i, s in enumerate(SC):
         sfx("clock-tick-tock", s0 + 0.6, 0.25)
         win(f"#{k}pc", s0, s1)
         win(f"#{k}clk", s0, s1)
-        lines_html(k, s["lines"], s0, s1, y=(TXT_Y if WIDE else 140))
+        lines_html(k, s["lines"], s0, s1, y=(TXT_Y if WIDE else 140), w=(880 if WIDE else None))
         continue
     if kind == "reveal":     # "ab nahi!" -> logo + URL burst
         cx, cy = SW / 2, SH * (0.36 if WIDE else 0.34)
         STAGE.append(f'<div class="logo" id="{k}lg" style="left:{cx - 110:.0f}px;top:{cy - 110:.0f}px;"><img src="assets/img/logo.svg" alt="AI Video Automator logo" style="width:220px;height:220px;"></div>'
                      f'<div class="ring" id="{k}rg" style="left:{cx - 150:.0f}px;top:{cy - 150:.0f}px;"></div>'
-                     f'<div class="url" id="{k}url" style="top:{cy + 300 if WIDE else cy + 520:.0f}px;">{E(s["url"])}</div>')
+                     f'<div class="url" id="{k}url" style="top:{SH * 0.56 + 210 if WIDE else SH * 0.53 + 400:.0f}px;">{E(s["url"])}</div>')
         tw(f"#{k}lg", "{scale:0, rotation:-180, opacity:0}", "{scale:1, rotation:0, opacity:1, duration:0.6, ease:'back.out(1.8)'}", s["t_logo"])
         tw(f"#{k}rg", "{scale:0.4, opacity:0.9}", "{scale:5, opacity:0, duration:1.0, ease:'power2.out'}", s["t_logo"] + 0.1)
         tw(f"#{k}url", "{y:40, opacity:0, scale:0.8}", "{y:0, opacity:1, scale:1, duration:0.45, ease:'back.out(2)'}", s["t_url"])
@@ -229,7 +231,7 @@ for i, s in enumerate(SC):
         phone(f"{k}ph{j}", img, x, y, (-14 if j % 2 == 0 else 14), t, s1, scale=(1.0 if n == 1 else 0.92), z=j * 40)
     for j, (text, t) in enumerate(s.get("chips", [])):
         if WIDE:
-            x, y = 90 + (j % 2) * 380, SH * 0.62 + (j // 2) * 120
+            x, y = 90 + (j % 2) * 380, SH * 0.66 + (j // 2) * 110
         else:
             x, y = 60 + (j % 2) * 480, SH * 0.36 + (j // 2) * 120
         chip(f"{k}c{j}", text, x, y, t, s1, icon='<span class="dot"></span>')
