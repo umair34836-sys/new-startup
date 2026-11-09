@@ -135,7 +135,12 @@ def phone(pid, img, x, y, rot, t_in, s1, scale=1.0, z=0):
     win(f"#{pid}", t_in, s1)
 
 
+ICONS = C.get("icons", {})   # chip text -> brand icon (Simple Icons, CC0), shown before the name
+
+
 def chip(cid, text, x, y, t, s1, icon=""):
+    if text in ICONS:
+        icon = f'<img src="{ICONS[text]}" alt="{E(text)} icon" style="width:{40 if WIDE else 44}px;height:{40 if WIDE else 44}px;">'
     STAGE.append(f'<div class="chip" id="{cid}" style="left:{x:.0f}px;top:{y:.0f}px;">{icon}{E(text)}</div>')
     tw(f"#{cid}", "{scale:0.4, opacity:0, y:30}", "{scale:1, opacity:1, y:0, duration:0.4, ease:'back.out(2)'}", t)
     T.append(f'tl.to("#{cid}", {{y:"-=14", duration:1.6, yoyo:true, repeat:{max(0, int((s1 - t) / 1.6) // 2 * 2)}, ease:"sine.inOut"}}, {r3(t + 0.4)});')
@@ -201,18 +206,28 @@ for i, s in enumerate(SC):
         lines_html(k, s["lines"], s0, s1, y=(SH * 0.56 if WIDE else SH * 0.53), align="center", x=60, w=SW - 120)
         continue
     if kind == "end":
+        BASE = SH * (0.04 if WIDE else 0.12)
         cx = SW / 2
-        STAGE.append(f'<div class="logo" id="{k}lg" style="left:{cx - 100:.0f}px;top:{SH * 0.12:.0f}px;"><img src="assets/img/logo.svg" alt="AI Video Automator logo" style="width:200px;height:200px;"></div>'
-                     f'<div class="endt" id="{k}t" style="top:{SH * 0.12 + 230:.0f}px;">AI Video Automator</div>'
-                     f'<div class="price" id="{k}p" style="top:{SH * 0.12 + 350:.0f}px;">{E(s["price"])}</div>'
-                     f'<div class="cta" id="{k}c" style="top:{SH * 0.12 + (500 if WIDE else 520):.0f}px;"><span>{E(s["url"])}</span></div>'
-                     f'<div class="small" id="{k}s" style="top:{SH * 0.12 + (640 if WIDE else 660):.0f}px;">{E(s["small"])}</div>')
+        STAGE.append(f'<div class="logo" id="{k}lg" style="left:{cx - 100:.0f}px;top:{BASE:.0f}px;"><img src="assets/img/logo.svg" alt="AI Video Automator logo" style="width:200px;height:200px;"></div>'
+                     f'<div class="endt" id="{k}t" style="top:{BASE + (215 if WIDE else 230):.0f}px;">AI Video Automator</div>'
+                     f'<div class="price" id="{k}p" style="top:{BASE + (318 if WIDE else 350):.0f}px;">{E(s["price"])}</div>'
+                     f'<div class="cta" id="{k}c" style="top:{BASE + (405 if WIDE else 520):.0f}px;"><span>{E(s["url"])}</span></div>'
+                     f'<div class="cta2" id="{k}c2" style="top:{BASE + (560 if WIDE else 660):.0f}px;"><span>{E(s.get("url2", ""))}</span></div>'
+                     f'<div class="small" id="{k}s" style="top:{BASE + (650 if WIDE else 780):.0f}px;">{E(s["small"])}</div>'
+                     + (f'<div class="works" id="{k}wk" style="top:{BASE + (712 if WIDE else 880):.0f}px;">'
+                        + "".join(f'<span><img src="{ICONS[n]}" alt="{E(n)} icon">{E(n)}</span>' for n in s.get("works", []) if n in ICONS) + '</div>'
+                        if s.get("works") else ""))
         tw(f"#{k}lg", "{scale:0, rotation:-120}", "{scale:1, rotation:0, duration:0.6, ease:'back.out(1.8)'}", s0 + 0.05)
         tw(f"#{k}t", "{y:40, opacity:0}", "{y:0, opacity:1, duration:0.45}", s0 + 0.3)
         tw(f"#{k}p", "{scale:0.5, opacity:0}", "{scale:1, opacity:1, duration:0.4, ease:'back.out(2.2)'}", s["t_price"])
         tw(f"#{k}c", "{scale:0.5, opacity:0}", "{scale:1, opacity:1, duration:0.4, ease:'back.out(2.2)'}", s["t_url"])
         T.append(f'tl.to("#{k}c span", {{scale:1.06, duration:0.45, yoyo:true, repeat:5, ease:"sine.inOut"}}, {r3(s["t_url"] + 0.45)});')
         tw(f"#{k}s", "{opacity:0}", "{opacity:1, duration:0.5}", s["t_url"] + 0.6)
+        tw(f"#{k}c2", "{y:30, opacity:0}", "{y:0, opacity:1, duration:0.4, ease:'back.out(2)'}", s.get("t_url2", s["t_url"] + 0.5))
+        if s.get("works"):
+            tw(f"#{k}wk span", "{scale:0.4, opacity:0}", "{scale:1, opacity:1, duration:0.35, stagger:0.12, ease:'back.out(2)'}", s0 + 0.9)
+            win(f"#{k}wk", s0, TOTAL + 1)
+        win(f"#{k}c2", s0, TOTAL + 1)
         sfx("impact-punch", s["t_price"], 0.4)
         sfx("confirm-1", s["t_url"], 0.35)
         for q in ("lg", "t", "p", "c", "s"):
@@ -233,7 +248,7 @@ for i, s in enumerate(SC):
         if WIDE:
             x, y = 90 + (j % 2) * 380, SH * 0.66 + (j // 2) * 110
         else:
-            x, y = 60 + (j % 2) * 480, SH * 0.36 + (j // 2) * 120
+            x, y = 60 + (j % 2) * 480, SH * s.get("chips_y", {}).get(a.format, 0.36) + (j // 2) * 120
         chip(f"{k}c{j}", text, x, y, t, s1, icon='<span class="dot"></span>')
 
 HT.insert(2, "")  # keep order
@@ -282,6 +297,13 @@ html, body {{ width:{W}px; height:{H}px; overflow:hidden; background:{L['bg1']};
 .cta {{ position:absolute; left:0; right:0; text-align:center; }}
 .cta span {{ display:inline-block; font-family:JB; font-weight:800; font-size:{60 if WIDE else 52}px; color:#fff; padding:22px 48px; border-radius:22px;
              background:linear-gradient(90deg, {P1}, {P2}); box-shadow:0 20px 50px rgba(79,70,229,0.4); }}
+.cta2 {{ position:absolute; left:0; right:0; text-align:center; }}
+.cta2 span {{ display:inline-block; font-family:JB; font-weight:800; font-size:{44 if WIDE else 42}px; color:{P1}; padding:14px 36px; border-radius:18px;
+              border:3px solid {P1}; background:#fff; }}
+.works {{ position:absolute; left:0; right:0; display:flex; justify-content:center; gap:{40 if WIDE else 26}px; }}
+.works span {{ display:flex; align-items:center; gap:12px; font-weight:700; font-size:{30 if WIDE else 30}px; color:{TX}; padding:10px 22px; border-radius:16px; background:#fff;
+               box-shadow:0 10px 26px rgba(49,31,120,0.15); }}
+.works img {{ width:36px; height:36px; }}
 .small {{ position:absolute; left:0; right:0; text-align:center; font-size:{34 if WIDE else 34}px; color:{MU}; }}
 """
 

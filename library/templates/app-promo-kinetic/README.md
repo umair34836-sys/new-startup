@@ -19,3 +19,9 @@ Masla hal karein, daily report e-mail). E-mail fields blurred; a payment-methods
 ElevenLabs Viraj, eleven_v4, 12 lines: 64.96 s / 66.24 s per take, 915 credits each; Whisper medium heard every line
 in take A, the closing URL only clearly in take B, so take A + take B's URL were spliced at a silence.
 Music: CC0 Pantheon (HoliznaCC0), music_fit --end resolve, mix_vo_music -16 LUFS.
+
+v2 (owner 2026-11-09: "video.talkember.site last me dekhao, YouTube ChatGPT Google Flow ka icon bhi use kro"):
+config `icons` maps a chip name to a brand icon file; icons come from Simple Icons (CC0, cdn.jsdelivr.net/npm/
+simple-icons@13.21.0/icons/<slug>.svg, checked 2026-11-09: youtube, openai, google, gmail exist; windows is NOT in
+the set) recoloured with a `fill` attribute. The end card has `url2` (second site), `works` (icon row) and sits higher
+in 16:9 (BASE = 4% of the stage) so all rows fit above the chapter tabs.
