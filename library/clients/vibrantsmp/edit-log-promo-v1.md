@@ -47,3 +47,4 @@
 - QA: both H.264 High yuv420p 1920x1080 30 fps; trailer 34.0 s -15.1 LUFS; horror 28.0 s -15.5 LUFS, -0.6 dB peak.
 - Delivery size: horror with grain 16 at crf 17 came out 486 MB (464 MiB > the 400 MiB chat limit). Re-encoded with
   crf 19 + maxrate 16M / bufsize 32M -> 58 MB (16.7 Mbps), same grade/loudness. Strong grain needs a bitrate cap.
+- Portal: trailer -> version 11, horror -> version 12 on order #3 (2026-11-09) + client message.
