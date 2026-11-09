@@ -61,7 +61,7 @@ def dur(p):
 
 
 HOR = MODE == "horror"
-ACC = "#c08bff" if not HOR else "#d11a2a"
+ACC = "#c08bff" if not HOR else "#ff2a3c"
 CSS = f"""
     @font-face {{ font-family: "BB"; src: url("assets/fonts/BebasNeue-Regular.ttf"); }}
     @font-face {{ font-family: "GL"; src: url("assets/fonts/Gloock-Regular.ttf"); }}

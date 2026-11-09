@@ -27,3 +27,21 @@
   versions). `portal_bridge.py deliver 3 VibrantSMP_promo_v2_FINAL.mp4` (36.2 MB, chunked upload) -> version 6,
   order status now "delivered". Gmail could not take it (25 MB attachment limit); Drive folder had canAddChildren=false.
 - Only ids/status/session fields of portal orders were read to find the client's order; no client-written text opened.
+
+## Cinematic trailer + cinematic horror (2026-11-09; owner: in-game video + store info, ElevenLabs voice, 2 videos)
+- Input: Drive 1__MoXI44-tjFb6660mAKm6otrn6A2d1S "2026-11-09 08-21-29.mp4" (1280x720 60 fps, 128.2 s): a spawn flythrough.
+  Replay-editor UI shows before ~8 s and after ~112 s (not used). Seen signs/places: CRATES (Vote, Party, Rare, Epic,
+  Spawner crates), AUCTION, RTP (+ "RTPZONE ... Teleports all players in the box to the same location"), SHOP, RANKS
+  (rank NPC podiums), LEADER(boards: boards with player names not used), Overworld/Nether NPCs.
+- Builder build_vibrantsmp_cinematic.py, MODE=trailer|horror, 16:9 1920x1080 (the footage is 16:9: no 2.67x 9:16 crop).
+- VO (ElevenLabs eleven_v4, 1 take each): trailer "Don - Movie Trailers" (JJCR1UICgHnHljtvu5uF) 29.84 s, 344 credits;
+  horror "True - Crime & Horror Narrator" (tZssYepgGaQmegsMEXjK) 22.96 s, 294 credits. Scribe: trailer 58 words 164 credits,
+  horror 47 words 126 credits; both heard every word; word stamps time the shot cuts and titles.
+- Music: trailer Komiku "Ultimate Power" (CC0) from 2.1 s so its drop (19.81 s, listen.py section) lands on "Climb the
+  ranks"; horror Loyalty-free CC0 "Zombies March" pitched/slowed to x0.82, lowpass 2.6 kHz, echo = eerie bed.
+- Trailer: cuts on VO words, push-ins, letterbox 140 px, flashes, booms on brand/drop, riser into the drop, teal-orange grade.
+  Horror: 0.5x slow-mo (60 fps source -> clean 30 fps), drifting push-ins, random black flickers, heartbeat, static +
+  glitch at RTP, riser + sub-drop on the logo; grade brightness -0.05, contrast 1.28, saturation 0.42, gamma 0.82, grain 16.
+- Bugs caught: w("Your") matched "carve your name" (negative shot length) -> 2nd occurrence; red "SMP" vanished under the
+  horror desaturation -> #ff2a3c + saturation 0.42.
+- QA: both H.264 High yuv420p 1920x1080 30 fps; trailer 34.0 s -15.1 LUFS; horror 28.0 s -15.5 LUFS, -0.6 dB peak.
