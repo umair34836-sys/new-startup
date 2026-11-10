@@ -71,6 +71,7 @@ streak tiles `rain_blue_0/1.png` and `rain_gold_0/1.png` (512 px, slant -0.18).
 - `templates/loop-short/`: 9:16 Short that loops seamlessly (last line runs into the first; first/last frame differ by under 1 grey level), word-timed captions, music cut to whole bars with no fade (Heaven Developer, 2026-10-30).
 - `templates/minecraft-lore-short/`: 9:16 ~20 s cinematic Minecraft lore explainer (English VO, dark CC0 music, CSS-3D blocky figure, own shadow skin; portal order 2 "Who is Herobrine", 2026-10-30).
 - `templates/smp-server-promo/short-15s/`: 15 s 9:16 cut-down of a 16:9 SMP promo from gameplay footage (plate9.py crop + cas, beat cuts, title from frame 0; FireCraft, 2026-10-30).
+- `templates/ad-pack/`: many short ads for one product, each in a different edit style (build_ad.py, 20 styles s01-s20, timing from VO silences; 20 ads for app.talkember.site, 2026-11-10).
 
 - `brand-identity-reveal/`: 16:9 ~30 s music-only brand identity / guidelines film driven by one reveal.json (logo construction
   from the real traced mark via mark_to_svg.py, lockup, browser/phone mockups, stacked page cards, typography, colour
