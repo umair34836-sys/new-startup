@@ -50,3 +50,19 @@ Notes for the edit:
 - First reply to the event job (22:18) starts with a long mob list before the arena line; the clean one is the
   "Sir correction" whisper right after.
 - A reconnect happens at 24:00 ("Connecting to the server...").
+
+## How the system works (owner's own description, given in chat 2026-11-16; not re-tested here)
+
+- Three parts: Minecraft plugin (the agent, inside the server), Copper Panel (PHP + SQLite on an Ubuntu VPS,
+  https://plugin.firecraft.fun), and an LLM provider the panel calls.
+- Plugin is outbound-only HTTPS: no port has to be opened on the game server. It polls the panel for jobs
+  (`/agent/v1/poll`) and posts events (`POST /agent/v1/events`: chat lines, metrics).
+- Watchers: the AI only gets chat lines that start with a set prefix (now `server `) AND come from an allowed
+  player (now the owner). All other chat never leaves the server.
+- Actions: in-game reply (`tellraw`), commands such as `tp` and status, and a Discord send tool (the panel calls
+  the Discord bot API directly).
+- Rules (prefix, allowed players) are changed in the panel and picked up by the plugin on the next poll, no restart.
+- Security: one server key per server (`cwk_...`), sensitive commands such as `/stop` and `/op` are blocked for
+  the AI, all traffic is HTTPS.
+- New direction (owner, 2026-11-16): sell this to hosting companies so they can offer "AI-integrated servers";
+  promo video for hosting owners is being planned, nothing built yet.
