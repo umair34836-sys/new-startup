@@ -41,3 +41,16 @@ Lessons (hyperframes check here): a relative `rotationY:"+=6"` drift while the e
 `gsap_relative_value_second_writer` ERROR: drift with absolute y/z only. Two fromTo on one element -> second as tl.to.
 9:16: one-line hook text needs ~84 px (112 px wrapped and overlapped the next line); keep pop-out tiles over the screen,
 not over the headline; 4 chips in one row at 250 px spacing.
+
+## build_hosting_pitch.py (2026-11-16): pitch to hosting companies, 16:9
+
+`python3 build_hosting_pitch.py PROJECT [--brand "Your Hosting"] [--domain panel.yourhosting.com]`
+Hook from real in-game clips -> the host's problem (3 identical plan cards) -> mock "<brand> AI-Integrated Servers"
+ad over footage -> the panel inside a drawn browser bar on the host's domain (no real subdomain needed) ->
+3 assurances -> closing line. English captions under a Hinglish VO. `--brand` makes a per-host version.
+- Clips: cut from the owner's recording at 1244x700 crop (drops the HUD line) -> 1536x864 + cas 0.4, shown in a
+  framed window, not full-bleed (source is 720p). Source times are in library/research/copper-work-site.md.
+- Scene times `T` = the VO's own pauses + 0.3 s. Measured here: VO 66.9 s (ElevenLabs eleven_v4, Viraj, 1 take,
+  831 credits); Whisper small merged two stretches (24-40 s), medium on that cut heard every line.
+- Render 69.4 s 1080p: 45.8 MB, -14.1 LUFS, 0 black spans, yuv420p. Under-20 MB copy at 2100k came out 9.6 MB.
+- Left out on purpose: price, contact, AI provider name, other players' names and chat.
