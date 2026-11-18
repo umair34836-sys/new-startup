@@ -66,3 +66,13 @@ of the final audio against vo.wav only proves the mix was muxed as built, not th
 Four directions per video were made: bold + clean with `thumb_make.py` (skill thumbnail-design), a Canva-generated "cyber"
 layout with the real console screenshot filled in through the Canva MCP, and a photo-card version from the gallery Pro
 editor. Tool steps and gotchas: `library/research/thumbnails-canva-gallery-2026-11-07.md`. Run `thumb_check.py` on each.
+
+## Video 3 (2026-11-18): "Panel AI vs Manual" from screenshots only
+Inputs: the owner's Drive folder (README + 37 panel screenshots V3-01..V3-37, 1280x607; two GIF-derived clips not used).
+Plan `V3` in shots.py: 24 shots, 26 VO lines (`v3_lines.txt`), all `shot` kind (screenshot + Ken Burns + word-synced arrows).
+Measured here 2026-11-18: VoxCPM2 26 lines in ~38 min incl. warm-up; Whisper word timestamps ~4 min; render 142 s 1080p in
+4m 12s (-q high -w 3); mix -16.1 LUFS. IP blur: the STUN lines in the console ("maps this host to <public IP>") show the
+server's IP; blurred x 905-1118 on V3-30 and x 925-1048 on V3-37 and viewed again (the first box at x 985 left "161.118.18" visible).
+VO lessons: "इंस्टॉल" was garbled in 4 lines across seeds (7/21/33) -> reworded to "लगाया / लगाओ / लग गया";
+"सब्सक्राइब" garbled again -> "मिलते हैं अगली वीडियो में". A long end caption covered the "Edited by MrCopper804" credit: keep
+the outro caption short. QA rule held: Whisper on the first 20 s of the FINAL = line 1.

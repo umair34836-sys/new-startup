@@ -600,6 +600,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   thumb_make.py, "cyber" via Canva MCP create-design + update_fill of the real console screenshot, "card" via the gallery
   Pro editor design_image). How each tool works + gotchas: library/research/thumbnails-canva-gallery-2026-11-07.md.
   Public image URL for the gallery = a Canva export of a scratch design page. All 8 passed thumb_check; not committed.
+  VIDEO 3 (2026-11-18, owner's Drive folder 1JV7pC3pR20Vi3MrbtVqZl56hmZB27fCq): "Panel AI vs Manual" 2:22 FINAL from 37 panel
+  screenshots (panel Assistant failed to install Geyser twice; manual Plugins install, EULA, 2 port allocations 20087/20026,
+  config edits). Floodgate NOT installed yet and no join/voice test shots: video points to Videos 1/2. VO word "इंस्टॉल"
+  garbled in every seed: reword. Details: template README "Video 3".
   OFF-BY-ONE BUG (owner caught it 2026-11-07: "teen cheezein 8 s par, cards 14 s par"): vs_tts --parts writes 000.wav for
   line 1, but the builder/mixer loaded {i:03d}.wav for line i, so v1-v3 played the NEXT line's take in every slot (line 1
   silent, voice one line ahead of the picture). My "sync" measurements (VO track vs final audio = 0.000 s, scene cut vs line
