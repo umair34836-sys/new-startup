@@ -604,6 +604,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   screenshots (panel Assistant failed to install Geyser twice; manual Plugins install, EULA, 2 port allocations 20087/20026,
   config edits). Floodgate NOT installed yet and no join/voice test shots: video points to Videos 1/2. VO word "इंस्टॉल"
   garbled in every seed: reword. Details: template README "Video 3".
+  CLIENT FEEDBACK (SkilloraClouds "NOX", Discord screenshots the owner sent 2026-11-19): (1) one SEPARATE video per plugin, never
+  several plugins in one video (Video 3 "AI vs Manual" was rejected for this); (2) never mention the previous/next video;
+  (3) extra ports: tell viewers to open a ticket in the SkilloraClouds Discord for an extra allocation (not "Create Allocation");
+  (4) the panel now has a 1-click "GeyserMC auto setuper": the Geyser video must show that (needs its screenshots/recording).
+  Voice Chat FINAL-v5 delivered with (2)+(3) applied.
   OFF-BY-ONE BUG (owner caught it 2026-11-07: "teen cheezein 8 s par, cards 14 s par"): vs_tts --parts writes 000.wav for
   line 1, but the builder/mixer loaded {i:03d}.wav for line i, so v1-v3 played the NEXT line's take in every slot (line 1
   silent, voice one line ahead of the picture). My "sync" measurements (VO track vs final audio = 0.000 s, scene cut vs line
