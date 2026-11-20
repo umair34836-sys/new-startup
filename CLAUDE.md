@@ -609,6 +609,8 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   (3) extra ports: tell viewers to open a ticket in the SkilloraClouds Discord for an extra allocation (not "Create Allocation");
   (4) the panel now has a 1-click "GeyserMC auto setuper": the Geyser video must show that (needs its screenshots/recording).
   Voice Chat FINAL-v5 delivered with (2)+(3) applied.
+  Checked 2026-11-20: skilloraclouds.com/knowledge (agent-reach read) links "Open a Ticket" to https://discord.gg/skilloraclouds
+  and has NO article on Geyser or its auto setuper; owner's Drive had no auto-setuper images either -> Geyser video waits for them.
   OFF-BY-ONE BUG (owner caught it 2026-11-07: "teen cheezein 8 s par, cards 14 s par"): vs_tts --parts writes 000.wav for
   line 1, but the builder/mixer loaded {i:03d}.wav for line i, so v1-v3 played the NEXT line's take in every slot (line 1
   silent, voice one line ahead of the picture). My "sync" measurements (VO track vs final audio = 0.000 s, scene cut vs line
