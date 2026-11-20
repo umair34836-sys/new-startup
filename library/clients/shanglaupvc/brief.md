@@ -22,3 +22,12 @@ promotional reel, voice ElevenLabs priority". Link given: https://www.facebook.c
   info@shanglaupvc.com.pk, post claims: thermal + sound insulation, security, durability, "Lifetime Maintenance-Free
   for New Orders!" (22/08/2024 post; an offer, may be old: not used).
 - Two phone numbers appear: 0311-0444465 (2024 posts, thumbnails) and 0317-5010191 (2023 posts). Reel uses 0311-0444465.
+
+## Client message 2026-11-20 (owner forwarded `Shangla_Upvc_Ads.7z`)
+- Contained ONE file: `Shangla Upvc Ads.mp3`, 91.7 s mono 44.1 kHz, a finished Urdu ad VO (no music under it:
+  silences < -50 dBFS, listen.py). Treated as the brief + the voice to use. Not committed (client media).
+- Phone in the VO: 0313-512-0718 (Whisper medium on the cut 76.8-81.9 s, ur/hi/en/prompted, all agree; small once
+  heard "0311": do not trust small for digits). New vs the 0311-0444465 / 0317-5010191 on old posts.
+- Theme: winter (thandi hawa, shor, gard-o-ghubar), design, finishing, meyar; tagline "Khoobsurti bhi, meyar bhi,
+  aitmaad bhi", close "aap ka ghar khaas hai, to darwaze aur khidkiyan bhi khaas".
+- Built with templates/phone-clip-reel/build_shangla_v3.py: 93.6 s 9:16, -14.1 LUFS, 0 black, 84 MB.
