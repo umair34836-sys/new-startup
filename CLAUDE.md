@@ -611,6 +611,11 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   Voice Chat FINAL-v5 delivered with (2)+(3) applied.
   Checked 2026-11-20: skilloraclouds.com/knowledge (agent-reach read) links "Open a Ticket" to https://discord.gg/skilloraclouds
   and has NO article on Geyser or its auto setuper; owner's Drive had no auto-setuper images either -> Geyser video waits for them.
+  GEYSER 1-CLICK VIDEO (owner 2026-11-20: "simple video, kuch images, serf batana hai yaha yaha click kerna hai"): 48 s FINAL
+  (plan V4, v4_lines.txt). Steps READ from the client's own post thumbnails in the owner's screenshot (upscaled 3x): Properties
+  card "Bedrock and Java together", "Click On Update", "Make sure you have Extra Allocations on Network", "Go To Network And Copy
+  Your Server After Restart". Panel visuals = our V3 shots (Assistant panel blurred out of w15). VO "फिर" at a line start came
+  out "तो तो": start lines with "अब" / "रीस्टार्ट के बाद" instead.
   OFF-BY-ONE BUG (owner caught it 2026-11-07: "teen cheezein 8 s par, cards 14 s par"): vs_tts --parts writes 000.wav for
   line 1, but the builder/mixer loaded {i:03d}.wav for line i, so v1-v3 played the NEXT line's take in every slot (line 1
   silent, voice one line ahead of the picture). My "sync" measurements (VO track vs final audio = 0.000 s, scene cut vs line

@@ -193,3 +193,34 @@ V3 = dict(
              reveal=["25:जावा", "25:बेडरॉक", "25:हर"]),
         dict(kind="outro", lines=[26], h1="Done!", h2="Geyser + Voice Chat, apne ports par", next="Watch: Bedrock join + Voice Chat mod"),
     ])
+
+# Video 4 (2026-11-20): Geyser 1-click setup, knowledge only (owner: "serf itna batana hai k yaha yaha per click kerna hai").
+# Steps read from the client's own Discord post thumbnails (owner's screenshot 2026-11-19): Properties page card
+# "Bedrock and Java together", "Make sure you have Extra Allocations on Network", "Click On Update", "Go To Network And Copy
+# Your Server After Restart". Ticket for extra allocation = client's instruction. Panel images = our V3 shots (w15, w32).
+V4 = dict(
+    title="Geyser 1-click setup", sub="Java + Bedrock on the SkilloraClouds panel",
+    music="lofi-chill--holiznacc0--chills.mp3", music_start=10.0, music_cut=166,
+    caps={1: "Java + Bedrock on one server. Geyser now sets up in a few clicks.", 2: "First: an extra port. Open a ticket in Discord for an extra allocation.",
+          3: "Network tab: check the extra allocation is there", 4: "Side menu: Properties",
+          5: "Option 'Bedrock and Java together': select it, press Update", 6: "Restart the server. Geyser sets itself up.",
+          7: "Network tab: copy your server address + the Bedrock port", 8: "Bedrock: Servers, Add Server, paste address + port",
+          9: "Done! Phone and PC friends, together."},
+    shots=[
+        dict(kind="title", lines=[1], h1="GEYSER 1-CLICK SETUP", h2="Java + Bedrock, ek hi server", tags=["SkilloraClouds panel", "Bedrock", "Java"]),
+        dict(kind="card", lines=[2], step=(1, "Extra port"), bg="w32.jpg", title="Extra port",
+             items=[("1", "Discord: open a ticket", "ask for an extra allocation")], reveal=["2:टिकट"]),
+        dict(kind="shot", lines=[3], step=(1, "Extra port"), src="w32.jpg", kb=(0.35, 0.5, 1.1),
+             calls=[("3:नेटवर्क", "Network", (66, 505)), ("3:ऐलोकेशन", "Extra allocation (Bedrock)", (395, 331))]),
+        dict(kind="shot", lines=[4], step=(2, "Properties"), src="w15c.jpg", kb=(0.2, 0.8, 1.1),
+             calls=[("4:प्रॉपर्टीज़", "Properties", (70, 552))]),
+        dict(kind="card", lines=[5], step=(2, "Properties"), bg="gs_bg.jpg", title="Properties",
+             items=[("1", "Bedrock and Java together", "select this option"), ("2", "Update", "press it")], reveal=["5:बेडरॉक", "5:अपडेट"]),
+        dict(kind="card", lines=[6], step=(3, "Restart"), bg="w37.jpg", title="Restart",
+             items=[("", "Restart the server", "Geyser sets itself up")], reveal=["6:रीस्टार्ट"]),
+        dict(kind="shot", lines=[7], step=(4, "Join"), src="w32.jpg", kb=(0.6, 0.5, 1.1),
+             calls=[("7:नेटवर्क", "Network", (66, 505)), ("7:कॉपी", "Copy (Bedrock port)", (985, 337))]),
+        dict(kind="card", lines=[8], step=(4, "Join"), title="Bedrock",
+             items=[("1", "Servers, Add Server", ""), ("2", "Address + Bedrock port", "from the Network tab")], reveal=["8:सर्वर्स", "8:एड्रेस"]),
+        dict(kind="outro", lines=[9], h1="Done!", h2="Phone + PC, ek saath", next="Subscribe for more server guides"),
+    ])
