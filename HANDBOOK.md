@@ -350,6 +350,7 @@ Python tools under `perc-venv` run with `/home/user/tools/perc-venv/bin/python`.
 | editor-portfolio | the owner's own showreel |
 | website-promo | a song about a website + site walkthrough (TalkEmber) |
 | thumbnail | thumbnail/cover/poster specs |
+| auto-parts-promo | 9:16 ~30 s dealer promo from free Mixkit 4K stock + VO, no client footage (Kohinoor) |
 | blocky-walk, blocky-monsoon | 3D voxel village films with blocky characters |
 
 ## 11. Asset libraries

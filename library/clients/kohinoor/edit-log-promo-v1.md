@@ -48,3 +48,15 @@ Job: 9:16, ~30 s, English VO, direct FINAL (owner's answers, brief.md). Builder:
 3. N P R. Nippon Piston Ring, from Japan, since nineteen thirty-four.
 4. Genuine NPR piston rings, and more auto parts, all in one place.
 5. Kohinoor. Ask us for genuine NPR today.
+
+## Build + QA (measured here 2026-11-21)
+- VoxCPM2 luxury-deep: 5 lines in ~12 min incl. backend start (first line ~9 min). Whisper small (language=en) per line:
+  all words heard ("Kohinor" spelling only; "N P R" -> "NPR", "nineteen thirty-four" -> "1934"). VO 27.58 s, placed at 0.5 s.
+- music_fit --length 30 --end resolve: start 0.85 s into the track (bar grid), track has no natural ending -> stops on
+  the downbeat at 28.00 s + 2.0 s ring-out, 0 joins, phase error median 35 ms, last-1 s RMS -39.9 dBFS.
+- mix_vo_music --vo-at 0.5: music_vs_vo_gap 15.0 LU, -16 LUFS.
+- hyperframes@0.8.210 check: 0 errors/warnings, 16/16 contrast AA. Render -q high -w 3: 74 s.
+- Final: 1080x1920 H.264 High yuv420p, 30 fps, faststart, 30.0 s; metadata + SEI removed (x264/Lavf strings 0);
+  ebur128 -16.0 LUFS, LRA 2.1 LU, peak -3.4 dBFS; blackdetect d=0.05: 0 spans; watch.py: real 30.0 fps, 0 black,
+  0 frozen, cuts 4.17/9.13/15.83/19.57/23.33 (= the VO scene starts).
+- Delivered FINAL directly (owner's choice) with SendUserFile, 2026-11-21. No contact details on the end card yet.
