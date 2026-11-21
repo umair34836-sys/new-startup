@@ -13,3 +13,12 @@ check each page; look at a contact sheet and skip frames with brand badges/lette
 5. Post: re-encode `format=yuv420p -profile:v high -movflags +faststart`, then remux with
    `-map_metadata -1 -bsf:v filter_units=remove_types=6 -fflags +bitexact`; QA ebur128, blackdetect, watch.py.
 Measured 2026-11-21: render 74 s for 30 s; final -16.0 LUFS, 0 black/frozen spans.
+
+## v2 / v3 builders (2026-11-21)
+- `build_kohinoor_v2.py`: reference-style 30 s music-only edit (white motion-design act + hype drop act + pin card),
+  CC0 "Phonk Remix", beat map from beat_events.py. Needs assets/audio/{bed2.wav,events2.json}.
+- `build_kohinoor_v3.py`: copy of a reference edit's timing (cut list from watch.py on the reference) with an exploded
+  piston hero. Needs assets/audio/refB_audio.wav (the reference audio was used only because the owner insisted;
+  default to a CC0 track).
+- Lesson: per-clip `-t <seconds>` can drop a frame per clip; for beat-exact montages use tpad + `-frames:v N -fps_mode cfr`
+  and check the concat's frame count before rendering.
