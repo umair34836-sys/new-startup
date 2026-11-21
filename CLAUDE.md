@@ -666,4 +666,7 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - Never make profit or return claims.
 
 - Client Kohinoor (owner, 2026-11-21: "Kohinoor ka ek client session bana do"): home session session_01JK8Ts8LJnAoq1hzETknkCE
-  (branch client-kohinoor). No details yet; that session asks the owner first. Brief goes to library/clients/kohinoor/.
+  (branch client-kohinoor). Pakistani auto parts dealer, authorized NPR (Nippon Piston Ring) dealer (owner's word). 30 s 9:16
+  English FINAL delivered 2026-11-21 from new template library/templates/auto-parts-promo (voice luxury-deep, CC0
+  cinematic--eye-of-the-storm, 5 Mixkit stock clips, NPR facts from npr-riken.co.jp). Open: phone/WhatsApp/city/logo not
+  given yet, end card = name + "Authorized NPR dealer" only. Brief: library/clients/kohinoor/.
