@@ -664,3 +664,6 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   - Job: an English promo + a Hinglish promo covering everything. Brand look: gold hexagon "G" on black.
   - Slogan shown in videos: "GOOD's | Where trust is built." (owner chose "built" on 2026-11-02; client wrote "build").
   - Never make profit or return claims.
+
+- Client Kohinoor (owner, 2026-11-21: "Kohinoor ka ek client session bana do"): home session session_01JK8Ts8LJnAoq1hzETknkCE
+  (branch client-kohinoor). No details yet; that session asks the owner first. Brief goes to library/clients/kohinoor/.
