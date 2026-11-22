@@ -18,3 +18,12 @@ Arunendra Kumar 5,414 (talking to camera, caption chips, 30 s). All top reels sh
   Mixkit 35426, 35889, 16087, 35346 were `videoRestricted` (personal use only): not used.
 - Clips are fetched per job (not stored; Mixkit terms). Run build_hook_bar_reel.py inside the project (python3 -I).
 - Silent: the song is added in the Instagram app. Render 21.5 s, yuv420p, 0 black.
+
+## build_urdu_sher_reels.py (2026-11-22): the owner's chosen style (text is the hero)
+Owner: posts must reach the audience through TEXT only, and "poetry apne andaze se mat likhna" (do not write poetry).
+Reference reels he sent (yt-dlp, 2026-11-22): Halloween_Queen DgBBllYqaZY 14,424 likes (masked girl, dark, Urdu sher),
+Abbiii DgAxD4IOH3o 4,277 (car in night rain, Urdu sher top + red bar), BILAL Df-EmUxRlBO 826 (two friends from behind,
+Urdu sher on chips); DgAr0k3IIj2 gave HTTP 429. Common: faceless moving footage, very dark, 2-line sher in Urdu script.
+- Couplets: classical only (Ghalib, Mir), text copied exactly from rekhta.org ?lang=ur pages (URL per reel in REELS).
+- Font NotoNastaliqUrdu (library/fonts, OFL). Background darkened (eq brightness -0.08, sat 0.7) + top gradient.
+- Measured: 3 renders 12.0 s, 5-9 MB, yuv420p.

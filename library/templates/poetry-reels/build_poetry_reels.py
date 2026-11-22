@@ -6,10 +6,11 @@ A 4:5 post image is cut from the last frame (text sits inside y 300-1620).
 python3 build_poetry_reels.py OUTDIR
 """
 import html, json, os, subprocess, sys
+MIX = os.environ.get("MIXDIR")  # Mixkit videoFree clips fetched per job: name "mx:<id>"
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 OUT = os.path.abspath(sys.argv[1]); os.makedirs(OUT, exist_ok=True)
 HANDLE = os.environ.get("HANDLE", "Ahmad Ali ✍️")
-REELS = [
+REELS = json.load(open(os.environ["SPEC"])) if os.environ.get("SPEC") else [
   dict(id="r1-dilruba", song="Dilruba Dilnasheen (Rito Riba, Siddhant Kaushal)", bg="fire/candles-many-flames.mp4", tint="rgba(40,10,0,0.55)", acc="#ffb36b",
        tag="Dil ki baat", lines=["Tum saamne ho to", "dil ko qaraar aata hai,", "warna har lamha", "bas intezaar aata hai."]),
   dict(id="r2-inkaar", song="Inkaar (Azan Ahmad)", bg="city-night/night-city-lights-rain.mp4", tint="rgba(5,8,25,0.55)", acc="#8fb8ff",
@@ -27,8 +28,9 @@ for R in REELS:
     subprocess.run(["cp", f"{REPO}/library/vendor/gsap-3.14.2.min.js", f"{A}/vendor/"], check=True)
     for f in ("PlayfairDisplay-Italic.ttf", "Poppins-SemiBold.ttf", "Manrope-Variable.ttf"): subprocess.run(["cp", f"{REPO}/library/fonts/{f}", f"{A}/fonts/"], check=True)
     for f in ("hyperframes.json", "meta.json", "package.json"): subprocess.run(["cp", f"{REPO}/video/{f}", P], check=True)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-stream_loop", "-1", "-i", f"{REPO}/library/stock/{R['bg']}", "-t", str(DUR), "-an",
-                    "-vf", "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,fps=30,format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "fast", f"{A}/bg.mp4"], check=True)
+    src = f"{MIX}/{R['bg'][3:]}.mp4" if R["bg"].startswith("mx:") else f"{REPO}/library/stock/{R['bg']}"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-stream_loop", "-1", "-i", src, "-t", str(DUR), "-an",
+                    "-vf", f"crop=ih*9/16:ih:(iw-ih*9/16)*{R.get('cropx', 0.5)}:0,scale=1080:1920:flags=lanczos,fps=30,format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "fast", f"{A}/bg.mp4"], check=True)
     E = html.escape; body, js = [], []
     words = []
     for li, ln in enumerate(R["lines"]):
@@ -53,7 +55,7 @@ for R in REELS:
 <div id="bgz" style="position:absolute;inset:0;transform-origin:50% 50%;"><video id="bgv" src="assets/bg.mp4" data-start="0" data-duration="{DUR}" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>
 <div style="position:absolute;inset:0;background:{R['tint']};"></div>
 <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%);"></div>
-<div id="tg" style="position:absolute;left:0;right:0;top:470px;text-align:center;font-family:PS;font-size:44px;color:{R['acc']};">{E(R['tag'])}</div>
+<div id="tg" style="position:absolute;left:60px;right:60px;top:{R.get('tagtop', 470)}px;text-align:center;font-family:PS;font-size:{R.get('tagsize', 44)}px;line-height:1.2;color:{R['acc']};">{E(R['tag'])}</div>
 {chr(10).join(body)}
 <div id="hd" style="position:absolute;left:0;right:0;top:1290px;text-align:center;font-family:MR;font-weight:700;font-size:38px;color:rgba(255,255,255,0.85);">{E(HANDLE)}</div>
 </div><script>
