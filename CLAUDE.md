@@ -616,6 +616,10 @@ click = click-soft are byte-identical (md5); GSAP core 3.14.2 has no "rough" eas
   card "Bedrock and Java together", "Click On Update", "Make sure you have Extra Allocations on Network", "Go To Network And Copy
   Your Server After Restart". Panel visuals = our V3 shots (Assistant panel blurred out of w15). VO "फिर" at a line start came
   out "तो तो": start lines with "अब" / "रीस्टार्ट के बाद" instead.
+  VERSION CHANGE VIDEO (client "Ri9zmc" via owner 2026-11-23: "startup version changing ki bi banado"; owner: show + explain only):
+  63 s FINAL (plan V5, v5_lines.txt) from the real Version-page shots w11-w15 (Assistant panel blurred) + w03 Start. Quoted
+  panel texts: "Wipe Server Files: This will delete all files...", "Accept EULA", "stopped first and left stopped".
+  VO: "बिल्ड" alone at a line start garbled -> "बिल्ड नंबर"; "ऑन" after "फ़ाइल्स" was lost (meaning flips) -> "फ़ाइल्स को ऑन".
   OFF-BY-ONE BUG (owner caught it 2026-11-07: "teen cheezein 8 s par, cards 14 s par"): vs_tts --parts writes 000.wav for
   line 1, but the builder/mixer loaded {i:03d}.wav for line i, so v1-v3 played the NEXT line's take in every slot (line 1
   silent, voice one line ahead of the picture). My "sync" measurements (VO track vs final audio = 0.000 s, scene cut vs line

@@ -224,3 +224,35 @@ V4 = dict(
              items=[("1", "Servers, Add Server", ""), ("2", "Address + Bedrock port", "from the Network tab")], reveal=["8:सर्वर्स", "8:एड्रेस"]),
         dict(kind="outro", lines=[9], h1="Done!", h2="Phone + PC, ek saath", next="Subscribe for more server guides"),
     ])
+
+# Video 5 (2026-11-23): change the server software / Minecraft version (client "Ri9zmc": "ek startup version changing ki bi
+# banado"; owner: "ker k dekhao nhi, serf dekha ker samjao"). Screens = real V3 shots of the Version page (w11-w15, Assistant
+# panel blurred), w03 overview. Texts quoted in the VO were read on w11/w14/w15.
+V5 = dict(
+    title="Server version change", sub="Version page on the SkilloraClouds panel",
+    music="lofi-chill--holiznacc0--chills.mp3", music_start=10.0, music_cut=166,
+    caps={1: "Change your server's Minecraft version or software: easy on the SkilloraClouds panel", 2: "Side menu: Version",
+          3: "Server software list: Vanilla, Paper, Forge and more. Pick yours.", 4: "Pick the Minecraft version",
+          5: "Pick a build. The top one is the newest (Latest).", 6: "Wipe Server Files ON = all server files are deleted. Think first.",
+          7: "Accept EULA ON = you accept the Minecraft EULA", 8: "Green Install button. Server stops first and stays stopped after, so you can check.",
+          9: "Done: 'Currently running' shows your new version", 10: "Overview: press Start. New version ready.", 11: "That's it. Enjoy the new version!"},
+    shots=[
+        dict(kind="title", lines=[1], h1="SERVER VERSION CHANGE", h2="Version ya software, kuch clicks me", tags=["SkilloraClouds panel", "Paper", "Vanilla", "Forge"]),
+        dict(kind="shot", lines=[2], step=(1, "Version"), src="w11c.jpg", kb=(0.2, 0.8, 1.1),
+             calls=[("2:वर्ज़न", "Version", (63, 516))]),
+        dict(kind="shot", lines=[3], step=(2, "Software"), src="w11c.jpg", kb=(0.45, 0.5, 1.08),
+             calls=[("3:वनीला", "Vanilla", (324, 290)), ("3:पेपर,", "Paper", (650, 290)), ("3:फ़ोर्ज,", "Forge", (322, 353)), ("3:चुनो।", "Pick your software", (650, 290))]),
+        dict(kind="shot", lines=[4], step=(3, "MC version"), src="w12c.jpg", kb=(0.3, 0.6, 1.1),
+             calls=[("4:वर्ज़न", "Minecraft version (e.g. 26.3)", (310, 354))]),
+        dict(kind="shot", lines=[5], step=(4, "Build"), src="w13c.jpg", kb=(0.3, 0.5, 1.1),
+             calls=[("5:बिल्ड", "Builds", (265, 231)), ("5:ऊपर", "#253 = Latest", (312, 327))]),
+        dict(kind="shot", lines=[6, 7], step=(5, "Options"), src="w14c.jpg", kb=(0.5, 0.45, 1.12),
+             calls=[("6:वाइप", "Wipe Server Files = delete ALL files", (493, 271), 0, "r"), ("7:एक्सेप्ट", "Accept EULA", (493, 340))]),
+        dict(kind="shot", lines=[8], step=(6, "Install"), src="w14c.jpg", kb=(0.6, 0.6, 1.12),
+             calls=[("8:हरा", "Install", (777, 414)), ("8:रुकेगा,", "Server is stopped first", (630, 227))]),
+        dict(kind="shot", lines=[9], step=(7, "Check"), src="w15c.jpg", kb=(0.3, 0.35, 1.1),
+             calls=[("9:करंटली", "Currently running Paper", (404, 220)), ("9:नया", "Version 26.3, Build #253", (405, 243))]),
+        dict(kind="shot", lines=[10], step=(8, "Start"), src="w03.jpg", kb=(0.75, 0.25, 1.1),
+             calls=[("10:स्टार्ट", "Start", (990, 136))]),
+        dict(kind="outro", lines=[11], h1="Done!", h2="Naya version, kuch clicks me", next="Subscribe for more server guides"),
+    ])

@@ -5,12 +5,12 @@ usage: build_tut.py v1|v2 [--stub]   -> proj_vX/index.html, proj_vX/assets/vid/*
 import json, os, re, subprocess, sys, shutil, html, difflib
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from shots import V1, V2, V3, V4, CHEV, path
+from shots import V1, V2, V3, V4, V5, CHEV, path
 
 D = os.path.dirname(os.path.abspath(__file__))
 V = sys.argv[1]
 STUB = "--stub" in sys.argv
-PLAN = {"v1": V1, "v2": V2, "v3": V3, "v4": V4}[V]
+PLAN = {"v1": V1, "v2": V2, "v3": V3, "v4": V4, "v5": V5}[V]
 P = f"{D}/proj_{V}"
 os.makedirs(f"{P}/assets/vid", exist_ok=True)
 for sub in ("fonts", "vendor", "img"):
