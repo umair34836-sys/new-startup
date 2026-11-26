@@ -75,13 +75,78 @@ for k, (im, z, look, pos) in enumerate(SEQ):
     show(f"#fl{k}", a, a + 0.18); j.append(f'tl.fromTo("#fl{k}",{{opacity:1}},{{opacity:0,duration:0.18}},{a});')
 b.append(f'<video id="vfx" src="assets/vfx.mp4" data-start="0" data-duration="{T}" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;"></video>')
 b.append(f'<div id="gl" style="position:absolute;left:0;right:0;top:1560px;text-align:center;font-family:AN;font-size:66px;color:{W};text-shadow:0 0 18px {BLUE},0 0 40px {GREEN};">AQUA GREEN</div>'); show("#gl", 5.2, 15.47)
-# detail on every beat: label facts + aquagreenwater.org + PCRWR report (sources in library/clients/aquagreen/brief.md)
-FACTS = [(0, "SINCE 2019"), (1, "REVERSE OSMOSIS"), (2, "6-STAGE<br>PURIFICATION"), (4, "100% BATCHES<br>LAB TESTED"),
-         (5, "PCRWR REPORT:<br>SAFE &#10003;<small>Govt. quality test, Oct–Dec 2025</small>"), (6, "500 ML"), (7, "1.5 L &bull; 19 L"),
-         (8, "TDS 180–300"), (9, "pH 6.5–8.5"), (11, "HOME DELIVERY<br>6 DAYS A WEEK"), (12, "ISLAMABAD &amp;<br>RAWALPINDI"),
-         (13, "WATER COOLERS"), (14, "10,000+ SAPLINGS<br>PLANTED")]
-for k, txt in FACTS:
-    word(f"f{k}", f'<span style="display:inline-block;padding:16px 30px 20px;border-radius:22px;background:rgba(5,10,20,0.78);">{txt}</span>', CUTS[k], CUTS[k + 1], f"left:50px;right:50px;top:290px;white-space:normal;text-align:center;font-family:AN;font-size:104px;line-height:1.02;color:{W};{SHD}")
+# detail on every beat as animated ELEMENTS (owner 2026-11-26: "text ke through nahi, elements ke through detailing"):
+# drawn SVG infographics on a dark glass badge, 1-3 word label only. Facts: library/clients/aquagreen/brief.md.
+LB, LG, WH = "#4aa8ff", "#6fdc48", "#ffffff"
+def elem(k, label, inner, anim):
+    a, e = CUTS[k], CUTS[k + 1]; i = f"el{k}"
+    b.append(f'<div id="{i}" style="position:absolute;left:290px;top:230px;width:500px;height:560px;">'
+             f'<div style="position:absolute;left:0;top:0;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle, rgba(6,22,45,0.88) 0%, rgba(6,22,45,0.78) 62%, rgba(6,22,45,0) 72%);"></div>'
+             f'<svg viewBox="0 0 200 200" width="500" height="500" style="position:absolute;left:0;top:0;overflow:visible;filter:drop-shadow(0 0 8px rgba(74,168,255,0.8));">'
+             f'<circle id="{i}r" cx="100" cy="100" r="92" fill="none" stroke="{LB}" stroke-width="2" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>{inner}</svg>'
+             f'<div style="position:absolute;left:-150px;right:-150px;top:515px;text-align:center;"><span style="display:inline-block;padding:8px 26px;border-radius:30px;background:rgba(6,22,45,0.88);border:2px solid {LB};font-family:MS;font-weight:800;font-size:44px;color:#fff;">{label}</span></div></div>')
+    show(f"#{i}", a, e)
+    j.append(f'tl.fromTo("#{i}",{{scale:0.6,opacity:0}},{{scale:1,opacity:1,duration:0.22,ease:"back.out(2)"}},{r2(a)});')
+    j.append(f'tl.to("#{i}r",{{attr:{{"stroke-dashoffset":0}},duration:{r2(min(0.5, e - a - 0.05))},ease:"power2.out"}},{r2(a)});')
+    d = e - a
+    for line in anim(i, a, d): j.append(line)
+def S(sel, fr, to, at, du, ease="power2.out"): return f'tl.fromTo("{sel}",{fr},{{...{to},duration:{du:.2f},ease:"{ease}"}},{at:.2f});'
+DROP = "M100 40 C100 40 70 80 70 102 A30 30 0 0 0 130 102 C130 80 100 40 100 40Z"
+# k0: logo ring pulse + rising bubbles (purity)
+elem(0, "Since 2019", f'<path d="{DROP}" fill="{LB}" opacity="0.9"/><path d="M84 108 Q100 92 116 108 Q100 130 84 108Z" fill="{LG}"/>' + "".join(f'<circle id="el0b{n}" cx="{60 + n * 20}" cy="160" r="{3 + n % 3}" fill="none" stroke="{WH}" stroke-width="1.5"/>' for n in range(5)),
+     lambda i, a, d: [S(f"#{i}b{n}", "{y:0,opacity:1}", "{y:-110,opacity:0}", a + n * 0.06, d - 0.1, "none") for n in range(5)])
+# k1: reverse osmosis membrane - water passes, dirt blocked
+elem(1, "Reverse Osmosis", f'<line x1="30" y1="100" x2="170" y2="100" stroke="{WH}" stroke-width="3" stroke-dasharray="4 3"/>' +
+     "".join(f'<circle id="el1w{n}" cx="{45 + n * 22}" cy="40" r="5" fill="{LB}"/>' for n in range(6)) +
+     "".join(f'<rect id="el1d{n}" x="{52 + n * 34}" y="40" width="9" height="9" fill="#a0784a"/>' for n in range(4)),
+     lambda i, a, d: [S(f"#{i}w{n}", "{y:0}", "{y:120}", a + 0.03 * n, d - 0.1, "power1.in") for n in range(6)] + [S(f"#{i}d{n}", "{y:0}", "{y:48}", a + 0.03 * n, (d - 0.1) * 0.5, "power1.in") for n in range(4)])
+# k2: 6 filter stages light up, drop falls through
+elem(2, "6 Stages", "".join(f'<rect id="el2s{n}" x="55" y="{38 + n * 22}" width="90" height="14" rx="7" fill="none" stroke="{LB}" stroke-width="2.5"/>' for n in range(6)) + f'<circle id="el2d" cx="100" cy="28" r="6" fill="{WH}"/>',
+     lambda i, a, d: [S(f"#{i}s{n}", f'{{fill:"rgba(74,168,255,0)"}}', f'{{fill:"{LB}"}}', a + n * d / 7, 0.1) for n in range(6)] + [S(f"#{i}d", "{y:0}", "{y:140}", a, d - 0.05, "none")])
+# k3 = exploded bottle beat (no element)
+# k4: lab flask fills + check
+elem(4, "Lab Tested", f'<path d="M85 40 L85 85 L55 150 Q52 160 62 160 L138 160 Q148 160 145 150 L115 85 L115 40" fill="none" stroke="{WH}" stroke-width="4"/>'
+     f'<clipPath id="el4c"><path d="M85 40 L85 85 L55 150 Q52 160 62 160 L138 160 Q148 160 145 150 L115 85 L115 40Z"/></clipPath>'
+     f'<rect id="el4f" x="40" y="160" width="120" height="0" fill="{LB}" clip-path="url(#el4c)"/>'
+     f'<path id="el4k" d="M120 60 L135 75 L165 42" fill="none" stroke="{LG}" stroke-width="8" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>',
+     lambda i, a, d: [S(f"#{i}f", "{attr:{y:160,height:0}}", "{attr:{y:100,height:60}}", a, d * 0.6), S(f"#{i}k", '{attr:{"stroke-dashoffset":100}}', '{attr:{"stroke-dashoffset":0}}', a + d * 0.5, d * 0.35)])
+# k5: govt test shield + check (PCRWR, Oct-Dec 2025: Safe)
+elem(5, "PCRWR: Safe", f'<path id="el5s" d="M100 30 L155 50 L155 100 Q155 145 100 170 Q45 145 45 100 L45 50Z" fill="rgba(111,220,72,0.15)" stroke="{LG}" stroke-width="5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>'
+     f'<path id="el5k" d="M75 100 L93 118 L128 80" fill="none" stroke="{WH}" stroke-width="10" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>',
+     lambda i, a, d: [S(f"#{i}s", '{attr:{"stroke-dashoffset":100}}', '{attr:{"stroke-dashoffset":0}}', a, d * 0.45), S(f"#{i}k", '{attr:{"stroke-dashoffset":100}}', '{attr:{"stroke-dashoffset":0}}', a + d * 0.45, d * 0.3)])
+# k6/k7: bottle sizes 500 ml -> 1.5 L -> 19 L silhouettes
+BOT = lambda x, w, h, n: f'<g id="el7b{n}" style="transform-box:fill-box;transform-origin:50% 100%;"><rect x="{x + w * 0.35}" y="{165 - h - 10}" width="{w * 0.3}" height="10" fill="{LB}"/><rect x="{x}" y="{165 - h}" width="{w}" height="{h}" rx="{w * 0.25}" fill="none" stroke="{WH}" stroke-width="3"/><rect x="{x + 3}" y="{165 - h * 0.6}" width="{w - 6}" height="{h * 0.6 - 3}" rx="{w * 0.2}" fill="{LB}" opacity="0.7"/></g>'
+elem(6, "500 ml", BOT(80, 40, 95, 9).replace("el7b9", "el6b"), lambda i, a, d: [S(f"#{i}b", "{scaleY:0}", "{scaleY:1}", a, 0.3, "back.out(2)")])
+elem(7, "1.5 L &middot; 19 L", BOT(40, 26, 60, 0) + BOT(78, 34, 85, 1) + BOT(122, 46, 115, 2),
+     lambda i, a, d: [S(f"#{i}b{n}", "{scaleY:0}", "{scaleY:1}", a + n * 0.1, 0.25, "back.out(2)") for n in range(3)])
+# k8: TDS - mineral bubbles rising (Ca Mg Na K from the label)
+elem(8, "Minerals", "".join(f'<g id="el8m{n}"><circle cx="{50 + n * 33}" cy="150" r="15" fill="rgba(74,168,255,0.3)" stroke="{WH}" stroke-width="2"/><text x="{50 + n * 33}" y="155" text-anchor="middle" style="font-family:MS;font-weight:800;font-size:13px;fill:#fff;">{m}</text></g>' for n, m in enumerate(["Ca", "Mg", "Na", "K"])),
+     lambda i, a, d: [S(f"#{i}m{n}", "{y:20,opacity:0}", f"{{y:{-70 - n * 8},opacity:1}}", a + n * 0.07, d - 0.1, "power1.out") for n in range(4)])
+# k9: pH gauge, needle into the 6.5-8.5 band
+elem(9, "pH 6.5&ndash;8.5", f'<path d="M40 130 A60 60 0 0 1 160 130" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="12"/><path d="M95 70 A60 60 0 0 1 133 82" fill="none" stroke="{LG}" stroke-width="12"/>'
+     f'<line id="el9n" x1="100" y1="130" x2="100" y2="80" stroke="{WH}" stroke-width="5" stroke-linecap="round" style="transform-origin:100px 130px;"/><circle cx="100" cy="130" r="7" fill="{WH}"/>',
+     lambda i, a, d: [S(f"#{i}n", "{rotation:-80}", "{rotation:25}", a, d * 0.7, "back.out(1.5)")])
+# k10 = exploded bottle beat
+# k11: delivery van along a road, 6 day dots
+elem(11, "6 Days a Week", f'<line x1="25" y1="130" x2="175" y2="130" stroke="{WH}" stroke-width="3"/>' + "".join(f'<circle id="el11d{n}" cx="{35 + n * 26}" cy="150" r="6" fill="rgba(255,255,255,0.25)"/>' for n in range(6)) +
+     f'<g id="el11v"><rect x="20" y="95" width="45" height="30" rx="4" fill="{LB}"/><rect x="65" y="105" width="18" height="20" rx="3" fill="{LB}"/><circle cx="35" cy="128" r="6" fill="{WH}"/><circle cx="72" cy="128" r="6" fill="{WH}"/></g>',
+     lambda i, a, d: [S(f"#{i}v", "{x:-20}", "{x:95}", a, d - 0.05, "none")] + [S(f"#{i}d{n}", '{fill:"rgba(255,255,255,0.25)"}', f'{{fill:"{LG}"}}', a + n * d / 7, 0.08) for n in range(6)])
+# k12: two pins joined by a drawn route (Islamabad - Rawalpindi)
+PIN = lambda x, y, n: f'<g id="el12p{n}" style="transform-box:fill-box;transform-origin:50% 100%;"><path d="M{x} {y} C{x - 14} {y - 18} {x - 14} {y - 34} {x} {y - 34} C{x + 14} {y - 34} {x + 14} {y - 18} {x} {y}Z" fill="{LG if n else LB}"/><circle cx="{x}" cy="{y - 24}" r="5" fill="#06162d"/></g>'
+elem(12, "ISB &middot; RWP", f'<path id="el12r" d="M60 120 Q100 60 140 135" fill="none" stroke="{WH}" stroke-width="4" stroke-dasharray="6 5"/>'
+     f'<path id="el12m" d="M60 120 Q100 60 140 135" fill="none" stroke="#06162d" stroke-width="6" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"/>' + PIN(60, 122, 0) + PIN(140, 137, 1),
+     lambda i, a, d: [S(f"#{i}p0", "{scale:0}", "{scale:1}", a, 0.2, "back.out(2)"), S(f"#{i}m", '{attr:{"stroke-dashoffset":0}}', '{attr:{"stroke-dashoffset":-100}}', a + 0.1, d * 0.5), S(f"#{i}p1", "{scale:0}", "{scale:1}", a + d * 0.55, 0.2, "back.out(2)")])
+# k13: water cooler, hot / normal / cold taps
+elem(13, "Water Coolers", f'<rect x="70" y="30" width="60" height="45" rx="12" fill="rgba(74,168,255,0.5)" stroke="{WH}" stroke-width="3"/><rect x="65" y="75" width="70" height="95" rx="6" fill="none" stroke="{WH}" stroke-width="3"/>' +
+     "".join(f'<rect id="el13t{n}" x="{78 + n * 16}" y="95" width="10" height="14" rx="2" fill="{c}"/>' for n, c in enumerate(["#ff5a4a", WH, LB])) +
+     f'<rect id="el13w" x="81" y="109" width="4" height="0" fill="{LB}"/>',
+     lambda i, a, d: [S(f"#{i}t{n}", "{scale:0}", "{scale:1}", a + n * 0.08, 0.15, "back.out(3)") for n in range(3)] + [S(f"#{i}w", "{attr:{height:0}}", "{attr:{height:40}}", a + 0.3, d - 0.35, "none")])
+# k14: sapling grows (10,000+ saplings planted)
+elem(14, "10,000+ Saplings", f'<line x1="40" y1="165" x2="160" y2="165" stroke="#8a6a3c" stroke-width="5"/>'
+     f'<path id="el14s" d="M100 165 L100 80" stroke="{LG}" stroke-width="6" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>'
+     f'<path id="el14l1" d="M100 115 Q70 105 68 82 Q95 85 100 115Z" fill="{LG}" style="transform-box:fill-box;transform-origin:100% 100%;"/>'
+     f'<path id="el14l2" d="M100 95 Q130 88 134 62 Q105 66 100 95Z" fill="{LG}" style="transform-box:fill-box;transform-origin:0% 100%;"/>',
+     lambda i, a, d: [S(f"#{i}s", '{attr:{"stroke-dashoffset":100}}', '{attr:{"stroke-dashoffset":0}}', a, d * 0.45), S(f"#{i}l1", "{scale:0}", "{scale:1}", a + d * 0.35, 0.2, "back.out(2)"), S(f"#{i}l2", "{scale:0}", "{scale:1}", a + d * 0.5, 0.2, "back.out(2)")])
 # end card (glitch name, real contact from the back label)
 E = 15.47
 b.append(f'<div id="end" style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%, #0b2d55 0%, {K} 70%);">'
