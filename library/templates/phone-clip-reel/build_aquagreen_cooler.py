@@ -75,9 +75,13 @@ for k, (im, z, look, pos) in enumerate(SEQ):
     show(f"#fl{k}", a, a + 0.18); j.append(f'tl.fromTo("#fl{k}",{{opacity:1}},{{opacity:0,duration:0.18}},{a});')
 b.append(f'<video id="vfx" src="assets/vfx.mp4" data-start="0" data-duration="{T}" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;"></video>')
 b.append(f'<div id="gl" style="position:absolute;left:0;right:0;top:1560px;text-align:center;font-family:AN;font-size:66px;color:{W};text-shadow:0 0 18px {BLUE},0 0 40px {GREEN};">AQUA GREEN</div>'); show("#gl", 5.2, 15.47)
-word("f1", "500 ML", 9.73, 10.33, f"left:0;right:0;top:300px;text-align:center;font-family:AN;font-size:150px;color:{W};{SHD}")
-word("f2", "TDS 180–300", 11.07, 11.7, f"left:0;right:0;top:300px;text-align:center;font-family:AN;font-size:120px;color:{W};{SHD}")
-word("f3", "pH 6.5–8.5", 12.97, 13.67, f"left:0;right:0;top:300px;text-align:center;font-family:AN;font-size:130px;color:{W};{SHD}")
+# detail on every beat: label facts + aquagreenwater.org + PCRWR report (sources in library/clients/aquagreen/brief.md)
+FACTS = [(0, "SINCE 2019"), (1, "REVERSE OSMOSIS"), (2, "6-STAGE<br>PURIFICATION"), (4, "100% BATCHES<br>LAB TESTED"),
+         (5, "PCRWR REPORT:<br>SAFE &#10003;<small>Govt. quality test, Oct–Dec 2025</small>"), (6, "500 ML"), (7, "1.5 L &bull; 19 L"),
+         (8, "TDS 180–300"), (9, "pH 6.5–8.5"), (11, "HOME DELIVERY<br>6 DAYS A WEEK"), (12, "ISLAMABAD &amp;<br>RAWALPINDI"),
+         (13, "WATER COOLERS"), (14, "10,000+ SAPLINGS<br>PLANTED")]
+for k, txt in FACTS:
+    word(f"f{k}", f'<span style="display:inline-block;padding:16px 30px 20px;border-radius:22px;background:rgba(5,10,20,0.78);">{txt}</span>', CUTS[k], CUTS[k + 1], f"left:50px;right:50px;top:290px;white-space:normal;text-align:center;font-family:AN;font-size:104px;line-height:1.02;color:{W};{SHD}")
 # end card (glitch name, real contact from the back label)
 E = 15.47
 b.append(f'<div id="end" style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%, #0b2d55 0%, {K} 70%);">'
@@ -85,6 +89,7 @@ b.append(f'<div id="end" style="position:absolute;inset:0;background:radial-grad
          f'<div id="e2" style="position:absolute;left:0;right:0;top:830px;text-align:center;font-family:MS;font-weight:700;font-size:50px;color:{W};">Bottled Drinking Water</div>'
          f'<div id="e3" style="position:absolute;left:110px;right:110px;top:960px;padding:22px 0;border-radius:22px;background:{W};text-align:center;font-family:AN;font-size:84px;color:{K};">UAN 033-111-110-52</div>'
          f'<div id="e4" style="position:absolute;left:0;right:0;top:1140px;text-align:center;font-family:MS;font-weight:600;font-size:44px;color:#bfe3ff;">www.aquagreenwaters.org</div>'
+         f'<div id="e6" style="position:absolute;left:0;right:0;top:1220px;text-align:center;font-family:MS;font-weight:600;font-size:40px;color:#ffffff;">Home delivery: Islamabad &amp; Rawalpindi</div>'
          f'<div id="e5" style="position:absolute;left:0;right:0;top:1780px;text-align:center;font-family:MS;font-weight:500;font-size:30px;color:rgba(255,255,255,0.55);">Edited by MrCopper804</div></div>')
 show("#end", E, T + 1)
 j += [f'tl.fromTo("#e1",{{opacity:0,skewX:40,x:-80}},{{opacity:1,skewX:0,x:0,duration:0.35,ease:"steps(6)"}},{E + 0.05});',
@@ -95,7 +100,7 @@ j += [f'tl.fromTo("#e1",{{opacity:0,skewX:40,x:-80}},{{opacity:1,skewX:0,x:0,dur
 b.append('<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);pointer-events:none;"></div>')
 open(f"{P}/index.html", "w").write(f'''<!doctype html><html lang="en" data-resolution="portrait"><head><meta charset="UTF-8"><meta name="viewport" content="width=1080, height=1920">
 <script src="assets/vendor/gsap-3.14.2.min.js"></script><style>@font-face{{font-family:"AN";src:url("assets/fonts/Anton-Regular.ttf");}}@font-face{{font-family:"MS";src:url("assets/fonts/Montserrat-Variable.ttf");font-weight:100 900;}}
-*{{margin:0;padding:0;box-sizing:border-box;}}html,body{{width:1080px;height:1920px;overflow:hidden;background:{K};}}</style></head><body>
+small{{display:block;font-family:MS;font-weight:600;font-size:40px;margin-top:14px;color:#cfe9ff;}}*{{margin:0;padding:0;box-sizing:border-box;}}html,body{{width:1080px;height:1920px;overflow:hidden;background:{K};}}</style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{T}" data-width="1080" data-height="1920" style="position:absolute;inset:0;overflow:hidden;background:{K};">
 {chr(10).join(b)}
 <audio id="mix" src="assets/audio/mix.wav" data-start="0" data-duration="{T}" data-volume="1.0" data-track-index="10"></audio>
